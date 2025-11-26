@@ -1,61 +1,63 @@
-import { useState } from 'react'
-import { Routes, Route, Link } from 'react-router'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Route, Routes, Link } from 'react-router'
+
+const plannedForms = [
+  'Account registration',
+  'Profile update',
+  'Password reset',
+  'Newsletter signup',
+  'Feedback survey',
+]
+
+function Layout({ children }) {
+  return (
+    <div>
+      <header>
+        <h1>20 Forms, 20 Designs</h1>
+        <p>Explorations of form experiences built with React and plain JavaScript.</p>
+        <nav>
+          <Link to="/">Home</Link>
+          {' | '}
+          <Link to="/about">About</Link>
+        </nav>
+      </header>
+      <main>{children}</main>
+    </div>
+  )
+}
 
 function Home() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Layout>
+      <p>The gallery is being prepared. Check back soon for the first forms.</p>
+      <section>
+        <h2>Planned forms</h2>
+        <ul>
+          {plannedForms.map((entry) => (
+            <li key={entry}>{entry}</li>
+          ))}
+        </ul>
+      </section>
+    </Layout>
   )
 }
 
 function About() {
   return (
-    <div>
-      <h1>About</h1>
+    <Layout>
       <p>
-        This is an exploratory project showing how 20 different forms could be
-        implemented using 20 different design systems.
+        Each form will highlight a different design approach while keeping the code in
+        JavaScript and React for flexibility and clarity.
       </p>
-    </div>
+    </Layout>
   )
 }
 
 function App() {
   return (
-    <div>
-      <nav>
-        <Link to="/">Home</Link> | <Link to="/about">About</Link>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+    </Routes>
   )
 }
 
