@@ -51,52 +51,264 @@ const plannedForms = [
 ]
 
 const componentLibraries = [
-  { name: 'MUI', directory: 'mui' },
-  { name: 'Chakra UI', directory: 'chakra-ui' },
-  { name: 'Ant Design', directory: 'ant-design' },
-  { name: 'Fluent UI', directory: 'fluent-ui' },
-  { name: 'React Bootstrap', directory: 'react-bootstrap' },
-  { name: 'Semantic UI React', directory: 'semantic-ui-react' },
-  { name: 'Evergreen', directory: 'evergreen' },
-  { name: 'Blueprint', directory: 'blueprint' },
-  { name: 'Grommet', directory: 'grommet' },
-  { name: 'Carbon Design System', directory: 'carbon-design-system' },
-  { name: 'Mantine', directory: 'mantine' },
-  { name: 'PrimeReact', directory: 'primereact' },
-  { name: 'NextUI', directory: 'nextui' },
-  { name: 'Geist UI', directory: 'geist-ui' },
-  { name: 'shadcn/ui', directory: 'shadcn-ui' },
-  { name: 'Radix UI', directory: 'radix-ui' },
-  { name: 'Headless UI', directory: 'headless-ui' },
-  { name: 'daisyUI', directory: 'daisyui' },
-  { name: 'Cloudscape Design System', directory: 'cloudscape-design' },
-  { name: 'Shopify Polaris', directory: 'shopify-polaris' },
-  { name: 'Elastic UI (EUI)', directory: 'elastic-ui' },
-  { name: 'Zendesk Garden', directory: 'zendesk-garden' },
-  { name: 'Base Web', directory: 'base-web' },
-  { name: 'PatternFly', directory: 'patternfly' },
-  { name: 'Atlassian Atlaskit', directory: 'atlassian-atlaskit' },
-  { name: 'React Spectrum', directory: 'react-spectrum' },
-  { name: 'Pinterest Gestalt', directory: 'gestalt' },
-  { name: 'VMware Clarity', directory: 'clarity' },
+  {
+    name: 'MUI',
+    directory: 'mui',
+    website: 'https://mui.com',
+    repo: 'https://github.com/mui/material-ui',
+  },
+  {
+    name: 'Chakra UI',
+    directory: 'chakra-ui',
+    website: 'https://chakra-ui.com',
+    repo: 'https://github.com/chakra-ui/chakra-ui',
+  },
+  {
+    name: 'Ant Design',
+    directory: 'ant-design',
+    website: 'https://ant.design',
+    repo: 'https://github.com/ant-design/ant-design',
+  },
+  {
+    name: 'Fluent UI',
+    directory: 'fluent-ui',
+    website: 'https://developer.microsoft.com/en-us/fluentui',
+    repo: 'https://github.com/microsoft/fluentui',
+  },
+  {
+    name: 'React Bootstrap',
+    directory: 'react-bootstrap',
+    website: 'https://react-bootstrap.github.io',
+    repo: 'https://github.com/react-bootstrap/react-bootstrap',
+  },
+  {
+    name: 'Semantic UI React',
+    directory: 'semantic-ui-react',
+    website: 'https://react.semantic-ui.com',
+    repo: 'https://github.com/Semantic-Org/Semantic-UI-React',
+  },
+  {
+    name: 'Evergreen',
+    directory: 'evergreen',
+    website: 'https://evergreen.segment.com',
+    repo: 'https://github.com/segmentio/evergreen',
+  },
+  {
+    name: 'Blueprint',
+    directory: 'blueprint',
+    website: 'https://blueprintjs.com',
+    repo: 'https://github.com/palantir/blueprint',
+  },
+  {
+    name: 'Grommet',
+    directory: 'grommet',
+    website: 'https://v2.grommet.io',
+    repo: 'https://github.com/grommet/grommet',
+  },
+  {
+    name: 'Carbon Design System',
+    directory: 'carbon-design-system',
+    website: 'https://carbondesignsystem.com',
+    repo: 'https://github.com/carbon-design-system/carbon',
+  },
+  {
+    name: 'Mantine',
+    directory: 'mantine',
+    website: 'https://mantine.dev',
+    repo: 'https://github.com/mantinedev/mantine',
+  },
+  {
+    name: 'PrimeReact',
+    directory: 'primereact',
+    website: 'https://primereact.org',
+    repo: 'https://github.com/primefaces/primereact',
+  },
+  {
+    name: 'NextUI',
+    directory: 'nextui',
+    website: 'https://nextui.org',
+    repo: 'https://github.com/nextui-org/nextui',
+  },
+  {
+    name: 'Geist UI',
+    directory: 'geist-ui',
+    website: 'https://geist-ui.dev',
+    repo: 'https://github.com/geist-org/geist-ui',
+  },
+  {
+    name: 'shadcn/ui',
+    directory: 'shadcn-ui',
+    website: 'https://ui.shadcn.com',
+    repo: 'https://github.com/shadcn-ui/ui',
+  },
+  {
+    name: 'Radix UI',
+    directory: 'radix-ui',
+    website: 'https://www.radix-ui.com',
+    repo: 'https://github.com/radix-ui/primitives',
+  },
+  {
+    name: 'Headless UI',
+    directory: 'headless-ui',
+    website: 'https://headlessui.com',
+    repo: 'https://github.com/tailwindlabs/headlessui',
+  },
+  {
+    name: 'daisyUI',
+    directory: 'daisyui',
+    website: 'https://daisyui.com',
+    repo: 'https://github.com/saadeghi/daisyui',
+  },
+  {
+    name: 'Cloudscape Design System',
+    directory: 'cloudscape-design',
+    website: 'https://cloudscape.design',
+    repo: 'https://github.com/cloudscape-design/components',
+  },
+  {
+    name: 'Shopify Polaris',
+    directory: 'shopify-polaris',
+    website: 'https://polaris.shopify.com',
+    repo: 'https://github.com/Shopify/polaris',
+  },
+  {
+    name: 'Elastic UI (EUI)',
+    directory: 'elastic-ui',
+    website: 'https://elastic.github.io/eui',
+    repo: 'https://github.com/elastic/eui',
+  },
+  {
+    name: 'Zendesk Garden',
+    directory: 'zendesk-garden',
+    website: 'https://garden.zendesk.com',
+    repo: 'https://github.com/zendesk/garden',
+  },
+  {
+    name: 'Base Web',
+    directory: 'base-web',
+    website: 'https://baseweb.design',
+    repo: 'https://github.com/uber/baseweb',
+  },
+  {
+    name: 'PatternFly',
+    directory: 'patternfly',
+    website: 'https://www.patternfly.org',
+    repo: 'https://github.com/patternfly/patternfly-react',
+  },
+  {
+    name: 'Atlassian Atlaskit',
+    directory: 'atlassian-atlaskit',
+    website: 'https://atlassian.design/components',
+    repo: 'https://bitbucket.org/atlassian/atlassian-frontend',
+  },
+  {
+    name: 'React Spectrum',
+    directory: 'react-spectrum',
+    website: 'https://react-spectrum.adobe.com',
+    repo: 'https://github.com/adobe/react-spectrum',
+  },
+  {
+    name: 'Pinterest Gestalt',
+    directory: 'gestalt',
+    website: 'https://gestalt.pinterest.systems',
+    repo: 'https://github.com/pinterest/gestalt',
+  },
+  {
+    name: 'VMware Clarity',
+    directory: 'clarity',
+    website: 'https://clarity.design',
+    repo: 'https://github.com/vmware/clarity',
+  },
   {
     name: 'Salesforce Lightning Design System React',
     directory: 'lightning-design-system-react',
+    website: 'https://react.lightningdesignsystem.com',
+    repo: 'https://github.com/salesforce/design-system-react',
   },
-  { name: 'Orbit by Kiwi.com', directory: 'orbit' },
-  { name: 'RSuite', directory: 'rsuite' },
-  { name: 'Semi Design', directory: 'semi-design' },
-  { name: 'Arco Design', directory: 'arco-design' },
-  { name: 'Ionic React', directory: 'ionic-react' },
-  { name: 'Braid Design System', directory: 'braid-design-system' },
-  { name: 'Primer React', directory: 'primer-react' },
-  { name: 'FAST Design', directory: 'fast-design' },
-  { name: 'Shoelace', directory: 'shoelace' },
-  { name: 'U.S. Web Design System', directory: 'uswds' },
-  { name: 'Ariakit', directory: 'ariakit' },
-  { name: 'Tremor', directory: 'tremor' },
-  { name: 'Rebass', directory: 'rebass' },
-  { name: 'React + No CSS', directory: 'react-no-css' },
+  {
+    name: 'Orbit by Kiwi.com',
+    directory: 'orbit',
+    website: 'https://orbit.kiwi',
+    repo: 'https://github.com/kiwicom/orbit',
+  },
+  {
+    name: 'RSuite',
+    directory: 'rsuite',
+    website: 'https://rsuitejs.com',
+    repo: 'https://github.com/rsuite/rsuite',
+  },
+  {
+    name: 'Semi Design',
+    directory: 'semi-design',
+    website: 'https://semi.design',
+    repo: 'https://github.com/DouyinFE/semi-design',
+  },
+  {
+    name: 'Arco Design',
+    directory: 'arco-design',
+    website: 'https://arco.design',
+    repo: 'https://github.com/arco-design/arco-design',
+  },
+  {
+    name: 'Ionic React',
+    directory: 'ionic-react',
+    website: 'https://ionicframework.com/react',
+    repo: 'https://github.com/ionic-team/ionic-framework',
+  },
+  {
+    name: 'Braid Design System',
+    directory: 'braid-design-system',
+    website: 'https://seek-oss.github.io/braid-design-system',
+    repo: 'https://github.com/seek-oss/braid-design-system',
+  },
+  {
+    name: 'Primer React',
+    directory: 'primer-react',
+    website: 'https://primer.style/react',
+    repo: 'https://github.com/primer/react',
+  },
+  {
+    name: 'FAST Design',
+    directory: 'fast-design',
+    website: 'https://www.fast.design',
+    repo: 'https://github.com/microsoft/fast',
+  },
+  {
+    name: 'Shoelace',
+    directory: 'shoelace',
+    website: 'https://shoelace.style',
+    repo: 'https://github.com/shoelace-style/shoelace',
+  },
+  {
+    name: 'U.S. Web Design System',
+    directory: 'uswds',
+    website: 'https://designsystem.digital.gov',
+    repo: 'https://github.com/uswds/uswds',
+  },
+  {
+    name: 'Ariakit',
+    directory: 'ariakit',
+    website: 'https://ariakit.org',
+    repo: 'https://github.com/ariakit/ariakit',
+  },
+  {
+    name: 'Tremor',
+    directory: 'tremor',
+    website: 'https://www.tremor.so',
+    repo: 'https://github.com/tremorlabs/tremor',
+  },
+  {
+    name: 'Rebass',
+    directory: 'rebass',
+    website: 'https://rebassjs.org',
+    repo: 'https://github.com/rebassjs/rebass',
+  },
+  {
+    name: 'React + No CSS',
+    directory: 'react-no-css',
+    website: 'https://react.dev',
+    repo: 'https://github.com/facebook/react',
+  },
 ]
 
 const reactNoCssFormComponents = {
@@ -126,6 +338,31 @@ function App() {
   const [selectedForms, setSelectedForms] = useState([])
   const [selectedLibraries, setSelectedLibraries] = useState([])
 
+  const formItems = useMemo(
+    () => plannedForms.map((form) => ({ value: form, label: form })),
+    [],
+  )
+
+  const componentLibraryItems = useMemo(
+    () =>
+      componentLibraries.map((library) => ({
+        value: library.name,
+        label: (
+          <span>
+            {library.name} (
+            <a href={library.website} target="_blank" rel="noreferrer">
+              website
+            </a>
+            ) /{' '}
+            <a href={library.repo} target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+          </span>
+        ),
+      })),
+    [],
+  )
+
   const combinations = useMemo(
     () =>
       selectedForms.flatMap((form) =>
@@ -154,20 +391,22 @@ function App() {
       <div style={styles.selectorRow}>
         <SelectionColumn
           title="Forms"
-          items={plannedForms}
+          items={formItems}
           selectedItems={selectedForms}
           onToggleItem={(form) => toggleSelection(form, selectedForms, setSelectedForms)}
-          onSelectAll={() => setSelectedForms(plannedForms)}
+          onSelectAll={() => setSelectedForms(formItems.map((item) => item.value))}
           onSelectNone={() => setSelectedForms([])}
         />
         <SelectionColumn
           title="Component libraries"
-          items={componentLibraries.map((entry) => entry.name)}
+          items={componentLibraryItems}
           selectedItems={selectedLibraries}
           onToggleItem={(library) =>
             toggleSelection(library, selectedLibraries, setSelectedLibraries)
           }
-          onSelectAll={() => setSelectedLibraries(componentLibraries.map((entry) => entry.name))}
+          onSelectAll={() =>
+            setSelectedLibraries(componentLibraryItems.map((item) => item.value))
+          }
           onSelectNone={() => setSelectedLibraries([])}
           twoColumnLayout
         />
