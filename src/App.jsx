@@ -8,7 +8,39 @@ import ReactBootstrapPreview from './components/ReactBootstrapPreview'
 import ReactNoCssPreview from './components/ReactNoCssPreview'
 import SelectionColumn from './components/SelectionColumn'
 import FormGroupedPreviews from './components/FormGroupedPreviews'
-import styles from './styles'
+// Inlined styles from styles.js
+const styles = {
+  selectorRow: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+    columnGap: '64px',
+    rowGap: '24px',
+    alignItems: 'start',
+  },
+  themeToggleRow: {
+    display: 'flex',
+    gap: '12px',
+    alignItems: 'center',
+    marginTop: '24px',
+    marginBottom: '4px',
+  },
+  previewToggleRow: {
+    display: 'flex',
+    gap: '12px',
+    alignItems: 'center',
+    marginTop: '8px',
+    marginBottom: '-12px',
+  },
+  previewToggleLabel: {
+    fontWeight: 600,
+  },
+  radioRow: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+    fontSize: '0.95rem',
+  },
+}
 
 import { reactNoCssFormComponents } from './component-libraries/react-no-css/lazy.js'
 import { muiFormComponents } from './component-libraries/mui/lazy.js'

@@ -1,5 +1,23 @@
 import { Component } from 'react'
-import styles from '../styles'
+// Inlined styles from styles.js
+const styles = {
+  formErrorFallback: {
+    border: '1px dashed #f5b5b5',
+    borderRadius: '8px',
+    padding: '12px',
+    backgroundColor: '#fff7f7',
+    color: '#9b1c1c',
+  },
+  formErrorTitle: {
+    margin: '0 0 4px',
+    fontWeight: 700,
+    fontSize: '0.95rem',
+  },
+  formErrorDetails: {
+    margin: 0,
+    fontSize: '0.9rem',
+  },
+}
 
 class FormErrorBoundary extends Component {
   constructor(props) {

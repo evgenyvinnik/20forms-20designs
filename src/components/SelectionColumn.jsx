@@ -1,16 +1,47 @@
-import styles from '../styles'
+const selectionStyles = {
+  sectionHeader: {
+    marginBottom: '6px',
+  },
+  sectionTitle: {
+    margin: 0,
+    fontSize: '1.1rem',
+  },
+  selectionActions: {
+    display: 'flex',
+    gap: '12px',
+    flexWrap: 'wrap',
+    marginBottom: '12px',
+    alignItems: 'center',
+  },
+  checkboxRow: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+    fontSize: '0.95rem',
+  },
+  singleColumnList: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '8px',
+  },
+  twoColumnList: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+    gap: '8px 12px',
+  },
+}
 
 function CheckboxRow({ label, checked, onChange, disabled }) {
   if (disabled) {
     return (
-      <div style={{ ...styles.checkboxRow, opacity: 0.5 }}>
+      <div style={{ ...selectionStyles.checkboxRow, opacity: 0.5 }}>
         <span style={{ marginLeft: '22px' }}>{label}</span>
       </div>
     )
   }
 
   return (
-    <label style={styles.checkboxRow}>
+    <label style={selectionStyles.checkboxRow}>
       <input type="checkbox" checked={checked} onChange={onChange} />
       <span>{label}</span>
     </label>
@@ -34,15 +65,15 @@ function SelectionColumn({
     (item) => !selectedItems.includes(item.value)
   )
   const listStyle = twoColumnLayout
-    ? styles.twoColumnList
-    : styles.singleColumnList
+    ? selectionStyles.twoColumnList
+    : selectionStyles.singleColumnList
 
   return (
     <section>
-      <div style={styles.sectionHeader}>
-        <h2 style={styles.sectionTitle}>{title}</h2>
+      <div style={selectionStyles.sectionHeader}>
+        <h2 style={selectionStyles.sectionTitle}>{title}</h2>
       </div>
-      <div style={styles.selectionActions}>
+      <div style={selectionStyles.selectionActions}>
         <CheckboxRow
           label="Select all"
           checked={allSelected}
