@@ -24,26 +24,36 @@ function PrivacyConsentForm() {
         <legend className="text-sm font-medium">Communication channels</legend>
         <div className="flex items-center space-x-2">
           <Checkbox name="emailOptIn" />
-          <Label htmlFor="emailOptIn" className="font-normal">Email updates</Label>
+          <Label htmlFor="emailOptIn" className="font-normal">
+            Email updates
+          </Label>
         </div>
         <div className="flex items-center space-x-2">
           <Checkbox name="smsOptIn" />
-          <Label htmlFor="smsOptIn" className="font-normal">SMS notifications</Label>
+          <Label htmlFor="smsOptIn" className="font-normal">
+            SMS notifications
+          </Label>
         </div>
         <div className="flex items-center space-x-2">
           <Checkbox name="phoneOptIn" />
-          <Label htmlFor="phoneOptIn" className="font-normal">Phone calls</Label>
+          <Label htmlFor="phoneOptIn" className="font-normal">
+            Phone calls
+          </Label>
         </div>
       </fieldset>
       <fieldset className="space-y-2">
         <legend className="text-sm font-medium">Privacy options</legend>
         <div className="flex items-center space-x-2">
           <Checkbox name="analytics" />
-          <Label htmlFor="analytics" className="font-normal">Allow analytics cookies</Label>
+          <Label htmlFor="analytics" className="font-normal">
+            Allow analytics cookies
+          </Label>
         </div>
         <div className="flex items-center space-x-2">
           <Checkbox name="personalization" />
-          <Label htmlFor="personalization" className="font-normal">Allow personalized content</Label>
+          <Label htmlFor="personalization" className="font-normal">
+            Allow personalized content
+          </Label>
         </div>
       </fieldset>
       <div className="space-y-2">

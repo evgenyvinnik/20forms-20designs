@@ -62,11 +62,7 @@ function EventRegistrationForm() {
       </div>
       <div className="form-control">
         <label className="label cursor-pointer justify-start gap-2">
-          <input
-            name="newsletter"
-            type="checkbox"
-            className="checkbox"
-          />
+          <input name="newsletter" type="checkbox" className="checkbox" />
           <span className="label-text">Notify me about future events</span>
         </label>
       </div>

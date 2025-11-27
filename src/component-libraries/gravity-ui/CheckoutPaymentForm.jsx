@@ -27,14 +27,22 @@ function CheckoutPaymentForm() {
         id="gravity-checkout-shipping-method"
         label="Shipping method"
         name="shippingMethod"
-        options={[{ value: '', content: 'Select shipping' }, ...shippingOptions]}
+        options={[
+          { value: '', content: 'Select shipping' },
+          ...shippingOptions,
+        ]}
         placeholder="Select shipping"
       />
       <TextInput
         id="gravity-checkout-card-number"
         label="Card number"
         name="cardNumber"
-        controlProps={{ required: true, pattern: '[0-9]{13,19}', inputMode: 'numeric', maxLength: 19 }}
+        controlProps={{
+          required: true,
+          pattern: '[0-9]{13,19}',
+          inputMode: 'numeric',
+          maxLength: 19,
+        }}
       />
       <TextInput
         id="gravity-checkout-expiration"
@@ -51,7 +59,12 @@ function CheckoutPaymentForm() {
         id="gravity-checkout-cvc"
         label="CVC"
         name="cvc"
-        controlProps={{ required: true, inputMode: 'numeric', pattern: '[0-9]{3,4}', maxLength: 4 }}
+        controlProps={{
+          required: true,
+          inputMode: 'numeric',
+          pattern: '[0-9]{3,4}',
+          maxLength: 4,
+        }}
       />
       <TextInput
         id="gravity-checkout-promo"

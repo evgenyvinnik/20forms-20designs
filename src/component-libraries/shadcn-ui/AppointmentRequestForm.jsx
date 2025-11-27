@@ -13,11 +13,21 @@ function AppointmentRequestForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
         <Label htmlFor="shadcn-appointment-name">Full name</Label>
-        <Input id="shadcn-appointment-name" name="fullName" type="text" required />
+        <Input
+          id="shadcn-appointment-name"
+          name="fullName"
+          type="text"
+          required
+        />
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-appointment-email">Email address</Label>
-        <Input id="shadcn-appointment-email" name="email" type="email" required />
+        <Input
+          id="shadcn-appointment-email"
+          name="email"
+          type="email"
+          required
+        />
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-appointment-date">Preferred date</Label>
@@ -29,7 +39,12 @@ function AppointmentRequestForm() {
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-appointment-reason">Reason for visit</Label>
-        <Textarea id="shadcn-appointment-reason" name="reason" rows="3" required />
+        <Textarea
+          id="shadcn-appointment-reason"
+          name="reason"
+          rows="3"
+          required
+        />
       </div>
       <Button type="submit">Request appointment</Button>
     </form>

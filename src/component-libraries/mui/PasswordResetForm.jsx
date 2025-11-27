@@ -7,9 +7,19 @@ function PasswordResetForm() {
   }
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+    >
       <Typography>Request a password reset link via email.</Typography>
-      <TextField id="mui-password-reset-email" name="email" label="Email address" type="email" required />
+      <TextField
+        id="mui-password-reset-email"
+        name="email"
+        label="Email address"
+        type="email"
+        required
+      />
       <Button type="submit" variant="contained">
         Send reset link
       </Button>

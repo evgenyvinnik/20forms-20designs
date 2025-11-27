@@ -45,7 +45,11 @@ function CustomerFeedbackForm() {
           controlProps={{ required: true }}
         />
       </Field>
-      <Checkbox name="followUp" value="yes" content="I would like a follow-up" />
+      <Checkbox
+        name="followUp"
+        value="yes"
+        content="I would like a follow-up"
+      />
       <Button view="action" type="submit">
         Send feedback
       </Button>

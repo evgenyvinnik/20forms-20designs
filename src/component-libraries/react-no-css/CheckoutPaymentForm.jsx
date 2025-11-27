@@ -12,7 +12,11 @@ function CheckoutPaymentForm() {
       </div>
       <div>
         <label htmlFor="nocss-checkout-shipping-method">Shipping method</label>
-        <select id="nocss-checkout-shipping-method" name="shippingMethod" required>
+        <select
+          id="nocss-checkout-shipping-method"
+          name="shippingMethod"
+          required
+        >
           <option value="">Select shipping</option>
           <option value="standard">Standard</option>
           <option value="express">Express</option>
@@ -57,7 +61,12 @@ function CheckoutPaymentForm() {
       </div>
       <div>
         <label htmlFor="nocss-checkout-promo">Promo code</label>
-        <input id="nocss-checkout-promo" name="promoCode" type="text" pattern="[A-Za-z0-9]{3,15}" />
+        <input
+          id="nocss-checkout-promo"
+          name="promoCode"
+          type="text"
+          pattern="[A-Za-z0-9]{3,15}"
+        />
       </div>
       <button type="submit">Place order</button>
     </form>

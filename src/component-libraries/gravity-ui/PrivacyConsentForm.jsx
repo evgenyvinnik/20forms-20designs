@@ -31,7 +31,11 @@ function PrivacyConsentForm() {
       </div>
       <div style={fieldStackStyle}>
         <Text variant="subheader-3">Privacy options</Text>
-        <Checkbox name="analytics" value="analytics" content="Allow analytics cookies" />
+        <Checkbox
+          name="analytics"
+          value="analytics"
+          content="Allow analytics cookies"
+        />
         <Checkbox
           name="personalization"
           value="personalization"

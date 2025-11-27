@@ -34,7 +34,11 @@ function ProfileUpdateForm() {
         label="Phone number"
         name="phone"
         type="tel"
-        controlProps={{ required: true, inputMode: 'tel', pattern: '[+0-9\\s-]{7,20}' }}
+        controlProps={{
+          required: true,
+          inputMode: 'tel',
+          pattern: '[+0-9\\s-]{7,20}',
+        }}
       />
       <Field label="Short bio" htmlFor="gravity-profile-bio">
         <TextArea

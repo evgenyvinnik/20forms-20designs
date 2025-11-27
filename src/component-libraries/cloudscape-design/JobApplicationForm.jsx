@@ -61,7 +61,9 @@ function JobApplicationForm() {
               rows={4}
             />
           </FormField>
-          <Checkbox name="updates">Keep me informed about future roles</Checkbox>
+          <Checkbox name="updates">
+            Keep me informed about future roles
+          </Checkbox>
           <Button variant="primary" formAction="submit">
             Submit application
           </Button>

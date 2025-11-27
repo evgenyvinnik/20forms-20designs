@@ -1,6 +1,17 @@
 import { useState } from 'react'
-import { Box, Button, Checkbox, FormControlLabel, MenuItem, TextField } from '@mui/material'
-import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from '../../constants/locationOptions'
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  MenuItem,
+  TextField,
+} from '@mui/material'
+import {
+  CANADIAN_PROVINCES,
+  COUNTRIES,
+  US_STATES,
+} from '../../constants/locationOptions'
 
 function ShippingAddressForm() {
   const [country, setCountry] = useState('US')
@@ -11,14 +22,44 @@ function ShippingAddressForm() {
   }
 
   const regionOptions = country === 'CA' ? CANADIAN_PROVINCES : US_STATES
-  const postalPattern = country === 'CA' ? '[A-Za-z]\\d[A-Za-z] ?\\d[A-Za-z]\\d' : '\\d{5}(-\\d{4})?'
+  const postalPattern =
+    country === 'CA'
+      ? '[A-Za-z]\\d[A-Za-z] ?\\d[A-Za-z]\\d'
+      : '\\d{5}(-\\d{4})?'
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-      <TextField id="mui-shipping-full-name" name="fullName" label="Recipient name" type="text" required />
-      <TextField id="mui-shipping-street" name="street" label="Street address" type="text" required />
-      <TextField id="mui-shipping-street-2" name="street2" label="Apartment, suite, etc." type="text" />
-      <TextField id="mui-shipping-city" name="city" label="City" type="text" required />
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+    >
+      <TextField
+        id="mui-shipping-full-name"
+        name="fullName"
+        label="Recipient name"
+        type="text"
+        required
+      />
+      <TextField
+        id="mui-shipping-street"
+        name="street"
+        label="Street address"
+        type="text"
+        required
+      />
+      <TextField
+        id="mui-shipping-street-2"
+        name="street2"
+        label="Apartment, suite, etc."
+        type="text"
+      />
+      <TextField
+        id="mui-shipping-city"
+        name="city"
+        label="City"
+        type="text"
+        required
+      />
 
       <TextField
         id="mui-shipping-country"
@@ -36,7 +77,14 @@ function ShippingAddressForm() {
         ))}
       </TextField>
 
-      <TextField id="mui-shipping-region" name="region" label="State / Province / Territory" select required defaultValue="">
+      <TextField
+        id="mui-shipping-region"
+        name="region"
+        label="State / Province / Territory"
+        select
+        required
+        defaultValue=""
+      >
         <MenuItem value="">Select an option</MenuItem>
         {regionOptions.map((region) => (
           <MenuItem key={region} value={region}>

@@ -6,7 +6,9 @@ function TwoFactorAuthForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <p className="text-sm text-gray-600">Enter the code from your authenticator app or SMS.</p>
+      <p className="text-sm text-gray-600">
+        Enter the code from your authenticator app or SMS.
+      </p>
       <div className="form-control">
         <label htmlFor="two-factor-code" className="label">
           <span className="label-text">Verification code</span>

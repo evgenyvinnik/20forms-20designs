@@ -9,7 +9,9 @@ function MuiPreview({ selectedForms, isLibrarySelected, formComponents }) {
     <section style={styles.previewSection}>
       <div style={styles.sectionHeader}>
         <h2 style={styles.sectionTitle}>MUI previews</h2>
-        <p style={styles.previewHelper}>MUI form implementations rendered when MUI is selected.</p>
+        <p style={styles.previewHelper}>
+          MUI form implementations rendered when MUI is selected.
+        </p>
       </div>
 
       {!hasSelections ? (

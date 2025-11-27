@@ -30,7 +30,8 @@ function ContactInquiryForm() {
       </div>
       <div>
         <label>
-          <input name="consent" type="checkbox" />Allow follow-up communication
+          <input name="consent" type="checkbox" />
+          Allow follow-up communication
         </label>
       </div>
       <button type="submit">Submit inquiry</button>

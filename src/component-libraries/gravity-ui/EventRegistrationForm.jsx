@@ -43,7 +43,11 @@ function EventRegistrationForm() {
         type="number"
         controlProps={{ required: true, min: 0, max: 20 }}
       />
-      <Checkbox name="newsletter" value="true" content="Notify me about future events" />
+      <Checkbox
+        name="newsletter"
+        value="true"
+        content="Notify me about future events"
+      />
       <Button view="action" type="submit">
         Register
       </Button>

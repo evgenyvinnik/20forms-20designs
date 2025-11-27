@@ -17,7 +17,11 @@ function CheckoutPaymentForm() {
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-checkout-shipping-method">Shipping method</Label>
-        <Select id="shadcn-checkout-shipping-method" name="shippingMethod" required>
+        <Select
+          id="shadcn-checkout-shipping-method"
+          name="shippingMethod"
+          required
+        >
           <option value="">Select shipping</option>
           <option value="standard">Standard</option>
           <option value="express">Express</option>
@@ -62,7 +66,12 @@ function CheckoutPaymentForm() {
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-checkout-promo">Promo code</Label>
-        <Input id="shadcn-checkout-promo" name="promoCode" type="text" pattern="[A-Za-z0-9]{3,15}" />
+        <Input
+          id="shadcn-checkout-promo"
+          name="promoCode"
+          type="text"
+          pattern="[A-Za-z0-9]{3,15}"
+        />
       </div>
       <Button type="submit">Place order</Button>
     </form>

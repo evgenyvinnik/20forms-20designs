@@ -57,7 +57,11 @@ function AdvancedSearchForm() {
         options={sortOptions}
         defaultValue="relevance"
       />
-      <Checkbox name="includeArchived" value="true" content="Include archived" />
+      <Checkbox
+        name="includeArchived"
+        value="true"
+        content="Include archived"
+      />
       <Button view="action" type="submit">
         Search
       </Button>

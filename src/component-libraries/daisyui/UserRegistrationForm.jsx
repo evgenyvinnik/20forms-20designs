@@ -71,13 +71,10 @@ function UserRegistrationForm() {
       </div>
       <div className="form-control">
         <label className="label cursor-pointer justify-start gap-2">
-          <input
-            name="terms"
-            type="checkbox"
-            required
-            className="checkbox"
-          />
-          <span className="label-text">I agree to the terms and conditions</span>
+          <input name="terms" type="checkbox" required className="checkbox" />
+          <span className="label-text">
+            I agree to the terms and conditions
+          </span>
         </label>
       </div>
       <button type="submit" className="btn btn-primary w-full">

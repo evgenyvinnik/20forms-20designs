@@ -1,4 +1,11 @@
-import { Box, Button, Checkbox, FormControlLabel, MenuItem, TextField } from '@mui/material'
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  MenuItem,
+  TextField,
+} from '@mui/material'
 
 function EventRegistrationForm() {
   const handleSubmit = (event) => {
@@ -7,10 +14,33 @@ function EventRegistrationForm() {
   }
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-      <TextField id="mui-event-name" name="fullName" label="Full name" type="text" required />
-      <TextField id="mui-event-email" name="email" label="Email address" type="email" required />
-      <TextField id="mui-event-ticket" name="ticketType" label="Ticket type" select required defaultValue="">
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+    >
+      <TextField
+        id="mui-event-name"
+        name="fullName"
+        label="Full name"
+        type="text"
+        required
+      />
+      <TextField
+        id="mui-event-email"
+        name="email"
+        label="Email address"
+        type="email"
+        required
+      />
+      <TextField
+        id="mui-event-ticket"
+        name="ticketType"
+        label="Ticket type"
+        select
+        required
+        defaultValue=""
+      >
         <MenuItem value="">Select ticket</MenuItem>
         <MenuItem value="general">General admission</MenuItem>
         <MenuItem value="vip">VIP</MenuItem>

@@ -21,7 +21,12 @@ function TwoFactorAuthForm() {
       </div>
       <div>
         <label htmlFor="nocss-two-factor-backup">Backup code (optional)</label>
-        <input id="nocss-two-factor-backup" name="backupCode" type="text" pattern="[A-Za-z0-9]{6,12}" />
+        <input
+          id="nocss-two-factor-backup"
+          name="backupCode"
+          type="text"
+          pattern="[A-Za-z0-9]{6,12}"
+        />
       </div>
       <button type="submit">Verify</button>
       <button type="button" onClick={() => alert('A new code has been sent!')}>

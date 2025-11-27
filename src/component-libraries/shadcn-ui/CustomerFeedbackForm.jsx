@@ -33,11 +33,18 @@ function CustomerFeedbackForm() {
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-feedback-comments">Comments</Label>
-        <Textarea id="shadcn-feedback-comments" name="comments" rows="4" required />
+        <Textarea
+          id="shadcn-feedback-comments"
+          name="comments"
+          rows="4"
+          required
+        />
       </div>
       <div className="flex items-center space-x-2">
         <Checkbox name="followUp" />
-        <Label htmlFor="followUp" className="font-normal">I would like a follow-up</Label>
+        <Label htmlFor="followUp" className="font-normal">
+          I would like a follow-up
+        </Label>
       </div>
       <Button type="submit">Send feedback</Button>
     </form>

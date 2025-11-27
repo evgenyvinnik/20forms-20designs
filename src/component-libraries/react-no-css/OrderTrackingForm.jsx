@@ -18,11 +18,21 @@ function OrderTrackingForm() {
       </div>
       <div>
         <label htmlFor="nocss-order-tracking-email">Email address</label>
-        <input id="nocss-order-tracking-email" name="email" type="email" required />
+        <input
+          id="nocss-order-tracking-email"
+          name="email"
+          type="email"
+          required
+        />
       </div>
       <div>
         <label htmlFor="nocss-order-tracking-postal">Postal code</label>
-        <input id="nocss-order-tracking-postal" name="postalCode" type="text" required />
+        <input
+          id="nocss-order-tracking-postal"
+          name="postalCode"
+          type="text"
+          required
+        />
       </div>
       <button type="submit">Find order</button>
     </form>

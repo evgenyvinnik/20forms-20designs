@@ -1,5 +1,9 @@
 import { useState } from 'react'
-import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from '../../constants/locationOptions'
+import {
+  CANADIAN_PROVINCES,
+  COUNTRIES,
+  US_STATES,
+} from '../../constants/locationOptions'
 
 function ShippingAddressForm() {
   const [country, setCountry] = useState('US')
@@ -10,7 +14,10 @@ function ShippingAddressForm() {
   }
 
   const regionOptions = country === 'CA' ? CANADIAN_PROVINCES : US_STATES
-  const postalPattern = country === 'CA' ? '[A-Za-z]\\d[A-Za-z] ?\\d[A-Za-z]\\d' : '\\d{5}(-\\d{4})?'
+  const postalPattern =
+    country === 'CA'
+      ? '[A-Za-z]\\d[A-Za-z] ?\\d[A-Za-z]\\d'
+      : '\\d{5}(-\\d{4})?'
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -114,11 +121,7 @@ function ShippingAddressForm() {
       </div>
       <div className="form-control">
         <label className="label cursor-pointer justify-start gap-2">
-          <input
-            name="default"
-            type="checkbox"
-            className="checkbox"
-          />
+          <input name="default" type="checkbox" className="checkbox" />
           <span className="label-text">Use as default shipping address</span>
         </label>
       </div>

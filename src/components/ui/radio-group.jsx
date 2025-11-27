@@ -1,13 +1,15 @@
 import * as React from 'react'
 import { cn } from '@/lib/utils'
 
-const RadioGroup = React.forwardRef(({ className, children, ...props }, ref) => {
-  return (
-    <div className={cn('grid gap-2', className)} ref={ref} {...props}>
-      {children}
-    </div>
-  )
-})
+const RadioGroup = React.forwardRef(
+  ({ className, children, ...props }, ref) => {
+    return (
+      <div className={cn('grid gap-2', className)} ref={ref} {...props}>
+        {children}
+      </div>
+    )
+  }
+)
 RadioGroup.displayName = 'RadioGroup'
 
 const RadioGroupItem = React.forwardRef(({ className, ...props }, ref) => {

@@ -32,7 +32,10 @@ function ShippingAddressForm() {
       ? CANADIAN_PROVINCES.map((p) => ({ value: p, label: p }))
       : US_STATES.map((s) => ({ value: s, label: s }))
 
-  const countryOptions = COUNTRIES.map((c) => ({ value: c.value, label: c.label }))
+  const countryOptions = COUNTRIES.map((c) => ({
+    value: c.value,
+    label: c.label,
+  }))
 
   return (
     <Container>

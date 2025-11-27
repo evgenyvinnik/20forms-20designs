@@ -35,11 +35,17 @@ function JobApplicationForm() {
       </div>
       <div>
         <label htmlFor="nocss-job-cover-letter">Cover letter</label>
-        <textarea id="nocss-job-cover-letter" name="coverLetter" rows="4" required />
+        <textarea
+          id="nocss-job-cover-letter"
+          name="coverLetter"
+          rows="4"
+          required
+        />
       </div>
       <div>
         <label>
-          <input name="updates" type="checkbox" />Keep me informed about future roles
+          <input name="updates" type="checkbox" />
+          Keep me informed about future roles
         </label>
       </div>
       <button type="submit">Submit application</button>

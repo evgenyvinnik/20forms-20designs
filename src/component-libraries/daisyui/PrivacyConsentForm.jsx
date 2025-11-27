@@ -31,34 +31,24 @@ function PrivacyConsentForm() {
         />
       </div>
       <fieldset className="border p-4 rounded-lg">
-        <legend className="text-lg font-bold px-2">Communication channels</legend>
+        <legend className="text-lg font-bold px-2">
+          Communication channels
+        </legend>
         <div className="form-control">
           <label className="label cursor-pointer justify-start gap-2">
-            <input
-              name="emailOptIn"
-              type="checkbox"
-              className="checkbox"
-            />
+            <input name="emailOptIn" type="checkbox" className="checkbox" />
             <span className="label-text">Email updates</span>
           </label>
         </div>
         <div className="form-control">
           <label className="label cursor-pointer justify-start gap-2">
-            <input
-              name="smsOptIn"
-              type="checkbox"
-              className="checkbox"
-            />
+            <input name="smsOptIn" type="checkbox" className="checkbox" />
             <span className="label-text">SMS notifications</span>
           </label>
         </div>
         <div className="form-control">
           <label className="label cursor-pointer justify-start gap-2">
-            <input
-              name="phoneOptIn"
-              type="checkbox"
-              className="checkbox"
-            />
+            <input name="phoneOptIn" type="checkbox" className="checkbox" />
             <span className="label-text">Phone calls</span>
           </label>
         </div>
@@ -67,11 +57,7 @@ function PrivacyConsentForm() {
         <legend className="text-lg font-bold px-2">Privacy options</legend>
         <div className="form-control">
           <label className="label cursor-pointer justify-start gap-2">
-            <input
-              name="analytics"
-              type="checkbox"
-              className="checkbox"
-            />
+            <input name="analytics" type="checkbox" className="checkbox" />
             <span className="label-text">Allow analytics cookies</span>
           </label>
         </div>

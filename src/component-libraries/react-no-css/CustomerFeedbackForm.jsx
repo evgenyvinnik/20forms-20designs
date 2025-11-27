@@ -26,7 +26,12 @@ function CustomerFeedbackForm() {
       </div>
       <div>
         <label htmlFor="nocss-feedback-comments">Comments</label>
-        <textarea id="nocss-feedback-comments" name="comments" rows="4" required />
+        <textarea
+          id="nocss-feedback-comments"
+          name="comments"
+          rows="4"
+          required
+        />
       </div>
       <div>
         <label>

@@ -1,4 +1,10 @@
-import { Box, Button, Checkbox, FormControlLabel, TextField } from '@mui/material'
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  TextField,
+} from '@mui/material'
 
 function JobApplicationForm() {
   const handleSubmit = (event) => {
@@ -7,9 +13,25 @@ function JobApplicationForm() {
   }
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-      <TextField id="mui-job-full-name" name="fullName" label="Full name" type="text" required />
-      <TextField id="mui-job-email" name="email" label="Email address" type="email" required />
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+    >
+      <TextField
+        id="mui-job-full-name"
+        name="fullName"
+        label="Full name"
+        type="text"
+        required
+      />
+      <TextField
+        id="mui-job-email"
+        name="email"
+        label="Email address"
+        type="email"
+        required
+      />
       <TextField
         id="mui-job-phone"
         name="phone"
@@ -18,8 +40,20 @@ function JobApplicationForm() {
         required
         inputProps={{ pattern: '[+0-9\\s-]{7,20}', inputMode: 'tel' }}
       />
-      <TextField id="mui-job-role" name="role" label="Role applied for" type="text" required />
-      <TextField id="mui-job-resume" name="resume" label="Resume link" type="url" required />
+      <TextField
+        id="mui-job-role"
+        name="role"
+        label="Role applied for"
+        type="text"
+        required
+      />
+      <TextField
+        id="mui-job-resume"
+        name="resume"
+        label="Resume link"
+        type="url"
+        required
+      />
       <TextField
         id="mui-job-cover-letter"
         name="coverLetter"

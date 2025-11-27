@@ -1,4 +1,10 @@
-import { Box, Button, Checkbox, FormControlLabel, TextField } from '@mui/material'
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  TextField,
+} from '@mui/material'
 
 function UserRegistrationForm() {
   const handleSubmit = (event) => {
@@ -7,9 +13,25 @@ function UserRegistrationForm() {
   }
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-      <TextField id="mui-user-registration-name" name="fullName" label="Full name" type="text" required />
-      <TextField id="mui-user-registration-email" name="email" label="Email address" type="email" required />
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+    >
+      <TextField
+        id="mui-user-registration-name"
+        name="fullName"
+        label="Full name"
+        type="text"
+        required
+      />
+      <TextField
+        id="mui-user-registration-email"
+        name="email"
+        label="Email address"
+        type="email"
+        required
+      />
       <TextField
         id="mui-user-registration-username"
         name="username"

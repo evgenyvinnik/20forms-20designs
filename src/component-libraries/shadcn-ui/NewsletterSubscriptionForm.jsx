@@ -14,7 +14,12 @@ function NewsletterSubscriptionForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
         <Label htmlFor="shadcn-newsletter-email">Email address</Label>
-        <Input id="shadcn-newsletter-email" name="email" type="email" required />
+        <Input
+          id="shadcn-newsletter-email"
+          name="email"
+          type="email"
+          required
+        />
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-newsletter-frequency">Frequency</Label>
@@ -27,7 +32,9 @@ function NewsletterSubscriptionForm() {
       </div>
       <div className="flex items-center space-x-2">
         <Checkbox name="agree" />
-        <Label htmlFor="agree" className="font-normal">Receive product updates</Label>
+        <Label htmlFor="agree" className="font-normal">
+          Receive product updates
+        </Label>
       </div>
       <Button type="submit">Subscribe</Button>
     </form>

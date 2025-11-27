@@ -1,7 +1,17 @@
 import { useMemo, useState } from 'react'
-import { Button, Checkbox, Pane, SelectField, TextInputField } from 'evergreen-ui'
+import {
+  Button,
+  Checkbox,
+  Pane,
+  SelectField,
+  TextInputField,
+} from 'evergreen-ui'
 
-import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from '../../constants/locationOptions'
+import {
+  CANADIAN_PROVINCES,
+  COUNTRIES,
+  US_STATES,
+} from '../../constants/locationOptions'
 
 const formStackProps = { display: 'flex', flexDirection: 'column', gap: 16 }
 
@@ -13,7 +23,9 @@ function ShippingAddressForm() {
     [country]
   )
   const postalPattern =
-    country === 'CA' ? '[A-Za-z]\\d[A-Za-z] ?\\d[A-Za-z]\\d' : '\\d{5}(-\\d{4})?'
+    country === 'CA'
+      ? '[A-Za-z]\\d[A-Za-z] ?\\d[A-Za-z]\\d'
+      : '\\d{5}(-\\d{4})?'
 
   const handleSubmit = (event) => {
     event.preventDefault()

@@ -35,7 +35,11 @@ function TwoFactorAuthForm() {
         <Button appearance="primary" type="submit">
           Verify
         </Button>
-        <Button type="button" appearance="minimal" onClick={() => alert('A new code has been sent!')}>
+        <Button
+          type="button"
+          appearance="minimal"
+          onClick={() => alert('A new code has been sent!')}
+        >
           Resend code
         </Button>
       </Pane>

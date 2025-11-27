@@ -53,7 +53,12 @@ function BillingInfoForm() {
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-billing-address">Billing address</Label>
-        <Input id="shadcn-billing-address" name="address" type="text" required />
+        <Input
+          id="shadcn-billing-address"
+          name="address"
+          type="text"
+          required
+        />
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-billing-country">Country</Label>

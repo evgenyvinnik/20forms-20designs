@@ -6,7 +6,9 @@ function PasswordResetForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <p className="text-sm text-gray-600">Request a password reset link via email.</p>
+      <p className="text-sm text-gray-600">
+        Request a password reset link via email.
+      </p>
       <div className="form-control">
         <label htmlFor="password-reset-email" className="label">
           <span className="label-text">Email address</span>

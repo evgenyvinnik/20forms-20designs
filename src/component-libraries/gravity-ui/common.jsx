@@ -1,8 +1,16 @@
 import { useMemo, useState } from 'react'
 import { Select, Text } from '@gravity-ui/uikit'
 
-export const formStackStyle = { display: 'flex', flexDirection: 'column', gap: 20 }
-export const fieldStackStyle = { display: 'flex', flexDirection: 'column', gap: 6 }
+export const formStackStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 20,
+}
+export const fieldStackStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 6,
+}
 
 export function Field({ label, htmlFor, children }) {
   return (

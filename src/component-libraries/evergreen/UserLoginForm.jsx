@@ -30,7 +30,11 @@ function UserLoginForm() {
         <Button appearance="primary" type="submit">
           Sign in
         </Button>
-        <Button type="button" appearance="minimal" onClick={() => alert('Password reset link flow placeholder')}>
+        <Button
+          type="button"
+          appearance="minimal"
+          onClick={() => alert('Password reset link flow placeholder')}
+        >
           Forgot password?
         </Button>
       </Pane>

@@ -20,7 +20,9 @@ function ShippingAddressForm() {
     return regions.map((region) => ({ value: region, content: region }))
   }, [country])
   const postalPattern =
-    country === 'CA' ? '[A-Za-z]\\d[A-Za-z] ?\\d[A-Za-z]\\d' : '\\d{5}(-\\d{4})?'
+    country === 'CA'
+      ? '[A-Za-z]\\d[A-Za-z] ?\\d[A-Za-z]\\d'
+      : '\\d{5}(-\\d{4})?'
 
   const handleSubmit = (event) => {
     event.preventDefault()

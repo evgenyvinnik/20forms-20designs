@@ -10,7 +10,12 @@ function OnboardingWizardForm() {
         <h3>Step 1: Account</h3>
         <div>
           <label htmlFor="nocss-onboarding-email">Work email</label>
-          <input id="nocss-onboarding-email" name="email" type="email" required />
+          <input
+            id="nocss-onboarding-email"
+            name="email"
+            type="email"
+            required
+          />
         </div>
         <div>
           <label htmlFor="nocss-onboarding-password">Password</label>
@@ -27,7 +32,12 @@ function OnboardingWizardForm() {
         <h3>Step 2: Team</h3>
         <div>
           <label htmlFor="nocss-onboarding-team-name">Team name</label>
-          <input id="nocss-onboarding-team-name" name="teamName" type="text" required />
+          <input
+            id="nocss-onboarding-team-name"
+            name="teamName"
+            type="text"
+            required
+          />
         </div>
         <div>
           <label htmlFor="nocss-onboarding-size">Team size</label>
@@ -48,12 +58,15 @@ function OnboardingWizardForm() {
         </div>
         <div>
           <label>
-            <input name="updates" type="checkbox" />Send me product tips
+            <input name="updates" type="checkbox" />
+            Send me product tips
           </label>
         </div>
       </section>
       <div>
-        <button type="button" onClick={() => alert('Back action placeholder')}>Back</button>
+        <button type="button" onClick={() => alert('Back action placeholder')}>
+          Back
+        </button>
         <button type="submit">Finish setup</button>
       </div>
     </form>

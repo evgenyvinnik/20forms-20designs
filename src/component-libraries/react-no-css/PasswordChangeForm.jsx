@@ -8,7 +8,12 @@ function PasswordChangeForm() {
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="nocss-password-change-current">Current password</label>
-        <input id="nocss-password-change-current" name="currentPassword" type="password" required />
+        <input
+          id="nocss-password-change-current"
+          name="currentPassword"
+          type="password"
+          required
+        />
       </div>
       <div>
         <label htmlFor="nocss-password-change-new">New password</label>
@@ -21,7 +26,9 @@ function PasswordChangeForm() {
         />
       </div>
       <div>
-        <label htmlFor="nocss-password-change-confirm">Confirm new password</label>
+        <label htmlFor="nocss-password-change-confirm">
+          Confirm new password
+        </label>
         <input
           id="nocss-password-change-confirm"
           name="confirmPassword"
@@ -32,7 +39,8 @@ function PasswordChangeForm() {
       </div>
       <div>
         <label>
-          <input name="logoutOthers" type="checkbox" />Sign out of other devices
+          <input name="logoutOthers" type="checkbox" />
+          Sign out of other devices
         </label>
       </div>
       <button type="submit">Update password</button>

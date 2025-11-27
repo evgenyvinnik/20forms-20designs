@@ -7,7 +7,11 @@ function OrderTrackingForm() {
   }
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+    >
       <TextField
         id="mui-order-tracking-number"
         name="orderNumber"
@@ -16,8 +20,20 @@ function OrderTrackingForm() {
         required
         inputProps={{ pattern: '[A-Za-z0-9-]{6,20}' }}
       />
-      <TextField id="mui-order-tracking-email" name="email" label="Email address" type="email" required />
-      <TextField id="mui-order-tracking-postal" name="postalCode" label="Postal code" type="text" required />
+      <TextField
+        id="mui-order-tracking-email"
+        name="email"
+        label="Email address"
+        type="email"
+        required
+      />
+      <TextField
+        id="mui-order-tracking-postal"
+        name="postalCode"
+        label="Postal code"
+        type="text"
+        required
+      />
       <Button type="submit" variant="contained">
         Find order
       </Button>

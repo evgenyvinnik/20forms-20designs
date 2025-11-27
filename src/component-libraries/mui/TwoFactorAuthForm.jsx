@@ -7,8 +7,14 @@ function TwoFactorAuthForm() {
   }
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-      <Typography>Enter the code from your authenticator app or SMS.</Typography>
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+    >
+      <Typography>
+        Enter the code from your authenticator app or SMS.
+      </Typography>
       <TextField
         id="mui-two-factor-code"
         name="code"
@@ -27,7 +33,11 @@ function TwoFactorAuthForm() {
       <Button type="submit" variant="contained">
         Verify
       </Button>
-      <Button type="button" variant="outlined" onClick={() => alert('A new code has been sent!')}>
+      <Button
+        type="button"
+        variant="outlined"
+        onClick={() => alert('A new code has been sent!')}
+      >
         Resend code
       </Button>
     </Box>

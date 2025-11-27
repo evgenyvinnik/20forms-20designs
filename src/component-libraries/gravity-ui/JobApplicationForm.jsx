@@ -28,7 +28,11 @@ function JobApplicationForm() {
         label="Phone number"
         name="phone"
         type="tel"
-        controlProps={{ required: true, inputMode: 'tel', pattern: '[+0-9\\s-]{7,20}' }}
+        controlProps={{
+          required: true,
+          inputMode: 'tel',
+          pattern: '[+0-9\\s-]{7,20}',
+        }}
       />
       <TextInput
         id="gravity-job-role"
@@ -51,7 +55,11 @@ function JobApplicationForm() {
           controlProps={{ required: true }}
         />
       </Field>
-      <Checkbox name="updates" value="yes" content="Keep me informed about future roles" />
+      <Checkbox
+        name="updates"
+        value="yes"
+        content="Keep me informed about future roles"
+      />
       <Button view="action" type="submit">
         Submit application
       </Button>

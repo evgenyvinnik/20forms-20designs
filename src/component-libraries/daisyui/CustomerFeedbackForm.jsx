@@ -61,11 +61,7 @@ function CustomerFeedbackForm() {
       </div>
       <div className="form-control">
         <label className="label cursor-pointer justify-start gap-2">
-          <input
-            name="followUp"
-            type="checkbox"
-            className="checkbox"
-          />
+          <input name="followUp" type="checkbox" className="checkbox" />
           <span className="label-text">I would like a follow-up</span>
         </label>
       </div>

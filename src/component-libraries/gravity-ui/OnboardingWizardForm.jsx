@@ -69,7 +69,11 @@ function OnboardingWizardForm() {
       </div>
 
       <div style={buttonRowStyle}>
-        <Button type="button" view="flat" onClick={() => alert('Back action placeholder')}>
+        <Button
+          type="button"
+          view="flat"
+          onClick={() => alert('Back action placeholder')}
+        >
           Back
         </Button>
         <Button view="action" type="submit">

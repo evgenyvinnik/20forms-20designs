@@ -33,11 +33,18 @@ function ContactInquiryForm() {
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-contact-message">Message</Label>
-        <Textarea id="shadcn-contact-message" name="message" rows="4" required />
+        <Textarea
+          id="shadcn-contact-message"
+          name="message"
+          rows="4"
+          required
+        />
       </div>
       <div className="flex items-center space-x-2">
         <Checkbox name="consent" />
-        <Label htmlFor="consent" className="font-normal">Allow follow-up communication</Label>
+        <Label htmlFor="consent" className="font-normal">
+          Allow follow-up communication
+        </Label>
       </div>
       <Button type="submit">Submit inquiry</Button>
     </form>

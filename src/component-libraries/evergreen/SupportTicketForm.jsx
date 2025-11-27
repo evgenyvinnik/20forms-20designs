@@ -1,4 +1,11 @@
-import { Button, FilePicker, Pane, RadioGroup, TextInputField, TextareaField } from 'evergreen-ui'
+import {
+  Button,
+  FilePicker,
+  Pane,
+  RadioGroup,
+  TextInputField,
+  TextareaField,
+} from 'evergreen-ui'
 
 const formStackProps = { display: 'flex', flexDirection: 'column', gap: 16 }
 
@@ -10,7 +17,13 @@ function SupportTicketForm() {
 
   return (
     <Pane is="form" onSubmit={handleSubmit} {...formStackProps}>
-      <TextInputField id="evergreen-ticket-subject" label="Subject" name="subject" type="text" required />
+      <TextInputField
+        id="evergreen-ticket-subject"
+        label="Subject"
+        name="subject"
+        type="text"
+        required
+      />
       <RadioGroup
         label="Priority"
         name="priority"
@@ -31,7 +44,11 @@ function SupportTicketForm() {
       />
       <Pane display="flex" flexDirection="column" gap={8}>
         <label htmlFor="evergreen-ticket-attachments">Attachments</label>
-        <FilePicker id="evergreen-ticket-attachments" name="attachments" multiple />
+        <FilePicker
+          id="evergreen-ticket-attachments"
+          name="attachments"
+          multiple
+        />
       </Pane>
       <Button appearance="primary" type="submit">
         Submit ticket

@@ -10,8 +10,20 @@ function CheckoutPaymentForm() {
 
   return (
     <Pane is="form" onSubmit={handleSubmit} {...formStackProps}>
-      <TextInputField id="evergreen-checkout-email" label="Email for receipt" name="email" type="email" required />
-      <SelectField id="evergreen-checkout-shipping-method" label="Shipping method" name="shippingMethod" defaultValue="" required>
+      <TextInputField
+        id="evergreen-checkout-email"
+        label="Email for receipt"
+        name="email"
+        type="email"
+        required
+      />
+      <SelectField
+        id="evergreen-checkout-shipping-method"
+        label="Shipping method"
+        name="shippingMethod"
+        defaultValue=""
+        required
+      >
         <option value="">Select shipping</option>
         <option value="standard">Standard</option>
         <option value="express">Express</option>

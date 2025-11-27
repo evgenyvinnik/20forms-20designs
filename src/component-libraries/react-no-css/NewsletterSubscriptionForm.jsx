@@ -21,7 +21,8 @@ function NewsletterSubscriptionForm() {
       </div>
       <div>
         <label>
-          <input name="agree" type="checkbox" />Receive product updates
+          <input name="agree" type="checkbox" />
+          Receive product updates
         </label>
       </div>
       <button type="submit">Subscribe</button>

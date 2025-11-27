@@ -43,7 +43,9 @@ function AdvancedSearchForm() {
       </div>
       <div className="flex items-center space-x-2">
         <Checkbox name="includeArchived" />
-        <Label htmlFor="includeArchived" className="font-normal">Include archived</Label>
+        <Label htmlFor="includeArchived" className="font-normal">
+          Include archived
+        </Label>
       </div>
       <Button type="submit">Search</Button>
     </form>

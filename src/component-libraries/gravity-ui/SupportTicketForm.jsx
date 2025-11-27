@@ -1,5 +1,12 @@
 import { useState } from 'react'
-import { Button, RadioGroup, Text, TextArea, TextInput, useFileInput } from '@gravity-ui/uikit'
+import {
+  Button,
+  RadioGroup,
+  Text,
+  TextArea,
+  TextInput,
+  useFileInput,
+} from '@gravity-ui/uikit'
 
 import { Field, formStackStyle } from './common.jsx'
 
@@ -28,7 +35,12 @@ function SupportTicketForm() {
         name="subject"
         controlProps={{ required: true }}
       />
-      <RadioGroup label="Priority" name="priority" defaultValue="low" options={priorityOptions} />
+      <RadioGroup
+        label="Priority"
+        name="priority"
+        defaultValue="low"
+        options={priorityOptions}
+      />
       <Field label="Issue description" htmlFor="gravity-ticket-description">
         <TextArea
           id="gravity-ticket-description"

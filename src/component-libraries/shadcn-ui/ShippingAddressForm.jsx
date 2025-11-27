@@ -4,7 +4,11 @@ import { Input } from './ui/input'
 import { Label } from './ui/label'
 import { Select } from './ui/select'
 import { Checkbox } from './ui/checkbox'
-import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from '../../constants/locationOptions'
+import {
+  CANADIAN_PROVINCES,
+  COUNTRIES,
+  US_STATES,
+} from '../../constants/locationOptions'
 
 function ShippingAddressForm() {
   const [country, setCountry] = useState('US')
@@ -15,13 +19,21 @@ function ShippingAddressForm() {
   }
 
   const regionOptions = country === 'CA' ? CANADIAN_PROVINCES : US_STATES
-  const postalPattern = country === 'CA' ? '[A-Za-z]\\d[A-Za-z] ?\\d[A-Za-z]\\d' : '\\d{5}(-\\d{4})?'
+  const postalPattern =
+    country === 'CA'
+      ? '[A-Za-z]\\d[A-Za-z] ?\\d[A-Za-z]\\d'
+      : '\\d{5}(-\\d{4})?'
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
         <Label htmlFor="shadcn-shipping-full-name">Recipient name</Label>
-        <Input id="shadcn-shipping-full-name" name="fullName" type="text" required />
+        <Input
+          id="shadcn-shipping-full-name"
+          name="fullName"
+          type="text"
+          required
+        />
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-shipping-street">Street address</Label>
@@ -52,7 +64,9 @@ function ShippingAddressForm() {
         </Select>
       </div>
       <div className="space-y-2">
-        <Label htmlFor="shadcn-shipping-region">State / Province / Territory</Label>
+        <Label htmlFor="shadcn-shipping-region">
+          State / Province / Territory
+        </Label>
         <Select id="shadcn-shipping-region" name="region" required>
           <option value="">Select an option</option>
           {regionOptions.map((region) => (
@@ -75,7 +89,9 @@ function ShippingAddressForm() {
       </div>
       <div className="flex items-center space-x-2">
         <Checkbox name="default" />
-        <Label htmlFor="default" className="font-normal">Use as default shipping address</Label>
+        <Label htmlFor="default" className="font-normal">
+          Use as default shipping address
+        </Label>
       </div>
       <Button type="submit">Save address</Button>
     </form>

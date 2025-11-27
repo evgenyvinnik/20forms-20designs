@@ -25,7 +25,12 @@ function BillingInfoForm() {
         id="gravity-billing-card-number"
         label="Card number"
         name="cardNumber"
-        controlProps={{ required: true, inputMode: 'numeric', pattern: '[0-9]{13,19}', maxLength: 19 }}
+        controlProps={{
+          required: true,
+          inputMode: 'numeric',
+          pattern: '[0-9]{13,19}',
+          maxLength: 19,
+        }}
       />
       <TextInput
         id="gravity-billing-expiration"
@@ -42,7 +47,12 @@ function BillingInfoForm() {
         id="gravity-billing-cvc"
         label="Security code"
         name="cvc"
-        controlProps={{ required: true, inputMode: 'numeric', pattern: '[0-9]{3,4}', maxLength: 4 }}
+        controlProps={{
+          required: true,
+          inputMode: 'numeric',
+          pattern: '[0-9]{3,4}',
+          maxLength: 4,
+        }}
       />
       <TextInput
         id="gravity-billing-address"

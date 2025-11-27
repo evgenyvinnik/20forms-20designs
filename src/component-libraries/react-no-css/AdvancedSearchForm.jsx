@@ -37,7 +37,8 @@ function AdvancedSearchForm() {
       </div>
       <div>
         <label>
-          <input name="includeArchived" type="checkbox" />Include archived
+          <input name="includeArchived" type="checkbox" />
+          Include archived
         </label>
       </div>
       <button type="submit">Search</button>

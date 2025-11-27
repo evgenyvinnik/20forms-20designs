@@ -30,7 +30,11 @@ function NewsletterSubscriptionForm() {
         options={frequencyOptions}
         placeholder="Select frequency"
       />
-      <Checkbox name="agree" value="updates" content="Receive product updates" />
+      <Checkbox
+        name="agree"
+        value="updates"
+        content="Receive product updates"
+      />
       <Button view="action" type="submit">
         Subscribe
       </Button>

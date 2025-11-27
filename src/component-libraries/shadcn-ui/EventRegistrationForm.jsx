@@ -31,11 +31,20 @@ function EventRegistrationForm() {
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-event-guests">Number of guests</Label>
-        <Input id="shadcn-event-guests" name="guestCount" type="number" min="0" max="20" required />
+        <Input
+          id="shadcn-event-guests"
+          name="guestCount"
+          type="number"
+          min="0"
+          max="20"
+          required
+        />
       </div>
       <div className="flex items-center space-x-2">
         <Checkbox name="newsletter" />
-        <Label htmlFor="newsletter" className="font-normal">Notify me about future events</Label>
+        <Label htmlFor="newsletter" className="font-normal">
+          Notify me about future events
+        </Label>
       </div>
       <Button type="submit">Register</Button>
     </form>

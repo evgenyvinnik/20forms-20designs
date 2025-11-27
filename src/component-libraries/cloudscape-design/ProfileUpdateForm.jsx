@@ -46,7 +46,11 @@ function ProfileUpdateForm() {
             <Input name="phone" type="tel" placeholder="Enter phone number" />
           </FormField>
           <FormField label="Short bio">
-            <Textarea name="bio" placeholder="Tell us about yourself" rows={3} />
+            <Textarea
+              name="bio"
+              placeholder="Tell us about yourself"
+              rows={3}
+            />
           </FormField>
           <Button variant="primary" formAction="submit">
             Save changes

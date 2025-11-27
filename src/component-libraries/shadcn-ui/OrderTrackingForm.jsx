@@ -22,11 +22,21 @@ function OrderTrackingForm() {
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-order-tracking-email">Email address</Label>
-        <Input id="shadcn-order-tracking-email" name="email" type="email" required />
+        <Input
+          id="shadcn-order-tracking-email"
+          name="email"
+          type="email"
+          required
+        />
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-order-tracking-postal">Postal code</Label>
-        <Input id="shadcn-order-tracking-postal" name="postalCode" type="text" required />
+        <Input
+          id="shadcn-order-tracking-postal"
+          name="postalCode"
+          type="text"
+          required
+        />
       </div>
       <Button type="submit">Find order</Button>
     </form>

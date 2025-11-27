@@ -8,11 +8,21 @@ function ProfileUpdateForm() {
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="nocss-profile-first-name">First name</label>
-        <input id="nocss-profile-first-name" name="firstName" type="text" required />
+        <input
+          id="nocss-profile-first-name"
+          name="firstName"
+          type="text"
+          required
+        />
       </div>
       <div>
         <label htmlFor="nocss-profile-last-name">Last name</label>
-        <input id="nocss-profile-last-name" name="lastName" type="text" required />
+        <input
+          id="nocss-profile-last-name"
+          name="lastName"
+          type="text"
+          required
+        />
       </div>
       <div>
         <label htmlFor="nocss-profile-email">Email address</label>

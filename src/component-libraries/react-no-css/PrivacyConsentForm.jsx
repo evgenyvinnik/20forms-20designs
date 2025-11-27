@@ -17,22 +17,27 @@ function PrivacyConsentForm() {
       <fieldset>
         <legend>Communication channels</legend>
         <label>
-          <input name="emailOptIn" type="checkbox" />Email updates
+          <input name="emailOptIn" type="checkbox" />
+          Email updates
         </label>
         <label>
-          <input name="smsOptIn" type="checkbox" />SMS notifications
+          <input name="smsOptIn" type="checkbox" />
+          SMS notifications
         </label>
         <label>
-          <input name="phoneOptIn" type="checkbox" />Phone calls
+          <input name="phoneOptIn" type="checkbox" />
+          Phone calls
         </label>
       </fieldset>
       <fieldset>
         <legend>Privacy options</legend>
         <label>
-          <input name="analytics" type="checkbox" />Allow analytics cookies
+          <input name="analytics" type="checkbox" />
+          Allow analytics cookies
         </label>
         <label>
-          <input name="personalization" type="checkbox" />Allow personalized content
+          <input name="personalization" type="checkbox" />
+          Allow personalized content
         </label>
       </fieldset>
       <div>

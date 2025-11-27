@@ -32,11 +32,7 @@ function UserLoginForm() {
       </div>
       <div className="form-control">
         <label className="label cursor-pointer justify-start gap-2">
-          <input
-            name="remember"
-            type="checkbox"
-            className="checkbox"
-          />
+          <input name="remember" type="checkbox" className="checkbox" />
           <span className="label-text">Keep me signed in</span>
         </label>
       </div>

@@ -1,5 +1,9 @@
 import { useState } from 'react'
-import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from '../../constants/locationOptions'
+import {
+  CANADIAN_PROVINCES,
+  COUNTRIES,
+  US_STATES,
+} from '../../constants/locationOptions'
 
 function ShippingAddressForm() {
   const [country, setCountry] = useState('US')
@@ -10,13 +14,21 @@ function ShippingAddressForm() {
   }
 
   const regionOptions = country === 'CA' ? CANADIAN_PROVINCES : US_STATES
-  const postalPattern = country === 'CA' ? '[A-Za-z]\\d[A-Za-z] ?\\d[A-Za-z]\\d' : '\\d{5}(-\\d{4})?'
+  const postalPattern =
+    country === 'CA'
+      ? '[A-Za-z]\\d[A-Za-z] ?\\d[A-Za-z]\\d'
+      : '\\d{5}(-\\d{4})?'
 
   return (
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="nocss-shipping-full-name">Recipient name</label>
-        <input id="nocss-shipping-full-name" name="fullName" type="text" required />
+        <input
+          id="nocss-shipping-full-name"
+          name="fullName"
+          type="text"
+          required
+        />
       </div>
       <div>
         <label htmlFor="nocss-shipping-street">Street address</label>
@@ -47,7 +59,9 @@ function ShippingAddressForm() {
         </select>
       </div>
       <div>
-        <label htmlFor="nocss-shipping-region">State / Province / Territory</label>
+        <label htmlFor="nocss-shipping-region">
+          State / Province / Territory
+        </label>
         <select id="nocss-shipping-region" name="region" required>
           <option value="">Select an option</option>
           {regionOptions.map((region) => (
@@ -70,7 +84,8 @@ function ShippingAddressForm() {
       </div>
       <div>
         <label>
-          <input name="default" type="checkbox" />Use as default shipping address
+          <input name="default" type="checkbox" />
+          Use as default shipping address
         </label>
       </div>
       <button type="submit">Save address</button>

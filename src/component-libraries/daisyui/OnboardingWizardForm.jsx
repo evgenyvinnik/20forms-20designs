@@ -82,11 +82,7 @@ function OnboardingWizardForm() {
         </div>
         <div className="form-control">
           <label className="label cursor-pointer justify-start gap-2">
-            <input
-              name="updates"
-              type="checkbox"
-              className="checkbox"
-            />
+            <input name="updates" type="checkbox" className="checkbox" />
             <span className="label-text">Send me product tips</span>
           </label>
         </div>

@@ -21,12 +21,7 @@ function CustomerFeedbackForm() {
       <form onSubmit={handleSubmit}>
         <SpaceBetween direction="vertical" size="l">
           <FormField label="Name">
-            <Input
-              name="name"
-              type="text"
-              placeholder="Your name"
-              required
-            />
+            <Input name="name" type="text" placeholder="Your name" required />
           </FormField>
           <FormField label="Email address">
             <Input

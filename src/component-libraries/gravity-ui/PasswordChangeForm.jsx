@@ -31,7 +31,11 @@ function PasswordChangeForm() {
         type="password"
         controlProps={{ required: true, minLength: 8 }}
       />
-      <Checkbox name="logoutOthers" value="yes" content="Sign out of other devices" />
+      <Checkbox
+        name="logoutOthers"
+        value="yes"
+        content="Sign out of other devices"
+      />
       <Button view="action" type="submit">
         Update password
       </Button>

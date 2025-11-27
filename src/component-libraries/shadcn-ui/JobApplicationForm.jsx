@@ -41,11 +41,18 @@ function JobApplicationForm() {
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-job-cover-letter">Cover letter</Label>
-        <Textarea id="shadcn-job-cover-letter" name="coverLetter" rows="4" required />
+        <Textarea
+          id="shadcn-job-cover-letter"
+          name="coverLetter"
+          rows="4"
+          required
+        />
       </div>
       <div className="flex items-center space-x-2">
         <Checkbox name="updates" />
-        <Label htmlFor="updates" className="font-normal">Keep me informed about future roles</Label>
+        <Label htmlFor="updates" className="font-normal">
+          Keep me informed about future roles
+        </Label>
       </div>
       <Button type="submit">Submit application</Button>
     </form>

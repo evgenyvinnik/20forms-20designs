@@ -36,8 +36,10 @@ function PrivacyConsentForm() {
               required
             />
           </FormField>
-          
-          <Container header={<Header variant="h3">Communication channels</Header>}>
+
+          <Container
+            header={<Header variant="h3">Communication channels</Header>}
+          >
             <SpaceBetween direction="vertical" size="s">
               <Checkbox name="emailOptIn">Email updates</Checkbox>
               <Checkbox name="smsOptIn">SMS notifications</Checkbox>
@@ -48,14 +50,20 @@ function PrivacyConsentForm() {
           <Container header={<Header variant="h3">Privacy options</Header>}>
             <SpaceBetween direction="vertical" size="s">
               <Checkbox name="analytics">Allow analytics cookies</Checkbox>
-              <Checkbox name="personalization">Allow personalized content</Checkbox>
+              <Checkbox name="personalization">
+                Allow personalized content
+              </Checkbox>
             </SpaceBetween>
           </Container>
 
           <FormField label="Additional notes">
-            <Textarea name="notes" placeholder="Any additional preferences" rows={3} />
+            <Textarea
+              name="notes"
+              placeholder="Any additional preferences"
+              rows={3}
+            />
           </FormField>
-          
+
           <Button variant="primary" formAction="submit">
             Save preferences
           </Button>

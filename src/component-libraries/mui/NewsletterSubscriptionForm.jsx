@@ -1,4 +1,11 @@
-import { Box, Button, Checkbox, FormControlLabel, MenuItem, TextField } from '@mui/material'
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  MenuItem,
+  TextField,
+} from '@mui/material'
 
 function NewsletterSubscriptionForm() {
   const handleSubmit = (event) => {
@@ -7,8 +14,18 @@ function NewsletterSubscriptionForm() {
   }
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-      <TextField id="mui-newsletter-email" name="email" label="Email address" type="email" required />
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+    >
+      <TextField
+        id="mui-newsletter-email"
+        name="email"
+        label="Email address"
+        type="email"
+        required
+      />
       <TextField
         id="mui-newsletter-frequency"
         name="frequency"
@@ -22,7 +39,10 @@ function NewsletterSubscriptionForm() {
         <MenuItem value="monthly">Monthly</MenuItem>
         <MenuItem value="quarterly">Quarterly</MenuItem>
       </TextField>
-      <FormControlLabel control={<Checkbox name="agree" />} label="Receive product updates" />
+      <FormControlLabel
+        control={<Checkbox name="agree" />}
+        label="Receive product updates"
+      />
       <Button type="submit" variant="contained">
         Subscribe
       </Button>

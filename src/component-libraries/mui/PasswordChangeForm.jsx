@@ -1,4 +1,10 @@
-import { Box, Button, Checkbox, FormControlLabel, TextField } from '@mui/material'
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  TextField,
+} from '@mui/material'
 
 function PasswordChangeForm() {
   const handleSubmit = (event) => {
@@ -7,7 +13,11 @@ function PasswordChangeForm() {
   }
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+    >
       <TextField
         id="mui-password-change-current"
         name="currentPassword"

@@ -45,7 +45,11 @@ function ContactInquiryForm() {
           controlProps={{ required: true }}
         />
       </Field>
-      <Checkbox name="consent" value="true" content="Allow follow-up communication" />
+      <Checkbox
+        name="consent"
+        value="true"
+        content="Allow follow-up communication"
+      />
       <Button view="action" type="submit">
         Submit inquiry
       </Button>

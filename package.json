@@ -98,7 +98,8 @@
     "styletron-engine-atomic": "^1.6.2",
     "styletron-react": "^6.1.1",
     "tamagui": "^1.138.5",
-    "theme-ui": "^0.17.2"
+    "theme-ui": "^0.17.2",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

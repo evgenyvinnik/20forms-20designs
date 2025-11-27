@@ -25,11 +25,19 @@ function EventRegistrationForm() {
       </div>
       <div>
         <label htmlFor="nocss-event-guests">Number of guests</label>
-        <input id="nocss-event-guests" name="guestCount" type="number" min="0" max="20" required />
+        <input
+          id="nocss-event-guests"
+          name="guestCount"
+          type="number"
+          min="0"
+          max="20"
+          required
+        />
       </div>
       <div>
         <label>
-          <input name="newsletter" type="checkbox" />Notify me about future events
+          <input name="newsletter" type="checkbox" />
+          Notify me about future events
         </label>
       </div>
       <button type="submit">Register</button>

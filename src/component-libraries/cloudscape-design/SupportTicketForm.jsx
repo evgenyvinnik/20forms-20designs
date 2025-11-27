@@ -44,7 +44,10 @@ function SupportTicketForm() {
               rows={4}
             />
           </FormField>
-          <FormField label="Attachments" description="Optional file attachments">
+          <FormField
+            label="Attachments"
+            description="Optional file attachments"
+          >
             <input name="attachments" type="file" multiple />
           </FormField>
           <Button variant="primary" formAction="submit">

@@ -36,11 +36,7 @@ function NewsletterSubscriptionForm() {
       </div>
       <div className="form-control">
         <label className="label cursor-pointer justify-start gap-2">
-          <input
-            name="agree"
-            type="checkbox"
-            className="checkbox"
-          />
+          <input name="agree" type="checkbox" className="checkbox" />
           <span className="label-text">Receive product updates</span>
         </label>
       </div>

@@ -50,7 +50,11 @@ function ContactInquiryForm() {
             />
           </FormField>
           <FormField label="Message">
-            <Textarea name="message" placeholder="Enter your message" rows={4} />
+            <Textarea
+              name="message"
+              placeholder="Enter your message"
+              rows={4}
+            />
           </FormField>
           <Checkbox name="consent">Allow follow-up communication</Checkbox>
           <Button variant="primary" formAction="submit">

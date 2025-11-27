@@ -1,4 +1,12 @@
-import { Button, Checkbox, Heading, Pane, SelectField, TextInputField, TextareaField } from 'evergreen-ui'
+import {
+  Button,
+  Checkbox,
+  Heading,
+  Pane,
+  SelectField,
+  TextInputField,
+  TextareaField,
+} from 'evergreen-ui'
 
 const formStackProps = { display: 'flex', flexDirection: 'column', gap: 24 }
 const sectionStackProps = { display: 'flex', flexDirection: 'column', gap: 16 }
@@ -14,7 +22,13 @@ function OnboardingWizardForm() {
     <Pane is="form" onSubmit={handleSubmit} {...formStackProps}>
       <Pane {...sectionStackProps}>
         <Heading size={500}>Step 1: Account</Heading>
-        <TextInputField id="evergreen-onboarding-email" label="Work email" name="email" type="email" required />
+        <TextInputField
+          id="evergreen-onboarding-email"
+          label="Work email"
+          name="email"
+          type="email"
+          required
+        />
         <TextInputField
           id="evergreen-onboarding-password"
           label="Password"
@@ -27,7 +41,13 @@ function OnboardingWizardForm() {
 
       <Pane {...sectionStackProps}>
         <Heading size={500}>Step 2: Team</Heading>
-        <TextInputField id="evergreen-onboarding-team-name" label="Team name" name="teamName" type="text" required />
+        <TextInputField
+          id="evergreen-onboarding-team-name"
+          label="Team name"
+          name="teamName"
+          type="text"
+          required
+        />
         <SelectField
           id="evergreen-onboarding-team-size"
           label="Team size"
@@ -56,7 +76,11 @@ function OnboardingWizardForm() {
       </Pane>
 
       <Pane {...buttonRowProps}>
-        <Button type="button" appearance="default" onClick={() => alert('Back action placeholder')}>
+        <Button
+          type="button"
+          appearance="default"
+          onClick={() => alert('Back action placeholder')}
+        >
           Back
         </Button>
         <Button appearance="primary" type="submit">

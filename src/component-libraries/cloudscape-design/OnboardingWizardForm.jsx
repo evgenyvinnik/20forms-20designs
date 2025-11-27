@@ -82,7 +82,9 @@ function OnboardingWizardForm() {
           </Container>
 
           <SpaceBetween direction="horizontal" size="xs">
-            <Button onClick={() => alert('Back action placeholder')}>Back</Button>
+            <Button onClick={() => alert('Back action placeholder')}>
+              Back
+            </Button>
             <Button variant="primary" formAction="submit">
               Finish setup
             </Button>

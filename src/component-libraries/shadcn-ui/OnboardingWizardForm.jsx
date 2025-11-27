@@ -17,7 +17,12 @@ function OnboardingWizardForm() {
         <h3 className="text-lg font-semibold">Step 1: Account</h3>
         <div className="space-y-2">
           <Label htmlFor="shadcn-onboarding-email">Work email</Label>
-          <Input id="shadcn-onboarding-email" name="email" type="email" required />
+          <Input
+            id="shadcn-onboarding-email"
+            name="email"
+            type="email"
+            required
+          />
         </div>
         <div className="space-y-2">
           <Label htmlFor="shadcn-onboarding-password">Password</Label>
@@ -34,7 +39,12 @@ function OnboardingWizardForm() {
         <h3 className="text-lg font-semibold">Step 2: Team</h3>
         <div className="space-y-2">
           <Label htmlFor="shadcn-onboarding-team-name">Team name</Label>
-          <Input id="shadcn-onboarding-team-name" name="teamName" type="text" required />
+          <Input
+            id="shadcn-onboarding-team-name"
+            name="teamName"
+            type="text"
+            required
+          />
         </div>
         <div className="space-y-2">
           <Label htmlFor="shadcn-onboarding-size">Team size</Label>
@@ -55,11 +65,19 @@ function OnboardingWizardForm() {
         </div>
         <div className="flex items-center space-x-2">
           <Checkbox name="updates" />
-          <Label htmlFor="updates" className="font-normal">Send me product tips</Label>
+          <Label htmlFor="updates" className="font-normal">
+            Send me product tips
+          </Label>
         </div>
       </section>
       <div className="flex gap-2">
-        <Button type="button" variant="outline" onClick={() => alert('Back action placeholder')}>Back</Button>
+        <Button
+          type="button"
+          variant="outline"
+          onClick={() => alert('Back action placeholder')}
+        >
+          Back
+        </Button>
         <Button type="submit">Finish setup</Button>
       </div>
     </form>

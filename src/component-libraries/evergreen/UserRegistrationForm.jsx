@@ -48,7 +48,11 @@ function UserRegistrationForm() {
         required
         minLength={8}
       />
-      <Checkbox label="I agree to the terms and conditions" name="terms" required />
+      <Checkbox
+        label="I agree to the terms and conditions"
+        name="terms"
+        required
+      />
       <Button appearance="primary" type="submit">
         Create account
       </Button>

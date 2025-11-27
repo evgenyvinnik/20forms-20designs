@@ -8,11 +8,21 @@ function AppointmentRequestForm() {
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="nocss-appointment-name">Full name</label>
-        <input id="nocss-appointment-name" name="fullName" type="text" required />
+        <input
+          id="nocss-appointment-name"
+          name="fullName"
+          type="text"
+          required
+        />
       </div>
       <div>
         <label htmlFor="nocss-appointment-email">Email address</label>
-        <input id="nocss-appointment-email" name="email" type="email" required />
+        <input
+          id="nocss-appointment-email"
+          name="email"
+          type="email"
+          required
+        />
       </div>
       <div>
         <label htmlFor="nocss-appointment-date">Preferred date</label>
@@ -24,7 +34,12 @@ function AppointmentRequestForm() {
       </div>
       <div>
         <label htmlFor="nocss-appointment-reason">Reason for visit</label>
-        <textarea id="nocss-appointment-reason" name="reason" rows="3" required />
+        <textarea
+          id="nocss-appointment-reason"
+          name="reason"
+          rows="3"
+          required
+        />
       </div>
       <button type="submit">Request appointment</button>
     </form>

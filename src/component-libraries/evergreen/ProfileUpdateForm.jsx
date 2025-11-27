@@ -40,7 +40,13 @@ function ProfileUpdateForm() {
         pattern="[+0-9\\s-]{7,20}"
         required
       />
-      <TextareaField id="evergreen-profile-bio" label="Short bio" name="bio" rows={3} required />
+      <TextareaField
+        id="evergreen-profile-bio"
+        label="Short bio"
+        name="bio"
+        rows={3}
+        required
+      />
       <Button appearance="primary" type="submit">
         Save changes
       </Button>

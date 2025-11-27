@@ -1,6 +1,10 @@
 import styles from '../styles'
 
-function ReactNoCssPreview({ selectedForms, isLibrarySelected, formComponents }) {
+function ReactNoCssPreview({
+  selectedForms,
+  isLibrarySelected,
+  formComponents,
+}) {
   if (!isLibrarySelected) return null
 
   const hasSelections = selectedForms.length > 0
@@ -9,7 +13,9 @@ function ReactNoCssPreview({ selectedForms, isLibrarySelected, formComponents })
     <section style={styles.previewSection}>
       <div style={styles.sectionHeader}>
         <h2 style={styles.sectionTitle}>React + No CSS previews</h2>
-        <p style={styles.previewHelper}>Plain HTML forms rendered when React + No CSS is selected.</p>
+        <p style={styles.previewHelper}>
+          Plain HTML forms rendered when React + No CSS is selected.
+        </p>
       </div>
 
       {!hasSelections ? (

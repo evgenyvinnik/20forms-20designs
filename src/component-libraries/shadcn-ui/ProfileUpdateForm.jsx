@@ -13,11 +13,21 @@ function ProfileUpdateForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
         <Label htmlFor="shadcn-profile-first-name">First name</Label>
-        <Input id="shadcn-profile-first-name" name="firstName" type="text" required />
+        <Input
+          id="shadcn-profile-first-name"
+          name="firstName"
+          type="text"
+          required
+        />
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-profile-last-name">Last name</Label>
-        <Input id="shadcn-profile-last-name" name="lastName" type="text" required />
+        <Input
+          id="shadcn-profile-last-name"
+          name="lastName"
+          type="text"
+          required
+        />
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-profile-email">Email address</Label>

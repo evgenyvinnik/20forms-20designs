@@ -7,8 +7,18 @@ function CheckoutPaymentForm() {
   }
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-      <TextField id="mui-checkout-email" name="email" label="Email for receipt" type="email" required />
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+    >
+      <TextField
+        id="mui-checkout-email"
+        name="email"
+        label="Email for receipt"
+        type="email"
+        required
+      />
 
       <TextField
         id="mui-checkout-shipping-method"
@@ -30,7 +40,11 @@ function CheckoutPaymentForm() {
         label="Card number"
         type="text"
         required
-        inputProps={{ inputMode: 'numeric', pattern: '[0-9]{13,19}', maxLength: 19 }}
+        inputProps={{
+          inputMode: 'numeric',
+          pattern: '[0-9]{13,19}',
+          maxLength: 19,
+        }}
       />
 
       <TextField
@@ -40,7 +54,10 @@ function CheckoutPaymentForm() {
         type="text"
         placeholder="MM/YY"
         required
-        inputProps={{ pattern: '^(0[1-9]|1[0-2])\\/\\d{2}$', inputMode: 'numeric' }}
+        inputProps={{
+          pattern: '^(0[1-9]|1[0-2])\\/\\d{2}$',
+          inputMode: 'numeric',
+        }}
       />
 
       <TextField
@@ -49,7 +66,11 @@ function CheckoutPaymentForm() {
         label="CVC"
         type="text"
         required
-        inputProps={{ inputMode: 'numeric', pattern: '[0-9]{3,4}', maxLength: 4 }}
+        inputProps={{
+          inputMode: 'numeric',
+          pattern: '[0-9]{3,4}',
+          maxLength: 4,
+        }}
       />
 
       <TextField
