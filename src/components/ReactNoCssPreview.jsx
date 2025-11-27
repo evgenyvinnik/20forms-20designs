@@ -17,13 +17,17 @@ function ReactNoCssPreview({ selectedForms, isLibrarySelected, formComponents })
           Select one or more forms to see their React + No CSS implementations.
         </p>
       ) : (
-        <div style={styles.previewGrid}>
+        <div style={styles.previewStrip}>
           {selectedForms.map((form) => {
             const FormComponent = formComponents[form]
+            if (!FormComponent) return null
 
             return (
               <div key={`react-no-css-${form}`} style={styles.previewCard}>
-                <div style={styles.comboLabel}>{form}</div>
+                <div style={styles.frameHeaderRow}>
+                  <div style={styles.comboLabel}>{form}</div>
+                  <div style={styles.libraryChip}>React + No CSS</div>
+                </div>
                 <div style={styles.previewFormWrapper}>
                   <FormComponent />
                 </div>

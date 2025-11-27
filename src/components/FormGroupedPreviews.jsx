@@ -24,26 +24,38 @@ function FormGroupedPreviews({ selectedForms, selectedLibraries, implementations
           Select one or more forms that are implemented by the selected component libraries.
         </p>
       ) : (
-        <div style={styles.previewGrid}>
-          {formsWithImplementations.map((form) => (
-            <div key={form} style={styles.previewCard}>
-              <div style={styles.comboLabel}>{form}</div>
-              <div style={styles.previewFormWrapper}>
-                {activeLibraries.map((library) => {
+        formsWithImplementations.map((form) => {
+          const librariesWithForm = activeLibraries.filter(
+            (library) => implementations[library].components[form],
+          )
+          if (librariesWithForm.length === 0) return null
+
+          return (
+            <div key={form} style={styles.stripGroup}>
+              <div style={styles.stripHeader}>
+                <h3 style={styles.stripTitle}>{form}</h3>
+                <p style={styles.stripCaption}>Component libraries</p>
+              </div>
+              <div style={styles.previewStrip}>
+                {librariesWithForm.map((library) => {
                   const FormComponent = implementations[library].components[form]
                   if (!FormComponent) return null
 
                   return (
-                    <div key={`${form}-${library}`} style={styles.libraryPreviewBlock}>
-                      <div style={styles.libraryChip}>{library}</div>
-                      <FormComponent />
+                    <div key={`${form}-${library}`} style={styles.previewCard}>
+                      <div style={styles.frameHeaderRow}>
+                        <div style={styles.comboLabel}>{library}</div>
+                      </div>
+                      <div style={styles.previewFormWrapper}>
+                        <FormComponent />
+                      </div>
                     </div>
                   )
                 })}
               </div>
             </div>
-          ))}
-        </div>
+          )
+        })
       )}
     </section>
   )
