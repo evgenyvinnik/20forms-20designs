@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Select } from '@/components/ui/select'
-import { Checkbox } from '@/components/ui/checkbox'
+import { Button } from './ui/button'
+import { Input } from './ui/input'
+import { Label } from './ui/label'
+import { Select } from './ui/select'
+import { Checkbox } from './ui/checkbox'
 import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from '../../constants/locationOptions'
 
 function ShippingAddressForm() {
