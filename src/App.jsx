@@ -1,7 +1,6 @@
 import { useMemo, useState } from 'react'
 
 import Layout from './components/Layout'
-import PairingGrid from './components/PairingGrid'
 import MuiPreview from './components/MuiPreview'
 import ReactNoCssPreview from './components/ReactNoCssPreview'
 import SelectionColumn from './components/SelectionColumn'
@@ -432,14 +431,6 @@ function App() {
     [],
   )
 
-  const combinations = useMemo(
-    () =>
-      selectedForms.flatMap((form) =>
-        selectedLibraries.map((library) => ({ form, library })),
-      ),
-    [selectedForms, selectedLibraries],
-  )
-
   const selectedReactNoCssForms = useMemo(
     () => selectedForms.filter((form) => reactNoCssFormComponents[form]),
     [selectedForms],
@@ -487,10 +478,6 @@ function App() {
           twoColumnLayout
         />
       </div>
-
-      <PairingGrid
-        combinations={combinations}
-      />
 
       <div style={styles.previewToggleRow}>
         <span style={styles.previewToggleLabel}>Group previews by:</span>

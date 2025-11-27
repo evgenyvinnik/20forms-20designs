@@ -154,7 +154,7 @@ const styles = {
   },
   previewGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
     gap: '18px',
     justifyItems: 'center',
   },
@@ -167,9 +167,7 @@ const styles = {
     flexDirection: 'column',
     gap: '14px',
     width: '100%',
-    maxWidth: '380px',
     minHeight: '380px',
-
   },
   previewFormWrapper: {
     border: '1px solid #e0e4ea',
