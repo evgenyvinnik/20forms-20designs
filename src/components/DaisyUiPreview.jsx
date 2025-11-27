@@ -1,4 +1,5 @@
 import styles from '../styles'
+import '../tailwind-no-preflight.css'
 
 function DaisyUiPreview({ selectedForms, isLibrarySelected, formComponents }) {
   if (!isLibrarySelected) return null
@@ -9,7 +10,10 @@ function DaisyUiPreview({ selectedForms, isLibrarySelected, formComponents }) {
     <section style={styles.previewSection}>
       <div style={styles.sectionHeader}>
         <h2 style={styles.sectionTitle}>DaisyUI previews</h2>
-        <p style={styles.previewHelper}>DaisyUI form implementations rendered when DaisyUI is selected.</p>
+        <p style={styles.previewHelper}>
+          DaisyUI form implementations (Tailwind Preflight disabled - styling
+          may be affected).
+        </p>
       </div>
 
       {!hasSelections ? (

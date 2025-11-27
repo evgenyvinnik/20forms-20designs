@@ -46,7 +46,7 @@ export const componentLibraries = [
     directory: 'evergreen',
     website: 'https://evergreen.segment.com',
     repo: 'https://github.com/segmentio/evergreen',
-    implemented: false,
+    implemented: true,
   },
   {
     name: 'Blueprint',
@@ -109,7 +109,7 @@ export const componentLibraries = [
     directory: 'gravity-ui',
     website: 'https://gravity-ui.com',
     repo: 'https://github.com/gravity-ui/uikit',
-    implemented: false,
+    implemented: true,
   },
   {
     name: 'Geist UI',

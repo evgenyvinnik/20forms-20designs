@@ -1,4 +1,5 @@
 import styles from '../styles'
+import '../tailwind-no-preflight.css'
 
 function RadixUiPreview({ selectedForms, isLibrarySelected, formComponents }) {
   if (!isLibrarySelected) return null

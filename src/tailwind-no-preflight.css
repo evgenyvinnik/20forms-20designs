@@ -1,0 +1,5 @@
+/* Tailwind CSS without Preflight for component libraries */
+/* Import only theme and utilities layers to avoid Preflight reset */
+@import "tailwindcss/theme" layer(theme);
+@import "tailwindcss/utilities" layer(utilities);
+@plugin "daisyui";

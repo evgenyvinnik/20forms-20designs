@@ -1,2 +1,2 @@
-@import "tailwindcss";
-@plugin "daisyui";
+/* No global Tailwind CSS import */
+/* Tailwind is only imported in specific component libraries that need it */

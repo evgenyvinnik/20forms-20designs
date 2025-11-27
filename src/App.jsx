@@ -1,4 +1,5 @@
-import { useMemo, useState, Suspense } from 'react'
+import { useMemo, Suspense } from 'react'
+import { useAppStore } from './store'
 
 import Layout from './components/Layout'
 import MuiPreview from './components/MuiPreview'
@@ -12,9 +13,13 @@ import { muiFormComponents } from './component-libraries/mui/lazy.js'
 import { radixUiFormComponents } from './component-libraries/radix-ui/lazy.js'
 import { daisyUiFormComponents } from './component-libraries/daisyui/lazy.js'
 import { shadcnUiFormComponents } from './component-libraries/shadcn-ui/lazy.js'
+import { evergreenFormComponents } from './component-libraries/evergreen/lazy.js'
+import { gravityUiFormComponents } from './component-libraries/gravity-ui/lazy.js'
 import RadixUiPreview from './components/RadixUiPreview'
 import DaisyUiPreview from './components/DaisyUiPreview'
 import ShadcnUiPreview from './components/ShadcnUiPreview'
+import EvergreenPreview from './components/EvergreenPreview'
+import GravityUiPreview from './components/GravityUiPreview'
 import { componentLibraries } from './constants/componentLibraries.js'
 
 const plannedForms = [
@@ -41,10 +46,18 @@ const plannedForms = [
 ]
 
 function App() {
-  const [selectedForms, setSelectedForms] = useState([])
-  const [selectedLibraries, setSelectedLibraries] = useState([])
-
-  const [previewGroupBy, setPreviewGroupBy] = useState('library')
+  const selectedForms = useAppStore((state) => state.selectedForms)
+  const selectedLibraries = useAppStore((state) => state.selectedLibraries)
+  const previewGroupBy = useAppStore((state) => state.previewGroupBy)
+  const setSelectedForms = useAppStore((state) => state.setSelectedForms)
+  const setSelectedLibraries = useAppStore(
+    (state) => state.setSelectedLibraries
+  )
+  const setPreviewGroupBy = useAppStore((state) => state.setPreviewGroupBy)
+  const toggleFormSelection = useAppStore((state) => state.toggleFormSelection)
+  const toggleLibrarySelection = useAppStore(
+    (state) => state.toggleLibrarySelection
+  )
 
   const previewImplementations = useMemo(
     () => ({
@@ -52,6 +65,12 @@ function App() {
         title: 'MUI previews',
         description: 'MUI form implementations rendered when MUI is selected.',
         components: muiFormComponents,
+      },
+      Evergreen: {
+        title: 'Evergreen previews',
+        description:
+          'Evergreen UI form implementations rendered when Evergreen is selected.',
+        components: evergreenFormComponents,
       },
       'React + No CSS': {
         title: 'React + No CSS previews',
@@ -76,6 +95,12 @@ function App() {
         description:
           'shadcn/ui form implementations rendered when shadcn/ui is selected.',
         components: shadcnUiFormComponents,
+      },
+      'Gravity UI': {
+        title: 'Gravity UI previews',
+        description:
+          'Gravity UI form implementations rendered when Gravity UI is selected.',
+        components: gravityUiFormComponents,
       },
     }),
     []
@@ -153,13 +178,19 @@ function App() {
 
   const shadcnUiSelected = selectedLibraries.includes('shadcn/ui')
 
-  const toggleSelection = (value, selected, setter) => {
-    const exists = selected.includes(value)
-    const nextSelection = exists
-      ? selected.filter((entry) => entry !== value)
-      : [...selected, value]
-    setter(nextSelection)
-  }
+  const selectedEvergreenForms = useMemo(
+    () => selectedForms.filter((form) => evergreenFormComponents[form]),
+    [selectedForms]
+  )
+
+  const evergreenSelected = selectedLibraries.includes('Evergreen')
+
+  const selectedGravityUiForms = useMemo(
+    () => selectedForms.filter((form) => gravityUiFormComponents[form]),
+    [selectedForms]
+  )
+
+  const gravityUiSelected = selectedLibraries.includes('Gravity UI')
 
   return (
     <Layout>
@@ -168,9 +199,7 @@ function App() {
           title="Forms"
           items={formItems}
           selectedItems={selectedForms}
-          onToggleItem={(form) =>
-            toggleSelection(form, selectedForms, setSelectedForms)
-          }
+          onToggleItem={(form) => toggleFormSelection(form)}
           onSelectAll={() =>
             setSelectedForms(formItems.map((item) => item.value))
           }
@@ -180,9 +209,7 @@ function App() {
           title="Component libraries"
           items={componentLibraryItems}
           selectedItems={selectedLibraries}
-          onToggleItem={(library) =>
-            toggleSelection(library, selectedLibraries, setSelectedLibraries)
-          }
+          onToggleItem={(library) => toggleLibrarySelection(library)}
           onSelectAll={() =>
             setSelectedLibraries(
               componentLibraryItems
@@ -226,6 +253,11 @@ function App() {
             isLibrarySelected={muiSelected}
             formComponents={muiFormComponents}
           />
+          <EvergreenPreview
+            selectedForms={selectedEvergreenForms}
+            isLibrarySelected={evergreenSelected}
+            formComponents={evergreenFormComponents}
+          />
 
           <ReactNoCssPreview
             selectedForms={selectedReactNoCssForms}
@@ -249,6 +281,11 @@ function App() {
             selectedForms={selectedShadcnUiForms}
             isLibrarySelected={shadcnUiSelected}
             formComponents={shadcnUiFormComponents}
+          />
+          <GravityUiPreview
+            selectedForms={selectedGravityUiForms}
+            isLibrarySelected={gravityUiSelected}
+            formComponents={gravityUiFormComponents}
           />
         </Suspense>
       ) : (

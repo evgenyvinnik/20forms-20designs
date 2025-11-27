@@ -1,7 +1,10 @@
 import styles from '../styles'
-import '../tailwind-no-preflight.css'
 
-function ShadcnUiPreview({ selectedForms, isLibrarySelected, formComponents }) {
+function EvergreenPreview({
+  selectedForms,
+  isLibrarySelected,
+  formComponents,
+}) {
   if (!isLibrarySelected) return null
 
   const hasSelections = selectedForms.length > 0
@@ -9,15 +12,15 @@ function ShadcnUiPreview({ selectedForms, isLibrarySelected, formComponents }) {
   return (
     <section style={styles.previewSection}>
       <div style={styles.sectionHeader}>
-        <h2 style={styles.sectionTitle}>shadcn/ui previews</h2>
+        <h2 style={styles.sectionTitle}>Evergreen previews</h2>
         <p style={styles.previewHelper}>
-          shadcn/ui form implementations rendered when shadcn/ui is selected.
+          Evergreen UI form implementations rendered when Evergreen is selected.
         </p>
       </div>
 
       {!hasSelections ? (
         <p style={styles.placeholderText}>
-          Select one or more forms to see their shadcn/ui implementations.
+          Select one or more forms to see their Evergreen UI implementations.
         </p>
       ) : (
         <div style={styles.previewStrip}>
@@ -26,10 +29,10 @@ function ShadcnUiPreview({ selectedForms, isLibrarySelected, formComponents }) {
             if (!FormComponent) return null
 
             return (
-              <div key={`shadcn-ui-${form}`} style={styles.previewCard}>
+              <div key={`evergreen-${form}`} style={styles.previewCard}>
                 <div style={styles.frameHeaderRow}>
                   <div style={styles.comboLabel}>{form}</div>
-                  <div style={styles.libraryChip}>shadcn/ui</div>
+                  <div style={styles.libraryChip}>Evergreen</div>
                 </div>
                 <div style={styles.previewFormWrapper}>
                   <FormComponent />
@@ -43,4 +46,4 @@ function ShadcnUiPreview({ selectedForms, isLibrarySelected, formComponents }) {
   )
 }
 
-export default ShadcnUiPreview
+export default EvergreenPreview
