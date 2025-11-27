@@ -381,6 +381,7 @@ const muiFormComponents = {
 function App() {
   const [selectedForms, setSelectedForms] = useState([])
   const [selectedLibraries, setSelectedLibraries] = useState([])
+  const [groupBy, setGroupBy] = useState('library')
 
   const formItems = useMemo(
     () => plannedForms.map((form) => ({ value: form, label: form })),
@@ -463,7 +464,11 @@ function App() {
         />
       </div>
 
-      <PairingGrid combinations={combinations} />
+      <PairingGrid
+        combinations={combinations}
+        groupBy={groupBy}
+        onGroupByChange={setGroupBy}
+      />
 
       <MuiPreview
         selectedForms={selectedMuiForms}
