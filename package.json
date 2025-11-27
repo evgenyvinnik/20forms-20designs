@@ -1,7 +1,7 @@
 {
   "name": "20forms-20designs",
   "private": true,
-  "version": "1.0.251127.21",
+  "version": "1.0.251127.22",
   "type": "module",
   "scripts": {
     "dev": "vite",
