@@ -1,7 +1,6 @@
 function JobApplicationForm() {
   return (
     <form>
-      <h2>Job Application</h2>
       <div>
         <label htmlFor="job-full-name">Full name</label>
         <input id="job-full-name" name="fullName" type="text" />

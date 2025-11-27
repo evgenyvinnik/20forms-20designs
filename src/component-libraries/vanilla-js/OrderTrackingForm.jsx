@@ -1,7 +1,6 @@
 function OrderTrackingForm() {
   return (
     <form>
-      <h2>Order Tracking</h2>
       <div>
         <label htmlFor="order-tracking-number">Order number</label>
         <input id="order-tracking-number" name="orderNumber" type="text" />

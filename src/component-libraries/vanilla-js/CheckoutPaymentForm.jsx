@@ -1,7 +1,6 @@
 function CheckoutPaymentForm() {
   return (
     <form>
-      <h2>Checkout</h2>
       <div>
         <label htmlFor="checkout-email">Email for receipt</label>
         <input id="checkout-email" name="email" type="email" />

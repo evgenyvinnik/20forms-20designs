@@ -1,7 +1,6 @@
 function ShippingAddressForm() {
   return (
     <form>
-      <h2>Shipping Address</h2>
       <div>
         <label htmlFor="shipping-full-name">Recipient name</label>
         <input id="shipping-full-name" name="fullName" type="text" />

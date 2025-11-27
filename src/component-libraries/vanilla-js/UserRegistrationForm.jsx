@@ -1,7 +1,6 @@
 function UserRegistrationForm() {
   return (
     <form>
-      <h2>User Registration</h2>
       <div>
         <label htmlFor="user-registration-name">Full name</label>
         <input id="user-registration-name" name="fullName" type="text" />

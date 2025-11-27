@@ -1,7 +1,6 @@
 function ContactInquiryForm() {
   return (
     <form>
-      <h2>Contact or Support Inquiry</h2>
       <div>
         <label htmlFor="contact-name">Full name</label>
         <input id="contact-name" name="fullName" type="text" />

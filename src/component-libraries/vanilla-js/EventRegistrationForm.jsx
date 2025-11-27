@@ -1,7 +1,6 @@
 function EventRegistrationForm() {
   return (
     <form>
-      <h2>Event Registration</h2>
       <div>
         <label htmlFor="event-name">Full name</label>
         <input id="event-name" name="fullName" type="text" />

@@ -1,7 +1,6 @@
 function AppointmentRequestForm() {
   return (
     <form>
-      <h2>Appointment Request</h2>
       <div>
         <label htmlFor="appointment-name">Full name</label>
         <input id="appointment-name" name="fullName" type="text" />

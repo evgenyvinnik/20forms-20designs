@@ -1,7 +1,6 @@
 function CustomerFeedbackForm() {
   return (
     <form>
-      <h2>Customer Feedback</h2>
       <div>
         <label htmlFor="feedback-name">Name</label>
         <input id="feedback-name" name="name" type="text" />

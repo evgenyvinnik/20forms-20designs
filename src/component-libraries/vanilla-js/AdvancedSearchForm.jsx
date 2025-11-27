@@ -1,7 +1,6 @@
 function AdvancedSearchForm() {
   return (
     <form>
-      <h2>Advanced Search</h2>
       <div>
         <label htmlFor="search-query">Search query</label>
         <input id="search-query" name="query" type="text" />

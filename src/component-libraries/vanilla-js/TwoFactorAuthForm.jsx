@@ -1,7 +1,6 @@
 function TwoFactorAuthForm() {
   return (
     <form>
-      <h2>Two-Factor Authentication</h2>
       <p>Enter the code from your authenticator app or SMS.</p>
       <div>
         <label htmlFor="two-factor-code">Verification code</label>

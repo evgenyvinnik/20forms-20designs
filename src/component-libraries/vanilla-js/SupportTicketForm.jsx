@@ -1,7 +1,6 @@
 function SupportTicketForm() {
   return (
     <form>
-      <h2>Support Ticket</h2>
       <div>
         <label htmlFor="ticket-subject">Subject</label>
         <input id="ticket-subject" name="subject" type="text" />

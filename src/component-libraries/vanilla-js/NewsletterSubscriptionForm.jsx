@@ -1,7 +1,6 @@
 function NewsletterSubscriptionForm() {
   return (
     <form>
-      <h2>Newsletter Subscription</h2>
       <div>
         <label htmlFor="newsletter-email">Email address</label>
         <input id="newsletter-email" name="email" type="email" />

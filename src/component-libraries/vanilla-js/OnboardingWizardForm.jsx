@@ -1,7 +1,6 @@
 function OnboardingWizardForm() {
   return (
     <form>
-      <h2>Onboarding Wizard</h2>
       <section>
         <h3>Step 1: Account</h3>
         <div>

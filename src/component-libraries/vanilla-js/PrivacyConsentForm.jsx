@@ -1,7 +1,6 @@
 function PrivacyConsentForm() {
   return (
     <form>
-      <h2>Privacy and Communication Preferences</h2>
       <div>
         <label htmlFor="privacy-name">Full name</label>
         <input id="privacy-name" name="fullName" type="text" />

@@ -1,7 +1,6 @@
 function PasswordResetForm() {
   return (
     <form>
-      <h2>Password Reset</h2>
       <p>Request a password reset link via email.</p>
       <div>
         <label htmlFor="password-reset-email">Email address</label>

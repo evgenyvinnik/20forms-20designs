@@ -1,7 +1,6 @@
 function PasswordChangeForm() {
   return (
     <form>
-      <h2>Account Security</h2>
       <div>
         <label htmlFor="password-change-current">Current password</label>
         <input id="password-change-current" name="currentPassword" type="password" />

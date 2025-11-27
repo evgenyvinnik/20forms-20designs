@@ -1,7 +1,6 @@
 function ProfileUpdateForm() {
   return (
     <form>
-      <h2>Profile Information Update</h2>
       <div>
         <label htmlFor="profile-first-name">First name</label>
         <input id="profile-first-name" name="firstName" type="text" />

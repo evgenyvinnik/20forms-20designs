@@ -1,7 +1,6 @@
 function BillingInfoForm() {
   return (
     <form>
-      <h2>Billing Information</h2>
       <div>
         <label htmlFor="billing-name">Name on card</label>
         <input id="billing-name" name="cardName" type="text" />

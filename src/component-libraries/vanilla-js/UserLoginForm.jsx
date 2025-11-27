@@ -1,7 +1,6 @@
 function UserLoginForm() {
   return (
     <form>
-      <h2>User Login</h2>
       <div>
         <label htmlFor="user-login-email">Email or username</label>
         <input id="user-login-email" name="identifier" type="text" />
