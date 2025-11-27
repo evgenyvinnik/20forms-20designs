@@ -11,13 +11,27 @@ function SupportTicketForm() {
         <input id="ticket-subject" name="subject" type="text" required />
       </div>
       <div>
-        <label htmlFor="ticket-priority">Priority</label>
-        <select id="ticket-priority" name="priority" required>
-          <option value="">Select priority</option>
-          <option value="low">Low</option>
-          <option value="medium">Medium</option>
-          <option value="high">High</option>
-        </select>
+        <fieldset>
+          <legend>Priority</legend>
+          <div>
+            <label>
+              <input id="ticket-priority-low" type="radio" name="priority" value="low" required />
+              Low
+            </label>
+          </div>
+          <div>
+            <label>
+              <input id="ticket-priority-medium" type="radio" name="priority" value="medium" />
+              Medium
+            </label>
+          </div>
+          <div>
+            <label>
+              <input id="ticket-priority-high" type="radio" name="priority" value="high" />
+              High
+            </label>
+          </div>
+        </fieldset>
       </div>
       <div>
         <label htmlFor="ticket-description">Issue description</label>
