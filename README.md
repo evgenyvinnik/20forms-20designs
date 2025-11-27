@@ -76,6 +76,36 @@ This is how this project was born. It represents 20 extremely common forms that 
 43. [Rebass](https://rebassjs.org/) ([GitHub](https://github.com/rebassjs/rebass))
 44. React (no CSS) ([GitHub](https://github.com/facebook/react))
 
+### Component library reference
+
+| # | Library Name | Website | GitHub Repository | Companies Using / Maintaining |
+| --- | --- | --- | --- | --- |
+| 1 | MUI (Material UI) | https://mui.com/ | https://github.com/mui/material-ui | Google (Material Design), Spotify, Netflix, Amazon, Unity (Maintained by MUI organization) |
+| 2 | Ant Design (AntD) | https://ant.design/ | https://github.com/ant-design/ant-design | Alibaba, Tencent, Baidu, Kuaishou (Maintained by Ant Group/Alibaba) |
+| 3 | Chakra UI | https://chakra-ui.com/ | https://github.com/chakra-ui/chakra-ui | Netflix, LogRocket, Segment, CodeSandbox (Maintained by Segun Adebayo and community) |
+| 4 | Shadcn UI | https://ui.shadcn.com/ | https://github.com/shadcn-ui/ui | Vercel (often used with Next.js), Independent Developers (Components are copied, not imported as a dependency; built on Radix UI) |
+| 5 | Radix UI | https://www.radix-ui.com/ | https://github.com/radix-ui/primitives | Stripe, Linear, Vercel (Maintained by Modulz/WorkOS) |
+| 6 | React-Bootstrap | https://react-bootstrap.github.io/ | https://github.com/react-bootstrap/react-bootstrap | NASA, Various Companies using the popular Bootstrap CSS framework (Maintained by community) |
+| 7 | Mantine | https://mantine.dev/ | https://github.com/mantinedev/mantine | Oracle, BMW, Booking.com, Nvidia (Maintained by Mantine organization) |
+| 8 | Fluent UI | https://react.fluentui.dev/ | https://github.com/microsoft/fluentui | Microsoft (Used in Microsoft 365, Teams, etc.) (Maintained by Microsoft) |
+| 9 | NextUI | https://nextui.org/ | https://github.com/nextui-org/nextui | Vercel (Sponsor), Various Companies focused on modern design (Maintained by Junior Garcia and community) |
+| 10 | PrimeReact | https://www.primefaces.org/primereact/ | https://github.com/primefaces/primereact | Mercedes, eBay, Intel, American Express, Lufthansa (Maintained by PrimeFaces) |
+| 11 | Blueprint | https://blueprintjs.com/ | https://github.com/palantir/blueprint | Palantir Technologies (Maintained by Palantir Technologies) |
+| 12 | Semantic UI React | https://react.semantic-ui.com/ | https://github.com/Semantic-Org/Semantic-UI-React | Netflix, Various Startups (Official React integration for Semantic UI) |
+| 13 | Grommet | https://v2.grommet.io/ | https://github.com/grommet/grommet | HP, Netflix, Samsung (Maintained by HP) |
+| 14 | Evergreen | https://evergreen.segment.com/ | https://github.com/segmentio/evergreen | Segment (Maintained by Segment) |
+| 15 | Headless UI | https://headlessui.com/ | https://github.com/tailwindlabs/headlessui | Tailwind Labs (often used with Tailwind CSS) (Maintained by Tailwind Labs) |
+| 16 | Rebass | https://rebassjs.org/ | https://github.com/rebassjs/rebass | Various Companies prioritizing minimalist design and smaller bundle size (Maintained by Bret Cameron and community) |
+| 17 | KendoReact | https://www.telerik.com/kendo-react-ui/ | https://github.com/telerik/kendo-react | Microsoft, Sony, NASA (Maintained by Progress Telerik) |
+| 18 | React Suite | https://rsuitejs.com/ | https://github.com/rsuite/rsuite | Various Companies building middle platform and back-end applications (Maintained by Hydego and community) |
+| 19 | React Aria / React Stately | https://react-spectrum.adobe.com/react-aria/ | https://github.com/adobe/react-spectrum | Adobe (Used in Adobe's products like Photoshop Express, Lightroom, etc.) (Maintained by Adobe) |
+| 20 | Arco Design | https://arco.design/ | https://github.com/arco-design/arco-design | ByteDance (Used in TikTok's ecosystem) (Maintained by ByteDance) |
+| 21 | DaisyUI | https://daisyui.com/ | https://github.com/saadeghi/daisyui | Various Developers utilizing Tailwind CSS (Wrapper for Tailwind CSS) |
+| 22 | Gestalt | https://gestalt.pinterest.systems/ | https://github.com/pinterest/gestalt | Pinterest (Maintained by Pinterest) |
+| 23 | Atlassian UI (Atlaskit) | https://atlassian.design/components/ | https://github.com/atlassian/atlaskit | Atlassian (Used in Jira, Confluence, Trello) (Maintained by Atlassian) |
+| 24 | Cloudscape Design System | https://cloudscape.design/ | https://github.com/cloudscape-design/components | Amazon Web Services (AWS) (Used in AWS Management Console) (Maintained by AWS) |
+| 25 | Carbon Components | https://carbondesignsystem.com/components/ | https://github.com/carbon-design-system/carbon | IBM (Maintained by IBM) |
+
 ### Additional component libraries to include
 
 These libraries were requested for inclusion; some are already represented above, and the rest can be added to future form implementations:
