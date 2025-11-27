@@ -29,15 +29,19 @@ function SelectionColumn({
       </div>
       <div style={styles.selectionActions}>
         <CheckboxRow label="Select all" checked={allSelected} onChange={onSelectAll} />
-        <CheckboxRow label="Select none" checked={noneSelected} onChange={onSelectNone} />
+        <CheckboxRow
+          label="Select none"
+          checked={noneSelected}
+          onChange={onSelectNone}
+        />
       </div>
       <div style={listStyle}>
         {items.map((item) => (
           <CheckboxRow
-            key={item}
-            label={item}
-            checked={selectedItems.includes(item)}
-            onChange={() => onToggleItem(item)}
+            key={item.value}
+            label={item.label}
+            checked={selectedItems.includes(item.value)}
+            onChange={() => onToggleItem(item.value)}
           />
         ))}
       </div>
