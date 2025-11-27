@@ -39,20 +39,17 @@ function DaisyUiPreview({
                   <div style={styles.comboLabel}>{form}</div>
                   <div style={styles.libraryChip}>DaisyUI</div>
                 </div>
-                <div style={styles.previewFormWrapper}>
-                  <FormErrorBoundary
-                    formName={form}
-                    libraryName="DaisyUI"
-                    resetKey={`daisyui-${form}`}
-                  >
-                    <LibraryThemeWrapper
-                      library="daisyUI"
-                      themeMode={themeMode}
-                    >
+                <FormErrorBoundary
+                  formName={form}
+                  libraryName="DaisyUI"
+                  resetKey={`daisyui-${form}`}
+                >
+                  <LibraryThemeWrapper library="daisyUI" themeMode={themeMode}>
+                    <div style={styles.previewFormWrapper}>
                       <FormComponent />
-                    </LibraryThemeWrapper>
-                  </FormErrorBoundary>
-                </div>
+                    </div>
+                  </LibraryThemeWrapper>
+                </FormErrorBoundary>
               </div>
             )
           })}

@@ -37,20 +37,20 @@ function GravityUiPreview({
                   <div style={styles.comboLabel}>{form}</div>
                   <div style={styles.libraryChip}>Gravity UI</div>
                 </div>
-                <div style={styles.previewFormWrapper}>
-                  <FormErrorBoundary
-                    formName={form}
-                    libraryName="Gravity UI"
-                    resetKey={`gravity-ui-${form}`}
+                <FormErrorBoundary
+                  formName={form}
+                  libraryName="Gravity UI"
+                  resetKey={`gravity-ui-${form}`}
+                >
+                  <LibraryThemeWrapper
+                    library="Gravity UI"
+                    themeMode={themeMode}
                   >
-                    <LibraryThemeWrapper
-                      library="Gravity UI"
-                      themeMode={themeMode}
-                    >
+                    <div style={styles.previewFormWrapper}>
                       <FormComponent />
-                    </LibraryThemeWrapper>
-                  </FormErrorBoundary>
-                </div>
+                    </div>
+                  </LibraryThemeWrapper>
+                </FormErrorBoundary>
               </div>
             )
           })}

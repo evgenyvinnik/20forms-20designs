@@ -40,20 +40,20 @@ function BlueprintPreview({
                   <div style={styles.comboLabel}>{form}</div>
                   <div style={styles.libraryChip}>Blueprint</div>
                 </div>
-                <div style={styles.previewFormWrapper}>
-                  <FormErrorBoundary
-                    formName={form}
-                    libraryName="Blueprint"
-                    resetKey={`blueprint-${form}`}
+                <FormErrorBoundary
+                  formName={form}
+                  libraryName="Blueprint"
+                  resetKey={`blueprint-${form}`}
+                >
+                  <LibraryThemeWrapper
+                    library="Blueprint"
+                    themeMode={themeMode}
                   >
-                    <LibraryThemeWrapper
-                      library="Blueprint"
-                      themeMode={themeMode}
-                    >
+                    <div style={styles.previewFormWrapper}>
                       <FormComponent />
-                    </LibraryThemeWrapper>
-                  </FormErrorBoundary>
-                </div>
+                    </div>
+                  </LibraryThemeWrapper>
+                </FormErrorBoundary>
               </div>
             )
           })}

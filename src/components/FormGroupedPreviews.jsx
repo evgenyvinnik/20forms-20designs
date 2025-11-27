@@ -57,17 +57,17 @@ function FormGroupedPreviews({
                       <div style={styles.frameHeaderRow}>
                         <div style={styles.comboLabel}>{library}</div>
                       </div>
-                      <div style={styles.previewFormWrapper}>
-                        <FormErrorBoundary
-                          formName={form}
-                          libraryName={library}
-                          resetKey={`${library}-${form}`}
-                        >
-                          {librarySupportsTheme(library) ? (
-                            <LibraryThemeWrapper
-                              library={library}
-                              themeMode={themeMode}
-                            >
+                      <FormErrorBoundary
+                        formName={form}
+                        libraryName={library}
+                        resetKey={`${library}-${form}`}
+                      >
+                        {librarySupportsTheme(library) ? (
+                          <LibraryThemeWrapper
+                            library={library}
+                            themeMode={themeMode}
+                          >
+                            <div style={styles.previewFormWrapper}>
                               {Wrapper ? (
                                 <Wrapper>
                                   <FormComponent />
@@ -75,16 +75,20 @@ function FormGroupedPreviews({
                               ) : (
                                 <FormComponent />
                               )}
-                            </LibraryThemeWrapper>
-                          ) : Wrapper ? (
-                            <Wrapper>
+                            </div>
+                          </LibraryThemeWrapper>
+                        ) : (
+                          <div style={styles.previewFormWrapper}>
+                            {Wrapper ? (
+                              <Wrapper>
+                                <FormComponent />
+                              </Wrapper>
+                            ) : (
                               <FormComponent />
-                            </Wrapper>
-                          ) : (
-                            <FormComponent />
-                          )}
-                        </FormErrorBoundary>
-                      </div>
+                            )}
+                          </div>
+                        )}
+                      </FormErrorBoundary>
                     </div>
                   )
                 })}

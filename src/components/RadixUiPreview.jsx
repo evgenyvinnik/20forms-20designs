@@ -38,20 +38,20 @@ function RadixUiPreview({
                   <div style={styles.comboLabel}>{form}</div>
                   <div style={styles.libraryChip}>Radix UI</div>
                 </div>
-                <div style={styles.previewFormWrapper}>
-                  <FormErrorBoundary
-                    formName={form}
-                    libraryName="Radix UI"
-                    resetKey={`radix-ui-${form}`}
+                <FormErrorBoundary
+                  formName={form}
+                  libraryName="Radix UI"
+                  resetKey={`radix-ui-${form}`}
+                >
+                  <LibraryThemeWrapper
+                    library="Radix UI"
+                    themeMode={themeMode}
                   >
-                    <LibraryThemeWrapper
-                      library="Radix UI"
-                      themeMode={themeMode}
-                    >
+                    <div style={styles.previewFormWrapper}>
                       <FormComponent />
-                    </LibraryThemeWrapper>
-                  </FormErrorBoundary>
-                </div>
+                    </div>
+                  </LibraryThemeWrapper>
+                </FormErrorBoundary>
               </div>
             )
           })}

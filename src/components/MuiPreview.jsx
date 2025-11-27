@@ -37,17 +37,17 @@ function MuiPreview({
                   <div style={styles.comboLabel}>{form}</div>
                   <div style={styles.libraryChip}>MUI</div>
                 </div>
-                <div style={styles.previewFormWrapper}>
-                  <FormErrorBoundary
-                    formName={form}
-                    libraryName="MUI"
-                    resetKey={`mui-${form}`}
-                  >
-                    <LibraryThemeWrapper library="MUI" themeMode={themeMode}>
+                <FormErrorBoundary
+                  formName={form}
+                  libraryName="MUI"
+                  resetKey={`mui-${form}`}
+                >
+                  <LibraryThemeWrapper library="MUI" themeMode={themeMode}>
+                    <div style={styles.previewFormWrapper}>
                       <FormComponent />
-                    </LibraryThemeWrapper>
-                  </FormErrorBoundary>
-                </div>
+                    </div>
+                  </LibraryThemeWrapper>
+                </FormErrorBoundary>
               </div>
             )
           })}

@@ -31,15 +31,15 @@ function ChakraUiPreview({ selectedForms, isLibrarySelected, formComponents }) {
                   <div style={styles.comboLabel}>{form}</div>
                   <div style={styles.libraryChip}>Chakra UI</div>
                 </div>
-                <div style={styles.previewFormWrapper}>
-                  <FormErrorBoundary
-                    formName={form}
-                    libraryName="Chakra UI"
-                    resetKey={`chakra-ui-${form}`}
-                  >
+                <FormErrorBoundary
+                  formName={form}
+                  libraryName="Chakra UI"
+                  resetKey={`chakra-ui-${form}`}
+                >
+                  <div style={styles.previewFormWrapper}>
                     <FormComponent />
-                  </FormErrorBoundary>
-                </div>
+                  </div>
+                </FormErrorBoundary>
               </div>
             )
           })}
