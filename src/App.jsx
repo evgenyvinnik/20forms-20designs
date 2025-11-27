@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, Suspense } from 'react'
 
 import Layout from './components/Layout'
 import MuiPreview from './components/MuiPreview'
@@ -7,46 +7,10 @@ import SelectionColumn from './components/SelectionColumn'
 import FormGroupedPreviews from './components/FormGroupedPreviews'
 import styles from './styles'
 
-import AdvancedSearchForm from './component-libraries/react-no-css/AdvancedSearchForm.jsx'
-import AppointmentRequestForm from './component-libraries/react-no-css/AppointmentRequestForm.jsx'
-import BillingInfoForm from './component-libraries/react-no-css/BillingInfoForm.jsx'
-import CheckoutPaymentForm from './component-libraries/react-no-css/CheckoutPaymentForm.jsx'
-import ContactInquiryForm from './component-libraries/react-no-css/ContactInquiryForm.jsx'
-import CustomerFeedbackForm from './component-libraries/react-no-css/CustomerFeedbackForm.jsx'
-import EventRegistrationForm from './component-libraries/react-no-css/EventRegistrationForm.jsx'
-import JobApplicationForm from './component-libraries/react-no-css/JobApplicationForm.jsx'
-import NewsletterSubscriptionForm from './component-libraries/react-no-css/NewsletterSubscriptionForm.jsx'
-import OnboardingWizardForm from './component-libraries/react-no-css/OnboardingWizardForm.jsx'
-import OrderTrackingForm from './component-libraries/react-no-css/OrderTrackingForm.jsx'
-import PasswordChangeForm from './component-libraries/react-no-css/PasswordChangeForm.jsx'
-import PasswordResetForm from './component-libraries/react-no-css/PasswordResetForm.jsx'
-import PrivacyConsentForm from './component-libraries/react-no-css/PrivacyConsentForm.jsx'
-import ProfileUpdateForm from './component-libraries/react-no-css/ProfileUpdateForm.jsx'
-import ShippingAddressForm from './component-libraries/react-no-css/ShippingAddressForm.jsx'
-import SupportTicketForm from './component-libraries/react-no-css/SupportTicketForm.jsx'
-import TwoFactorAuthForm from './component-libraries/react-no-css/TwoFactorAuthForm.jsx'
-import UserLoginForm from './component-libraries/react-no-css/UserLoginForm.jsx'
-import UserRegistrationForm from './component-libraries/react-no-css/UserRegistrationForm.jsx'
-import AdvancedSearchFormMui from './component-libraries/mui/AdvancedSearchForm.jsx'
-import AppointmentRequestFormMui from './component-libraries/mui/AppointmentRequestForm.jsx'
-import BillingInfoFormMui from './component-libraries/mui/BillingInfoForm.jsx'
-import CheckoutPaymentFormMui from './component-libraries/mui/CheckoutPaymentForm.jsx'
-import ContactInquiryFormMui from './component-libraries/mui/ContactInquiryForm.jsx'
-import CustomerFeedbackFormMui from './component-libraries/mui/CustomerFeedbackForm.jsx'
-import EventRegistrationFormMui from './component-libraries/mui/EventRegistrationForm.jsx'
-import JobApplicationFormMui from './component-libraries/mui/JobApplicationForm.jsx'
-import NewsletterSubscriptionFormMui from './component-libraries/mui/NewsletterSubscriptionForm.jsx'
-import OnboardingWizardFormMui from './component-libraries/mui/OnboardingWizardForm.jsx'
-import OrderTrackingFormMui from './component-libraries/mui/OrderTrackingForm.jsx'
-import PasswordChangeFormMui from './component-libraries/mui/PasswordChangeForm.jsx'
-import PasswordResetFormMui from './component-libraries/mui/PasswordResetForm.jsx'
-import PrivacyConsentFormMui from './component-libraries/mui/PrivacyConsentForm.jsx'
-import ProfileUpdateFormMui from './component-libraries/mui/ProfileUpdateForm.jsx'
-import ShippingAddressFormMui from './component-libraries/mui/ShippingAddressForm.jsx'
-import SupportTicketFormMui from './component-libraries/mui/SupportTicketForm.jsx'
-import TwoFactorAuthFormMui from './component-libraries/mui/TwoFactorAuthForm.jsx'
-import UserLoginFormMui from './component-libraries/mui/UserLoginForm.jsx'
-import UserRegistrationFormMui from './component-libraries/mui/UserRegistrationForm.jsx'
+import { reactNoCssFormComponents } from './component-libraries/react-no-css/lazy.js'
+import { muiFormComponents } from './component-libraries/mui/lazy.js'
+import { radixUiFormComponents } from './component-libraries/radix-ui/lazy.js'
+import RadixUiPreview from './components/RadixUiPreview'
 
 const plannedForms = [
   'User registration / sign up',
@@ -356,52 +320,6 @@ const componentLibraries = [
   },
 ]
 
-const reactNoCssFormComponents = {
-  'User registration / sign up': UserRegistrationForm,
-  'User login / sign in': UserLoginForm,
-  'Password reset / forgot password request': PasswordResetForm,
-  'Two-factor authentication code entry': TwoFactorAuthForm,
-  'Contact or support inquiry': ContactInquiryForm,
-  'Newsletter or marketing subscription': NewsletterSubscriptionForm,
-  'Profile information update': ProfileUpdateForm,
-  'Account security and password change': PasswordChangeForm,
-  'Billing information capture': BillingInfoForm,
-  'Shipping address capture': ShippingAddressForm,
-  'Checkout with payment details': CheckoutPaymentForm,
-  'Order tracking lookup': OrderTrackingForm,
-  'Appointment or booking request': AppointmentRequestForm,
-  'Event registration / RSVP': EventRegistrationForm,
-  'Job application submission': JobApplicationForm,
-  'Customer feedback or satisfaction survey': CustomerFeedbackForm,
-  'Support ticket submission': SupportTicketForm,
-  'Multi-step onboarding wizard': OnboardingWizardForm,
-  'Advanced search with filters': AdvancedSearchForm,
-  'Privacy, consent, and communication preferences': PrivacyConsentForm,
-}
-
-const muiFormComponents = {
-  'User registration / sign up': UserRegistrationFormMui,
-  'User login / sign in': UserLoginFormMui,
-  'Password reset / forgot password request': PasswordResetFormMui,
-  'Two-factor authentication code entry': TwoFactorAuthFormMui,
-  'Contact or support inquiry': ContactInquiryFormMui,
-  'Newsletter or marketing subscription': NewsletterSubscriptionFormMui,
-  'Profile information update': ProfileUpdateFormMui,
-  'Account security and password change': PasswordChangeFormMui,
-  'Billing information capture': BillingInfoFormMui,
-  'Shipping address capture': ShippingAddressFormMui,
-  'Checkout with payment details': CheckoutPaymentFormMui,
-  'Order tracking lookup': OrderTrackingFormMui,
-  'Appointment or booking request': AppointmentRequestFormMui,
-  'Event registration / RSVP': EventRegistrationFormMui,
-  'Job application submission': JobApplicationFormMui,
-  'Customer feedback or satisfaction survey': CustomerFeedbackFormMui,
-  'Support ticket submission': SupportTicketFormMui,
-  'Multi-step onboarding wizard': OnboardingWizardFormMui,
-  'Advanced search with filters': AdvancedSearchFormMui,
-  'Privacy, consent, and communication preferences': PrivacyConsentFormMui,
-}
-
 function App() {
   const [selectedForms, setSelectedForms] = useState([])
   const [selectedLibraries, setSelectedLibraries] = useState([])
@@ -417,16 +335,23 @@ function App() {
       },
       'React + No CSS': {
         title: 'React + No CSS previews',
-        description: 'Plain HTML forms rendered when React + No CSS is selected.',
+        description:
+          'Plain HTML forms rendered when React + No CSS is selected.',
         components: reactNoCssFormComponents,
       },
+      'Radix UI': {
+        title: 'Radix UI previews',
+        description:
+          'Radix UI form implementations rendered when Radix UI is selected.',
+        components: radixUiFormComponents,
+      },
     }),
-    [],
+    []
   )
 
   const formItems = useMemo(
     () => plannedForms.map((form) => ({ value: form, label: form })),
-    [],
+    []
   )
 
   const componentLibraryItems = useMemo(
@@ -446,22 +371,29 @@ function App() {
           </span>
         ),
       })),
-    [],
+    []
   )
 
   const selectedReactNoCssForms = useMemo(
     () => selectedForms.filter((form) => reactNoCssFormComponents[form]),
-    [selectedForms],
+    [selectedForms]
   )
 
   const reactNoCssSelected = selectedLibraries.includes('React + No CSS')
 
   const selectedMuiForms = useMemo(
     () => selectedForms.filter((form) => muiFormComponents[form]),
-    [selectedForms],
+    [selectedForms]
   )
 
   const muiSelected = selectedLibraries.includes('MUI')
+
+  const selectedRadixUiForms = useMemo(
+    () => selectedForms.filter((form) => radixUiFormComponents[form]),
+    [selectedForms]
+  )
+
+  const radixUiSelected = selectedLibraries.includes('Radix UI')
 
   const toggleSelection = (value, selected, setter) => {
     const exists = selected.includes(value)
@@ -478,8 +410,12 @@ function App() {
           title="Forms"
           items={formItems}
           selectedItems={selectedForms}
-          onToggleItem={(form) => toggleSelection(form, selectedForms, setSelectedForms)}
-          onSelectAll={() => setSelectedForms(formItems.map((item) => item.value))}
+          onToggleItem={(form) =>
+            toggleSelection(form, selectedForms, setSelectedForms)
+          }
+          onSelectAll={() =>
+            setSelectedForms(formItems.map((item) => item.value))
+          }
           onSelectNone={() => setSelectedForms([])}
         />
         <SelectionColumn
@@ -490,7 +426,9 @@ function App() {
             toggleSelection(library, selectedLibraries, setSelectedLibraries)
           }
           onSelectAll={() =>
-            setSelectedLibraries(componentLibraryItems.map((item) => item.value))
+            setSelectedLibraries(
+              componentLibraryItems.map((item) => item.value)
+            )
           }
           onSelectNone={() => setSelectedLibraries([])}
           twoColumnLayout
@@ -522,7 +460,7 @@ function App() {
       </div>
 
       {previewGroupBy === 'library' ? (
-        <>
+        <Suspense fallback={<div>Loading...</div>}>
           <MuiPreview
             selectedForms={selectedMuiForms}
             isLibrarySelected={muiSelected}
@@ -534,13 +472,21 @@ function App() {
             isLibrarySelected={reactNoCssSelected}
             formComponents={reactNoCssFormComponents}
           />
-        </>
+
+          <RadixUiPreview
+            selectedForms={selectedRadixUiForms}
+            isLibrarySelected={radixUiSelected}
+            formComponents={radixUiFormComponents}
+          />
+        </Suspense>
       ) : (
-        <FormGroupedPreviews
-          selectedForms={selectedForms}
-          selectedLibraries={selectedLibraries}
-          implementations={previewImplementations}
-        />
+        <Suspense fallback={<div>Loading...</div>}>
+          <FormGroupedPreviews
+            selectedForms={selectedForms}
+            selectedLibraries={selectedLibraries}
+            implementations={previewImplementations}
+          />
+        </Suspense>
       )}
     </Layout>
   )
