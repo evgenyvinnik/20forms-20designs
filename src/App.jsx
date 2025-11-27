@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 
 import Layout from './components/Layout'
 import PairingGrid from './components/PairingGrid'
+import MuiPreview from './components/MuiPreview'
 import ReactNoCssPreview from './components/ReactNoCssPreview'
 import SelectionColumn from './components/SelectionColumn'
 import styles from './styles'
@@ -26,6 +27,26 @@ import SupportTicketForm from './component-libraries/react-no-css/SupportTicketF
 import TwoFactorAuthForm from './component-libraries/react-no-css/TwoFactorAuthForm.jsx'
 import UserLoginForm from './component-libraries/react-no-css/UserLoginForm.jsx'
 import UserRegistrationForm from './component-libraries/react-no-css/UserRegistrationForm.jsx'
+import AdvancedSearchFormMui from './component-libraries/mui/AdvancedSearchForm.jsx'
+import AppointmentRequestFormMui from './component-libraries/mui/AppointmentRequestForm.jsx'
+import BillingInfoFormMui from './component-libraries/mui/BillingInfoForm.jsx'
+import CheckoutPaymentFormMui from './component-libraries/mui/CheckoutPaymentForm.jsx'
+import ContactInquiryFormMui from './component-libraries/mui/ContactInquiryForm.jsx'
+import CustomerFeedbackFormMui from './component-libraries/mui/CustomerFeedbackForm.jsx'
+import EventRegistrationFormMui from './component-libraries/mui/EventRegistrationForm.jsx'
+import JobApplicationFormMui from './component-libraries/mui/JobApplicationForm.jsx'
+import NewsletterSubscriptionFormMui from './component-libraries/mui/NewsletterSubscriptionForm.jsx'
+import OnboardingWizardFormMui from './component-libraries/mui/OnboardingWizardForm.jsx'
+import OrderTrackingFormMui from './component-libraries/mui/OrderTrackingForm.jsx'
+import PasswordChangeFormMui from './component-libraries/mui/PasswordChangeForm.jsx'
+import PasswordResetFormMui from './component-libraries/mui/PasswordResetForm.jsx'
+import PrivacyConsentFormMui from './component-libraries/mui/PrivacyConsentForm.jsx'
+import ProfileUpdateFormMui from './component-libraries/mui/ProfileUpdateForm.jsx'
+import ShippingAddressFormMui from './component-libraries/mui/ShippingAddressForm.jsx'
+import SupportTicketFormMui from './component-libraries/mui/SupportTicketForm.jsx'
+import TwoFactorAuthFormMui from './component-libraries/mui/TwoFactorAuthForm.jsx'
+import UserLoginFormMui from './component-libraries/mui/UserLoginForm.jsx'
+import UserRegistrationFormMui from './component-libraries/mui/UserRegistrationForm.jsx'
 
 const plannedForms = [
   'User registration / sign up',
@@ -334,6 +355,29 @@ const reactNoCssFormComponents = {
   'Privacy, consent, and communication preferences': PrivacyConsentForm,
 }
 
+const muiFormComponents = {
+  'User registration / sign up': UserRegistrationFormMui,
+  'User login / sign in': UserLoginFormMui,
+  'Password reset / forgot password request': PasswordResetFormMui,
+  'Two-factor authentication code entry': TwoFactorAuthFormMui,
+  'Contact or support inquiry': ContactInquiryFormMui,
+  'Newsletter or marketing subscription': NewsletterSubscriptionFormMui,
+  'Profile information update': ProfileUpdateFormMui,
+  'Account security and password change': PasswordChangeFormMui,
+  'Billing information capture': BillingInfoFormMui,
+  'Shipping address capture': ShippingAddressFormMui,
+  'Checkout with payment details': CheckoutPaymentFormMui,
+  'Order tracking lookup': OrderTrackingFormMui,
+  'Appointment or booking request': AppointmentRequestFormMui,
+  'Event registration / RSVP': EventRegistrationFormMui,
+  'Job application submission': JobApplicationFormMui,
+  'Customer feedback or satisfaction survey': CustomerFeedbackFormMui,
+  'Support ticket submission': SupportTicketFormMui,
+  'Multi-step onboarding wizard': OnboardingWizardFormMui,
+  'Advanced search with filters': AdvancedSearchFormMui,
+  'Privacy, consent, and communication preferences': PrivacyConsentFormMui,
+}
+
 function App() {
   const [selectedForms, setSelectedForms] = useState([])
   const [selectedLibraries, setSelectedLibraries] = useState([])
@@ -378,6 +422,13 @@ function App() {
 
   const reactNoCssSelected = selectedLibraries.includes('React + No CSS')
 
+  const selectedMuiForms = useMemo(
+    () => selectedForms.filter((form) => muiFormComponents[form]),
+    [selectedForms],
+  )
+
+  const muiSelected = selectedLibraries.includes('MUI')
+
   const toggleSelection = (value, selected, setter) => {
     const exists = selected.includes(value)
     const nextSelection = exists
@@ -413,6 +464,12 @@ function App() {
       </div>
 
       <PairingGrid combinations={combinations} />
+
+      <MuiPreview
+        selectedForms={selectedMuiForms}
+        isLibrarySelected={muiSelected}
+        formComponents={muiFormComponents}
+      />
 
       <ReactNoCssPreview
         selectedForms={selectedReactNoCssForms}
