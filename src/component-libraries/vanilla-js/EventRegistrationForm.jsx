@@ -1,17 +1,23 @@
 function EventRegistrationForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Event registration submitted!')
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="event-name">Full name</label>
-        <input id="event-name" name="fullName" type="text" />
+        <input id="event-name" name="fullName" type="text" required />
       </div>
       <div>
         <label htmlFor="event-email">Email address</label>
-        <input id="event-email" name="email" type="email" />
+        <input id="event-email" name="email" type="email" required />
       </div>
       <div>
         <label htmlFor="event-ticket">Ticket type</label>
-        <select id="event-ticket" name="ticketType">
+        <select id="event-ticket" name="ticketType" required>
+          <option value="">Select ticket</option>
           <option value="general">General admission</option>
           <option value="vip">VIP</option>
           <option value="student">Student</option>
@@ -19,7 +25,7 @@ function EventRegistrationForm() {
       </div>
       <div>
         <label htmlFor="event-guests">Number of guests</label>
-        <input id="event-guests" name="guestCount" type="number" min="0" />
+        <input id="event-guests" name="guestCount" type="number" min="0" max="20" required />
       </div>
       <div>
         <label>

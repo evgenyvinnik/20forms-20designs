@@ -1,13 +1,18 @@
 function PrivacyConsentForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Privacy preferences saved!')
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="privacy-name">Full name</label>
-        <input id="privacy-name" name="fullName" type="text" />
+        <input id="privacy-name" name="fullName" type="text" required />
       </div>
       <div>
         <label htmlFor="privacy-email">Email address</label>
-        <input id="privacy-email" name="email" type="email" />
+        <input id="privacy-email" name="email" type="email" required />
       </div>
       <fieldset>
         <legend>Communication channels</legend>

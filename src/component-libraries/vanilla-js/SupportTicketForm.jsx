@@ -1,13 +1,19 @@
 function SupportTicketForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Support ticket submitted!')
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="ticket-subject">Subject</label>
-        <input id="ticket-subject" name="subject" type="text" />
+        <input id="ticket-subject" name="subject" type="text" required />
       </div>
       <div>
         <label htmlFor="ticket-priority">Priority</label>
-        <select id="ticket-priority" name="priority">
+        <select id="ticket-priority" name="priority" required>
+          <option value="">Select priority</option>
           <option value="low">Low</option>
           <option value="medium">Medium</option>
           <option value="high">High</option>
@@ -15,7 +21,7 @@ function SupportTicketForm() {
       </div>
       <div>
         <label htmlFor="ticket-description">Issue description</label>
-        <textarea id="ticket-description" name="description" rows="4" />
+        <textarea id="ticket-description" name="description" rows="4" required />
       </div>
       <div>
         <label htmlFor="ticket-attachments">Attachments</label>

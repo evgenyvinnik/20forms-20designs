@@ -1,17 +1,23 @@
 function CustomerFeedbackForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Feedback submitted!')
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="feedback-name">Name</label>
-        <input id="feedback-name" name="name" type="text" />
+        <input id="feedback-name" name="name" type="text" required />
       </div>
       <div>
         <label htmlFor="feedback-email">Email address</label>
-        <input id="feedback-email" name="email" type="email" />
+        <input id="feedback-email" name="email" type="email" required />
       </div>
       <div>
         <label htmlFor="feedback-rating">Overall rating</label>
-        <select id="feedback-rating" name="rating">
+        <select id="feedback-rating" name="rating" required>
+          <option value="">Select rating</option>
           <option value="excellent">Excellent</option>
           <option value="good">Good</option>
           <option value="average">Average</option>
@@ -20,7 +26,7 @@ function CustomerFeedbackForm() {
       </div>
       <div>
         <label htmlFor="feedback-comments">Comments</label>
-        <textarea id="feedback-comments" name="comments" rows="4" />
+        <textarea id="feedback-comments" name="comments" rows="4" required />
       </div>
       <div>
         <label>
