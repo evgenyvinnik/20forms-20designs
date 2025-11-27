@@ -1,25 +1,25 @@
 import { useMemo, useState } from 'react'
 
-import AdvancedSearchForm from './component-libraries/vanilla-js/AdvancedSearchForm.jsx'
-import AppointmentRequestForm from './component-libraries/vanilla-js/AppointmentRequestForm.jsx'
-import BillingInfoForm from './component-libraries/vanilla-js/BillingInfoForm.jsx'
-import CheckoutPaymentForm from './component-libraries/vanilla-js/CheckoutPaymentForm.jsx'
-import ContactInquiryForm from './component-libraries/vanilla-js/ContactInquiryForm.jsx'
-import CustomerFeedbackForm from './component-libraries/vanilla-js/CustomerFeedbackForm.jsx'
-import EventRegistrationForm from './component-libraries/vanilla-js/EventRegistrationForm.jsx'
-import JobApplicationForm from './component-libraries/vanilla-js/JobApplicationForm.jsx'
-import NewsletterSubscriptionForm from './component-libraries/vanilla-js/NewsletterSubscriptionForm.jsx'
-import OnboardingWizardForm from './component-libraries/vanilla-js/OnboardingWizardForm.jsx'
-import OrderTrackingForm from './component-libraries/vanilla-js/OrderTrackingForm.jsx'
-import PasswordChangeForm from './component-libraries/vanilla-js/PasswordChangeForm.jsx'
-import PasswordResetForm from './component-libraries/vanilla-js/PasswordResetForm.jsx'
-import PrivacyConsentForm from './component-libraries/vanilla-js/PrivacyConsentForm.jsx'
-import ProfileUpdateForm from './component-libraries/vanilla-js/ProfileUpdateForm.jsx'
-import ShippingAddressForm from './component-libraries/vanilla-js/ShippingAddressForm.jsx'
-import SupportTicketForm from './component-libraries/vanilla-js/SupportTicketForm.jsx'
-import TwoFactorAuthForm from './component-libraries/vanilla-js/TwoFactorAuthForm.jsx'
-import UserLoginForm from './component-libraries/vanilla-js/UserLoginForm.jsx'
-import UserRegistrationForm from './component-libraries/vanilla-js/UserRegistrationForm.jsx'
+import AdvancedSearchForm from './component-libraries/react-no-css/AdvancedSearchForm.jsx'
+import AppointmentRequestForm from './component-libraries/react-no-css/AppointmentRequestForm.jsx'
+import BillingInfoForm from './component-libraries/react-no-css/BillingInfoForm.jsx'
+import CheckoutPaymentForm from './component-libraries/react-no-css/CheckoutPaymentForm.jsx'
+import ContactInquiryForm from './component-libraries/react-no-css/ContactInquiryForm.jsx'
+import CustomerFeedbackForm from './component-libraries/react-no-css/CustomerFeedbackForm.jsx'
+import EventRegistrationForm from './component-libraries/react-no-css/EventRegistrationForm.jsx'
+import JobApplicationForm from './component-libraries/react-no-css/JobApplicationForm.jsx'
+import NewsletterSubscriptionForm from './component-libraries/react-no-css/NewsletterSubscriptionForm.jsx'
+import OnboardingWizardForm from './component-libraries/react-no-css/OnboardingWizardForm.jsx'
+import OrderTrackingForm from './component-libraries/react-no-css/OrderTrackingForm.jsx'
+import PasswordChangeForm from './component-libraries/react-no-css/PasswordChangeForm.jsx'
+import PasswordResetForm from './component-libraries/react-no-css/PasswordResetForm.jsx'
+import PrivacyConsentForm from './component-libraries/react-no-css/PrivacyConsentForm.jsx'
+import ProfileUpdateForm from './component-libraries/react-no-css/ProfileUpdateForm.jsx'
+import ShippingAddressForm from './component-libraries/react-no-css/ShippingAddressForm.jsx'
+import SupportTicketForm from './component-libraries/react-no-css/SupportTicketForm.jsx'
+import TwoFactorAuthForm from './component-libraries/react-no-css/TwoFactorAuthForm.jsx'
+import UserLoginForm from './component-libraries/react-no-css/UserLoginForm.jsx'
+import UserRegistrationForm from './component-libraries/react-no-css/UserRegistrationForm.jsx'
 
 const plannedForms = [
   'User registration / sign up',
@@ -90,10 +90,10 @@ const componentLibraries = [
   { name: 'Ariakit', directory: 'ariakit' },
   { name: 'Tremor', directory: 'tremor' },
   { name: 'Rebass', directory: 'rebass' },
-  { name: 'Vanilla JS', directory: 'vanilla-js' },
+  { name: 'React + No CSS', directory: 'react-no-css' },
 ]
 
-const vanillaFormComponents = {
+const reactNoCssFormComponents = {
   'User registration / sign up': UserRegistrationForm,
   'User login / sign in': UserLoginForm,
   'Password reset / forgot password request': PasswordResetForm,
@@ -143,10 +143,10 @@ function SelectionColumn({
     <section>
       <div style={styles.sectionHeader}>
         <h2 style={styles.sectionTitle}>{title}</h2>
-        <div style={styles.selectionActions}>
-          <CheckboxRow label="Select all" checked={allSelected} onChange={onSelectAll} />
-          <CheckboxRow label="Select none" checked={noneSelected} onChange={onSelectNone} />
-        </div>
+      </div>
+      <div style={styles.selectionActions}>
+        <CheckboxRow label="Select all" checked={allSelected} onChange={onSelectAll} />
+        <CheckboxRow label="Select none" checked={noneSelected} onChange={onSelectNone} />
       </div>
       <div style={listStyle}>
         {items.map((item) => (
@@ -189,12 +189,12 @@ function App() {
     [selectedForms, selectedLibraries],
   )
 
-  const selectedVanillaForms = useMemo(
-    () => selectedForms.filter((form) => vanillaFormComponents[form]),
+  const selectedReactNoCssForms = useMemo(
+    () => selectedForms.filter((form) => reactNoCssFormComponents[form]),
     [selectedForms],
   )
 
-  const vanillaSelected = selectedLibraries.includes('Vanilla JS')
+  const reactNoCssSelected = selectedLibraries.includes('React + No CSS')
 
   const toggleSelection = (value, selected, setter) => {
     const exists = selected.includes(value)
@@ -246,24 +246,24 @@ function App() {
         )}
       </section>
 
-      {vanillaSelected && (
+      {reactNoCssSelected && (
         <section style={styles.previewSection}>
           <div style={styles.sectionHeader}>
-            <h2 style={styles.sectionTitle}>Vanilla JS previews</h2>
-            <p style={styles.previewHelper}>Plain HTML forms rendered when Vanilla JS is selected.</p>
+            <h2 style={styles.sectionTitle}>React + No CSS previews</h2>
+            <p style={styles.previewHelper}>Plain HTML forms rendered when React + No CSS is selected.</p>
           </div>
 
-          {selectedVanillaForms.length === 0 ? (
+          {selectedReactNoCssForms.length === 0 ? (
             <p style={styles.placeholderText}>
-              Select one or more forms to see their Vanilla JS implementations.
+              Select one or more forms to see their React + No CSS implementations.
             </p>
           ) : (
             <div style={styles.previewGrid}>
-              {selectedVanillaForms.map((form) => {
-                const FormComponent = vanillaFormComponents[form]
+              {selectedReactNoCssForms.map((form) => {
+                const FormComponent = reactNoCssFormComponents[form]
 
                 return (
-                  <div key={`vanilla-${form}`} style={styles.previewCard}>
+                  <div key={`react-no-css-${form}`} style={styles.previewCard}>
                     <div style={styles.comboLabel}>{form}</div>
                     <div style={styles.previewFormWrapper}>
                       <FormComponent />
@@ -304,11 +304,7 @@ const styles = {
     alignItems: 'start',
   },
   sectionHeader: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    gap: '12px',
-    marginBottom: '12px',
+    marginBottom: '6px',
   },
   sectionTitle: {
     margin: 0,
@@ -318,6 +314,8 @@ const styles = {
     display: 'flex',
     gap: '12px',
     flexWrap: 'wrap',
+    marginBottom: '12px',
+    alignItems: 'center',
   },
   checkboxRow: {
     display: 'flex',
