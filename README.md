@@ -76,6 +76,36 @@ This is how this project was born. It represents 20 extremely common forms that 
 43. [Rebass](https://rebassjs.org/) ([GitHub](https://github.com/rebassjs/rebass))
 44. React (no CSS) ([GitHub](https://github.com/facebook/react))
 
+### Additional component libraries to include
+
+These libraries were requested for inclusion; some are already represented above, and the rest can be added to future form implementations:
+
+26. [Framer Motion](https://www.framer.com/motion/) ([GitHub](https://github.com/framer/motion))
+27. [Recharts](https://recharts.org/) ([GitHub](https://github.com/recharts/recharts))
+28. [React Virtualized](https://www.npmjs.com/package/react-virtualized) ([GitHub](https://github.com/bvaughn/react-virtualized))
+29. [React Table (TanStack Table)](https://tanstack.com/table/) ([GitHub](https://github.com/TanStack/table))
+30. [Styled Components](https://styled-components.com/) ([GitHub](https://github.com/styled-components/styled-components))
+31. [Emotion](https://emotion.sh/) ([GitHub](https://github.com/emotion-js/emotion))
+32. [Theme UI](https://theme-ui.com/) ([GitHub](https://github.com/system-ui/theme-ui))
+33. [React Spring](https://www.react-spring.dev/) ([GitHub](https://github.com/pmndrs/react-spring))
+34. [Nivo](https://nivo.rocks/) ([GitHub](https://github.com/plouc/nivo))
+35. [React Flow](https://reactflow.dev/) ([GitHub](https://github.com/xyflow/react-flow))
+36. [VisX](https://airbnb.io/visx/) ([GitHub](https://github.com/airbnb/visx))
+37. [Primer React](https://primer.style/react/) ([GitHub](https://github.com/primer/react)) — already listed above (#37)
+38. [Ariakit](https://ariakit.org/) ([GitHub](https://github.com/ariakit/ariakit)) — already listed above (#41)
+39. [React Icons](https://react-icons.github.io/react-icons/) ([GitHub](https://github.com/react-icons/react-icons))
+40. [Storybook](https://storybook.js.org/) ([GitHub](https://github.com/storybookjs/storybook))
+41. [CoreUI](https://coreui.io/react/) ([GitHub](https://github.com/coreui/coreui-react))
+42. [React Admin](https://marmelab.com/react-admin/) ([GitHub](https://github.com/marmelab/react-admin))
+43. [Onsen UI](https://onsen.io/react/) ([GitHub](https://github.com/OnsenUI/OnsenUI))
+44. [Drip UI](https://drip-ui.com/) ([GitHub](https://github.com/drip-ui/drip-ui))
+45. [React-Select](https://react-select.com/) ([GitHub](https://github.com/JedWatson/react-select))
+46. [React Hook Form](https://react-hook-form.com/) ([GitHub](https://github.com/react-hook-form/react-hook-form))
+47. [Gluestack UI](https://gluestack.io/ui/docs) ([GitHub](https://github.com/gluestack/gluestack-ui))
+48. [Tremor](https://www.tremor.so/) ([GitHub](https://github.com/tremor-dev/tremor)) — already listed above (#42)
+49. [Keep React](https://keep-react.vercel.app/) ([GitHub](https://github.com/Atticus-M/keep-react))
+50. [Elastic UI (EUI)](https://elastic.github.io/eui/) ([GitHub](https://github.com/elastic/eui)) — already listed above (#23)
+
 ## Tech Stack
 
 - **Vite** - Next generation frontend tooling
