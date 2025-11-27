@@ -1,17 +1,23 @@
 function ContactInquiryForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Inquiry submitted!')
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="contact-name">Full name</label>
-        <input id="contact-name" name="fullName" type="text" />
+        <input id="contact-name" name="fullName" type="text" required />
       </div>
       <div>
         <label htmlFor="contact-email">Email address</label>
-        <input id="contact-email" name="email" type="email" />
+        <input id="contact-email" name="email" type="email" required />
       </div>
       <div>
         <label htmlFor="contact-topic">Topic</label>
-        <select id="contact-topic" name="topic">
+        <select id="contact-topic" name="topic" required>
+          <option value="">Select topic</option>
           <option value="support">Support</option>
           <option value="sales">Sales</option>
           <option value="feedback">Feedback</option>
@@ -20,7 +26,7 @@ function ContactInquiryForm() {
       </div>
       <div>
         <label htmlFor="contact-message">Message</label>
-        <textarea id="contact-message" name="message" rows="4" />
+        <textarea id="contact-message" name="message" rows="4" required />
       </div>
       <div>
         <label>

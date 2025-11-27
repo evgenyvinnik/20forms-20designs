@@ -1,13 +1,18 @@
 function AdvancedSearchForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Search submitted!')
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="search-query">Search query</label>
-        <input id="search-query" name="query" type="text" />
+        <input id="search-query" name="query" type="text" required />
       </div>
       <div>
         <label htmlFor="search-category">Category</label>
-        <select id="search-category" name="category">
+        <select id="search-category" name="category" required>
           <option value="all">All</option>
           <option value="articles">Articles</option>
           <option value="products">Products</option>
@@ -24,7 +29,7 @@ function AdvancedSearchForm() {
       </div>
       <div>
         <label htmlFor="search-sort">Sort by</label>
-        <select id="search-sort" name="sort">
+        <select id="search-sort" name="sort" required>
           <option value="relevance">Relevance</option>
           <option value="newest">Newest</option>
           <option value="oldest">Oldest</option>

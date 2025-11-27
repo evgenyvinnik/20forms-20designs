@@ -1,29 +1,41 @@
 function JobApplicationForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Application submitted!')
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="job-full-name">Full name</label>
-        <input id="job-full-name" name="fullName" type="text" />
+        <input id="job-full-name" name="fullName" type="text" required />
       </div>
       <div>
         <label htmlFor="job-email">Email address</label>
-        <input id="job-email" name="email" type="email" />
+        <input id="job-email" name="email" type="email" required />
       </div>
       <div>
         <label htmlFor="job-phone">Phone number</label>
-        <input id="job-phone" name="phone" type="tel" />
+        <input
+          id="job-phone"
+          name="phone"
+          type="tel"
+          pattern="[+0-9\s-]{7,20}"
+          inputMode="tel"
+          required
+        />
       </div>
       <div>
         <label htmlFor="job-role">Role applied for</label>
-        <input id="job-role" name="role" type="text" />
+        <input id="job-role" name="role" type="text" required />
       </div>
       <div>
         <label htmlFor="job-resume">Resume link</label>
-        <input id="job-resume" name="resume" type="url" />
+        <input id="job-resume" name="resume" type="url" required />
       </div>
       <div>
         <label htmlFor="job-cover-letter">Cover letter</label>
-        <textarea id="job-cover-letter" name="coverLetter" rows="4" />
+        <textarea id="job-cover-letter" name="coverLetter" rows="4" required />
       </div>
       <div>
         <label>
