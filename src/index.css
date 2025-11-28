@@ -1,2 +1,8 @@
-/* No global Tailwind CSS import */
-/* Tailwind is only imported in specific component libraries that need it */
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Restore browser defaults that Tailwind preflight overrides */
+a {
+  color: revert;
+  text-decoration: revert;
+}

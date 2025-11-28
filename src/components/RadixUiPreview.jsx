@@ -11,7 +11,6 @@ const styles = {
 
   previewFormWrapper: { padding: '10px', display: 'block' },
 }
-import '../tailwind-no-preflight.css'
 import { LibraryThemeWrapper } from './LibraryThemeWrapper'
 import PreviewFormWrapper from './PreviewFormWrapper'
 import PreviewSectionHeader from './PreviewSectionHeader'

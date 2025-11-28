@@ -10,7 +10,6 @@ const styles = {
 
   previewFormWrapper: { padding: '10px', display: 'block' },
 }
-import '../tailwind-no-preflight.css'
 import PreviewFormWrapper from './PreviewFormWrapper'
 import PreviewSectionHeader from './PreviewSectionHeader'
 import PreviewCard from './PreviewCard'
