@@ -1,145 +1,119 @@
 # 20forms-20designs
 
-Introducing "20 Forms - 20 Designs"
+> **Form Library Comparison Playground** — Compare the same forms implemented across different React design systems with full CSS isolation.
 
-This is project that I wanted to implement for quite some time. So far in my professional experience I have worked with a lot of various design systems and I was always fascinated how the same form could look so much differently using different component library.
+## Overview
 
-This is how this project was born. It represents 20 extremely common forms that were built using 20+ popular React design systems.
+This project showcases **20 common web forms** implemented using **8+ React component libraries**. Each form is rendered in a fully isolated iframe, preventing any CSS bleed between different design systems.
 
-## Forms implemented
+**[Live Demo →](https://evgenyvinnik.github.io/20forms-20designs/)**
 
-* User registration / sign up
-* User login / sign in
-* Password reset / forgot password request
-* Two-factor authentication code entry
-* Contact or support inquiry
-* Newsletter or marketing subscription
-* Profile information update
-* Account security and password change
-* Billing information capture
-* Shipping address capture
-* Checkout with payment details
-* Order tracking lookup
-* Appointment or booking request
-* Event registration / RSVP
-* Job application submission
-* Customer feedback or satisfaction survey
-* Support ticket submission
-* Multi-step onboarding wizard
-* Advanced search with filters
-* Privacy, consent, and communication preferences
+## ✨ Features
 
-## Component libraries used
+- **160 Mini-Apps** — Each form × library combination runs in its own isolated context
+- **CSS Isolation** — No style conflicts between design systems (iframe-based architecture)
+- **Theme Support** — Light/dark mode toggle for libraries that support theming
+- **Comparison Matrix** — Side-by-side comparison of forms across libraries
+- **Static Deployment** — Fully static, hosted on GitHub Pages
 
-1. [Ant Design](https://ant.design/) ([Repository](https://github.com/ant-design/ant-design))
-2. [Arco Design](https://arco.design/) ([Repository](https://github.com/arco-design/arco-design))
-3. [Ariakit](https://ariakit.org/) ([Repository](https://github.com/ariakit/ariakit))
-4. [Atlassian Atlaskit](https://atlassian.design/components) ([Repository](https://bitbucket.org/atlassian/atlassian-frontend/))
-5. [Base Web](https://baseweb.design/) ([Repository](https://github.com/uber/baseweb))
-6. [Blueprint](https://blueprintjs.com/) ([Repository](https://github.com/palantir/blueprint))
-7. [Braid Design System](https://seek-oss.github.io/braid-design-system/) ([Repository](https://github.com/seek-oss/braid-design-system))
-8. [Carbon Design System](https://carbondesignsystem.com/) ([Repository](https://github.com/carbon-design-system/carbon))
-10. [Cloudscape Design System](https://cloudscape.design/) ([Repository](https://github.com/cloudscape-design/components))
-11. [CoreUI](https://coreui.io/react/) ([Repository](https://github.com/coreui/coreui-react))
-13. [Drip UI](https://drip-ui.com/) ([Repository](https://github.com/drip-ui/drip-ui))
-14. [Elastic UI (EUI)](https://eui.elastic.co/) ([Repository](https://github.com/elastic/eui))
-15. [Emotion](https://emotion.sh/) ([Repository](https://github.com/emotion-js/emotion))
-16. [Evergreen](https://evergreen.segment.com/) ([Repository](https://github.com/segmentio/evergreen))
-17. [FAST Design](https://www.fast.design/) ([Repository](https://github.com/microsoft/fast))
-18. [Fluent UI](https://developer.microsoft.com/en-us/fluentui) ([Repository](https://github.com/microsoft/fluentui))
-19. [Framer Motion](https://www.framer.com/motion/) ([Repository](https://github.com/framer/motion))
-20. [Geist UI](https://geist-ui.dev/) ([Repository](https://github.com/geist-org/geist-ui))
-21. [Gluestack UI](https://gluestack.io/ui/docs) ([Repository](https://github.com/gluestack/gluestack-ui))
-22. [Gravity UI](https://gravity-ui.com/) ([Repository](https://github.com/gravity-ui/uikit))
-23. [Grommet](https://v2.grommet.io/) ([Repository](https://github.com/grommet/grommet))
-25. [HeroUI](https://heroui.com/) ([Repository](https://github.com/heroui-inc/heroui))
-26. [Ionic React](https://ionicframework.com/docs/react) ([Repository](https://github.com/ionic-team/ionic-framework))
-27. [Keep React](https://keep-react.vercel.app/) ([Repository](https://github.com/Atticus-M/keep-react))
-28. [KendoReact](https://www.telerik.com/kendo-react-ui/) ([Repository](https://github.com/telerik/kendo-react))
-29. [Mantine](https://mantine.dev/) ([Repository](https://github.com/mantinedev/mantine))
-30. [MUI](https://mui.com/) ([Repository](https://github.com/mui/material-ui))
-31. [NextUI](https://nextui.org/) ([Repository](https://github.com/nextui-org/nextui))
-32. [Nivo](https://nivo.rocks/) ([Repository](https://github.com/plouc/nivo))
-33. [Onsen UI](https://onsen.io/react/) ([Repository](https://github.com/OnsenUI/OnsenUI))
-34. [Orbit by Kiwi.com](https://orbit.kiwi/) ([Repository](https://github.com/kiwicom/orbit-components))
-35. [PatternFly](https://www.patternfly.org/) ([Repository](https://github.com/patternfly/patternfly-react))
-36. [Pinterest Gestalt](https://gestalt.pinterest.systems/) ([Repository](https://github.com/pinterest/gestalt))
-37. [Primer React](https://primer.style/react/) ([Repository](https://github.com/primer/react))
-38. [PrimeReact](https://primereact.org/) ([Repository](https://github.com/primefaces/primereact))
-39. [Radix UI](https://www.radix-ui.com/) ([Repository](https://github.com/radix-ui/primitives))
-40. [React (No CSS)](https://react.dev) ([Repository](https://github.com/facebook/react))
-41. [React Admin](https://marmelab.com/react-admin/) ([Repository](https://github.com/marmelab/react-admin))
-42. [React Aria / React Stately](https://react-spectrum.adobe.com/react-aria/) ([Repository](https://github.com/adobe/react-spectrum))
-43. [React Bootstrap](https://react-bootstrap.netlify.app/) ([Repository](https://github.com/react-bootstrap/react-bootstrap))
-44. [React Flow](https://reactflow.dev/) ([Repository](https://github.com/xyflow/react-flow))
-45. [React Hook Form](https://react-hook-form.com/) ([Repository](https://github.com/react-hook-form/react-hook-form))
-46. [React Icons](https://react-icons.github.io/react-icons/) ([Repository](https://github.com/react-icons/react-icons))
-47. [React Spectrum](https://react-spectrum.adobe.com/) ([Repository](https://github.com/adobe/react-spectrum))
-48. [React Spring](https://www.react-spring.dev/) ([Repository](https://github.com/pmndrs/react-spring))
-49. [React Table (TanStack Table)](https://tanstack.com/table/) ([Repository](https://github.com/TanStack/table))
-50. [React Virtualized](https://www.npmjs.com/package/react-virtualized) ([Repository](https://github.com/bvaughn/react-virtualized))
-51. [React-Select](https://react-select.com/) ([Repository](https://github.com/JedWatson/react-select))
-52. [Rebass](https://rebassjs.org/) ([Repository](https://github.com/rebassjs/rebass))
-53. [Recharts](https://recharts.org/) ([Repository](https://github.com/recharts/recharts))
-54. [RSuite](https://rsuitejs.com/) ([Repository](https://github.com/rsuite/rsuite))
-55. [Salesforce Lightning Design System React](https://react.lightningdesignsystem.com/) ([Repository](https://github.com/salesforce/design-system-react))
-56. [Semantic UI React](https://react.semantic-ui.com/) ([Repository](https://github.com/Semantic-Org/Semantic-UI-React))
-57. [Semi Design](https://semi.design/) ([Repository](https://github.com/DouyinFE/semi-design))
-59. [Shoelace](https://shoelace.style/) ([Repository](https://github.com/shoelace-style/shoelace))
-60. [Shopify Polaris](https://polaris.shopify.com/) ([Repository](https://github.com/Shopify/polaris))
-61. [Storybook](https://storybook.js.org/) ([Repository](https://github.com/storybookjs/storybook))
-62. [Styled Components](https://styled-components.com/) ([Repository](https://github.com/styled-components/styled-components))
-63. [Theme UI](https://theme-ui.com/) ([Repository](https://github.com/system-ui/theme-ui))
-64. [Tremor](https://www.tremor.so/) ([Repository](https://github.com/tremorlabs/tremor))
-65. [U.S. Web Design System](https://designsystem.digital.gov/) ([Repository](https://github.com/uswds/uswds))
-66. [VisX](https://airbnb.io/visx/) ([Repository](https://github.com/airbnb/visx))
-67. [VMware Clarity](https://clarity.design/) ([Repository](https://github.com/vmware/clarity))
-68. [Zendesk Garden](https://garden.zendesk.com/) ([Repository](https://github.com/zendeskgarden/react-components))
-69. [Flowbite React](https://flowbite-react.com/) ([Repository](https://github.com/themesberg/flowbite-react))
+## 🏗️ Architecture
 
-71. [Tamagui](https://tamagui.dev/) ([Repository](https://github.com/tamagui/tamagui))
-72. [Refine](https://refine.dev/) ([Repository](https://github.com/refinedev/refine))
+This project uses a **monorepo + iframe architecture** for complete CSS isolation:
 
-## Due to conflicts the following libraries won't be implemented
+```
+20forms-20designs/
+├── apps/
+│   ├── shell/                    # Main comparison UI
+│   ├── mui-user-login/           # MUI Login Form
+│   ├── mui-user-registration/    # MUI Registration Form
+│   ├── radix-ui-user-login/      # Radix UI Login Form
+│   └── ... (160 mini-apps total)
+├── packages/
+│   └── shared/                   # Shared types and utilities
+├── scripts/
+│   ├── generate-mini-apps.mjs    # Mini-app generator
+│   ├── build-all.mjs             # Build orchestration
+│   └── copy-builds-to-dist.mjs   # Deployment bundler
+└── src/
+    └── component-libraries/      # Original form implementations
+```
 
-1. [Chakra UI](https://chakra-ui.com/) ([Repository](https://github.com/chakra-ui/chakra-ui))
-2. [daisyUI](https://daisyui.com/) ([Repository](https://github.com/saadeghi/daisyui))
-3. [shadcn/ui](https://ui.shadcn.com/) ([Repository](https://github.com/shadcn-ui/ui))
-4. [Material Tailwind](https://www.material-tailwind.com/) ([Repository](https://github.com/creativetimofficial/material-tailwind))
-5. [Headless UI](https://headlessui.com/) ([Repository](https://github.com/tailwindlabs/headlessui))
+## 📋 Forms Implemented
 
-## Tech Stack
+1. User registration / sign up
+2. User login / sign in
+3. Password reset / forgot password request
+4. Two-factor authentication code entry
+5. Contact or support inquiry
+6. Newsletter or marketing subscription
+7. Profile information update
+8. Account security and password change
+9. Billing information capture
+10. Shipping address capture
+11. Checkout with payment details
+12. Order tracking lookup
+13. Appointment or booking request
+14. Event registration / RSVP
+15. Job application submission
+16. Customer feedback or satisfaction survey
+17. Support ticket submission
+18. Multi-step onboarding wizard
+19. Advanced search with filters
+20. Privacy, consent, and communication preferences
 
-- **Vite** - Next generation frontend tooling
-- **React 18** - A JavaScript library for building user interfaces
-- **React DOM** - React package for working with the DOM
-- **React Router** - Declarative routing for React
-- **Prettier** - Code formatter
-- **ESLint** - JavaScript linter
+## 🎨 Component Libraries
 
-## Getting Started
+| Library | Theme Support | Status |
+|---------|---------------|--------|
+| [MUI](https://mui.com/) | ✅ Light/Dark | ✅ Implemented |
+| [React Bootstrap](https://react-bootstrap.github.io/) | ✅ Light/Dark | ✅ Implemented |
+| [Radix UI](https://www.radix-ui.com/) | ✅ Light/Dark | ✅ Implemented |
+| [Blueprint](https://blueprintjs.com/) | ✅ Light/Dark | ✅ Implemented |
+| [Gravity UI](https://gravity-ui.com/) | ✅ Light/Dark | ✅ Implemented |
+| [Evergreen](https://evergreen.segment.com/) | ✅ Light/Dark | ✅ Implemented |
+| [Cloudscape](https://cloudscape.design/) | ✅ Light/Dark | ✅ Implemented |
+| [React + No CSS](https://react.dev/) | ✅ Light/Dark | ✅ Implemented |
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 20 or higher
+- Node.js 18 or higher
 - npm
 
 ### Installation
 
 ```bash
-npm install
+# Clone the repository
+git clone https://github.com/evgenyvinnik/20forms-20designs.git
+cd 20forms-20designs
+
+# Install dependencies (use --legacy-peer-deps due to conflicting peer dependencies)
+npm install --legacy-peer-deps
 ```
 
 ### Development
 
 ```bash
+# Run the shell app in development mode
+npm run dev
+
+# Or run a specific mini-app
+cd apps/mui-user-login
 npm run dev
 ```
 
-### Build
+### Building
 
 ```bash
+# Generate all mini-apps from source components (if needed)
+npm run generate
+
+# Build all apps (shell + 160 mini-apps)
 npm run build
+
+# Or build just the shell app
+npm run build:shell
 ```
 
 ### Preview Production Build
@@ -148,22 +122,57 @@ npm run build
 npm run preview
 ```
 
-### Linting
+## 📦 Project Structure
 
-```bash
-npm run lint
-```
+### Shell App (`apps/shell/`)
 
-### Formatting
+The main comparison UI that:
+- Displays a matrix of forms × libraries
+- Renders each combination in an isolated `<iframe>`
+- Provides theme switching (light/dark)
+- Allows filtering by form and library
 
-```bash
-npm run format
-```
+### Mini-Apps (`apps/<library>-<form>/`)
 
-## Deployment
+Each mini-app is a standalone Vite + React application that:
+- Renders exactly one form using one design system
+- Supports theme via URL query parameter (`?theme=dark`)
+- Is completely isolated from other mini-apps
 
-This project is configured to deploy to GitHub Pages automatically on push to the `main` branch.
+### Scripts
 
-## License
+| Script | Description |
+|--------|-------------|
+| `npm run generate` | Generate all 160 mini-apps from source components |
+| `npm run build` | Build shell + all mini-apps + copy to dist |
+| `npm run build:shell` | Build only the shell app |
+| `npm run clean` | Remove all build artifacts |
+| `npm run dev` | Run shell app in development mode |
 
-MIT License - see [LICENSE](LICENSE) for details.
+## 🔧 Adding a New Library
+
+1. Implement all 20 forms in `src/component-libraries/<library-name>/`
+2. Update `scripts/generate-mini-apps.mjs` with the library configuration
+3. Run `npm run generate` to create mini-apps
+4. Update `apps/shell/src/config.ts` with the new library
+5. Run `npm run build`
+
+## 🔧 Adding a New Form
+
+1. Create the form component in each library's directory
+2. Update the FORMS array in `scripts/generate-mini-apps.mjs`
+3. Run `npm run generate`
+4. Update `apps/shell/src/config.ts` with the new form
+5. Run `npm run build`
+
+## 📝 Tech Stack
+
+- **Vite** — Fast build tool and dev server
+- **React 18** — UI library
+- **TypeScript** — Type-safe shell app
+- **npm Workspaces** — Monorepo management
+- **GitHub Pages** — Static hosting
+
+## 📄 License
+
+MIT License — see [LICENSE](LICENSE) for details.

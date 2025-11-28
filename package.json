@@ -1,14 +1,25 @@
 {
   "name": "20forms-20designs",
   "private": true,
-  "version": "1.0.251128.29",
+  "version": "2.0.0",
   "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "generate": "node scripts/generate-mini-apps.mjs",
+    "dev": "npm run dev --workspace=@forms-comparison/shell",
+    "dev:shell": "npm run dev --workspace=@forms-comparison/shell",
+    "dev:old": "vite",
+    "build": "node scripts/build-all.mjs",
+    "build:shell": "npm run build --workspace=@forms-comparison/shell",
+    "build:old": "vite build",
+    "build:copy": "node scripts/copy-builds-to-dist.mjs",
+    "preview": "npm run preview --workspace=@forms-comparison/shell",
+    "clean": "node scripts/clean.mjs",
     "lint": "eslint .",
-    "format": "prettier --write \"src/**/*.{js,jsx,json}\"",
-    "preview": "vite preview",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
     "test": "playwright test",
     "test:ui": "playwright test --ui"
   },
@@ -104,7 +115,10 @@
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "@playwright/test": "^1.57.0",
-    "@vitejs/plugin-react": "^5.1.1",
+    "@types/node": "^22.10.1",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
@@ -112,10 +126,14 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "prettier": "^3.6.2",
-    "vite": "^7.2.4"
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3"
   },
   "overrides": {
-    "@types/react": "18.3.11",
-    "@types/react-dom": "18.3.0"
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
