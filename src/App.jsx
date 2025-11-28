@@ -243,6 +243,20 @@ function App() {
 
   const daisyUiSelected = selectedLibraries.includes('daisyUI')
 
+  const findLibrary = (directory) =>
+    componentLibraries.find((l) => l.directory === directory)
+
+  const muiLibrary = findLibrary('mui')
+  const chakraLibrary = findLibrary('chakra-ui')
+  const reactBootstrapLibrary = findLibrary('react-bootstrap')
+  const radixLibrary = findLibrary('radix-ui')
+  const daisyLibrary = findLibrary('daisyui')
+  const shadcnLibrary = findLibrary('shadcn-ui')
+  const evergreenLibrary = findLibrary('evergreen')
+  const gravityLibrary = findLibrary('gravity-ui')
+  const blueprintLibrary = findLibrary('blueprint')
+  const reactNoCssLibrary = findLibrary('react-no-css')
+
   const selectedShadcnUiForms = useMemo(
     () => selectedForms.filter((form) => shadcnUiFormComponents[form]),
     [selectedForms]
@@ -356,27 +370,32 @@ function App() {
             isLibrarySelected={muiSelected}
             formComponents={muiFormComponents}
             themeMode={themeMode}
+            libraryName={muiLibrary?.name}
           />
           <ChakraUiPreview
             selectedForms={selectedChakraUiForms}
             isLibrarySelected={chakraUiSelected}
             formComponents={chakraUiFormComponents}
+            libraryName={chakraLibrary?.name}
           />
           <ReactBootstrapPreview
             selectedForms={selectedReactBootstrapForms}
             isLibrarySelected={reactBootstrapSelected}
             formComponents={reactBootstrapFormComponents}
+            libraryName={reactBootstrapLibrary?.name}
           />
           <EvergreenPreview
             selectedForms={selectedEvergreenForms}
             isLibrarySelected={evergreenSelected}
             formComponents={evergreenFormComponents}
+            libraryName={evergreenLibrary?.name}
           />
           <BlueprintPreview
             selectedForms={selectedBlueprintForms}
             isLibrarySelected={blueprintSelected}
             formComponents={blueprintFormComponents}
             themeMode={themeMode}
+            libraryName={blueprintLibrary?.name}
           />
 
           <ReactNoCssPreview
@@ -390,6 +409,7 @@ function App() {
             isLibrarySelected={radixUiSelected}
             formComponents={radixUiFormComponents}
             themeMode={themeMode}
+            libraryName={radixLibrary?.name}
           />
 
           <DaisyUiPreview
@@ -397,18 +417,21 @@ function App() {
             isLibrarySelected={daisyUiSelected}
             formComponents={daisyUiFormComponents}
             themeMode={themeMode}
+            libraryName={daisyLibrary?.name}
           />
 
           <ShadcnUiPreview
             selectedForms={selectedShadcnUiForms}
             isLibrarySelected={shadcnUiSelected}
             formComponents={shadcnUiFormComponents}
+            libraryName={shadcnLibrary?.name}
           />
           <GravityUiPreview
             selectedForms={selectedGravityUiForms}
             isLibrarySelected={gravityUiSelected}
             formComponents={gravityUiFormComponents}
             themeMode={themeMode}
+            libraryName={gravityLibrary?.name}
           />
         </Suspense>
       ) : (

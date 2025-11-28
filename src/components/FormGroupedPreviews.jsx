@@ -32,28 +32,7 @@ const styles = {
     gap: '16px',
     padding: '6px 2px 12px',
   },
-  previewCard: {
-    border: '1px solid #c1c7cd',
-    borderRadius: '10px',
-    padding: '10px',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '10px',
-    width: '420px',
-    maxWidth: '100%',
-    boxSizing: 'border-box',
-  },
-  frameHeaderRow: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    gap: '10px',
-  },
-  comboLabel: {
-    fontWeight: 600,
-    marginBottom: '2px',
-    fontSize: '0.95rem',
-  },
+
   previewFormWrapper: {
     padding: '10px',
     display: 'block',
@@ -65,6 +44,7 @@ import {
 } from './LibraryThemeWrapper'
 import FormErrorBoundary from './FormErrorBoundary'
 import PreviewSectionHeader from './PreviewSectionHeader'
+import PreviewCard from './PreviewCard'
 
 function FormGroupedPreviews({
   selectedForms,
@@ -114,10 +94,7 @@ function FormGroupedPreviews({
                   if (!FormComponent) return null
 
                   return (
-                    <div key={`${form}-${library}`} style={styles.previewCard}>
-                      <div style={styles.frameHeaderRow}>
-                        <div style={styles.comboLabel}>{library}</div>
-                      </div>
+                    <PreviewCard key={`${form}-${library}`} form={library}>
                       <FormErrorBoundary
                         formName={form}
                         libraryName={library}
@@ -150,7 +127,7 @@ function FormGroupedPreviews({
                           </div>
                         )}
                       </FormErrorBoundary>
-                    </div>
+                    </PreviewCard>
                   )
                 })}
               </div>
