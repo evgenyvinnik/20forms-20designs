@@ -402,6 +402,8 @@ function App() {
             selectedForms={selectedReactNoCssForms}
             isLibrarySelected={reactNoCssSelected}
             formComponents={reactNoCssFormComponents}
+            libraryName={reactNoCssLibrary?.name}
+            themeMode={themeMode}
           />
 
           <RadixUiPreview

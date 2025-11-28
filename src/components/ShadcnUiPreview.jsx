@@ -1,7 +1,7 @@
 // Inlined styles from styles.js
 const styles = {
   previewSection: { marginTop: '32px' },
-  
+
   previewStrip: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -17,7 +17,13 @@ import PreviewSectionHeader from './PreviewSectionHeader'
 import PreviewCard from './PreviewCard'
 import PreviewPlaceholder from './PreviewPlaceholder'
 
-function ShadcnUiPreview({ selectedForms, isLibrarySelected, formComponents, themeMode, libraryName }) {
+function ShadcnUiPreview({
+  selectedForms,
+  isLibrarySelected,
+  formComponents,
+  themeMode,
+  libraryName,
+}) {
   if (!isLibrarySelected) return null
 
   const hasSelections = selectedForms.length > 0
@@ -49,7 +55,11 @@ function ShadcnUiPreview({ selectedForms, isLibrarySelected, formComponents, the
             if (!FormComponent) return null
 
             return (
-              <PreviewCard key={`shadcn-ui-${form}`} form={form} library={libraryName}>
+              <PreviewCard
+                key={`shadcn-ui-${form}`}
+                form={form}
+                library={libraryName}
+              >
                 <PreviewFormWrapper
                   formName={form}
                   libraryName={libraryName}

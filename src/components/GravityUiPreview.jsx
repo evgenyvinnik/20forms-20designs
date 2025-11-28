@@ -1,7 +1,7 @@
 // Inlined styles from styles.js
 const styles = {
   previewSection: { marginTop: '32px' },
-  
+
   previewStrip: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -43,7 +43,11 @@ function GravityUiPreview({
             if (!FormComponent) return null
 
             return (
-              <PreviewCard key={`gravity-ui-${form}`} form={form} library={libraryName}>
+              <PreviewCard
+                key={`gravity-ui-${form}`}
+                form={form}
+                library={libraryName}
+              >
                 <PreviewFormWrapper
                   formName={form}
                   libraryName={libraryName}

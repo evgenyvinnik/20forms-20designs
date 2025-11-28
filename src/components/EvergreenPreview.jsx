@@ -1,7 +1,7 @@
 // Inlined styles from styles.js
 const styles = {
   previewSection: { marginTop: '32px' },
-  
+
   previewStrip: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -41,7 +41,11 @@ function EvergreenPreview({
             const FormComponent = formComponents[form]
             if (!FormComponent) return null
             return (
-              <PreviewCard key={`evergreen-${form}`} form={form} library={libraryName}>
+              <PreviewCard
+                key={`evergreen-${form}`}
+                form={form}
+                library={libraryName}
+              >
                 <PreviewFormWrapper
                   formName={form}
                   libraryName={libraryName}

@@ -1,7 +1,7 @@
 // Inlined styles from styles.js
 const styles = {
   previewSection: { marginTop: '32px' },
-  
+
   previewStrip: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -43,8 +43,15 @@ function RadixUiPreview({
             const FormComponent = formComponents[form]
             if (!FormComponent) return null
             return (
-              <PreviewCard key={`radix-ui-${form}`} form={form} library={libraryName}>
-                <LibraryThemeWrapper library={libraryName} themeMode={themeMode}>
+              <PreviewCard
+                key={`radix-ui-${form}`}
+                form={form}
+                library={libraryName}
+              >
+                <LibraryThemeWrapper
+                  library={libraryName}
+                  themeMode={themeMode}
+                >
                   <PreviewFormWrapper
                     formName={form}
                     libraryName={libraryName}

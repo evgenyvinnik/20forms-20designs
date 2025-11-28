@@ -4,7 +4,7 @@ import '@blueprintjs/icons/lib/css/blueprint-icons.css'
 // Inlined styles from styles.js
 const styles = {
   previewSection: { marginTop: '32px' },
-  
+
   previewStrip: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -47,8 +47,15 @@ function BlueprintPreview({
             if (!FormComponent) return null
 
             return (
-              <PreviewCard key={`blueprint-${form}`} form={form} library={libraryName}>
-                <LibraryThemeWrapper library={libraryName} themeMode={themeMode}>
+              <PreviewCard
+                key={`blueprint-${form}`}
+                form={form}
+                library={libraryName}
+              >
+                <LibraryThemeWrapper
+                  library={libraryName}
+                  themeMode={themeMode}
+                >
                   <PreviewFormWrapper
                     formName={form}
                     libraryName={libraryName}

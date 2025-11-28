@@ -4,7 +4,7 @@ const styles = {
   sectionHeader: { marginBottom: '6px' },
   sectionTitle: { margin: 0, fontSize: '1.1rem' },
   previewHelper: { margin: 0, color: '#5b6675' },
-  
+
   previewStrip: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -22,6 +22,7 @@ function ReactNoCssPreview({
   selectedForms,
   isLibrarySelected,
   formComponents,
+  themeMode,
   libraryName,
 }) {
   if (!isLibrarySelected) return null
@@ -57,7 +58,11 @@ function ReactNoCssPreview({
             if (!FormComponent) return null
 
             return (
-              <PreviewCard key={`react-no-css-${form}`} form={form} library={libraryName}>
+              <PreviewCard
+                key={`react-no-css-${form}`}
+                form={form}
+                library={libraryName}
+              >
                 <PreviewFormWrapper
                   formName={form}
                   libraryName={libraryName}

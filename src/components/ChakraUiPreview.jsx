@@ -3,7 +3,7 @@ const styles = {
   previewSection: {
     marginTop: '32px',
   },
-  
+
   previewStrip: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -21,7 +21,13 @@ import PreviewSectionHeader from './PreviewSectionHeader'
 import PreviewCard from './PreviewCard'
 import PreviewPlaceholder from './PreviewPlaceholder'
 
-function ChakraUiPreview({ selectedForms, isLibrarySelected, formComponents, themeMode, libraryName }) {
+function ChakraUiPreview({
+  selectedForms,
+  isLibrarySelected,
+  formComponents,
+  themeMode,
+  libraryName,
+}) {
   if (!isLibrarySelected) return null
 
   const hasSelections = selectedForms.length > 0
@@ -42,7 +48,11 @@ function ChakraUiPreview({ selectedForms, isLibrarySelected, formComponents, the
             if (!FormComponent) return null
 
             return (
-              <PreviewCard key={`chakra-ui-${form}`} form={form} library={libraryName}>
+              <PreviewCard
+                key={`chakra-ui-${form}`}
+                form={form}
+                library={libraryName}
+              >
                 <PreviewFormWrapper
                   formName={form}
                   libraryName={libraryName}
