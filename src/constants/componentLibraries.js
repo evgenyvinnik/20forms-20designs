@@ -1,3 +1,14 @@
+import { reactNoCssFormComponents } from '../component-libraries/react-no-css/lazy.js'
+import { muiFormComponents } from '../component-libraries/mui/lazy.js'
+import { chakraUiFormComponents } from '../component-libraries/chakra-ui/lazy.js'
+import { reactBootstrapFormComponents } from '../component-libraries/react-bootstrap/lazy.js'
+import { radixUiFormComponents } from '../component-libraries/radix-ui/lazy.js'
+import { daisyUiFormComponents } from '../component-libraries/daisyui/lazy.js'
+import { shadcnUiFormComponents } from '../component-libraries/shadcn-ui/lazy.js'
+import { evergreenFormComponents } from '../component-libraries/evergreen/lazy.js'
+import { gravityUiFormComponents } from '../component-libraries/gravity-ui/lazy.js'
+import { blueprintFormComponents } from '../component-libraries/blueprint/lazy.js'
+
 export const componentLibraries = [
   {
     name: 'MUI',
@@ -357,3 +368,70 @@ export const componentLibraries = [
     implemented: false,
   },
 ]
+
+const createLookup = (key) =>
+  componentLibraries.reduce((lookup, library) => {
+    lookup[library[key]] = library
+    return lookup
+  }, {})
+
+export const componentLibrariesByName = createLookup('name')
+export const componentLibrariesByDirectory = createLookup('directory')
+
+
+
+export const implementedComponentsByLibrary = {
+  MUI: muiFormComponents,
+  'Chakra UI': chakraUiFormComponents,
+  'React Bootstrap': reactBootstrapFormComponents,
+  Evergreen: evergreenFormComponents,
+  Blueprint: blueprintFormComponents,
+  'React + No CSS': reactNoCssFormComponents,
+  'Radix UI': radixUiFormComponents,
+  daisyUI: daisyUiFormComponents,
+  'shadcn/ui': shadcnUiFormComponents,
+  'Gravity UI': gravityUiFormComponents,
+}
+
+export const previewCopyOverrides = {
+  'React + No CSS': {
+    description: 'Plain HTML forms rendered when React + No CSS is selected.',
+  },
+  daisyUI: {
+    title: 'DaisyUI previews',
+    description: 'DaisyUI form implementations rendered when DaisyUI is selected.',
+  },
+  Evergreen: {
+    description:
+      'Evergreen UI form implementations rendered when Evergreen is selected.',
+  },
+  Blueprint: {
+    description:
+      'Blueprint UI form implementations rendered when Blueprint is selected.',
+  },
+}
+
+export const librariesByName = Object.fromEntries(
+  Object.entries(componentLibrariesByName).map(([name, library]) => {
+    const components = implementedComponentsByLibrary[name]
+    const copyOverrides = previewCopyOverrides[name] || {}
+
+    const implementation = components
+      ? {
+          title: copyOverrides.title ?? `${name} previews`,
+          description:
+            copyOverrides.description ??
+            `${name} form implementations rendered when ${name} is selected.`,
+          components,
+        }
+      : undefined
+
+    return [name, { ...library, implementation }]
+  })
+)
+
+export const previewImplementations = Object.fromEntries(
+  Object.entries(librariesByName)
+    .filter(([, library]) => library.implementation?.components)
+    .map(([name, library]) => [name, library.implementation])
+)

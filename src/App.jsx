@@ -42,23 +42,17 @@ const styles = {
   },
 }
 
-import { reactNoCssFormComponents } from './component-libraries/react-no-css/lazy.js'
-import { muiFormComponents } from './component-libraries/mui/lazy.js'
-import { chakraUiFormComponents } from './component-libraries/chakra-ui/lazy.js'
-import { reactBootstrapFormComponents } from './component-libraries/react-bootstrap/lazy.js'
-import { radixUiFormComponents } from './component-libraries/radix-ui/lazy.js'
-import { daisyUiFormComponents } from './component-libraries/daisyui/lazy.js'
-import { shadcnUiFormComponents } from './component-libraries/shadcn-ui/lazy.js'
-import { evergreenFormComponents } from './component-libraries/evergreen/lazy.js'
-import { gravityUiFormComponents } from './component-libraries/gravity-ui/lazy.js'
-import { blueprintFormComponents } from './component-libraries/blueprint/lazy.js'
 import RadixUiPreview from './components/RadixUiPreview'
 import DaisyUiPreview from './components/DaisyUiPreview'
 import ShadcnUiPreview from './components/ShadcnUiPreview'
 import EvergreenPreview from './components/EvergreenPreview'
 import GravityUiPreview from './components/GravityUiPreview'
 import BlueprintPreview from './components/BlueprintPreview'
-import { componentLibraries } from './constants/componentLibraries.js'
+
+import {
+  librariesByName,
+  previewImplementations,
+} from './constants/componentLibraries.js'
 
 const plannedForms = [
   'User registration / sign up',
@@ -99,71 +93,6 @@ function App() {
     (state) => state.toggleLibrarySelection
   )
 
-  const previewImplementations = useMemo(
-    () => ({
-      MUI: {
-        title: 'MUI previews',
-        description: 'MUI form implementations rendered when MUI is selected.',
-        components: muiFormComponents,
-      },
-      'Chakra UI': {
-        title: 'Chakra UI previews',
-        description:
-          'Chakra UI form implementations rendered when Chakra UI is selected.',
-        components: chakraUiFormComponents,
-      },
-      'React Bootstrap': {
-        title: 'React Bootstrap previews',
-        description:
-          'React Bootstrap form implementations rendered when React Bootstrap is selected.',
-        components: reactBootstrapFormComponents,
-      },
-      Evergreen: {
-        title: 'Evergreen previews',
-        description:
-          'Evergreen UI form implementations rendered when Evergreen is selected.',
-        components: evergreenFormComponents,
-      },
-      Blueprint: {
-        title: 'Blueprint previews',
-        description:
-          'Blueprint UI form implementations rendered when Blueprint is selected.',
-        components: blueprintFormComponents,
-      },
-      'React + No CSS': {
-        title: 'React + No CSS previews',
-        description:
-          'Plain HTML forms rendered when React + No CSS is selected.',
-        components: reactNoCssFormComponents,
-      },
-      'Radix UI': {
-        title: 'Radix UI previews',
-        description:
-          'Radix UI form implementations rendered when Radix UI is selected.',
-        components: radixUiFormComponents,
-      },
-      daisyUI: {
-        title: 'DaisyUI previews',
-        description:
-          'DaisyUI form implementations rendered when DaisyUI is selected.',
-        components: daisyUiFormComponents,
-      },
-      'shadcn/ui': {
-        title: 'shadcn/ui previews',
-        description:
-          'shadcn/ui form implementations rendered when shadcn/ui is selected.',
-        components: shadcnUiFormComponents,
-      },
-      'Gravity UI': {
-        title: 'Gravity UI previews',
-        description:
-          'Gravity UI form implementations rendered when Gravity UI is selected.',
-        components: gravityUiFormComponents,
-      },
-    }),
-    []
-  )
-
   const formItems = useMemo(
     () => plannedForms.map((form) => ({ value: form, label: form })),
     []
@@ -171,7 +100,7 @@ function App() {
 
   const componentLibraryItems = useMemo(
     () =>
-      componentLibraries.map((library) => ({
+      Object.values(librariesByName).map((library) => ({
         value: library.name,
         label: (
           <span>
@@ -201,89 +130,20 @@ function App() {
     []
   )
 
-  const selectedReactNoCssForms = useMemo(
-    () => selectedForms.filter((form) => reactNoCssFormComponents[form]),
+  const selectedFormsByLibrary = useMemo(
+    () =>
+      Object.entries(librariesByName).reduce((acc, [name, library]) => {
+        const components = library.implementation?.components
+        acc[name] = components
+          ? selectedForms.filter((form) => components[form])
+          : []
+        return acc
+      }, {}),
     [selectedForms]
   )
 
-  const reactNoCssSelected = selectedLibraries.includes('React + No CSS')
-
-  const selectedChakraUiForms = useMemo(
-    () => selectedForms.filter((form) => chakraUiFormComponents[form]),
-    [selectedForms]
-  )
-
-  const chakraUiSelected = selectedLibraries.includes('Chakra UI')
-
-  const selectedReactBootstrapForms = useMemo(
-    () => selectedForms.filter((form) => reactBootstrapFormComponents[form]),
-    [selectedForms]
-  )
-
-  const reactBootstrapSelected = selectedLibraries.includes('React Bootstrap')
-
-  const selectedMuiForms = useMemo(
-    () => selectedForms.filter((form) => muiFormComponents[form]),
-    [selectedForms]
-  )
-
-  const muiSelected = selectedLibraries.includes('MUI')
-
-  const selectedRadixUiForms = useMemo(
-    () => selectedForms.filter((form) => radixUiFormComponents[form]),
-    [selectedForms]
-  )
-
-  const radixUiSelected = selectedLibraries.includes('Radix UI')
-
-  const selectedDaisyUiForms = useMemo(
-    () => selectedForms.filter((form) => daisyUiFormComponents[form]),
-    [selectedForms]
-  )
-
-  const daisyUiSelected = selectedLibraries.includes('daisyUI')
-
-  const findLibrary = (directory) =>
-    componentLibraries.find((l) => l.directory === directory)
-
-  const muiLibrary = findLibrary('mui')
-  const chakraLibrary = findLibrary('chakra-ui')
-  const reactBootstrapLibrary = findLibrary('react-bootstrap')
-  const radixLibrary = findLibrary('radix-ui')
-  const daisyLibrary = findLibrary('daisyui')
-  const shadcnLibrary = findLibrary('shadcn-ui')
-  const evergreenLibrary = findLibrary('evergreen')
-  const gravityLibrary = findLibrary('gravity-ui')
-  const blueprintLibrary = findLibrary('blueprint')
-  const reactNoCssLibrary = findLibrary('react-no-css')
-
-  const selectedShadcnUiForms = useMemo(
-    () => selectedForms.filter((form) => shadcnUiFormComponents[form]),
-    [selectedForms]
-  )
-
-  const shadcnUiSelected = selectedLibraries.includes('shadcn/ui')
-
-  const selectedEvergreenForms = useMemo(
-    () => selectedForms.filter((form) => evergreenFormComponents[form]),
-    [selectedForms]
-  )
-
-  const evergreenSelected = selectedLibraries.includes('Evergreen')
-
-  const selectedBlueprintForms = useMemo(
-    () => selectedForms.filter((form) => blueprintFormComponents[form]),
-    [selectedForms]
-  )
-
-  const blueprintSelected = selectedLibraries.includes('Blueprint')
-
-  const selectedGravityUiForms = useMemo(
-    () => selectedForms.filter((form) => gravityUiFormComponents[form]),
-    [selectedForms]
-  )
-
-  const gravityUiSelected = selectedLibraries.includes('Gravity UI')
+  const isLibrarySelected = (libraryName) =>
+    selectedLibraries.includes(libraryName)
 
   return (
     <Layout>
@@ -366,74 +226,92 @@ function App() {
       {previewGroupBy === 'library' ? (
         <Suspense fallback={<div>Loading...</div>}>
           <MuiPreview
-            selectedForms={selectedMuiForms}
-            isLibrarySelected={muiSelected}
-            formComponents={muiFormComponents}
+            selectedForms={selectedFormsByLibrary['MUI']}
+            isLibrarySelected={isLibrarySelected('MUI')}
+            formComponents={librariesByName['MUI']?.implementation?.components}
             themeMode={themeMode}
-            libraryName={muiLibrary?.name}
+            libraryName={librariesByName['MUI']?.name}
           />
           <ChakraUiPreview
-            selectedForms={selectedChakraUiForms}
-            isLibrarySelected={chakraUiSelected}
-            formComponents={chakraUiFormComponents}
-            libraryName={chakraLibrary?.name}
+            selectedForms={selectedFormsByLibrary['Chakra UI']}
+            isLibrarySelected={isLibrarySelected('Chakra UI')}
+            formComponents={
+              librariesByName['Chakra UI']?.implementation?.components
+            }
+            libraryName={librariesByName['Chakra UI']?.name}
           />
           <ReactBootstrapPreview
-            selectedForms={selectedReactBootstrapForms}
-            isLibrarySelected={reactBootstrapSelected}
-            formComponents={reactBootstrapFormComponents}
-            libraryName={reactBootstrapLibrary?.name}
+            selectedForms={selectedFormsByLibrary['React Bootstrap']}
+            isLibrarySelected={isLibrarySelected('React Bootstrap')}
+            formComponents={
+              librariesByName['React Bootstrap']?.implementation?.components
+            }
+            libraryName={librariesByName['React Bootstrap']?.name}
           />
           <EvergreenPreview
-            selectedForms={selectedEvergreenForms}
-            isLibrarySelected={evergreenSelected}
-            formComponents={evergreenFormComponents}
-            libraryName={evergreenLibrary?.name}
+            selectedForms={selectedFormsByLibrary['Evergreen']}
+            isLibrarySelected={isLibrarySelected('Evergreen')}
+            formComponents={
+              librariesByName['Evergreen']?.implementation?.components
+            }
+            libraryName={librariesByName['Evergreen']?.name}
           />
           <BlueprintPreview
-            selectedForms={selectedBlueprintForms}
-            isLibrarySelected={blueprintSelected}
-            formComponents={blueprintFormComponents}
+            selectedForms={selectedFormsByLibrary['Blueprint']}
+            isLibrarySelected={isLibrarySelected('Blueprint')}
+            formComponents={
+              librariesByName['Blueprint']?.implementation?.components
+            }
             themeMode={themeMode}
-            libraryName={blueprintLibrary?.name}
+            libraryName={librariesByName['Blueprint']?.name}
           />
 
           <ReactNoCssPreview
-            selectedForms={selectedReactNoCssForms}
-            isLibrarySelected={reactNoCssSelected}
-            formComponents={reactNoCssFormComponents}
-            libraryName={reactNoCssLibrary?.name}
+            selectedForms={selectedFormsByLibrary['React + No CSS']}
+            isLibrarySelected={isLibrarySelected('React + No CSS')}
+            formComponents={
+              librariesByName['React + No CSS']?.implementation?.components
+            }
+            libraryName={librariesByName['React + No CSS']?.name}
             themeMode={themeMode}
           />
 
           <RadixUiPreview
-            selectedForms={selectedRadixUiForms}
-            isLibrarySelected={radixUiSelected}
-            formComponents={radixUiFormComponents}
+            selectedForms={selectedFormsByLibrary['Radix UI']}
+            isLibrarySelected={isLibrarySelected('Radix UI')}
+            formComponents={
+              librariesByName['Radix UI']?.implementation?.components
+            }
             themeMode={themeMode}
-            libraryName={radixLibrary?.name}
+            libraryName={librariesByName['Radix UI']?.name}
           />
 
           <DaisyUiPreview
-            selectedForms={selectedDaisyUiForms}
-            isLibrarySelected={daisyUiSelected}
-            formComponents={daisyUiFormComponents}
+            selectedForms={selectedFormsByLibrary['daisyUI']}
+            isLibrarySelected={isLibrarySelected('daisyUI')}
+            formComponents={
+              librariesByName['daisyUI']?.implementation?.components
+            }
             themeMode={themeMode}
-            libraryName={daisyLibrary?.name}
+            libraryName={librariesByName['daisyUI']?.name}
           />
 
           <ShadcnUiPreview
-            selectedForms={selectedShadcnUiForms}
-            isLibrarySelected={shadcnUiSelected}
-            formComponents={shadcnUiFormComponents}
-            libraryName={shadcnLibrary?.name}
+            selectedForms={selectedFormsByLibrary['shadcn/ui']}
+            isLibrarySelected={isLibrarySelected('shadcn/ui')}
+            formComponents={
+              librariesByName['shadcn/ui']?.implementation?.components
+            }
+            libraryName={librariesByName['shadcn/ui']?.name}
           />
           <GravityUiPreview
-            selectedForms={selectedGravityUiForms}
-            isLibrarySelected={gravityUiSelected}
-            formComponents={gravityUiFormComponents}
+            selectedForms={selectedFormsByLibrary['Gravity UI']}
+            isLibrarySelected={isLibrarySelected('Gravity UI')}
+            formComponents={
+              librariesByName['Gravity UI']?.implementation?.components
+            }
             themeMode={themeMode}
-            libraryName={gravityLibrary?.name}
+            libraryName={librariesByName['Gravity UI']?.name}
           />
         </Suspense>
       ) : (
