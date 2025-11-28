@@ -1,15 +1,12 @@
 // Inlined styles from styles.js
 const styles = {
   previewSection: { marginTop: '32px' },
-
   previewStrip: {
     display: 'flex',
     flexWrap: 'wrap',
     gap: '16px',
     padding: '6px 2px 12px',
   },
-
-  previewFormWrapper: { padding: '10px', display: 'block' },
 }
 import PreviewFormWrapper from './PreviewFormWrapper'
 import PreviewSectionHeader from './PreviewSectionHeader'

@@ -1,7 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 // Inlined styles from styles.js
 const styles = {
-  previewSection: { marginTop: '32px' },
+  previewSection: {
+    marginTop: '32px',
+    backgroundColor: '#111827',
+    color: '#f8fafc',
+    padding: '24px',
+    borderRadius: '12px',
+  },
 
   previewStrip: {
     display: 'flex',
@@ -9,9 +15,8 @@ const styles = {
     gap: '16px',
     padding: '6px 2px 12px',
   },
-
-  previewFormWrapper: { padding: '10px', display: 'block' },
 }
+import { LibraryThemeWrapper } from './LibraryThemeWrapper'
 import PreviewFormWrapper from './PreviewFormWrapper'
 import PreviewSectionHeader from './PreviewSectionHeader'
 import PreviewCard from './PreviewCard'
@@ -49,14 +54,16 @@ function ReactBootstrapPreview({
                 form={form}
                 library={libraryName}
               >
-                <PreviewFormWrapper
-                  formName={form}
-                  libraryName={libraryName}
-                  resetKey={`react-bootstrap-${form}`}
-                  themeMode={themeMode}
-                >
-                  <FormComponent />
-                </PreviewFormWrapper>
+                <LibraryThemeWrapper library={libraryName} themeMode={themeMode}>
+                  <PreviewFormWrapper
+                    formName={form}
+                    libraryName={libraryName}
+                    resetKey={`react-bootstrap-${form}`}
+                    themeMode={themeMode}
+                  >
+                    <FormComponent />
+                  </PreviewFormWrapper>
+                </LibraryThemeWrapper>
               </PreviewCard>
             )
           })}

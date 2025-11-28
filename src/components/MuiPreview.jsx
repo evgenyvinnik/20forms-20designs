@@ -8,13 +8,6 @@ const styles = {
     gap: '16px',
     padding: '6px 2px 12px',
   },
-
-  previewFormWrapper: {
-    padding: '10px',
-    display: 'block',
-    background: undefined, // will be set dynamically
-    color: undefined, // will be set dynamically
-  },
 }
 import { LibraryThemeWrapper } from './LibraryThemeWrapper'
 import PreviewFormWrapper from './PreviewFormWrapper'

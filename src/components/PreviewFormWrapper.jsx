@@ -13,11 +13,9 @@ function PreviewFormWrapper({
   const previewFormWrapperStyle = {
     padding: '10px',
     display: 'block',
-    background: themeMode === 'dark' ? '#23272f' : '#fff',
-    color: themeMode === 'dark' ? '#f1f3f8' : '#23272f',
+    borderRadius: '10px',
+     border: '1px solid red',
   }
-
-  const Wrapper = wrapper || React.Fragment
 
   return (
     <div style={previewFormWrapperStyle}>
@@ -26,7 +24,7 @@ function PreviewFormWrapper({
         libraryName={libraryName}
         resetKey={resetKey}
       >
-        <Wrapper>{children}</Wrapper>
+        {children}
       </FormErrorBoundary>
     </div>
   )

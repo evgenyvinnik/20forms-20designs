@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { createTheme, ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
+import ScopedCssBaseline from '@mui/material/ScopedCssBaseline'
 import { Theme as RadixTheme } from '@radix-ui/themes'
 import { GravityUiWrapper } from '@/component-libraries/gravity-ui/GravityUiWrapper'
 
@@ -27,7 +28,11 @@ const MuiThemeWrapper = ({ themeMode, children }) => {
     [appearance]
   )
 
-  return <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
+  return (
+    <MuiThemeProvider theme={theme}>
+      <ScopedCssBaseline enableColorScheme>{children}</ScopedCssBaseline>
+    </MuiThemeProvider>
+  )
 }
 
 const gravityWrapper = ({ themeMode, children }) => (
@@ -35,8 +40,14 @@ const gravityWrapper = ({ themeMode, children }) => (
 )
 
 const BlueprintThemeWrapper = ({ themeMode, children }) => {
-  if (themeMode !== 'dark') return children
-  return <div className="bp5-dark">{children}</div>
+  const className =
+    themeMode === 'dark' ? 'bp5-body bp5-dark' : 'bp5-body'
+  return <div className={className}>{children}</div>
+}
+
+const ReactBootstrapThemeWrapper = ({ themeMode, children }) => {
+  const appearance = themeMode === 'dark' ? 'dark' : 'light'
+  return <div data-bs-theme={appearance}>{children}</div>
 }
 
 const wrappers = {
@@ -45,6 +56,7 @@ const wrappers = {
   daisyUI: DaisyUiThemeWrapper,
   'Gravity UI': gravityWrapper,
   Blueprint: BlueprintThemeWrapper,
+  'React Bootstrap': ReactBootstrapThemeWrapper,
 }
 
 function LibraryThemeWrapper({ library, themeMode = 'light', children }) {

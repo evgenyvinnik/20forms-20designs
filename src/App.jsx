@@ -102,14 +102,16 @@ function App() {
         value: library.name,
         label: (
           <span>
+            {library.name} (
             <a
               href={library.website}
               target="_blank"
               rel="noreferrer"
               onClick={(e) => e.stopPropagation()}
             >
-              {library.name}
+              website
             </a>
+            {' / '}
             <a
               href={library.repo}
               target="_blank"
@@ -118,6 +120,7 @@ function App() {
             >
               repo
             </a>
+            )
           </span>
         ),
         disabled: !library.implemented,
@@ -234,6 +237,7 @@ function App() {
             formComponents={
               librariesByName['React Bootstrap']?.implementation?.components
             }
+            themeMode={themeMode}
             libraryName={librariesByName['React Bootstrap']?.name}
           />
           <EvergreenPreview

@@ -1,8 +1,6 @@
 const layoutStyles = {
   page: {
     padding: '24px',
-    fontFamily:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
     color: '#1f2933',
   },
   header: {

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useAppStore } from '@/store'
 
 const styles = {
   previewCard: {
