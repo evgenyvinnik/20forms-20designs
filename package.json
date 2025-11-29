@@ -1,7 +1,7 @@
 {
   "name": "20forms-20designs",
   "private": true,
-  "version": "2.0.0",
+  "version": "1.0.251129.31",
   "type": "module",
   "workspaces": [
     "apps/*",
