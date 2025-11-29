@@ -1,215 +1,12 @@
-import { useState, useMemo, useEffect, useRef } from 'react'
-import { LIBRARIES, FORMS, buildIframeSrc } from './config'
-import { useAppStore, ThemeMode } from './store'
+import { useMemo } from 'react'
+import { LIBRARIES, FORMS } from './config'
+import { useAppStore } from './store'
+import { SelectionColumn } from './components/SelectionColumn'
+import { PreviewSection } from './components/PreviewSection'
+import { PreviewToggleRow } from './components/PreviewToggleRow'
+import { ThemeToggleRow } from './components/ThemeToggleRow'
+import { Header } from './components/Header'
 import './styles.css'
-
-// Simple checkbox row component
-function CheckboxRow({
-  label,
-  checked,
-  onChange,
-  disabled = false,
-}: {
-  label: React.ReactNode
-  checked: boolean
-  onChange: () => void
-  disabled?: boolean
-}) {
-  if (disabled) {
-    return (
-      <div className="checkbox-row disabled">
-        <span>{label}</span>
-      </div>
-    )
-  }
-
-  return (
-    <label className="checkbox-row">
-      <input type="checkbox" checked={checked} onChange={onChange} />
-      <span>{label}</span>
-    </label>
-  )
-}
-
-// Selection column component
-function SelectionColumn({
-  title,
-  items,
-  selectedItems,
-  onToggleItem,
-  onSelectAll,
-  onSelectNone,
-  twoColumnLayout = false,
-}: {
-  title: string
-  items: { value: string; label: React.ReactNode; disabled?: boolean }[]
-  selectedItems: string[]
-  onToggleItem: (value: string) => void
-  onSelectAll: () => void
-  onSelectNone: () => void
-  twoColumnLayout?: boolean
-}) {
-  const selectableItems = items.filter((item) => !item.disabled)
-  const allSelected =
-    selectableItems.length > 0 &&
-    selectableItems.every((item) => selectedItems.includes(item.value))
-  const noneSelected = selectableItems.every(
-    (item) => !selectedItems.includes(item.value)
-  )
-  const listClassName = twoColumnLayout
-    ? 'two-column-list'
-    : 'single-column-list'
-
-  return (
-    <section>
-      <div className="section-header">
-        <h2 className="section-title">{title}</h2>
-      </div>
-      <div className="selection-actions">
-        <CheckboxRow
-          label="Select all"
-          checked={allSelected}
-          onChange={onSelectAll}
-        />
-        <CheckboxRow
-          label="Select none"
-          checked={noneSelected}
-          onChange={onSelectNone}
-        />
-      </div>
-      <div className={listClassName}>
-        {items.map((item) => (
-          <CheckboxRow
-            key={item.value}
-            label={item.label}
-            checked={selectedItems.includes(item.value)}
-            onChange={() => onToggleItem(item.value)}
-            disabled={item.disabled}
-          />
-        ))}
-      </div>
-    </section>
-  )
-}
-
-// Preview card with iframe (auto-loads immediately)
-function PreviewCard({
-  libraryName,
-  formName,
-  theme,
-  supportsTheme,
-}: {
-  libraryName: string
-  formName: string
-  theme: ThemeMode
-  supportsTheme: boolean
-}) {
-  const [iframeHeight, setIframeHeight] = useState(500)
-  const iframeRef = useRef<HTMLIFrameElement>(null)
-  const iframeSrc = buildIframeSrc(libraryName, formName, theme)
-
-  // Listen for height messages from iframe
-  useEffect(() => {
-    const handleMessage = (event: MessageEvent) => {
-      if (event.data?.type === 'IFRAME_HEIGHT') {
-        // Check if this message is from our iframe
-        if (
-          iframeRef.current &&
-          event.source === iframeRef.current.contentWindow
-        ) {
-          const height = event.data.height
-          // Only accept reasonable heights (between 100 and 1200px)
-          if (height > 100 && height < 1200) {
-            setIframeHeight(height + 20) // Add some padding
-          }
-        }
-      }
-    }
-
-    window.addEventListener('message', handleMessage)
-    return () => window.removeEventListener('message', handleMessage)
-  }, [])
-
-  // Send theme updates to iframe when theme changes
-  useEffect(() => {
-    if (iframeRef.current?.contentWindow) {
-      iframeRef.current.contentWindow.postMessage(
-        { type: 'SET_THEME', theme },
-        '*'
-      )
-    }
-  }, [theme])
-
-  if (!iframeSrc) {
-    return null
-  }
-
-  // Handle iframe load and resize to fit content (fallback for same-origin)
-  const handleIframeLoad = (e: React.SyntheticEvent<HTMLIFrameElement>) => {
-    try {
-      const iframe = e.currentTarget
-      const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document
-      if (iframeDoc) {
-        const height = iframeDoc.body.scrollHeight
-        // Only accept reasonable heights (between 100 and 1200px)
-        if (height > 100 && height < 1200) {
-          setIframeHeight(height + 20)
-        }
-      }
-    } catch {
-      // Cross-origin restrictions - rely on postMessage instead
-    }
-
-    // Send theme to iframe when it loads
-    if (iframeRef.current?.contentWindow) {
-      iframeRef.current.contentWindow.postMessage(
-        { type: 'SET_THEME', theme },
-        '*'
-      )
-    }
-  }
-
-  return (
-    <div className="preview-card">
-      <div className="preview-card-header">
-        <strong>{formName}</strong> {libraryName}
-        {!supportsTheme && theme === 'dark' && (
-          <span
-            className="no-dark-theme-badge"
-            title="This library does not support dark theme"
-          >
-            ⚠️ Light only
-          </span>
-        )}
-      </div>
-      <iframe
-        ref={iframeRef}
-        title={`${libraryName}-${formName}`}
-        src={iframeSrc}
-        className="preview-iframe"
-        style={{ height: `${iframeHeight}px` }}
-        sandbox="allow-scripts allow-forms allow-same-origin"
-        onLoad={handleIframeLoad}
-      />
-    </div>
-  )
-}
-
-// Preview section header
-function PreviewSectionHeader({
-  title,
-  description,
-}: {
-  title: string
-  description?: string
-}) {
-  return (
-    <div className="section-header-row">
-      <h3>{title}</h3>
-      {description && <p>{description}</p>}
-    </div>
-  )
-}
 
 function App() {
   // Get state and actions from Zustand store
@@ -284,14 +81,7 @@ function App() {
 
   return (
     <div className="page">
-      <header className="header">
-        <h1 className="title">20 Forms, 20 Designs</h1>
-        <p className="subtitle">
-          Choose a form and a component library to see the pairing. Each preview
-          is rendered in an isolated iframe for complete CSS isolation between
-          libraries.
-        </p>
-      </header>
+      <Header />
 
       <main>
         <div className="selector-row">
@@ -314,78 +104,24 @@ function App() {
           />
         </div>
 
-        <div className="theme-toggle-row">
-          <span className="toggle-label">Theme:</span>
-          <label className="radio-row">
-            <input
-              type="radio"
-              name="preview-theme"
-              value="light"
-              checked={themeMode === 'light'}
-              onChange={() => setThemeMode('light')}
-            />
-            <span>Light theme</span>
-          </label>
-          <label className="radio-row">
-            <input
-              type="radio"
-              name="preview-theme"
-              value="dark"
-              checked={themeMode === 'dark'}
-              onChange={() => setThemeMode('dark')}
-            />
-            <span>Dark theme</span>
-          </label>
-        </div>
+        <ThemeToggleRow themeMode={themeMode} setThemeMode={setThemeMode} />
 
-        <div className="preview-toggle-row">
-          <span className="toggle-label">Group previews by:</span>
-          <label className="radio-row">
-            <input
-              type="radio"
-              name="preview-group-by"
-              value="library"
-              checked={groupBy === 'library'}
-              onChange={() => setGroupBy('library')}
-            />
-            <span>Design system</span>
-          </label>
-          <label className="radio-row">
-            <input
-              type="radio"
-              name="preview-group-by"
-              value="form"
-              checked={groupBy === 'form'}
-              onChange={() => setGroupBy('form')}
-            />
-            <span>Form name</span>
-          </label>
-        </div>
+        <PreviewToggleRow groupBy={groupBy} setGroupBy={setGroupBy} />
 
         {/* Previews grouped by library */}
         {groupBy === 'library' &&
           activeLibraries.map((lib) => {
-            const formsForLibrary = activeForms
-            if (formsForLibrary.length === 0) return null
+            if (activeForms.length === 0) return null
 
             return (
-              <section key={lib.name} className="preview-section">
-                <PreviewSectionHeader
-                  title={`${lib.name} previews`}
-                  description={`${lib.name} form implementations.`}
-                />
-                <div className="preview-strip">
-                  {formsForLibrary.map((form) => (
-                    <PreviewCard
-                      key={`${lib.name}-${form}`}
-                      libraryName={lib.name}
-                      formName={form}
-                      theme={themeMode}
-                      supportsTheme={lib.supportsTheme}
-                    />
-                  ))}
-                </div>
-              </section>
+              <PreviewSection
+                key={lib.name}
+                title={`${lib.name} previews`}
+                description={`${lib.name} form implementations.`}
+                forms={activeForms}
+                libraries={[lib]}
+                theme={themeMode}
+              />
             )
           })}
 
@@ -395,23 +131,14 @@ function App() {
             if (activeLibraries.length === 0) return null
 
             return (
-              <section key={form} className="preview-section">
-                <PreviewSectionHeader
-                  title={form}
-                  description={`Compare this form across different design systems.`}
-                />
-                <div className="preview-strip">
-                  {activeLibraries.map((lib) => (
-                    <PreviewCard
-                      key={`${lib.name}-${form}`}
-                      libraryName={lib.name}
-                      formName={form}
-                      theme={themeMode}
-                      supportsTheme={lib.supportsTheme}
-                    />
-                  ))}
-                </div>
-              </section>
+              <PreviewSection
+                key={form}
+                title={form}
+                description={`Compare this form across different design systems.`}
+                forms={[form]}
+                libraries={activeLibraries}
+                theme={themeMode}
+              />
             )
           })}
 
