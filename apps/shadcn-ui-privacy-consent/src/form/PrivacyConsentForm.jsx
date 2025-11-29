@@ -56,7 +56,10 @@ function PrivacyConsentForm() {
           </Label>
         </div>
         <div className="flex items-center space-x-2">
-          <Checkbox id="shadcn-privacy-personalization" name="personalization" />
+          <Checkbox
+            id="shadcn-privacy-personalization"
+            name="personalization"
+          />
           <Label
             htmlFor="shadcn-privacy-personalization"
             className="text-sm font-normal"

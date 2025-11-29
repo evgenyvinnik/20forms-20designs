@@ -31,12 +31,7 @@ function ProfileUpdateForm() {
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-profile-email">Email address</Label>
-        <Input
-          id="shadcn-profile-email"
-          name="email"
-          type="email"
-          required
-        />
+        <Input id="shadcn-profile-email" name="email" type="email" required />
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-profile-phone">Phone number</Label>
@@ -51,12 +46,7 @@ function ProfileUpdateForm() {
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-profile-bio">Short bio</Label>
-        <Textarea
-          id="shadcn-profile-bio"
-          name="bio"
-          rows="3"
-          required
-        />
+        <Textarea id="shadcn-profile-bio" name="bio" rows="3" required />
       </div>
       <Button type="submit">Save changes</Button>
     </form>

@@ -15,21 +15,11 @@ function ContactInquiryForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
         <Label htmlFor="shadcn-contact-name">Full name</Label>
-        <Input
-          id="shadcn-contact-name"
-          name="fullName"
-          type="text"
-          required
-        />
+        <Input id="shadcn-contact-name" name="fullName" type="text" required />
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-contact-email">Email address</Label>
-        <Input
-          id="shadcn-contact-email"
-          name="email"
-          type="email"
-          required
-        />
+        <Input id="shadcn-contact-email" name="email" type="email" required />
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-contact-topic">Topic</Label>
@@ -52,10 +42,7 @@ function ContactInquiryForm() {
       </div>
       <div className="flex items-center space-x-2">
         <Checkbox id="shadcn-contact-consent" name="consent" />
-        <Label
-          htmlFor="shadcn-contact-consent"
-          className="text-sm font-normal"
-        >
+        <Label htmlFor="shadcn-contact-consent" className="text-sm font-normal">
           Allow follow-up communication
         </Label>
       </div>
