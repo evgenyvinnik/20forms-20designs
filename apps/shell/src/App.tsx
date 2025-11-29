@@ -237,6 +237,16 @@ function PreviewCard({
     return () => window.removeEventListener('message', handleMessage)
   }, [])
 
+  // Send theme updates to iframe when theme changes
+  useEffect(() => {
+    if (iframeRef.current?.contentWindow) {
+      iframeRef.current.contentWindow.postMessage(
+        { type: 'SET_THEME', theme },
+        '*'
+      )
+    }
+  }, [theme])
+
   if (!iframeSrc) {
     return null
   }
@@ -255,6 +265,14 @@ function PreviewCard({
       }
     } catch {
       // Cross-origin restrictions - rely on postMessage instead
+    }
+    
+    // Send theme to iframe when it loads
+    if (iframeRef.current?.contentWindow) {
+      iframeRef.current.contentWindow.postMessage(
+        { type: 'SET_THEME', theme },
+        '*'
+      )
     }
   }
 
