@@ -172,7 +172,7 @@ function PreviewCard({
   return (
     <div className="preview-card">
       <div className="preview-card-header">
-        <strong>{formName}</strong> — {libraryName}
+        <strong>{formName}</strong> {libraryName}
         {!supportsTheme && theme === 'dark' && (
           <span
             className="no-dark-theme-badge"
