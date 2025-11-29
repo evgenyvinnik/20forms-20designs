@@ -40,6 +40,47 @@ This project uses a **monorepo + iframe architecture** for complete CSS isolatio
     └── component-libraries/      # Original form implementations
 ```
 
+### Why 160 Separate Mini-Apps?
+
+You might wonder: *why build 160 separate applications instead of one unified app?* The answer comes down to **CSS isolation** — the core technical challenge of this project.
+
+**The Problem with a Single SPA:**
+
+When multiple design systems coexist in one application, their styles inevitably conflict:
+- MUI's CSS baseline overrides Chakra's default styles
+- Tailwind's preflight resets Blueprint's component styling
+- Global resets from one library break layouts in another
+
+We initially attempted a single-SPA approach and encountered exactly these issues — forms looked broken, buttons had wrong colors, and spacing was inconsistent across libraries.
+
+**The Iframe Solution:**
+
+Each `<iframe>` creates a completely isolated browsing context with its own:
+- `<head>` element and stylesheets
+- CSS cascade and specificity rules
+- JavaScript runtime
+
+This means MUI's `CssBaseline`, Tailwind's preflight, and Chakra's global styles all live in separate worlds — they literally cannot interfere with each other.
+
+**Why Not Shadow DOM or CSS Modules?**
+
+- **Shadow DOM**: Doesn't fully isolate CSS custom properties, and many design systems rely on global providers/contexts that don't work well across shadow boundaries
+- **CSS Modules / Scoped CSS**: Only scopes class names, not global resets, CSS variables, or inherited styles that design systems heavily depend on
+- **CSS-in-JS runtime isolation**: Complex to implement across different CSS-in-JS solutions (Emotion, styled-components, Stitches, etc.)
+
+**The Trade-off:**
+
+Yes, building 160 separate apps means:
+- Longer build times (~2-3 minutes for full build)
+- Duplicated React/library bundles across apps
+- More complex deployment orchestration
+
+But it guarantees:
+- **Zero CSS bleed** between any two design systems
+- **True visual fidelity** — each form looks exactly as it would in a real project using that library
+- **Independent theming** — light/dark mode works correctly per-library without conflicts
+- **Flexible comparison** — users can view any combination of forms and libraries side-by-side
+
 ## 📋 Forms Implemented
 
 1. User registration / sign up
