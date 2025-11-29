@@ -13,6 +13,7 @@ export const componentLibraries = [
     website: 'https://mui.com',
     repo: 'https://github.com/mui/material-ui',
     implemented: true,
+    supportsDarkTheme: true,
   },
   {
     name: 'Chakra UI',
@@ -41,6 +42,7 @@ export const componentLibraries = [
     website: 'https://react-bootstrap.github.io',
     repo: 'https://github.com/react-bootstrap/react-bootstrap',
     implemented: true,
+    supportsDarkTheme: true,
   },
   {
     name: 'Semantic UI React',
@@ -55,6 +57,7 @@ export const componentLibraries = [
     website: 'https://evergreen.segment.com',
     repo: 'https://github.com/segmentio/evergreen',
     implemented: true,
+    supportsDarkTheme: false,
   },
   {
     name: 'Blueprint',
@@ -62,6 +65,7 @@ export const componentLibraries = [
     website: 'https://blueprintjs.com',
     repo: 'https://github.com/palantir/blueprint',
     implemented: true,
+    supportsDarkTheme: true,
   },
   {
     name: 'Grommet',
@@ -118,6 +122,7 @@ export const componentLibraries = [
     website: 'https://gravity-ui.com',
     repo: 'https://github.com/gravity-ui/uikit',
     implemented: true,
+    supportsDarkTheme: true,
   },
   {
     name: 'Geist UI',
@@ -139,6 +144,7 @@ export const componentLibraries = [
     website: 'https://www.radix-ui.com',
     repo: 'https://github.com/radix-ui/primitives',
     implemented: true,
+    supportsDarkTheme: true,
   },
   {
     name: 'Headless UI',
@@ -335,6 +341,7 @@ export const componentLibraries = [
     website: 'https://react.dev',
     repo: 'https://github.com/facebook/react',
     implemented: true,
+    supportsDarkTheme: true,
   },
   {
     name: 'Flowbite React',

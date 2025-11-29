@@ -40,14 +40,28 @@ const gravityWrapper = ({ themeMode, children }) => (
 )
 
 const BlueprintThemeWrapper = ({ themeMode, children }) => {
-  const className =
-    themeMode === 'dark' ? 'bp5-body bp5-dark' : 'bp5-body'
-  return <div className={className}>{children}</div>
+  const isDark = themeMode === 'dark'
+  const className = isDark ? 'bp5-body bp5-dark' : 'bp5-body'
+  const style = {
+    backgroundColor: isDark ? '#252a31' : '#ffffff',
+    borderRadius: '8px',
+    padding: '4px',
+  }
+  return (
+    <div className={className} style={style}>
+      {children}
+    </div>
+  )
 }
 
 const ReactBootstrapThemeWrapper = ({ themeMode, children }) => {
   const appearance = themeMode === 'dark' ? 'dark' : 'light'
-  return <div data-bs-theme={appearance}>{children}</div>
+  // bg-body class uses Bootstrap's --bs-body-bg which adapts to the theme
+  return (
+    <div data-bs-theme={appearance} className="bg-body" style={{ borderRadius: '8px', padding: '4px' }}>
+      {children}
+    </div>
+  )
 }
 
 const wrappers = {

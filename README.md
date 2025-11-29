@@ -71,7 +71,7 @@ This project uses a **monorepo + iframe architecture** for complete CSS isolatio
 |---------|---------------|------------|
 | [Blueprint](https://blueprintjs.com/) | ✅ Light/Dark | [GitHub](https://github.com/palantir/blueprint) |
 | [Cloudscape](https://cloudscape.design/) | ✅ Light/Dark | [GitHub](https://github.com/cloudscape-design/components) |
-| [Evergreen](https://evergreen.segment.com/) | ✅ Light/Dark | [GitHub](https://github.com/segmentio/evergreen) |
+| [Evergreen](https://evergreen.segment.com/) | ⚠️ Light only | [GitHub](https://github.com/segmentio/evergreen) |
 | [Gravity UI](https://gravity-ui.com/) | ✅ Light/Dark | [GitHub](https://github.com/gravity-ui/uikit) |
 | [MUI](https://mui.com/) | ✅ Light/Dark | [GitHub](https://github.com/mui/material-ui) |
 | [Radix UI](https://www.radix-ui.com/) | ✅ Light/Dark | [GitHub](https://github.com/radix-ui/primitives) |
