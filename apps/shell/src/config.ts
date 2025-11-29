@@ -13,6 +13,8 @@ export type LibraryId =
   | 'gestalt'
   | 'polaris'
   | 'chakra'
+  | 'elastic-ui'
+  | 'nextui'
 
 // Form ID for iframe URLs
 export type FormId =
@@ -67,6 +69,8 @@ export const LIBRARY_NAME_TO_ID: Record<string, LibraryId | undefined> = {
   'Pinterest Gestalt': 'gestalt',
   'Shopify Polaris': 'polaris',
   'Chakra UI': 'chakra',
+  'Elastic UI (EUI)': 'elastic-ui',
+  NextUI: 'nextui',
 }
 
 // Map from form name to form ID (for iframe URLs)
@@ -236,8 +240,8 @@ export const LIBRARIES: Library[] = [
     directory: 'nextui',
     website: 'https://nextui.org',
     repo: 'https://github.com/nextui-org/nextui',
-    implemented: false,
-    supportsTheme: false,
+    implemented: true,
+    supportsTheme: true,
   },
   {
     name: 'Gravity UI',
@@ -316,8 +320,8 @@ export const LIBRARIES: Library[] = [
     directory: 'elastic-ui',
     website: 'https://eui.elastic.co',
     repo: 'https://github.com/elastic/eui',
-    implemented: false,
-    supportsTheme: false,
+    implemented: true,
+    supportsTheme: true,
   },
   {
     name: 'Zendesk Garden',
@@ -448,10 +452,10 @@ export const LIBRARIES: Library[] = [
     supportsTheme: false,
   },
   {
-    name: 'Shoelace',
-    directory: 'shoelace',
-    website: 'https://shoelace.style',
-    repo: 'https://github.com/shoelace-style/shoelace',
+    name: 'Web Awesome',
+    directory: 'web-awesome',
+    website: 'https://webawesome.com',
+    repo: 'https://github.com/shoelace-style/webawesome',
     implemented: false,
     supportsTheme: false,
   },
@@ -516,6 +520,30 @@ export const LIBRARIES: Library[] = [
     directory: 'tamagui',
     website: 'https://tamagui.dev',
     repo: 'https://github.com/tamagui/tamagui',
+    implemented: false,
+    supportsTheme: false,
+  },
+  {
+    name: 'CoreUI',
+    directory: 'coreui',
+    website: 'https://coreui.io/react',
+    repo: 'https://github.com/coreui/coreui-react',
+    implemented: false,
+    supportsTheme: false,
+  },
+  {
+    name: 'Gluestack UI',
+    directory: 'gluestack-ui',
+    website: 'https://gluestack.io/ui/docs',
+    repo: 'https://github.com/gluestack/gluestack-ui',
+    implemented: false,
+    supportsTheme: false,
+  },
+  {
+    name: 'Theme UI',
+    directory: 'theme-ui',
+    website: 'https://theme-ui.com',
+    repo: 'https://github.com/system-ui/theme-ui',
     implemented: false,
     supportsTheme: false,
   },

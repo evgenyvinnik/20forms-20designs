@@ -111,15 +111,20 @@ But it guarantees:
 | Library                                                 | Theme Support | Repository                                                   |
 | ------------------------------------------------------- | ------------- | ------------------------------------------------------------ |
 | [Blueprint](https://blueprintjs.com/)                   | ✅ Light/Dark | [GitHub](https://github.com/palantir/blueprint)              |
+| [Chakra UI](https://chakra-ui.com/)                     | ✅ Light/Dark | [GitHub](https://github.com/chakra-ui/chakra-ui)             |
 | [Cloudscape](https://cloudscape.design/)                | ✅ Light/Dark | [GitHub](https://github.com/cloudscape-design/components)    |
 | [daisyUI](https://daisyui.com/)                         | ✅ Light/Dark | [GitHub](https://github.com/saadeghi/daisyui)                |
+| [Elastic UI (EUI)](https://eui.elastic.co/)             | ✅ Light/Dark | [GitHub](https://github.com/elastic/eui)                     |
 | [Evergreen](https://evergreen.segment.com/)             | ⚠️ Light only | [GitHub](https://github.com/segmentio/evergreen)             |
 | [Gravity UI](https://gravity-ui.com/)                   | ✅ Light/Dark | [GitHub](https://github.com/gravity-ui/uikit)                |
 | [MUI](https://mui.com/)                                 | ✅ Light/Dark | [GitHub](https://github.com/mui/material-ui)                 |
+| [NextUI](https://nextui.org/)                           | ✅ Light/Dark | [GitHub](https://github.com/nextui-org/nextui)               |
+| [Pinterest Gestalt](https://gestalt.pinterest.systems/) | ✅ Light/Dark | [GitHub](https://github.com/pinterest/gestalt)               |
 | [Radix UI](https://www.radix-ui.com/)                   | ✅ Light/Dark | [GitHub](https://github.com/radix-ui/primitives)             |
 | [React Bootstrap](https://react-bootstrap.netlify.app/) | ✅ Light/Dark | [GitHub](https://github.com/react-bootstrap/react-bootstrap) |
 | [React (No CSS)](https://react.dev/)                    | ✅ Light/Dark | [GitHub](https://github.com/facebook/react)                  |
 | [shadcn/ui](https://ui.shadcn.com/)                     | ✅ Light/Dark | [GitHub](https://github.com/shadcn-ui/ui)                    |
+| [Shopify Polaris](https://polaris.shopify.com/)         | ✅ Light/Dark | [GitHub](https://github.com/Shopify/polaris)                 |
 
 ### 📋 Planned Libraries
 
@@ -132,9 +137,7 @@ But it guarantees:
 | [Base Web](https://baseweb.design/)                                                  | [GitHub](https://github.com/uber/baseweb)                          |
 | [Braid Design System](https://seek-oss.github.io/braid-design-system/)               | [GitHub](https://github.com/seek-oss/braid-design-system)          |
 | [Carbon Design System](https://carbondesignsystem.com/)                              | [GitHub](https://github.com/carbon-design-system/carbon)           |
-| [Chakra UI](https://chakra-ui.com/)                                                  | [GitHub](https://github.com/chakra-ui/chakra-ui)                   |
 | [CoreUI](https://coreui.io/react/)                                                   | [GitHub](https://github.com/coreui/coreui-react)                   |
-| [Elastic UI (EUI)](https://eui.elastic.co/)                                          | [GitHub](https://github.com/elastic/eui)                           |
 | [Flowbite React](https://flowbite-react.com/)                                        | [GitHub](https://github.com/themesberg/flowbite-react)             |
 | [Fluent UI](https://developer.microsoft.com/en-us/fluentui)                          | [GitHub](https://github.com/microsoft/fluentui)                    |
 | [Geist UI](https://geist-ui.dev/)                                                    | [GitHub](https://github.com/geist-org/geist-ui)                    |
@@ -145,10 +148,8 @@ But it guarantees:
 | [KendoReact](https://www.telerik.com/kendo-react-ui/)                                | [GitHub](https://github.com/telerik/kendo-react)                   |
 | [Mantine](https://mantine.dev/)                                                      | [GitHub](https://github.com/mantinedev/mantine)                    |
 | [Material Tailwind](https://www.material-tailwind.com/)                              | [GitHub](https://github.com/creativetimofficial/material-tailwind) |
-| [NextUI](https://nextui.org/)                                                        | [GitHub](https://github.com/nextui-org/nextui)                     |
 | [Orbit by Kiwi.com](https://orbit.kiwi/)                                             | [GitHub](https://github.com/kiwicom/orbit-components)              |
 | [PatternFly](https://www.patternfly.org/)                                            | [GitHub](https://github.com/patternfly/patternfly-react)           |
-| [Pinterest Gestalt](https://gestalt.pinterest.systems/)                              | [GitHub](https://github.com/pinterest/gestalt)                     |
 | [Primer React](https://primer.style/react/)                                          | [GitHub](https://github.com/primer/react)                          |
 | [PrimeReact](https://primereact.org/)                                                | [GitHub](https://github.com/primefaces/primereact)                 |
 | [React Spectrum](https://react-spectrum.adobe.com/)                                  | [GitHub](https://github.com/adobe/react-spectrum)                  |
@@ -156,12 +157,11 @@ But it guarantees:
 | [Salesforce Lightning Design System React](https://design-system-react-site.herokuapp.com/) | [GitHub](https://github.com/salesforce/design-system-react)        |
 | [Semantic UI React](https://react.semantic-ui.com/)                                  | [GitHub](https://github.com/Semantic-Org/Semantic-UI-React)        |
 | [Semi Design](https://semi.design/)                                                  | [GitHub](https://github.com/DouyinFE/semi-design)                  |
-| [Web Awesome](https://webawesome.com/)                                                  | [GitHub](https://github.com/shoelace-style/webawesome)               |
-| [Shopify Polaris](https://polaris.shopify.com/)                                      | [GitHub](https://github.com/Shopify/polaris)                       |
 | [Tamagui](https://tamagui.dev/)                                                      | [GitHub](https://github.com/tamagui/tamagui)                       |
 | [Theme UI](https://theme-ui.com/)                                                    | [GitHub](https://github.com/system-ui/theme-ui)                    |
 | [U.S. Web Design System](https://designsystem.digital.gov/)                          | [GitHub](https://github.com/uswds/uswds)                           |
 | [VMware Clarity](https://clarity.design/)                                            | [GitHub](https://github.com/vmware/clarity)                        |
+| [Web Awesome](https://webawesome.com/)                                               | [GitHub](https://github.com/shoelace-style/webawesome)             |
 | [Zendesk Garden](https://garden.zendesk.com/)                                        | [GitHub](https://github.com/zendeskgarden/react-components)        |
 
 ## 🚀 Getting Started
