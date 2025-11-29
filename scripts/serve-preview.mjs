@@ -17,7 +17,9 @@ const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 const DIST_DIR = path.join(ROOT_DIR, 'dist');
 
-const PORT = process.env.PORT || 5000;
+// Try these ports in order if one is in use
+const PORTS_TO_TRY = [3000, 3001, 3002, 4000, 4001, 5001, 8000, 8080];
+const PORT = process.env.PORT ? parseInt(process.env.PORT) : null;
 const BASE_PATH = '/20forms-20designs';
 
 // MIME types
@@ -87,14 +89,40 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`
+// Try to start server on available port
+function startServer(port) {
+  server.listen(port, () => {
+    console.log(`
 🚀 Preview server running!
 
-   Local:   http://localhost:${PORT}${BASE_PATH}/
+   Local:   http://localhost:${port}${BASE_PATH}/
 
    This serves the production build with the correct base path.
    Press Ctrl+C to stop.
 `);
+  });
+}
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE' && !PORT) {
+    const currentIndex = PORTS_TO_TRY.indexOf(server.currentPort);
+    if (currentIndex < PORTS_TO_TRY.length - 1) {
+      const nextPort = PORTS_TO_TRY[currentIndex + 1];
+      console.log(`Port ${server.currentPort} in use, trying ${nextPort}...`);
+      server.currentPort = nextPort;
+      server.listen(nextPort);
+    } else {
+      console.error('All ports are in use. Please specify a port with PORT=XXXX npm run preview');
+      process.exit(1);
+    }
+  } else {
+    console.error('Server error:', err.message);
+    process.exit(1);
+  }
 });
+
+// Start with specified port or first in list
+const initialPort = PORT || PORTS_TO_TRY[0];
+server.currentPort = initialPort;
+startServer(initialPort);
 
