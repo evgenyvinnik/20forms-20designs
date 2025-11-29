@@ -243,17 +243,6 @@ Each mini-app is a standalone Vite + React application that:
 | `npm run dev:shell`         | Run shell app in development mode                 |
 | `npm run preview`           | Preview the production build locally              |
 | `npm run lint`              | Lint all apps (may take a while)                  |
-| `npm run lint:shell`        | Lint only the shell app                           |
-| `npm run lint:mui`          | Lint only MUI apps                                |
-| `npm run lint:react-bootstrap` | Lint only React Bootstrap apps                 |
-| `npm run lint:evergreen`    | Lint only Evergreen apps                          |
-| `npm run lint:blueprint`    | Lint only Blueprint apps                          |
-| `npm run lint:radix-ui`     | Lint only Radix UI apps                           |
-| `npm run lint:gravity-ui`   | Lint only Gravity UI apps                         |
-| `npm run lint:react-no-css` | Lint only React (No CSS) apps                     |
-| `npm run lint:cloudscape`   | Lint only Cloudscape apps                         |
-| `npm run lint:daisyui`      | Lint only daisyUI apps                            |
-| `npm run lint:shadcn-ui`    | Lint only shadcn/ui apps                          |
 
 ## 🔧 Adding a New Library
 

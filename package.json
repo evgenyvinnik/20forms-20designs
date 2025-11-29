@@ -18,17 +18,6 @@
     "clean": "node scripts/clean.mjs",
     "optimize-configs": "node scripts/optimize-vite-configs.mjs",
     "lint": "eslint 'apps/*/src/**/*.{js,jsx,ts,tsx}' 'packages/*/src/**/*.{js,jsx,ts,tsx}' --cache",
-    "lint:shell": "eslint apps/shell/src --cache",
-    "lint:mui": "eslint 'apps/mui-*/src/**/*.{js,jsx}' --cache",
-    "lint:react-bootstrap": "eslint 'apps/react-bootstrap-*/src/**/*.{js,jsx}' --cache",
-    "lint:evergreen": "eslint 'apps/evergreen-*/src/**/*.{js,jsx}' --cache",
-    "lint:blueprint": "eslint 'apps/blueprint-*/src/**/*.{js,jsx}' --cache",
-    "lint:radix-ui": "eslint 'apps/radix-ui-*/src/**/*.{js,jsx}' --cache",
-    "lint:gravity-ui": "eslint 'apps/gravity-ui-*/src/**/*.{js,jsx}' --cache",
-    "lint:react-no-css": "eslint 'apps/react-no-css-*/src/**/*.{js,jsx}' --cache",
-    "lint:cloudscape": "eslint 'apps/cloudscape-*/src/**/*.{js,jsx}' --cache",
-    "lint:daisyui": "eslint 'apps/daisyui-*/src/**/*.{js,jsx}' --cache",
-    "lint:shadcn-ui": "eslint 'apps/shadcn-ui-*/src/**/*.{js,jsx}' --cache",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\""
   },
   "devDependencies": {
