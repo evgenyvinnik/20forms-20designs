@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Pane, Heading, Card, ThemeProvider, defaultTheme, mergeTheme } from 'evergreen-ui';
+import { ThemeProvider, defaultTheme, mergeTheme } from 'evergreen-ui';
 
 // Custom dark theme for Evergreen
 const darkTheme = mergeTheme(defaultTheme, {
@@ -42,18 +42,11 @@ function App() {
   }, []);
 
     const evergreenTheme = theme === 'dark' ? darkTheme : defaultTheme;
-    const bgColor = theme === 'dark' ? '#1a1a2e' : undefined;
-    const cardBg = theme === 'dark' ? '#16213e' : 'white';
-    const textColor = theme === 'dark' ? '#e5e7eb' : undefined;
-    
     return (
       <ThemeProvider value={evergreenTheme}>
-        <Pane padding={24} background={bgColor || "tint1"} minHeight="100vh">
-          <Card elevation={1} padding={24} maxWidth={600} marginX="auto" background={cardBg}>
-            <Heading size={600} marginBottom={16} color={textColor}>Checkout Payment</Heading>
-            <FormComponent />
-          </Card>
-        </Pane>
+        <div style={{ padding: '16px' }}>
+          <FormComponent />
+        </div>
       </ThemeProvider>
     );
 }

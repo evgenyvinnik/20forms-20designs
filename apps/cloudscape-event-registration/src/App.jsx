@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import '@cloudscape-design/global-styles/index.css';
-import { Container, Header, SpaceBetween, Box } from '@cloudscape-design/components';
 import { applyMode, Mode } from '@cloudscape-design/global-styles';
 import FormComponent from './form/EventRegistrationForm';
 
@@ -26,12 +25,8 @@ function App() {
     }, [theme]);
 
     return (
-      <div style={{ minHeight: '100vh', background: 'var(--color-background-layout-main)', padding: '24px' }}>
-        <Container header={<Header variant="h1">Event Registration</Header>}>
-          <SpaceBetween size="l">
-            <FormComponent />
-          </SpaceBetween>
-        </Container>
+      <div style={{ padding: '16px' }}>
+        <FormComponent />
       </div>
     );
 }

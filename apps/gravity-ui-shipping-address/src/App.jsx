@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ThemeProvider, Container, Card, Text } from '@gravity-ui/uikit';
+import { ThemeProvider } from '@gravity-ui/uikit';
 import '@gravity-ui/uikit/styles/fonts.css';
 import '@gravity-ui/uikit/styles/styles.css';
 import FormComponent from './form/ShippingAddressForm';
@@ -23,13 +23,8 @@ function App() {
 
     return (
       <ThemeProvider theme={theme}>
-        <div style={{ minHeight: '100vh', background: 'var(--g-color-base-background)', padding: '24px' }}>
-          <Container maxWidth="s">
-            <Card style={{ padding: '24px' }}>
-              <Text variant="header-1" as="h1" style={{ marginBottom: '16px' }}>Shipping Address</Text>
-              <FormComponent />
-            </Card>
-          </Container>
+        <div style={{ padding: '16px' }}>
+          <FormComponent />
         </div>
       </ThemeProvider>
     );

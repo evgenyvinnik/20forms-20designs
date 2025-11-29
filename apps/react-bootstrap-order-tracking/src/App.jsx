@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Card } from 'react-bootstrap';
 import FormComponent from './form/OrderTrackingForm';
 
 function App() {
@@ -21,15 +20,8 @@ function App() {
   }, []);
 
     return (
-      <div data-bs-theme={theme} style={{ minHeight: '100vh', background: theme === 'dark' ? '#212529' : '#f8f9fa', padding: '24px' }}>
-        <Container>
-          <Card>
-            <Card.Header as="h5">Order Tracking</Card.Header>
-            <Card.Body>
-              <FormComponent />
-            </Card.Body>
-          </Card>
-        </Container>
+      <div data-bs-theme={theme} style={{ padding: '16px' }}>
+        <FormComponent />
       </div>
     );
 }

@@ -5,7 +5,7 @@ import {
   CANADIAN_PROVINCES,
   COUNTRIES,
   US_STATES,
-} from '../../constants/locationOptions'
+} from './locationOptions'
 import { Field, SingleSelectField, formStackStyle } from './common.jsx'
 
 function ShippingAddressForm() {

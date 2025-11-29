@@ -13,7 +13,7 @@ import {
   COUNTRIES,
   US_STATES,
   CANADIAN_PROVINCES,
-} from '../../constants/locationOptions'
+} from './locationOptions'
 
 function ShippingAddressForm() {
   const handleSubmit = (event) => {

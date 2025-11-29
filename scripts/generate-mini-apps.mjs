@@ -243,49 +243,39 @@ function generateAppJsx(library, form) {
   let wrapperStart = '';
   let wrapperEnd = '';
 
+  // Simple wrapper style - just padding, minimal layout
+  const wrapperStyle = `{{ padding: '16px' }}`;
+
   switch (library.id) {
     case 'mui':
       imports += `
-import { ThemeProvider, createTheme, CssBaseline, Container, Paper, Typography } from '@mui/material';`;
+import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';`;
       wrapperStart = `
     const muiTheme = createTheme({ palette: { mode: theme } });
     return (
       <ThemeProvider theme={muiTheme}>
         <CssBaseline />
-        <Container maxWidth="sm" sx={{ py: 4 }}>
-          <Paper elevation={3} sx={{ p: 3 }}>
-            <Typography variant="h5" component="h1" gutterBottom>
-              ${form.label}
-            </Typography>
-            <FormComponent />
-          </Paper>
-        </Container>
+        <div style=${wrapperStyle}>
+          <FormComponent />
+        </div>
       </ThemeProvider>
     );`;
       break;
 
     case 'react-bootstrap':
       imports += `
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Card } from 'react-bootstrap';`;
+import 'bootstrap/dist/css/bootstrap.min.css';`;
       wrapperStart = `
     return (
-      <div data-bs-theme={theme} style={{ minHeight: '100vh', background: theme === 'dark' ? '#212529' : '#f8f9fa', padding: '24px' }}>
-        <Container>
-          <Card>
-            <Card.Header as="h5">${form.label}</Card.Header>
-            <Card.Body>
-              <FormComponent />
-            </Card.Body>
-          </Card>
-        </Container>
+      <div data-bs-theme={theme} style=${wrapperStyle}>
+        <FormComponent />
       </div>
     );`;
       break;
 
     case 'evergreen':
       imports += `
-import { Pane, Heading, Card, ThemeProvider, defaultTheme, mergeTheme } from 'evergreen-ui';
+import { ThemeProvider, defaultTheme, mergeTheme } from 'evergreen-ui';
 
 // Custom dark theme for Evergreen
 const darkTheme = mergeTheme(defaultTheme, {
@@ -310,18 +300,11 @@ const darkTheme = mergeTheme(defaultTheme, {
 });`;
       wrapperStart = `
     const evergreenTheme = theme === 'dark' ? darkTheme : defaultTheme;
-    const bgColor = theme === 'dark' ? '#1a1a2e' : undefined;
-    const cardBg = theme === 'dark' ? '#16213e' : 'white';
-    const textColor = theme === 'dark' ? '#e5e7eb' : undefined;
-    
     return (
       <ThemeProvider value={evergreenTheme}>
-        <Pane padding={24} background={bgColor || "tint1"} minHeight="100vh">
-          <Card elevation={1} padding={24} maxWidth={600} marginX="auto" background={cardBg}>
-            <Heading size={600} marginBottom={16} color={textColor}>${form.label}</Heading>
-            <FormComponent />
-          </Card>
-        </Pane>
+        <div style=${wrapperStyle}>
+          <FormComponent />
+        </div>
       </ThemeProvider>
     );`;
       break;
@@ -329,56 +312,40 @@ const darkTheme = mergeTheme(defaultTheme, {
     case 'blueprint':
       imports += `
 import '@blueprintjs/core/lib/css/blueprint.css';
-import '@blueprintjs/icons/lib/css/blueprint-icons.css';
-import { Card, H3 } from '@blueprintjs/core';`;
+import '@blueprintjs/icons/lib/css/blueprint-icons.css';`;
       wrapperStart = `
     const className = theme === 'dark' ? 'bp5-dark' : '';
     return (
-      <div className={className} style={{ minHeight: '100vh', background: theme === 'dark' ? '#252a31' : '#f5f8fa', padding: '24px' }}>
-        <Card elevation={2} style={{ maxWidth: 600, margin: '0 auto', padding: '24px' }}>
-          <H3>${form.label}</H3>
-          <div style={{ marginTop: '16px' }}>
-            <FormComponent />
-          </div>
-        </Card>
+      <div className={className} style=${wrapperStyle}>
+        <FormComponent />
       </div>
     );`;
       break;
 
     case 'radix-ui':
       imports += `
-import { Theme, Container, Card, Heading, Box } from '@radix-ui/themes';
+import { Theme } from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';`;
       wrapperStart = `
     return (
       <Theme appearance={theme} accentColor="indigo" grayColor="slate" radius="medium">
-        <Box style={{ minHeight: '100vh', background: 'var(--color-background)', padding: '24px' }}>
-          <Container size="2">
-            <Card size="3">
-              <Heading size="5" mb="4">${form.label}</Heading>
-              <FormComponent />
-            </Card>
-          </Container>
-        </Box>
+        <div style=${wrapperStyle}>
+          <FormComponent />
+        </div>
       </Theme>
     );`;
       break;
 
     case 'gravity-ui':
       imports += `
-import { ThemeProvider, Container, Card, Text } from '@gravity-ui/uikit';
+import { ThemeProvider } from '@gravity-ui/uikit';
 import '@gravity-ui/uikit/styles/fonts.css';
 import '@gravity-ui/uikit/styles/styles.css';`;
       wrapperStart = `
     return (
       <ThemeProvider theme={theme}>
-        <div style={{ minHeight: '100vh', background: 'var(--g-color-base-background)', padding: '24px' }}>
-          <Container maxWidth="s">
-            <Card style={{ padding: '24px' }}>
-              <Text variant="header-1" as="h1" style={{ marginBottom: '16px' }}>${form.label}</Text>
-              <FormComponent />
-            </Card>
-          </Container>
+        <div style=${wrapperStyle}>
+          <FormComponent />
         </div>
       </ThemeProvider>
     );`;
@@ -388,16 +355,8 @@ import '@gravity-ui/uikit/styles/styles.css';`;
       imports = `import { useState, useEffect } from 'react';`;
       wrapperStart = `
     return (
-      <div style={{ 
-        minHeight: '100vh', 
-        background: theme === 'dark' ? '#1a1a1a' : '#f5f5f5', 
-        color: theme === 'dark' ? '#fff' : '#000',
-        padding: '24px' 
-      }}>
-        <div style={{ maxWidth: 600, margin: '0 auto', background: theme === 'dark' ? '#2a2a2a' : '#fff', padding: '24px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
-          <h1 style={{ fontSize: '1.5rem', marginBottom: '16px' }}>${form.label}</h1>
-          <FormComponent />
-        </div>
+      <div style={{ padding: '16px', background: theme === 'dark' ? '#1a1a1a' : '#fff', color: theme === 'dark' ? '#fff' : '#000' }}>
+        <FormComponent />
       </div>
     );`;
       break;
@@ -405,7 +364,6 @@ import '@gravity-ui/uikit/styles/styles.css';`;
     case 'cloudscape':
       imports += `
 import '@cloudscape-design/global-styles/index.css';
-import { Container, Header, SpaceBetween, Box } from '@cloudscape-design/components';
 import { applyMode, Mode } from '@cloudscape-design/global-styles';`;
       wrapperStart = `
     useEffect(() => {
@@ -413,12 +371,8 @@ import { applyMode, Mode } from '@cloudscape-design/global-styles';`;
     }, [theme]);
 
     return (
-      <div style={{ minHeight: '100vh', background: 'var(--color-background-layout-main)', padding: '24px' }}>
-        <Container header={<Header variant="h1">${form.label}</Header>}>
-          <SpaceBetween size="l">
-            <FormComponent />
-          </SpaceBetween>
-        </Container>
+      <div style=${wrapperStyle}>
+        <FormComponent />
       </div>
     );`;
       break;
@@ -426,8 +380,7 @@ import { applyMode, Mode } from '@cloudscape-design/global-styles';`;
     default:
       wrapperStart = `
     return (
-      <div style={{ padding: '24px', maxWidth: 600, margin: '0 auto' }}>
-        <h1>${form.label}</h1>
+      <div style=${wrapperStyle}>
         <FormComponent />
       </div>
     );`;
@@ -463,6 +416,9 @@ function copyFormComponent(library, form, targetDir) {
     // Fix any alias imports like @/ to relative imports
     content = content.replace(/@\//g, '../../../');
     
+    // Fix imports to constants/locationOptions - use local copy
+    content = content.replace(/['"]\.\.\/\.\.\/constants\/locationOptions['"]/g, "'./locationOptions'");
+    
     fs.writeFileSync(targetFile, content);
     return true;
   }
@@ -494,6 +450,17 @@ function copyUtilityFiles(library, form, targetDir) {
   if (fs.existsSync(wrapperSource)) {
     const targetFile = path.join(targetFormDir, 'GravityUiWrapper.jsx');
     fs.copyFileSync(wrapperSource, targetFile);
+  }
+  
+  // Copy locationOptions.js if needed (used by ShippingAddressForm and others)
+  const locationOptionsSource = path.join(ROOT_DIR, 'src', 'constants', 'locationOptions.js');
+  const formSourceFile = path.join(sourceDir, `${form.component}.jsx`);
+  if (fs.existsSync(formSourceFile) && fs.existsSync(locationOptionsSource)) {
+    const formContent = fs.readFileSync(formSourceFile, 'utf-8');
+    if (formContent.includes('locationOptions')) {
+      const targetFile = path.join(targetFormDir, 'locationOptions.js');
+      fs.copyFileSync(locationOptionsSource, targetFile);
+    }
   }
 }
 

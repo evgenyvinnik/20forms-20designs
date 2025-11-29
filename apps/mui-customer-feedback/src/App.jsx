@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ThemeProvider, createTheme, CssBaseline, Container, Paper, Typography } from '@mui/material';
+import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import FormComponent from './form/CustomerFeedbackForm';
 
 function App() {
@@ -23,14 +23,9 @@ function App() {
     return (
       <ThemeProvider theme={muiTheme}>
         <CssBaseline />
-        <Container maxWidth="sm" sx={{ py: 4 }}>
-          <Paper elevation={3} sx={{ p: 3 }}>
-            <Typography variant="h5" component="h1" gutterBottom>
-              Customer Feedback
-            </Typography>
-            <FormComponent />
-          </Paper>
-        </Container>
+        <div style={{ padding: '16px' }}>
+          <FormComponent />
+        </div>
       </ThemeProvider>
     );
 }

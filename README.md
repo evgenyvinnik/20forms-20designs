@@ -95,31 +95,32 @@ npm install --legacy-peer-deps
 ### Development
 
 ```bash
-# Run the shell app in development mode
-npm run dev
-
-# Or run a specific mini-app
-cd apps/mui-user-login
+# Run the original app (lazy-loaded components, no CSS isolation)
 npm run dev
 ```
 
-### Building
+This runs the original single-page app with all forms lazy-loaded. Fast and convenient for development, but styles may bleed between libraries.
+
+### Production Build (CSS Isolation)
 
 ```bash
-# Generate all mini-apps from source components (if needed)
-npm run generate
-
-# Build all apps (shell + 160 mini-apps)
+# Build all 161 apps (shell + 160 mini-apps) for GitHub Pages
 npm run build
 
-# Or build just the shell app
-npm run build:shell
+# Preview the production build locally
+npm run preview
+# Then open: http://localhost:5000/20forms-20designs/
 ```
 
-### Preview Production Build
+The production build uses iframes for complete CSS isolation between libraries.
+
+### Regenerating Mini-Apps
+
+If you modify form components in `src/component-libraries/`, regenerate the mini-apps:
 
 ```bash
-npm run preview
+npm run generate
+npm run build
 ```
 
 ## 📦 Project Structure

@@ -13,7 +13,7 @@ import {
   CANADIAN_PROVINCES,
   COUNTRIES,
   US_STATES,
-} from '../../constants/locationOptions'
+} from './locationOptions'
 
 function ShippingAddressForm() {
   const [country, setCountry] = useState('US')

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Theme, Container, Card, Heading, Box } from '@radix-ui/themes';
+import { Theme } from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';
 import FormComponent from './form/CustomerFeedbackForm';
 
@@ -22,14 +22,9 @@ function App() {
 
     return (
       <Theme appearance={theme} accentColor="indigo" grayColor="slate" radius="medium">
-        <Box style={{ minHeight: '100vh', background: 'var(--color-background)', padding: '24px' }}>
-          <Container size="2">
-            <Card size="3">
-              <Heading size="5" mb="4">Customer Feedback</Heading>
-              <FormComponent />
-            </Card>
-          </Container>
-        </Box>
+        <div style={{ padding: '16px' }}>
+          <FormComponent />
+        </div>
       </Theme>
     );
 }
