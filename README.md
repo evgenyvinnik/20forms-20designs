@@ -134,57 +134,33 @@ But it guarantees:
 | [Carbon Design System](https://carbondesignsystem.com/)                              | [GitHub](https://github.com/carbon-design-system/carbon)           |
 | [Chakra UI](https://chakra-ui.com/)                                                  | [GitHub](https://github.com/chakra-ui/chakra-ui)                   |
 | [CoreUI](https://coreui.io/react/)                                                   | [GitHub](https://github.com/coreui/coreui-react)                   |
-| [Drip UI](https://drip-ui.com/)                                                      | [GitHub](https://github.com/drip-ui/drip-ui)                       |
 | [Elastic UI (EUI)](https://eui.elastic.co/)                                          | [GitHub](https://github.com/elastic/eui)                           |
-| [Emotion](https://emotion.sh/)                                                       | [GitHub](https://github.com/emotion-js/emotion)                    |
-| [FAST Design](https://www.fast.design/)                                              | [GitHub](https://github.com/microsoft/fast)                        |
 | [Flowbite React](https://flowbite-react.com/)                                        | [GitHub](https://github.com/themesberg/flowbite-react)             |
 | [Fluent UI](https://developer.microsoft.com/en-us/fluentui)                          | [GitHub](https://github.com/microsoft/fluentui)                    |
-| [Framer Motion](https://www.framer.com/motion/)                                      | [GitHub](https://github.com/framer/motion)                         |
 | [Geist UI](https://geist-ui.dev/)                                                    | [GitHub](https://github.com/geist-org/geist-ui)                    |
 | [Gluestack UI](https://gluestack.io/ui/docs)                                         | [GitHub](https://github.com/gluestack/gluestack-ui)                |
 | [Grommet](https://v2.grommet.io/)                                                    | [GitHub](https://github.com/grommet/grommet)                       |
 | [Headless UI](https://headlessui.com/)                                               | [GitHub](https://github.com/tailwindlabs/headlessui)               |
 | [HeroUI](https://heroui.com/)                                                        | [GitHub](https://github.com/heroui-inc/heroui)                     |
-| [Ionic React](https://ionicframework.com/docs/react)                                 | [GitHub](https://github.com/ionic-team/ionic-framework)            |
-| [Keep React](https://keep-react.vercel.app/)                                         | [GitHub](https://github.com/Atticus-M/keep-react)                  |
 | [KendoReact](https://www.telerik.com/kendo-react-ui/)                                | [GitHub](https://github.com/telerik/kendo-react)                   |
 | [Mantine](https://mantine.dev/)                                                      | [GitHub](https://github.com/mantinedev/mantine)                    |
 | [Material Tailwind](https://www.material-tailwind.com/)                              | [GitHub](https://github.com/creativetimofficial/material-tailwind) |
 | [NextUI](https://nextui.org/)                                                        | [GitHub](https://github.com/nextui-org/nextui)                     |
-| [Nivo](https://nivo.rocks/)                                                          | [GitHub](https://github.com/plouc/nivo)                            |
-| [Onsen UI](https://onsen.io/react/)                                                  | [GitHub](https://github.com/OnsenUI/OnsenUI)                       |
 | [Orbit by Kiwi.com](https://orbit.kiwi/)                                             | [GitHub](https://github.com/kiwicom/orbit-components)              |
 | [PatternFly](https://www.patternfly.org/)                                            | [GitHub](https://github.com/patternfly/patternfly-react)           |
 | [Pinterest Gestalt](https://gestalt.pinterest.systems/)                              | [GitHub](https://github.com/pinterest/gestalt)                     |
 | [Primer React](https://primer.style/react/)                                          | [GitHub](https://github.com/primer/react)                          |
 | [PrimeReact](https://primereact.org/)                                                | [GitHub](https://github.com/primefaces/primereact)                 |
-| [React Admin](https://marmelab.com/react-admin/)                                     | [GitHub](https://github.com/marmelab/react-admin)                  |
-| [React Aria / React Stately](https://react-spectrum.adobe.com/react-aria/)           | [GitHub](https://github.com/adobe/react-spectrum)                  |
-| [React Flow](https://reactflow.dev/)                                                 | [GitHub](https://github.com/xyflow/react-flow)                     |
-| [React Hook Form](https://react-hook-form.com/)                                      | [GitHub](https://github.com/react-hook-form/react-hook-form)       |
-| [React Icons](https://react-icons.github.io/react-icons/)                            | [GitHub](https://github.com/react-icons/react-icons)               |
 | [React Spectrum](https://react-spectrum.adobe.com/)                                  | [GitHub](https://github.com/adobe/react-spectrum)                  |
-| [React Spring](https://www.react-spring.dev/)                                        | [GitHub](https://github.com/pmndrs/react-spring)                   |
-| [React Table (TanStack Table)](https://tanstack.com/table/)                          | [GitHub](https://github.com/TanStack/table)                        |
-| [React Virtualized](https://www.npmjs.com/package/react-virtualized)                 | [GitHub](https://github.com/bvaughn/react-virtualized)             |
-| [React-Select](https://react-select.com/)                                            | [GitHub](https://github.com/JedWatson/react-select)                |
-| [Rebass](https://rebassjs.org/)                                                      | [GitHub](https://github.com/rebassjs/rebass)                       |
-| [Recharts](https://recharts.org/)                                                    | [GitHub](https://github.com/recharts/recharts)                     |
-| [Refine](https://refine.dev/)                                                        | [GitHub](https://github.com/refinedev/refine)                      |
 | [RSuite](https://rsuitejs.com/)                                                      | [GitHub](https://github.com/rsuite/rsuite)                         |
-| [Salesforce Lightning Design System React](https://react.lightningdesignsystem.com/) | [GitHub](https://github.com/salesforce/design-system-react)        |
+| [Salesforce Lightning Design System React](https://design-system-react-site.herokuapp.com/) | [GitHub](https://github.com/salesforce/design-system-react)        |
 | [Semantic UI React](https://react.semantic-ui.com/)                                  | [GitHub](https://github.com/Semantic-Org/Semantic-UI-React)        |
 | [Semi Design](https://semi.design/)                                                  | [GitHub](https://github.com/DouyinFE/semi-design)                  |
-| [Shoelace](https://shoelace.style/)                                                  | [GitHub](https://github.com/shoelace-style/shoelace)               |
+| [Web Awesome](https://webawesome.com/)                                                  | [GitHub](https://github.com/shoelace-style/webawesome)               |
 | [Shopify Polaris](https://polaris.shopify.com/)                                      | [GitHub](https://github.com/Shopify/polaris)                       |
-| [Storybook](https://storybook.js.org/)                                               | [GitHub](https://github.com/storybookjs/storybook)                 |
-| [Styled Components](https://styled-components.com/)                                  | [GitHub](https://github.com/styled-components/styled-components)   |
 | [Tamagui](https://tamagui.dev/)                                                      | [GitHub](https://github.com/tamagui/tamagui)                       |
 | [Theme UI](https://theme-ui.com/)                                                    | [GitHub](https://github.com/system-ui/theme-ui)                    |
-| [Tremor](https://www.tremor.so/)                                                     | [GitHub](https://github.com/tremorlabs/tremor)                     |
 | [U.S. Web Design System](https://designsystem.digital.gov/)                          | [GitHub](https://github.com/uswds/uswds)                           |
-| [VisX](https://airbnb.io/visx/)                                                      | [GitHub](https://github.com/airbnb/visx)                           |
 | [VMware Clarity](https://clarity.design/)                                            | [GitHub](https://github.com/vmware/clarity)                        |
 | [Zendesk Garden](https://garden.zendesk.com/)                                        | [GitHub](https://github.com/zendeskgarden/react-components)        |
 
