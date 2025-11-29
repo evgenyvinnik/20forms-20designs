@@ -24,16 +24,16 @@ function App() {
   // Apply dark class to document body for proper Blueprint dark mode support
   useEffect(() => {
     if (theme === 'dark') {
-      document.body.classList.add(Classes.DARK)
+      document.body.classList.add(Classes.DARK); document.body.style.backgroundColor = '#1c2127'
     } else {
-      document.body.classList.remove(Classes.DARK)
+      document.body.classList.remove(Classes.DARK); document.body.style.backgroundColor = '#ffffff'
     }
   }, [theme])
 
   const className = theme === 'dark' ? Classes.DARK : ''
   const style = {
     padding: '16px',
-    color: theme === 'dark' ? '#f6f7f9' : '#1c2127',
+    color: theme === 'dark' ? '#f6f7f9' : '#1c2127', backgroundColor: theme === 'dark' ? '#1c2127' : '#ffffff',
   }
   return (
     <div className={className} style={style}>
