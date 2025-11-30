@@ -19,6 +19,10 @@ export type LibraryId =
   | 'tamagui'
   | 'heroui'
   | 'uswds'
+  | 'antd'
+  | 'kendoreact'
+  | 'primereact'
+  | 'webawesome'
 
 // Form ID for iframe URLs
 export type FormId =
@@ -79,6 +83,10 @@ export const LIBRARY_NAME_TO_ID: Record<string, LibraryId | undefined> = {
   Tamagui: 'tamagui',
   HeroUI: 'heroui',
   'U.S. Web Design System': 'uswds',
+  'Ant Design': 'antd',
+  KendoReact: 'kendoreact',
+  PrimeReact: 'primereact',
+  'Web Awesome': 'webawesome',
 }
 
 // Map from form name to form ID (for iframe URLs)
@@ -149,11 +157,11 @@ export const LIBRARIES: Library[] = [
   },
   {
     name: 'Ant Design',
-    directory: 'ant-design',
+    directory: 'antd',
     website: 'https://ant.design',
     repo: 'https://github.com/ant-design/ant-design',
-    implemented: false,
-    supportsTheme: false,
+    implemented: true,
+    supportsTheme: true,
   },
   {
     name: 'Fluent UI',
@@ -224,16 +232,16 @@ export const LIBRARIES: Library[] = [
     directory: 'primereact',
     website: 'https://primereact.org',
     repo: 'https://github.com/primefaces/primereact',
-    implemented: false,
-    supportsTheme: false,
+    implemented: true,
+    supportsTheme: true,
   },
   {
     name: 'KendoReact',
-    directory: 'kendo-react',
+    directory: 'kendoreact',
     website: 'https://www.telerik.com/kendo-react-ui',
     repo: 'https://github.com/telerik/kendo-react',
-    implemented: false,
-    supportsTheme: false,
+    implemented: true,
+    supportsTheme: true,
   },
   {
     name: 'HeroUI',
@@ -445,11 +453,11 @@ export const LIBRARIES: Library[] = [
   },
   {
     name: 'Web Awesome',
-    directory: 'web-awesome',
+    directory: 'webawesome',
     website: 'https://webawesome.com',
-    repo: 'https://github.com/shoelace-style/webawesome',
-    implemented: false,
-    supportsTheme: false,
+    repo: 'https://github.com/AmazeeLabs/webawesome',
+    implemented: true,
+    supportsTheme: true,
   },
   {
     name: 'U.S. Web Design System',

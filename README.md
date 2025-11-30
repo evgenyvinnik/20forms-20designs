@@ -12,7 +12,7 @@ This is how this project was born. It represents 20 extremely common forms that 
 
 ## ✨ Features
 
-- **400 Mini-Apps** — Each form × library combination runs in its own isolated context
+- **460+ Mini-Apps** — Each form × library combination runs in its own isolated context
 - **CSS Isolation** — No style conflicts between design systems (iframe-based architecture)
 - **Theme Support** — Light/dark mode toggle for libraries that support theming
 - **Comparison Matrix** — Side-by-side comparison of forms across libraries
@@ -29,20 +29,16 @@ This project uses a **monorepo + iframe architecture** for complete CSS isolatio
 │   ├── mui-user-login/           # MUI Login Form
 │   ├── mui-user-registration/    # MUI Registration Form
 │   ├── radix-ui-user-login/      # Radix UI Login Form
-│   └── ... (400 mini-apps total)
-├── packages/
-│   └── shared/                   # Shared types and utilities
+│   └── ... (460+ mini-apps total)
 ├── scripts/
-│   ├── generate-mini-apps.mjs    # Mini-app generator
 │   ├── build-all.mjs             # Build orchestration
 │   └── copy-builds-to-dist.mjs   # Deployment bundler
-└── src/
-    └── component-libraries/      # Original form implementations
+└── public/                       # Static assets
 ```
 
-### Why 200 Separate Mini-Apps?
+### Why 460+ Separate Mini-Apps?
 
-You might wonder: *why build 200 separate applications instead of one unified app?* The answer comes down to **CSS isolation** — the core technical challenge of this project.
+You might wonder: *why build 460+ separate applications instead of one unified app?* The answer comes down to **CSS isolation** — the core technical challenge of this project.
 
 **The Problem with a Single SPA:**
 
@@ -70,7 +66,7 @@ This means MUI's `CssBaseline`, Tailwind's preflight, and Chakra's global styles
 
 **The Trade-off:**
 
-Yes, building 400 separate apps means:
+Yes, building 460+ separate apps means:
 - Longer build times (~2-3 minutes for full build)
 - Duplicated React/library bundles across apps
 - More complex deployment orchestration
@@ -112,6 +108,7 @@ All libraries implement the same 20 forms with identical content, labels, and fi
 
 | Library                                                 | Theme Support | Repository                                                        |
 | ------------------------------------------------------- | ------------- | ----------------------------------------------------------------- |
+| [Ant Design](https://ant.design/)                       | ✅ Light/Dark | [GitHub](https://github.com/ant-design/ant-design)                |
 | [Blueprint](https://blueprintjs.com/)                   | ✅ Light/Dark | [GitHub](https://github.com/palantir/blueprint)                   |
 | [Chakra UI](https://chakra-ui.com/)                     | ✅ Light/Dark | [GitHub](https://github.com/chakra-ui/chakra-ui)                  |
 | [Cloudscape](https://cloudscape.design/)                | ✅ Light/Dark | [GitHub](https://github.com/cloudscape-design/components)         |
@@ -121,8 +118,10 @@ All libraries implement the same 20 forms with identical content, labels, and fi
 | [Geist UI](https://geist-ui.dev/)                       | ✅ Light/Dark | [GitHub](https://github.com/geist-org/geist-ui)                   |
 | [Gravity UI](https://gravity-ui.com/)                   | ✅ Light/Dark | [GitHub](https://github.com/gravity-ui/uikit)                     |
 | [HeroUI](https://heroui.com/)                           | ✅ Light/Dark | [GitHub](https://github.com/heroui-inc/heroui)                    |
+| [KendoReact](https://www.telerik.com/kendo-react-ui/)   | ✅ Light/Dark | [GitHub](https://github.com/telerik/kendo-react)                  |
 | [MUI](https://mui.com/)                                 | ✅ Light/Dark | [GitHub](https://github.com/mui/material-ui)                      |
 | [Pinterest Gestalt](https://gestalt.pinterest.systems/) | ✅ Light/Dark | [GitHub](https://github.com/pinterest/gestalt)                    |
+| [PrimeReact](https://primereact.org/)                   | ✅ Light/Dark | [GitHub](https://github.com/primefaces/primereact)                |
 | [Radix UI](https://www.radix-ui.com/)                   | ✅ Light/Dark | [GitHub](https://github.com/radix-ui/primitives)                  |
 | [React Bootstrap](https://react-bootstrap.netlify.app/) | ✅ Light/Dark | [GitHub](https://github.com/react-bootstrap/react-bootstrap)      |
 | [React (No CSS)](https://react.dev/)                    | ✅ Light/Dark | [GitHub](https://github.com/facebook/react) — *Reference implementation* |
@@ -130,13 +129,13 @@ All libraries implement the same 20 forms with identical content, labels, and fi
 | [Shopify Polaris](https://polaris.shopify.com/)         | ✅ Light/Dark | [GitHub](https://github.com/Shopify/polaris)                      |
 | [Tamagui](https://tamagui.dev/)                         | ✅ Light/Dark | [GitHub](https://github.com/tamagui/tamagui)                      |
 | [U.S. Web Design System](https://designsystem.digital.gov/) | ✅ Light/Dark | [GitHub](https://github.com/uswds/uswds)                      |
+| [Web Awesome](https://webawesome.com/)                  | ✅ Light/Dark | [GitHub](https://github.com/AmazeeLabs/webawesome)                |
 | [Zendesk Garden](https://garden.zendesk.com/)           | ✅ Light/Dark | [GitHub](https://github.com/zendeskgarden/react-components)       |
 
 ### 📋 Planned Libraries
 
 | Library                                                                              | Repository                                                         |
 | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| [Ant Design](https://ant.design/)                                                    | [GitHub](https://github.com/ant-design/ant-design)                 |
 | [Arco Design](https://arco.design/)                                                  | [GitHub](https://github.com/arco-design/arco-design)               |
 | [Ariakit](https://ariakit.org/)                                                      | [GitHub](https://github.com/ariakit/ariakit)                       |
 | [Atlassian Atlaskit](https://atlassian.design/components)                            | [Bitbucket](https://bitbucket.org/atlassian/atlassian-frontend/)   |
@@ -149,13 +148,11 @@ All libraries implement the same 20 forms with identical content, labels, and fi
 | [Gluestack UI](https://gluestack.io/ui/docs)                                         | [GitHub](https://github.com/gluestack/gluestack-ui)                |
 | [Grommet](https://v2.grommet.io/)                                                    | [GitHub](https://github.com/grommet/grommet)                       |
 | [Headless UI](https://headlessui.com/)                                               | [GitHub](https://github.com/tailwindlabs/headlessui)               |
-| [KendoReact](https://www.telerik.com/kendo-react-ui/)                                | [GitHub](https://github.com/telerik/kendo-react)                   |
 | [Mantine](https://mantine.dev/)                                                      | [GitHub](https://github.com/mantinedev/mantine)                    |
 | [Material Tailwind](https://www.material-tailwind.com/)                              | [GitHub](https://github.com/creativetimofficial/material-tailwind) |
 | [Orbit by Kiwi.com](https://orbit.kiwi/)                                             | [GitHub](https://github.com/kiwicom/orbit-components)              |
 | [PatternFly](https://www.patternfly.org/)                                            | [GitHub](https://github.com/patternfly/patternfly-react)           |
 | [Primer React](https://primer.style/react/)                                          | [GitHub](https://github.com/primer/react)                          |
-| [PrimeReact](https://primereact.org/)                                                | [GitHub](https://github.com/primefaces/primereact)                 |
 | [React Spectrum](https://react-spectrum.adobe.com/)                                  | [GitHub](https://github.com/adobe/react-spectrum)                  |
 | [RSuite](https://rsuitejs.com/)                                                      | [GitHub](https://github.com/rsuite/rsuite)                         |
 | [Salesforce Lightning Design System React](https://design-system-react-site.herokuapp.com/) | [GitHub](https://github.com/salesforce/design-system-react)        |
@@ -163,7 +160,6 @@ All libraries implement the same 20 forms with identical content, labels, and fi
 | [Semi Design](https://semi.design/)                                                  | [GitHub](https://github.com/DouyinFE/semi-design)                  |
 | [Theme UI](https://theme-ui.com/)                                                    | [GitHub](https://github.com/system-ui/theme-ui)                    |
 | [VMware Clarity](https://clarity.design/)                                            | [GitHub](https://github.com/vmware/clarity)                        |
-| [Web Awesome](https://webawesome.com/)                                               | [GitHub](https://github.com/shoelace-style/webawesome)             |
 
 ## 🚀 Getting Started
 
@@ -195,7 +191,7 @@ This runs the shell application in development mode.
 ### Production Build (CSS Isolation)
 
 ```bash
-# Build all 401 apps (shell + 400 mini-apps) for GitHub Pages
+# Build all 461 apps (shell + 460 mini-apps) for GitHub Pages
 npm run build
 
 # Preview the production build locally
@@ -204,15 +200,6 @@ npm run preview
 ```
 
 The production build uses iframes for complete CSS isolation between libraries.
-
-### Regenerating Mini-Apps
-
-If you modify form components in `src/component-libraries/`, regenerate the mini-apps:
-
-```bash
-npm run generate
-npm run build
-```
 
 ## 📦 Project Structure
 
@@ -237,7 +224,6 @@ Each mini-app is a standalone Vite + React application that:
 
 | Script                      | Description                                       |
 | --------------------------- | ------------------------------------------------- |
-| `npm run generate`          | Generate all mini-apps from source components     |
 | `npm run build`             | Build shell + all mini-apps + copy to dist        |
 | `npm run build:shell`       | Build only the shell app                          |
 | `npm run clean`             | Remove all build artifacts                        |
@@ -247,19 +233,17 @@ Each mini-app is a standalone Vite + React application that:
 
 ## 🔧 Adding a New Library
 
-1. Implement all 20 forms in `src/component-libraries/<library-name>/`
-2. Update `scripts/generate-mini-apps.mjs` with the library configuration
-3. Run `npm run generate` to create mini-apps
-4. Update `apps/shell/src/config.ts` with the new library
-5. Run `npm run build`
+1. Create a new directory for each form: `apps/<library>-<form>/`
+2. Implement all 20 forms following the pattern from existing libraries
+3. Update `apps/shell/src/config.ts` with the new library (add to LibraryId type, LIBRARY_NAME_TO_ID, and LIBRARIES array)
+4. Run `npm run build`
 
 ## 🔧 Adding a New Form
 
-1. Create the form component in each library's directory
-2. Update the FORMS array in `scripts/generate-mini-apps.mjs`
-3. Run `npm run generate`
-4. Update `apps/shell/src/config.ts` with the new form
-5. Run `npm run build`
+1. Create the form in each library's directory: `apps/<library>-<new-form>/`
+2. Follow the pattern from existing forms in each library
+3. Update `apps/shell/src/config.ts` with the new form (add to FormId type, FORM_NAME_TO_ID, and FORMS array)
+4. Run `npm run build`
 
 ## 🌐 Deployment
 
@@ -273,8 +257,7 @@ This project is configured for automatic deployment to GitHub Pages via GitHub A
 The workflow:
 
 - Installs dependencies with `--legacy-peer-deps`
-- Generates mini-apps if they don't exist
-- Builds all 401 apps (shell + 400 mini-apps)
+- Builds all 461 apps (shell + 460 mini-apps)
 - Deploys to GitHub Pages
 
 **Live URL:** `https://<username>.github.io/20forms-20designs/`
