@@ -20,7 +20,9 @@ function App() {
 
   useEffect(() => {
     document.documentElement.classList.remove('wa-light', 'wa-dark')
-    document.documentElement.classList.add(theme === 'dark' ? 'wa-dark' : 'wa-light')
+    document.documentElement.classList.add(
+      theme === 'dark' ? 'wa-dark' : 'wa-light'
+    )
   }, [theme])
 
   return (

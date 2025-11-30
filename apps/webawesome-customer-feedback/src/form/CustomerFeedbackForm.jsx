@@ -13,18 +13,8 @@ function CustomerFeedbackForm() {
 
   return (
     <form onSubmit={handleSubmit} className="wa-stack wa-gap-m">
-      <wa-input
-        label="Name"
-        name="name"
-        type="text"
-        required
-      />
-      <wa-input
-        label="Email address"
-        name="email"
-        type="email"
-        required
-      />
+      <wa-input label="Name" name="name" type="text" required />
+      <wa-input label="Email address" name="email" type="email" required />
       <wa-select
         label="Overall rating"
         name="rating"
@@ -36,15 +26,8 @@ function CustomerFeedbackForm() {
         <wa-option value="average">Average</wa-option>
         <wa-option value="poor">Poor</wa-option>
       </wa-select>
-      <wa-textarea
-        label="Comments"
-        name="comments"
-        rows="4"
-        required
-      />
-      <wa-checkbox name="followUp">
-        I would like a follow-up
-      </wa-checkbox>
+      <wa-textarea label="Comments" name="comments" rows="4" required />
+      <wa-checkbox name="followUp">I would like a follow-up</wa-checkbox>
       <wa-button type="submit" variant="brand">
         Send feedback
       </wa-button>

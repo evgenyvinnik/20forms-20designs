@@ -38,34 +38,15 @@ function OnboardingWizardForm() {
 
       {step === 1 && (
         <>
-          <wa-input
-            label="Full name"
-            name="fullName"
-            type="text"
-            required
-          />
-          <wa-input
-            label="Email"
-            name="email"
-            type="email"
-            required
-          />
-          <wa-input
-            label="Password"
-            name="password"
-            type="password"
-            required
-          />
+          <wa-input label="Full name" name="fullName" type="text" required />
+          <wa-input label="Email" name="email" type="email" required />
+          <wa-input label="Password" name="password" type="password" required />
         </>
       )}
 
       {step === 2 && (
         <>
-          <wa-input
-            label="Company name"
-            name="company"
-            type="text"
-          />
+          <wa-input label="Company name" name="company" type="text" />
           <wa-select
             label="Industry"
             name="industry"
@@ -97,9 +78,7 @@ function OnboardingWizardForm() {
           <wa-checkbox name="newsletter">
             Subscribe to our newsletter
           </wa-checkbox>
-          <wa-checkbox name="updates">
-            Receive product updates
-          </wa-checkbox>
+          <wa-checkbox name="updates">Receive product updates</wa-checkbox>
           <wa-checkbox name="terms" required>
             I agree to the Terms of Service and Privacy Policy
           </wa-checkbox>

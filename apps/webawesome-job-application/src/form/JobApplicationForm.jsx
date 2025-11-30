@@ -11,42 +11,12 @@ function JobApplicationForm() {
 
   return (
     <form onSubmit={handleSubmit} className="wa-stack wa-gap-m">
-      <wa-input
-        label="Full name"
-        name="fullName"
-        type="text"
-        required
-      />
-      <wa-input
-        label="Email address"
-        name="email"
-        type="email"
-        required
-      />
-      <wa-input
-        label="Phone number"
-        name="phone"
-        type="tel"
-        required
-      />
-      <wa-input
-        label="Role applied for"
-        name="role"
-        type="text"
-        required
-      />
-      <wa-input
-        label="Resume link"
-        name="resume"
-        type="url"
-        required
-      />
-      <wa-textarea
-        label="Cover letter"
-        name="coverLetter"
-        rows="4"
-        required
-      />
+      <wa-input label="Full name" name="fullName" type="text" required />
+      <wa-input label="Email address" name="email" type="email" required />
+      <wa-input label="Phone number" name="phone" type="tel" required />
+      <wa-input label="Role applied for" name="role" type="text" required />
+      <wa-input label="Resume link" name="resume" type="url" required />
+      <wa-textarea label="Cover letter" name="coverLetter" rows="4" required />
       <wa-checkbox name="updates">
         Keep me informed about future roles
       </wa-checkbox>

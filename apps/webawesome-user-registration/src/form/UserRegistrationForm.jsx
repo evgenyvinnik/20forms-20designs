@@ -10,18 +10,8 @@ function UserRegistrationForm() {
 
   return (
     <form onSubmit={handleSubmit} className="wa-stack wa-gap-m">
-      <wa-input
-        label="Full name"
-        name="fullName"
-        type="text"
-        required
-      />
-      <wa-input
-        label="Email address"
-        name="email"
-        type="email"
-        required
-      />
+      <wa-input label="Full name" name="fullName" type="text" required />
+      <wa-input label="Email address" name="email" type="email" required />
       <wa-input
         label="Username"
         name="username"

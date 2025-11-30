@@ -12,18 +12,8 @@ function EventRegistrationForm() {
 
   return (
     <form onSubmit={handleSubmit} className="wa-stack wa-gap-m">
-      <wa-input
-        label="Full name"
-        name="fullName"
-        type="text"
-        required
-      />
-      <wa-input
-        label="Email address"
-        name="email"
-        type="email"
-        required
-      />
+      <wa-input label="Full name" name="fullName" type="text" required />
+      <wa-input label="Email address" name="email" type="email" required />
       <wa-select
         label="Ticket type"
         name="ticketType"
@@ -42,9 +32,7 @@ function EventRegistrationForm() {
         max="20"
         required
       />
-      <wa-checkbox name="newsletter">
-        Notify me about future events
-      </wa-checkbox>
+      <wa-checkbox name="newsletter">Notify me about future events</wa-checkbox>
       <wa-button type="submit" variant="brand">
         Register
       </wa-button>

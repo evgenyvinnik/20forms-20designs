@@ -25,12 +25,7 @@ function CheckoutPaymentForm() {
         maxlength="19"
         required
       />
-      <wa-input
-        label="Name on card"
-        name="cardName"
-        type="text"
-        required
-      />
+      <wa-input label="Name on card" name="cardName" type="text" required />
       <div className="wa-cluster wa-gap-m">
         <wa-input
           label="Expiry"
@@ -47,11 +42,7 @@ function CheckoutPaymentForm() {
           required
         />
       </div>
-      <wa-input
-        label="Promo code"
-        name="promo"
-        type="text"
-      />
+      <wa-input label="Promo code" name="promo" type="text" />
       <wa-checkbox name="terms" required>
         I agree to the terms and conditions
       </wa-checkbox>

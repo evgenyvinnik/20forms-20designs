@@ -33,9 +33,7 @@ function PasswordChangeForm() {
         minlength="8"
         required
       />
-      <wa-checkbox name="logoutOthers">
-        Sign out of other devices
-      </wa-checkbox>
+      <wa-checkbox name="logoutOthers">Sign out of other devices</wa-checkbox>
       <wa-button type="submit" variant="brand">
         Update password
       </wa-button>

@@ -22,29 +22,10 @@ function ShippingAddressForm() {
 
   return (
     <form onSubmit={handleSubmit} className="wa-stack wa-gap-m">
-      <wa-input
-        label="Recipient name"
-        name="fullName"
-        type="text"
-        required
-      />
-      <wa-input
-        label="Street address"
-        name="street"
-        type="text"
-        required
-      />
-      <wa-input
-        label="Apartment, suite, etc."
-        name="street2"
-        type="text"
-      />
-      <wa-input
-        label="City"
-        name="city"
-        type="text"
-        required
-      />
+      <wa-input label="Recipient name" name="fullName" type="text" required />
+      <wa-input label="Street address" name="street" type="text" required />
+      <wa-input label="Apartment, suite, etc." name="street2" type="text" />
+      <wa-input label="City" name="city" type="text" required />
       <wa-select
         label="Country"
         name="country"
@@ -70,15 +51,8 @@ function ShippingAddressForm() {
           </wa-option>
         ))}
       </wa-select>
-      <wa-input
-        label="Postal code"
-        name="postalCode"
-        type="text"
-        required
-      />
-      <wa-checkbox name="default">
-        Use as default shipping address
-      </wa-checkbox>
+      <wa-input label="Postal code" name="postalCode" type="text" required />
+      <wa-checkbox name="default">Use as default shipping address</wa-checkbox>
       <wa-button type="submit" variant="brand">
         Save address
       </wa-button>
