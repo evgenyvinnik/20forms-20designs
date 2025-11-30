@@ -22,7 +22,10 @@ function PrivacyConsentForm() {
   return (
     <form onSubmit={handleSubmit} className="p-fluid">
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-privacy-name" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-privacy-name"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Full name
         </label>
         <InputText
@@ -34,7 +37,10 @@ function PrivacyConsentForm() {
         />
       </div>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-privacy-email" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-privacy-email"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Email address
         </label>
         <InputText
@@ -46,9 +52,23 @@ function PrivacyConsentForm() {
           required
         />
       </div>
-      <fieldset style={{ border: '1px solid #ccc', padding: '1rem', marginBottom: '1rem' }}>
+      <fieldset
+        style={{
+          border: '1px solid #ccc',
+          padding: '1rem',
+          marginBottom: '1rem',
+        }}
+      >
         <legend>Communication channels</legend>
-        <div className="field" style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <div
+          className="field"
+          style={{
+            marginBottom: '0.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+          }}
+        >
           <Checkbox
             inputId="primereact-privacy-email-opt"
             name="emailOptIn"
@@ -57,7 +77,15 @@ function PrivacyConsentForm() {
           />
           <label htmlFor="primereact-privacy-email-opt">Email updates</label>
         </div>
-        <div className="field" style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <div
+          className="field"
+          style={{
+            marginBottom: '0.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+          }}
+        >
           <Checkbox
             inputId="primereact-privacy-sms-opt"
             name="smsOptIn"
@@ -66,7 +94,15 @@ function PrivacyConsentForm() {
           />
           <label htmlFor="primereact-privacy-sms-opt">SMS notifications</label>
         </div>
-        <div className="field" style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <div
+          className="field"
+          style={{
+            marginBottom: '0.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+          }}
+        >
           <Checkbox
             inputId="primereact-privacy-phone-opt"
             name="phoneOptIn"
@@ -76,29 +112,58 @@ function PrivacyConsentForm() {
           <label htmlFor="primereact-privacy-phone-opt">Phone calls</label>
         </div>
       </fieldset>
-      <fieldset style={{ border: '1px solid #ccc', padding: '1rem', marginBottom: '1rem' }}>
+      <fieldset
+        style={{
+          border: '1px solid #ccc',
+          padding: '1rem',
+          marginBottom: '1rem',
+        }}
+      >
         <legend>Privacy options</legend>
-        <div className="field" style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <div
+          className="field"
+          style={{
+            marginBottom: '0.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+          }}
+        >
           <Checkbox
             inputId="primereact-privacy-analytics"
             name="analytics"
             checked={analytics}
             onChange={(e) => setAnalytics(e.checked)}
           />
-          <label htmlFor="primereact-privacy-analytics">Allow analytics cookies</label>
+          <label htmlFor="primereact-privacy-analytics">
+            Allow analytics cookies
+          </label>
         </div>
-        <div className="field" style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <div
+          className="field"
+          style={{
+            marginBottom: '0.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+          }}
+        >
           <Checkbox
             inputId="primereact-privacy-personalization"
             name="personalization"
             checked={personalization}
             onChange={(e) => setPersonalization(e.checked)}
           />
-          <label htmlFor="primereact-privacy-personalization">Allow personalized content</label>
+          <label htmlFor="primereact-privacy-personalization">
+            Allow personalized content
+          </label>
         </div>
       </fieldset>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-privacy-notes" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-privacy-notes"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Additional notes
         </label>
         <InputTextarea

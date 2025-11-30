@@ -24,7 +24,10 @@ function NewsletterSubscriptionForm() {
   return (
     <form onSubmit={handleSubmit} className="p-fluid">
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-newsletter-email" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-newsletter-email"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Email address
         </label>
         <InputText
@@ -37,7 +40,10 @@ function NewsletterSubscriptionForm() {
         />
       </div>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-newsletter-frequency" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-newsletter-frequency"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Frequency
         </label>
         <Dropdown
@@ -50,14 +56,24 @@ function NewsletterSubscriptionForm() {
           required
         />
       </div>
-      <div className="field-checkbox" style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+      <div
+        className="field-checkbox"
+        style={{
+          marginBottom: '1rem',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+        }}
+      >
         <Checkbox
           inputId="primereact-newsletter-agree"
           name="agree"
           checked={agree}
           onChange={(e) => setAgree(e.checked)}
         />
-        <label htmlFor="primereact-newsletter-agree">Receive product updates</label>
+        <label htmlFor="primereact-newsletter-agree">
+          Receive product updates
+        </label>
       </div>
       <Button type="submit" label="Subscribe" />
     </form>

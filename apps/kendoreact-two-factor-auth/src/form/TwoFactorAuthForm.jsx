@@ -7,12 +7,15 @@ const codeValidator = (value) =>
   value && /^\d{6}$/.test(value) ? '' : 'Please enter a 6-digit code'
 
 const FormInput = (fieldRenderProps) => {
-  const { label, id, valid, visited, validationMessage, ...others } = fieldRenderProps
+  const { label, id, valid, visited, validationMessage, ...others } =
+    fieldRenderProps
   return (
     <div className="k-form-field">
       <Label editorId={id}>{label}</Label>
       <Input id={id} {...others} />
-      {visited && !valid && <div className="k-form-error">{validationMessage}</div>}
+      {visited && !valid && (
+        <div className="k-form-error">{validationMessage}</div>
+      )}
     </div>
   )
 }
@@ -48,7 +51,11 @@ function TwoFactorAuthForm() {
           />
 
           <div className="k-form-buttons" style={{ marginTop: '16px' }}>
-            <Button type="submit" themeColor="primary" disabled={!formRenderProps.allowSubmit}>
+            <Button
+              type="submit"
+              themeColor="primary"
+              disabled={!formRenderProps.allowSubmit}
+            >
               Verify
             </Button>
             <Button

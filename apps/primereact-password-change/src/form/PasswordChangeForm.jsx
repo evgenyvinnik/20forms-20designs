@@ -17,7 +17,10 @@ function PasswordChangeForm() {
   return (
     <form onSubmit={handleSubmit} className="p-fluid">
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-password-change-current" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-password-change-current"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Current password
         </label>
         <Password
@@ -31,7 +34,10 @@ function PasswordChangeForm() {
         />
       </div>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-password-change-new" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-password-change-new"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           New password
         </label>
         <Password
@@ -44,7 +50,10 @@ function PasswordChangeForm() {
         />
       </div>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-password-change-confirm" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-password-change-confirm"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Confirm new password
         </label>
         <Password
@@ -57,14 +66,24 @@ function PasswordChangeForm() {
           required
         />
       </div>
-      <div className="field-checkbox" style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+      <div
+        className="field-checkbox"
+        style={{
+          marginBottom: '1rem',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+        }}
+      >
         <Checkbox
           inputId="primereact-password-change-logout"
           name="logoutOthers"
           checked={logoutOthers}
           onChange={(e) => setLogoutOthers(e.checked)}
         />
-        <label htmlFor="primereact-password-change-logout">Sign out of other devices</label>
+        <label htmlFor="primereact-password-change-logout">
+          Sign out of other devices
+        </label>
       </div>
       <Button type="submit" label="Update password" />
     </form>

@@ -13,9 +13,14 @@ function TwoFactorAuthForm() {
 
   return (
     <form onSubmit={handleSubmit} className="p-fluid">
-      <p style={{ marginBottom: '1rem' }}>Enter the code from your authenticator app or SMS.</p>
+      <p style={{ marginBottom: '1rem' }}>
+        Enter the code from your authenticator app or SMS.
+      </p>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-two-factor-code" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-two-factor-code"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Verification code
         </label>
         <InputText
@@ -29,7 +34,10 @@ function TwoFactorAuthForm() {
         />
       </div>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-two-factor-backup" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-two-factor-backup"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Backup code (optional)
         </label>
         <InputText
@@ -41,7 +49,12 @@ function TwoFactorAuthForm() {
       </div>
       <div style={{ display: 'flex', gap: '0.5rem' }}>
         <Button type="submit" label="Verify" />
-        <Button type="button" label="Resend code" severity="secondary" onClick={() => alert('A new code has been sent!')} />
+        <Button
+          type="button"
+          label="Resend code"
+          severity="secondary"
+          onClick={() => alert('A new code has been sent!')}
+        />
       </div>
     </form>
   )

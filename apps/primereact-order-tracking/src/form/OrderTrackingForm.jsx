@@ -15,7 +15,10 @@ function OrderTrackingForm() {
   return (
     <form onSubmit={handleSubmit} className="p-fluid">
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-order-tracking-number" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-order-tracking-number"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Order number
         </label>
         <InputText
@@ -27,7 +30,10 @@ function OrderTrackingForm() {
         />
       </div>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-order-tracking-email" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-order-tracking-email"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Email address
         </label>
         <InputText
@@ -40,7 +46,10 @@ function OrderTrackingForm() {
         />
       </div>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-order-tracking-postal" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-order-tracking-postal"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Postal code
         </label>
         <InputText

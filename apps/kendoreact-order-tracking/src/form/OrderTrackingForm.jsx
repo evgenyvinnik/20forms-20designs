@@ -5,17 +5,24 @@ import { Button } from '@progress/kendo-react-buttons'
 
 const requiredValidator = (value) => (value ? '' : 'This field is required')
 const emailValidator = (value) =>
-  value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? '' : 'Please enter a valid email'
+  value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+    ? ''
+    : 'Please enter a valid email'
 const orderNumberValidator = (value) =>
-  value && /^[A-Za-z0-9-]{6,20}$/.test(value) ? '' : 'Please enter a valid order number'
+  value && /^[A-Za-z0-9-]{6,20}$/.test(value)
+    ? ''
+    : 'Please enter a valid order number'
 
 const FormInput = (fieldRenderProps) => {
-  const { label, id, valid, visited, validationMessage, ...others } = fieldRenderProps
+  const { label, id, valid, visited, validationMessage, ...others } =
+    fieldRenderProps
   return (
     <div className="k-form-field">
       <Label editorId={id}>{label}</Label>
       <Input id={id} {...others} />
-      {visited && !valid && <div className="k-form-error">{validationMessage}</div>}
+      {visited && !valid && (
+        <div className="k-form-error">{validationMessage}</div>
+      )}
     </div>
   )
 }
@@ -56,7 +63,11 @@ function OrderTrackingForm() {
           />
 
           <div className="k-form-buttons" style={{ marginTop: '16px' }}>
-            <Button type="submit" themeColor="primary" disabled={!formRenderProps.allowSubmit}>
+            <Button
+              type="submit"
+              themeColor="primary"
+              disabled={!formRenderProps.allowSubmit}
+            >
               Find order
             </Button>
           </div>

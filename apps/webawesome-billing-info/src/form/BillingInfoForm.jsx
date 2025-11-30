@@ -12,12 +12,7 @@ function BillingInfoForm() {
 
   return (
     <form onSubmit={handleSubmit} className="wa-stack wa-gap-m">
-      <wa-input
-        label="Cardholder name"
-        name="cardName"
-        type="text"
-        required
-      />
+      <wa-input label="Cardholder name" name="cardName" type="text" required />
       <wa-input
         label="Card number"
         name="cardNumber"
@@ -41,18 +36,8 @@ function BillingInfoForm() {
           required
         />
       </div>
-      <wa-input
-        label="Billing address"
-        name="address"
-        type="text"
-        required
-      />
-      <wa-input
-        label="City"
-        name="city"
-        type="text"
-        required
-      />
+      <wa-input label="Billing address" name="address" type="text" required />
+      <wa-input label="City" name="city" type="text" required />
       <wa-select
         label="Country"
         name="country"
@@ -63,21 +48,9 @@ function BillingInfoForm() {
         <wa-option value="ca">Canada</wa-option>
         <wa-option value="mx">Mexico</wa-option>
       </wa-select>
-      <wa-input
-        label="State / Province"
-        name="state"
-        type="text"
-        required
-      />
-      <wa-input
-        label="ZIP / Postal code"
-        name="zip"
-        type="text"
-        required
-      />
-      <wa-checkbox name="saveCard">
-        Save card for future purchases
-      </wa-checkbox>
+      <wa-input label="State / Province" name="state" type="text" required />
+      <wa-input label="ZIP / Postal code" name="zip" type="text" required />
+      <wa-checkbox name="saveCard">Save card for future purchases</wa-checkbox>
       <wa-button type="submit" variant="brand">
         Save billing info
       </wa-button>

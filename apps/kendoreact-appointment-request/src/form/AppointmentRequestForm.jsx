@@ -6,48 +6,62 @@ import { Button } from '@progress/kendo-react-buttons'
 
 const requiredValidator = (value) => (value ? '' : 'This field is required')
 const emailValidator = (value) =>
-  value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? '' : 'Please enter a valid email'
+  value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+    ? ''
+    : 'Please enter a valid email'
 
 const FormInput = (fieldRenderProps) => {
-  const { label, id, valid, visited, validationMessage, ...others } = fieldRenderProps
+  const { label, id, valid, visited, validationMessage, ...others } =
+    fieldRenderProps
   return (
     <div className="k-form-field">
       <Label editorId={id}>{label}</Label>
       <Input id={id} {...others} />
-      {visited && !valid && <div className="k-form-error">{validationMessage}</div>}
+      {visited && !valid && (
+        <div className="k-form-error">{validationMessage}</div>
+      )}
     </div>
   )
 }
 
 const FormTextArea = (fieldRenderProps) => {
-  const { label, id, valid, visited, validationMessage, value, onChange } = fieldRenderProps
+  const { label, id, valid, visited, validationMessage, value, onChange } =
+    fieldRenderProps
   return (
     <div className="k-form-field">
       <Label editorId={id}>{label}</Label>
       <TextArea id={id} value={value} onChange={onChange} rows={3} />
-      {visited && !valid && <div className="k-form-error">{validationMessage}</div>}
+      {visited && !valid && (
+        <div className="k-form-error">{validationMessage}</div>
+      )}
     </div>
   )
 }
 
 const FormDatePicker = (fieldRenderProps) => {
-  const { label, id, valid, visited, validationMessage, value, onChange } = fieldRenderProps
+  const { label, id, valid, visited, validationMessage, value, onChange } =
+    fieldRenderProps
   return (
     <div className="k-form-field">
       <Label editorId={id}>{label}</Label>
       <DatePicker id={id} value={value} onChange={onChange} />
-      {visited && !valid && <div className="k-form-error">{validationMessage}</div>}
+      {visited && !valid && (
+        <div className="k-form-error">{validationMessage}</div>
+      )}
     </div>
   )
 }
 
 const FormTimePicker = (fieldRenderProps) => {
-  const { label, id, valid, visited, validationMessage, value, onChange } = fieldRenderProps
+  const { label, id, valid, visited, validationMessage, value, onChange } =
+    fieldRenderProps
   return (
     <div className="k-form-field">
       <Label editorId={id}>{label}</Label>
       <TimePicker id={id} value={value} onChange={onChange} />
-      {visited && !valid && <div className="k-form-error">{validationMessage}</div>}
+      {visited && !valid && (
+        <div className="k-form-error">{validationMessage}</div>
+      )}
     </div>
   )
 }
@@ -104,7 +118,11 @@ function AppointmentRequestForm() {
           />
 
           <div className="k-form-buttons" style={{ marginTop: '16px' }}>
-            <Button type="submit" themeColor="primary" disabled={!formRenderProps.allowSubmit}>
+            <Button
+              type="submit"
+              themeColor="primary"
+              disabled={!formRenderProps.allowSubmit}
+            >
               Request appointment
             </Button>
           </div>

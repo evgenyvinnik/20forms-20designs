@@ -4,15 +4,20 @@ import { Label } from '@progress/kendo-react-labels'
 import { Button } from '@progress/kendo-react-buttons'
 
 const emailValidator = (value) =>
-  value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? '' : 'Please enter a valid email'
+  value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+    ? ''
+    : 'Please enter a valid email'
 
 const FormInput = (fieldRenderProps) => {
-  const { label, id, valid, visited, validationMessage, ...others } = fieldRenderProps
+  const { label, id, valid, visited, validationMessage, ...others } =
+    fieldRenderProps
   return (
     <div className="k-form-field">
       <Label editorId={id}>{label}</Label>
       <Input id={id} {...others} />
-      {visited && !valid && <div className="k-form-error">{validationMessage}</div>}
+      {visited && !valid && (
+        <div className="k-form-error">{validationMessage}</div>
+      )}
     </div>
   )
 }
@@ -27,7 +32,9 @@ function PasswordResetForm() {
       onSubmit={handleSubmit}
       render={(formRenderProps) => (
         <FormElement>
-          <p style={{ marginBottom: '16px' }}>Request a password reset link via email.</p>
+          <p style={{ marginBottom: '16px' }}>
+            Request a password reset link via email.
+          </p>
 
           <Field
             id="kendoreact-password-reset-email"
@@ -39,7 +46,11 @@ function PasswordResetForm() {
           />
 
           <div className="k-form-buttons" style={{ marginTop: '16px' }}>
-            <Button type="submit" themeColor="primary" disabled={!formRenderProps.allowSubmit}>
+            <Button
+              type="submit"
+              themeColor="primary"
+              disabled={!formRenderProps.allowSubmit}
+            >
               Send reset link
             </Button>
           </div>
