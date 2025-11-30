@@ -7,6 +7,8 @@ import {
   YStack,
   Text,
   Select,
+  Adapt,
+  Sheet,
 } from 'tamagui'
 import { useState } from 'react'
 import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from './locationOptions'
@@ -66,12 +68,37 @@ function ShippingAddressForm() {
             <Select.Trigger>
               <Select.Value placeholder="Select country" />
             </Select.Trigger>
-            <Select.Content>
-              {COUNTRIES.map((c, index) => (
-                <Select.Item key={c.value} index={index} value={c.value}>
-                  <Select.ItemText>{c.label}</Select.ItemText>
-                </Select.Item>
-              ))}
+            <Adapt when="sm" platform="touch">
+              <Sheet
+                modal
+                dismissOnSnapToBottom
+                animationConfig={{
+                  type: 'spring',
+                  damping: 20,
+                  mass: 1.2,
+                  stiffness: 250,
+                }}
+              >
+                <Sheet.Frame>
+                  <Sheet.ScrollView>
+                    <Adapt.Contents />
+                  </Sheet.ScrollView>
+                </Sheet.Frame>
+                <Sheet.Overlay
+                  animation="lazy"
+                  enterStyle={{ opacity: 0 }}
+                  exitStyle={{ opacity: 0 }}
+                />
+              </Sheet>
+            </Adapt>
+            <Select.Content zIndex={200000}>
+              <Select.Viewport>
+                {COUNTRIES.map((c, index) => (
+                  <Select.Item key={c.value} index={index} value={c.value}>
+                    <Select.ItemText>{c.label}</Select.ItemText>
+                  </Select.Item>
+                ))}
+              </Select.Viewport>
             </Select.Content>
           </Select>
         </YStack>
@@ -82,12 +109,37 @@ function ShippingAddressForm() {
             <Select.Trigger>
               <Select.Value placeholder="Select an option" />
             </Select.Trigger>
-            <Select.Content>
-              {regionOptions.map((r, index) => (
-                <Select.Item key={r} index={index} value={r}>
-                  <Select.ItemText>{r}</Select.ItemText>
-                </Select.Item>
-              ))}
+            <Adapt when="sm" platform="touch">
+              <Sheet
+                modal
+                dismissOnSnapToBottom
+                animationConfig={{
+                  type: 'spring',
+                  damping: 20,
+                  mass: 1.2,
+                  stiffness: 250,
+                }}
+              >
+                <Sheet.Frame>
+                  <Sheet.ScrollView>
+                    <Adapt.Contents />
+                  </Sheet.ScrollView>
+                </Sheet.Frame>
+                <Sheet.Overlay
+                  animation="lazy"
+                  enterStyle={{ opacity: 0 }}
+                  exitStyle={{ opacity: 0 }}
+                />
+              </Sheet>
+            </Adapt>
+            <Select.Content zIndex={200000}>
+              <Select.Viewport>
+                {regionOptions.map((r, index) => (
+                  <Select.Item key={r} index={index} value={r}>
+                    <Select.ItemText>{r}</Select.ItemText>
+                  </Select.Item>
+                ))}
+              </Select.Viewport>
             </Select.Content>
           </Select>
         </YStack>

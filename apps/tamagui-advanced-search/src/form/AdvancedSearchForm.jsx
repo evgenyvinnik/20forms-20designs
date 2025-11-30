@@ -7,6 +7,8 @@ import {
   YStack,
   Text,
   Select,
+  Adapt,
+  Sheet,
 } from 'tamagui'
 import { useState } from 'react'
 
@@ -34,19 +36,44 @@ function AdvancedSearchForm() {
             <Select.Trigger>
               <Select.Value placeholder="All" />
             </Select.Trigger>
-            <Select.Content>
-              <Select.Item index={0} value="all">
-                <Select.ItemText>All</Select.ItemText>
-              </Select.Item>
-              <Select.Item index={1} value="articles">
-                <Select.ItemText>Articles</Select.ItemText>
-              </Select.Item>
-              <Select.Item index={2} value="products">
-                <Select.ItemText>Products</Select.ItemText>
-              </Select.Item>
-              <Select.Item index={3} value="people">
-                <Select.ItemText>People</Select.ItemText>
-              </Select.Item>
+            <Adapt when="sm" platform="touch">
+              <Sheet
+                modal
+                dismissOnSnapToBottom
+                animationConfig={{
+                  type: 'spring',
+                  damping: 20,
+                  mass: 1.2,
+                  stiffness: 250,
+                }}
+              >
+                <Sheet.Frame>
+                  <Sheet.ScrollView>
+                    <Adapt.Contents />
+                  </Sheet.ScrollView>
+                </Sheet.Frame>
+                <Sheet.Overlay
+                  animation="lazy"
+                  enterStyle={{ opacity: 0 }}
+                  exitStyle={{ opacity: 0 }}
+                />
+              </Sheet>
+            </Adapt>
+            <Select.Content zIndex={200000}>
+              <Select.Viewport>
+                <Select.Item index={0} value="all">
+                  <Select.ItemText>All</Select.ItemText>
+                </Select.Item>
+                <Select.Item index={1} value="articles">
+                  <Select.ItemText>Articles</Select.ItemText>
+                </Select.Item>
+                <Select.Item index={2} value="products">
+                  <Select.ItemText>Products</Select.ItemText>
+                </Select.Item>
+                <Select.Item index={3} value="people">
+                  <Select.ItemText>People</Select.ItemText>
+                </Select.Item>
+              </Select.Viewport>
             </Select.Content>
           </Select>
         </YStack>
@@ -67,16 +94,41 @@ function AdvancedSearchForm() {
             <Select.Trigger>
               <Select.Value placeholder="Relevance" />
             </Select.Trigger>
-            <Select.Content>
-              <Select.Item index={0} value="relevance">
-                <Select.ItemText>Relevance</Select.ItemText>
-              </Select.Item>
-              <Select.Item index={1} value="newest">
-                <Select.ItemText>Newest</Select.ItemText>
-              </Select.Item>
-              <Select.Item index={2} value="oldest">
-                <Select.ItemText>Oldest</Select.ItemText>
-              </Select.Item>
+            <Adapt when="sm" platform="touch">
+              <Sheet
+                modal
+                dismissOnSnapToBottom
+                animationConfig={{
+                  type: 'spring',
+                  damping: 20,
+                  mass: 1.2,
+                  stiffness: 250,
+                }}
+              >
+                <Sheet.Frame>
+                  <Sheet.ScrollView>
+                    <Adapt.Contents />
+                  </Sheet.ScrollView>
+                </Sheet.Frame>
+                <Sheet.Overlay
+                  animation="lazy"
+                  enterStyle={{ opacity: 0 }}
+                  exitStyle={{ opacity: 0 }}
+                />
+              </Sheet>
+            </Adapt>
+            <Select.Content zIndex={200000}>
+              <Select.Viewport>
+                <Select.Item index={0} value="relevance">
+                  <Select.ItemText>Relevance</Select.ItemText>
+                </Select.Item>
+                <Select.Item index={1} value="newest">
+                  <Select.ItemText>Newest</Select.ItemText>
+                </Select.Item>
+                <Select.Item index={2} value="oldest">
+                  <Select.ItemText>Oldest</Select.ItemText>
+                </Select.Item>
+              </Select.Viewport>
             </Select.Content>
           </Select>
         </YStack>

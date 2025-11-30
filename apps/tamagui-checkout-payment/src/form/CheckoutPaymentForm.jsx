@@ -1,4 +1,4 @@
-import { Button, Input, Label, YStack, Select } from 'tamagui'
+import { Button, Input, Label, YStack, Select, Adapt, Sheet } from 'tamagui'
 import { useState } from 'react'
 
 function CheckoutPaymentForm() {
@@ -33,16 +33,41 @@ function CheckoutPaymentForm() {
             <Select.Trigger>
               <Select.Value placeholder="Select shipping" />
             </Select.Trigger>
-            <Select.Content>
-              <Select.Item index={0} value="standard">
-                <Select.ItemText>Standard</Select.ItemText>
-              </Select.Item>
-              <Select.Item index={1} value="express">
-                <Select.ItemText>Express</Select.ItemText>
-              </Select.Item>
-              <Select.Item index={2} value="overnight">
-                <Select.ItemText>Overnight</Select.ItemText>
-              </Select.Item>
+            <Adapt when="sm" platform="touch">
+              <Sheet
+                modal
+                dismissOnSnapToBottom
+                animationConfig={{
+                  type: 'spring',
+                  damping: 20,
+                  mass: 1.2,
+                  stiffness: 250,
+                }}
+              >
+                <Sheet.Frame>
+                  <Sheet.ScrollView>
+                    <Adapt.Contents />
+                  </Sheet.ScrollView>
+                </Sheet.Frame>
+                <Sheet.Overlay
+                  animation="lazy"
+                  enterStyle={{ opacity: 0 }}
+                  exitStyle={{ opacity: 0 }}
+                />
+              </Sheet>
+            </Adapt>
+            <Select.Content zIndex={200000}>
+              <Select.Viewport>
+                <Select.Item index={0} value="standard">
+                  <Select.ItemText>Standard</Select.ItemText>
+                </Select.Item>
+                <Select.Item index={1} value="express">
+                  <Select.ItemText>Express</Select.ItemText>
+                </Select.Item>
+                <Select.Item index={2} value="overnight">
+                  <Select.ItemText>Overnight</Select.ItemText>
+                </Select.Item>
+              </Select.Viewport>
             </Select.Content>
           </Select>
         </YStack>
