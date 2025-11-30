@@ -29,9 +29,17 @@ function PrivacyConsentForm() {
         Email address
       </Input>
       <Spacer h={1} />
-      <fieldset style={{ border: '1px solid #eaeaea', padding: '16px', borderRadius: '6px' }}>
+      <fieldset
+        style={{
+          border: '1px solid #eaeaea',
+          padding: '16px',
+          borderRadius: '6px',
+        }}
+      >
         <legend>
-          <Text small b>Communication channels</Text>
+          <Text small b>
+            Communication channels
+          </Text>
         </legend>
         <Checkbox name="emailOptIn">Email updates</Checkbox>
         <Spacer h={0.5} />
@@ -40,9 +48,17 @@ function PrivacyConsentForm() {
         <Checkbox name="phoneOptIn">Phone calls</Checkbox>
       </fieldset>
       <Spacer h={1} />
-      <fieldset style={{ border: '1px solid #eaeaea', padding: '16px', borderRadius: '6px' }}>
+      <fieldset
+        style={{
+          border: '1px solid #eaeaea',
+          padding: '16px',
+          borderRadius: '6px',
+        }}
+      >
         <legend>
-          <Text small b>Privacy options</Text>
+          <Text small b>
+            Privacy options
+          </Text>
         </legend>
         <Checkbox name="analytics">Allow analytics cookies</Checkbox>
         <Spacer h={0.5} />
