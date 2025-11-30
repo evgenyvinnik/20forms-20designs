@@ -20,7 +20,6 @@ export type LibraryId =
   | 'heroui'
   | 'uswds'
   | 'antd'
-  | 'kendoreact'
   | 'primereact'
   | 'webawesome'
 
@@ -84,7 +83,6 @@ export const LIBRARY_NAME_TO_ID: Record<string, LibraryId | undefined> = {
   HeroUI: 'heroui',
   'U.S. Web Design System': 'uswds',
   'Ant Design': 'antd',
-  KendoReact: 'kendoreact',
   PrimeReact: 'primereact',
   'Web Awesome': 'webawesome',
 }
@@ -232,14 +230,6 @@ export const LIBRARIES: Library[] = [
     directory: 'primereact',
     website: 'https://primereact.org',
     repo: 'https://github.com/primefaces/primereact',
-    implemented: true,
-    supportsTheme: true,
-  },
-  {
-    name: 'KendoReact',
-    directory: 'kendoreact',
-    website: 'https://www.telerik.com/kendo-react-ui',
-    repo: 'https://github.com/telerik/kendo-react',
     implemented: true,
     supportsTheme: true,
   },

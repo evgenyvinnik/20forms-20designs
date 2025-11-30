@@ -12,7 +12,7 @@ This is how this project was born. It represents 20 extremely common forms that 
 
 ## ✨ Features
 
-- **460+ Mini-Apps** — Each form × library combination runs in its own isolated context
+- **440+ Mini-Apps** — Each form × library combination runs in its own isolated context
 - **CSS Isolation** — No style conflicts between design systems (iframe-based architecture)
 - **Theme Support** — Light/dark mode toggle for libraries that support theming
 - **Comparison Matrix** — Side-by-side comparison of forms across libraries
@@ -29,14 +29,14 @@ This project uses a **monorepo + iframe architecture** for complete CSS isolatio
 │   ├── mui-user-login/           # MUI Login Form
 │   ├── mui-user-registration/    # MUI Registration Form
 │   ├── radix-ui-user-login/      # Radix UI Login Form
-│   └── ... (460+ mini-apps total)
+│   └── ... (440+ mini-apps total)
 ├── scripts/
 │   ├── build-all.mjs             # Build orchestration
 │   └── copy-builds-to-dist.mjs   # Deployment bundler
 └── public/                       # Static assets
 ```
 
-### Why 460+ Separate Mini-Apps?
+### Why 440+ Separate Mini-Apps?
 
 You might wonder: *why build 460+ separate applications instead of one unified app?* The answer comes down to **CSS isolation** — the core technical challenge of this project.
 
@@ -66,7 +66,7 @@ This means MUI's `CssBaseline`, Tailwind's preflight, and Chakra's global styles
 
 **The Trade-off:**
 
-Yes, building 460+ separate apps means:
+Yes, building 440+ separate apps means:
 - Longer build times (~2-3 minutes for full build)
 - Duplicated React/library bundles across apps
 - More complex deployment orchestration
@@ -118,7 +118,6 @@ All libraries implement the same 20 forms with identical content, labels, and fi
 | [Geist UI](https://geist-ui.dev/)                       | ✅ Light/Dark | [GitHub](https://github.com/geist-org/geist-ui)                   |
 | [Gravity UI](https://gravity-ui.com/)                   | ✅ Light/Dark | [GitHub](https://github.com/gravity-ui/uikit)                     |
 | [HeroUI](https://heroui.com/)                           | ✅ Light/Dark | [GitHub](https://github.com/heroui-inc/heroui)                    |
-| [KendoReact](https://www.telerik.com/kendo-react-ui/)   | ✅ Light/Dark | [GitHub](https://github.com/telerik/kendo-react)                  |
 | [MUI](https://mui.com/)                                 | ✅ Light/Dark | [GitHub](https://github.com/mui/material-ui)                      |
 | [Pinterest Gestalt](https://gestalt.pinterest.systems/) | ✅ Light/Dark | [GitHub](https://github.com/pinterest/gestalt)                    |
 | [PrimeReact](https://primereact.org/)                   | ✅ Light/Dark | [GitHub](https://github.com/primefaces/primereact)                |
@@ -191,7 +190,7 @@ This runs the shell application in development mode.
 ### Production Build (CSS Isolation)
 
 ```bash
-# Build all 461 apps (shell + 460 mini-apps) for GitHub Pages
+# Build all 441 apps (shell + 440 mini-apps) for GitHub Pages
 npm run build
 
 # Preview the production build locally
@@ -257,7 +256,7 @@ This project is configured for automatic deployment to GitHub Pages via GitHub A
 The workflow:
 
 - Installs dependencies with `--legacy-peer-deps`
-- Builds all 461 apps (shell + 460 mini-apps)
+- Builds all 441 apps (shell + 440 mini-apps)
 - Deploys to GitHub Pages
 
 **Live URL:** `https://<username>.github.io/20forms-20designs/`
