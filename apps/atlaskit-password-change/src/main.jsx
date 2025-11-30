@@ -1,6 +1,23 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import '@atlaskit/css-reset'
 import App from './App'
+
+let lastReportedHeight = 0
+
+function reportHeight() {
+  if (window.parent === window) return
+
+  const root = document.getElementById('root')
+  if (!root) return
+
+  const height = root.scrollHeight
+
+  if (Math.abs(height - lastReportedHeight) > 5) {
+    lastReportedHeight = height
+    window.parent.postMessage({ type: 'IFRAME_HEIGHT', height }, '*')
+  }
+}
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -8,15 +25,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </React.StrictMode>
 )
 
-// Report height to parent window for iframe resizing
-function reportHeight() {
-  const height = document.documentElement.scrollHeight
-  window.parent.postMessage({ type: 'setHeight', height }, '*')
-}
+setTimeout(reportHeight, 200)
+setTimeout(reportHeight, 500)
+setTimeout(reportHeight, 1000)
 
-// Report height on load and resize
-window.addEventListener('load', reportHeight)
-window.addEventListener('resize', reportHeight)
-
-// Also report height after a short delay to catch any dynamic content
-setTimeout(reportHeight, 100)
+window.addEventListener('load', () => setTimeout(reportHeight, 100))

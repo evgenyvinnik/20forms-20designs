@@ -1,20 +1,32 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import '@atlaskit/css-reset'
+import App from './App'
+
+let lastReportedHeight = 0
 
 function reportHeight() {
-  const height = document.documentElement.scrollHeight
-  window.parent.postMessage({ type: 'setHeight', height }, '*')
+  if (window.parent === window) return
+
+  const root = document.getElementById('root')
+  if (!root) return
+
+  const height = root.scrollHeight
+
+  if (Math.abs(height - lastReportedHeight) > 5) {
+    lastReportedHeight = height
+    window.parent.postMessage({ type: 'IFRAME_HEIGHT', height }, '*')
+  }
 }
-
-const observer = new MutationObserver(reportHeight)
-observer.observe(document.body, { childList: true, subtree: true, attributes: true })
-
-window.addEventListener('load', reportHeight)
-window.addEventListener('resize', reportHeight)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
 )
+
+setTimeout(reportHeight, 200)
+setTimeout(reportHeight, 500)
+setTimeout(reportHeight, 1000)
+
+window.addEventListener('load', () => setTimeout(reportHeight, 100))

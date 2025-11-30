@@ -1,20 +1,35 @@
-import { setGlobalTheme, token } from '@atlaskit/tokens'
-import '@atlaskit/css-reset'
-import PasswordChangeForm from './form/PasswordChangeForm'
-
-setGlobalTheme({ light: 'light', dark: 'dark', colorMode: 'auto' })
+import { useState, useEffect } from 'react'
+import { setGlobalTheme } from '@atlaskit/tokens'
+import { Box } from '@atlaskit/primitives'
+import FormComponent from './form/PasswordChangeForm'
+import './styles.css'
 
 function App() {
+  const [currentTheme, setCurrentTheme] = useState(() => {
+    const params = new URLSearchParams(window.location.search)
+    return params.get('theme') === 'dark' ? 'dark' : 'light'
+  })
+
+  useEffect(() => {
+    setGlobalTheme({
+      colorMode: currentTheme,
+    })
+  }, [currentTheme])
+
+  useEffect(() => {
+    const handleMessage = (event) => {
+      if (event.data?.type === 'SET_THEME') {
+        setCurrentTheme(event.data.theme === 'dark' ? 'dark' : 'light')
+      }
+    }
+    window.addEventListener('message', handleMessage)
+    return () => window.removeEventListener('message', handleMessage)
+  }, [])
+
   return (
-    <div
-      style={{
-        padding: token('space.300', '24px'),
-        backgroundColor: token('elevation.surface', '#FFFFFF'),
-        minHeight: '100vh',
-      }}
-    >
-      <PasswordChangeForm />
-    </div>
+    <Box padding="space.200">
+      <FormComponent />
+    </Box>
   )
 }
 

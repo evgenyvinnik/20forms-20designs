@@ -1,21 +1,35 @@
-import '@atlaskit/css-reset'
-import { setGlobalTheme, token } from '@atlaskit/tokens'
-import SupportTicketForm from './form/SupportTicketForm'
-
-setGlobalTheme({ light: 'light', dark: 'dark', colorMode: 'auto' })
+import { useState, useEffect } from 'react'
+import { setGlobalTheme } from '@atlaskit/tokens'
+import { Box } from '@atlaskit/primitives'
+import FormComponent from './form/SupportTicketForm'
+import './styles.css'
 
 function App() {
+  const [currentTheme, setCurrentTheme] = useState(() => {
+    const params = new URLSearchParams(window.location.search)
+    return params.get('theme') === 'dark' ? 'dark' : 'light'
+  })
+
+  useEffect(() => {
+    setGlobalTheme({
+      colorMode: currentTheme,
+    })
+  }, [currentTheme])
+
+  useEffect(() => {
+    const handleMessage = (event) => {
+      if (event.data?.type === 'SET_THEME') {
+        setCurrentTheme(event.data.theme === 'dark' ? 'dark' : 'light')
+      }
+    }
+    window.addEventListener('message', handleMessage)
+    return () => window.removeEventListener('message', handleMessage)
+  }, [])
+
   return (
-    <div
-      style={{
-        minHeight: '100vh',
-        padding: token('space.200', '16px'),
-        backgroundColor: token('elevation.surface', '#FFFFFF'),
-        color: token('color.text', '#172B4D'),
-      }}
-    >
-      <SupportTicketForm />
-    </div>
+    <Box padding="space.200">
+      <FormComponent />
+    </Box>
   )
 }
 

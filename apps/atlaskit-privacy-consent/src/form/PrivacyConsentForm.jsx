@@ -2,91 +2,75 @@ import Button from '@atlaskit/button/new'
 import Textfield from '@atlaskit/textfield'
 import TextArea from '@atlaskit/textarea'
 import { Checkbox } from '@atlaskit/checkbox'
-import Form, { Field, FormFooter, Fieldset } from '@atlaskit/form'
-import { Stack, Text } from '@atlaskit/primitives'
+import { Label } from '@atlaskit/form'
+import { Box, Stack, Text } from '@atlaskit/primitives'
 
 function PrivacyConsentForm() {
-  const handleSubmit = (data) => {
-    console.log('Form data:', data)
+  const handleSubmit = (event) => {
+    event.preventDefault()
     alert('Privacy preferences saved!')
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      {({ formProps }) => (
-        <form {...formProps}>
-          <Stack space="space.200">
-            <Field name="fullName" label="Full name" isRequired>
-              {({ fieldProps }) => <Textfield {...fieldProps} />}
-            </Field>
-
-            <Field name="email" label="Email address" isRequired>
-              {({ fieldProps }) => <Textfield {...fieldProps} type="email" />}
-            </Field>
-
-            <Fieldset legend="Communication channels">
-              <Stack space="space.100">
-                <Field name="emailOptIn">
-                  {({ fieldProps }) => (
-                    <Checkbox
-                      {...fieldProps}
-                      label="Email updates"
-                    />
-                  )}
-                </Field>
-                <Field name="smsOptIn">
-                  {({ fieldProps }) => (
-                    <Checkbox
-                      {...fieldProps}
-                      label="SMS notifications"
-                    />
-                  )}
-                </Field>
-                <Field name="phoneOptIn">
-                  {({ fieldProps }) => (
-                    <Checkbox
-                      {...fieldProps}
-                      label="Phone calls"
-                    />
-                  )}
-                </Field>
-              </Stack>
-            </Fieldset>
-
-            <Fieldset legend="Privacy options">
-              <Stack space="space.100">
-                <Field name="analytics">
-                  {({ fieldProps }) => (
-                    <Checkbox
-                      {...fieldProps}
-                      label="Allow analytics cookies"
-                    />
-                  )}
-                </Field>
-                <Field name="personalization">
-                  {({ fieldProps }) => (
-                    <Checkbox
-                      {...fieldProps}
-                      label="Allow personalized content"
-                    />
-                  )}
-                </Field>
-              </Stack>
-            </Fieldset>
-
-            <Field name="notes" label="Additional notes">
-              {({ fieldProps }) => <TextArea {...fieldProps} rows={3} />}
-            </Field>
-
-            <FormFooter>
-              <Button type="submit" appearance="primary">
-                Save preferences
-              </Button>
-            </FormFooter>
+    <form onSubmit={handleSubmit}>
+      <Stack space="space.200">
+        <Box>
+          <Label htmlFor="atlaskit-privacy-name">Full name</Label>
+          <Textfield
+            id="atlaskit-privacy-name"
+            name="fullName"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-privacy-email">Email address</Label>
+          <Textfield
+            id="atlaskit-privacy-email"
+            name="email"
+            type="email"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Text as="strong">Communication channels</Text>
+          <Stack space="space.100">
+            <Checkbox
+              name="emailOptIn"
+              label="Email updates"
+            />
+            <Checkbox
+              name="smsOptIn"
+              label="SMS notifications"
+            />
+            <Checkbox
+              name="phoneOptIn"
+              label="Phone calls"
+            />
           </Stack>
-        </form>
-      )}
-    </Form>
+        </Box>
+        <Box>
+          <Text as="strong">Privacy options</Text>
+          <Stack space="space.100">
+            <Checkbox
+              name="analytics"
+              label="Allow analytics cookies"
+            />
+            <Checkbox
+              name="personalization"
+              label="Allow personalized content"
+            />
+          </Stack>
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-privacy-notes">Additional notes</Label>
+          <TextArea
+            id="atlaskit-privacy-notes"
+            name="notes"
+          />
+        </Box>
+        <Button type="submit" appearance="primary">Save preferences</Button>
+      </Stack>
+    </form>
   )
 }
 

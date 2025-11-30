@@ -1,0 +1,4 @@
+/* Atlaskit uses design tokens and CSS-in-JS, minimal custom CSS needed */
+.app-container {
+  min-height: 100vh;
+}

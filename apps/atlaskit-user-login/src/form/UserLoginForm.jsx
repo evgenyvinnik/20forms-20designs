@@ -1,52 +1,53 @@
+import { useState } from 'react'
 import Button from '@atlaskit/button/new'
 import Textfield from '@atlaskit/textfield'
 import { Checkbox } from '@atlaskit/checkbox'
-import Form, { Field, FormFooter } from '@atlaskit/form'
-import { Inline, Stack } from '@atlaskit/primitives'
+import { Label } from '@atlaskit/form'
+import { Box, Stack, Inline } from '@atlaskit/primitives'
 
 function UserLoginForm() {
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault()
     alert('Login submitted!')
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      {({ formProps }) => (
-        <form {...formProps}>
-          <Stack space="space.200">
-            <Field name="identifier" label="Email or username" isRequired>
-              {({ fieldProps }) => <Textfield {...fieldProps} />}
-            </Field>
-
-            <Field name="password" label="Password" isRequired>
-              {({ fieldProps }) => (
-                <Textfield {...fieldProps} type="password" />
-              )}
-            </Field>
-
-            <Field name="remember">
-              {({ fieldProps }) => (
-                <Checkbox {...fieldProps} label="Keep me signed in" />
-              )}
-            </Field>
-
-            <FormFooter>
-              <Inline space="space.100">
-                <Button type="submit" appearance="primary">
-                  Sign in
-                </Button>
-                <Button
-                  appearance="default"
-                  onClick={() => alert('Password reset link flow placeholder')}
-                >
-                  Forgot password?
-                </Button>
-              </Inline>
-            </FormFooter>
-          </Stack>
-        </form>
-      )}
-    </Form>
+    <form onSubmit={handleSubmit}>
+      <Stack space="space.200">
+        <Box>
+          <Label htmlFor="atlaskit-user-login-email">Email or username</Label>
+          <Textfield
+            id="atlaskit-user-login-email"
+            name="identifier"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-user-login-password">Password</Label>
+          <Textfield
+            id="atlaskit-user-login-password"
+            name="password"
+            type="password"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Checkbox
+            name="remember"
+            label="Keep me signed in"
+          />
+        </Box>
+        <Inline space="space.100">
+          <Button type="submit" appearance="primary">Sign in</Button>
+          <Button
+            appearance="subtle"
+            onClick={() => alert('Password reset link flow placeholder')}
+          >
+            Forgot password?
+          </Button>
+        </Inline>
+      </Stack>
+    </form>
   )
 }
 

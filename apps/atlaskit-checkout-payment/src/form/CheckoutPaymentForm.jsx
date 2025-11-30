@@ -1,8 +1,9 @@
+import { useState } from 'react'
 import Button from '@atlaskit/button/new'
 import Textfield from '@atlaskit/textfield'
 import Select from '@atlaskit/select'
-import Form, { Field, FormFooter } from '@atlaskit/form'
-import { Stack } from '@atlaskit/primitives'
+import { Label } from '@atlaskit/form'
+import { Box, Stack } from '@atlaskit/primitives'
 
 const shippingOptions = [
   { label: 'Standard', value: 'standard' },
@@ -11,108 +12,74 @@ const shippingOptions = [
 ]
 
 function CheckoutPaymentForm() {
-  const handleSubmit = (data) => {
-    console.log('Form data:', data)
+  const [shipping, setShipping] = useState(null)
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
     alert('Checkout submitted!')
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      {({ formProps }) => (
-        <form {...formProps}>
-          <Stack space="space.200">
-            <Field
-              name="email"
-              label="Email for receipt"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield
-                  {...fieldProps}
-                  type="email"
-                  placeholder="Enter your email"
-                />
-              )}
-            </Field>
-
-            <Field
-              name="shippingMethod"
-              label="Shipping method"
-              isRequired
-            >
-              {({ fieldProps: { id, ...rest } }) => (
-                <Select
-                  inputId={id}
-                  {...rest}
-                  options={shippingOptions}
-                  placeholder="Select shipping"
-                  isClearable={false}
-                />
-              )}
-            </Field>
-
-            <Field
-              name="cardNumber"
-              label="Card number"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield
-                  {...fieldProps}
-                  maxLength={19}
-                  placeholder="0000 0000 0000 0000"
-                />
-              )}
-            </Field>
-
-            <Field
-              name="expiration"
-              label="Expiration"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield
-                  {...fieldProps}
-                  placeholder="MM/YY"
-                />
-              )}
-            </Field>
-
-            <Field
-              name="cvc"
-              label="CVC"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield
-                  {...fieldProps}
-                  maxLength={4}
-                  placeholder="123"
-                />
-              )}
-            </Field>
-
-            <Field
-              name="promoCode"
-              label="Promo code"
-            >
-              {({ fieldProps }) => (
-                <Textfield
-                  {...fieldProps}
-                  placeholder="Enter promo code"
-                />
-              )}
-            </Field>
-
-            <FormFooter>
-              <Button type="submit" appearance="primary">
-                Place order
-              </Button>
-            </FormFooter>
-          </Stack>
-        </form>
-      )}
-    </Form>
+    <form onSubmit={handleSubmit}>
+      <Stack space="space.200">
+        <Box>
+          <Label htmlFor="atlaskit-checkout-email">Email for receipt</Label>
+          <Textfield
+            id="atlaskit-checkout-email"
+            name="email"
+            type="email"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-checkout-shipping-method">Shipping method</Label>
+          <Select
+            inputId="atlaskit-checkout-shipping-method"
+            name="shippingMethod"
+            options={shippingOptions}
+            value={shipping}
+            onChange={setShipping}
+            placeholder="Select shipping"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-checkout-card-number">Card number</Label>
+          <Textfield
+            id="atlaskit-checkout-card-number"
+            name="cardNumber"
+            maxLength={19}
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-checkout-expiration">Expiration</Label>
+          <Textfield
+            id="atlaskit-checkout-expiration"
+            name="expiration"
+            placeholder="MM/YY"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-checkout-cvc">CVC</Label>
+          <Textfield
+            id="atlaskit-checkout-cvc"
+            name="cvc"
+            maxLength={4}
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-checkout-promo">Promo code</Label>
+          <Textfield
+            id="atlaskit-checkout-promo"
+            name="promoCode"
+          />
+        </Box>
+        <Button type="submit" appearance="primary">Place order</Button>
+      </Stack>
+    </form>
   )
 }
 

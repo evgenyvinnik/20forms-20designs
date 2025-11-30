@@ -1,22 +1,35 @@
-import '@atlaskit/css-reset'
-import { setGlobalTheme, token } from '@atlaskit/tokens'
-import AdvancedSearchForm from './form/AdvancedSearchForm'
-
-setGlobalTheme({ colorMode: 'light' })
+import { useState, useEffect } from 'react'
+import { setGlobalTheme } from '@atlaskit/tokens'
+import { Box } from '@atlaskit/primitives'
+import FormComponent from './form/AdvancedSearchForm'
+import './styles.css'
 
 function App() {
+  const [currentTheme, setCurrentTheme] = useState(() => {
+    const params = new URLSearchParams(window.location.search)
+    return params.get('theme') === 'dark' ? 'dark' : 'light'
+  })
+
+  useEffect(() => {
+    setGlobalTheme({
+      colorMode: currentTheme,
+    })
+  }, [currentTheme])
+
+  useEffect(() => {
+    const handleMessage = (event) => {
+      if (event.data?.type === 'SET_THEME') {
+        setCurrentTheme(event.data.theme === 'dark' ? 'dark' : 'light')
+      }
+    }
+    window.addEventListener('message', handleMessage)
+    return () => window.removeEventListener('message', handleMessage)
+  }, [])
+
   return (
-    <div
-      style={{
-        padding: token('space.300', '24px'),
-        fontFamily: token(
-          'font.family.sans',
-          '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif'
-        ),
-      }}
-    >
-      <AdvancedSearchForm />
-    </div>
+    <Box padding="space.200">
+      <FormComponent />
+    </Box>
   )
 }
 

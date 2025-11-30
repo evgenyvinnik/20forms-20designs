@@ -1,97 +1,63 @@
 import Button from '@atlaskit/button/new'
 import Textfield from '@atlaskit/textfield'
 import TextArea from '@atlaskit/textarea'
-import Form, { Field, FormFooter } from '@atlaskit/form'
-import { Stack } from '@atlaskit/primitives'
+import { Label } from '@atlaskit/form'
+import { Box, Stack } from '@atlaskit/primitives'
 
 function ProfileUpdateForm() {
-  const handleSubmit = (data) => {
-    console.log('Form data:', data)
+  const handleSubmit = (event) => {
+    event.preventDefault()
     alert('Profile updated!')
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      {({ formProps }) => (
-        <form {...formProps}>
-          <Stack space="space.200">
-            <Field
-              name="firstName"
-              label="First name"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield
-                  {...fieldProps}
-                  placeholder="Enter your first name"
-                />
-              )}
-            </Field>
-
-            <Field
-              name="lastName"
-              label="Last name"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield
-                  {...fieldProps}
-                  placeholder="Enter your last name"
-                />
-              )}
-            </Field>
-
-            <Field
-              name="email"
-              label="Email address"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield
-                  {...fieldProps}
-                  type="email"
-                  placeholder="Enter your email address"
-                />
-              )}
-            </Field>
-
-            <Field
-              name="phone"
-              label="Phone number"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield
-                  {...fieldProps}
-                  type="tel"
-                  placeholder="Enter your phone number"
-                />
-              )}
-            </Field>
-
-            <Field
-              name="bio"
-              label="Short bio"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <TextArea
-                  {...fieldProps}
-                  placeholder="Tell us about yourself"
-                  minimumRows={3}
-                />
-              )}
-            </Field>
-
-            <FormFooter>
-              <Button type="submit" appearance="primary">
-                Save changes
-              </Button>
-            </FormFooter>
-          </Stack>
-        </form>
-      )}
-    </Form>
+    <form onSubmit={handleSubmit}>
+      <Stack space="space.200">
+        <Box>
+          <Label htmlFor="atlaskit-profile-first-name">First name</Label>
+          <Textfield
+            id="atlaskit-profile-first-name"
+            name="firstName"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-profile-last-name">Last name</Label>
+          <Textfield
+            id="atlaskit-profile-last-name"
+            name="lastName"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-profile-email">Email address</Label>
+          <Textfield
+            id="atlaskit-profile-email"
+            name="email"
+            type="email"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-profile-phone">Phone number</Label>
+          <Textfield
+            id="atlaskit-profile-phone"
+            name="phone"
+            type="tel"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-profile-bio">Short bio</Label>
+          <TextArea
+            id="atlaskit-profile-bio"
+            name="bio"
+            isRequired
+          />
+        </Box>
+        <Button type="submit" appearance="primary">Save changes</Button>
+      </Stack>
+    </form>
   )
 }
 

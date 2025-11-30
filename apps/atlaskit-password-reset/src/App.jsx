@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
-import { setGlobalTheme, token } from '@atlaskit/tokens'
-import '@atlaskit/css-reset'
+import { setGlobalTheme } from '@atlaskit/tokens'
+import { Box } from '@atlaskit/primitives'
 import FormComponent from './form/PasswordResetForm'
+import './styles.css'
 
 function App() {
   const [currentTheme, setCurrentTheme] = useState(() => {
@@ -10,13 +11,15 @@ function App() {
   })
 
   useEffect(() => {
-    setGlobalTheme({ colorMode: currentTheme })
+    setGlobalTheme({
+      colorMode: currentTheme,
+    })
   }, [currentTheme])
 
   useEffect(() => {
     const handleMessage = (event) => {
       if (event.data?.type === 'SET_THEME') {
-        setCurrentTheme(event.data.theme)
+        setCurrentTheme(event.data.theme === 'dark' ? 'dark' : 'light')
       }
     }
     window.addEventListener('message', handleMessage)
@@ -24,16 +27,9 @@ function App() {
   }, [])
 
   return (
-    <div
-      style={{
-        padding: '16px',
-        backgroundColor: token('elevation.surface'),
-        color: token('color.text'),
-        minHeight: '100vh',
-      }}
-    >
+    <Box padding="space.200">
       <FormComponent />
-    </div>
+    </Box>
   )
 }
 

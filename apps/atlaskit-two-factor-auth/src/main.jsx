@@ -1,22 +1,32 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import '@atlaskit/css-reset'
+import App from './App'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+let lastReportedHeight = 0
 
-// Report height to parent window for iframe resizing
 function reportHeight() {
-  const height = document.documentElement.scrollHeight
-  window.parent.postMessage({ type: 'setHeight', height }, '*')
+  if (window.parent === window) return
+
+  const root = document.getElementById('root')
+  if (!root) return
+
+  const height = root.scrollHeight
+
+  if (Math.abs(height - lastReportedHeight) > 5) {
+    lastReportedHeight = height
+    window.parent.postMessage({ type: 'IFRAME_HEIGHT', height }, '*')
+  }
 }
 
-// Report height on load and on resize
-window.addEventListener('load', reportHeight)
-window.addEventListener('resize', reportHeight)
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
 
-// Also report height after a short delay to account for dynamic content
-setTimeout(reportHeight, 100)
+setTimeout(reportHeight, 200)
+setTimeout(reportHeight, 500)
+setTimeout(reportHeight, 1000)
+
+window.addEventListener('load', () => setTimeout(reportHeight, 100))

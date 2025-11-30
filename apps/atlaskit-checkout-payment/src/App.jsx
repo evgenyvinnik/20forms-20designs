@@ -1,20 +1,35 @@
-import { setGlobalTheme, token } from '@atlaskit/tokens'
-import '@atlaskit/css-reset'
-import CheckoutPaymentForm from './form/CheckoutPaymentForm'
-
-setGlobalTheme({ colorMode: 'light' })
+import { useState, useEffect } from 'react'
+import { setGlobalTheme } from '@atlaskit/tokens'
+import { Box } from '@atlaskit/primitives'
+import FormComponent from './form/CheckoutPaymentForm'
+import './styles.css'
 
 function App() {
+  const [currentTheme, setCurrentTheme] = useState(() => {
+    const params = new URLSearchParams(window.location.search)
+    return params.get('theme') === 'dark' ? 'dark' : 'light'
+  })
+
+  useEffect(() => {
+    setGlobalTheme({
+      colorMode: currentTheme,
+    })
+  }, [currentTheme])
+
+  useEffect(() => {
+    const handleMessage = (event) => {
+      if (event.data?.type === 'SET_THEME') {
+        setCurrentTheme(event.data.theme === 'dark' ? 'dark' : 'light')
+      }
+    }
+    window.addEventListener('message', handleMessage)
+    return () => window.removeEventListener('message', handleMessage)
+  }, [])
+
   return (
-    <div
-      style={{
-        padding: token('space.300', '24px'),
-        minHeight: '100vh',
-        boxSizing: 'border-box',
-      }}
-    >
-      <CheckoutPaymentForm />
-    </div>
+    <Box padding="space.200">
+      <FormComponent />
+    </Box>
   )
 }
 

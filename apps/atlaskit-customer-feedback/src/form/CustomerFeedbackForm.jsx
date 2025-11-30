@@ -4,8 +4,8 @@ import Textfield from '@atlaskit/textfield'
 import TextArea from '@atlaskit/textarea'
 import Select from '@atlaskit/select'
 import { Checkbox } from '@atlaskit/checkbox'
-import Form, { Field, FormFooter } from '@atlaskit/form'
-import { Stack } from '@atlaskit/primitives'
+import { Label } from '@atlaskit/form'
+import { Box, Stack } from '@atlaskit/primitives'
 
 const ratingOptions = [
   { label: 'Excellent', value: 'excellent' },
@@ -15,90 +15,62 @@ const ratingOptions = [
 ]
 
 function CustomerFeedbackForm() {
-  const [followUp, setFollowUp] = useState(false)
+  const [rating, setRating] = useState(null)
 
-  const handleSubmit = (data) => {
-    console.log('Form data:', { ...data, followUp })
+  const handleSubmit = (event) => {
+    event.preventDefault()
     alert('Feedback submitted!')
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      {({ formProps }) => (
-        <form {...formProps}>
-          <Stack space="space.200">
-            <Field
-              name="name"
-              label="Name"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield
-                  {...fieldProps}
-                  placeholder="Enter your name"
-                />
-              )}
-            </Field>
-
-            <Field
-              name="email"
-              label="Email address"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield
-                  {...fieldProps}
-                  type="email"
-                  placeholder="Enter your email"
-                />
-              )}
-            </Field>
-
-            <Field
-              name="rating"
-              label="Overall rating"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Select
-                  {...fieldProps}
-                  options={ratingOptions}
-                  placeholder="Select rating"
-                  isClearable
-                />
-              )}
-            </Field>
-
-            <Field
-              name="comments"
-              label="Comments"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <TextArea
-                  {...fieldProps}
-                  placeholder="Enter your comments"
-                  minimumRows={4}
-                />
-              )}
-            </Field>
-
-            <Checkbox
-              name="followUp"
-              label="I would like a follow-up"
-              isChecked={followUp}
-              onChange={(e) => setFollowUp(e.target.checked)}
-            />
-
-            <FormFooter>
-              <Button type="submit" appearance="primary">
-                Send feedback
-              </Button>
-            </FormFooter>
-          </Stack>
-        </form>
-      )}
-    </Form>
+    <form onSubmit={handleSubmit}>
+      <Stack space="space.200">
+        <Box>
+          <Label htmlFor="atlaskit-feedback-name">Name</Label>
+          <Textfield
+            id="atlaskit-feedback-name"
+            name="name"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-feedback-email">Email address</Label>
+          <Textfield
+            id="atlaskit-feedback-email"
+            name="email"
+            type="email"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-feedback-rating">Overall rating</Label>
+          <Select
+            inputId="atlaskit-feedback-rating"
+            name="rating"
+            options={ratingOptions}
+            value={rating}
+            onChange={setRating}
+            placeholder="Select rating"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-feedback-comments">Comments</Label>
+          <TextArea
+            id="atlaskit-feedback-comments"
+            name="comments"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Checkbox
+            name="followUp"
+            label="I would like a follow-up"
+          />
+        </Box>
+        <Button type="submit" appearance="primary">Send feedback</Button>
+      </Stack>
+    </form>
   )
 }
 

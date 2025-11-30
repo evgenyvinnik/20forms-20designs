@@ -1,68 +1,45 @@
 import Button from '@atlaskit/button/new'
-import Form, { Field, FormFooter } from '@atlaskit/form'
 import Textfield from '@atlaskit/textfield'
-import { Stack } from '@atlaskit/primitives'
+import { Label } from '@atlaskit/form'
+import { Box, Stack } from '@atlaskit/primitives'
 
 function OrderTrackingForm() {
-  const handleSubmit = (data) => {
+  const handleSubmit = (event) => {
+    event.preventDefault()
     alert('Order lookup submitted!')
-    console.log('Form data:', data)
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      {({ formProps }) => (
-        <form {...formProps}>
-          <Stack space="space.200">
-            <Field
-              name="orderNumber"
-              label="Order number"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield
-                  {...fieldProps}
-                  placeholder="Enter your order number"
-                />
-              )}
-            </Field>
-
-            <Field
-              name="email"
-              label="Email address"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield
-                  {...fieldProps}
-                  type="email"
-                  placeholder="Enter your email address"
-                />
-              )}
-            </Field>
-
-            <Field
-              name="postalCode"
-              label="Postal code"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield
-                  {...fieldProps}
-                  placeholder="Enter your postal code"
-                />
-              )}
-            </Field>
-
-            <FormFooter>
-              <Button type="submit" appearance="primary">
-                Find order
-              </Button>
-            </FormFooter>
-          </Stack>
-        </form>
-      )}
-    </Form>
+    <form onSubmit={handleSubmit}>
+      <Stack space="space.200">
+        <Box>
+          <Label htmlFor="atlaskit-order-tracking-number">Order number</Label>
+          <Textfield
+            id="atlaskit-order-tracking-number"
+            name="orderNumber"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-order-tracking-email">Email address</Label>
+          <Textfield
+            id="atlaskit-order-tracking-email"
+            name="email"
+            type="email"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-order-tracking-postal">Postal code</Label>
+          <Textfield
+            id="atlaskit-order-tracking-postal"
+            name="postalCode"
+            isRequired
+          />
+        </Box>
+        <Button type="submit" appearance="primary">Find order</Button>
+      </Stack>
+    </form>
   )
 }
 

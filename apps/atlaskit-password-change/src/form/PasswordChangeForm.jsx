@@ -1,83 +1,54 @@
 import Button from '@atlaskit/button/new'
 import Textfield from '@atlaskit/textfield'
 import { Checkbox } from '@atlaskit/checkbox'
-import Form, { Field, FormFooter } from '@atlaskit/form'
-import { Stack } from '@atlaskit/primitives'
+import { Label } from '@atlaskit/form'
+import { Box, Stack } from '@atlaskit/primitives'
 
 function PasswordChangeForm() {
-  const handleSubmit = (data) => {
-    if (data.newPassword !== data.confirmPassword) {
-      alert('Passwords do not match!')
-      return
-    }
+  const handleSubmit = (event) => {
+    event.preventDefault()
     alert('Password change requested!')
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      {({ formProps }) => (
-        <form {...formProps}>
-          <Stack space="space.200">
-            <Field
-              name="currentPassword"
-              label="Current password"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield
-                  {...fieldProps}
-                  type="password"
-                  autoComplete="current-password"
-                />
-              )}
-            </Field>
-
-            <Field
-              name="newPassword"
-              label="New password"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield
-                  {...fieldProps}
-                  type="password"
-                  autoComplete="new-password"
-                />
-              )}
-            </Field>
-
-            <Field
-              name="confirmPassword"
-              label="Confirm new password"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield
-                  {...fieldProps}
-                  type="password"
-                  autoComplete="new-password"
-                />
-              )}
-            </Field>
-
-            <Field name="logoutOthers">
-              {({ fieldProps }) => (
-                <Checkbox
-                  {...fieldProps}
-                  label="Sign out of other devices"
-                />
-              )}
-            </Field>
-
-            <FormFooter>
-              <Button type="submit" appearance="primary">
-                Update password
-              </Button>
-            </FormFooter>
-          </Stack>
-        </form>
-      )}
-    </Form>
+    <form onSubmit={handleSubmit}>
+      <Stack space="space.200">
+        <Box>
+          <Label htmlFor="atlaskit-password-change-current">Current password</Label>
+          <Textfield
+            id="atlaskit-password-change-current"
+            name="currentPassword"
+            type="password"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-password-change-new">New password</Label>
+          <Textfield
+            id="atlaskit-password-change-new"
+            name="newPassword"
+            type="password"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-password-change-confirm">Confirm new password</Label>
+          <Textfield
+            id="atlaskit-password-change-confirm"
+            name="confirmPassword"
+            type="password"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Checkbox
+            name="logoutOthers"
+            label="Sign out of other devices"
+          />
+        </Box>
+        <Button type="submit" appearance="primary">Update password</Button>
+      </Stack>
+    </form>
   )
 }
 

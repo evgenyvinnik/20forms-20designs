@@ -1,83 +1,63 @@
 import Button from '@atlaskit/button/new'
 import Textfield from '@atlaskit/textfield'
 import TextArea from '@atlaskit/textarea'
-import Form, { Field, FormFooter } from '@atlaskit/form'
-import { Stack } from '@atlaskit/primitives'
+import { DatePicker, TimePicker } from '@atlaskit/datetime-picker'
+import { Label } from '@atlaskit/form'
+import { Box, Stack } from '@atlaskit/primitives'
 
 function AppointmentRequestForm() {
-  const handleSubmit = (data) => {
-    console.log('Form data:', data)
+  const handleSubmit = (event) => {
+    event.preventDefault()
     alert('Appointment request submitted!')
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      {({ formProps }) => (
-        <form {...formProps}>
-          <Stack space="space.200">
-            <Field
-              name="fullName"
-              label="Full name"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield {...fieldProps} placeholder="Enter your full name" />
-              )}
-            </Field>
-
-            <Field
-              name="email"
-              label="Email address"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield {...fieldProps} type="email" placeholder="Enter your email" />
-              )}
-            </Field>
-
-            <Field
-              name="date"
-              label="Preferred date"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield {...fieldProps} type="date" />
-              )}
-            </Field>
-
-            <Field
-              name="time"
-              label="Preferred time"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <Textfield {...fieldProps} type="time" />
-              )}
-            </Field>
-
-            <Field
-              name="reason"
-              label="Reason for visit"
-              isRequired
-            >
-              {({ fieldProps }) => (
-                <TextArea
-                  {...fieldProps}
-                  placeholder="Enter reason for your visit"
-                  minimumRows={3}
-                />
-              )}
-            </Field>
-
-            <FormFooter>
-              <Button type="submit" appearance="primary">
-                Request appointment
-              </Button>
-            </FormFooter>
-          </Stack>
-        </form>
-      )}
-    </Form>
+    <form onSubmit={handleSubmit}>
+      <Stack space="space.200">
+        <Box>
+          <Label htmlFor="atlaskit-appointment-name">Full name</Label>
+          <Textfield
+            id="atlaskit-appointment-name"
+            name="fullName"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-appointment-email">Email address</Label>
+          <Textfield
+            id="atlaskit-appointment-email"
+            name="email"
+            type="email"
+            isRequired
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-appointment-date">Preferred date</Label>
+          <DatePicker
+            id="atlaskit-appointment-date"
+            name="date"
+            placeholder="Select a date"
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-appointment-time">Preferred time</Label>
+          <TimePicker
+            id="atlaskit-appointment-time"
+            name="time"
+            placeholder="Select a time"
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="atlaskit-appointment-reason">Reason for visit</Label>
+          <TextArea
+            id="atlaskit-appointment-reason"
+            name="reason"
+            isRequired
+          />
+        </Box>
+        <Button type="submit" appearance="primary">Request appointment</Button>
+      </Stack>
+    </form>
   )
 }
 
