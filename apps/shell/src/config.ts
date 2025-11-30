@@ -14,10 +14,8 @@ export type LibraryId =
   | 'polaris'
   | 'chakra'
   | 'elastic-ui'
-  | 'geist-ui'
   | 'zendesk-garden'
   | 'tamagui'
-  | 'heroui'
   | 'uswds'
   | 'antd'
   | 'primereact'
@@ -77,10 +75,8 @@ export const LIBRARY_NAME_TO_ID: Record<string, LibraryId | undefined> = {
   'Shopify Polaris': 'polaris',
   'Chakra UI': 'chakra',
   'Elastic UI (EUI)': 'elastic-ui',
-  'Geist UI': 'geist-ui',
   'Zendesk Garden': 'zendesk-garden',
   Tamagui: 'tamagui',
-  HeroUI: 'heroui',
   'U.S. Web Design System': 'uswds',
   'Ant Design': 'antd',
   PrimeReact: 'primereact',
@@ -234,26 +230,10 @@ export const LIBRARIES: Library[] = [
     supportsTheme: true,
   },
   {
-    name: 'HeroUI',
-    directory: 'heroui',
-    website: 'https://heroui.com',
-    repo: 'https://github.com/heroui-inc/heroui',
-    implemented: true,
-    supportsTheme: true,
-  },
-  {
     name: 'Gravity UI',
     directory: 'gravity-ui',
     website: 'https://gravity-ui.com',
     repo: 'https://github.com/gravity-ui/uikit',
-    implemented: true,
-    supportsTheme: true,
-  },
-  {
-    name: 'Geist UI',
-    directory: 'geist-ui',
-    website: 'https://geist-ui.dev',
-    repo: 'https://github.com/geist-org/geist-ui',
     implemented: true,
     supportsTheme: true,
   },

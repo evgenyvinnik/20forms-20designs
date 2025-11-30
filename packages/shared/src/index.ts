@@ -17,10 +17,8 @@ export type LibraryId =
   | 'polaris'
   | 'chakra'
   | 'elastic-ui'
-  | 'geist-ui'
   | 'zendesk-garden'
   | 'tamagui'
-  | 'heroui'
   | 'uswds'
 
 export type FormId =
@@ -247,14 +245,6 @@ export const LIBRARIES: LibraryConfig[] = [
     supportsTheme: true,
   },
   {
-    id: 'geist-ui',
-    name: 'Geist UI',
-    directory: 'geist-ui',
-    website: 'https://geist-ui.dev',
-    repo: 'https://github.com/geist-org/geist-ui',
-    supportsTheme: true,
-  },
-  {
     id: 'zendesk-garden',
     name: 'Zendesk Garden',
     directory: 'zendesk-garden',
@@ -268,14 +258,6 @@ export const LIBRARIES: LibraryConfig[] = [
     directory: 'tamagui',
     website: 'https://tamagui.dev',
     repo: 'https://github.com/tamagui/tamagui',
-    supportsTheme: true,
-  },
-  {
-    id: 'heroui',
-    name: 'HeroUI',
-    directory: 'heroui',
-    website: 'https://heroui.com',
-    repo: 'https://github.com/heroui-inc/heroui',
     supportsTheme: true,
   },
   {

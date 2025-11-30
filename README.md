@@ -115,9 +115,7 @@ All libraries implement the same 20 forms with identical content, labels, and fi
 | [daisyUI](https://daisyui.com/)                         | ✅ Light/Dark | [GitHub](https://github.com/saadeghi/daisyui)                     |
 | [Elastic UI (EUI)](https://eui.elastic.co/)             | ✅ Light/Dark | [GitHub](https://github.com/elastic/eui)                          |
 | [Evergreen](https://evergreen.segment.com/)             | ⚠️ Light only | [GitHub](https://github.com/segmentio/evergreen)                  |
-| [Geist UI](https://geist-ui.dev/)                       | ✅ Light/Dark | [GitHub](https://github.com/geist-org/geist-ui)                   |
 | [Gravity UI](https://gravity-ui.com/)                   | ✅ Light/Dark | [GitHub](https://github.com/gravity-ui/uikit)                     |
-| [HeroUI](https://heroui.com/)                           | ✅ Light/Dark | [GitHub](https://github.com/heroui-inc/heroui)                    |
 | [MUI](https://mui.com/)                                 | ✅ Light/Dark | [GitHub](https://github.com/mui/material-ui)                      |
 | [Pinterest Gestalt](https://gestalt.pinterest.systems/) | ✅ Light/Dark | [GitHub](https://github.com/pinterest/gestalt)                    |
 | [PrimeReact](https://primereact.org/)                   | ✅ Light/Dark | [GitHub](https://github.com/primefaces/primereact)                |
