@@ -14,7 +14,6 @@ export type LibraryId =
   | 'polaris'
   | 'chakra'
   | 'elastic-ui'
-  | 'nextui'
   | 'geist-ui'
   | 'zendesk-garden'
   | 'tamagui'
@@ -75,7 +74,6 @@ export const LIBRARY_NAME_TO_ID: Record<string, LibraryId | undefined> = {
   'Shopify Polaris': 'polaris',
   'Chakra UI': 'chakra',
   'Elastic UI (EUI)': 'elastic-ui',
-  NextUI: 'nextui',
   'Geist UI': 'geist-ui',
   'Zendesk Garden': 'zendesk-garden',
   Tamagui: 'tamagui',
@@ -242,14 +240,6 @@ export const LIBRARIES: Library[] = [
     directory: 'heroui',
     website: 'https://heroui.com',
     repo: 'https://github.com/heroui-inc/heroui',
-    implemented: true,
-    supportsTheme: true,
-  },
-  {
-    name: 'NextUI',
-    directory: 'nextui',
-    website: 'https://nextui.org',
-    repo: 'https://github.com/nextui-org/nextui',
     implemented: true,
     supportsTheme: true,
   },
@@ -450,14 +440,6 @@ export const LIBRARIES: Library[] = [
     directory: 'primer-react',
     website: 'https://primer.style/react',
     repo: 'https://github.com/primer/react',
-    implemented: false,
-    supportsTheme: false,
-  },
-  {
-    name: 'FAST Design',
-    directory: 'fast-design',
-    website: 'https://www.fast.design',
-    repo: 'https://github.com/microsoft/fast',
     implemented: false,
     supportsTheme: false,
   },
