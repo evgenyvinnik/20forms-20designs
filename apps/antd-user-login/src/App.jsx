@@ -21,7 +21,10 @@ function App() {
   return (
     <ConfigProvider
       theme={{
-        algorithm: currentTheme === 'dark' ? theme.darkAlgorithm : theme.defaultAlgorithm,
+        algorithm:
+          currentTheme === 'dark'
+            ? theme.darkAlgorithm
+            : theme.defaultAlgorithm,
       }}
     >
       <div

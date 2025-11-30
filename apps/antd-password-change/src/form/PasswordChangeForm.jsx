@@ -12,7 +12,9 @@ function PasswordChangeForm() {
       <Form.Item
         label="Current password"
         name="currentPassword"
-        rules={[{ required: true, message: 'Please enter your current password' }]}
+        rules={[
+          { required: true, message: 'Please enter your current password' },
+        ]}
       >
         <Input.Password />
       </Form.Item>

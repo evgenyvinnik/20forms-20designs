@@ -8,15 +8,13 @@ function UserLoginForm() {
   }
 
   return (
-    <Form
-      form={form}
-      layout="vertical"
-      onFinish={handleSubmit}
-    >
+    <Form form={form} layout="vertical" onFinish={handleSubmit}>
       <Form.Item
         label="Email or username"
         name="identifier"
-        rules={[{ required: true, message: 'Please enter your email or username' }]}
+        rules={[
+          { required: true, message: 'Please enter your email or username' },
+        ]}
       >
         <Input />
       </Form.Item>

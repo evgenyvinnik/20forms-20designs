@@ -22,7 +22,9 @@ function TwoFactorAuthForm() {
       <Form.Item
         label="Verification code"
         name="verificationCode"
-        rules={[{ required: true, message: 'Please enter the verification code' }]}
+        rules={[
+          { required: true, message: 'Please enter the verification code' },
+        ]}
       >
         <Input maxLength={6} />
       </Form.Item>

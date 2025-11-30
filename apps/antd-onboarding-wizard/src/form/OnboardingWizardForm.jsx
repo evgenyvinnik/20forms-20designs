@@ -1,4 +1,13 @@
-import { Form, Input, Button, Select, Checkbox, Typography, Space, Divider } from 'antd'
+import {
+  Form,
+  Input,
+  Button,
+  Select,
+  Checkbox,
+  Typography,
+  Space,
+  Divider,
+} from 'antd'
 
 const { TextArea } = Input
 const { Title } = Typography

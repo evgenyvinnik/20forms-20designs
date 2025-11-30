@@ -32,7 +32,9 @@ function PrivacyConsentForm() {
       </Form.Item>
 
       <Divider orientation="left">
-        <Title level={5} style={{ margin: 0 }}>Communication channels</Title>
+        <Title level={5} style={{ margin: 0 }}>
+          Communication channels
+        </Title>
       </Divider>
 
       <Form.Item name="emailOptIn" valuePropName="checked">
@@ -48,7 +50,9 @@ function PrivacyConsentForm() {
       </Form.Item>
 
       <Divider orientation="left">
-        <Title level={5} style={{ margin: 0 }}>Privacy options</Title>
+        <Title level={5} style={{ margin: 0 }}>
+          Privacy options
+        </Title>
       </Divider>
 
       <Form.Item name="analytics" valuePropName="checked">
