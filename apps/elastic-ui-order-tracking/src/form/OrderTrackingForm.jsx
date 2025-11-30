@@ -1,36 +1,22 @@
 import { useState, useCallback } from 'react'
-import {
-  EuiForm,
-  EuiFormRow,
-  EuiFieldText,
-  EuiButton,
-  EuiFlexGroup,
-  EuiFlexItem,
-  EuiText,
-} from '@elastic/eui'
+import { EuiForm, EuiFormRow, EuiFieldText, EuiButton } from '@elastic/eui'
 
 function OrderTrackingForm() {
   const [orderNumber, setOrderNumber] = useState('')
   const [email, setEmail] = useState('')
+  const [postalCode, setPostalCode] = useState('')
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
-    alert('Tracking information requested!')
+    alert('Order lookup submitted!')
   }, [])
 
   return (
     <EuiForm component="form" onSubmit={handleSubmit}>
-      <EuiFormRow>
-        <EuiText size="s">
-          <p>Enter your order number and email address to track your order</p>
-        </EuiText>
-      </EuiFormRow>
-
       <EuiFormRow label="Order number">
         <EuiFieldText
           value={orderNumber}
           onChange={(e) => setOrderNumber(e.target.value)}
-          placeholder="e.g., ORD-123456"
           required
         />
       </EuiFormRow>
@@ -44,14 +30,18 @@ function OrderTrackingForm() {
         />
       </EuiFormRow>
 
+      <EuiFormRow label="Postal code">
+        <EuiFieldText
+          value={postalCode}
+          onChange={(e) => setPostalCode(e.target.value)}
+          required
+        />
+      </EuiFormRow>
+
       <EuiFormRow>
-        <EuiFlexGroup gutterSize="s">
-          <EuiFlexItem grow={false}>
-            <EuiButton type="submit" fill>
-              Track order
-            </EuiButton>
-          </EuiFlexItem>
-        </EuiFlexGroup>
+        <EuiButton type="submit" fill>
+          Find order
+        </EuiButton>
       </EuiFormRow>
     </EuiForm>
   )

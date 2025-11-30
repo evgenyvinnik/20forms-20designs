@@ -3,50 +3,31 @@ import {
   EuiForm,
   EuiFormRow,
   EuiFieldText,
-  EuiSelect,
   EuiTextArea,
+  EuiRadioGroup,
+  EuiFilePicker,
   EuiButton,
 } from '@elastic/eui'
 
-const categoryOptions = [
-  { value: '', text: 'Select category' },
-  { value: 'technical', text: 'Technical Issue' },
-  { value: 'billing', text: 'Billing Question' },
-  { value: 'account', text: 'Account Problem' },
-  { value: 'feature', text: 'Feature Request' },
-  { value: 'other', text: 'Other' },
-]
-
 const priorityOptions = [
-  { value: 'low', text: 'Low' },
-  { value: 'medium', text: 'Medium' },
-  { value: 'high', text: 'High' },
-  { value: 'urgent', text: 'Urgent' },
+  { id: 'low', label: 'Low' },
+  { id: 'medium', label: 'Medium' },
+  { id: 'high', label: 'High' },
 ]
 
 function SupportTicketForm() {
   const [subject, setSubject] = useState('')
-  const [category, setCategory] = useState('')
-  const [priority, setPriority] = useState('medium')
+  const [priority, setPriority] = useState('')
   const [description, setDescription] = useState('')
-  const [email, setEmail] = useState('')
+  const [attachments, setAttachments] = useState([])
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
-    alert('Support ticket submitted successfully!')
+    alert('Support ticket submitted!')
   }, [])
 
   return (
     <EuiForm component="form" onSubmit={handleSubmit}>
-      <EuiFormRow label="Email address">
-        <EuiFieldText
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </EuiFormRow>
-
       <EuiFormRow label="Subject">
         <EuiFieldText
           value={subject}
@@ -55,30 +36,25 @@ function SupportTicketForm() {
         />
       </EuiFormRow>
 
-      <EuiFormRow label="Category">
-        <EuiSelect
-          options={categoryOptions}
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          required
-        />
-      </EuiFormRow>
-
-      <EuiFormRow label="Priority">
-        <EuiSelect
+      <EuiFormRow label="Priority" fullWidth>
+        <EuiRadioGroup
           options={priorityOptions}
-          value={priority}
-          onChange={(e) => setPriority(e.target.value)}
+          idSelected={priority}
+          onChange={(id) => setPriority(id)}
         />
       </EuiFormRow>
 
-      <EuiFormRow label="Description">
+      <EuiFormRow label="Issue description">
         <EuiTextArea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          rows={5}
+          rows={4}
           required
         />
+      </EuiFormRow>
+
+      <EuiFormRow label="Attachments">
+        <EuiFilePicker multiple onChange={(files) => setAttachments(files)} />
       </EuiFormRow>
 
       <EuiFormRow>

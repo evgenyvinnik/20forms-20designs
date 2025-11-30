@@ -6,34 +6,29 @@ import {
   EuiSelect,
   EuiCheckbox,
   EuiButton,
-  EuiFlexGroup,
-  EuiFlexItem,
 } from '@elastic/eui'
-
-const countryOptions = [
-  { value: '', text: 'Select country' },
-  { value: 'us', text: 'United States' },
-  { value: 'ca', text: 'Canada' },
-]
+import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from './locationOptions'
 
 function ShippingAddressForm() {
+  const [country, setCountry] = useState('US')
   const [fullName, setFullName] = useState('')
-  const [addressLine1, setAddressLine1] = useState('')
-  const [addressLine2, setAddressLine2] = useState('')
+  const [street, setStreet] = useState('')
+  const [street2, setStreet2] = useState('')
   const [city, setCity] = useState('')
-  const [state, setState] = useState('')
+  const [region, setRegion] = useState('')
   const [postalCode, setPostalCode] = useState('')
-  const [country, setCountry] = useState('')
-  const [saveAddress, setSaveAddress] = useState(false)
+  const [defaultAddress, setDefaultAddress] = useState(false)
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
-    alert('Shipping address saved successfully!')
+    alert('Shipping address saved!')
   }, [])
+
+  const regionOptions = country === 'CA' ? CANADIAN_PROVINCES : US_STATES
 
   return (
     <EuiForm component="form" onSubmit={handleSubmit}>
-      <EuiFormRow label="Full name">
+      <EuiFormRow label="Recipient name">
         <EuiFieldText
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
@@ -41,70 +36,67 @@ function ShippingAddressForm() {
         />
       </EuiFormRow>
 
-      <EuiFormRow label="Address line 1">
+      <EuiFormRow label="Street address">
         <EuiFieldText
-          value={addressLine1}
-          onChange={(e) => setAddressLine1(e.target.value)}
+          value={street}
+          onChange={(e) => setStreet(e.target.value)}
           required
         />
       </EuiFormRow>
 
-      <EuiFormRow label="Address line 2 (optional)">
+      <EuiFormRow label="Apartment, suite, etc.">
         <EuiFieldText
-          value={addressLine2}
-          onChange={(e) => setAddressLine2(e.target.value)}
+          value={street2}
+          onChange={(e) => setStreet2(e.target.value)}
         />
       </EuiFormRow>
 
-      <EuiFlexGroup>
-        <EuiFlexItem>
-          <EuiFormRow label="City">
-            <EuiFieldText
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              required
-            />
-          </EuiFormRow>
-        </EuiFlexItem>
-        <EuiFlexItem>
-          <EuiFormRow label="State / Province">
-            <EuiFieldText
-              value={state}
-              onChange={(e) => setState(e.target.value)}
-              required
-            />
-          </EuiFormRow>
-        </EuiFlexItem>
-      </EuiFlexGroup>
+      <EuiFormRow label="City">
+        <EuiFieldText
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+          required
+        />
+      </EuiFormRow>
 
-      <EuiFlexGroup>
-        <EuiFlexItem>
-          <EuiFormRow label="Postal code">
-            <EuiFieldText
-              value={postalCode}
-              onChange={(e) => setPostalCode(e.target.value)}
-              required
-            />
-          </EuiFormRow>
-        </EuiFlexItem>
-        <EuiFlexItem>
-          <EuiFormRow label="Country">
-            <EuiSelect
-              options={countryOptions}
-              value={country}
-              onChange={(e) => setCountry(e.target.value)}
-              required
-            />
-          </EuiFormRow>
-        </EuiFlexItem>
-      </EuiFlexGroup>
+      <EuiFormRow label="Country">
+        <EuiSelect
+          options={COUNTRIES.map(({ value, label }) => ({
+            value,
+            text: label,
+          }))}
+          value={country}
+          onChange={(e) => setCountry(e.target.value)}
+          required
+        />
+      </EuiFormRow>
+
+      <EuiFormRow label="State / Province / Territory">
+        <EuiSelect
+          options={[
+            { value: '', text: 'Select an option' },
+            ...regionOptions.map((region) => ({ value: region, text: region })),
+          ]}
+          value={region}
+          onChange={(e) => setRegion(e.target.value)}
+          required
+        />
+      </EuiFormRow>
+
+      <EuiFormRow label="Postal code">
+        <EuiFieldText
+          value={postalCode}
+          onChange={(e) => setPostalCode(e.target.value)}
+          required
+        />
+      </EuiFormRow>
 
       <EuiFormRow>
         <EuiCheckbox
-          id="saveAddress"
-          label="Save this address for future orders"
-          checked={saveAddress}
-          onChange={(e) => setSaveAddress(e.target.checked)}
+          id="defaultAddress"
+          label="Use as default shipping address"
+          checked={defaultAddress}
+          onChange={(e) => setDefaultAddress(e.target.checked)}
         />
       </EuiFormRow>
 

@@ -9,19 +9,20 @@ import {
 } from '@elastic/eui'
 
 const frequencyOptions = [
-  { value: 'daily', text: 'Daily' },
+  { value: '', text: 'Select frequency' },
   { value: 'weekly', text: 'Weekly' },
   { value: 'monthly', text: 'Monthly' },
+  { value: 'quarterly', text: 'Quarterly' },
 ]
 
 function NewsletterSubscriptionForm() {
   const [email, setEmail] = useState('')
-  const [frequency, setFrequency] = useState('weekly')
-  const [acceptTerms, setAcceptTerms] = useState(false)
+  const [frequency, setFrequency] = useState('')
+  const [productUpdates, setProductUpdates] = useState(false)
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
-    alert('Subscribed to newsletter successfully!')
+    alert('Newsletter subscription submitted!')
   }, [])
 
   return (
@@ -35,21 +36,21 @@ function NewsletterSubscriptionForm() {
         />
       </EuiFormRow>
 
-      <EuiFormRow label="Email frequency">
+      <EuiFormRow label="Frequency">
         <EuiSelect
           options={frequencyOptions}
           value={frequency}
           onChange={(e) => setFrequency(e.target.value)}
+          required
         />
       </EuiFormRow>
 
       <EuiFormRow>
         <EuiCheckbox
-          id="acceptTerms"
-          label="I agree to receive marketing emails"
-          checked={acceptTerms}
-          onChange={(e) => setAcceptTerms(e.target.checked)}
-          required
+          id="productUpdates"
+          label="Receive product updates"
+          checked={productUpdates}
+          onChange={(e) => setProductUpdates(e.target.checked)}
         />
       </EuiFormRow>
 

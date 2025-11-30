@@ -3,75 +3,81 @@ import {
   EuiForm,
   EuiFormRow,
   EuiFieldText,
-  EuiRadioGroup,
+  EuiSelect,
   EuiTextArea,
   EuiCheckbox,
   EuiButton,
 } from '@elastic/eui'
 
 const ratingOptions = [
-  { id: '1', label: '1 - Poor' },
-  { id: '2', label: '2 - Fair' },
-  { id: '3', label: '3 - Good' },
-  { id: '4', label: '4 - Very Good' },
-  { id: '5', label: '5 - Excellent' },
+  { value: '', text: 'Select rating' },
+  { value: 'excellent', text: 'Excellent' },
+  { value: 'good', text: 'Good' },
+  { value: 'average', text: 'Average' },
+  { value: 'poor', text: 'Poor' },
 ]
 
 function CustomerFeedbackForm() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [rating, setRating] = useState('')
-  const [feedback, setFeedback] = useState('')
-  const [recommend, setRecommend] = useState(false)
+  const [comments, setComments] = useState('')
+  const [followUp, setFollowUp] = useState(false)
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
-    alert('Thank you for your feedback!')
+    alert('Feedback submitted!')
   }, [])
 
   return (
     <EuiForm component="form" onSubmit={handleSubmit}>
-      <EuiFormRow label="Name (optional)">
-        <EuiFieldText value={name} onChange={(e) => setName(e.target.value)} />
+      <EuiFormRow label="Name">
+        <EuiFieldText
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
       </EuiFormRow>
 
-      <EuiFormRow label="Email (optional)">
+      <EuiFormRow label="Email address">
         <EuiFieldText
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
       </EuiFormRow>
 
       <EuiFormRow label="Overall rating">
-        <EuiRadioGroup
+        <EuiSelect
           options={ratingOptions}
-          idSelected={rating}
-          onChange={(id) => setRating(id)}
+          value={rating}
+          onChange={(e) => setRating(e.target.value)}
+          required
         />
       </EuiFormRow>
 
-      <EuiFormRow label="Your feedback">
+      <EuiFormRow label="Comments">
         <EuiTextArea
-          value={feedback}
-          onChange={(e) => setFeedback(e.target.value)}
-          rows={5}
+          value={comments}
+          onChange={(e) => setComments(e.target.value)}
+          rows={4}
           required
         />
       </EuiFormRow>
 
       <EuiFormRow>
         <EuiCheckbox
-          id="recommend"
-          label="Would you recommend us to others?"
-          checked={recommend}
-          onChange={(e) => setRecommend(e.target.checked)}
+          id="followUp"
+          label="I would like a follow-up"
+          checked={followUp}
+          onChange={(e) => setFollowUp(e.target.checked)}
         />
       </EuiFormRow>
 
       <EuiFormRow>
         <EuiButton type="submit" fill>
-          Submit feedback
+          Send feedback
         </EuiButton>
       </EuiFormRow>
     </EuiForm>

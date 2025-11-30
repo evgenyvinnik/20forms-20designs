@@ -11,21 +11,22 @@ import {
 
 function TwoFactorAuthForm() {
   const [code, setCode] = useState('')
+  const [backupCode, setBackupCode] = useState('')
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
-    alert('Two-factor authentication verified!')
+    alert('Verification submitted!')
   }, [])
 
   const handleResend = useCallback(() => {
-    alert('Verification code resent!')
+    alert('A new code has been sent!')
   }, [])
 
   return (
     <EuiForm component="form" onSubmit={handleSubmit}>
       <EuiFormRow>
         <EuiText size="s">
-          <p>Enter the 6-digit code from your authenticator app</p>
+          <p>Enter the code from your authenticator app or SMS.</p>
         </EuiText>
       </EuiFormRow>
 
@@ -34,8 +35,14 @@ function TwoFactorAuthForm() {
           value={code}
           onChange={(e) => setCode(e.target.value)}
           maxLength={6}
-          placeholder="000000"
           required
+        />
+      </EuiFormRow>
+
+      <EuiFormRow label="Backup code (optional)">
+        <EuiFieldText
+          value={backupCode}
+          onChange={(e) => setBackupCode(e.target.value)}
         />
       </EuiFormRow>
 

@@ -1,14 +1,21 @@
 import { useState, useCallback } from 'react'
-import { EuiForm, EuiFormRow, EuiFieldPassword, EuiButton } from '@elastic/eui'
+import {
+  EuiForm,
+  EuiFormRow,
+  EuiFieldPassword,
+  EuiCheckbox,
+  EuiButton,
+} from '@elastic/eui'
 
 function PasswordChangeForm() {
   const [currentPassword, setCurrentPassword] = useState('')
   const [newPassword, setNewPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+  const [logoutOthers, setLogoutOthers] = useState(false)
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
-    alert('Password changed successfully!')
+    alert('Password change requested!')
   }, [])
 
   return (
@@ -41,8 +48,17 @@ function PasswordChangeForm() {
       </EuiFormRow>
 
       <EuiFormRow>
+        <EuiCheckbox
+          id="logoutOthers"
+          label="Sign out of other devices"
+          checked={logoutOthers}
+          onChange={(e) => setLogoutOthers(e.target.checked)}
+        />
+      </EuiFormRow>
+
+      <EuiFormRow>
         <EuiButton type="submit" fill>
-          Change password
+          Update password
         </EuiButton>
       </EuiFormRow>
     </EuiForm>

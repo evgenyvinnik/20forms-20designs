@@ -6,57 +6,41 @@ import {
   EuiSelect,
   EuiCheckbox,
   EuiButton,
-  EuiFlexGroup,
-  EuiFlexItem,
 } from '@elastic/eui'
 
 const categoryOptions = [
-  { value: '', text: 'All categories' },
-  { value: 'electronics', text: 'Electronics' },
-  { value: 'clothing', text: 'Clothing' },
-  { value: 'books', text: 'Books' },
-  { value: 'home', text: 'Home & Garden' },
+  { value: 'all', text: 'All' },
+  { value: 'articles', text: 'Articles' },
+  { value: 'products', text: 'Products' },
+  { value: 'people', text: 'People' },
 ]
 
 const sortOptions = [
   { value: 'relevance', text: 'Relevance' },
-  { value: 'date-desc', text: 'Newest first' },
-  { value: 'date-asc', text: 'Oldest first' },
-  { value: 'price-asc', text: 'Price: Low to High' },
-  { value: 'price-desc', text: 'Price: High to Low' },
+  { value: 'newest', text: 'Newest' },
+  { value: 'oldest', text: 'Oldest' },
 ]
 
 function AdvancedSearchForm() {
-  const [keywords, setKeywords] = useState('')
-  const [category, setCategory] = useState('')
-  const [priceMin, setPriceMin] = useState('')
-  const [priceMax, setPriceMax] = useState('')
-  const [sortBy, setSortBy] = useState('relevance')
-  const [inStockOnly, setInStockOnly] = useState(false)
-  const [includeDescription, setIncludeDescription] = useState(true)
+  const [query, setQuery] = useState('')
+  const [category, setCategory] = useState('all')
+  const [dateFrom, setDateFrom] = useState('')
+  const [dateTo, setDateTo] = useState('')
+  const [sort, setSort] = useState('relevance')
+  const [includeArchived, setIncludeArchived] = useState(false)
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
     alert('Search submitted!')
   }, [])
 
-  const handleClear = useCallback(() => {
-    setKeywords('')
-    setCategory('')
-    setPriceMin('')
-    setPriceMax('')
-    setSortBy('relevance')
-    setInStockOnly(false)
-    setIncludeDescription(true)
-  }, [])
-
   return (
     <EuiForm component="form" onSubmit={handleSubmit}>
-      <EuiFormRow label="Keywords">
+      <EuiFormRow label="Search query">
         <EuiFieldText
-          value={keywords}
-          onChange={(e) => setKeywords(e.target.value)}
-          placeholder="Enter search terms..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          required
         />
       </EuiFormRow>
 
@@ -65,69 +49,48 @@ function AdvancedSearchForm() {
           options={categoryOptions}
           value={category}
           onChange={(e) => setCategory(e.target.value)}
+          required
         />
       </EuiFormRow>
 
-      <EuiFlexGroup>
-        <EuiFlexItem>
-          <EuiFormRow label="Min price">
-            <EuiFieldText
-              type="number"
-              value={priceMin}
-              onChange={(e) => setPriceMin(e.target.value)}
-              placeholder="0"
-            />
-          </EuiFormRow>
-        </EuiFlexItem>
-        <EuiFlexItem>
-          <EuiFormRow label="Max price">
-            <EuiFieldText
-              type="number"
-              value={priceMax}
-              onChange={(e) => setPriceMax(e.target.value)}
-              placeholder="1000"
-            />
-          </EuiFormRow>
-        </EuiFlexItem>
-      </EuiFlexGroup>
+      <EuiFormRow label="Date from">
+        <EuiFieldText
+          type="date"
+          value={dateFrom}
+          onChange={(e) => setDateFrom(e.target.value)}
+        />
+      </EuiFormRow>
+
+      <EuiFormRow label="Date to">
+        <EuiFieldText
+          type="date"
+          value={dateTo}
+          onChange={(e) => setDateTo(e.target.value)}
+        />
+      </EuiFormRow>
 
       <EuiFormRow label="Sort by">
         <EuiSelect
           options={sortOptions}
-          value={sortBy}
-          onChange={(e) => setSortBy(e.target.value)}
+          value={sort}
+          onChange={(e) => setSort(e.target.value)}
+          required
         />
       </EuiFormRow>
 
       <EuiFormRow>
         <EuiCheckbox
-          id="inStockOnly"
-          label="In stock only"
-          checked={inStockOnly}
-          onChange={(e) => setInStockOnly(e.target.checked)}
+          id="includeArchived"
+          label="Include archived"
+          checked={includeArchived}
+          onChange={(e) => setIncludeArchived(e.target.checked)}
         />
       </EuiFormRow>
 
       <EuiFormRow>
-        <EuiCheckbox
-          id="includeDescription"
-          label="Search in descriptions"
-          checked={includeDescription}
-          onChange={(e) => setIncludeDescription(e.target.checked)}
-        />
-      </EuiFormRow>
-
-      <EuiFormRow>
-        <EuiFlexGroup gutterSize="s">
-          <EuiFlexItem grow={false}>
-            <EuiButton type="submit" fill>
-              Search
-            </EuiButton>
-          </EuiFlexItem>
-          <EuiFlexItem grow={false}>
-            <EuiButton onClick={handleClear}>Clear</EuiButton>
-          </EuiFlexItem>
-        </EuiFlexGroup>
+        <EuiButton type="submit" fill>
+          Search
+        </EuiButton>
       </EuiFormRow>
     </EuiForm>
   )

@@ -2,101 +2,116 @@ import { useState, useCallback } from 'react'
 import {
   EuiForm,
   EuiFormRow,
+  EuiFieldText,
+  EuiTextArea,
   EuiCheckbox,
   EuiButton,
-  EuiFlexGroup,
-  EuiFlexItem,
-  EuiText,
+  EuiTitle,
+  EuiSpacer,
 } from '@elastic/eui'
 
 function PrivacyConsentForm() {
-  const [essentialCookies, setEssentialCookies] = useState(true)
-  const [analyticsCookies, setAnalyticsCookies] = useState(false)
-  const [marketingCookies, setMarketingCookies] = useState(false)
-  const [thirdPartyCookies, setThirdPartyCookies] = useState(false)
-  const [privacyPolicy, setPrivacyPolicy] = useState(false)
+  const [fullName, setFullName] = useState('')
+  const [email, setEmail] = useState('')
+  const [emailOptIn, setEmailOptIn] = useState(false)
+  const [smsOptIn, setSmsOptIn] = useState(false)
+  const [phoneOptIn, setPhoneOptIn] = useState(false)
+  const [analytics, setAnalytics] = useState(false)
+  const [personalization, setPersonalization] = useState(false)
+  const [notes, setNotes] = useState('')
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
     alert('Privacy preferences saved!')
   }, [])
 
-  const handleAcceptAll = useCallback(() => {
-    setAnalyticsCookies(true)
-    setMarketingCookies(true)
-    setThirdPartyCookies(true)
-    setPrivacyPolicy(true)
-  }, [])
-
   return (
     <EuiForm component="form" onSubmit={handleSubmit}>
-      <EuiFormRow>
-        <EuiText size="s">
-          <p>
-            Manage your privacy preferences. Essential cookies are always
-            enabled.
-          </p>
-        </EuiText>
-      </EuiFormRow>
-
-      <EuiFormRow>
-        <EuiCheckbox
-          id="essentialCookies"
-          label="Essential cookies (required)"
-          checked={essentialCookies}
-          onChange={() => {}}
-          disabled
-        />
-      </EuiFormRow>
-
-      <EuiFormRow>
-        <EuiCheckbox
-          id="analyticsCookies"
-          label="Analytics cookies"
-          checked={analyticsCookies}
-          onChange={(e) => setAnalyticsCookies(e.target.checked)}
-        />
-      </EuiFormRow>
-
-      <EuiFormRow>
-        <EuiCheckbox
-          id="marketingCookies"
-          label="Marketing cookies"
-          checked={marketingCookies}
-          onChange={(e) => setMarketingCookies(e.target.checked)}
-        />
-      </EuiFormRow>
-
-      <EuiFormRow>
-        <EuiCheckbox
-          id="thirdPartyCookies"
-          label="Third-party cookies"
-          checked={thirdPartyCookies}
-          onChange={(e) => setThirdPartyCookies(e.target.checked)}
-        />
-      </EuiFormRow>
-
-      <EuiFormRow>
-        <EuiCheckbox
-          id="privacyPolicy"
-          label="I have read and agree to the Privacy Policy"
-          checked={privacyPolicy}
-          onChange={(e) => setPrivacyPolicy(e.target.checked)}
+      <EuiFormRow label="Full name">
+        <EuiFieldText
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
           required
         />
       </EuiFormRow>
 
+      <EuiFormRow label="Email address">
+        <EuiFieldText
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+      </EuiFormRow>
+
+      <EuiSpacer size="m" />
+
+      <EuiTitle size="xs">
+        <legend>Communication channels</legend>
+      </EuiTitle>
+      <EuiSpacer size="s" />
       <EuiFormRow>
-        <EuiFlexGroup gutterSize="s">
-          <EuiFlexItem grow={false}>
-            <EuiButton type="submit" fill>
-              Save preferences
-            </EuiButton>
-          </EuiFlexItem>
-          <EuiFlexItem grow={false}>
-            <EuiButton onClick={handleAcceptAll}>Accept all</EuiButton>
-          </EuiFlexItem>
-        </EuiFlexGroup>
+        <EuiCheckbox
+          id="emailOptIn"
+          label="Email updates"
+          checked={emailOptIn}
+          onChange={(e) => setEmailOptIn(e.target.checked)}
+        />
+      </EuiFormRow>
+      <EuiFormRow>
+        <EuiCheckbox
+          id="smsOptIn"
+          label="SMS notifications"
+          checked={smsOptIn}
+          onChange={(e) => setSmsOptIn(e.target.checked)}
+        />
+      </EuiFormRow>
+      <EuiFormRow>
+        <EuiCheckbox
+          id="phoneOptIn"
+          label="Phone calls"
+          checked={phoneOptIn}
+          onChange={(e) => setPhoneOptIn(e.target.checked)}
+        />
+      </EuiFormRow>
+
+      <EuiSpacer size="m" />
+
+      <EuiTitle size="xs">
+        <legend>Privacy options</legend>
+      </EuiTitle>
+      <EuiSpacer size="s" />
+      <EuiFormRow>
+        <EuiCheckbox
+          id="analytics"
+          label="Allow analytics cookies"
+          checked={analytics}
+          onChange={(e) => setAnalytics(e.target.checked)}
+        />
+      </EuiFormRow>
+      <EuiFormRow>
+        <EuiCheckbox
+          id="personalization"
+          label="Allow personalized content"
+          checked={personalization}
+          onChange={(e) => setPersonalization(e.target.checked)}
+        />
+      </EuiFormRow>
+
+      <EuiSpacer size="m" />
+
+      <EuiFormRow label="Additional notes">
+        <EuiTextArea
+          value={notes}
+          onChange={(e) => setNotes(e.target.value)}
+          rows={3}
+        />
+      </EuiFormRow>
+
+      <EuiFormRow>
+        <EuiButton type="submit" fill>
+          Save preferences
+        </EuiButton>
       </EuiFormRow>
     </EuiForm>
   )
