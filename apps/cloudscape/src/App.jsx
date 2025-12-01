@@ -1,9 +1,7 @@
 import '@cloudscape-design/global-styles/index.css'
 import { applyMode, Mode } from '@cloudscape-design/global-styles'
 
-
 import { useState, useEffect } from 'react'
-
 
 // Import all form components
 import AdvancedSearchForm from './forms/AdvancedSearchForm'
