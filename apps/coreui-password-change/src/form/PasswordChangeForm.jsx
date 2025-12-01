@@ -15,7 +15,9 @@ function PasswordChangeForm() {
   return (
     <CForm onSubmit={handleSubmit}>
       <div className="mb-3">
-        <CFormLabel htmlFor="coreui-password-change-current">Current password</CFormLabel>
+        <CFormLabel htmlFor="coreui-password-change-current">
+          Current password
+        </CFormLabel>
         <CFormInput
           id="coreui-password-change-current"
           name="currentPassword"
@@ -24,7 +26,9 @@ function PasswordChangeForm() {
         />
       </div>
       <div className="mb-3">
-        <CFormLabel htmlFor="coreui-password-change-new">New password</CFormLabel>
+        <CFormLabel htmlFor="coreui-password-change-new">
+          New password
+        </CFormLabel>
         <CFormInput
           id="coreui-password-change-new"
           name="newPassword"
@@ -34,7 +38,9 @@ function PasswordChangeForm() {
         />
       </div>
       <div className="mb-3">
-        <CFormLabel htmlFor="coreui-password-change-confirm">Confirm new password</CFormLabel>
+        <CFormLabel htmlFor="coreui-password-change-confirm">
+          Confirm new password
+        </CFormLabel>
         <CFormInput
           id="coreui-password-change-confirm"
           name="confirmPassword"

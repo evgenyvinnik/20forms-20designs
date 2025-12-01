@@ -1,9 +1,4 @@
-import {
-  CForm,
-  CFormLabel,
-  CFormInput,
-  CButton,
-} from '@coreui/react'
+import { CForm, CFormLabel, CFormInput, CButton } from '@coreui/react'
 
 function OrderTrackingForm() {
   const handleSubmit = (event) => {
@@ -14,7 +9,9 @@ function OrderTrackingForm() {
   return (
     <CForm onSubmit={handleSubmit}>
       <div className="mb-3">
-        <CFormLabel htmlFor="coreui-order-tracking-number">Order number</CFormLabel>
+        <CFormLabel htmlFor="coreui-order-tracking-number">
+          Order number
+        </CFormLabel>
         <CFormInput
           id="coreui-order-tracking-number"
           name="orderNumber"
@@ -24,7 +21,9 @@ function OrderTrackingForm() {
         />
       </div>
       <div className="mb-3">
-        <CFormLabel htmlFor="coreui-order-tracking-email">Email address</CFormLabel>
+        <CFormLabel htmlFor="coreui-order-tracking-email">
+          Email address
+        </CFormLabel>
         <CFormInput
           id="coreui-order-tracking-email"
           name="email"
@@ -33,7 +32,9 @@ function OrderTrackingForm() {
         />
       </div>
       <div className="mb-3">
-        <CFormLabel htmlFor="coreui-order-tracking-postal">Postal code</CFormLabel>
+        <CFormLabel htmlFor="coreui-order-tracking-postal">
+          Postal code
+        </CFormLabel>
         <CFormInput
           id="coreui-order-tracking-postal"
           name="postalCode"

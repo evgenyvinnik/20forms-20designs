@@ -35,19 +35,11 @@ function AdvancedSearchForm() {
       </div>
       <div className="mb-3">
         <CFormLabel htmlFor="coreui-search-date-from">Date from</CFormLabel>
-        <CFormInput
-          id="coreui-search-date-from"
-          name="dateFrom"
-          type="date"
-        />
+        <CFormInput id="coreui-search-date-from" name="dateFrom" type="date" />
       </div>
       <div className="mb-3">
         <CFormLabel htmlFor="coreui-search-date-to">Date to</CFormLabel>
-        <CFormInput
-          id="coreui-search-date-to"
-          name="dateTo"
-          type="date"
-        />
+        <CFormInput id="coreui-search-date-to" name="dateTo" type="date" />
       </div>
       <div className="mb-3">
         <CFormLabel htmlFor="coreui-search-sort">Sort by</CFormLabel>
