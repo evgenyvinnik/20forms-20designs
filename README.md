@@ -6,13 +6,13 @@
 
 This is project that I wanted to implement for quite some time. So far in my professional experience I have worked with a lot of various design systems and I was always fascinated how the same form could look so much differently using different component library.
 
-This is how this project was born. It represents 20 extremely common forms that were built using 20+ popular React design systems. Each form is rendered in a fully isolated iframe, preventing any CSS bleed between different design systems.
+This is how this project was born. It represents 20 extremely common forms that were built using 41 popular React design systems. Each form is rendered in a fully isolated iframe, preventing any CSS bleed between different design systems.
 
 **[Live Demo →](https://evgenyvinnik.github.io/20forms-20designs/)**
 
 ## ✨ Features
 
-- **520+ Mini-Apps** — Each form × library combination runs in its own isolated context
+- **820 Form Implementations** — 41 libraries × 20 forms, each running in an isolated context
 - **CSS Isolation** — No style conflicts between design systems (iframe-based architecture)
 - **Theme Support** — Light/dark mode toggle for libraries that support theming
 - **Comparison Matrix** — Side-by-side comparison of forms across libraries
@@ -26,19 +26,19 @@ This project uses a **monorepo + iframe architecture** for complete CSS isolatio
 20forms-20designs/
 ├── apps/
 │   ├── shell/                    # Main comparison UI
-│   ├── mui-user-login/           # MUI Login Form
-│   ├── mui-user-registration/    # MUI Registration Form
-│   ├── radix-ui-user-login/      # Radix UI Login Form
-│   └── ... (520+ mini-apps total)
+│   ├── mui/                      # MUI (all 20 forms)
+│   ├── chakra/                   # Chakra UI (all 20 forms)
+│   ├── antd/                     # Ant Design (all 20 forms)
+│   └── ... (42 apps total: 41 libraries + shell)
 ├── scripts/
 │   ├── build-all.mjs             # Build orchestration
 │   └── copy-builds-to-dist.mjs   # Deployment bundler
 └── public/                       # Static assets
 ```
 
-### Why 520+ Separate Mini-Apps?
+### Why Separate Apps Per Library?
 
-You might wonder: *why build 520+ separate applications instead of one unified app?* The answer comes down to **CSS isolation** — the core technical challenge of this project.
+You might wonder: *why build 42 separate applications instead of one unified app?* The answer comes down to **CSS isolation** — the core technical challenge of this project.
 
 **The Problem with a Single SPA:**
 
@@ -66,7 +66,7 @@ This means MUI's `CssBaseline`, Tailwind's preflight, and Chakra's global styles
 
 **The Trade-off:**
 
-Yes, building 440+ separate apps means:
+Yes, building 42 separate apps means:
 - Longer build times (~2-3 minutes for full build)
 - Duplicated React/library bundles across apps
 - More complex deployment orchestration
@@ -181,7 +181,7 @@ This runs the shell application in development mode.
 ### Production Build (CSS Isolation)
 
 ```bash
-# Build all 521 apps (shell + 520 mini-apps) for GitHub Pages
+# Build all 42 apps (shell + 41 library apps) for GitHub Pages
 npm run build
 
 # Preview the production build locally
@@ -202,19 +202,20 @@ The main comparison UI that:
 - Provides theme switching (light/dark)
 - Allows filtering by form and library
 
-### Mini-Apps (`apps/<library>-<form>/`)
+### Library Apps (`apps/<library>/`)
 
-Each mini-app is a standalone Vite + React application that:
+Each library app is a standalone Vite + React application that:
 
-- Renders exactly one form using one design system
+- Contains all 20 form implementations for that design system
+- Supports form selection via URL query parameter (`?form=user-login`)
 - Supports theme via URL query parameter (`?theme=dark`)
-- Is completely isolated from other mini-apps
+- Is completely isolated from other library apps
 
 ### Scripts
 
 | Script                      | Description                                       |
 | --------------------------- | ------------------------------------------------- |
-| `npm run build`             | Build shell + all mini-apps + copy to dist        |
+| `npm run build`             | Build shell + all library apps + copy to dist     |
 | `npm run build:shell`       | Build only the shell app                          |
 | `npm run clean`             | Remove all build artifacts                        |
 | `npm run dev:shell`         | Run shell app in development mode                 |
@@ -223,15 +224,16 @@ Each mini-app is a standalone Vite + React application that:
 
 ## 🔧 Adding a New Library
 
-1. Create a new directory for each form: `apps/<library>-<form>/`
-2. Implement all 20 forms following the pattern from existing libraries
-3. Update `apps/shell/src/config.ts` with the new library (add to LibraryId type, LIBRARY_NAME_TO_ID, and LIBRARIES array)
-4. Run `npm run build`
+1. Create a new directory: `apps/<library>/`
+2. Implement all 20 forms in `src/forms/` following the pattern from existing libraries
+3. Create the App.jsx with form routing via URL parameter
+4. Update `apps/shell/src/config.ts` with the new library (add to LibraryId type, LIBRARY_NAME_TO_ID, LIBRARIES array, and CONSOLIDATED_LIBRARIES set)
+5. Run `npm run build`
 
 ## 🔧 Adding a New Form
 
-1. Create the form in each library's directory: `apps/<library>-<new-form>/`
-2. Follow the pattern from existing forms in each library
+1. Add the new form component to each library's `src/forms/` directory
+2. Update the form routing in each library's App.jsx
 3. Update `apps/shell/src/config.ts` with the new form (add to FormId type, FORM_NAME_TO_ID, and FORMS array)
 4. Run `npm run build`
 
@@ -247,7 +249,7 @@ This project is configured for automatic deployment to GitHub Pages via GitHub A
 The workflow:
 
 - Installs dependencies with `--legacy-peer-deps`
-- Builds all 521 apps (shell + 520 mini-apps)
+- Builds all 42 apps (shell + 41 library apps)
 - Deploys to GitHub Pages
 
 **Live URL:** `https://<username>.github.io/20forms-20designs/`
