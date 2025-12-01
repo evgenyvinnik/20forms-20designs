@@ -58,12 +58,7 @@ function ProfileUpdateForm() {
         />
       </Field>
       <Field label="Short bio" required>
-        <Textarea
-          id="fluent-ui-profile-bio"
-          name="bio"
-          rows={3}
-          required
-        />
+        <Textarea id="fluent-ui-profile-bio" name="bio" rows={3} required />
       </Field>
       <Button type="submit" appearance="primary">
         Save changes

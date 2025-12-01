@@ -27,12 +27,7 @@ function CustomerFeedbackForm() {
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <Field label="Name" required>
-        <Input
-          id="fluent-ui-feedback-name"
-          name="name"
-          type="text"
-          required
-        />
+        <Input id="fluent-ui-feedback-name" name="name" type="text" required />
       </Field>
       <Field label="Email address" required>
         <Input

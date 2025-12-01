@@ -21,12 +21,7 @@ function OrderTrackingForm() {
 
         <CdsInput>
           <label>Email address</label>
-          <input
-            id="clarity-order-email"
-            name="email"
-            type="email"
-            required
-          />
+          <input id="clarity-order-email" name="email" type="email" required />
         </CdsInput>
 
         <CdsInput>
