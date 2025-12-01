@@ -38,9 +38,11 @@ export type LibraryId =
   | 'patternfly'
   | 'theme-ui'
   | 'slds'
-  | 'slds'
-  | 'theme-ui'
   | 'material-tailwind'
+  | 'react-spectrum'
+  | 'orbit'
+  | 'semi'
+  | 'headless-ui'
 
 // Form ID for iframe URLs
 export type FormId =
@@ -120,6 +122,10 @@ export const LIBRARY_NAME_TO_ID: Record<string, LibraryId | undefined> = {
   'Salesforce Lightning Design System React': 'slds',
   PatternFly: 'patternfly',
   'Material Tailwind': 'material-tailwind',
+  'React Spectrum': 'react-spectrum',
+  'Orbit by Kiwi.com': 'orbit',
+  'Semi Design': 'semi',
+  'Headless UI': 'headless-ui',
 }
 
 // Map from form name to form ID (for iframe URLs)
@@ -297,8 +303,8 @@ export const LIBRARIES: Library[] = [
     directory: 'headless-ui',
     website: 'https://headlessui.com',
     repo: 'https://github.com/tailwindlabs/headlessui',
-    implemented: false,
-    supportsTheme: false,
+    implemented: true,
+    supportsTheme: true,
   },
   {
     name: 'daisyUI',
@@ -369,16 +375,8 @@ export const LIBRARIES: Library[] = [
     directory: 'react-spectrum',
     website: 'https://react-spectrum.adobe.com',
     repo: 'https://github.com/adobe/react-spectrum',
-    implemented: false,
-    supportsTheme: false,
-  },
-  {
-    name: 'React Aria / React Stately',
-    directory: 'react-aria',
-    website: 'https://react-spectrum.adobe.com/react-aria',
-    repo: 'https://github.com/adobe/react-spectrum',
-    implemented: false,
-    supportsTheme: false,
+    implemented: true,
+    supportsTheme: true,
   },
   {
     name: 'Pinterest Gestalt',
@@ -387,14 +385,6 @@ export const LIBRARIES: Library[] = [
     repo: 'https://github.com/pinterest/gestalt',
     implemented: true,
     supportsTheme: true,
-  },
-  {
-    name: 'VMware Clarity',
-    directory: 'clarity',
-    website: 'https://clarity.design',
-    repo: 'https://github.com/vmware/clarity',
-    implemented: false,
-    supportsTheme: false,
   },
   {
     name: 'Salesforce Lightning Design System React',
@@ -409,8 +399,8 @@ export const LIBRARIES: Library[] = [
     directory: 'orbit',
     website: 'https://orbit.kiwi',
     repo: 'https://github.com/kiwicom/orbit',
-    implemented: false,
-    supportsTheme: false,
+    implemented: true,
+    supportsTheme: true,
   },
   {
     name: 'RSuite',
@@ -422,11 +412,11 @@ export const LIBRARIES: Library[] = [
   },
   {
     name: 'Semi Design',
-    directory: 'semi-design',
+    directory: 'semi',
     website: 'https://semi.design',
     repo: 'https://github.com/DouyinFE/semi-design',
-    implemented: false,
-    supportsTheme: false,
+    implemented: true,
+    supportsTheme: true,
   },
   {
     name: 'Arco Design',
@@ -435,14 +425,6 @@ export const LIBRARIES: Library[] = [
     repo: 'https://github.com/arco-design/arco-design',
     implemented: true,
     supportsTheme: true,
-  },
-  {
-    name: 'Ionic React',
-    directory: 'ionic-react',
-    website: 'https://ionicframework.com/react',
-    repo: 'https://github.com/ionic-team/ionic-framework',
-    implemented: false,
-    supportsTheme: false,
   },
   {
     name: 'Braid Design System',
@@ -483,22 +465,6 @@ export const LIBRARIES: Library[] = [
     repo: 'https://github.com/ariakit/ariakit',
     implemented: true,
     supportsTheme: true,
-  },
-  {
-    name: 'Tremor',
-    directory: 'tremor',
-    website: 'https://www.tremor.so',
-    repo: 'https://github.com/tremorlabs/tremor',
-    implemented: false,
-    supportsTheme: false,
-  },
-  {
-    name: 'Rebass',
-    directory: 'rebass',
-    website: 'https://rebassjs.org',
-    repo: 'https://github.com/rebassjs/rebass',
-    implemented: false,
-    supportsTheme: false,
   },
   {
     name: 'React + No CSS',
@@ -555,14 +521,6 @@ export const LIBRARIES: Library[] = [
     repo: 'https://github.com/system-ui/theme-ui',
     implemented: true,
     supportsTheme: true,
-  },
-  {
-    name: 'Refine',
-    directory: 'refine',
-    website: 'https://refine.dev',
-    repo: 'https://github.com/refinedev/refine',
-    implemented: false,
-    supportsTheme: false,
   },
 ]
 

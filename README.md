@@ -125,10 +125,13 @@ All libraries implement the same 20 forms with identical content, labels, and fi
 | [MUI](https://mui.com/)                                 | ✅ Light/Dark | [GitHub](https://github.com/mui/material-ui)                      |
 | [Pinterest Gestalt](https://gestalt.pinterest.systems/) | ✅ Light/Dark | [GitHub](https://github.com/pinterest/gestalt)                    |
 | [PrimeReact](https://primereact.org/)                   | ✅ Light/Dark | [GitHub](https://github.com/primefaces/primereact)                |
+| [PatternFly](https://www.patternfly.org/)               | ✅ Light/Dark | [GitHub](https://github.com/patternfly/patternfly-react)          |
 | [Radix UI](https://www.radix-ui.com/)                   | ✅ Light/Dark | [GitHub](https://github.com/radix-ui/primitives)                  |
 | [React Bootstrap](https://react-bootstrap.netlify.app/) | ✅ Light/Dark | [GitHub](https://github.com/react-bootstrap/react-bootstrap)      |
+| [React Spectrum](https://react-spectrum.adobe.com/)     | ✅ Light/Dark | [GitHub](https://github.com/adobe/react-spectrum)                 |
 | [RSuite](https://rsuitejs.com/)                         | ✅ Light/Dark | [GitHub](https://github.com/rsuite/rsuite)                        |
 | [React (No CSS)](https://react.dev/)                    | ✅ Light/Dark | [GitHub](https://github.com/facebook/react) — *Reference implementation* |
+| [Salesforce Lightning Design System](https://react.lightningdesignsystem.com/) | ✅ Light/Dark | [GitHub](https://github.com/salesforce/design-system-react) |
 | [shadcn/ui](https://ui.shadcn.com/)                     | ✅ Light/Dark | [GitHub](https://github.com/shadcn-ui/ui)                         |
 | [Shopify Polaris](https://polaris.shopify.com/)         | ✅ Light/Dark | [GitHub](https://github.com/Shopify/polaris)                      |
 | [Tamagui](https://tamagui.dev/)                         | ✅ Light/Dark | [GitHub](https://github.com/tamagui/tamagui)                      |
@@ -143,20 +146,11 @@ All libraries implement the same 20 forms with identical content, labels, and fi
 | [Mantine](https://mantine.dev/)                         | ✅ Light/Dark | [GitHub](https://github.com/mantinedev/mantine)                   |
 | [Primer React](https://primer.style/react/)             | ✅ Light/Dark | [GitHub](https://github.com/primer/react)                         |
 | [Semantic UI React](https://react.semantic-ui.com/)     | ✅ Light/Dark | [GitHub](https://github.com/Semantic-Org/Semantic-UI-React)       |
-
-### 📋 Planned Libraries
-
-| Library                                                                              | Repository                                                         |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| [Headless UI](https://headlessui.com/)                                               | [GitHub](https://github.com/tailwindlabs/headlessui)               |
-| [Material Tailwind](https://www.material-tailwind.com/)                              | [GitHub](https://github.com/creativetimofficial/material-tailwind) |
-| [Orbit by Kiwi.com](https://orbit.kiwi/)                                             | [GitHub](https://github.com/kiwicom/orbit-components)              |
-| [PatternFly](https://www.patternfly.org/)                                            | [GitHub](https://github.com/patternfly/patternfly-react)           |
-| [React Spectrum](https://react-spectrum.adobe.com/)                                  | [GitHub](https://github.com/adobe/react-spectrum)                  |
-| [Salesforce Lightning Design System React](https://design-system-react-site.herokuapp.com/) | [GitHub](https://github.com/salesforce/design-system-react)        |
-| [Semi Design](https://semi.design/)                                                  | [GitHub](https://github.com/DouyinFE/semi-design)                  |
-| [Theme UI](https://theme-ui.com/)                                                    | [GitHub](https://github.com/system-ui/theme-ui)                    |
-| [VMware Clarity](https://clarity.design/)                                            | [GitHub](https://github.com/vmware/clarity)                        |
+| [Semi Design](https://semi.design/)                      | ✅ Light/Dark | [GitHub](https://github.com/DouyinFE/semi-design)                 |
+| [Headless UI](https://headlessui.com/)                   | ✅ Light/Dark | [GitHub](https://github.com/tailwindlabs/headlessui)              |
+| [Material Tailwind](https://www.material-tailwind.com/)  | ✅ Light/Dark | [GitHub](https://github.com/creativetimofficial/material-tailwind) |
+| [Orbit by Kiwi.com](https://orbit.kiwi/)                 | ✅ Light/Dark | [GitHub](https://github.com/kiwicom/orbit)                        |
+| [Theme UI](https://theme-ui.com/)                        | ✅ Light/Dark | [GitHub](https://github.com/system-ui/theme-ui)                   |
 
 ## 🚀 Getting Started
 
