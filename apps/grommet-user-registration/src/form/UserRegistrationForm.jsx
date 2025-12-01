@@ -68,7 +68,11 @@ function UserRegistrationForm() {
           type="password"
         />
       </FormField>
-      <FormField name="terms" htmlFor="grommet-user-registration-terms" required>
+      <FormField
+        name="terms"
+        htmlFor="grommet-user-registration-terms"
+        required
+      >
         <CheckBox
           id="grommet-user-registration-terms"
           name="terms"

@@ -14,11 +14,7 @@ function BillingInfoForm() {
         htmlFor="grommet-billing-name"
         required
       >
-        <TextInput
-          id="grommet-billing-name"
-          name="cardName"
-          type="text"
-        />
+        <TextInput id="grommet-billing-name" name="cardName" type="text" />
       </FormField>
       <FormField
         label="Card number"
@@ -65,11 +61,7 @@ function BillingInfoForm() {
         htmlFor="grommet-billing-address"
         required
       >
-        <TextInput
-          id="grommet-billing-address"
-          name="address"
-          type="text"
-        />
+        <TextInput id="grommet-billing-address" name="address" type="text" />
       </FormField>
       <FormField
         label="Country"

@@ -1,4 +1,12 @@
-import { Box, Button, CheckBox, Form, FormField, Select, TextInput } from 'grommet'
+import {
+  Box,
+  Button,
+  CheckBox,
+  Form,
+  FormField,
+  Select,
+  TextInput,
+} from 'grommet'
 
 function EventRegistrationForm() {
   const handleSubmit = (event) => {
@@ -14,11 +22,7 @@ function EventRegistrationForm() {
         htmlFor="grommet-event-name"
         required
       >
-        <TextInput
-          id="grommet-event-name"
-          name="fullName"
-          type="text"
-        />
+        <TextInput id="grommet-event-name" name="fullName" type="text" />
       </FormField>
       <FormField
         label="Email address"
@@ -26,11 +30,7 @@ function EventRegistrationForm() {
         htmlFor="grommet-event-email"
         required
       >
-        <TextInput
-          id="grommet-event-email"
-          name="email"
-          type="email"
-        />
+        <TextInput id="grommet-event-email" name="email" type="email" />
       </FormField>
       <FormField
         label="Ticket type"

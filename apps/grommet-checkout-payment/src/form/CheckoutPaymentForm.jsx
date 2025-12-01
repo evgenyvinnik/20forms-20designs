@@ -14,11 +14,7 @@ function CheckoutPaymentForm() {
         htmlFor="grommet-checkout-email"
         required
       >
-        <TextInput
-          id="grommet-checkout-email"
-          name="email"
-          type="email"
-        />
+        <TextInput id="grommet-checkout-email" name="email" type="email" />
       </FormField>
       <FormField
         label="Shipping method"
@@ -59,12 +55,7 @@ function CheckoutPaymentForm() {
           placeholder="MM/YY"
         />
       </FormField>
-      <FormField
-        label="CVC"
-        name="cvc"
-        htmlFor="grommet-checkout-cvc"
-        required
-      >
+      <FormField label="CVC" name="cvc" htmlFor="grommet-checkout-cvc" required>
         <TextInput
           id="grommet-checkout-cvc"
           name="cvc"
@@ -77,11 +68,7 @@ function CheckoutPaymentForm() {
         name="promoCode"
         htmlFor="grommet-checkout-promo"
       >
-        <TextInput
-          id="grommet-checkout-promo"
-          name="promoCode"
-          type="text"
-        />
+        <TextInput id="grommet-checkout-promo" name="promoCode" type="text" />
       </FormField>
       <Box margin={{ top: 'medium' }}>
         <Button type="submit" primary label="Place order" />
