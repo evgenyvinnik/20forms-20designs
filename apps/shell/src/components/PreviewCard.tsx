@@ -16,20 +16,20 @@ const FORM_HEIGHTS: Record<FormId, number> = {
   'password-reset': 350,
   'two-factor-auth': 350,
   'newsletter-subscription': 350,
-  'order-tracking': 350,
+  'order-tracking': 450,
 
   // Medium forms (moderate complexity)
   'user-login': 450,
-  'contact-inquiry': 550,
+  'contact-inquiry': 900,
   'profile-update': 600,
   'password-change': 500,
-  'appointment-request': 600,
-  'advanced-search': 600,
+  'appointment-request': 700,
+  'advanced-search': 700,
 
   // Standard forms (typical registration/checkout)
   'user-registration': 700,
   'billing-info': 700,
-  'shipping-address': 650,
+  'shipping-address': 750,
   'checkout-payment': 750,
   'event-registration': 700,
   'support-ticket': 650,
@@ -40,7 +40,7 @@ const FORM_HEIGHTS: Record<FormId, number> = {
   'privacy-consent': 800,
 
   // Extra tall forms (multi-step, wizards)
-  'onboarding-wizard': 750,
+  'onboarding-wizard': 850,
 }
 
 // Default height if form is not in the map
