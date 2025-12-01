@@ -16,7 +16,8 @@
     "preview:shell": "npm run preview --workspace=@forms-comparison/shell",
     "clean": "node scripts/clean.mjs",
     "lint": "eslint 'apps/*/src/**/*.{js,jsx,ts,tsx}' 'packages/*/src/**/*.{js,jsx,ts,tsx}' --cache",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\""
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "sloc": "node scripts/calc-sloc.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
