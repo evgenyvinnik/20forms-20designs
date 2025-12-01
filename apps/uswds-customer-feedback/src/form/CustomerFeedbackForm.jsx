@@ -24,23 +24,6 @@ function CustomerFeedbackForm({ theme }) {
     },
   }
 
-  const ratings = [
-    { value: '5', label: '5 - Excellent' },
-    { value: '4', label: '4 - Good' },
-    { value: '3', label: '3 - Average' },
-    { value: '2', label: '2 - Below Average' },
-    { value: '1', label: '1 - Poor' },
-  ]
-
-  const feedbackCategories = [
-    'Product quality',
-    'Customer service',
-    'Shipping / Delivery',
-    'Website experience',
-    'Pricing',
-    'Other',
-  ]
-
   return (
     <Form onSubmit={handleSubmit}>
       <FormGroup>
@@ -48,12 +31,13 @@ function CustomerFeedbackForm({ theme }) {
           htmlFor="uswds-feedback-name"
           style={theme === 'dark' ? darkStyles.label : undefined}
         >
-          Name (optional)
+          Name
         </Label>
         <TextInput
           id="uswds-feedback-name"
           name="name"
           type="text"
+          required
           style={theme === 'dark' ? darkStyles.input : undefined}
         />
       </FormGroup>
@@ -62,35 +46,15 @@ function CustomerFeedbackForm({ theme }) {
           htmlFor="uswds-feedback-email"
           style={theme === 'dark' ? darkStyles.label : undefined}
         >
-          Email address (optional)
+          Email address
         </Label>
         <TextInput
           id="uswds-feedback-email"
           name="email"
           type="email"
-          style={theme === 'dark' ? darkStyles.input : undefined}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label
-          htmlFor="uswds-feedback-category"
-          style={theme === 'dark' ? darkStyles.label : undefined}
-        >
-          Feedback category
-        </Label>
-        <Select
-          id="uswds-feedback-category"
-          name="category"
           required
           style={theme === 'dark' ? darkStyles.input : undefined}
-        >
-          <option value="">Select category</option>
-          {feedbackCategories.map((category) => (
-            <option key={category} value={category}>
-              {category}
-            </option>
-          ))}
-        </Select>
+        />
       </FormGroup>
       <FormGroup>
         <Label
@@ -106,11 +70,10 @@ function CustomerFeedbackForm({ theme }) {
           style={theme === 'dark' ? darkStyles.input : undefined}
         >
           <option value="">Select rating</option>
-          {ratings.map((rating) => (
-            <option key={rating.value} value={rating.value}>
-              {rating.label}
-            </option>
-          ))}
+          <option value="excellent">Excellent</option>
+          <option value="good">Good</option>
+          <option value="average">Average</option>
+          <option value="poor">Poor</option>
         </Select>
       </FormGroup>
       <FormGroup>
@@ -123,26 +86,18 @@ function CustomerFeedbackForm({ theme }) {
         <Textarea
           id="uswds-feedback-comments"
           name="comments"
-          placeholder="Please share your feedback..."
           required
           style={theme === 'dark' ? darkStyles.input : undefined}
         />
       </FormGroup>
       <FormGroup>
         <Checkbox
-          id="uswds-feedback-recommend"
-          name="recommend"
-          label="I would recommend this to a friend"
+          id="uswds-feedback-followup"
+          name="followUp"
+          label="I would like a follow-up"
         />
       </FormGroup>
-      <FormGroup>
-        <Checkbox
-          id="uswds-feedback-contact"
-          name="contactMe"
-          label="I would like to be contacted about my feedback"
-        />
-      </FormGroup>
-      <Button type="submit">Submit feedback</Button>
+      <Button type="submit">Send feedback</Button>
     </Form>
   )
 }

@@ -60,15 +60,16 @@ function TwoFactorAuthForm({ theme }) {
           style={theme === 'dark' ? darkStyles.input : undefined}
         />
       </FormGroup>
-      <Button type="submit">Verify</Button>
-      <Button
-        type="button"
-        outline
-        onClick={() => alert('A new code has been sent!')}
-        style={{ marginLeft: '1rem' }}
-      >
-        Resend code
-      </Button>
+      <div style={{ display: 'flex', gap: '12px' }}>
+        <Button type="submit">Verify</Button>
+        <Button
+          type="button"
+          outline
+          onClick={() => alert('A new code has been sent!')}
+        >
+          Resend code
+        </Button>
+      </div>
     </Form>
   )
 }

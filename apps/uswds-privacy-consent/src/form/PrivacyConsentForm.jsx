@@ -1,121 +1,105 @@
-import { useState } from 'react'
-import { Form, FormGroup, Checkbox, Button } from '@trussworks/react-uswds'
+import {
+  Form,
+  FormGroup,
+  Label,
+  TextInput,
+  Textarea,
+  Checkbox,
+  Button,
+  Fieldset,
+} from '@trussworks/react-uswds'
 
 function PrivacyConsentForm({ theme }) {
-  const [consents, setConsents] = useState({
-    essential: true,
-    analytics: false,
-    marketing: false,
-    thirdParty: false,
-  })
-
-  const handleConsentChange = (key) => {
-    if (key === 'essential') return
-    setConsents((prev) => ({ ...prev, [key]: !prev[key] }))
-  }
-
-  const handleAcceptAll = () => {
-    setConsents({
-      essential: true,
-      analytics: true,
-      marketing: true,
-      thirdParty: true,
-    })
-  }
-
-  const handleRejectAll = () => {
-    setConsents({
-      essential: true,
-      analytics: false,
-      marketing: false,
-      thirdParty: false,
-    })
-  }
-
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Privacy preferences saved!')
   }
 
-  const consentOptions = [
-    {
-      key: 'essential',
-      label: 'Essential cookies (required)',
-      description:
-        'These cookies are necessary for the website to function and cannot be switched off.',
-      required: true,
+  const darkStyles = {
+    label: { color: '#f0f0f0' },
+    input: {
+      backgroundColor: '#2d2d2d',
+      color: '#f0f0f0',
+      borderColor: '#565c65',
     },
-    {
-      key: 'analytics',
-      label: 'Analytics cookies',
-      description:
-        'These cookies allow us to count visits and traffic sources to measure and improve site performance.',
-      required: false,
-    },
-    {
-      key: 'marketing',
-      label: 'Marketing cookies',
-      description:
-        'These cookies may be set by our advertising partners to build a profile of your interests.',
-      required: false,
-    },
-    {
-      key: 'thirdParty',
-      label: 'Third-party cookies',
-      description:
-        'These cookies are set by third-party services that appear on our pages.',
-      required: false,
-    },
-  ]
+    legend: { color: '#f0f0f0' },
+  }
 
   return (
     <Form onSubmit={handleSubmit}>
-      <div style={{ marginBottom: '16px' }}>
-        <p style={theme === 'dark' ? { color: '#f0f0f0' } : undefined}>
-          We use cookies to enhance your browsing experience and analyze our
-          traffic. Please select your cookie preferences below.
-        </p>
-      </div>
-
-      {consentOptions.map((option) => (
-        <FormGroup key={option.key}>
-          <Checkbox
-            id={`uswds-privacy-${option.key}`}
-            name={option.key}
-            checked={consents[option.key]}
-            onChange={() => handleConsentChange(option.key)}
-            disabled={option.required}
-            label={option.label}
-          />
-          <p
-            style={{
-              fontSize: '14px',
-              marginLeft: '28px',
-              marginTop: '4px',
-              color: theme === 'dark' ? '#a9aeb1' : '#71767a',
-            }}
-          >
-            {option.description}
-          </p>
-        </FormGroup>
-      ))}
-
-      <div
-        style={{
-          display: 'flex',
-          gap: '12px',
-          marginTop: '16px',
-          flexWrap: 'wrap',
-        }}
-      >
-        <Button type="submit">Save preferences</Button>
-        <Button type="button" onClick={handleAcceptAll} outline>
-          Accept all
-        </Button>
-        <Button type="button" onClick={handleRejectAll} outline>
-          Reject all
-        </Button>
-      </div>
+      <FormGroup>
+        <Label
+          htmlFor="uswds-privacy-name"
+          style={theme === 'dark' ? darkStyles.label : undefined}
+        >
+          Full name
+        </Label>
+        <TextInput
+          id="uswds-privacy-name"
+          name="fullName"
+          type="text"
+          required
+          style={theme === 'dark' ? darkStyles.input : undefined}
+        />
+      </FormGroup>
+      <FormGroup>
+        <Label
+          htmlFor="uswds-privacy-email"
+          style={theme === 'dark' ? darkStyles.label : undefined}
+        >
+          Email address
+        </Label>
+        <TextInput
+          id="uswds-privacy-email"
+          name="email"
+          type="email"
+          required
+          style={theme === 'dark' ? darkStyles.input : undefined}
+        />
+      </FormGroup>
+      <Fieldset legend="Communication channels">
+        <Checkbox
+          id="uswds-privacy-email-opt"
+          name="emailOptIn"
+          label="Email updates"
+        />
+        <Checkbox
+          id="uswds-privacy-sms-opt"
+          name="smsOptIn"
+          label="SMS notifications"
+        />
+        <Checkbox
+          id="uswds-privacy-phone-opt"
+          name="phoneOptIn"
+          label="Phone calls"
+        />
+      </Fieldset>
+      <Fieldset legend="Privacy options">
+        <Checkbox
+          id="uswds-privacy-analytics"
+          name="analytics"
+          label="Allow analytics cookies"
+        />
+        <Checkbox
+          id="uswds-privacy-personalization"
+          name="personalization"
+          label="Allow personalized content"
+        />
+      </Fieldset>
+      <FormGroup>
+        <Label
+          htmlFor="uswds-privacy-notes"
+          style={theme === 'dark' ? darkStyles.label : undefined}
+        >
+          Additional notes
+        </Label>
+        <Textarea
+          id="uswds-privacy-notes"
+          name="notes"
+          style={theme === 'dark' ? darkStyles.input : undefined}
+        />
+      </FormGroup>
+      <Button type="submit">Save preferences</Button>
     </Form>
   )
 }

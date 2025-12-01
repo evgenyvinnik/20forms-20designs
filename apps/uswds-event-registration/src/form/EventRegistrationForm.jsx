@@ -5,7 +5,6 @@ import {
   TextInput,
   Select,
   Checkbox,
-  Textarea,
   Button,
 } from '@trussworks/react-uswds'
 
@@ -24,14 +23,6 @@ function EventRegistrationForm({ theme }) {
     },
   }
 
-  const ticketTypes = [
-    'General admission',
-    'VIP',
-    'Early bird',
-    'Student',
-    'Group (5+)',
-  ]
-
   return (
     <Form onSubmit={handleSubmit}>
       <FormGroup>
@@ -43,7 +34,7 @@ function EventRegistrationForm({ theme }) {
         </Label>
         <TextInput
           id="uswds-event-name"
-          name="name"
+          name="fullName"
           type="text"
           required
           style={theme === 'dark' ? darkStyles.input : undefined}
@@ -66,93 +57,48 @@ function EventRegistrationForm({ theme }) {
       </FormGroup>
       <FormGroup>
         <Label
-          htmlFor="uswds-event-phone"
-          style={theme === 'dark' ? darkStyles.label : undefined}
-        >
-          Phone number
-        </Label>
-        <TextInput
-          id="uswds-event-phone"
-          name="phone"
-          type="tel"
-          style={theme === 'dark' ? darkStyles.input : undefined}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label
-          htmlFor="uswds-event-organization"
-          style={theme === 'dark' ? darkStyles.label : undefined}
-        >
-          Organization / Company
-        </Label>
-        <TextInput
-          id="uswds-event-organization"
-          name="organization"
-          type="text"
-          style={theme === 'dark' ? darkStyles.input : undefined}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label
-          htmlFor="uswds-event-ticket-type"
+          htmlFor="uswds-event-ticket"
           style={theme === 'dark' ? darkStyles.label : undefined}
         >
           Ticket type
         </Label>
         <Select
-          id="uswds-event-ticket-type"
+          id="uswds-event-ticket"
           name="ticketType"
           required
           style={theme === 'dark' ? darkStyles.input : undefined}
         >
-          <option value="">Select ticket type</option>
-          {ticketTypes.map((type) => (
-            <option key={type} value={type}>
-              {type}
-            </option>
-          ))}
+          <option value="">Select ticket</option>
+          <option value="general">General admission</option>
+          <option value="vip">VIP</option>
+          <option value="student">Student</option>
         </Select>
       </FormGroup>
       <FormGroup>
         <Label
-          htmlFor="uswds-event-attendees"
+          htmlFor="uswds-event-guests"
           style={theme === 'dark' ? darkStyles.label : undefined}
         >
-          Number of attendees
+          Number of guests
         </Label>
         <TextInput
-          id="uswds-event-attendees"
-          name="attendees"
+          id="uswds-event-guests"
+          name="guestCount"
           type="number"
-          min="1"
-          max="20"
-          defaultValue="1"
+          min={0}
+          max={20}
           required
-          style={theme === 'dark' ? darkStyles.input : undefined}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label
-          htmlFor="uswds-event-dietary"
-          style={theme === 'dark' ? darkStyles.label : undefined}
-        >
-          Dietary requirements
-        </Label>
-        <Textarea
-          id="uswds-event-dietary"
-          name="dietary"
-          placeholder="Please list any dietary restrictions or allergies"
           style={theme === 'dark' ? darkStyles.input : undefined}
         />
       </FormGroup>
       <FormGroup>
         <Checkbox
-          id="uswds-event-terms"
-          name="terms"
-          label="I agree to the event terms and conditions"
+          id="uswds-event-newsletter"
+          name="newsletter"
+          label="Notify me about future events"
         />
       </FormGroup>
-      <Button type="submit">Register for event</Button>
+      <Button type="submit">Register</Button>
     </Form>
   )
 }

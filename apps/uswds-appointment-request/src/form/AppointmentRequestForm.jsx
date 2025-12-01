@@ -3,7 +3,6 @@ import {
   FormGroup,
   Label,
   TextInput,
-  Select,
   Textarea,
   Button,
 } from '@trussworks/react-uswds'
@@ -23,30 +22,6 @@ function AppointmentRequestForm({ theme }) {
     },
   }
 
-  const appointmentTypes = [
-    'General consultation',
-    'Follow-up visit',
-    'New patient appointment',
-    'Specialist referral',
-    'Urgent care',
-  ]
-
-  const timeSlots = [
-    '09:00 AM',
-    '09:30 AM',
-    '10:00 AM',
-    '10:30 AM',
-    '11:00 AM',
-    '11:30 AM',
-    '01:00 PM',
-    '01:30 PM',
-    '02:00 PM',
-    '02:30 PM',
-    '03:00 PM',
-    '03:30 PM',
-    '04:00 PM',
-  ]
-
   return (
     <Form onSubmit={handleSubmit}>
       <FormGroup>
@@ -58,7 +33,7 @@ function AppointmentRequestForm({ theme }) {
         </Label>
         <TextInput
           id="uswds-appointment-name"
-          name="name"
+          name="fullName"
           type="text"
           required
           style={theme === 'dark' ? darkStyles.input : undefined}
@@ -78,42 +53,6 @@ function AppointmentRequestForm({ theme }) {
           required
           style={theme === 'dark' ? darkStyles.input : undefined}
         />
-      </FormGroup>
-      <FormGroup>
-        <Label
-          htmlFor="uswds-appointment-phone"
-          style={theme === 'dark' ? darkStyles.label : undefined}
-        >
-          Phone number
-        </Label>
-        <TextInput
-          id="uswds-appointment-phone"
-          name="phone"
-          type="tel"
-          required
-          style={theme === 'dark' ? darkStyles.input : undefined}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label
-          htmlFor="uswds-appointment-type"
-          style={theme === 'dark' ? darkStyles.label : undefined}
-        >
-          Appointment type
-        </Label>
-        <Select
-          id="uswds-appointment-type"
-          name="appointmentType"
-          required
-          style={theme === 'dark' ? darkStyles.input : undefined}
-        >
-          <option value="">Select appointment type</option>
-          {appointmentTypes.map((type) => (
-            <option key={type} value={type}>
-              {type}
-            </option>
-          ))}
-        </Select>
       </FormGroup>
       <FormGroup>
         <Label
@@ -137,30 +76,25 @@ function AppointmentRequestForm({ theme }) {
         >
           Preferred time
         </Label>
-        <Select
+        <TextInput
           id="uswds-appointment-time"
           name="time"
+          type="time"
           required
           style={theme === 'dark' ? darkStyles.input : undefined}
-        >
-          <option value="">Select time slot</option>
-          {timeSlots.map((time) => (
-            <option key={time} value={time}>
-              {time}
-            </option>
-          ))}
-        </Select>
+        />
       </FormGroup>
       <FormGroup>
         <Label
-          htmlFor="uswds-appointment-notes"
+          htmlFor="uswds-appointment-reason"
           style={theme === 'dark' ? darkStyles.label : undefined}
         >
-          Additional notes
+          Reason for visit
         </Label>
         <Textarea
-          id="uswds-appointment-notes"
-          name="notes"
+          id="uswds-appointment-reason"
+          name="reason"
+          required
           style={theme === 'dark' ? darkStyles.input : undefined}
         />
       </FormGroup>

@@ -3,7 +3,6 @@ import {
   FormGroup,
   Label,
   TextInput,
-  Select,
   Textarea,
   Checkbox,
   Button,
@@ -12,7 +11,7 @@ import {
 function JobApplicationForm({ theme }) {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Job application submitted!')
+    alert('Application submitted!')
   }
 
   const darkStyles = {
@@ -24,36 +23,18 @@ function JobApplicationForm({ theme }) {
     },
   }
 
-  const positions = [
-    'Software Engineer',
-    'Product Manager',
-    'UX Designer',
-    'Data Analyst',
-    'DevOps Engineer',
-    'Marketing Specialist',
-    'Sales Representative',
-    'Customer Support',
-  ]
-
-  const experienceLevels = [
-    'Entry level (0-2 years)',
-    'Mid level (3-5 years)',
-    'Senior (6-10 years)',
-    'Lead / Principal (10+ years)',
-  ]
-
   return (
     <Form onSubmit={handleSubmit}>
       <FormGroup>
         <Label
-          htmlFor="uswds-job-name"
+          htmlFor="uswds-job-full-name"
           style={theme === 'dark' ? darkStyles.label : undefined}
         >
           Full name
         </Label>
         <TextInput
-          id="uswds-job-name"
-          name="name"
+          id="uswds-job-full-name"
+          name="fullName"
           type="text"
           required
           style={theme === 'dark' ? darkStyles.input : undefined}
@@ -85,93 +66,38 @@ function JobApplicationForm({ theme }) {
           id="uswds-job-phone"
           name="phone"
           type="tel"
+          pattern="[+0-9\s-]{7,20}"
+          inputMode="tel"
           required
           style={theme === 'dark' ? darkStyles.input : undefined}
         />
       </FormGroup>
       <FormGroup>
         <Label
-          htmlFor="uswds-job-position"
+          htmlFor="uswds-job-role"
           style={theme === 'dark' ? darkStyles.label : undefined}
         >
-          Position applying for
-        </Label>
-        <Select
-          id="uswds-job-position"
-          name="position"
-          required
-          style={theme === 'dark' ? darkStyles.input : undefined}
-        >
-          <option value="">Select position</option>
-          {positions.map((position) => (
-            <option key={position} value={position}>
-              {position}
-            </option>
-          ))}
-        </Select>
-      </FormGroup>
-      <FormGroup>
-        <Label
-          htmlFor="uswds-job-experience"
-          style={theme === 'dark' ? darkStyles.label : undefined}
-        >
-          Experience level
-        </Label>
-        <Select
-          id="uswds-job-experience"
-          name="experience"
-          required
-          style={theme === 'dark' ? darkStyles.input : undefined}
-        >
-          <option value="">Select experience level</option>
-          {experienceLevels.map((level) => (
-            <option key={level} value={level}>
-              {level}
-            </option>
-          ))}
-        </Select>
-      </FormGroup>
-      <FormGroup>
-        <Label
-          htmlFor="uswds-job-linkedin"
-          style={theme === 'dark' ? darkStyles.label : undefined}
-        >
-          LinkedIn profile URL
+          Role applied for
         </Label>
         <TextInput
-          id="uswds-job-linkedin"
-          name="linkedin"
+          id="uswds-job-role"
+          name="role"
+          type="text"
+          required
+          style={theme === 'dark' ? darkStyles.input : undefined}
+        />
+      </FormGroup>
+      <FormGroup>
+        <Label
+          htmlFor="uswds-job-resume"
+          style={theme === 'dark' ? darkStyles.label : undefined}
+        >
+          Resume link
+        </Label>
+        <TextInput
+          id="uswds-job-resume"
+          name="resume"
           type="url"
-          placeholder="https://linkedin.com/in/your-profile"
-          style={theme === 'dark' ? darkStyles.input : undefined}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label
-          htmlFor="uswds-job-portfolio"
-          style={theme === 'dark' ? darkStyles.label : undefined}
-        >
-          Portfolio / Website URL
-        </Label>
-        <TextInput
-          id="uswds-job-portfolio"
-          name="portfolio"
-          type="url"
-          placeholder="https://your-portfolio.com"
-          style={theme === 'dark' ? darkStyles.input : undefined}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label
-          htmlFor="uswds-job-start-date"
-          style={theme === 'dark' ? darkStyles.label : undefined}
-        >
-          Available start date
-        </Label>
-        <TextInput
-          id="uswds-job-start-date"
-          name="startDate"
-          type="date"
           required
           style={theme === 'dark' ? darkStyles.input : undefined}
         />
@@ -186,22 +112,15 @@ function JobApplicationForm({ theme }) {
         <Textarea
           id="uswds-job-cover-letter"
           name="coverLetter"
-          placeholder="Tell us why you're a great fit for this position..."
+          required
           style={theme === 'dark' ? darkStyles.input : undefined}
         />
       </FormGroup>
       <FormGroup>
         <Checkbox
-          id="uswds-job-relocate"
-          name="relocate"
-          label="I am willing to relocate if necessary"
-        />
-      </FormGroup>
-      <FormGroup>
-        <Checkbox
-          id="uswds-job-remote"
-          name="remote"
-          label="I am interested in remote work opportunities"
+          id="uswds-job-updates"
+          name="updates"
+          label="Keep me informed about future roles"
         />
       </FormGroup>
       <Button type="submit">Submit application</Button>

@@ -4,14 +4,13 @@ import {
   Label,
   TextInput,
   Select,
-  Checkbox,
   Button,
 } from '@trussworks/react-uswds'
 
 function CheckoutPaymentForm({ theme }) {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Payment submitted!')
+    alert('Checkout submitted!')
   }
 
   const darkStyles = {
@@ -23,39 +22,41 @@ function CheckoutPaymentForm({ theme }) {
     },
   }
 
-  const currentYear = new Date().getFullYear()
-  const years = Array.from({ length: 12 }, (_, i) => currentYear + i)
-  const months = [
-    '01 - January',
-    '02 - February',
-    '03 - March',
-    '04 - April',
-    '05 - May',
-    '06 - June',
-    '07 - July',
-    '08 - August',
-    '09 - September',
-    '10 - October',
-    '11 - November',
-    '12 - December',
-  ]
-
   return (
     <Form onSubmit={handleSubmit}>
       <FormGroup>
         <Label
-          htmlFor="uswds-checkout-card-name"
+          htmlFor="uswds-checkout-email"
           style={theme === 'dark' ? darkStyles.label : undefined}
         >
-          Cardholder name
+          Email for receipt
         </Label>
         <TextInput
-          id="uswds-checkout-card-name"
-          name="cardName"
-          type="text"
+          id="uswds-checkout-email"
+          name="email"
+          type="email"
           required
           style={theme === 'dark' ? darkStyles.input : undefined}
         />
+      </FormGroup>
+      <FormGroup>
+        <Label
+          htmlFor="uswds-checkout-shipping-method"
+          style={theme === 'dark' ? darkStyles.label : undefined}
+        >
+          Shipping method
+        </Label>
+        <Select
+          id="uswds-checkout-shipping-method"
+          name="shippingMethod"
+          required
+          style={theme === 'dark' ? darkStyles.input : undefined}
+        >
+          <option value="">Select shipping</option>
+          <option value="standard">Standard</option>
+          <option value="express">Express</option>
+          <option value="overnight">Overnight</option>
+        </Select>
       </FormGroup>
       <FormGroup>
         <Label
@@ -69,66 +70,43 @@ function CheckoutPaymentForm({ theme }) {
           name="cardNumber"
           type="text"
           inputMode="numeric"
+          pattern="[0-9]{13,19}"
           maxLength={19}
-          placeholder="1234 5678 9012 3456"
           required
           style={theme === 'dark' ? darkStyles.input : undefined}
         />
       </FormGroup>
       <FormGroup>
         <Label
-          htmlFor="uswds-checkout-exp-month"
+          htmlFor="uswds-checkout-expiration"
           style={theme === 'dark' ? darkStyles.label : undefined}
         >
-          Expiration month
-        </Label>
-        <Select
-          id="uswds-checkout-exp-month"
-          name="expMonth"
-          required
-          style={theme === 'dark' ? darkStyles.input : undefined}
-        >
-          <option value="">Select month</option>
-          {months.map((month, index) => (
-            <option key={index} value={String(index + 1).padStart(2, '0')}>
-              {month}
-            </option>
-          ))}
-        </Select>
-      </FormGroup>
-      <FormGroup>
-        <Label
-          htmlFor="uswds-checkout-exp-year"
-          style={theme === 'dark' ? darkStyles.label : undefined}
-        >
-          Expiration year
-        </Label>
-        <Select
-          id="uswds-checkout-exp-year"
-          name="expYear"
-          required
-          style={theme === 'dark' ? darkStyles.input : undefined}
-        >
-          <option value="">Select year</option>
-          {years.map((year) => (
-            <option key={year} value={year}>
-              {year}
-            </option>
-          ))}
-        </Select>
-      </FormGroup>
-      <FormGroup>
-        <Label
-          htmlFor="uswds-checkout-cvv"
-          style={theme === 'dark' ? darkStyles.label : undefined}
-        >
-          Security code (CVV)
+          Expiration
         </Label>
         <TextInput
-          id="uswds-checkout-cvv"
-          name="cvv"
-          type="password"
+          id="uswds-checkout-expiration"
+          name="expiration"
+          type="text"
+          placeholder="MM/YY"
+          pattern="^(0[1-9]|1[0-2])\/\d{2}$"
           inputMode="numeric"
+          required
+          style={theme === 'dark' ? darkStyles.input : undefined}
+        />
+      </FormGroup>
+      <FormGroup>
+        <Label
+          htmlFor="uswds-checkout-cvc"
+          style={theme === 'dark' ? darkStyles.label : undefined}
+        >
+          CVC
+        </Label>
+        <TextInput
+          id="uswds-checkout-cvc"
+          name="cvc"
+          type="text"
+          inputMode="numeric"
+          pattern="[0-9]{3,4}"
           maxLength={4}
           required
           style={theme === 'dark' ? darkStyles.input : undefined}
@@ -136,27 +114,20 @@ function CheckoutPaymentForm({ theme }) {
       </FormGroup>
       <FormGroup>
         <Label
-          htmlFor="uswds-checkout-billing-zip"
+          htmlFor="uswds-checkout-promo"
           style={theme === 'dark' ? darkStyles.label : undefined}
         >
-          Billing ZIP code
+          Promo code
         </Label>
         <TextInput
-          id="uswds-checkout-billing-zip"
-          name="billingZip"
+          id="uswds-checkout-promo"
+          name="promoCode"
           type="text"
-          required
+          pattern="[A-Za-z0-9]{3,15}"
           style={theme === 'dark' ? darkStyles.input : undefined}
         />
       </FormGroup>
-      <FormGroup>
-        <Checkbox
-          id="uswds-checkout-save-card"
-          name="saveCard"
-          label="Save card for future purchases"
-        />
-      </FormGroup>
-      <Button type="submit">Complete purchase</Button>
+      <Button type="submit">Place order</Button>
     </Form>
   )
 }

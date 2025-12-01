@@ -9,7 +9,7 @@ import {
 function OrderTrackingForm({ theme }) {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Tracking your order!')
+    alert('Order lookup submitted!')
   }
 
   const darkStyles = {
@@ -25,37 +25,51 @@ function OrderTrackingForm({ theme }) {
     <Form onSubmit={handleSubmit}>
       <FormGroup>
         <Label
-          htmlFor="uswds-order-number"
+          htmlFor="uswds-order-tracking-number"
           style={theme === 'dark' ? darkStyles.label : undefined}
         >
           Order number
         </Label>
         <TextInput
-          id="uswds-order-number"
+          id="uswds-order-tracking-number"
           name="orderNumber"
           type="text"
-          placeholder="e.g., ORD-123456789"
+          pattern="[A-Za-z0-9-]{6,20}"
           required
           style={theme === 'dark' ? darkStyles.input : undefined}
         />
       </FormGroup>
       <FormGroup>
         <Label
-          htmlFor="uswds-order-email"
+          htmlFor="uswds-order-tracking-email"
           style={theme === 'dark' ? darkStyles.label : undefined}
         >
           Email address
         </Label>
         <TextInput
-          id="uswds-order-email"
+          id="uswds-order-tracking-email"
           name="email"
           type="email"
-          placeholder="The email used for your order"
           required
           style={theme === 'dark' ? darkStyles.input : undefined}
         />
       </FormGroup>
-      <Button type="submit">Track order</Button>
+      <FormGroup>
+        <Label
+          htmlFor="uswds-order-tracking-postal"
+          style={theme === 'dark' ? darkStyles.label : undefined}
+        >
+          Postal code
+        </Label>
+        <TextInput
+          id="uswds-order-tracking-postal"
+          name="postalCode"
+          type="text"
+          required
+          style={theme === 'dark' ? darkStyles.input : undefined}
+        />
+      </FormGroup>
+      <Button type="submit">Find order</Button>
     </Form>
   )
 }
