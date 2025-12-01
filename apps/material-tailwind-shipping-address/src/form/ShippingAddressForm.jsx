@@ -1,5 +1,12 @@
 import { useState } from 'react'
-import { Input, Select, Option, Checkbox, Button, Typography } from '@material-tailwind/react'
+import {
+  Input,
+  Select,
+  Option,
+  Checkbox,
+  Button,
+  Typography,
+} from '@material-tailwind/react'
 
 const COUNTRIES = [
   { code: 'US', name: 'United States' },
@@ -7,20 +14,72 @@ const COUNTRIES = [
 ]
 
 const US_STATES = [
-  'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
-  'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa',
-  'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan',
-  'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-  'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio',
-  'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota',
-  'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia',
-  'Wisconsin', 'Wyoming',
+  'Alabama',
+  'Alaska',
+  'Arizona',
+  'Arkansas',
+  'California',
+  'Colorado',
+  'Connecticut',
+  'Delaware',
+  'Florida',
+  'Georgia',
+  'Hawaii',
+  'Idaho',
+  'Illinois',
+  'Indiana',
+  'Iowa',
+  'Kansas',
+  'Kentucky',
+  'Louisiana',
+  'Maine',
+  'Maryland',
+  'Massachusetts',
+  'Michigan',
+  'Minnesota',
+  'Mississippi',
+  'Missouri',
+  'Montana',
+  'Nebraska',
+  'Nevada',
+  'New Hampshire',
+  'New Jersey',
+  'New Mexico',
+  'New York',
+  'North Carolina',
+  'North Dakota',
+  'Ohio',
+  'Oklahoma',
+  'Oregon',
+  'Pennsylvania',
+  'Rhode Island',
+  'South Carolina',
+  'South Dakota',
+  'Tennessee',
+  'Texas',
+  'Utah',
+  'Vermont',
+  'Virginia',
+  'Washington',
+  'West Virginia',
+  'Wisconsin',
+  'Wyoming',
 ]
 
 const CANADIAN_PROVINCES = [
-  'Alberta', 'British Columbia', 'Manitoba', 'New Brunswick', 'Newfoundland and Labrador',
-  'Northwest Territories', 'Nova Scotia', 'Nunavut', 'Ontario', 'Prince Edward Island',
-  'Quebec', 'Saskatchewan', 'Yukon',
+  'Alberta',
+  'British Columbia',
+  'Manitoba',
+  'New Brunswick',
+  'Newfoundland and Labrador',
+  'Northwest Territories',
+  'Nova Scotia',
+  'Nunavut',
+  'Ontario',
+  'Prince Edward Island',
+  'Quebec',
+  'Saskatchewan',
+  'Yukon',
 ]
 
 function ShippingAddressForm() {
@@ -32,12 +91,19 @@ function ShippingAddressForm() {
   }
 
   const regions = country === 'US' ? US_STATES : CANADIAN_PROVINCES
-  const postalPattern = country === 'US' ? '[0-9]{5}(-[0-9]{4})?' : '[A-Za-z][0-9][A-Za-z] ?[0-9][A-Za-z][0-9]'
+  const postalPattern =
+    country === 'US'
+      ? '[0-9]{5}(-[0-9]{4})?'
+      : '[A-Za-z][0-9][A-Za-z] ?[0-9][A-Za-z][0-9]'
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Recipient name
         </Typography>
         <Input
@@ -47,11 +113,15 @@ function ShippingAddressForm() {
           required
           placeholder="Enter recipient name"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Street address
         </Typography>
         <Input
@@ -61,11 +131,15 @@ function ShippingAddressForm() {
           required
           placeholder="Enter street address"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Apartment, suite, etc.
         </Typography>
         <Input
@@ -74,11 +148,15 @@ function ShippingAddressForm() {
           type="text"
           placeholder="Apartment, suite, etc. (optional)"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           City
         </Typography>
         <Input
@@ -88,11 +166,15 @@ function ShippingAddressForm() {
           required
           placeholder="Enter city"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Country
         </Typography>
         <Select
@@ -103,12 +185,18 @@ function ShippingAddressForm() {
           className="dark:text-white"
         >
           {COUNTRIES.map((c) => (
-            <Option key={c.code} value={c.code}>{c.name}</Option>
+            <Option key={c.code} value={c.code}>
+              {c.name}
+            </Option>
           ))}
         </Select>
       </div>
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           State / Province / Territory
         </Typography>
         <Select
@@ -117,12 +205,18 @@ function ShippingAddressForm() {
           className="dark:text-white"
         >
           {regions.map((region) => (
-            <Option key={region} value={region}>{region}</Option>
+            <Option key={region} value={region}>
+              {region}
+            </Option>
           ))}
         </Select>
       </div>
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Postal code
         </Typography>
         <Input
@@ -133,17 +227,21 @@ function ShippingAddressForm() {
           pattern={postalPattern}
           placeholder="Enter postal code"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <Checkbox
         name="default"
         label={
-          <Typography variant="small" color="gray" className="font-normal dark:text-gray-300">
+          <Typography
+            variant="small"
+            color="gray"
+            className="font-normal dark:text-gray-300"
+          >
             Use as default shipping address
           </Typography>
         }
-        containerProps={{ className: "-ml-2.5" }}
+        containerProps={{ className: '-ml-2.5' }}
       />
       <Button type="submit" color="blue">
         Save address

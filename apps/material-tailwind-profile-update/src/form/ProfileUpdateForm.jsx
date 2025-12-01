@@ -9,7 +9,11 @@ function ProfileUpdateForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           First name
         </Typography>
         <Input
@@ -19,11 +23,15 @@ function ProfileUpdateForm() {
           required
           placeholder="Enter your first name"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Last name
         </Typography>
         <Input
@@ -33,11 +41,15 @@ function ProfileUpdateForm() {
           required
           placeholder="Enter your last name"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Email address
         </Typography>
         <Input
@@ -47,11 +59,15 @@ function ProfileUpdateForm() {
           required
           placeholder="Enter your email"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Phone number
         </Typography>
         <Input
@@ -63,11 +79,15 @@ function ProfileUpdateForm() {
           inputMode="tel"
           placeholder="Enter your phone number"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Short bio
         </Typography>
         <Textarea
@@ -77,7 +97,7 @@ function ProfileUpdateForm() {
           rows={3}
           placeholder="Tell us about yourself"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <Button type="submit" color="blue">

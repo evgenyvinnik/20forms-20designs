@@ -1,4 +1,11 @@
-import { Input, Select, Option, Checkbox, Button, Typography } from '@material-tailwind/react'
+import {
+  Input,
+  Select,
+  Option,
+  Checkbox,
+  Button,
+  Typography,
+} from '@material-tailwind/react'
 
 function NewsletterSubscriptionForm() {
   const handleSubmit = (event) => {
@@ -9,7 +16,11 @@ function NewsletterSubscriptionForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Email address
         </Typography>
         <Input
@@ -19,11 +30,15 @@ function NewsletterSubscriptionForm() {
           required
           placeholder="Enter your email"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Frequency
         </Typography>
         <Select
@@ -39,11 +54,15 @@ function NewsletterSubscriptionForm() {
       <Checkbox
         name="agree"
         label={
-          <Typography variant="small" color="gray" className="font-normal dark:text-gray-300">
+          <Typography
+            variant="small"
+            color="gray"
+            className="font-normal dark:text-gray-300"
+          >
             Receive product updates
           </Typography>
         }
-        containerProps={{ className: "-ml-2.5" }}
+        containerProps={{ className: '-ml-2.5' }}
       />
       <Button type="submit" color="blue">
         Subscribe
