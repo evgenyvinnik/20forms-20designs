@@ -1,14 +1,13 @@
 import { useState, useCallback } from 'react'
 import {
   Field,
-  Label,
   Input,
   Textarea,
   Checkbox,
   Select,
 } from '@zendeskgarden/react-forms'
 import { Button } from '@zendeskgarden/react-buttons'
-import { Grid, Row, Col } from '@zendeskgarden/react-grid'
+import { Grid } from '@zendeskgarden/react-grid'
 import { MD } from '@zendeskgarden/react-typography'
 
 function OnboardingWizardForm() {
@@ -27,18 +26,16 @@ function OnboardingWizardForm() {
   return (
     <form onSubmit={handleSubmit}>
       <Grid>
-        <Row>
-          <Col>
-            <MD isBold tag="div">
-              Step 1: Account
-            </MD>
-          </Col>
-        </Row>
+        <Grid.Row>
+          <Grid.Col>
+            <MD isBold>Step 1: Account</MD>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '8px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '8px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Work email</Label>
+              <Field.Label>Work email</Field.Label>
               <Input
                 type="email"
                 value={email}
@@ -46,13 +43,13 @@ function OnboardingWizardForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Password</Label>
+              <Field.Label>Password</Field.Label>
               <Input
                 type="password"
                 value={password}
@@ -61,34 +58,32 @@ function OnboardingWizardForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '24px' }}>
-          <Col>
-            <MD isBold tag="div">
-              Step 2: Team
-            </MD>
-          </Col>
-        </Row>
+        <Grid.Row style={{ marginTop: '24px' }}>
+          <Grid.Col>
+            <MD isBold>Step 2: Team</MD>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '8px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '8px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Team name</Label>
+              <Field.Label>Team name</Field.Label>
               <Input
                 value={teamName}
                 onChange={(e) => setTeamName(e.target.value)}
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Team size</Label>
+              <Field.Label>Team size</Field.Label>
               <Select
                 value={teamSize}
                 onChange={(e) => setTeamSize(e.target.value)}
@@ -101,21 +96,19 @@ function OnboardingWizardForm() {
                 <option value="50+">50+</option>
               </Select>
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '24px' }}>
-          <Col>
-            <MD isBold tag="div">
-              Step 3: Preferences
-            </MD>
-          </Col>
-        </Row>
+        <Grid.Row style={{ marginTop: '24px' }}>
+          <Grid.Col>
+            <MD isBold>Step 3: Preferences</MD>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '8px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '8px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Primary goal</Label>
+              <Field.Label>Primary goal</Field.Label>
               <Textarea
                 value={goal}
                 onChange={(e) => setGoal(e.target.value)}
@@ -123,24 +116,24 @@ function OnboardingWizardForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
               <Checkbox
                 checked={updates}
                 onChange={(e) => setUpdates(e.target.checked)}
               >
-                <Label>Send me product tips</Label>
+                <Field.Label>Send me product tips</Field.Label>
               </Checkbox>
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '24px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '24px' }}>
+          <Grid.Col>
             <Button
               onClick={() => alert('Back action placeholder')}
               style={{ marginRight: '8px' }}
@@ -150,8 +143,8 @@ function OnboardingWizardForm() {
             <Button type="submit" isPrimary>
               Finish setup
             </Button>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
       </Grid>
     </form>
   )

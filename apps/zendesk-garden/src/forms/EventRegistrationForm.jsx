@@ -1,13 +1,7 @@
 import { useState, useCallback } from 'react'
-import {
-  Field,
-  Label,
-  Input,
-  Checkbox,
-  Select,
-} from '@zendeskgarden/react-forms'
+import { Field, Input, Checkbox, Select } from '@zendeskgarden/react-forms'
 import { Button } from '@zendeskgarden/react-buttons'
-import { Grid, Row, Col } from '@zendeskgarden/react-grid'
+import { Grid } from '@zendeskgarden/react-grid'
 
 function EventRegistrationForm() {
   const [fullName, setFullName] = useState('')
@@ -24,23 +18,23 @@ function EventRegistrationForm() {
   return (
     <form onSubmit={handleSubmit}>
       <Grid>
-        <Row>
-          <Col>
+        <Grid.Row>
+          <Grid.Col>
             <Field>
-              <Label>Full name</Label>
+              <Field.Label>Full name</Field.Label>
               <Input
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Email address</Label>
+              <Field.Label>Email address</Field.Label>
               <Input
                 type="email"
                 value={email}
@@ -48,13 +42,13 @@ function EventRegistrationForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Ticket type</Label>
+              <Field.Label>Ticket type</Field.Label>
               <Select
                 value={ticketType}
                 onChange={(e) => setTicketType(e.target.value)}
@@ -66,13 +60,13 @@ function EventRegistrationForm() {
                 <option value="student">Student</option>
               </Select>
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Number of guests</Label>
+              <Field.Label>Number of guests</Field.Label>
               <Input
                 type="number"
                 min={0}
@@ -82,29 +76,29 @@ function EventRegistrationForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
               <Checkbox
                 checked={newsletter}
                 onChange={(e) => setNewsletter(e.target.checked)}
               >
-                <Label>Notify me about future events</Label>
+                <Field.Label>Notify me about future events</Field.Label>
               </Checkbox>
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '24px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '24px' }}>
+          <Grid.Col>
             <Button type="submit" isPrimary>
               Register
             </Button>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
       </Grid>
     </form>
   )

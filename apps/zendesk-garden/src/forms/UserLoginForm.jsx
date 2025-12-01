@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
-import { Field, Label, Input, Checkbox } from '@zendeskgarden/react-forms'
+import { Field, Input, Checkbox } from '@zendeskgarden/react-forms'
 import { Button } from '@zendeskgarden/react-buttons'
-import { Grid, Row, Col } from '@zendeskgarden/react-grid'
+import { Grid } from '@zendeskgarden/react-grid'
 
 function UserLoginForm() {
   const [identifier, setIdentifier] = useState('')
@@ -16,23 +16,23 @@ function UserLoginForm() {
   return (
     <form onSubmit={handleSubmit}>
       <Grid>
-        <Row>
-          <Col>
+        <Grid.Row>
+          <Grid.Col>
             <Field>
-              <Label>Email or username</Label>
+              <Field.Label>Email or username</Field.Label>
               <Input
                 value={identifier}
                 onChange={(e) => setIdentifier(e.target.value)}
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Password</Label>
+              <Field.Label>Password</Field.Label>
               <Input
                 type="password"
                 value={password}
@@ -40,24 +40,24 @@ function UserLoginForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
               <Checkbox
                 checked={rememberMe}
                 onChange={(e) => setRememberMe(e.target.checked)}
               >
-                <Label>Keep me signed in</Label>
+                <Field.Label>Keep me signed in</Field.Label>
               </Checkbox>
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '24px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '24px' }}>
+          <Grid.Col>
             <Button type="submit" isPrimary style={{ marginRight: '8px' }}>
               Sign in
             </Button>
@@ -66,8 +66,8 @@ function UserLoginForm() {
             >
               Forgot password?
             </Button>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
       </Grid>
     </form>
   )

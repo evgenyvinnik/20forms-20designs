@@ -1,13 +1,7 @@
 import { useState, useCallback } from 'react'
-import {
-  Field,
-  Label,
-  Input,
-  Checkbox,
-  Select,
-} from '@zendeskgarden/react-forms'
+import { Field, Input, Checkbox, Select } from '@zendeskgarden/react-forms'
 import { Button } from '@zendeskgarden/react-buttons'
-import { Grid, Row, Col } from '@zendeskgarden/react-grid'
+import { Grid } from '@zendeskgarden/react-grid'
 
 function NewsletterSubscriptionForm() {
   const [email, setEmail] = useState('')
@@ -22,10 +16,10 @@ function NewsletterSubscriptionForm() {
   return (
     <form onSubmit={handleSubmit}>
       <Grid>
-        <Row>
-          <Col>
+        <Grid.Row>
+          <Grid.Col>
             <Field>
-              <Label>Email address</Label>
+              <Field.Label>Email address</Field.Label>
               <Input
                 type="email"
                 value={email}
@@ -33,13 +27,13 @@ function NewsletterSubscriptionForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Frequency</Label>
+              <Field.Label>Frequency</Field.Label>
               <Select
                 value={frequency}
                 onChange={(e) => setFrequency(e.target.value)}
@@ -51,29 +45,29 @@ function NewsletterSubscriptionForm() {
                 <option value="quarterly">Quarterly</option>
               </Select>
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
               <Checkbox
                 checked={productUpdates}
                 onChange={(e) => setProductUpdates(e.target.checked)}
               >
-                <Label>Receive product updates</Label>
+                <Field.Label>Receive product updates</Field.Label>
               </Checkbox>
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '24px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '24px' }}>
+          <Grid.Col>
             <Button type="submit" isPrimary>
               Subscribe
             </Button>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
       </Grid>
     </form>
   )

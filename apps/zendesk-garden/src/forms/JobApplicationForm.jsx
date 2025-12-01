@@ -1,13 +1,7 @@
 import { useState, useCallback } from 'react'
-import {
-  Field,
-  Label,
-  Input,
-  Textarea,
-  Checkbox,
-} from '@zendeskgarden/react-forms'
+import { Field, Input, Textarea, Checkbox } from '@zendeskgarden/react-forms'
 import { Button } from '@zendeskgarden/react-buttons'
-import { Grid, Row, Col } from '@zendeskgarden/react-grid'
+import { Grid } from '@zendeskgarden/react-grid'
 
 function JobApplicationForm() {
   const [fullName, setFullName] = useState('')
@@ -26,23 +20,23 @@ function JobApplicationForm() {
   return (
     <form onSubmit={handleSubmit}>
       <Grid>
-        <Row>
-          <Col>
+        <Grid.Row>
+          <Grid.Col>
             <Field>
-              <Label>Full name</Label>
+              <Field.Label>Full name</Field.Label>
               <Input
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Email address</Label>
+              <Field.Label>Email address</Field.Label>
               <Input
                 type="email"
                 value={email}
@@ -50,13 +44,13 @@ function JobApplicationForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Phone number</Label>
+              <Field.Label>Phone number</Field.Label>
               <Input
                 type="tel"
                 value={phone}
@@ -65,26 +59,26 @@ function JobApplicationForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Role applied for</Label>
+              <Field.Label>Role applied for</Field.Label>
               <Input
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Resume link</Label>
+              <Field.Label>Resume link</Field.Label>
               <Input
                 type="url"
                 value={resumeUrl}
@@ -92,13 +86,13 @@ function JobApplicationForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Cover letter</Label>
+              <Field.Label>Cover letter</Field.Label>
               <Textarea
                 value={coverLetter}
                 onChange={(e) => setCoverLetter(e.target.value)}
@@ -106,29 +100,29 @@ function JobApplicationForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
               <Checkbox
                 checked={updates}
                 onChange={(e) => setUpdates(e.target.checked)}
               >
-                <Label>Keep me informed about future roles</Label>
+                <Field.Label>Keep me informed about future roles</Field.Label>
               </Checkbox>
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '24px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '24px' }}>
+          <Grid.Col>
             <Button type="submit" isPrimary>
               Submit application
             </Button>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
       </Grid>
     </form>
   )

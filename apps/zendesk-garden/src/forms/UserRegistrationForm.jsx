@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
-import { Field, Label, Input, Checkbox } from '@zendeskgarden/react-forms'
+import { Field, Input, Checkbox } from '@zendeskgarden/react-forms'
 import { Button } from '@zendeskgarden/react-buttons'
-import { Grid, Row, Col } from '@zendeskgarden/react-grid'
+import { Grid } from '@zendeskgarden/react-grid'
 
 function UserRegistrationForm() {
   const [fullName, setFullName] = useState('')
@@ -19,23 +19,23 @@ function UserRegistrationForm() {
   return (
     <form onSubmit={handleSubmit}>
       <Grid>
-        <Row>
-          <Col>
+        <Grid.Row>
+          <Grid.Col>
             <Field>
-              <Label>Full name</Label>
+              <Field.Label>Full name</Field.Label>
               <Input
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Email address</Label>
+              <Field.Label>Email address</Field.Label>
               <Input
                 type="email"
                 value={email}
@@ -43,13 +43,13 @@ function UserRegistrationForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Username</Label>
+              <Field.Label>Username</Field.Label>
               <Input
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
@@ -57,13 +57,13 @@ function UserRegistrationForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Password</Label>
+              <Field.Label>Password</Field.Label>
               <Input
                 type="password"
                 value={password}
@@ -72,13 +72,13 @@ function UserRegistrationForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Confirm password</Label>
+              <Field.Label>Confirm password</Field.Label>
               <Input
                 type="password"
                 value={confirmPassword}
@@ -87,30 +87,30 @@ function UserRegistrationForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
               <Checkbox
                 checked={agreeToTerms}
                 onChange={(e) => setAgreeToTerms(e.target.checked)}
                 required
               >
-                <Label>I agree to the terms and conditions</Label>
+                <Field.Label>I agree to the terms and conditions</Field.Label>
               </Checkbox>
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '24px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '24px' }}>
+          <Grid.Col>
             <Button type="submit" isPrimary>
               Create account
             </Button>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
       </Grid>
     </form>
   )

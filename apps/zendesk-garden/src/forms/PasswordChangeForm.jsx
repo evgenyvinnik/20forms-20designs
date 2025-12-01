@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
-import { Field, Label, Input, Checkbox } from '@zendeskgarden/react-forms'
+import { Field, Input, Checkbox } from '@zendeskgarden/react-forms'
 import { Button } from '@zendeskgarden/react-buttons'
-import { Grid, Row, Col } from '@zendeskgarden/react-grid'
+import { Grid } from '@zendeskgarden/react-grid'
 
 function PasswordChangeForm() {
   const [currentPassword, setCurrentPassword] = useState('')
@@ -17,10 +17,10 @@ function PasswordChangeForm() {
   return (
     <form onSubmit={handleSubmit}>
       <Grid>
-        <Row>
-          <Col>
+        <Grid.Row>
+          <Grid.Col>
             <Field>
-              <Label>Current password</Label>
+              <Field.Label>Current password</Field.Label>
               <Input
                 type="password"
                 value={currentPassword}
@@ -28,13 +28,13 @@ function PasswordChangeForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>New password</Label>
+              <Field.Label>New password</Field.Label>
               <Input
                 type="password"
                 value={newPassword}
@@ -43,13 +43,13 @@ function PasswordChangeForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Confirm new password</Label>
+              <Field.Label>Confirm new password</Field.Label>
               <Input
                 type="password"
                 value={confirmPassword}
@@ -58,29 +58,29 @@ function PasswordChangeForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
               <Checkbox
                 checked={logoutOthers}
                 onChange={(e) => setLogoutOthers(e.target.checked)}
               >
-                <Label>Sign out of other devices</Label>
+                <Field.Label>Sign out of other devices</Field.Label>
               </Checkbox>
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '24px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '24px' }}>
+          <Grid.Col>
             <Button type="submit" isPrimary>
               Update password
             </Button>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
       </Grid>
     </form>
   )

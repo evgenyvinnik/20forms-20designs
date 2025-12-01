@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
-import { Field, Label, Input } from '@zendeskgarden/react-forms'
+import { Field, Input } from '@zendeskgarden/react-forms'
 import { Button } from '@zendeskgarden/react-buttons'
-import { Grid, Row, Col } from '@zendeskgarden/react-grid'
+import { Grid } from '@zendeskgarden/react-grid'
 
 function OrderTrackingForm() {
   const [orderNumber, setOrderNumber] = useState('')
@@ -16,23 +16,23 @@ function OrderTrackingForm() {
   return (
     <form onSubmit={handleSubmit}>
       <Grid>
-        <Row>
-          <Col>
+        <Grid.Row>
+          <Grid.Col>
             <Field>
-              <Label>Order number</Label>
+              <Field.Label>Order number</Field.Label>
               <Input
                 value={orderNumber}
                 onChange={(e) => setOrderNumber(e.target.value)}
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Email address</Label>
+              <Field.Label>Email address</Field.Label>
               <Input
                 type="email"
                 value={email}
@@ -40,29 +40,29 @@ function OrderTrackingForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Postal code</Label>
+              <Field.Label>Postal code</Field.Label>
               <Input
                 value={postalCode}
                 onChange={(e) => setPostalCode(e.target.value)}
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '24px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '24px' }}>
+          <Grid.Col>
             <Button type="submit" isPrimary>
               Find order
             </Button>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
       </Grid>
     </form>
   )

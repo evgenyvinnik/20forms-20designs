@@ -1,13 +1,7 @@
 import { useState, useCallback } from 'react'
-import {
-  Field,
-  Label,
-  Input,
-  Checkbox,
-  Select,
-} from '@zendeskgarden/react-forms'
+import { Field, Input, Checkbox, Select } from '@zendeskgarden/react-forms'
 import { Button } from '@zendeskgarden/react-buttons'
-import { Grid, Row, Col } from '@zendeskgarden/react-grid'
+import { Grid } from '@zendeskgarden/react-grid'
 import { COUNTRIES, US_STATES, CANADIAN_PROVINCES } from './locationOptions'
 
 function ShippingAddressForm() {
@@ -30,61 +24,61 @@ function ShippingAddressForm() {
   return (
     <form onSubmit={handleSubmit}>
       <Grid>
-        <Row>
-          <Col>
+        <Grid.Row>
+          <Grid.Col>
             <Field>
-              <Label>Recipient name</Label>
+              <Field.Label>Recipient name</Field.Label>
               <Input
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Street address</Label>
+              <Field.Label>Street address</Field.Label>
               <Input
                 value={street}
                 onChange={(e) => setStreet(e.target.value)}
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Apartment, suite, etc.</Label>
+              <Field.Label>Apartment, suite, etc.</Field.Label>
               <Input
                 value={street2}
                 onChange={(e) => setStreet2(e.target.value)}
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>City</Label>
+              <Field.Label>City</Field.Label>
               <Input
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Country</Label>
+              <Field.Label>Country</Field.Label>
               <Select
                 value={country}
                 onChange={(e) => {
@@ -100,13 +94,13 @@ function ShippingAddressForm() {
                 ))}
               </Select>
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>State / Province / Territory</Label>
+              <Field.Label>State / Province / Territory</Field.Label>
               <Select
                 value={region}
                 onChange={(e) => setRegion(e.target.value)}
@@ -120,42 +114,42 @@ function ShippingAddressForm() {
                 ))}
               </Select>
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Postal code</Label>
+              <Field.Label>Postal code</Field.Label>
               <Input
                 value={postalCode}
                 onChange={(e) => setPostalCode(e.target.value)}
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
               <Checkbox
                 checked={isDefault}
                 onChange={(e) => setIsDefault(e.target.checked)}
               >
-                <Label>Use as default shipping address</Label>
+                <Field.Label>Use as default shipping address</Field.Label>
               </Checkbox>
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '24px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '24px' }}>
+          <Grid.Col>
             <Button type="submit" isPrimary>
               Save address
             </Button>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
       </Grid>
     </form>
   )

@@ -1,8 +1,8 @@
 import { useState, useCallback } from 'react'
-import { Field, Label, Input } from '@zendeskgarden/react-forms'
+import { Field, Input } from '@zendeskgarden/react-forms'
 import { Button } from '@zendeskgarden/react-buttons'
-import { Grid, Row, Col } from '@zendeskgarden/react-grid'
-import { Paragraph } from '@zendeskgarden/react-typography'
+import { Grid } from '@zendeskgarden/react-grid'
+import { MD } from '@zendeskgarden/react-typography'
 
 function TwoFactorAuthForm() {
   const [code, setCode] = useState('')
@@ -16,18 +16,18 @@ function TwoFactorAuthForm() {
   return (
     <form onSubmit={handleSubmit}>
       <Grid>
-        <Row>
-          <Col>
-            <Paragraph>
+        <Grid.Row>
+          <Grid.Col>
+            <MD>
               Enter the code from your authenticator app or SMS.
-            </Paragraph>
-          </Col>
-        </Row>
+            </MD>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Verification code</Label>
+              <Field.Label>Verification code</Field.Label>
               <Input
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
@@ -36,31 +36,31 @@ function TwoFactorAuthForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Backup code (optional)</Label>
+              <Field.Label>Backup code (optional)</Field.Label>
               <Input
                 value={backupCode}
                 onChange={(e) => setBackupCode(e.target.value)}
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '24px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '24px' }}>
+          <Grid.Col>
             <Button type="submit" isPrimary style={{ marginRight: '8px' }}>
               Verify
             </Button>
             <Button onClick={() => alert('A new code has been sent!')}>
               Resend code
             </Button>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
       </Grid>
     </form>
   )

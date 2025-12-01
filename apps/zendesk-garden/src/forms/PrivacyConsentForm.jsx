@@ -1,14 +1,8 @@
 import { useState, useCallback } from 'react'
-import {
-  Field,
-  Label,
-  Input,
-  Textarea,
-  Checkbox,
-} from '@zendeskgarden/react-forms'
+import { Field, Input, Textarea, Checkbox } from '@zendeskgarden/react-forms'
 import { Button } from '@zendeskgarden/react-buttons'
-import { Grid, Row, Col } from '@zendeskgarden/react-grid'
-import { SM } from '@zendeskgarden/react-typography'
+import { Grid } from '@zendeskgarden/react-grid'
+import { MD } from '@zendeskgarden/react-typography'
 
 function PrivacyConsentForm() {
   const [fullName, setFullName] = useState('')
@@ -28,23 +22,23 @@ function PrivacyConsentForm() {
   return (
     <form onSubmit={handleSubmit}>
       <Grid>
-        <Row>
-          <Col>
+        <Grid.Row>
+          <Grid.Col>
             <Field>
-              <Label>Full name</Label>
+              <Field.Label>Full name</Field.Label>
               <Input
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Email address</Label>
+              <Field.Label>Email address</Field.Label>
               <Input
                 type="email"
                 value={email}
@@ -52,21 +46,21 @@ function PrivacyConsentForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '24px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '24px' }}>
+          <Grid.Col>
             <fieldset style={{ border: 'none', padding: 0, margin: 0 }}>
-              <SM isBold tag="div" style={{ marginBottom: '8px' }}>
+              <MD isBold style={{ marginBottom: '8px' }}>
                 Communication channels
-              </SM>
+              </MD>
               <Field style={{ marginBottom: '8px' }}>
                 <Checkbox
                   checked={emailOptIn}
                   onChange={(e) => setEmailOptIn(e.target.checked)}
                 >
-                  <Label>Email updates</Label>
+                  <Field.Label>Email updates</Field.Label>
                 </Checkbox>
               </Field>
               <Field style={{ marginBottom: '8px' }}>
@@ -74,7 +68,7 @@ function PrivacyConsentForm() {
                   checked={smsOptIn}
                   onChange={(e) => setSmsOptIn(e.target.checked)}
                 >
-                  <Label>SMS notifications</Label>
+                  <Field.Label>SMS notifications</Field.Label>
                 </Checkbox>
               </Field>
               <Field>
@@ -82,25 +76,25 @@ function PrivacyConsentForm() {
                   checked={phoneOptIn}
                   onChange={(e) => setPhoneOptIn(e.target.checked)}
                 >
-                  <Label>Phone calls</Label>
+                  <Field.Label>Phone calls</Field.Label>
                 </Checkbox>
               </Field>
             </fieldset>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '24px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '24px' }}>
+          <Grid.Col>
             <fieldset style={{ border: 'none', padding: 0, margin: 0 }}>
-              <SM isBold tag="div" style={{ marginBottom: '8px' }}>
+              <MD isBold style={{ marginBottom: '8px' }}>
                 Privacy options
-              </SM>
+              </MD>
               <Field style={{ marginBottom: '8px' }}>
                 <Checkbox
                   checked={analytics}
                   onChange={(e) => setAnalytics(e.target.checked)}
                 >
-                  <Label>Allow analytics cookies</Label>
+                  <Field.Label>Allow analytics cookies</Field.Label>
                 </Checkbox>
               </Field>
               <Field>
@@ -108,33 +102,33 @@ function PrivacyConsentForm() {
                   checked={personalization}
                   onChange={(e) => setPersonalization(e.target.checked)}
                 >
-                  <Label>Allow personalized content</Label>
+                  <Field.Label>Allow personalized content</Field.Label>
                 </Checkbox>
               </Field>
             </fieldset>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Additional notes</Label>
+              <Field.Label>Additional notes</Field.Label>
               <Textarea
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
                 rows={3}
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '24px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '24px' }}>
+          <Grid.Col>
             <Button type="submit" isPrimary>
               Save preferences
             </Button>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
       </Grid>
     </form>
   )

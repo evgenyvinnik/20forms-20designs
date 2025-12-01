@@ -1,14 +1,8 @@
 import { useState, useCallback } from 'react'
-import {
-  Field,
-  Label,
-  Input,
-  Textarea,
-  Radio,
-} from '@zendeskgarden/react-forms'
+import { Field, Input, Textarea, Radio } from '@zendeskgarden/react-forms'
 import { Button } from '@zendeskgarden/react-buttons'
-import { Grid, Row, Col } from '@zendeskgarden/react-grid'
-import { SM } from '@zendeskgarden/react-typography'
+import { Grid } from '@zendeskgarden/react-grid'
+import { MD } from '@zendeskgarden/react-typography'
 
 function SupportTicketForm() {
   const [subject, setSubject] = useState('')
@@ -23,25 +17,25 @@ function SupportTicketForm() {
   return (
     <form onSubmit={handleSubmit}>
       <Grid>
-        <Row>
-          <Col>
+        <Grid.Row>
+          <Grid.Col>
             <Field>
-              <Label>Subject</Label>
+              <Field.Label>Subject</Field.Label>
               <Input
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <fieldset style={{ border: 'none', padding: 0, margin: 0 }}>
-              <SM isBold tag="div" style={{ marginBottom: '8px' }}>
+              <MD isBold style={{ marginBottom: '8px' }}>
                 Priority
-              </SM>
+              </MD>
               <Field style={{ marginBottom: '8px' }}>
                 <Radio
                   name="priority"
@@ -49,7 +43,7 @@ function SupportTicketForm() {
                   checked={priority === 'low'}
                   onChange={() => setPriority('low')}
                 >
-                  <Label>Low</Label>
+                  <Field.Label>Low</Field.Label>
                 </Radio>
               </Field>
               <Field style={{ marginBottom: '8px' }}>
@@ -59,7 +53,7 @@ function SupportTicketForm() {
                   checked={priority === 'medium'}
                   onChange={() => setPriority('medium')}
                 >
-                  <Label>Medium</Label>
+                  <Field.Label>Medium</Field.Label>
                 </Radio>
               </Field>
               <Field>
@@ -69,17 +63,17 @@ function SupportTicketForm() {
                   checked={priority === 'high'}
                   onChange={() => setPriority('high')}
                 >
-                  <Label>High</Label>
+                  <Field.Label>High</Field.Label>
                 </Radio>
               </Field>
             </fieldset>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Issue description</Label>
+              <Field.Label>Issue description</Field.Label>
               <Textarea
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
@@ -87,25 +81,25 @@ function SupportTicketForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Attachments</Label>
+              <Field.Label>Attachments</Field.Label>
               <Input type="file" multiple />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '24px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '24px' }}>
+          <Grid.Col>
             <Button type="submit" isPrimary>
               Submit ticket
             </Button>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
       </Grid>
     </form>
   )

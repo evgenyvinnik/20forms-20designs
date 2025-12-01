@@ -1,8 +1,8 @@
 import { useState, useCallback } from 'react'
-import { Field, Label, Input } from '@zendeskgarden/react-forms'
+import { Field, Input } from '@zendeskgarden/react-forms'
 import { Button } from '@zendeskgarden/react-buttons'
-import { Grid, Row, Col } from '@zendeskgarden/react-grid'
-import { Paragraph } from '@zendeskgarden/react-typography'
+import { Grid } from '@zendeskgarden/react-grid'
+import { MD } from '@zendeskgarden/react-typography'
 
 function PasswordResetForm() {
   const [email, setEmail] = useState('')
@@ -15,16 +15,16 @@ function PasswordResetForm() {
   return (
     <form onSubmit={handleSubmit}>
       <Grid>
-        <Row>
-          <Col>
-            <Paragraph>Request a password reset link via email.</Paragraph>
-          </Col>
-        </Row>
+        <Grid.Row>
+          <Grid.Col>
+            <MD>Request a password reset link via email.</MD>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Email address</Label>
+              <Field.Label>Email address</Field.Label>
               <Input
                 type="email"
                 value={email}
@@ -32,16 +32,16 @@ function PasswordResetForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '24px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '24px' }}>
+          <Grid.Col>
             <Button type="submit" isPrimary>
               Send reset link
             </Button>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
       </Grid>
     </form>
   )

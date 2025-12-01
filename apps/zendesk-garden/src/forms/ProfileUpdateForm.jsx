@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
-import { Field, Label, Input, Textarea } from '@zendeskgarden/react-forms'
+import { Field, Input, Textarea } from '@zendeskgarden/react-forms'
 import { Button } from '@zendeskgarden/react-buttons'
-import { Grid, Row, Col } from '@zendeskgarden/react-grid'
+import { Grid } from '@zendeskgarden/react-grid'
 
 function ProfileUpdateForm() {
   const [firstName, setFirstName] = useState('')
@@ -18,33 +18,33 @@ function ProfileUpdateForm() {
   return (
     <form onSubmit={handleSubmit}>
       <Grid>
-        <Row>
-          <Col sm={6}>
+        <Grid.Row>
+          <Grid.Col sm={6}>
             <Field>
-              <Label>First name</Label>
+              <Field.Label>First name</Field.Label>
               <Input
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 required
               />
             </Field>
-          </Col>
-          <Col sm={6}>
+          </Grid.Col>
+          <Grid.Col sm={6}>
             <Field>
-              <Label>Last name</Label>
+              <Field.Label>Last name</Field.Label>
               <Input
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Email address</Label>
+              <Field.Label>Email address</Field.Label>
               <Input
                 type="email"
                 value={email}
@@ -52,13 +52,13 @@ function ProfileUpdateForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Phone number</Label>
+              <Field.Label>Phone number</Field.Label>
               <Input
                 type="tel"
                 value={phone}
@@ -67,13 +67,13 @@ function ProfileUpdateForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '16px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '16px' }}>
+          <Grid.Col>
             <Field>
-              <Label>Short bio</Label>
+              <Field.Label>Short bio</Field.Label>
               <Textarea
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
@@ -81,16 +81,16 @@ function ProfileUpdateForm() {
                 required
               />
             </Field>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
 
-        <Row style={{ marginTop: '24px' }}>
-          <Col>
+        <Grid.Row style={{ marginTop: '24px' }}>
+          <Grid.Col>
             <Button type="submit" isPrimary>
               Save changes
             </Button>
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
       </Grid>
     </form>
   )
