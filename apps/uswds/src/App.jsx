@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from 'react'
-
+import './dark-mode.css'
 
 // Import all form components
 import AdvancedSearchForm from './forms/AdvancedSearchForm'
@@ -103,7 +102,7 @@ function App() {
 
   return (
     <div style={{ padding: '20px', maxWidth: '500px', margin: '0 auto' }}>
-      <FormComponent />
+      <FormComponent theme={theme} />
     </div>
   )
 }

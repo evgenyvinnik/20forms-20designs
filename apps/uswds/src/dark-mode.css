@@ -1,0 +1,72 @@
+/* Dark mode styles for USWDS components that don't accept inline styles */
+
+/* Checkbox label text */
+body.dark .usa-checkbox__label {
+  color: #f0f0f0;
+}
+
+/* Checkbox box styling */
+body.dark .usa-checkbox__label::before {
+  background-color: #2d2d2d;
+  border-color: #565c65;
+}
+
+/* Checkbox checked state */
+body.dark .usa-checkbox__input:checked + .usa-checkbox__label::before {
+  background-color: #005ea2;
+  border-color: #005ea2;
+}
+
+/* Checkbox focus state */
+body.dark .usa-checkbox__input:focus + .usa-checkbox__label::before {
+  outline-color: #a9aeb1;
+}
+
+/* Radio button label text */
+body.dark .usa-radio__label {
+  color: #f0f0f0;
+}
+
+/* Radio button circle styling */
+body.dark .usa-radio__label::before {
+  background-color: #2d2d2d;
+  border-color: #565c65;
+}
+
+/* Radio button checked state */
+body.dark .usa-radio__input:checked + .usa-radio__label::before {
+  background-color: #2d2d2d;
+  border-color: #005ea2;
+}
+
+/* Fieldset legend */
+body.dark .usa-legend,
+body.dark .usa-fieldset legend {
+  color: #f0f0f0;
+}
+
+/* Fieldset border */
+body.dark .usa-fieldset {
+  border-color: #565c65;
+}
+
+/* Form hint text */
+body.dark .usa-hint {
+  color: #a9aeb1;
+}
+
+/* Error messages */
+body.dark .usa-error-message {
+  color: #f8aea8;
+}
+
+/* Button outline variant for dark mode */
+body.dark .usa-button--outline {
+  color: #a9aeb1;
+  border-color: #a9aeb1;
+}
+
+body.dark .usa-button--outline:hover {
+  color: #f0f0f0;
+  border-color: #f0f0f0;
+}
