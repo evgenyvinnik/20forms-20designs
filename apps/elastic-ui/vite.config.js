@@ -14,15 +14,4 @@ export default defineConfig(({ mode }) => ({
   optimizeDeps: {
     include: ['@elastic/eui'],
   },
-  // Fix for EUI's dynamic icon imports
-  experimental: {
-    renderBuiltUrl(filename, { hostType }) {
-      // Don't modify CSS or HTML references
-      if (hostType === 'css' || hostType === 'html') {
-        return { relative: true }
-      }
-      // For JS dynamic imports, use relative paths
-      return { relative: true }
-    },
-  },
 }))

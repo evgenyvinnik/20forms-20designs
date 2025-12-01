@@ -4,7 +4,15 @@ import tailwindcss from '@tailwindcss/vite'
 import flowbiteReact from 'flowbite-react/plugin/vite'
 
 export default defineConfig(({ mode }) => ({
-  plugins: [react(), tailwindcss(), flowbiteReact()],
+  plugins: [
+    react({
+      babel: {
+        plugins: ['babel-plugin-react-compiler'],
+      },
+    }),
+    tailwindcss(),
+    flowbiteReact(),
+  ],
   base: '/20forms-20designs/flowbite-react/',
   build: {
     outDir: 'dist',
