@@ -47,11 +47,7 @@ function OrderTrackingForm({ theme }) {
       </div>
 
       <div className="slds-form-element">
-        <Button
-          type="submit"
-          variant="brand"
-          label="Find order"
-        />
+        <Button type="submit" variant="brand" label="Find order" />
       </div>
     </form>
   )

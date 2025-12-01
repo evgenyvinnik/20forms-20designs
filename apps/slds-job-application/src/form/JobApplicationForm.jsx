@@ -94,11 +94,7 @@ function JobApplicationForm({ theme }) {
       </div>
 
       <div className="slds-form-element">
-        <Button
-          type="submit"
-          variant="brand"
-          label="Submit application"
-        />
+        <Button type="submit" variant="brand" label="Submit application" />
       </div>
     </form>
   )

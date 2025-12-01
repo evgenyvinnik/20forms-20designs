@@ -55,7 +55,9 @@ function OnboardingWizardForm({ theme }) {
 
       {step === 0 && (
         <>
-          <h3 className="slds-text-heading_small slds-m-bottom_small">Account</h3>
+          <h3 className="slds-text-heading_small slds-m-bottom_small">
+            Account
+          </h3>
           <div className="slds-form-element slds-m-bottom_small">
             <Input
               id="slds-onboarding-email"
@@ -108,7 +110,9 @@ function OnboardingWizardForm({ theme }) {
 
       {step === 2 && (
         <>
-          <h3 className="slds-text-heading_small slds-m-bottom_small">Preferences</h3>
+          <h3 className="slds-text-heading_small slds-m-bottom_small">
+            Preferences
+          </h3>
           <div className="slds-form-element slds-m-bottom_small">
             <Textarea
               id="slds-onboarding-goal"
@@ -147,11 +151,7 @@ function OnboardingWizardForm({ theme }) {
             onClick={handleNext}
           />
         ) : (
-          <Button
-            type="submit"
-            variant="brand"
-            label="Finish setup"
-          />
+          <Button type="submit" variant="brand" label="Finish setup" />
         )}
       </div>
     </form>

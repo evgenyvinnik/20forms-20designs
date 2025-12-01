@@ -79,11 +79,7 @@ function CustomerFeedbackForm({ theme }) {
       </div>
 
       <div className="slds-form-element">
-        <Button
-          type="submit"
-          variant="brand"
-          label="Send feedback"
-        />
+        <Button type="submit" variant="brand" label="Send feedback" />
       </div>
     </form>
   )

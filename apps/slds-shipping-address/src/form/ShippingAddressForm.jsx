@@ -43,7 +43,9 @@ function ShippingAddressForm({ theme }) {
 
   const postalCodePattern = useMemo(() => {
     if (country.length === 0) return undefined
-    return country[0].id === 'us' ? '[0-9]{5}(-[0-9]{4})?' : '[A-Za-z][0-9][A-Za-z] ?[0-9][A-Za-z][0-9]'
+    return country[0].id === 'us'
+      ? '[0-9]{5}(-[0-9]{4})?'
+      : '[A-Za-z][0-9][A-Za-z] ?[0-9][A-Za-z][0-9]'
   }, [country])
 
   const handleSubmit = (event) => {
@@ -141,11 +143,7 @@ function ShippingAddressForm({ theme }) {
       </div>
 
       <div className="slds-form-element">
-        <Button
-          type="submit"
-          variant="brand"
-          label="Save address"
-        />
+        <Button type="submit" variant="brand" label="Save address" />
       </div>
     </form>
   )

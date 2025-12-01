@@ -95,11 +95,7 @@ function BillingInfoForm({ theme }) {
       </div>
 
       <div className="slds-form-element">
-        <Button
-          type="submit"
-          variant="brand"
-          label="Save billing details"
-        />
+        <Button type="submit" variant="brand" label="Save billing details" />
       </div>
     </form>
   )
