@@ -1,4 +1,11 @@
-import { Field, Fieldset, Label, Legend, Radio, RadioGroup } from '@headlessui/react'
+import {
+  Field,
+  Fieldset,
+  Label,
+  Legend,
+  Radio,
+  RadioGroup,
+} from '@headlessui/react'
 import { useState } from 'react'
 
 const priorities = [
@@ -32,7 +39,12 @@ function SupportTicketForm() {
 
       <Fieldset className="fieldset">
         <Legend className="legend">Priority</Legend>
-        <RadioGroup value={priority} onChange={setPriority} name="priority" className="radio-group">
+        <RadioGroup
+          value={priority}
+          onChange={setPriority}
+          name="priority"
+          className="radio-group"
+        >
           {priorities.map((p) => (
             <Field key={p.value} className="radio-wrapper">
               <Radio value={p.value} className="radio">

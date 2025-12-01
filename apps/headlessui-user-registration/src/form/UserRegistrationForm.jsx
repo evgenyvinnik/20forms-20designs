@@ -21,7 +21,10 @@ function UserRegistrationForm() {
   return (
     <form onSubmit={handleSubmit} className="form-stack">
       <Field className="form-field">
-        <Label className="label" htmlFor="headlessui-user-registration-fullname">
+        <Label
+          className="label"
+          htmlFor="headlessui-user-registration-fullname"
+        >
           Full name
         </Label>
         <input
@@ -47,7 +50,10 @@ function UserRegistrationForm() {
       </Field>
 
       <Field className="form-field">
-        <Label className="label" htmlFor="headlessui-user-registration-username">
+        <Label
+          className="label"
+          htmlFor="headlessui-user-registration-username"
+        >
           Username
         </Label>
         <input
@@ -61,7 +67,10 @@ function UserRegistrationForm() {
       </Field>
 
       <Field className="form-field">
-        <Label className="label" htmlFor="headlessui-user-registration-password">
+        <Label
+          className="label"
+          htmlFor="headlessui-user-registration-password"
+        >
           Password
         </Label>
         <input
@@ -75,7 +84,10 @@ function UserRegistrationForm() {
       </Field>
 
       <Field className="form-field">
-        <Label className="label" htmlFor="headlessui-user-registration-confirm-password">
+        <Label
+          className="label"
+          htmlFor="headlessui-user-registration-confirm-password"
+        >
           Confirm password
         </Label>
         <input
@@ -107,7 +119,9 @@ function UserRegistrationForm() {
             </svg>
           )}
         </Checkbox>
-        <Label className="checkbox-label">I agree to the terms and conditions</Label>
+        <Label className="checkbox-label">
+          I agree to the terms and conditions
+        </Label>
       </Field>
 
       <button type="submit" className="button button-primary">
