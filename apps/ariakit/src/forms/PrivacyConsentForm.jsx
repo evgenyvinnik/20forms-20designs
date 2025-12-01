@@ -3,10 +3,14 @@ import * as Ariakit from '@ariakit/react'
 function PrivacyConsentForm() {
   const form = Ariakit.useFormStore({
     defaultValues: {
-      essential: true,
+      fullName: '',
+      email: '',
+      emailOptIn: false,
+      smsOptIn: false,
+      phoneOptIn: false,
       analytics: false,
-      marketing: false,
-      thirdParty: false,
+      personalization: false,
+      notes: '',
     },
   })
 
@@ -16,66 +20,80 @@ function PrivacyConsentForm() {
 
   return (
     <Ariakit.Form store={form} className="form-stack">
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.fullName} className="label">
+          Full name
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.fullName}
+          className="input"
+          required
+        />
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.email} className="label">
+          Email address
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.email}
+          type="email"
+          className="input"
+          required
+        />
+      </Ariakit.FormGroup>
       <Ariakit.FormGroup className="fieldset">
         <Ariakit.FormGroupLabel className="legend">
-          Essential cookies
+          Communication channels
         </Ariakit.FormGroupLabel>
-        <p className="description">
-          Required for the website to function properly.
-        </p>
         <div className="checkbox-wrapper">
           <Ariakit.FormCheckbox
-            name={form.names.essential}
+            name={form.names.emailOptIn}
             className="checkbox"
-            disabled
           />
-          <label className="label">Enable essential cookies</label>
+          <label className="label">Email updates</label>
+        </div>
+        <div className="checkbox-wrapper">
+          <Ariakit.FormCheckbox
+            name={form.names.smsOptIn}
+            className="checkbox"
+          />
+          <label className="label">SMS notifications</label>
+        </div>
+        <div className="checkbox-wrapper">
+          <Ariakit.FormCheckbox
+            name={form.names.phoneOptIn}
+            className="checkbox"
+          />
+          <label className="label">Phone calls</label>
         </div>
       </Ariakit.FormGroup>
       <Ariakit.FormGroup className="fieldset">
         <Ariakit.FormGroupLabel className="legend">
-          Analytics cookies
+          Privacy options
         </Ariakit.FormGroupLabel>
-        <p className="description">
-          Help us understand how visitors interact with our website.
-        </p>
         <div className="checkbox-wrapper">
           <Ariakit.FormCheckbox
             name={form.names.analytics}
             className="checkbox"
           />
-          <label className="label">Enable analytics cookies</label>
+          <label className="label">Allow analytics cookies</label>
         </div>
-      </Ariakit.FormGroup>
-      <Ariakit.FormGroup className="fieldset">
-        <Ariakit.FormGroupLabel className="legend">
-          Marketing cookies
-        </Ariakit.FormGroupLabel>
-        <p className="description">
-          Used to deliver personalized advertisements.
-        </p>
         <div className="checkbox-wrapper">
           <Ariakit.FormCheckbox
-            name={form.names.marketing}
+            name={form.names.personalization}
             className="checkbox"
           />
-          <label className="label">Enable marketing cookies</label>
+          <label className="label">Allow personalized content</label>
         </div>
       </Ariakit.FormGroup>
-      <Ariakit.FormGroup className="fieldset">
-        <Ariakit.FormGroupLabel className="legend">
-          Third-party cookies
-        </Ariakit.FormGroupLabel>
-        <p className="description">
-          Allow third-party services to collect data.
-        </p>
-        <div className="checkbox-wrapper">
-          <Ariakit.FormCheckbox
-            name={form.names.thirdParty}
-            className="checkbox"
-          />
-          <label className="label">Enable third-party cookies</label>
-        </div>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.notes} className="label">
+          Additional notes
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.notes}
+          render={<textarea className="textarea" rows={3} />}
+        />
       </Ariakit.FormGroup>
       <Ariakit.FormSubmit className="button button-primary">
         Save preferences

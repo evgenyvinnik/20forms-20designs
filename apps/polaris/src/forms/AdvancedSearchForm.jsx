@@ -5,55 +5,42 @@ import {
   Select,
   Checkbox,
   Button,
-  InlineStack,
 } from '@shopify/polaris'
 
 function AdvancedSearchForm() {
-  const [keywords, setKeywords] = useState('')
-  const [category, setCategory] = useState('')
+  const [query, setQuery] = useState('')
+  const [category, setCategory] = useState('all')
   const [dateFrom, setDateFrom] = useState('')
   const [dateTo, setDateTo] = useState('')
-  const [sortBy, setSortBy] = useState('')
-  const [exactMatch, setExactMatch] = useState(false)
+  const [sortBy, setSortBy] = useState('relevance')
+  const [includeArchived, setIncludeArchived] = useState(false)
 
   const categoryOptions = [
-    { label: 'All categories', value: '' },
-    { label: 'Products', value: 'products' },
+    { label: 'All', value: 'all' },
     { label: 'Articles', value: 'articles' },
-    { label: 'Documents', value: 'documents' },
-    { label: 'Images', value: 'images' },
+    { label: 'Products', value: 'products' },
+    { label: 'People', value: 'people' },
   ]
 
   const sortOptions = [
-    { label: 'Relevance', value: '' },
-    { label: 'Date (newest)', value: 'date-desc' },
-    { label: 'Date (oldest)', value: 'date-asc' },
-    { label: 'Name (A-Z)', value: 'name-asc' },
-    { label: 'Name (Z-A)', value: 'name-desc' },
+    { label: 'Relevance', value: 'relevance' },
+    { label: 'Newest', value: 'newest' },
+    { label: 'Oldest', value: 'oldest' },
   ]
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
-    alert('Search executed!')
-  }, [])
-
-  const handleReset = useCallback(() => {
-    setKeywords('')
-    setCategory('')
-    setDateFrom('')
-    setDateTo('')
-    setSortBy('')
-    setExactMatch(false)
+    alert('Search submitted!')
   }, [])
 
   return (
     <form onSubmit={handleSubmit}>
       <FormLayout>
         <TextField
-          label="Keywords"
+          label="Search query"
           type="text"
-          value={keywords}
-          onChange={setKeywords}
+          value={query}
+          onChange={setQuery}
           autoComplete="off"
           requiredIndicator
         />
@@ -62,6 +49,7 @@ function AdvancedSearchForm() {
           options={categoryOptions}
           value={category}
           onChange={setCategory}
+          requiredIndicator
         />
         <FormLayout.Group>
           <TextField
@@ -84,18 +72,16 @@ function AdvancedSearchForm() {
           options={sortOptions}
           value={sortBy}
           onChange={setSortBy}
+          requiredIndicator
         />
         <Checkbox
-          label="Exact match only"
-          checked={exactMatch}
-          onChange={setExactMatch}
+          label="Include archived"
+          checked={includeArchived}
+          onChange={setIncludeArchived}
         />
-        <InlineStack gap="300">
-          <Button submit variant="primary">
-            Search
-          </Button>
-          <Button onClick={handleReset}>Reset</Button>
-        </InlineStack>
+        <Button submit variant="primary">
+          Search
+        </Button>
       </FormLayout>
     </form>
   )

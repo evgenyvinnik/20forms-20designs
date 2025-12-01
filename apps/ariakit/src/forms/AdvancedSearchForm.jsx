@@ -3,11 +3,12 @@ import * as Ariakit from '@ariakit/react'
 function AdvancedSearchForm() {
   const form = Ariakit.useFormStore({
     defaultValues: {
-      keywords: '',
+      query: '',
       category: 'all',
       dateFrom: '',
       dateTo: '',
       sortBy: 'relevance',
+      includeArchived: false,
     },
   })
 
@@ -18,11 +19,11 @@ function AdvancedSearchForm() {
   return (
     <Ariakit.Form store={form} className="form-stack">
       <Ariakit.FormGroup className="form-field">
-        <Ariakit.FormLabel name={form.names.keywords} className="label">
-          Keywords
+        <Ariakit.FormLabel name={form.names.query} className="label">
+          Search query
         </Ariakit.FormLabel>
         <Ariakit.FormInput
-          name={form.names.keywords}
+          name={form.names.query}
           className="input"
           required
         />
@@ -36,11 +37,12 @@ function AdvancedSearchForm() {
           render={
             <select className="select">
               <option value="all">All</option>
-              <option value="electronics">Electronics</option>
-              <option value="clothing">Clothing</option>
-              <option value="books">Books</option>
+              <option value="articles">Articles</option>
+              <option value="products">Products</option>
+              <option value="people">People</option>
             </select>
           }
+          required
         />
       </Ariakit.FormGroup>
       <Ariakit.FormGroup className="form-field">
@@ -72,12 +74,20 @@ function AdvancedSearchForm() {
           render={
             <select className="select">
               <option value="relevance">Relevance</option>
-              <option value="date">Date</option>
-              <option value="price">Price</option>
+              <option value="newest">Newest</option>
+              <option value="oldest">Oldest</option>
             </select>
           }
+          required
         />
       </Ariakit.FormGroup>
+      <div className="checkbox-wrapper">
+        <Ariakit.FormCheckbox
+          name={form.names.includeArchived}
+          className="checkbox"
+        />
+        <label className="label">Include archived</label>
+      </div>
       <Ariakit.FormSubmit className="button button-primary">
         Search
       </Ariakit.FormSubmit>

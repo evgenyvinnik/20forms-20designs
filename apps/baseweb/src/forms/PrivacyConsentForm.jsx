@@ -1,58 +1,80 @@
 import { FormControl } from 'baseui/form-control'
+import { Input } from 'baseui/input'
+import { Textarea } from 'baseui/textarea'
 import { Checkbox } from 'baseui/checkbox'
 import { Button } from 'baseui/button'
 import { Block } from 'baseui/block'
-import { HeadingSmall, ParagraphSmall } from 'baseui/typography'
+import { HeadingSmall } from 'baseui/typography'
 import { useState } from 'react'
 
 function PrivacyConsentForm() {
-  const [emailUpdates, setEmailUpdates] = useState(false)
-  const [smsUpdates, setSmsUpdates] = useState(false)
-  const [pushNotifications, setPushNotifications] = useState(false)
+  const [fullName, setFullName] = useState('')
+  const [email, setEmail] = useState('')
+  const [emailOptIn, setEmailOptIn] = useState(false)
+  const [smsOptIn, setSmsOptIn] = useState(false)
+  const [phoneOptIn, setPhoneOptIn] = useState(false)
   const [analytics, setAnalytics] = useState(false)
-  const [thirdParty, setThirdParty] = useState(false)
-  const [termsAccepted, setTermsAccepted] = useState(false)
+  const [personalization, setPersonalization] = useState(false)
+  const [notes, setNotes] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    if (!termsAccepted) {
-      alert('Please accept the terms and conditions')
-      return
-    }
     alert('Privacy preferences saved!')
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <Block display="flex" flexDirection="column" gridGap="scale600">
-        <Block as="section">
+        <FormControl label="Full name">
+          <Input
+            id="baseweb-privacy-name"
+            name="fullName"
+            type="text"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            required
+          />
+        </FormControl>
+
+        <FormControl label="Email address">
+          <Input
+            id="baseweb-privacy-email"
+            name="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </FormControl>
+
+        <Block as="fieldset">
           <HeadingSmall marginBottom="scale400">
-            Communication Preferences
+            Communication channels
           </HeadingSmall>
           <Block display="flex" flexDirection="column" gridGap="scale300">
             <Checkbox
-              checked={emailUpdates}
-              onChange={(e) => setEmailUpdates(e.target.checked)}
+              checked={emailOptIn}
+              onChange={(e) => setEmailOptIn(e.target.checked)}
             >
               Email updates
             </Checkbox>
             <Checkbox
-              checked={smsUpdates}
-              onChange={(e) => setSmsUpdates(e.target.checked)}
+              checked={smsOptIn}
+              onChange={(e) => setSmsOptIn(e.target.checked)}
             >
-              SMS updates
+              SMS notifications
             </Checkbox>
             <Checkbox
-              checked={pushNotifications}
-              onChange={(e) => setPushNotifications(e.target.checked)}
+              checked={phoneOptIn}
+              onChange={(e) => setPhoneOptIn(e.target.checked)}
             >
-              Push notifications
+              Phone calls
             </Checkbox>
           </Block>
         </Block>
 
-        <Block as="section">
-          <HeadingSmall marginBottom="scale400">Privacy Options</HeadingSmall>
+        <Block as="fieldset">
+          <HeadingSmall marginBottom="scale400">Privacy options</HeadingSmall>
           <Block display="flex" flexDirection="column" gridGap="scale300">
             <Checkbox
               checked={analytics}
@@ -61,43 +83,24 @@ function PrivacyConsentForm() {
               Allow analytics cookies
             </Checkbox>
             <Checkbox
-              checked={thirdParty}
-              onChange={(e) => setThirdParty(e.target.checked)}
+              checked={personalization}
+              onChange={(e) => setPersonalization(e.target.checked)}
             >
-              Share data with third parties
+              Allow personalized content
             </Checkbox>
           </Block>
         </Block>
 
-        <Block as="section">
-          <HeadingSmall marginBottom="scale400">
-            Terms & Conditions
-          </HeadingSmall>
-          <Checkbox
-            checked={termsAccepted}
-            onChange={(e) => setTermsAccepted(e.target.checked)}
-          >
-            I accept the terms and conditions
-          </Checkbox>
-        </Block>
+        <FormControl label="Additional notes">
+          <Textarea
+            id="baseweb-privacy-notes"
+            name="notes"
+            value={notes}
+            onChange={(e) => setNotes(e.target.value)}
+          />
+        </FormControl>
 
-        <Block display="flex" gridGap="scale400">
-          <Button type="submit">Save Preferences</Button>
-          <Button
-            type="button"
-            kind="secondary"
-            onClick={() => {
-              setEmailUpdates(false)
-              setSmsUpdates(false)
-              setPushNotifications(false)
-              setAnalytics(false)
-              setThirdParty(false)
-              setTermsAccepted(false)
-            }}
-          >
-            Reset All
-          </Button>
-        </Block>
+        <Button type="submit">Save preferences</Button>
       </Block>
     </form>
   )

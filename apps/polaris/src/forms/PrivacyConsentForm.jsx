@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react'
 import {
   FormLayout,
+  TextField,
   Checkbox,
   Button,
   Text,
@@ -8,71 +9,88 @@ import {
 } from '@shopify/polaris'
 
 function PrivacyConsentForm() {
-  const [essentialCookies, setEssentialCookies] = useState(true)
-  const [analyticsCookies, setAnalyticsCookies] = useState(false)
-  const [marketingCookies, setMarketingCookies] = useState(false)
-  const [thirdPartyCookies, setThirdPartyCookies] = useState(false)
-  const [dataSharing, setDataSharing] = useState(false)
+  const [fullName, setFullName] = useState('')
+  const [email, setEmail] = useState('')
+  const [emailOptIn, setEmailOptIn] = useState(false)
+  const [smsOptIn, setSmsOptIn] = useState(false)
+  const [phoneOptIn, setPhoneOptIn] = useState(false)
+  const [analytics, setAnalytics] = useState(false)
+  const [personalization, setPersonalization] = useState(false)
+  const [notes, setNotes] = useState('')
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
     alert('Privacy preferences saved!')
   }, [])
 
-  const handleAcceptAll = useCallback(() => {
-    setAnalyticsCookies(true)
-    setMarketingCookies(true)
-    setThirdPartyCookies(true)
-    setDataSharing(true)
-    alert('All cookies accepted!')
-  }, [])
-
   return (
     <form onSubmit={handleSubmit}>
       <FormLayout>
-        <Text as="p">
-          We use cookies and similar technologies to improve your experience.
-          Please select your preferences below.
-        </Text>
-        <BlockStack gap="300">
+        <TextField
+          label="Full name"
+          type="text"
+          value={fullName}
+          onChange={setFullName}
+          autoComplete="name"
+          requiredIndicator
+        />
+        <TextField
+          label="Email address"
+          type="email"
+          value={email}
+          onChange={setEmail}
+          autoComplete="email"
+          requiredIndicator
+        />
+
+        <BlockStack gap="200">
+          <Text as="legend" variant="headingSm">
+            Communication channels
+          </Text>
           <Checkbox
-            label="Essential cookies (required)"
-            helpText="These cookies are necessary for the website to function properly."
-            checked={essentialCookies}
-            onChange={setEssentialCookies}
-            disabled
+            label="Email updates"
+            checked={emailOptIn}
+            onChange={setEmailOptIn}
           />
           <Checkbox
-            label="Analytics cookies"
-            helpText="Help us understand how visitors interact with our website."
-            checked={analyticsCookies}
-            onChange={setAnalyticsCookies}
+            label="SMS notifications"
+            checked={smsOptIn}
+            onChange={setSmsOptIn}
           />
           <Checkbox
-            label="Marketing cookies"
-            helpText="Used to deliver personalized advertisements."
-            checked={marketingCookies}
-            onChange={setMarketingCookies}
-          />
-          <Checkbox
-            label="Third-party cookies"
-            helpText="Set by third-party services that appear on our pages."
-            checked={thirdPartyCookies}
-            onChange={setThirdPartyCookies}
-          />
-          <Checkbox
-            label="Data sharing with partners"
-            helpText="Allow sharing of data with trusted partners for improved services."
-            checked={dataSharing}
-            onChange={setDataSharing}
+            label="Phone calls"
+            checked={phoneOptIn}
+            onChange={setPhoneOptIn}
           />
         </BlockStack>
-        <BlockStack gap="300">
-          <Button submit variant="primary">
-            Save preferences
-          </Button>
-          <Button onClick={handleAcceptAll}>Accept all</Button>
+
+        <BlockStack gap="200">
+          <Text as="legend" variant="headingSm">
+            Privacy options
+          </Text>
+          <Checkbox
+            label="Allow analytics cookies"
+            checked={analytics}
+            onChange={setAnalytics}
+          />
+          <Checkbox
+            label="Allow personalized content"
+            checked={personalization}
+            onChange={setPersonalization}
+          />
         </BlockStack>
+
+        <TextField
+          label="Additional notes"
+          value={notes}
+          onChange={setNotes}
+          multiline={3}
+          autoComplete="off"
+        />
+
+        <Button submit variant="primary">
+          Save preferences
+        </Button>
       </FormLayout>
     </form>
   )

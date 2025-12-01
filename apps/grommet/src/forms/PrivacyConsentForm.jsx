@@ -1,15 +1,13 @@
-import { Box, Button, CheckBox, Form, FormField, Heading, Text, TextArea, TextInput } from 'grommet'
+import { Box, Button, CheckBox, Form, FormField, Text, TextArea, TextInput } from 'grommet'
 
 function PrivacyConsentForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Privacy consent saved!')
+    alert('Privacy preferences saved!')
   }
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Heading level={3} margin={{ bottom: 'medium' }}>Privacy Consent</Heading>
-
       <FormField
         label="Full name"
         name="fullName"
@@ -23,7 +21,7 @@ function PrivacyConsentForm() {
       </FormField>
 
       <FormField
-        label="Email"
+        label="Email address"
         name="email"
         htmlFor="grommet-privacy-email"
         required
@@ -39,16 +37,16 @@ function PrivacyConsentForm() {
         <Text weight="bold" margin={{ bottom: 'small' }}>Communication channels</Text>
         <Box gap="small">
           <CheckBox
-            name="emailUpdates"
+            name="emailOptIn"
             label="Email updates"
           />
           <CheckBox
-            name="smsNotifications"
+            name="smsOptIn"
             label="SMS notifications"
           />
           <CheckBox
-            name="pushNotifications"
-            label="Push notifications"
+            name="phoneOptIn"
+            label="Phone calls"
           />
         </Box>
       </Box>
@@ -61,12 +59,8 @@ function PrivacyConsentForm() {
             label="Allow analytics cookies"
           />
           <CheckBox
-            name="marketing"
-            label="Allow marketing communications"
-          />
-          <CheckBox
-            name="thirdParty"
-            label="Share data with partners"
+            name="personalization"
+            label="Allow personalized content"
           />
         </Box>
       </Box>

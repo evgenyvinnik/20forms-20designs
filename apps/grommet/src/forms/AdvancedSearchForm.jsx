@@ -5,7 +5,6 @@ import {
   DateInput,
   Form,
   FormField,
-  Heading,
   Select,
   TextInput,
 } from 'grommet'
@@ -16,16 +15,8 @@ function AdvancedSearchForm() {
     alert('Search submitted!')
   }
 
-  const handleReset = () => {
-    alert('Reset filters')
-  }
-
   return (
     <Form onSubmit={handleSubmit}>
-      <Heading level={3} margin={{ bottom: 'medium' }}>
-        Advanced Search
-      </Heading>
-
       <FormField
         label="Search query"
         name="query"
@@ -35,7 +26,6 @@ function AdvancedSearchForm() {
         <TextInput
           id="grommet-search-query"
           name="query"
-          placeholder="Enter keywords..."
         />
       </FormField>
 
@@ -43,11 +33,12 @@ function AdvancedSearchForm() {
         label="Category"
         name="category"
         htmlFor="grommet-search-category"
+        required
       >
         <Select
           id="grommet-search-category"
           name="category"
-          options={['All categories', 'Documents', 'Images', 'Videos', 'Audio']}
+          options={['All', 'Articles', 'Products', 'People']}
           placeholder="Select category"
         />
       </FormField>
@@ -72,31 +63,28 @@ function AdvancedSearchForm() {
         />
       </FormField>
 
-      <FormField label="Sort by" name="sortBy" htmlFor="grommet-search-sort">
+      <FormField label="Sort by" name="sortBy" htmlFor="grommet-search-sort" required>
         <Select
           id="grommet-search-sort"
           name="sortBy"
           options={[
             'Relevance',
-            'Date: Newest',
-            'Date: Oldest',
-            'Name: A-Z',
-            'Name: Z-A',
+            'Newest',
+            'Oldest',
           ]}
           placeholder="Select sort order"
         />
       </FormField>
 
-      <FormField name="exactMatch" htmlFor="grommet-search-exact">
+      <FormField name="includeArchived" htmlFor="grommet-search-archived">
         <CheckBox
-          id="grommet-search-exact"
-          name="exactMatch"
-          label="Exact match only"
+          id="grommet-search-archived"
+          name="includeArchived"
+          label="Include archived"
         />
       </FormField>
 
-      <Box direction="row" gap="medium" margin={{ top: 'medium' }}>
-        <Button type="button" label="Reset" onClick={handleReset} />
+      <Box margin={{ top: 'medium' }}>
         <Button type="submit" primary label="Search" />
       </Box>
     </Form>
