@@ -51,19 +51,10 @@ function ShippingAddressForm() {
         />
       </Field>
       <Field label="Apartment, suite, etc.">
-        <Input
-          id="fluent-ui-shipping-street-2"
-          name="street2"
-          type="text"
-        />
+        <Input id="fluent-ui-shipping-street-2" name="street2" type="text" />
       </Field>
       <Field label="City" required>
-        <Input
-          id="fluent-ui-shipping-city"
-          name="city"
-          type="text"
-          required
-        />
+        <Input id="fluent-ui-shipping-city" name="city" type="text" required />
       </Field>
       <Field label="Country" required>
         <Select

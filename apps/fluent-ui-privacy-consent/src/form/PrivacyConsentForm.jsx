@@ -64,11 +64,7 @@ function PrivacyConsentForm() {
         <Checkbox name="personalization" label="Allow personalized content" />
       </fieldset>
       <Field label="Additional notes">
-        <Textarea
-          id="fluent-ui-privacy-notes"
-          name="notes"
-          rows={3}
-        />
+        <Textarea id="fluent-ui-privacy-notes" name="notes" rows={3} />
       </Field>
       <Button type="submit" appearance="primary">
         Save preferences
