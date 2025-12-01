@@ -436,7 +436,7 @@ export const LIBRARIES: Library[] = [
   {
     name: 'Salesforce Lightning Design System React',
     directory: 'slds',
-    website: 'https://react.lightningdesignsystem.com',
+    website: 'https://design-system-react-site.herokuapp.com',
     repo: 'https://github.com/salesforce/design-system-react',
     implemented: true,
     supportsTheme: true,

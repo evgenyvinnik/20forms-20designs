@@ -1,5 +1,7 @@
+import '@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.min.css'
 
 import { useState, useEffect } from 'react'
+import IconSettings from '@salesforce/design-system-react/components/icon-settings'
 
 
 // Import all form components
@@ -100,11 +102,23 @@ function App() {
 
   // Get the form component based on the form ID
   const FormComponent = FORM_COMPONENTS[formId]
+  const isDark = theme === 'dark'
 
   return (
-    <div style={{ padding: '20px', maxWidth: '500px', margin: '0 auto' }}>
-      <FormComponent />
-    </div>
+    <IconSettings iconPath="/assets/icons">
+      <div
+        className={isDark ? 'slds-theme_dark' : ''}
+        style={{
+          padding: '20px',
+          maxWidth: '500px',
+          margin: '0 auto',
+          backgroundColor: isDark ? '#16325c' : undefined,
+          minHeight: '100vh',
+        }}
+      >
+        <FormComponent />
+      </div>
+    </IconSettings>
   )
 }
 

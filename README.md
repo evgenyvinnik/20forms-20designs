@@ -140,7 +140,7 @@ All libraries implement the same 20 forms with identical content, labels, and fi
 | [React Bootstrap](https://react-bootstrap.netlify.app/) | ✅ Light/Dark | [GitHub](https://github.com/react-bootstrap/react-bootstrap)      |
 | [React Spectrum](https://react-spectrum.adobe.com/)     | ✅ Light/Dark | [GitHub](https://github.com/adobe/react-spectrum)                 |
 | [RSuite](https://rsuitejs.com/)                         | ✅ Light/Dark | [GitHub](https://github.com/rsuite/rsuite)                        |
-| [Salesforce Lightning Design System](https://react.lightningdesignsystem.com/) | ✅ Light/Dark | [GitHub](https://github.com/salesforce/design-system-react) |
+| [Salesforce Lightning Design System](https://design-system-react-site.herokuapp.com/) | ✅ Light/Dark | [GitHub](https://github.com/salesforce/design-system-react) |
 | [Semantic UI React](https://react.semantic-ui.com/)     | ✅ Light/Dark | [GitHub](https://github.com/Semantic-Org/Semantic-UI-React)       |
 | [Semi Design](https://semi.design/)                      | ✅ Light/Dark | [GitHub](https://github.com/DouyinFE/semi-design)                 |
 | [Shadcn/ui](https://ui.shadcn.com/)                     | ✅ Light/Dark | [GitHub](https://github.com/shadcn-ui/ui)                         |

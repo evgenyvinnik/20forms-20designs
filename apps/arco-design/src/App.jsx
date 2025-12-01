@@ -1,8 +1,6 @@
 import '@arco-design/web-react/dist/css/arco.css'
 
-
 import { useState, useEffect } from 'react'
-
 
 // Import all form components
 import AdvancedSearchForm from './forms/AdvancedSearchForm'

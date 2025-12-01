@@ -19,7 +19,7 @@ function OnboardingWizardForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <Flex direction="column" gap="size-200">
-        <Heading level={3}>Account</Heading>
+        <Heading level={3}>Step 1: Account</Heading>
         <TextField label="Work email" name="email" type="email" isRequired />
         <TextField
           label="Password"
@@ -29,7 +29,7 @@ function OnboardingWizardForm() {
           isRequired
         />
 
-        <Heading level={3}>Team</Heading>
+        <Heading level={3}>Step 2: Team</Heading>
         <TextField label="Team name" name="teamName" type="text" isRequired />
         <Picker label="Team size" name="teamSize" isRequired>
           <Item key="">Select size</Item>
@@ -39,7 +39,7 @@ function OnboardingWizardForm() {
           <Item key="50+">50+</Item>
         </Picker>
 
-        <Heading level={3}>Preferences</Heading>
+        <Heading level={3}>Step 3: Preferences</Heading>
         <TextArea label="Primary goal" name="goal" isRequired />
         <Checkbox name="updates">Send me product tips</Checkbox>
 
