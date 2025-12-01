@@ -1,83 +1,81 @@
 import * as Ariakit from '@ariakit/react'
 
 function EventRegistrationForm() {
-  const newsletterCheckbox = Ariakit.useCheckboxStore({ defaultValue: false })
+  const form = Ariakit.useFormStore({
+    defaultValues: {
+      fullName: '',
+      email: '',
+      ticketType: '',
+      guestCount: 0,
+      newsletter: false,
+    },
+  })
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  form.useSubmit(() => {
     alert('Event registration submitted!')
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit} className="form-stack">
-      <div className="form-field">
-        <label htmlFor="ariakit-event-name" className="label">
+    <Ariakit.Form store={form} className="form-stack">
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.fullName} className="label">
           Full name
-        </label>
-        <input
-          id="ariakit-event-name"
-          name="fullName"
-          type="text"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.fullName}
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-event-email" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.email} className="label">
           Email address
-        </label>
-        <input
-          id="ariakit-event-email"
-          name="email"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.email}
           type="email"
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-event-ticket" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.ticketType} className="label">
           Ticket type
-        </label>
-        <select
-          id="ariakit-event-ticket"
-          name="ticketType"
-          className="select"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.ticketType}
+          render={
+            <select className="select">
+              <option value="">Select ticket</option>
+              <option value="general">General admission</option>
+              <option value="vip">VIP</option>
+              <option value="student">Student</option>
+            </select>
+          }
           required
-        >
-          <option value="">Select ticket</option>
-          <option value="general">General admission</option>
-          <option value="vip">VIP</option>
-          <option value="student">Student</option>
-        </select>
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-event-guests" className="label">
+        />
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.guestCount} className="label">
           Number of guests
-        </label>
-        <input
-          id="ariakit-event-guests"
-          name="guestCount"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.guestCount}
           type="number"
-          min="0"
-          max="20"
+          min={0}
+          max={20}
           className="input"
           required
         />
-      </div>
+      </Ariakit.FormGroup>
       <label className="checkbox-wrapper">
-        <Ariakit.Checkbox
-          store={newsletterCheckbox}
-          name="newsletter"
-          className="checkbox"
-        >
-          <Ariakit.CheckboxCheck className="checkbox-check" />
-        </Ariakit.Checkbox>
+        <Ariakit.FormCheckbox name={form.names.newsletter} className="checkbox" />
         <span className="checkbox-label">Notify me about future events</span>
       </label>
-      <Ariakit.Button type="submit" className="button button-primary">
+      <Ariakit.FormSubmit className="button button-primary">
         Register
-      </Ariakit.Button>
-    </form>
+      </Ariakit.FormSubmit>
+    </Ariakit.Form>
   )
 }
 

@@ -1,15 +1,25 @@
-import { useState } from 'react'
 import * as Ariakit from '@ariakit/react'
 import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from './locationOptions'
 
 function ShippingAddressForm() {
-  const [country, setCountry] = useState('US')
-  const defaultCheckbox = Ariakit.useCheckboxStore({ defaultValue: false })
+  const form = Ariakit.useFormStore({
+    defaultValues: {
+      fullName: '',
+      street: '',
+      street2: '',
+      city: '',
+      country: 'US',
+      region: '',
+      postalCode: '',
+      defaultAddress: false,
+    },
+  })
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  const country = form.useValue(form.names.country)
+
+  form.useSubmit(() => {
     alert('Shipping address saved!')
-  }
+  })
 
   const regionOptions = country === 'CA' ? CANADIAN_PROVINCES : US_STATES
   const postalPattern =
@@ -18,119 +28,103 @@ function ShippingAddressForm() {
       : '\\d{5}(-\\d{4})?'
 
   return (
-    <form onSubmit={handleSubmit} className="form-stack">
-      <div className="form-field">
-        <label htmlFor="ariakit-shipping-full-name" className="label">
+    <Ariakit.Form store={form} className="form-stack">
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.fullName} className="label">
           Recipient name
-        </label>
-        <input
-          id="ariakit-shipping-full-name"
-          name="fullName"
-          type="text"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.fullName}
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-shipping-street" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.street} className="label">
           Street address
-        </label>
-        <input
-          id="ariakit-shipping-street"
-          name="street"
-          type="text"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.street}
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-shipping-street-2" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.street2} className="label">
           Apartment, suite, etc.
-        </label>
-        <input
-          id="ariakit-shipping-street-2"
-          name="street2"
-          type="text"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.street2}
           className="input"
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-shipping-city" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.city} className="label">
           City
-        </label>
-        <input
-          id="ariakit-shipping-city"
-          name="city"
-          type="text"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.city}
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-shipping-country" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.country} className="label">
           Country
-        </label>
-        <select
-          id="ariakit-shipping-country"
-          name="country"
-          value={country}
-          onChange={(event) => setCountry(event.target.value)}
-          className="select"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.country}
+          render={
+            <select className="select">
+              {COUNTRIES.map(({ value, label }) => (
+                <option key={value} value={value}>
+                  {label}
+                </option>
+              ))}
+            </select>
+          }
           required
-        >
-          {COUNTRIES.map(({ value, label }) => (
-            <option key={value} value={value}>
-              {label}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-shipping-region" className="label">
+        />
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.region} className="label">
           State / Province / Territory
-        </label>
-        <select
-          id="ariakit-shipping-region"
-          name="region"
-          className="select"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.region}
+          render={
+            <select className="select">
+              <option value="">Select an option</option>
+              {regionOptions.map((region) => (
+                <option key={region} value={region}>
+                  {region}
+                </option>
+              ))}
+            </select>
+          }
           required
-        >
-          <option value="">Select an option</option>
-          {regionOptions.map((region) => (
-            <option key={region} value={region}>
-              {region}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-shipping-postal" className="label">
+        />
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.postalCode} className="label">
           Postal code
-        </label>
-        <input
-          id="ariakit-shipping-postal"
-          name="postalCode"
-          type="text"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.postalCode}
           pattern={postalPattern}
           inputMode="text"
           className="input"
           required
         />
-      </div>
+      </Ariakit.FormGroup>
       <label className="checkbox-wrapper">
-        <Ariakit.Checkbox
-          store={defaultCheckbox}
-          name="default"
-          className="checkbox"
-        >
-          <Ariakit.CheckboxCheck className="checkbox-check" />
-        </Ariakit.Checkbox>
+        <Ariakit.FormCheckbox name={form.names.defaultAddress} className="checkbox" />
         <span className="checkbox-label">Use as default shipping address</span>
       </label>
-      <Ariakit.Button type="submit" className="button button-primary">
+      <Ariakit.FormSubmit className="button button-primary">
         Save address
-      </Ariakit.Button>
-    </form>
+      </Ariakit.FormSubmit>
+    </Ariakit.Form>
   )
 }
 

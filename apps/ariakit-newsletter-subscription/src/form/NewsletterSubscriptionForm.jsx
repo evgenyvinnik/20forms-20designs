@@ -1,57 +1,56 @@
 import * as Ariakit from '@ariakit/react'
 
 function NewsletterSubscriptionForm() {
-  const agreeCheckbox = Ariakit.useCheckboxStore({ defaultValue: false })
+  const form = Ariakit.useFormStore({
+    defaultValues: {
+      email: '',
+      frequency: '',
+      agree: false,
+    },
+  })
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  form.useSubmit(() => {
     alert('Newsletter subscription submitted!')
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit} className="form-stack">
-      <div className="form-field">
-        <label htmlFor="ariakit-newsletter-email" className="label">
+    <Ariakit.Form store={form} className="form-stack">
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.email} className="label">
           Email address
-        </label>
-        <input
-          id="ariakit-newsletter-email"
-          name="email"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.email}
           type="email"
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-newsletter-frequency" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.frequency} className="label">
           Frequency
-        </label>
-        <select
-          id="ariakit-newsletter-frequency"
-          name="frequency"
-          className="select"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.frequency}
+          render={
+            <select className="select">
+              <option value="">Select frequency</option>
+              <option value="weekly">Weekly</option>
+              <option value="monthly">Monthly</option>
+              <option value="quarterly">Quarterly</option>
+            </select>
+          }
           required
-        >
-          <option value="">Select frequency</option>
-          <option value="weekly">Weekly</option>
-          <option value="monthly">Monthly</option>
-          <option value="quarterly">Quarterly</option>
-        </select>
-      </div>
+        />
+      </Ariakit.FormGroup>
       <label className="checkbox-wrapper">
-        <Ariakit.Checkbox
-          store={agreeCheckbox}
-          name="agree"
-          className="checkbox"
-        >
-          <Ariakit.CheckboxCheck className="checkbox-check" />
-        </Ariakit.Checkbox>
+        <Ariakit.FormCheckbox name={form.names.agree} className="checkbox" />
         <span className="checkbox-label">Receive product updates</span>
       </label>
-      <Ariakit.Button type="submit" className="button button-primary">
+      <Ariakit.FormSubmit className="button button-primary">
         Subscribe
-      </Ariakit.Button>
-    </form>
+      </Ariakit.FormSubmit>
+    </Ariakit.Form>
   )
 }
 

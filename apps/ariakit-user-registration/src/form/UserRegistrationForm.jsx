@@ -1,95 +1,93 @@
 import * as Ariakit from '@ariakit/react'
 
 function UserRegistrationForm() {
-  const termsCheckbox = Ariakit.useCheckboxStore({ defaultValue: false })
+  const form = Ariakit.useFormStore({
+    defaultValues: {
+      fullName: '',
+      email: '',
+      username: '',
+      password: '',
+      confirmPassword: '',
+      terms: false,
+    },
+  })
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  form.useSubmit(() => {
     alert('Registration submitted!')
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit} className="form-stack">
-      <div className="form-field">
-        <label htmlFor="ariakit-user-registration-name" className="label">
+    <Ariakit.Form store={form} className="form-stack">
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.fullName} className="label">
           Full name
-        </label>
-        <input
-          id="ariakit-user-registration-name"
-          name="fullName"
-          type="text"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.fullName}
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-user-registration-email" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.email} className="label">
           Email address
-        </label>
-        <input
-          id="ariakit-user-registration-email"
-          name="email"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.email}
           type="email"
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-user-registration-username" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.username} className="label">
           Username
-        </label>
-        <input
-          id="ariakit-user-registration-username"
-          name="username"
-          type="text"
-          minLength="3"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.username}
+          minLength={3}
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-user-registration-password" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.password} className="label">
           Password
-        </label>
-        <input
-          id="ariakit-user-registration-password"
-          name="password"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.password}
           type="password"
-          minLength="8"
+          minLength={8}
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-user-registration-confirm" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.confirmPassword} className="label">
           Confirm password
-        </label>
-        <input
-          id="ariakit-user-registration-confirm"
-          name="confirmPassword"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.confirmPassword}
           type="password"
-          minLength="8"
+          minLength={8}
           className="input"
           required
         />
-      </div>
+      </Ariakit.FormGroup>
       <label className="checkbox-wrapper">
-        <Ariakit.Checkbox
-          store={termsCheckbox}
-          name="terms"
+        <Ariakit.FormCheckbox
+          name={form.names.terms}
           className="checkbox"
           required
-        >
-          <Ariakit.CheckboxCheck className="checkbox-check" />
-        </Ariakit.Checkbox>
+        />
         <span className="checkbox-label">
           I agree to the terms and conditions
         </span>
       </label>
-      <Ariakit.Button type="submit" className="button button-primary">
+      <Ariakit.FormSubmit className="button button-primary">
         Create account
-      </Ariakit.Button>
-    </form>
+      </Ariakit.FormSubmit>
+    </Ariakit.Form>
   )
 }
 

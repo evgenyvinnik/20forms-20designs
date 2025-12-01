@@ -1,49 +1,49 @@
 import * as Ariakit from '@ariakit/react'
 
 function UserLoginForm() {
-  const checkbox = Ariakit.useCheckboxStore({ defaultValue: false })
+  const form = Ariakit.useFormStore({
+    defaultValues: {
+      identifier: '',
+      password: '',
+      remember: false,
+    },
+  })
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  form.useSubmit(() => {
     alert('Login submitted!')
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit} className="form-stack">
-      <div className="form-field">
-        <label htmlFor="ariakit-user-login-email" className="label">
+    <Ariakit.Form store={form} className="form-stack">
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.identifier} className="label">
           Email or username
-        </label>
-        <input
-          id="ariakit-user-login-email"
-          name="identifier"
-          type="text"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.identifier}
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-user-login-password" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.password} className="label">
           Password
-        </label>
-        <input
-          id="ariakit-user-login-password"
-          name="password"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.password}
           type="password"
           className="input"
           required
         />
-      </div>
+      </Ariakit.FormGroup>
       <label className="checkbox-wrapper">
-        <Ariakit.Checkbox store={checkbox} name="remember" className="checkbox">
-          <Ariakit.CheckboxCheck className="checkbox-check" />
-        </Ariakit.Checkbox>
+        <Ariakit.FormCheckbox name={form.names.remember} className="checkbox" />
         <span className="checkbox-label">Keep me signed in</span>
       </label>
       <div className="form-row">
-        <Ariakit.Button type="submit" className="button button-primary">
+        <Ariakit.FormSubmit className="button button-primary">
           Sign in
-        </Ariakit.Button>
+        </Ariakit.FormSubmit>
         <Ariakit.Button
           type="button"
           className="button button-secondary"
@@ -52,7 +52,7 @@ function UserLoginForm() {
           Forgot password?
         </Ariakit.Button>
       </div>
-    </form>
+    </Ariakit.Form>
   )
 }
 

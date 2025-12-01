@@ -1,47 +1,49 @@
 import * as Ariakit from '@ariakit/react'
 
 function TwoFactorAuthForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  const form = Ariakit.useFormStore({
+    defaultValues: {
+      code: '',
+      backupCode: '',
+    },
+  })
+
+  form.useSubmit(() => {
     alert('Verification submitted!')
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit} className="form-stack">
+    <Ariakit.Form store={form} className="form-stack">
       <p className="description">
         Enter the code from your authenticator app or SMS.
       </p>
-      <div className="form-field">
-        <label htmlFor="ariakit-two-factor-code" className="label">
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.code} className="label">
           Verification code
-        </label>
-        <input
-          id="ariakit-two-factor-code"
-          name="code"
-          type="text"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.code}
           inputMode="numeric"
           pattern="\d{6}"
-          maxLength="6"
+          maxLength={6}
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-two-factor-backup" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.backupCode} className="label">
           Backup code (optional)
-        </label>
-        <input
-          id="ariakit-two-factor-backup"
-          name="backupCode"
-          type="text"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.backupCode}
           pattern="[A-Za-z0-9]{6,12}"
           className="input"
         />
-      </div>
+      </Ariakit.FormGroup>
       <div className="form-row">
-        <Ariakit.Button type="submit" className="button button-primary">
+        <Ariakit.FormSubmit className="button button-primary">
           Verify
-        </Ariakit.Button>
+        </Ariakit.FormSubmit>
         <Ariakit.Button
           type="button"
           className="button button-secondary"
@@ -50,7 +52,7 @@ function TwoFactorAuthForm() {
           Resend code
         </Ariakit.Button>
       </div>
-    </form>
+    </Ariakit.Form>
   )
 }
 

@@ -1,30 +1,34 @@
 import * as Ariakit from '@ariakit/react'
 
 function PasswordResetForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  const form = Ariakit.useFormStore({
+    defaultValues: {
+      email: '',
+    },
+  })
+
+  form.useSubmit(() => {
     alert('Password reset link requested!')
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit} className="form-stack">
+    <Ariakit.Form store={form} className="form-stack">
       <p className="description">Request a password reset link via email.</p>
-      <div className="form-field">
-        <label htmlFor="ariakit-password-reset-email" className="label">
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.email} className="label">
           Email address
-        </label>
-        <input
-          id="ariakit-password-reset-email"
-          name="email"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.email}
           type="email"
           className="input"
           required
         />
-      </div>
-      <Ariakit.Button type="submit" className="button button-primary">
+      </Ariakit.FormGroup>
+      <Ariakit.FormSubmit className="button button-primary">
         Send reset link
-      </Ariakit.Button>
-    </form>
+      </Ariakit.FormSubmit>
+    </Ariakit.Form>
   )
 }
 

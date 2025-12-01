@@ -1,77 +1,79 @@
 import * as Ariakit from '@ariakit/react'
 
 function AppointmentRequestForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  const form = Ariakit.useFormStore({
+    defaultValues: {
+      fullName: '',
+      email: '',
+      date: '',
+      time: '',
+      reason: '',
+    },
+  })
+
+  form.useSubmit(() => {
     alert('Appointment request submitted!')
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit} className="form-stack">
-      <div className="form-field">
-        <label htmlFor="ariakit-appointment-name" className="label">
+    <Ariakit.Form store={form} className="form-stack">
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.fullName} className="label">
           Full name
-        </label>
-        <input
-          id="ariakit-appointment-name"
-          name="fullName"
-          type="text"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.fullName}
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-appointment-email" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.email} className="label">
           Email address
-        </label>
-        <input
-          id="ariakit-appointment-email"
-          name="email"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.email}
           type="email"
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-appointment-date" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.date} className="label">
           Preferred date
-        </label>
-        <input
-          id="ariakit-appointment-date"
-          name="date"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.date}
           type="date"
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-appointment-time" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.time} className="label">
           Preferred time
-        </label>
-        <input
-          id="ariakit-appointment-time"
-          name="time"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.time}
           type="time"
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-appointment-reason" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.reason} className="label">
           Reason for visit
-        </label>
-        <textarea
-          id="ariakit-appointment-reason"
-          name="reason"
-          rows="3"
-          className="textarea"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.reason}
+          render={<textarea rows={3} className="textarea" />}
           required
         />
-      </div>
-      <Ariakit.Button type="submit" className="button button-primary">
+      </Ariakit.FormGroup>
+      <Ariakit.FormSubmit className="button button-primary">
         Request appointment
-      </Ariakit.Button>
-    </form>
+      </Ariakit.FormSubmit>
+    </Ariakit.Form>
   )
 }
 

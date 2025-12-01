@@ -1,67 +1,64 @@
 import * as Ariakit from '@ariakit/react'
 
 function PasswordChangeForm() {
-  const logoutCheckbox = Ariakit.useCheckboxStore({ defaultValue: false })
+  const form = Ariakit.useFormStore({
+    defaultValues: {
+      currentPassword: '',
+      newPassword: '',
+      confirmPassword: '',
+      logoutOthers: false,
+    },
+  })
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  form.useSubmit(() => {
     alert('Password change requested!')
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit} className="form-stack">
-      <div className="form-field">
-        <label htmlFor="ariakit-password-change-current" className="label">
+    <Ariakit.Form store={form} className="form-stack">
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.currentPassword} className="label">
           Current password
-        </label>
-        <input
-          id="ariakit-password-change-current"
-          name="currentPassword"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.currentPassword}
           type="password"
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-password-change-new" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.newPassword} className="label">
           New password
-        </label>
-        <input
-          id="ariakit-password-change-new"
-          name="newPassword"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.newPassword}
           type="password"
-          minLength="8"
+          minLength={8}
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-password-change-confirm" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.confirmPassword} className="label">
           Confirm new password
-        </label>
-        <input
-          id="ariakit-password-change-confirm"
-          name="confirmPassword"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.confirmPassword}
           type="password"
-          minLength="8"
+          minLength={8}
           className="input"
           required
         />
-      </div>
+      </Ariakit.FormGroup>
       <label className="checkbox-wrapper">
-        <Ariakit.Checkbox
-          store={logoutCheckbox}
-          name="logoutOthers"
-          className="checkbox"
-        >
-          <Ariakit.CheckboxCheck className="checkbox-check" />
-        </Ariakit.Checkbox>
+        <Ariakit.FormCheckbox name={form.names.logoutOthers} className="checkbox" />
         <span className="checkbox-label">Sign out of other devices</span>
       </label>
-      <Ariakit.Button type="submit" className="button button-primary">
+      <Ariakit.FormSubmit className="button button-primary">
         Update password
-      </Ariakit.Button>
-    </form>
+      </Ariakit.FormSubmit>
+    </Ariakit.Form>
   )
 }
 

@@ -1,105 +1,99 @@
 import * as Ariakit from '@ariakit/react'
 
 function JobApplicationForm() {
-  const updatesCheckbox = Ariakit.useCheckboxStore({ defaultValue: false })
+  const form = Ariakit.useFormStore({
+    defaultValues: {
+      fullName: '',
+      email: '',
+      phone: '',
+      role: '',
+      resume: '',
+      coverLetter: '',
+      updates: false,
+    },
+  })
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  form.useSubmit(() => {
     alert('Application submitted!')
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit} className="form-stack">
-      <div className="form-field">
-        <label htmlFor="ariakit-job-full-name" className="label">
+    <Ariakit.Form store={form} className="form-stack">
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.fullName} className="label">
           Full name
-        </label>
-        <input
-          id="ariakit-job-full-name"
-          name="fullName"
-          type="text"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.fullName}
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-job-email" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.email} className="label">
           Email address
-        </label>
-        <input
-          id="ariakit-job-email"
-          name="email"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.email}
           type="email"
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-job-phone" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.phone} className="label">
           Phone number
-        </label>
-        <input
-          id="ariakit-job-phone"
-          name="phone"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.phone}
           type="tel"
           pattern="[+0-9\s-]{7,20}"
           inputMode="tel"
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-job-role" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.role} className="label">
           Role applied for
-        </label>
-        <input
-          id="ariakit-job-role"
-          name="role"
-          type="text"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.role}
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-job-resume" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.resume} className="label">
           Resume link
-        </label>
-        <input
-          id="ariakit-job-resume"
-          name="resume"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.resume}
           type="url"
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-job-cover-letter" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.coverLetter} className="label">
           Cover letter
-        </label>
-        <textarea
-          id="ariakit-job-cover-letter"
-          name="coverLetter"
-          rows="4"
-          className="textarea"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.coverLetter}
+          render={<textarea rows={4} className="textarea" />}
           required
         />
-      </div>
+      </Ariakit.FormGroup>
       <label className="checkbox-wrapper">
-        <Ariakit.Checkbox
-          store={updatesCheckbox}
-          name="updates"
-          className="checkbox"
-        >
-          <Ariakit.CheckboxCheck className="checkbox-check" />
-        </Ariakit.Checkbox>
+        <Ariakit.FormCheckbox name={form.names.updates} className="checkbox" />
         <span className="checkbox-label">
           Keep me informed about future roles
         </span>
       </label>
-      <Ariakit.Button type="submit" className="button button-primary">
+      <Ariakit.FormSubmit className="button button-primary">
         Submit application
-      </Ariakit.Button>
-    </form>
+      </Ariakit.FormSubmit>
+    </Ariakit.Form>
   )
 }
 

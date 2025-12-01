@@ -1,82 +1,79 @@
 import * as Ariakit from '@ariakit/react'
 
 function CustomerFeedbackForm() {
-  const followUpCheckbox = Ariakit.useCheckboxStore({ defaultValue: false })
+  const form = Ariakit.useFormStore({
+    defaultValues: {
+      name: '',
+      email: '',
+      rating: '',
+      comments: '',
+      followUp: false,
+    },
+  })
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  form.useSubmit(() => {
     alert('Feedback submitted!')
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit} className="form-stack">
-      <div className="form-field">
-        <label htmlFor="ariakit-feedback-name" className="label">
+    <Ariakit.Form store={form} className="form-stack">
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.name} className="label">
           Name
-        </label>
-        <input
-          id="ariakit-feedback-name"
-          name="name"
-          type="text"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.name}
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-feedback-email" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.email} className="label">
           Email address
-        </label>
-        <input
-          id="ariakit-feedback-email"
-          name="email"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.email}
           type="email"
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-feedback-rating" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.rating} className="label">
           Overall rating
-        </label>
-        <select
-          id="ariakit-feedback-rating"
-          name="rating"
-          className="select"
-          required
-        >
-          <option value="">Select rating</option>
-          <option value="excellent">Excellent</option>
-          <option value="good">Good</option>
-          <option value="average">Average</option>
-          <option value="poor">Poor</option>
-        </select>
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-feedback-comments" className="label">
-          Comments
-        </label>
-        <textarea
-          id="ariakit-feedback-comments"
-          name="comments"
-          rows="4"
-          className="textarea"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.rating}
+          render={
+            <select className="select">
+              <option value="">Select rating</option>
+              <option value="excellent">Excellent</option>
+              <option value="good">Good</option>
+              <option value="average">Average</option>
+              <option value="poor">Poor</option>
+            </select>
+          }
           required
         />
-      </div>
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.comments} className="label">
+          Comments
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.comments}
+          render={<textarea rows={4} className="textarea" />}
+          required
+        />
+      </Ariakit.FormGroup>
       <label className="checkbox-wrapper">
-        <Ariakit.Checkbox
-          store={followUpCheckbox}
-          name="followUp"
-          className="checkbox"
-        >
-          <Ariakit.CheckboxCheck className="checkbox-check" />
-        </Ariakit.Checkbox>
+        <Ariakit.FormCheckbox name={form.names.followUp} className="checkbox" />
         <span className="checkbox-label">I would like a follow-up</span>
       </label>
-      <Ariakit.Button type="submit" className="button button-primary">
+      <Ariakit.FormSubmit className="button button-primary">
         Send feedback
-      </Ariakit.Button>
-    </form>
+      </Ariakit.FormSubmit>
+    </Ariakit.Form>
   )
 }
 

@@ -1,54 +1,56 @@
 import * as Ariakit from '@ariakit/react'
 
 function OrderTrackingForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  const form = Ariakit.useFormStore({
+    defaultValues: {
+      orderNumber: '',
+      email: '',
+      postalCode: '',
+    },
+  })
+
+  form.useSubmit(() => {
     alert('Order lookup submitted!')
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit} className="form-stack">
-      <div className="form-field">
-        <label htmlFor="ariakit-order-tracking-number" className="label">
+    <Ariakit.Form store={form} className="form-stack">
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.orderNumber} className="label">
           Order number
-        </label>
-        <input
-          id="ariakit-order-tracking-number"
-          name="orderNumber"
-          type="text"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.orderNumber}
           pattern="[A-Za-z0-9-]{6,20}"
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-order-tracking-email" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.email} className="label">
           Email address
-        </label>
-        <input
-          id="ariakit-order-tracking-email"
-          name="email"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.email}
           type="email"
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-order-tracking-postal" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.postalCode} className="label">
           Postal code
-        </label>
-        <input
-          id="ariakit-order-tracking-postal"
-          name="postalCode"
-          type="text"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.postalCode}
           className="input"
           required
         />
-      </div>
-      <Ariakit.Button type="submit" className="button button-primary">
+      </Ariakit.FormGroup>
+      <Ariakit.FormSubmit className="button button-primary">
         Find order
-      </Ariakit.Button>
-    </form>
+      </Ariakit.FormSubmit>
+    </Ariakit.Form>
   )
 }
 
