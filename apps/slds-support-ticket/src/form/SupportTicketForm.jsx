@@ -28,11 +28,11 @@ function SupportTicketForm({ theme }) {
       </div>
 
       <fieldset className="slds-form-element slds-m-bottom_small">
-        <legend className="slds-form-element__legend slds-form-element__label">Priority</legend>
+        <legend className="slds-form-element__legend slds-form-element__label">
+          Priority
+        </legend>
         <div className="slds-form-element__control">
-          <RadioGroup
-            onChange={(e) => setPriority(e.target.value)}
-          >
+          <RadioGroup onChange={(e) => setPriority(e.target.value)}>
             <Radio
               id="slds-ticket-priority-low"
               labels={{ label: 'Low' }}
@@ -69,7 +69,10 @@ function SupportTicketForm({ theme }) {
       </div>
 
       <div className="slds-form-element slds-m-bottom_medium">
-        <label className="slds-form-element__label" htmlFor="slds-ticket-attachments">
+        <label
+          className="slds-form-element__label"
+          htmlFor="slds-ticket-attachments"
+        >
           Attachments
         </label>
         <div className="slds-form-element__control">
@@ -83,11 +86,7 @@ function SupportTicketForm({ theme }) {
       </div>
 
       <div className="slds-form-element">
-        <Button
-          type="submit"
-          variant="brand"
-          label="Submit ticket"
-        />
+        <Button type="submit" variant="brand" label="Submit ticket" />
       </div>
     </form>
   )

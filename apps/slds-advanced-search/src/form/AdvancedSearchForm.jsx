@@ -96,11 +96,7 @@ function AdvancedSearchForm({ theme }) {
       </div>
 
       <div className="slds-form-element">
-        <Button
-          type="submit"
-          variant="brand"
-          label="Search"
-        />
+        <Button type="submit" variant="brand" label="Search" />
       </div>
     </form>
   )

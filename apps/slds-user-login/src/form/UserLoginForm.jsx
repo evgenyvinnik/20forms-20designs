@@ -46,11 +46,7 @@ function UserLoginForm({ theme }) {
       </div>
 
       <div className="slds-form-element">
-        <Button
-          type="submit"
-          variant="brand"
-          label="Sign in"
-        />
+        <Button type="submit" variant="brand" label="Sign in" />
         <Button
           type="button"
           variant="neutral"

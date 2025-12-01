@@ -65,11 +65,7 @@ function PasswordChangeForm({ theme }) {
       </div>
 
       <div className="slds-form-element">
-        <Button
-          type="submit"
-          variant="brand"
-          label="Update password"
-        />
+        <Button type="submit" variant="brand" label="Update password" />
       </div>
     </form>
   )

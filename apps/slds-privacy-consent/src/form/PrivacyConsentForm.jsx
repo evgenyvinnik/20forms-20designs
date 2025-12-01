@@ -98,11 +98,7 @@ function PrivacyConsentForm({ theme }) {
       </fieldset>
 
       <div className="slds-form-element">
-        <Button
-          type="submit"
-          variant="brand"
-          label="Save preferences"
-        />
+        <Button type="submit" variant="brand" label="Save preferences" />
       </div>
     </form>
   )

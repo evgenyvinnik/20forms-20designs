@@ -79,11 +79,7 @@ function ContactInquiryForm({ theme }) {
       </div>
 
       <div className="slds-form-element">
-        <Button
-          type="submit"
-          variant="brand"
-          label="Submit inquiry"
-        />
+        <Button type="submit" variant="brand" label="Submit inquiry" />
       </div>
     </form>
   )

@@ -12,7 +12,10 @@ function PasswordResetForm({ theme }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <p className="slds-m-bottom_medium" style={{ color: theme === 'dark' ? '#fff' : '#16325c' }}>
+      <p
+        className="slds-m-bottom_medium"
+        style={{ color: theme === 'dark' ? '#fff' : '#16325c' }}
+      >
         Request a password reset link via email.
       </p>
 
@@ -28,11 +31,7 @@ function PasswordResetForm({ theme }) {
       </div>
 
       <div className="slds-form-element">
-        <Button
-          type="submit"
-          variant="brand"
-          label="Send reset link"
-        />
+        <Button type="submit" variant="brand" label="Send reset link" />
       </div>
     </form>
   )

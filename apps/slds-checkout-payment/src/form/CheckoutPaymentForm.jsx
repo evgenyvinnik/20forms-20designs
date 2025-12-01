@@ -97,11 +97,7 @@ function CheckoutPaymentForm({ theme }) {
       </div>
 
       <div className="slds-form-element">
-        <Button
-          type="submit"
-          variant="brand"
-          label="Place order"
-        />
+        <Button type="submit" variant="brand" label="Place order" />
       </div>
     </form>
   )

@@ -71,11 +71,7 @@ function AppointmentRequestForm({ theme }) {
       </div>
 
       <div className="slds-form-element">
-        <Button
-          type="submit"
-          variant="brand"
-          label="Request appointment"
-        />
+        <Button type="submit" variant="brand" label="Request appointment" />
       </div>
     </form>
   )

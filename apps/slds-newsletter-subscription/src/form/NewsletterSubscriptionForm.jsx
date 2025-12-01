@@ -55,11 +55,7 @@ function NewsletterSubscriptionForm({ theme }) {
       </div>
 
       <div className="slds-form-element">
-        <Button
-          type="submit"
-          variant="brand"
-          label="Subscribe"
-        />
+        <Button type="submit" variant="brand" label="Subscribe" />
       </div>
     </form>
   )

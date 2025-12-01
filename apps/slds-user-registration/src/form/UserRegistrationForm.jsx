@@ -89,11 +89,7 @@ function UserRegistrationForm({ theme }) {
       </div>
 
       <div className="slds-form-element">
-        <Button
-          type="submit"
-          variant="brand"
-          label="Create account"
-        />
+        <Button type="submit" variant="brand" label="Create account" />
       </div>
     </form>
   )
