@@ -8,9 +8,9 @@ function TwoFactorAuthForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <p className="text-muted">
+      <Form.Text muted className="mb-3 d-block">
         Enter the code from your authenticator app or SMS.
-      </p>
+      </Form.Text>
 
       <Form.Group className="mb-3" controlId="rb-two-factor-code">
         <Form.Label>Verification code</Form.Label>

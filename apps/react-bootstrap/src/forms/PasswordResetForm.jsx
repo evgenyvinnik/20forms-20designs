@@ -8,7 +8,9 @@ function PasswordResetForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <p className="text-muted">Request a password reset link via email.</p>
+      <Form.Text muted className="mb-3 d-block">
+        Request a password reset link via email.
+      </Form.Text>
       <Form.Group className="mb-3" controlId="rb-password-reset-email">
         <Form.Label>Email address</Form.Label>
         <Form.Control name="email" type="email" required />
