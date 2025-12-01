@@ -18,7 +18,11 @@ function PasswordResetForm() {
       <Content>
         <p>Request a password reset link via email.</p>
       </Content>
-      <FormGroup label="Email address" isRequired fieldId="pf-password-reset-email">
+      <FormGroup
+        label="Email address"
+        isRequired
+        fieldId="pf-password-reset-email"
+      >
         <TextInput
           isRequired
           type="email"
@@ -27,7 +31,9 @@ function PasswordResetForm() {
         />
       </FormGroup>
       <ActionGroup>
-        <Button variant="primary" type="submit">Send reset link</Button>
+        <Button variant="primary" type="submit">
+          Send reset link
+        </Button>
       </ActionGroup>
     </Form>
   )

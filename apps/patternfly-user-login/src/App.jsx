@@ -27,11 +27,13 @@ function App() {
   }, [theme])
 
   return (
-    <div style={{ 
-      padding: '16px',
-      background: theme === 'dark' ? '#1b1d21' : '#fff',
-      minHeight: '100vh'
-    }}>
+    <div
+      style={{
+        padding: '16px',
+        background: theme === 'dark' ? '#1b1d21' : '#fff',
+        minHeight: '100vh',
+      }}
+    >
       <FormComponent />
     </div>
   )

@@ -15,7 +15,11 @@ function UserLoginForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <FormGroup label="Email or username" isRequired fieldId="pf-user-login-email">
+      <FormGroup
+        label="Email or username"
+        isRequired
+        fieldId="pf-user-login-email"
+      >
         <TextInput
           isRequired
           type="text"
@@ -39,9 +43,11 @@ function UserLoginForm() {
         />
       </FormGroup>
       <ActionGroup>
-        <Button variant="primary" type="submit">Sign in</Button>
-        <Button 
-          variant="link" 
+        <Button variant="primary" type="submit">
+          Sign in
+        </Button>
+        <Button
+          variant="link"
           onClick={() => alert('Password reset link flow placeholder')}
         >
           Forgot password?

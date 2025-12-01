@@ -15,7 +15,11 @@ function UserRegistrationForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <FormGroup label="Full name" isRequired fieldId="pf-user-registration-name">
+      <FormGroup
+        label="Full name"
+        isRequired
+        fieldId="pf-user-registration-name"
+      >
         <TextInput
           isRequired
           type="text"
@@ -23,7 +27,11 @@ function UserRegistrationForm() {
           name="fullName"
         />
       </FormGroup>
-      <FormGroup label="Email address" isRequired fieldId="pf-user-registration-email">
+      <FormGroup
+        label="Email address"
+        isRequired
+        fieldId="pf-user-registration-email"
+      >
         <TextInput
           isRequired
           type="email"
@@ -31,7 +39,11 @@ function UserRegistrationForm() {
           name="email"
         />
       </FormGroup>
-      <FormGroup label="Username" isRequired fieldId="pf-user-registration-username">
+      <FormGroup
+        label="Username"
+        isRequired
+        fieldId="pf-user-registration-username"
+      >
         <TextInput
           isRequired
           type="text"
@@ -39,7 +51,11 @@ function UserRegistrationForm() {
           name="username"
         />
       </FormGroup>
-      <FormGroup label="Password" isRequired fieldId="pf-user-registration-password">
+      <FormGroup
+        label="Password"
+        isRequired
+        fieldId="pf-user-registration-password"
+      >
         <TextInput
           isRequired
           type="password"
@@ -47,7 +63,11 @@ function UserRegistrationForm() {
           name="password"
         />
       </FormGroup>
-      <FormGroup label="Confirm password" isRequired fieldId="pf-user-registration-confirm">
+      <FormGroup
+        label="Confirm password"
+        isRequired
+        fieldId="pf-user-registration-confirm"
+      >
         <TextInput
           isRequired
           type="password"
@@ -64,7 +84,9 @@ function UserRegistrationForm() {
         />
       </FormGroup>
       <ActionGroup>
-        <Button variant="primary" type="submit">Create account</Button>
+        <Button variant="primary" type="submit">
+          Create account
+        </Button>
       </ActionGroup>
     </Form>
   )

@@ -25,7 +25,11 @@ function AppointmentRequestForm() {
           name="fullName"
         />
       </FormGroup>
-      <FormGroup label="Email address" isRequired fieldId="pf-appointment-email">
+      <FormGroup
+        label="Email address"
+        isRequired
+        fieldId="pf-appointment-email"
+      >
         <TextInput
           isRequired
           type="email"
@@ -33,19 +37,25 @@ function AppointmentRequestForm() {
           name="email"
         />
       </FormGroup>
-      <FormGroup label="Preferred date" isRequired fieldId="pf-appointment-date">
-        <DatePicker
-          id="pf-appointment-date"
-          name="date"
-        />
+      <FormGroup
+        label="Preferred date"
+        isRequired
+        fieldId="pf-appointment-date"
+      >
+        <DatePicker id="pf-appointment-date" name="date" />
       </FormGroup>
-      <FormGroup label="Preferred time" isRequired fieldId="pf-appointment-time">
-        <TimePicker
-          id="pf-appointment-time"
-          name="time"
-        />
+      <FormGroup
+        label="Preferred time"
+        isRequired
+        fieldId="pf-appointment-time"
+      >
+        <TimePicker id="pf-appointment-time" name="time" />
       </FormGroup>
-      <FormGroup label="Reason for visit" isRequired fieldId="pf-appointment-reason">
+      <FormGroup
+        label="Reason for visit"
+        isRequired
+        fieldId="pf-appointment-reason"
+      >
         <TextArea
           isRequired
           id="pf-appointment-reason"
@@ -54,7 +64,9 @@ function AppointmentRequestForm() {
         />
       </FormGroup>
       <ActionGroup>
-        <Button variant="primary" type="submit">Request appointment</Button>
+        <Button variant="primary" type="submit">
+          Request appointment
+        </Button>
       </ActionGroup>
     </Form>
   )

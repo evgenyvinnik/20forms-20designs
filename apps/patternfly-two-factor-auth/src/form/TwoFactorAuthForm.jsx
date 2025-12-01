@@ -18,7 +18,11 @@ function TwoFactorAuthForm() {
       <Content>
         <p>Enter the code from your authenticator app or SMS.</p>
       </Content>
-      <FormGroup label="Verification code" isRequired fieldId="pf-two-factor-code">
+      <FormGroup
+        label="Verification code"
+        isRequired
+        fieldId="pf-two-factor-code"
+      >
         <TextInput
           isRequired
           type="text"
@@ -28,15 +32,16 @@ function TwoFactorAuthForm() {
         />
       </FormGroup>
       <FormGroup label="Backup code (optional)" fieldId="pf-two-factor-backup">
-        <TextInput
-          type="text"
-          id="pf-two-factor-backup"
-          name="backupCode"
-        />
+        <TextInput type="text" id="pf-two-factor-backup" name="backupCode" />
       </FormGroup>
       <ActionGroup>
-        <Button variant="primary" type="submit">Verify</Button>
-        <Button variant="link" onClick={() => alert('A new code has been sent!')}>
+        <Button variant="primary" type="submit">
+          Verify
+        </Button>
+        <Button
+          variant="link"
+          onClick={() => alert('A new code has been sent!')}
+        >
           Resend code
         </Button>
       </ActionGroup>

@@ -22,20 +22,10 @@ function EventRegistrationForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <FormGroup label="Full name" isRequired fieldId="pf-event-name">
-        <TextInput
-          isRequired
-          type="text"
-          id="pf-event-name"
-          name="fullName"
-        />
+        <TextInput isRequired type="text" id="pf-event-name" name="fullName" />
       </FormGroup>
       <FormGroup label="Email address" isRequired fieldId="pf-event-email">
-        <TextInput
-          isRequired
-          type="email"
-          id="pf-event-email"
-          name="email"
-        />
+        <TextInput isRequired type="email" id="pf-event-email" name="email" />
       </FormGroup>
       <FormGroup label="Ticket type" isRequired fieldId="pf-event-ticket">
         <FormSelect id="pf-event-ticket" name="ticketType" isRequired>
@@ -70,7 +60,9 @@ function EventRegistrationForm() {
         />
       </FormGroup>
       <ActionGroup>
-        <Button variant="primary" type="submit">Register</Button>
+        <Button variant="primary" type="submit">
+          Register
+        </Button>
       </ActionGroup>
     </Form>
   )

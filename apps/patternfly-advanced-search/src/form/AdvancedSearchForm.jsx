@@ -18,12 +18,7 @@ function AdvancedSearchForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <FormGroup label="Search query" isRequired fieldId="pf-search-query">
-        <TextInput
-          isRequired
-          type="text"
-          id="pf-search-query"
-          name="query"
-        />
+        <TextInput isRequired type="text" id="pf-search-query" name="query" />
       </FormGroup>
       <FormGroup label="Category" isRequired fieldId="pf-search-category">
         <FormSelect id="pf-search-category" name="category" isRequired>
@@ -34,18 +29,10 @@ function AdvancedSearchForm() {
         </FormSelect>
       </FormGroup>
       <FormGroup label="Date from" fieldId="pf-search-date-from">
-        <TextInput
-          type="date"
-          id="pf-search-date-from"
-          name="dateFrom"
-        />
+        <TextInput type="date" id="pf-search-date-from" name="dateFrom" />
       </FormGroup>
       <FormGroup label="Date to" fieldId="pf-search-date-to">
-        <TextInput
-          type="date"
-          id="pf-search-date-to"
-          name="dateTo"
-        />
+        <TextInput type="date" id="pf-search-date-to" name="dateTo" />
       </FormGroup>
       <FormGroup label="Sort by" isRequired fieldId="pf-search-sort">
         <FormSelect id="pf-search-sort" name="sort" isRequired>
@@ -62,7 +49,9 @@ function AdvancedSearchForm() {
         />
       </FormGroup>
       <ActionGroup>
-        <Button variant="primary" type="submit">Search</Button>
+        <Button variant="primary" type="submit">
+          Search
+        </Button>
       </ActionGroup>
     </Form>
   )

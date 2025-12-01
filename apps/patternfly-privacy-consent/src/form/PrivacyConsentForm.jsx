@@ -27,18 +27,16 @@ function PrivacyConsentForm() {
         />
       </FormGroup>
       <FormGroup label="Email address" isRequired fieldId="pf-privacy-email">
-        <TextInput
-          isRequired
-          type="email"
-          id="pf-privacy-email"
-          name="email"
-        />
+        <TextInput isRequired type="email" id="pf-privacy-email" name="email" />
       </FormGroup>
-      
+
       <FormFieldGroup
         header={
           <FormFieldGroupHeader
-            titleText={{ text: 'Communication channels', id: 'communication-channels' }}
+            titleText={{
+              text: 'Communication channels',
+              id: 'communication-channels',
+            }}
           />
         }
       >
@@ -89,14 +87,12 @@ function PrivacyConsentForm() {
       </FormFieldGroup>
 
       <FormGroup label="Additional notes" fieldId="pf-privacy-notes">
-        <TextArea
-          id="pf-privacy-notes"
-          name="notes"
-          rows={3}
-        />
+        <TextArea id="pf-privacy-notes" name="notes" rows={3} />
       </FormGroup>
       <ActionGroup>
-        <Button variant="primary" type="submit">Save preferences</Button>
+        <Button variant="primary" type="submit">
+          Save preferences
+        </Button>
       </ActionGroup>
     </Form>
   )

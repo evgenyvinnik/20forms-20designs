@@ -42,7 +42,11 @@ function OnboardingWizardForm() {
 
       <FormSection>
         <Title headingLevel="h3">Step 2: Team</Title>
-        <FormGroup label="Team name" isRequired fieldId="pf-onboarding-team-name">
+        <FormGroup
+          label="Team name"
+          isRequired
+          fieldId="pf-onboarding-team-name"
+        >
           <TextInput
             isRequired
             type="text"
@@ -64,12 +68,7 @@ function OnboardingWizardForm() {
       <FormSection>
         <Title headingLevel="h3">Step 3: Preferences</Title>
         <FormGroup label="Primary goal" isRequired fieldId="pf-onboarding-goal">
-          <TextArea
-            isRequired
-            id="pf-onboarding-goal"
-            name="goal"
-            rows={3}
-          />
+          <TextArea isRequired id="pf-onboarding-goal" name="goal" rows={3} />
         </FormGroup>
         <FormGroup fieldId="pf-onboarding-updates">
           <Checkbox
@@ -81,10 +80,15 @@ function OnboardingWizardForm() {
       </FormSection>
 
       <ActionGroup>
-        <Button variant="secondary" onClick={() => alert('Back action placeholder')}>
+        <Button
+          variant="secondary"
+          onClick={() => alert('Back action placeholder')}
+        >
           Back
         </Button>
-        <Button variant="primary" type="submit">Finish setup</Button>
+        <Button variant="primary" type="submit">
+          Finish setup
+        </Button>
       </ActionGroup>
     </Form>
   )

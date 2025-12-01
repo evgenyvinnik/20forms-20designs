@@ -14,7 +14,11 @@ function OrderTrackingForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <FormGroup label="Order number" isRequired fieldId="pf-order-tracking-number">
+      <FormGroup
+        label="Order number"
+        isRequired
+        fieldId="pf-order-tracking-number"
+      >
         <TextInput
           isRequired
           type="text"
@@ -22,7 +26,11 @@ function OrderTrackingForm() {
           name="orderNumber"
         />
       </FormGroup>
-      <FormGroup label="Email address" isRequired fieldId="pf-order-tracking-email">
+      <FormGroup
+        label="Email address"
+        isRequired
+        fieldId="pf-order-tracking-email"
+      >
         <TextInput
           isRequired
           type="email"
@@ -30,7 +38,11 @@ function OrderTrackingForm() {
           name="email"
         />
       </FormGroup>
-      <FormGroup label="Postal code" isRequired fieldId="pf-order-tracking-postal">
+      <FormGroup
+        label="Postal code"
+        isRequired
+        fieldId="pf-order-tracking-postal"
+      >
         <TextInput
           isRequired
           type="text"
@@ -39,7 +51,9 @@ function OrderTrackingForm() {
         />
       </FormGroup>
       <ActionGroup>
-        <Button variant="primary" type="submit">Find order</Button>
+        <Button variant="primary" type="submit">
+          Find order
+        </Button>
       </ActionGroup>
     </Form>
   )

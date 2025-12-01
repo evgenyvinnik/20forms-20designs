@@ -27,12 +27,7 @@ function ContactInquiryForm() {
         />
       </FormGroup>
       <FormGroup label="Email address" isRequired fieldId="pf-contact-email">
-        <TextInput
-          isRequired
-          type="email"
-          id="pf-contact-email"
-          name="email"
-        />
+        <TextInput isRequired type="email" id="pf-contact-email" name="email" />
       </FormGroup>
       <FormGroup label="Topic" isRequired fieldId="pf-contact-topic">
         <FormSelect id="pf-contact-topic" name="topic" isRequired>
@@ -44,12 +39,7 @@ function ContactInquiryForm() {
         </FormSelect>
       </FormGroup>
       <FormGroup label="Message" isRequired fieldId="pf-contact-message">
-        <TextArea
-          isRequired
-          id="pf-contact-message"
-          name="message"
-          rows={4}
-        />
+        <TextArea isRequired id="pf-contact-message" name="message" rows={4} />
       </FormGroup>
       <FormGroup fieldId="pf-contact-consent">
         <Checkbox
@@ -59,7 +49,9 @@ function ContactInquiryForm() {
         />
       </FormGroup>
       <ActionGroup>
-        <Button variant="primary" type="submit">Submit inquiry</Button>
+        <Button variant="primary" type="submit">
+          Submit inquiry
+        </Button>
       </ActionGroup>
     </Form>
   )

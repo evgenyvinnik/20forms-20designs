@@ -16,7 +16,11 @@ function CheckoutPaymentForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <FormGroup label="Email for receipt" isRequired fieldId="pf-checkout-email">
+      <FormGroup
+        label="Email for receipt"
+        isRequired
+        fieldId="pf-checkout-email"
+      >
         <TextInput
           isRequired
           type="email"
@@ -24,15 +28,27 @@ function CheckoutPaymentForm() {
           name="email"
         />
       </FormGroup>
-      <FormGroup label="Shipping method" isRequired fieldId="pf-checkout-shipping-method">
-        <FormSelect id="pf-checkout-shipping-method" name="shippingMethod" isRequired>
+      <FormGroup
+        label="Shipping method"
+        isRequired
+        fieldId="pf-checkout-shipping-method"
+      >
+        <FormSelect
+          id="pf-checkout-shipping-method"
+          name="shippingMethod"
+          isRequired
+        >
           <FormSelectOption value="" label="Select shipping" isPlaceholder />
           <FormSelectOption value="standard" label="Standard" />
           <FormSelectOption value="express" label="Express" />
           <FormSelectOption value="overnight" label="Overnight" />
         </FormSelect>
       </FormGroup>
-      <FormGroup label="Card number" isRequired fieldId="pf-checkout-card-number">
+      <FormGroup
+        label="Card number"
+        isRequired
+        fieldId="pf-checkout-card-number"
+      >
         <TextInput
           isRequired
           type="text"
@@ -60,14 +76,12 @@ function CheckoutPaymentForm() {
         />
       </FormGroup>
       <FormGroup label="Promo code" fieldId="pf-checkout-promo">
-        <TextInput
-          type="text"
-          id="pf-checkout-promo"
-          name="promoCode"
-        />
+        <TextInput type="text" id="pf-checkout-promo" name="promoCode" />
       </FormGroup>
       <ActionGroup>
-        <Button variant="primary" type="submit">Place order</Button>
+        <Button variant="primary" type="submit">
+          Place order
+        </Button>
       </ActionGroup>
     </Form>
   )
