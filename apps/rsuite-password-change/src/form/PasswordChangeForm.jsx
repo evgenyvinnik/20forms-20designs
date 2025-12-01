@@ -14,12 +14,22 @@ function PasswordChangeForm() {
 
       <Form.Group controlId="newPassword">
         <Form.ControlLabel>New password</Form.ControlLabel>
-        <Form.Control name="newPassword" type="password" minLength={8} required />
+        <Form.Control
+          name="newPassword"
+          type="password"
+          minLength={8}
+          required
+        />
       </Form.Group>
 
       <Form.Group controlId="confirmPassword">
         <Form.ControlLabel>Confirm new password</Form.ControlLabel>
-        <Form.Control name="confirmPassword" type="password" minLength={8} required />
+        <Form.Control
+          name="confirmPassword"
+          type="password"
+          minLength={8}
+          required
+        />
       </Form.Group>
 
       <Form.Group controlId="logoutOthers">

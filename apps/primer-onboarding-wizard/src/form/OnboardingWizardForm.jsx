@@ -1,4 +1,13 @@
-import { Box, FormControl, TextInput, Select, Textarea, Checkbox, Button, Heading } from '@primer/react'
+import {
+  Box,
+  FormControl,
+  TextInput,
+  Select,
+  Textarea,
+  Checkbox,
+  Button,
+  Heading,
+} from '@primer/react'
 
 function OnboardingWizardForm() {
   const handleSubmit = (event) => {
@@ -13,8 +22,10 @@ function OnboardingWizardForm() {
       sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
     >
       <section>
-        <Heading as="h3" sx={{ fontSize: 2, mb: 3 }}>Account</Heading>
-        
+        <Heading as="h3" sx={{ fontSize: 2, mb: 3 }}>
+          Account
+        </Heading>
+
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
           <FormControl required>
             <FormControl.Label>Work email</FormControl.Label>
@@ -40,8 +51,10 @@ function OnboardingWizardForm() {
       </section>
 
       <section>
-        <Heading as="h3" sx={{ fontSize: 2, mb: 3 }}>Team</Heading>
-        
+        <Heading as="h3" sx={{ fontSize: 2, mb: 3 }}>
+          Team
+        </Heading>
+
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
           <FormControl required>
             <FormControl.Label>Team name</FormControl.Label>
@@ -67,17 +80,14 @@ function OnboardingWizardForm() {
       </section>
 
       <section>
-        <Heading as="h3" sx={{ fontSize: 2, mb: 3 }}>Preferences</Heading>
-        
+        <Heading as="h3" sx={{ fontSize: 2, mb: 3 }}>
+          Preferences
+        </Heading>
+
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
           <FormControl required>
             <FormControl.Label>Primary goal</FormControl.Label>
-            <Textarea
-              id="primer-onboarding-goal"
-              name="goal"
-              rows={3}
-              block
-            />
+            <Textarea id="primer-onboarding-goal" name="goal" rows={3} block />
           </FormControl>
 
           <FormControl>

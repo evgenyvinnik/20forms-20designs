@@ -1,4 +1,12 @@
-import { Box, Button, DateInput, Form, FormField, TextArea, TextInput } from 'grommet'
+import {
+  Box,
+  Button,
+  DateInput,
+  Form,
+  FormField,
+  TextArea,
+  TextInput,
+} from 'grommet'
 
 function AppointmentRequestForm() {
   const handleSubmit = (event) => {
@@ -14,11 +22,7 @@ function AppointmentRequestForm() {
         htmlFor="grommet-appointment-name"
         required
       >
-        <TextInput
-          id="grommet-appointment-name"
-          name="fullName"
-          type="text"
-        />
+        <TextInput id="grommet-appointment-name" name="fullName" type="text" />
       </FormField>
       <FormField
         label="Email address"
@@ -26,11 +30,7 @@ function AppointmentRequestForm() {
         htmlFor="grommet-appointment-email"
         required
       >
-        <TextInput
-          id="grommet-appointment-email"
-          name="email"
-          type="email"
-        />
+        <TextInput id="grommet-appointment-email" name="email" type="email" />
       </FormField>
       <FormField
         label="Preferred date"
@@ -50,11 +50,7 @@ function AppointmentRequestForm() {
         htmlFor="grommet-appointment-time"
         required
       >
-        <TextInput
-          id="grommet-appointment-time"
-          name="time"
-          type="time"
-        />
+        <TextInput id="grommet-appointment-time" name="time" type="time" />
       </FormField>
       <FormField
         label="Reason for visit"
@@ -62,11 +58,7 @@ function AppointmentRequestForm() {
         htmlFor="grommet-appointment-reason"
         required
       >
-        <TextArea
-          id="grommet-appointment-reason"
-          name="reason"
-          rows={3}
-        />
+        <TextArea id="grommet-appointment-reason" name="reason" rows={3} />
       </FormField>
       <Box margin={{ top: 'medium' }}>
         <Button type="submit" primary label="Request appointment" />

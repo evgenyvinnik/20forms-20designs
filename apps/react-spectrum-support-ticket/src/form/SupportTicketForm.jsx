@@ -1,4 +1,13 @@
-import { Form, TextField, TextArea, RadioGroup, Radio, Button, Flex, Text } from '@adobe/react-spectrum'
+import {
+  Form,
+  TextField,
+  TextArea,
+  RadioGroup,
+  Radio,
+  Button,
+  Flex,
+  Text,
+} from '@adobe/react-spectrum'
 
 function SupportTicketForm() {
   const handleSubmit = (event) => {
@@ -9,22 +18,13 @@ function SupportTicketForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <Flex direction="column" gap="size-200">
-        <TextField
-          label="Subject"
-          name="subject"
-          type="text"
-          isRequired
-        />
+        <TextField label="Subject" name="subject" type="text" isRequired />
         <RadioGroup label="Priority" name="priority" isRequired>
           <Radio value="low">Low</Radio>
           <Radio value="medium">Medium</Radio>
           <Radio value="high">High</Radio>
         </RadioGroup>
-        <TextArea
-          label="Issue description"
-          name="description"
-          isRequired
-        />
+        <TextArea label="Issue description" name="description" isRequired />
         <Flex direction="column" gap="size-100">
           <Text>Attachments</Text>
           <input type="file" name="attachments" multiple />

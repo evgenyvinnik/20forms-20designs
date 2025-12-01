@@ -1,4 +1,13 @@
-import { Form, TextField, TextArea, Picker, Item, Checkbox, Button, Flex } from '@adobe/react-spectrum'
+import {
+  Form,
+  TextField,
+  TextArea,
+  Picker,
+  Item,
+  Checkbox,
+  Button,
+  Flex,
+} from '@adobe/react-spectrum'
 
 function CustomerFeedbackForm() {
   const handleSubmit = (event) => {
@@ -9,18 +18,8 @@ function CustomerFeedbackForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <Flex direction="column" gap="size-200">
-        <TextField
-          label="Name"
-          name="name"
-          type="text"
-          isRequired
-        />
-        <TextField
-          label="Email address"
-          name="email"
-          type="email"
-          isRequired
-        />
+        <TextField label="Name" name="name" type="text" isRequired />
+        <TextField label="Email address" name="email" type="email" isRequired />
         <Picker label="Overall rating" name="rating" isRequired>
           <Item key="">Select rating</Item>
           <Item key="excellent">Excellent</Item>
@@ -28,11 +27,7 @@ function CustomerFeedbackForm() {
           <Item key="average">Average</Item>
           <Item key="poor">Poor</Item>
         </Picker>
-        <TextArea
-          label="Comments"
-          name="comments"
-          isRequired
-        />
+        <TextArea label="Comments" name="comments" isRequired />
         <Checkbox name="followUp">I would like a follow-up</Checkbox>
         <Button type="submit" variant="accent">
           Send feedback

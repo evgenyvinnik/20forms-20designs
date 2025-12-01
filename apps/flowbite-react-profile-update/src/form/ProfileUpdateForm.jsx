@@ -57,12 +57,7 @@ function ProfileUpdateForm() {
         <div className="mb-2 block">
           <Label htmlFor="flowbite-profile-bio" value="Short bio" />
         </div>
-        <Textarea
-          id="flowbite-profile-bio"
-          name="bio"
-          rows={3}
-          required
-        />
+        <Textarea id="flowbite-profile-bio" name="bio" rows={3} required />
       </div>
       <Button type="submit">Save changes</Button>
     </form>

@@ -66,11 +66,7 @@ function PrivacyConsentForm() {
       </fieldset>
       <div className="mb-3">
         <CFormLabel htmlFor="coreui-privacy-notes">Additional notes</CFormLabel>
-        <CFormTextarea
-          id="coreui-privacy-notes"
-          name="notes"
-          rows={3}
-        />
+        <CFormTextarea id="coreui-privacy-notes" name="notes" rows={3} />
       </div>
       <div className="d-grid">
         <CButton type="submit" color="primary">

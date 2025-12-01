@@ -1,4 +1,12 @@
-import { Form, TextField, Picker, Item, Checkbox, Button, Flex } from '@adobe/react-spectrum'
+import {
+  Form,
+  TextField,
+  Picker,
+  Item,
+  Checkbox,
+  Button,
+  Flex,
+} from '@adobe/react-spectrum'
 import { DatePicker } from '@adobe/react-spectrum'
 
 function AdvancedSearchForm() {
@@ -10,26 +18,15 @@ function AdvancedSearchForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <Flex direction="column" gap="size-200">
-        <TextField
-          label="Search query"
-          name="query"
-          type="text"
-          isRequired
-        />
+        <TextField label="Search query" name="query" type="text" isRequired />
         <Picker label="Category" name="category" isRequired>
           <Item key="all">All</Item>
           <Item key="articles">Articles</Item>
           <Item key="products">Products</Item>
           <Item key="people">People</Item>
         </Picker>
-        <DatePicker
-          label="Date from"
-          name="dateFrom"
-        />
-        <DatePicker
-          label="Date to"
-          name="dateTo"
-        />
+        <DatePicker label="Date from" name="dateFrom" />
+        <DatePicker label="Date to" name="dateTo" />
         <Picker label="Sort by" name="sort" isRequired>
           <Item key="relevance">Relevance</Item>
           <Item key="newest">Newest</Item>

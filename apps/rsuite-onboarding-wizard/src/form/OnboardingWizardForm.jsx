@@ -1,4 +1,12 @@
-import { Form, Button, ButtonToolbar, SelectPicker, Input, Checkbox, Panel } from 'rsuite'
+import {
+  Form,
+  Button,
+  ButtonToolbar,
+  SelectPicker,
+  Input,
+  Checkbox,
+  Panel,
+} from 'rsuite'
 
 const teamSizeOptions = [
   { label: '1-5', value: '1-5' },
@@ -22,7 +30,12 @@ function OnboardingWizardForm() {
 
         <Form.Group controlId="password">
           <Form.ControlLabel>Password</Form.ControlLabel>
-          <Form.Control name="password" type="password" minLength={8} required />
+          <Form.Control
+            name="password"
+            type="password"
+            minLength={8}
+            required
+          />
         </Form.Group>
       </Panel>
 
@@ -48,7 +61,13 @@ function OnboardingWizardForm() {
       <Panel header="Step 3: Preferences" bordered style={{ marginBottom: 16 }}>
         <Form.Group controlId="goal">
           <Form.ControlLabel>Primary goal</Form.ControlLabel>
-          <Form.Control name="goal" accepter={Input} as="textarea" rows={3} required />
+          <Form.Control
+            name="goal"
+            accepter={Input}
+            as="textarea"
+            rows={3}
+            required
+          />
         </Form.Group>
 
         <Form.Group controlId="updates">
@@ -58,7 +77,10 @@ function OnboardingWizardForm() {
 
       <Form.Group>
         <ButtonToolbar>
-          <Button appearance="default" onClick={() => alert('Back action placeholder')}>
+          <Button
+            appearance="default"
+            onClick={() => alert('Back action placeholder')}
+          >
             Back
           </Button>
           <Button appearance="primary" type="submit">

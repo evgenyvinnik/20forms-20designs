@@ -1,4 +1,11 @@
-import { Box, FormControl, TextInput, Select, Checkbox, Button } from '@primer/react'
+import {
+  Box,
+  FormControl,
+  TextInput,
+  Select,
+  Checkbox,
+  Button,
+} from '@primer/react'
 
 function AdvancedSearchForm() {
   const handleSubmit = (event) => {
@@ -14,12 +21,7 @@ function AdvancedSearchForm() {
     >
       <FormControl required>
         <FormControl.Label>Search query</FormControl.Label>
-        <TextInput
-          id="primer-search-query"
-          name="query"
-          type="text"
-          block
-        />
+        <TextInput id="primer-search-query" name="query" type="text" block />
       </FormControl>
 
       <FormControl required>
@@ -44,12 +46,7 @@ function AdvancedSearchForm() {
 
       <FormControl>
         <FormControl.Label>Date to</FormControl.Label>
-        <TextInput
-          id="primer-search-dateto"
-          name="dateTo"
-          type="date"
-          block
-        />
+        <TextInput id="primer-search-dateto" name="dateTo" type="date" block />
       </FormControl>
 
       <FormControl required>

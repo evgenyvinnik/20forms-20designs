@@ -1,4 +1,14 @@
-import { Form, TextField, TextArea, Picker, Item, Checkbox, Button, Flex, Heading } from '@adobe/react-spectrum'
+import {
+  Form,
+  TextField,
+  TextArea,
+  Picker,
+  Item,
+  Checkbox,
+  Button,
+  Flex,
+  Heading,
+} from '@adobe/react-spectrum'
 
 function OnboardingWizardForm() {
   const handleSubmit = (event) => {
@@ -10,12 +20,7 @@ function OnboardingWizardForm() {
     <Form onSubmit={handleSubmit}>
       <Flex direction="column" gap="size-200">
         <Heading level={3}>Account</Heading>
-        <TextField
-          label="Work email"
-          name="email"
-          type="email"
-          isRequired
-        />
+        <TextField label="Work email" name="email" type="email" isRequired />
         <TextField
           label="Password"
           name="password"
@@ -25,12 +30,7 @@ function OnboardingWizardForm() {
         />
 
         <Heading level={3}>Team</Heading>
-        <TextField
-          label="Team name"
-          name="teamName"
-          type="text"
-          isRequired
-        />
+        <TextField label="Team name" name="teamName" type="text" isRequired />
         <Picker label="Team size" name="teamSize" isRequired>
           <Item key="">Select size</Item>
           <Item key="1-5">1-5</Item>
@@ -40,11 +40,7 @@ function OnboardingWizardForm() {
         </Picker>
 
         <Heading level={3}>Preferences</Heading>
-        <TextArea
-          label="Primary goal"
-          name="goal"
-          isRequired
-        />
+        <TextArea label="Primary goal" name="goal" isRequired />
         <Checkbox name="updates">Send me product tips</Checkbox>
 
         <Flex gap="size-100">

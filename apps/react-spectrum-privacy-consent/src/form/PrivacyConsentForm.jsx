@@ -1,4 +1,13 @@
-import { Form, TextField, TextArea, Checkbox, CheckboxGroup, Button, Flex, Text } from '@adobe/react-spectrum'
+import {
+  Form,
+  TextField,
+  TextArea,
+  Checkbox,
+  CheckboxGroup,
+  Button,
+  Flex,
+  Text,
+} from '@adobe/react-spectrum'
 
 function PrivacyConsentForm() {
   const handleSubmit = (event) => {
@@ -9,20 +18,12 @@ function PrivacyConsentForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <Flex direction="column" gap="size-200">
-        <TextField
-          label="Full name"
-          name="fullName"
-          type="text"
-          isRequired
-        />
-        <TextField
-          label="Email address"
-          name="email"
-          type="email"
-          isRequired
-        />
+        <TextField label="Full name" name="fullName" type="text" isRequired />
+        <TextField label="Email address" name="email" type="email" isRequired />
 
-        <Text UNSAFE_style={{ fontWeight: 'bold' }}>Communication Channels</Text>
+        <Text UNSAFE_style={{ fontWeight: 'bold' }}>
+          Communication Channels
+        </Text>
         <Checkbox name="emailOptIn">Email updates</Checkbox>
         <Checkbox name="smsOptIn">SMS notifications</Checkbox>
         <Checkbox name="phoneOptIn">Phone calls</Checkbox>
@@ -31,10 +32,7 @@ function PrivacyConsentForm() {
         <Checkbox name="analytics">Allow analytics cookies</Checkbox>
         <Checkbox name="personalization">Allow personalized content</Checkbox>
 
-        <TextArea
-          label="Additional notes"
-          name="notes"
-        />
+        <TextArea label="Additional notes" name="notes" />
 
         <Button type="submit" variant="accent">
           Save preferences

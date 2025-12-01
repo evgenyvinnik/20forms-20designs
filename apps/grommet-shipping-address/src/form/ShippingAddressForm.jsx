@@ -1,5 +1,13 @@
 import { useState } from 'react'
-import { Box, Button, CheckBox, Form, FormField, Select, TextInput } from 'grommet'
+import {
+  Box,
+  Button,
+  CheckBox,
+  Form,
+  FormField,
+  Select,
+  TextInput,
+} from 'grommet'
 import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from './locationOptions'
 
 function ShippingAddressForm() {
@@ -32,22 +40,14 @@ function ShippingAddressForm() {
         htmlFor="grommet-shipping-street"
         required
       >
-        <TextInput
-          id="grommet-shipping-street"
-          name="street"
-          type="text"
-        />
+        <TextInput id="grommet-shipping-street" name="street" type="text" />
       </FormField>
       <FormField
         label="Apartment, suite, etc."
         name="street2"
         htmlFor="grommet-shipping-street-2"
       >
-        <TextInput
-          id="grommet-shipping-street-2"
-          name="street2"
-          type="text"
-        />
+        <TextInput id="grommet-shipping-street-2" name="street2" type="text" />
       </FormField>
       <FormField
         label="City"
@@ -55,11 +55,7 @@ function ShippingAddressForm() {
         htmlFor="grommet-shipping-city"
         required
       >
-        <TextInput
-          id="grommet-shipping-city"
-          name="city"
-          type="text"
-        />
+        <TextInput id="grommet-shipping-city" name="city" type="text" />
       </FormField>
       <FormField
         label="Country"
@@ -96,11 +92,7 @@ function ShippingAddressForm() {
         htmlFor="grommet-shipping-postal"
         required
       >
-        <TextInput
-          id="grommet-shipping-postal"
-          name="postalCode"
-          type="text"
-        />
+        <TextInput id="grommet-shipping-postal" name="postalCode" type="text" />
       </FormField>
       <FormField name="default" htmlFor="grommet-shipping-default">
         <CheckBox

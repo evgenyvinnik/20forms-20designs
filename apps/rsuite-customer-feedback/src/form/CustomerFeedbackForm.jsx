@@ -38,7 +38,13 @@ function CustomerFeedbackForm() {
 
       <Form.Group controlId="comments">
         <Form.ControlLabel>Comments</Form.ControlLabel>
-        <Form.Control name="comments" accepter={Input} as="textarea" rows={4} required />
+        <Form.Control
+          name="comments"
+          accepter={Input}
+          as="textarea"
+          rows={4}
+          required
+        />
       </Form.Group>
 
       <Form.Group controlId="followUp">

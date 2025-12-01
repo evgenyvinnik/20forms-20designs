@@ -110,7 +110,9 @@ function JobApplicationForm() {
             </svg>
           )}
         </Checkbox>
-        <Label className="checkbox-label">Keep me informed about future roles</Label>
+        <Label className="checkbox-label">
+          Keep me informed about future roles
+        </Label>
       </Field>
 
       <button type="submit" className="button button-primary">
