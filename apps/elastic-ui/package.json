@@ -1,0 +1,24 @@
+{
+  "name": "@forms-comparison/elastic-ui",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@elastic/eui": "^97.0.0",
+    "@elastic/datemath": "^5.0.3",
+    "@emotion/react": "^11.14.0",
+    "@emotion/css": "^11.13.5",
+    "moment": "^2.30.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.1",
+    "vite": "^7.2.4"
+  }
+}
