@@ -72,16 +72,6 @@ const LIBRARIES = [
     supportsTheme: true,
   },
   {
-    id: 'gluestack-ui',
-    name: 'Gluestack UI',
-    prefix: 'gluestack',
-    dependencies: {
-      '@gluestack-ui/themed': '^1.1.61',
-      '@gluestack-style/react': '^1.0.57',
-    },
-    supportsTheme: true,
-  },
-  {
     id: 'grommet',
     name: 'Grommet',
     prefix: 'grommet',

@@ -12,9 +12,6 @@ import {
   generateFluentUIForms 
 } from './libraries/fluent-ui-forms.mjs'
 import { 
-  generateGluestackForms 
-} from './libraries/gluestack-forms.mjs'
-import { 
   generateGrommetForms 
 } from './libraries/grommet-forms.mjs'
 import { 
@@ -62,8 +59,6 @@ export function generateForm(library, form) {
       return generateFlowbiteForms(form)
     case 'fluent-ui':
       return generateFluentUIForms(form)
-    case 'gluestack-ui':
-      return generateGluestackForms(form)
     case 'grommet':
       return generateGrommetForms(form)
     case 'headless-ui':
