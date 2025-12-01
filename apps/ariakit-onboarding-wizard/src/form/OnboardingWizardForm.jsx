@@ -1,110 +1,121 @@
 import * as Ariakit from '@ariakit/react'
 
 function OnboardingWizardForm() {
-  const termsCheckbox = Ariakit.useCheckboxStore({ defaultValue: false })
+  const form = Ariakit.useFormStore({
+    defaultValues: {
+      fullName: '',
+      email: '',
+      companyName: '',
+      teamSize: '',
+      role: '',
+      terms: false,
+    },
+  })
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  form.useSubmit(() => {
     alert('Onboarding completed!')
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit} className="form-stack">
-      <section>
-        <h3 className="section-title">Personal information</h3>
-        <div className="form-field">
-          <label htmlFor="ariakit-onboarding-fullname" className="label">
+    <Ariakit.Form store={form} className="form-stack">
+      <Ariakit.FormGroup className="section">
+        <Ariakit.FormGroupLabel className="section-title">
+          Personal information
+        </Ariakit.FormGroupLabel>
+        <Ariakit.FormGroup className="form-field">
+          <Ariakit.FormLabel name={form.names.fullName} className="label">
             Full name
-          </label>
-          <input
-            id="ariakit-onboarding-fullname"
-            name="fullName"
-            type="text"
+          </Ariakit.FormLabel>
+          <Ariakit.FormInput
+            name={form.names.fullName}
             className="input"
             required
           />
-        </div>
-        <div className="form-field">
-          <label htmlFor="ariakit-onboarding-email" className="label">
+        </Ariakit.FormGroup>
+        <Ariakit.FormGroup className="form-field">
+          <Ariakit.FormLabel name={form.names.email} className="label">
             Email address
-          </label>
-          <input
-            id="ariakit-onboarding-email"
-            name="email"
+          </Ariakit.FormLabel>
+          <Ariakit.FormInput
+            name={form.names.email}
             type="email"
             className="input"
             required
           />
-        </div>
-      </section>
-      <section>
-        <h3 className="section-title">Company details</h3>
-        <div className="form-field">
-          <label htmlFor="ariakit-onboarding-companyname" className="label">
+        </Ariakit.FormGroup>
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="section">
+        <Ariakit.FormGroupLabel className="section-title">
+          Company details
+        </Ariakit.FormGroupLabel>
+        <Ariakit.FormGroup className="form-field">
+          <Ariakit.FormLabel name={form.names.companyName} className="label">
             Company name
-          </label>
-          <input
-            id="ariakit-onboarding-companyname"
-            name="companyName"
-            type="text"
+          </Ariakit.FormLabel>
+          <Ariakit.FormInput
+            name={form.names.companyName}
             className="input"
             required
           />
-        </div>
-        <div className="form-field">
-          <label htmlFor="ariakit-onboarding-teamsize" className="label">
+        </Ariakit.FormGroup>
+        <Ariakit.FormGroup className="form-field">
+          <Ariakit.FormLabel name={form.names.teamSize} className="label">
             Team size
-          </label>
-          <select
-            id="ariakit-onboarding-teamsize"
-            name="teamSize"
-            className="select"
+          </Ariakit.FormLabel>
+          <Ariakit.FormInput
+            name={form.names.teamSize}
+            render={
+              <select className="select">
+                <option value="" disabled>
+                  Select team size
+                </option>
+                <option value="1-10">1-10</option>
+                <option value="11-50">11-50</option>
+                <option value="51-200">51-200</option>
+                <option value="201+">201+</option>
+              </select>
+            }
             required
-            defaultValue=""
-          >
-            <option value="" disabled>
-              Select team size
-            </option>
-            <option value="1-10">1-10</option>
-            <option value="11-50">11-50</option>
-            <option value="51-200">51-200</option>
-            <option value="201+">201+</option>
-          </select>
-        </div>
-      </section>
-      <section>
-        <h3 className="section-title">Preferences</h3>
-        <div className="form-field">
-          <label htmlFor="ariakit-onboarding-role" className="label">
+          />
+        </Ariakit.FormGroup>
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="section">
+        <Ariakit.FormGroupLabel className="section-title">
+          Preferences
+        </Ariakit.FormGroupLabel>
+        <Ariakit.FormGroup className="form-field">
+          <Ariakit.FormLabel name={form.names.role} className="label">
             Role
-          </label>
-          <select
-            id="ariakit-onboarding-role"
-            name="role"
-            className="select"
+          </Ariakit.FormLabel>
+          <Ariakit.FormInput
+            name={form.names.role}
+            render={
+              <select className="select">
+                <option value="" disabled>
+                  Select role
+                </option>
+                <option value="developer">Developer</option>
+                <option value="designer">Designer</option>
+                <option value="manager">Manager</option>
+                <option value="other">Other</option>
+              </select>
+            }
             required
-            defaultValue=""
-          >
-            <option value="" disabled>
-              Select role
-            </option>
-            <option value="developer">Developer</option>
-            <option value="designer">Designer</option>
-            <option value="manager">Manager</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
+          />
+        </Ariakit.FormGroup>
         <div className="checkbox-wrapper">
-          <Ariakit.Checkbox store={termsCheckbox} className="checkbox" required>
-            <Ariakit.CheckboxCheck className="checkbox-check" />
-          </Ariakit.Checkbox>
+          <Ariakit.FormCheckbox
+            name={form.names.terms}
+            className="checkbox"
+            required
+          />
           <label className="label">I agree to the Terms of Service</label>
         </div>
-      </section>
-      <Ariakit.Button type="submit" className="button button-primary">
+      </Ariakit.FormGroup>
+      <Ariakit.FormSubmit className="button button-primary">
         Complete onboarding
-      </Ariakit.Button>
-    </form>
+      </Ariakit.FormSubmit>
+    </Ariakit.Form>
   )
 }
 
