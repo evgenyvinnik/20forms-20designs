@@ -1,0 +1,8 @@
+@use '@carbon/react';
+
+.app-container {
+  padding: 16px;
+  min-height: 100vh;
+  background: react.$background;
+  color: react.$text-primary;
+}
