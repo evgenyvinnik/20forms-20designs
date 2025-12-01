@@ -26,8 +26,10 @@ function JobApplicationForm() {
           name="fullName"
           type="text"
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div>
@@ -42,8 +44,10 @@ function JobApplicationForm() {
           name="email"
           type="email"
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div>
@@ -60,8 +64,10 @@ function JobApplicationForm() {
           required
           pattern="[+0-9\s-]{7,20}"
           inputMode="tel"
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div>
@@ -76,8 +82,10 @@ function JobApplicationForm() {
           name="role"
           type="text"
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div>
@@ -93,8 +101,10 @@ function JobApplicationForm() {
           type="url"
           required
           placeholder="https://..."
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div>
@@ -109,8 +119,10 @@ function JobApplicationForm() {
           name="coverLetter"
           rows={4}
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div className="flex items-center gap-2">
@@ -123,7 +135,7 @@ function JobApplicationForm() {
           Keep me informed about future roles
         </Typography>
       </div>
-      <Button type="submit" className="mt-2">
+      <Button type="submit" className="mt-2" fullWidth>
         Submit application
       </Button>
     </form>

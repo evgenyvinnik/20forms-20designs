@@ -22,8 +22,10 @@ function OrderTrackingForm() {
           required
           pattern="[A-Za-z0-9-]{6,20}"
           placeholder="e.g., ORD-123456"
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div>
@@ -38,8 +40,10 @@ function OrderTrackingForm() {
           name="email"
           type="email"
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div>
@@ -54,11 +58,13 @@ function OrderTrackingForm() {
           name="postalCode"
           type="text"
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
-      <Button type="submit" className="mt-2">
+      <Button type="submit" className="mt-2" fullWidth>
         Find order
       </Button>
     </form>

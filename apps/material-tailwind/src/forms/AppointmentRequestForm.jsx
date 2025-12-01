@@ -20,8 +20,10 @@ function AppointmentRequestForm() {
           name="fullName"
           type="text"
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div>
@@ -36,8 +38,10 @@ function AppointmentRequestForm() {
           name="email"
           type="email"
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div>
@@ -52,8 +56,10 @@ function AppointmentRequestForm() {
           name="date"
           type="date"
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div>
@@ -68,8 +74,10 @@ function AppointmentRequestForm() {
           name="time"
           type="time"
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div>
@@ -84,11 +92,13 @@ function AppointmentRequestForm() {
           name="reason"
           rows={3}
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
-      <Button type="submit" className="mt-2">
+      <Button type="submit" className="mt-2" fullWidth>
         Request appointment
       </Button>
     </form>

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Input, Button, Checkbox, Typography } from '@material-tailwind/react'
+import { Input, Button, Checkbox, Select, Option, Typography } from '@material-tailwind/react'
 
 function EventRegistrationForm() {
   const [ticketType, setTicketType] = useState('')
@@ -23,8 +23,10 @@ function EventRegistrationForm() {
           name="fullName"
           type="text"
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div>
@@ -39,8 +41,10 @@ function EventRegistrationForm() {
           name="email"
           type="email"
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div>
@@ -56,7 +60,7 @@ function EventRegistrationForm() {
           value={ticketType}
           onChange={(e) => setTicketType(e.target.value)}
           required
-          className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+          className="w-full h-11 rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-white"
         >
           <option value="">Select ticket</option>
           <option value="general">General admission</option>
@@ -78,8 +82,10 @@ function EventRegistrationForm() {
           min={0}
           max={20}
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div className="flex items-center gap-2">
@@ -92,7 +98,7 @@ function EventRegistrationForm() {
           Notify me about future events
         </Typography>
       </div>
-      <Button type="submit" className="mt-2">
+      <Button type="submit" className="mt-2" fullWidth>
         Register
       </Button>
     </form>

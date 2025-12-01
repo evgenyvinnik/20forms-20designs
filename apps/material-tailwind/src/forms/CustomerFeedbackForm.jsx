@@ -29,8 +29,10 @@ function CustomerFeedbackForm() {
           name="name"
           type="text"
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div>
@@ -45,8 +47,10 @@ function CustomerFeedbackForm() {
           name="email"
           type="email"
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div>
@@ -62,7 +66,7 @@ function CustomerFeedbackForm() {
           value={rating}
           onChange={(e) => setRating(e.target.value)}
           required
-          className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+          className="w-full h-11 rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-white"
         >
           <option value="">Select rating</option>
           <option value="excellent">Excellent</option>
@@ -83,8 +87,10 @@ function CustomerFeedbackForm() {
           name="comments"
           rows={4}
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div className="flex items-center gap-2">
@@ -97,7 +103,7 @@ function CustomerFeedbackForm() {
           I would like a follow-up
         </Typography>
       </div>
-      <Button type="submit" className="mt-2">
+      <Button type="submit" className="mt-2" fullWidth>
         Send feedback
       </Button>
     </form>

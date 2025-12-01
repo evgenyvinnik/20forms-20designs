@@ -1,5 +1,11 @@
 import { useState } from 'react'
-import { Input, Button, Checkbox, Typography } from '@material-tailwind/react'
+import {
+  Input,
+  Button,
+  Select,
+  Option,
+  Typography,
+} from '@material-tailwind/react'
 
 function CheckoutPaymentForm() {
   const [shippingMethod, setShippingMethod] = useState('')
@@ -23,8 +29,10 @@ function CheckoutPaymentForm() {
           name="email"
           type="email"
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div>
@@ -34,19 +42,19 @@ function CheckoutPaymentForm() {
         >
           Shipping method
         </Typography>
-        <select
+        <Select
           id="material-tailwind-checkout-payment-shippingMethod"
-          name="shippingMethod"
           value={shippingMethod}
-          onChange={(e) => setShippingMethod(e.target.value)}
-          required
-          className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+          onChange={(val) => setShippingMethod(val)}
+          size="lg"
+          className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
+          labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         >
-          <option value="">Select shipping</option>
-          <option value="standard">Standard</option>
-          <option value="express">Express</option>
-          <option value="overnight">Overnight</option>
-        </select>
+          <Option value="standard">Standard</Option>
+          <Option value="express">Express</Option>
+          <Option value="overnight">Overnight</Option>
+        </Select>
       </div>
       <div>
         <Typography
@@ -63,8 +71,10 @@ function CheckoutPaymentForm() {
           pattern="[0-9]{13,19}"
           maxLength={19}
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div className="grid grid-cols-2 gap-4">
@@ -83,8 +93,10 @@ function CheckoutPaymentForm() {
             pattern="^(0[1-9]|1[0-2])\/\d{2}$"
             inputMode="numeric"
             required
+            size="lg"
             className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
             labelProps={{ className: 'hidden' }}
+            containerProps={{ className: 'min-w-0' }}
           />
         </div>
         <div>
@@ -102,8 +114,10 @@ function CheckoutPaymentForm() {
             pattern="[0-9]{3,4}"
             maxLength={4}
             required
+            size="lg"
             className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
             labelProps={{ className: 'hidden' }}
+            containerProps={{ className: 'min-w-0' }}
           />
         </div>
       </div>
@@ -119,11 +133,13 @@ function CheckoutPaymentForm() {
           name="promoCode"
           type="text"
           pattern="[A-Za-z0-9]{3,15}"
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
-      <Button type="submit" className="mt-2">
+      <Button type="submit" className="mt-2" fullWidth>
         Place order
       </Button>
     </form>

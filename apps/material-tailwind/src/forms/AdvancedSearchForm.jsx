@@ -24,8 +24,10 @@ function AdvancedSearchForm() {
           name="query"
           type="text"
           required
+          size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}
+          containerProps={{ className: 'min-w-0' }}
         />
       </div>
       <div>
@@ -41,7 +43,7 @@ function AdvancedSearchForm() {
           value={category}
           onChange={(e) => setCategory(e.target.value)}
           required
-          className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+          className="w-full h-11 rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-white"
         >
           <option value="all">All</option>
           <option value="articles">Articles</option>
@@ -49,35 +51,41 @@ function AdvancedSearchForm() {
           <option value="people">People</option>
         </select>
       </div>
-      <div>
-        <Typography
-          variant="small"
-          className="mb-1 font-medium text-gray-900 dark:text-white"
-        >
-          Date from
-        </Typography>
-        <Input
-          id="material-tailwind-advanced-search-dateFrom"
-          name="dateFrom"
-          type="date"
-          className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-          labelProps={{ className: 'hidden' }}
-        />
-      </div>
-      <div>
-        <Typography
-          variant="small"
-          className="mb-1 font-medium text-gray-900 dark:text-white"
-        >
-          Date to
-        </Typography>
-        <Input
-          id="material-tailwind-advanced-search-dateTo"
-          name="dateTo"
-          type="date"
-          className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-          labelProps={{ className: 'hidden' }}
-        />
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <Typography
+            variant="small"
+            className="mb-1 font-medium text-gray-900 dark:text-white"
+          >
+            Date from
+          </Typography>
+          <Input
+            id="material-tailwind-advanced-search-dateFrom"
+            name="dateFrom"
+            type="date"
+            size="lg"
+            className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
+            labelProps={{ className: 'hidden' }}
+            containerProps={{ className: 'min-w-0' }}
+          />
+        </div>
+        <div>
+          <Typography
+            variant="small"
+            className="mb-1 font-medium text-gray-900 dark:text-white"
+          >
+            Date to
+          </Typography>
+          <Input
+            id="material-tailwind-advanced-search-dateTo"
+            name="dateTo"
+            type="date"
+            size="lg"
+            className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
+            labelProps={{ className: 'hidden' }}
+            containerProps={{ className: 'min-w-0' }}
+          />
+        </div>
       </div>
       <div>
         <Typography
@@ -92,7 +100,7 @@ function AdvancedSearchForm() {
           value={sort}
           onChange={(e) => setSort(e.target.value)}
           required
-          className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+          className="w-full h-11 rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-white"
         >
           <option value="relevance">Relevance</option>
           <option value="newest">Newest</option>
@@ -109,7 +117,7 @@ function AdvancedSearchForm() {
           Include archived
         </Typography>
       </div>
-      <Button type="submit" className="mt-2">
+      <Button type="submit" className="mt-2" fullWidth>
         Search
       </Button>
     </form>
