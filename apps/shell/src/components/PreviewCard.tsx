@@ -9,6 +9,30 @@ import { ThemeMode } from '../store'
 
 const GITHUB_REPO_BASE = 'https://github.com/evgenyvinnik/20forms-20designs'
 
+// Map from form ID to form component filename
+const FORM_ID_TO_FILENAME: Record<FormId, string> = {
+  'user-registration': 'UserRegistrationForm.jsx',
+  'user-login': 'UserLoginForm.jsx',
+  'password-reset': 'PasswordResetForm.jsx',
+  'two-factor-auth': 'TwoFactorAuthForm.jsx',
+  'contact-inquiry': 'ContactInquiryForm.jsx',
+  'newsletter-subscription': 'NewsletterSubscriptionForm.jsx',
+  'profile-update': 'ProfileUpdateForm.jsx',
+  'password-change': 'PasswordChangeForm.jsx',
+  'billing-info': 'BillingInfoForm.jsx',
+  'shipping-address': 'ShippingAddressForm.jsx',
+  'checkout-payment': 'CheckoutPaymentForm.jsx',
+  'order-tracking': 'OrderTrackingForm.jsx',
+  'appointment-request': 'AppointmentRequestForm.jsx',
+  'event-registration': 'EventRegistrationForm.jsx',
+  'job-application': 'JobApplicationForm.jsx',
+  'customer-feedback': 'CustomerFeedbackForm.jsx',
+  'support-ticket': 'SupportTicketForm.jsx',
+  'onboarding-wizard': 'OnboardingWizardForm.jsx',
+  'advanced-search': 'AdvancedSearchForm.jsx',
+  'privacy-consent': 'PrivacyConsentForm.jsx',
+}
+
 // Hardcoded heights per form type based on form complexity
 // This eliminates the need for iframe-to-parent postMessage communication
 const FORM_HEIGHTS: Record<FormId, number> = {
@@ -40,7 +64,7 @@ const FORM_HEIGHTS: Record<FormId, number> = {
   'privacy-consent': 800,
 
   // Extra tall forms (multi-step, wizards)
-  'onboarding-wizard': 850,
+  'onboarding-wizard': 950,
 }
 
 // Default height if form is not in the map
@@ -61,7 +85,13 @@ function buildGitHubUrl(libraryName: string, formName: string): string {
     return GITHUB_REPO_BASE
   }
 
-  return `${GITHUB_REPO_BASE}/tree/main/apps/${libId}-${formId}`
+  const formFilename = FORM_ID_TO_FILENAME[formId]
+  if (!formFilename) {
+    return GITHUB_REPO_BASE
+  }
+
+  // New path structure: /apps/{libId}/src/forms/{FormComponent}.jsx
+  return `${GITHUB_REPO_BASE}/blob/main/apps/${libId}/src/forms/${formFilename}`
 }
 
 function getFormHeight(formName: string): number {
