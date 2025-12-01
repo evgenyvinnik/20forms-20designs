@@ -93,13 +93,17 @@ function OnboardingWizardForm() {
             required
           />
         </Ariakit.FormGroup>
-        <div className="checkbox-wrapper">
-          <Ariakit.FormCheckbox
-            name={form.names.updates}
-            className="checkbox"
-          />
-          <label className="label">Send me product tips</label>
-        </div>
+        <Ariakit.FormGroup className="form-field">
+          <div className="checkbox-wrapper">
+            <Ariakit.FormCheckbox
+              name={form.names.updates}
+              className="checkbox"
+            />
+            <Ariakit.FormLabel name={form.names.updates} className="label">
+              Send me product tips
+            </Ariakit.FormLabel>
+          </div>
+        </Ariakit.FormGroup>
       </Ariakit.FormGroup>
       <div className="button-group">
         <button

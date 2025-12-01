@@ -45,45 +45,59 @@ function PrivacyConsentForm() {
         <Ariakit.FormGroupLabel className="legend">
           Communication channels
         </Ariakit.FormGroupLabel>
-        <div className="checkbox-wrapper">
-          <Ariakit.FormCheckbox
-            name={form.names.emailOptIn}
-            className="checkbox"
-          />
-          <label className="label">Email updates</label>
-        </div>
-        <div className="checkbox-wrapper">
-          <Ariakit.FormCheckbox
-            name={form.names.smsOptIn}
-            className="checkbox"
-          />
-          <label className="label">SMS notifications</label>
-        </div>
-        <div className="checkbox-wrapper">
-          <Ariakit.FormCheckbox
-            name={form.names.phoneOptIn}
-            className="checkbox"
-          />
-          <label className="label">Phone calls</label>
+        <div className="checkbox-group">
+          <div className="checkbox-wrapper">
+            <Ariakit.FormCheckbox
+              name={form.names.emailOptIn}
+              className="checkbox"
+            />
+            <Ariakit.FormLabel name={form.names.emailOptIn} className="label">
+              Email updates
+            </Ariakit.FormLabel>
+          </div>
+          <div className="checkbox-wrapper">
+            <Ariakit.FormCheckbox
+              name={form.names.smsOptIn}
+              className="checkbox"
+            />
+            <Ariakit.FormLabel name={form.names.smsOptIn} className="label">
+              SMS notifications
+            </Ariakit.FormLabel>
+          </div>
+          <div className="checkbox-wrapper">
+            <Ariakit.FormCheckbox
+              name={form.names.phoneOptIn}
+              className="checkbox"
+            />
+            <Ariakit.FormLabel name={form.names.phoneOptIn} className="label">
+              Phone calls
+            </Ariakit.FormLabel>
+          </div>
         </div>
       </Ariakit.FormGroup>
       <Ariakit.FormGroup className="fieldset">
         <Ariakit.FormGroupLabel className="legend">
           Privacy options
         </Ariakit.FormGroupLabel>
-        <div className="checkbox-wrapper">
-          <Ariakit.FormCheckbox
-            name={form.names.analytics}
-            className="checkbox"
-          />
-          <label className="label">Allow analytics cookies</label>
-        </div>
-        <div className="checkbox-wrapper">
-          <Ariakit.FormCheckbox
-            name={form.names.personalization}
-            className="checkbox"
-          />
-          <label className="label">Allow personalized content</label>
+        <div className="checkbox-group">
+          <div className="checkbox-wrapper">
+            <Ariakit.FormCheckbox
+              name={form.names.analytics}
+              className="checkbox"
+            />
+            <Ariakit.FormLabel name={form.names.analytics} className="label">
+              Allow analytics cookies
+            </Ariakit.FormLabel>
+          </div>
+          <div className="checkbox-wrapper">
+            <Ariakit.FormCheckbox
+              name={form.names.personalization}
+              className="checkbox"
+            />
+            <Ariakit.FormLabel name={form.names.personalization} className="label">
+              Allow personalized content
+            </Ariakit.FormLabel>
+          </div>
         </div>
       </Ariakit.FormGroup>
       <Ariakit.FormGroup className="form-field">
