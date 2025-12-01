@@ -1,4 +1,5 @@
 import '@cloudscape-design/global-styles/index.css'
+import { applyMode, Mode } from '@cloudscape-design/global-styles'
 
 
 import { useState, useEffect } from 'react'
@@ -61,20 +62,16 @@ function App() {
     return params.get('theme') === 'dark' ? 'dark' : 'light'
   })
 
-  // Apply theme on mount and when it changes
+  // Apply theme on mount and when it changes using Cloudscape's applyMode
   useEffect(() => {
-    // Check URL for theme parameter
-    const params = new URLSearchParams(window.location.search)
-    const urlTheme = params.get('theme')
-
-    if (urlTheme === 'dark' || theme === 'dark') {
-      document.body.classList.add('dark')
-      document.body.style.backgroundColor = '#1a1a2e'
-      document.body.style.color = '#ffffff'
+    if (theme === 'dark') {
+      applyMode(Mode.Dark)
+      document.body.style.backgroundColor = '#0f1b2a'
+      document.body.style.color = '#d1d5db'
     } else {
-      document.body.classList.remove('dark')
-      document.body.style.backgroundColor = ''
-      document.body.style.color = ''
+      applyMode(Mode.Light)
+      document.body.style.backgroundColor = '#ffffff'
+      document.body.style.color = '#000716'
     }
   }, [theme])
 
