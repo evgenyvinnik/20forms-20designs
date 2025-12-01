@@ -3,12 +3,14 @@
 /**
  * Build All Script
  * 
- * This script builds all apps in the monorepo:
+ * This script builds apps in the monorepo:
  * 1. Builds the shell app
- * 2. Builds all mini-apps in parallel (with concurrency limit)
+ * 2. Builds apps in parallel (with concurrency limit)
  * 3. Copies all builds to the dist directory
  * 
- * Usage: node scripts/build-all.mjs
+ * Usage: 
+ *   node scripts/build-all.mjs              # Build all apps (legacy mini-apps + consolidated)
+ *   node scripts/build-all.mjs --consolidated  # Build only consolidated apps (recommended)
  */
 
 import { spawn } from 'child_process';
@@ -23,6 +25,18 @@ const APPS_DIR = path.join(ROOT_DIR, 'apps');
 
 // Maximum concurrent builds (increase based on CPU cores - typically 8-12 is safe)
 const MAX_CONCURRENCY = 12;
+
+// Consolidated app names (one per design system)
+const CONSOLIDATED_APPS = [
+  'mui', 'chakra', 'antd', 'react-bootstrap', 'evergreen', 'blueprint',
+  'radix-ui', 'gravity-ui', 'react-no-css', 'cloudscape', 'daisyui',
+  'shadcn-ui', 'gestalt', 'polaris', 'elastic-ui', 'zendesk-garden',
+  'tamagui', 'uswds', 'primereact', 'webawesome', 'arco-design', 'carbon',
+  'ariakit', 'baseweb', 'atlaskit', 'braid', 'fluent-ui', 'mantine',
+  'coreui', 'grommet', 'flowbite-react', 'semantic-ui', 'primer', 'rsuite',
+  'patternfly', 'theme-ui', 'slds', 'material-tailwind',
+  'react-spectrum', 'orbit', 'semi-design', 'headlessui'
+];
 
 /**
  * Run a command in a directory
@@ -119,15 +133,29 @@ function getAppDirectories() {
  * Main execution
  */
 async function main() {
-  console.log('🚀 Building all apps...\n');
+  const args = process.argv.slice(2);
+  const consolidatedOnly = args.includes('--consolidated');
+
+  if (consolidatedOnly) {
+    console.log('🚀 Building consolidated apps only...\n');
+  } else {
+    console.log('🚀 Building all apps...\n');
+  }
   const startTime = Date.now();
 
   // Get all apps
   const allApps = getAppDirectories();
   const shellApp = allApps.find(app => app === 'shell');
-  const miniApps = allApps.filter(app => app !== 'shell');
-
-  console.log(`Found ${allApps.length} apps (1 shell + ${miniApps.length} mini-apps)\n`);
+  
+  let appsToBuild;
+  if (consolidatedOnly) {
+    // Only build consolidated apps (no hyphen in name, not shell)
+    appsToBuild = CONSOLIDATED_APPS.filter(app => allApps.includes(app));
+    console.log(`Found ${appsToBuild.length} consolidated apps to build\n`);
+  } else {
+    appsToBuild = allApps.filter(app => app !== 'shell');
+    console.log(`Found ${allApps.length} apps (1 shell + ${appsToBuild.length} mini-apps)\n`);
+  }
 
   // Build shell first
   if (shellApp) {
@@ -140,9 +168,9 @@ async function main() {
     console.log('');
   }
 
-  // Build mini-apps in parallel
-  console.log(`📦 Building ${miniApps.length} mini-apps (concurrency: ${MAX_CONCURRENCY})...\n`);
-  const results = await buildWithConcurrency(miniApps, MAX_CONCURRENCY);
+  // Build apps in parallel
+  console.log(`📦 Building ${appsToBuild.length} apps (concurrency: ${MAX_CONCURRENCY})...\n`);
+  const results = await buildWithConcurrency(appsToBuild, MAX_CONCURRENCY);
 
   // Summary
   const successful = results.filter(r => r.success).length;

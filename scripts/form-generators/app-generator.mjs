@@ -10,8 +10,6 @@ export function generateAppJsx(library, form) {
       return generateFlowbiteApp(library, form)
     case 'fluent-ui':
       return generateFluentUIApp(library, form)
-    case 'gluestack-ui':
-      return generateGluestackApp(library, form)
     case 'grommet':
       return generateGrommetApp(library, form)
     case 'headless-ui':
@@ -164,44 +162,6 @@ function App() {
         <FormComponent />
       </div>
     </FluentProvider>
-  )
-}
-
-export default App
-`
-}
-
-function generateGluestackApp(library, form) {
-  return `import { useState, useEffect } from 'react'
-import { GluestackUIProvider, Box } from '@gluestack-ui/themed'
-import FormComponent from './form/${form.name}'
-
-function App() {
-  const [theme, setTheme] = useState(() => {
-    const params = new URLSearchParams(window.location.search)
-    return params.get('theme') === 'dark' ? 'dark' : 'light'
-  })
-
-  useEffect(() => {
-    const handleMessage = (event) => {
-      if (event.data?.type === 'SET_THEME') {
-        setTheme(event.data.theme)
-      }
-    }
-    window.addEventListener('message', handleMessage)
-    return () => window.removeEventListener('message', handleMessage)
-  }, [])
-
-  return (
-    <GluestackUIProvider colorMode={theme}>
-      <Box
-        p="$4"
-        bg={theme === 'dark' ? '$backgroundDark900' : '$backgroundLight0'}
-        sx={{ minHeight: '100vh' }}
-      >
-        <FormComponent theme={theme} />
-      </Box>
-    </GluestackUIProvider>
   )
 }
 

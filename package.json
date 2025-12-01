@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "dev:shell": "npm run dev --workspace=@forms-comparison/shell",
-    "build": "node scripts/build-all.mjs",
+    "build": "node scripts/build-all.mjs --consolidated",
+    "build:all": "node scripts/build-all.mjs",
     "build:shell": "npm run build --workspace=@forms-comparison/shell",
     "build:copy": "node scripts/copy-builds-to-dist.mjs",
     "preview": "node scripts/serve-preview.mjs",
