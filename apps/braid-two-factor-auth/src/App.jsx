@@ -2,41 +2,30 @@ import { useState, useEffect } from 'react'
 import 'braid-design-system/reset'
 import { BraidProvider, Box } from 'braid-design-system'
 import apacTheme from 'braid-design-system/themes/apac'
-import FormComponent from './form/TwoFactorAuthForm'
-
-import { darkMode } from 'braid-design-system/css'
+import TwoFactorAuthForm from './form/TwoFactorAuthForm'
 
 function App() {
-  const [theme, setTheme] = useState(() => {
-    const params = new URLSearchParams(window.location.search)
-    return params.get('theme') === 'dark' ? 'dark' : 'light'
-  })
+  const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
     const handleMessage = (event) => {
-      if (event.data?.type === 'SET_THEME') {
-        setTheme(event.data.theme)
+      if (event.data.type === 'theme-change') {
+        setDarkMode(event.data.darkMode)
+        if (event.data.darkMode) {
+          document.documentElement.classList.add('darkMode')
+        } else {
+          document.documentElement.classList.remove('darkMode')
+        }
       }
     }
     window.addEventListener('message', handleMessage)
     return () => window.removeEventListener('message', handleMessage)
   }, [])
 
-  useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add(darkMode)
-    } else {
-      document.documentElement.classList.remove(darkMode)
-    }
-  }, [theme])
-
   return (
     <BraidProvider theme={apacTheme}>
-      <Box
-        padding="medium"
-        background={theme === 'dark' ? 'surfaceDark' : 'surface'}
-      >
-        <FormComponent />
+      <Box padding="large">
+        <TwoFactorAuthForm />
       </Box>
     </BraidProvider>
   )
