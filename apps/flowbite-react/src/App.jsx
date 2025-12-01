@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { Flowbite } from 'flowbite-react'
 
 // Import all form components
 import AdvancedSearchForm from './forms/AdvancedSearchForm'
@@ -88,13 +87,11 @@ function App() {
   const FormComponent = FORM_COMPONENTS[formId] || FORM_COMPONENTS['user-login']
 
   return (
-    <Flowbite>
-      <div
-        className={`p-4 min-h-screen ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}
-      >
-        <FormComponent />
-      </div>
-    </Flowbite>
+    <div
+      className={`p-4 min-h-screen ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}
+    >
+      <FormComponent />
+    </div>
   )
 }
 

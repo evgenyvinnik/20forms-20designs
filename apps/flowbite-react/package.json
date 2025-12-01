@@ -11,7 +11,7 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "flowbite-react": "^0.10.2"
+    "flowbite-react": "^0.12.10"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.8",
