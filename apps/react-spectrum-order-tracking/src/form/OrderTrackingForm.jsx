@@ -15,12 +15,7 @@ function OrderTrackingForm() {
           type="text"
           isRequired
         />
-        <TextField
-          label="Email address"
-          name="email"
-          type="email"
-          isRequired
-        />
+        <TextField label="Email address" name="email" type="email" isRequired />
         <TextField
           label="Postal code"
           name="postalCode"

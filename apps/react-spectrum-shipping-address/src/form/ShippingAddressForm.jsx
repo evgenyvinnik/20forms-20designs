@@ -1,5 +1,13 @@
 import { useState } from 'react'
-import { Form, TextField, Picker, Item, Checkbox, Button, Flex } from '@adobe/react-spectrum'
+import {
+  Form,
+  TextField,
+  Picker,
+  Item,
+  Checkbox,
+  Button,
+  Flex,
+} from '@adobe/react-spectrum'
 
 const US_STATES = [
   { key: 'AL', label: 'Alabama' },
@@ -95,17 +103,8 @@ function ShippingAddressForm() {
           type="text"
           isRequired
         />
-        <TextField
-          label="Apartment, suite, etc."
-          name="street2"
-          type="text"
-        />
-        <TextField
-          label="City"
-          name="city"
-          type="text"
-          isRequired
-        />
+        <TextField label="Apartment, suite, etc." name="street2" type="text" />
+        <TextField label="City" name="city" type="text" isRequired />
         <Picker
           label="Country"
           selectedKey={country}

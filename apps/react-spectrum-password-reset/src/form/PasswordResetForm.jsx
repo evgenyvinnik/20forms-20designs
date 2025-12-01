@@ -10,12 +10,7 @@ function PasswordResetForm() {
     <Form onSubmit={handleSubmit}>
       <Flex direction="column" gap="size-200">
         <Text>Request a password reset link via email.</Text>
-        <TextField
-          label="Email address"
-          name="email"
-          type="email"
-          isRequired
-        />
+        <TextField label="Email address" name="email" type="email" isRequired />
         <Button type="submit" variant="accent">
           Send reset link
         </Button>

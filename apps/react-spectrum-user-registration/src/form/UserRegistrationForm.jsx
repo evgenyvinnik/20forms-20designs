@@ -9,18 +9,8 @@ function UserRegistrationForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <Flex direction="column" gap="size-200">
-        <TextField
-          label="Full name"
-          name="fullName"
-          type="text"
-          isRequired
-        />
-        <TextField
-          label="Email address"
-          name="email"
-          type="email"
-          isRequired
-        />
+        <TextField label="Full name" name="fullName" type="text" isRequired />
+        <TextField label="Email address" name="email" type="email" isRequired />
         <TextField
           label="Username"
           name="username"

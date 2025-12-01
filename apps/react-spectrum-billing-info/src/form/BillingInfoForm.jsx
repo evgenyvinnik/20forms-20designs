@@ -1,4 +1,11 @@
-import { Form, TextField, Picker, Item, Button, Flex } from '@adobe/react-spectrum'
+import {
+  Form,
+  TextField,
+  Picker,
+  Item,
+  Button,
+  Flex,
+} from '@adobe/react-spectrum'
 
 function BillingInfoForm() {
   const handleSubmit = (event) => {
