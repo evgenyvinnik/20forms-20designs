@@ -15,6 +15,7 @@
     "@zendeskgarden/react-forms": "^9.12.2",
     "@zendeskgarden/react-buttons": "^9.12.2",
     "@zendeskgarden/react-grid": "^9.12.2",
+    "@zendeskgarden/react-typography": "^9.12.2",
     "styled-components": "^5.3.11"
   },
   "devDependencies": {

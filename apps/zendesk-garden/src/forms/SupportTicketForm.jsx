@@ -8,6 +8,7 @@ import {
 } from '@zendeskgarden/react-forms'
 import { Button } from '@zendeskgarden/react-buttons'
 import { Grid, Row, Col } from '@zendeskgarden/react-grid'
+import { SM } from '@zendeskgarden/react-typography'
 
 function SupportTicketForm() {
   const [subject, setSubject] = useState('')
@@ -38,9 +39,9 @@ function SupportTicketForm() {
         <Row style={{ marginTop: '16px' }}>
           <Col>
             <fieldset style={{ border: 'none', padding: 0, margin: 0 }}>
-              <legend style={{ fontWeight: 'bold', marginBottom: '8px' }}>
+              <SM isBold tag="div" style={{ marginBottom: '8px' }}>
                 Priority
-              </legend>
+              </SM>
               <Field style={{ marginBottom: '8px' }}>
                 <Radio
                   name="priority"

@@ -9,6 +9,7 @@ import {
 } from '@zendeskgarden/react-forms'
 import { Button } from '@zendeskgarden/react-buttons'
 import { Grid, Row, Col } from '@zendeskgarden/react-grid'
+import { MD } from '@zendeskgarden/react-typography'
 
 function OnboardingWizardForm() {
   const [email, setEmail] = useState('')
@@ -28,7 +29,7 @@ function OnboardingWizardForm() {
       <Grid>
         <Row>
           <Col>
-            <h3>Step 1: Account</h3>
+            <MD isBold tag="div">Step 1: Account</MD>
           </Col>
         </Row>
 
@@ -63,7 +64,7 @@ function OnboardingWizardForm() {
 
         <Row style={{ marginTop: '24px' }}>
           <Col>
-            <h3>Step 2: Team</h3>
+            <MD isBold tag="div">Step 2: Team</MD>
           </Col>
         </Row>
 
@@ -101,7 +102,7 @@ function OnboardingWizardForm() {
 
         <Row style={{ marginTop: '24px' }}>
           <Col>
-            <h3>Step 3: Preferences</h3>
+            <MD isBold tag="div">Step 3: Preferences</MD>
           </Col>
         </Row>
 

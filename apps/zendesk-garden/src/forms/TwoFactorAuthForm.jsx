@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react'
 import { Field, Label, Input } from '@zendeskgarden/react-forms'
 import { Button } from '@zendeskgarden/react-buttons'
 import { Grid, Row, Col } from '@zendeskgarden/react-grid'
+import { Paragraph } from '@zendeskgarden/react-typography'
 
 function TwoFactorAuthForm() {
   const [code, setCode] = useState('')
@@ -17,7 +18,9 @@ function TwoFactorAuthForm() {
       <Grid>
         <Row>
           <Col>
-            <p>Enter the code from your authenticator app or SMS.</p>
+            <Paragraph>
+              Enter the code from your authenticator app or SMS.
+            </Paragraph>
           </Col>
         </Row>
 

@@ -8,6 +8,7 @@ import {
 } from '@zendeskgarden/react-forms'
 import { Button } from '@zendeskgarden/react-buttons'
 import { Grid, Row, Col } from '@zendeskgarden/react-grid'
+import { SM } from '@zendeskgarden/react-typography'
 
 function PrivacyConsentForm() {
   const [fullName, setFullName] = useState('')
@@ -57,9 +58,9 @@ function PrivacyConsentForm() {
         <Row style={{ marginTop: '24px' }}>
           <Col>
             <fieldset style={{ border: 'none', padding: 0, margin: 0 }}>
-              <legend style={{ fontWeight: 'bold', marginBottom: '8px' }}>
+              <SM isBold tag="div" style={{ marginBottom: '8px' }}>
                 Communication channels
-              </legend>
+              </SM>
               <Field style={{ marginBottom: '8px' }}>
                 <Checkbox
                   checked={emailOptIn}
@@ -91,9 +92,9 @@ function PrivacyConsentForm() {
         <Row style={{ marginTop: '24px' }}>
           <Col>
             <fieldset style={{ border: 'none', padding: 0, margin: 0 }}>
-              <legend style={{ fontWeight: 'bold', marginBottom: '8px' }}>
+              <SM isBold tag="div" style={{ marginBottom: '8px' }}>
                 Privacy options
-              </legend>
+              </SM>
               <Field style={{ marginBottom: '8px' }}>
                 <Checkbox
                   checked={analytics}

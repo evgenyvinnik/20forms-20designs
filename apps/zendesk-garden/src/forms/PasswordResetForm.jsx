@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react'
 import { Field, Label, Input } from '@zendeskgarden/react-forms'
 import { Button } from '@zendeskgarden/react-buttons'
 import { Grid, Row, Col } from '@zendeskgarden/react-grid'
+import { Paragraph } from '@zendeskgarden/react-typography'
 
 function PasswordResetForm() {
   const [email, setEmail] = useState('')
@@ -16,7 +17,7 @@ function PasswordResetForm() {
       <Grid>
         <Row>
           <Col>
-            <p>Request a password reset link via email.</p>
+            <Paragraph>Request a password reset link via email.</Paragraph>
           </Col>
         </Row>
 
