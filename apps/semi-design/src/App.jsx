@@ -1,6 +1,5 @@
-
+import './styles.css'
 import { useState, useEffect } from 'react'
-
 
 // Import all form components
 import AdvancedSearchForm from './forms/AdvancedSearchForm'
@@ -65,14 +64,11 @@ function App() {
     const params = new URLSearchParams(window.location.search)
     const urlTheme = params.get('theme')
 
+    // Semi Design uses theme-mode attribute on body for dark mode
     if (urlTheme === 'dark' || theme === 'dark') {
-      document.body.classList.add('dark')
-      document.body.style.backgroundColor = '#1a1a2e'
-      document.body.style.color = '#ffffff'
+      document.body.setAttribute('theme-mode', 'dark')
     } else {
-      document.body.classList.remove('dark')
-      document.body.style.backgroundColor = ''
-      document.body.style.color = ''
+      document.body.removeAttribute('theme-mode')
     }
   }, [theme])
 
