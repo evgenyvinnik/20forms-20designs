@@ -1,5 +1,8 @@
+#!/usr/bin/env node
+
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const includedExtensions = new Set([
   '.js',
@@ -17,20 +20,37 @@ const includedExtensions = new Set([
 ]);
 
 const ignoredDirectories = new Set([
-  'node_modules',
+  '.cache',
   '.git',
-  'dist',
-  'build',
+  '.husky',
+  '.idea',
   '.next',
-  'coverage',
+  '.pnpm-store',
+  '.svelte-kit',
+  '.tamagui',
   '.turbo',
   '.vercel',
-  '.cache',
-  '.husky',
+  '.vitepress',
   '.vscode',
-  '.idea',
-  '.tamagui',
+  '.yarn',
+  'build',
+  'coverage',
+  'dist',
+  'node_modules',
+  'out',
+  'storybook-static',
+  'temp',
+  'tmp',
 ]);
+
+const ignoredFiles = new Set([
+  'package-lock.json',
+  'pnpm-lock.yaml',
+  'yarn.lock',
+]);
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 function isBinary(buffer) {
   return buffer.includes(0);
@@ -63,6 +83,7 @@ function walk(directory) {
         perExtension.set(ext, (perExtension.get(ext) ?? 0) + count);
       }
     } else {
+      if (ignoredFiles.has(entry.name)) continue;
       const ext = path.extname(entry.name).toLowerCase();
       if (!includedExtensions.has(ext)) continue;
       const count = countFileLines(fullPath);
@@ -75,9 +96,11 @@ function walk(directory) {
 }
 
 function main() {
-  const root = process.cwd();
+  const rootArg = process.argv[2];
+  const root = rootArg ? path.resolve(rootArg) : path.resolve(__dirname, '..');
   const { total, perExtension } = walk(root);
 
+  console.log(`Calculating SLOC from ${root}`);
   console.log('SLOC by extension (non-empty lines):');
   const sorted = [...perExtension.entries()].sort((a, b) => b[1] - a[1]);
   for (const [ext, count] of sorted) {
