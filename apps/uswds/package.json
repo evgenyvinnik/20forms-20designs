@@ -1,0 +1,22 @@
+{
+  "name": "@forms-comparison/uswds",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@trussworks/react-uswds": "^10.2.0",
+    "focus-trap-react": "^10.3.1",
+    "@uswds/uswds": "^3.10.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.1",
+    "vite": "^7.2.4"
+  }
+}
