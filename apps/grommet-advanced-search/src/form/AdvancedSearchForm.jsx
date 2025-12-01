@@ -1,4 +1,14 @@
-import { Box, Button, CheckBox, DateInput, Form, FormField, Heading, Select, TextInput } from 'grommet'
+import {
+  Box,
+  Button,
+  CheckBox,
+  DateInput,
+  Form,
+  FormField,
+  Heading,
+  Select,
+  TextInput,
+} from 'grommet'
 
 function AdvancedSearchForm() {
   const handleSubmit = (event) => {
@@ -12,7 +22,9 @@ function AdvancedSearchForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Heading level={3} margin={{ bottom: 'medium' }}>Advanced Search</Heading>
+      <Heading level={3} margin={{ bottom: 'medium' }}>
+        Advanced Search
+      </Heading>
 
       <FormField
         label="Search query"
@@ -52,11 +64,7 @@ function AdvancedSearchForm() {
         />
       </FormField>
 
-      <FormField
-        label="Date to"
-        name="dateTo"
-        htmlFor="grommet-search-date-to"
-      >
+      <FormField label="Date to" name="dateTo" htmlFor="grommet-search-date-to">
         <DateInput
           id="grommet-search-date-to"
           name="dateTo"
@@ -64,15 +72,17 @@ function AdvancedSearchForm() {
         />
       </FormField>
 
-      <FormField
-        label="Sort by"
-        name="sortBy"
-        htmlFor="grommet-search-sort"
-      >
+      <FormField label="Sort by" name="sortBy" htmlFor="grommet-search-sort">
         <Select
           id="grommet-search-sort"
           name="sortBy"
-          options={['Relevance', 'Date: Newest', 'Date: Oldest', 'Name: A-Z', 'Name: Z-A']}
+          options={[
+            'Relevance',
+            'Date: Newest',
+            'Date: Oldest',
+            'Name: A-Z',
+            'Name: Z-A',
+          ]}
           placeholder="Select sort order"
         />
       </FormField>

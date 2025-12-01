@@ -1,4 +1,13 @@
-import { Box, Button, CheckBox, Form, FormField, Select, TextArea, TextInput } from 'grommet'
+import {
+  Box,
+  Button,
+  CheckBox,
+  Form,
+  FormField,
+  Select,
+  TextArea,
+  TextInput,
+} from 'grommet'
 
 function ContactInquiryForm() {
   const handleSubmit = (event) => {
@@ -14,11 +23,7 @@ function ContactInquiryForm() {
         htmlFor="grommet-contact-name"
         required
       >
-        <TextInput
-          id="grommet-contact-name"
-          name="fullName"
-          type="text"
-        />
+        <TextInput id="grommet-contact-name" name="fullName" type="text" />
       </FormField>
       <FormField
         label="Email address"
@@ -26,11 +31,7 @@ function ContactInquiryForm() {
         htmlFor="grommet-contact-email"
         required
       >
-        <TextInput
-          id="grommet-contact-email"
-          name="email"
-          type="email"
-        />
+        <TextInput id="grommet-contact-email" name="email" type="email" />
       </FormField>
       <FormField
         label="Topic"
@@ -51,11 +52,7 @@ function ContactInquiryForm() {
         htmlFor="grommet-contact-message"
         required
       >
-        <TextArea
-          id="grommet-contact-message"
-          name="message"
-          rows={4}
-        />
+        <TextArea id="grommet-contact-message" name="message" rows={4} />
       </FormField>
       <FormField name="consent" htmlFor="grommet-contact-consent">
         <CheckBox

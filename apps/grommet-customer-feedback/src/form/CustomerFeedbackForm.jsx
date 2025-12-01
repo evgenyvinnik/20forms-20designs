@@ -1,4 +1,13 @@
-import { Box, Button, CheckBox, Form, FormField, Select, TextArea, TextInput } from 'grommet'
+import {
+  Box,
+  Button,
+  CheckBox,
+  Form,
+  FormField,
+  Select,
+  TextArea,
+  TextInput,
+} from 'grommet'
 
 function CustomerFeedbackForm() {
   const handleSubmit = (event) => {
@@ -14,11 +23,7 @@ function CustomerFeedbackForm() {
         htmlFor="grommet-feedback-name"
         required
       >
-        <TextInput
-          id="grommet-feedback-name"
-          name="name"
-          type="text"
-        />
+        <TextInput id="grommet-feedback-name" name="name" type="text" />
       </FormField>
       <FormField
         label="Email address"
@@ -26,11 +31,7 @@ function CustomerFeedbackForm() {
         htmlFor="grommet-feedback-email"
         required
       >
-        <TextInput
-          id="grommet-feedback-email"
-          name="email"
-          type="email"
-        />
+        <TextInput id="grommet-feedback-email" name="email" type="email" />
       </FormField>
       <FormField
         label="Overall rating"
@@ -51,11 +52,7 @@ function CustomerFeedbackForm() {
         htmlFor="grommet-feedback-comments"
         required
       >
-        <TextArea
-          id="grommet-feedback-comments"
-          name="comments"
-          rows={4}
-        />
+        <TextArea id="grommet-feedback-comments" name="comments" rows={4} />
       </FormField>
       <FormField name="followUp" htmlFor="grommet-feedback-followup">
         <CheckBox
