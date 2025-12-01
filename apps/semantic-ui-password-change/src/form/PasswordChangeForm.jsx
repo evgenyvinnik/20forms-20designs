@@ -32,10 +32,7 @@ function PasswordChangeForm({ inverted }) {
         minLength={8}
       />
       <Form.Field>
-        <Checkbox
-          name="logoutOthers"
-          label="Sign out of other devices"
-        />
+        <Checkbox name="logoutOthers" label="Sign out of other devices" />
       </Form.Field>
       <Button type="submit" primary>
         Update password

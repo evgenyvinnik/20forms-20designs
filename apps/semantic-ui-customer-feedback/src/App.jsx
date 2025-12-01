@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import 'semantic-ui-css/semantic.min.css'
-import FormComponent from './form/PasswordChangeForm'
+import FormComponent from './form/CustomerFeedbackForm'
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -32,10 +32,7 @@ function App() {
 
   return (
     <div style={theme === 'dark' ? darkStyles : lightStyles}>
-      <div
-        className={theme === 'dark' ? 'ui inverted segment' : 'ui segment'}
-        style={{ margin: 0, borderRadius: 0, minHeight: '100vh' }}
-      >
+      <div className={theme === 'dark' ? 'ui inverted segment' : 'ui segment'} style={{ margin: 0, borderRadius: 0, minHeight: '100vh' }}>
         <div style={{ padding: '16px' }}>
           <FormComponent inverted={theme === 'dark'} />
         </div>
