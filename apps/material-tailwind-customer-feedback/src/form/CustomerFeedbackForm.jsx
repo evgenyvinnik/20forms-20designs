@@ -1,5 +1,11 @@
 import { useState } from 'react'
-import { Input, Button, Textarea, Checkbox, Typography } from '@material-tailwind/react'
+import {
+  Input,
+  Button,
+  Textarea,
+  Checkbox,
+  Typography,
+} from '@material-tailwind/react'
 
 function CustomerFeedbackForm() {
   const [rating, setRating] = useState('')
@@ -12,7 +18,10 @@ function CustomerFeedbackForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div>
-        <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+        <Typography
+          variant="small"
+          className="mb-1 font-medium text-gray-900 dark:text-white"
+        >
           Name
         </Typography>
         <Input
@@ -21,11 +30,14 @@ function CustomerFeedbackForm() {
           type="text"
           required
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+        <Typography
+          variant="small"
+          className="mb-1 font-medium text-gray-900 dark:text-white"
+        >
           Email address
         </Typography>
         <Input
@@ -34,11 +46,14 @@ function CustomerFeedbackForm() {
           type="email"
           required
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+        <Typography
+          variant="small"
+          className="mb-1 font-medium text-gray-900 dark:text-white"
+        >
           Overall rating
         </Typography>
         <select
@@ -57,7 +72,10 @@ function CustomerFeedbackForm() {
         </select>
       </div>
       <div>
-        <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+        <Typography
+          variant="small"
+          className="mb-1 font-medium text-gray-900 dark:text-white"
+        >
           Comments
         </Typography>
         <Textarea
@@ -66,7 +84,7 @@ function CustomerFeedbackForm() {
           rows={4}
           required
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div className="flex items-center gap-2">

@@ -28,7 +28,9 @@ function App() {
   }, [theme])
 
   return (
-    <div className={`min-h-screen p-4 ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}>
+    <div
+      className={`min-h-screen p-4 ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}
+    >
       <FormComponent />
     </div>
   )

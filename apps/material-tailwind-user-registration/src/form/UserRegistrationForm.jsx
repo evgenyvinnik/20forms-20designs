@@ -9,7 +9,11 @@ function UserRegistrationForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Full name
         </Typography>
         <Input
@@ -19,11 +23,15 @@ function UserRegistrationForm() {
           required
           placeholder="Enter your full name"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Email address
         </Typography>
         <Input
@@ -33,11 +41,15 @@ function UserRegistrationForm() {
           required
           placeholder="Enter your email"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Username
         </Typography>
         <Input
@@ -48,11 +60,15 @@ function UserRegistrationForm() {
           minLength={3}
           placeholder="Choose a username"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Password
         </Typography>
         <Input
@@ -63,11 +79,15 @@ function UserRegistrationForm() {
           minLength={8}
           placeholder="Create a password"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Confirm password
         </Typography>
         <Input
@@ -78,18 +98,22 @@ function UserRegistrationForm() {
           minLength={8}
           placeholder="Confirm your password"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <Checkbox
         name="terms"
         required
         label={
-          <Typography variant="small" color="gray" className="font-normal dark:text-gray-300">
+          <Typography
+            variant="small"
+            color="gray"
+            className="font-normal dark:text-gray-300"
+          >
             I agree to the terms and conditions
           </Typography>
         }
-        containerProps={{ className: "-ml-2.5" }}
+        containerProps={{ className: '-ml-2.5' }}
       />
       <Button type="submit" color="blue">
         Create account

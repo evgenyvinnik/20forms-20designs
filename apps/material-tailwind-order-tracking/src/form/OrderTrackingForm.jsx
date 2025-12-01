@@ -9,7 +9,10 @@ function OrderTrackingForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div>
-        <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+        <Typography
+          variant="small"
+          className="mb-1 font-medium text-gray-900 dark:text-white"
+        >
           Order number
         </Typography>
         <Input
@@ -20,11 +23,14 @@ function OrderTrackingForm() {
           pattern="[A-Za-z0-9-]{6,20}"
           placeholder="e.g., ORD-123456"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+        <Typography
+          variant="small"
+          className="mb-1 font-medium text-gray-900 dark:text-white"
+        >
           Email address
         </Typography>
         <Input
@@ -33,11 +39,14 @@ function OrderTrackingForm() {
           type="email"
           required
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+        <Typography
+          variant="small"
+          className="mb-1 font-medium text-gray-900 dark:text-white"
+        >
           Postal code
         </Typography>
         <Input
@@ -46,7 +55,7 @@ function OrderTrackingForm() {
           type="text"
           required
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <Button type="submit" className="mt-2">

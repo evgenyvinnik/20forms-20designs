@@ -9,7 +9,11 @@ function UserLoginForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Email or username
         </Typography>
         <Input
@@ -20,12 +24,16 @@ function UserLoginForm() {
           placeholder="Enter your email or username"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{
-            className: "hidden",
+            className: 'hidden',
           }}
         />
       </div>
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Password
         </Typography>
         <Input
@@ -36,18 +44,22 @@ function UserLoginForm() {
           placeholder="Enter your password"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{
-            className: "hidden",
+            className: 'hidden',
           }}
         />
       </div>
       <Checkbox
         name="remember"
         label={
-          <Typography variant="small" color="gray" className="font-normal dark:text-gray-300">
+          <Typography
+            variant="small"
+            color="gray"
+            className="font-normal dark:text-gray-300"
+          >
             Keep me signed in
           </Typography>
         }
-        containerProps={{ className: "-ml-2.5" }}
+        containerProps={{ className: '-ml-2.5' }}
       />
       <div className="flex gap-2">
         <Button type="submit" color="blue">

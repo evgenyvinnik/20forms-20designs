@@ -1,4 +1,10 @@
-import { Input, Button, Textarea, Checkbox, Typography } from '@material-tailwind/react'
+import {
+  Input,
+  Button,
+  Textarea,
+  Checkbox,
+  Typography,
+} from '@material-tailwind/react'
 
 function PrivacyConsentForm() {
   const handleSubmit = (event) => {
@@ -9,7 +15,10 @@ function PrivacyConsentForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div>
-        <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+        <Typography
+          variant="small"
+          className="mb-1 font-medium text-gray-900 dark:text-white"
+        >
           Full name
         </Typography>
         <Input
@@ -18,11 +27,14 @@ function PrivacyConsentForm() {
           type="text"
           required
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+        <Typography
+          variant="small"
+          className="mb-1 font-medium text-gray-900 dark:text-white"
+        >
           Email address
         </Typography>
         <Input
@@ -31,12 +43,16 @@ function PrivacyConsentForm() {
           type="email"
           required
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
 
       <fieldset className="border border-gray-300 dark:border-gray-700 rounded-md p-4">
-        <Typography as="legend" variant="small" className="font-medium text-gray-900 dark:text-white px-2">
+        <Typography
+          as="legend"
+          variant="small"
+          className="font-medium text-gray-900 dark:text-white px-2"
+        >
           Communication channels
         </Typography>
         <div className="flex flex-col gap-2 mt-2">
@@ -46,7 +62,10 @@ function PrivacyConsentForm() {
               name="emailOptIn"
               className="dark:border-gray-600"
             />
-            <Typography variant="small" className="text-gray-900 dark:text-white">
+            <Typography
+              variant="small"
+              className="text-gray-900 dark:text-white"
+            >
               Email updates
             </Typography>
           </div>
@@ -56,7 +75,10 @@ function PrivacyConsentForm() {
               name="smsOptIn"
               className="dark:border-gray-600"
             />
-            <Typography variant="small" className="text-gray-900 dark:text-white">
+            <Typography
+              variant="small"
+              className="text-gray-900 dark:text-white"
+            >
               SMS notifications
             </Typography>
           </div>
@@ -66,7 +88,10 @@ function PrivacyConsentForm() {
               name="phoneOptIn"
               className="dark:border-gray-600"
             />
-            <Typography variant="small" className="text-gray-900 dark:text-white">
+            <Typography
+              variant="small"
+              className="text-gray-900 dark:text-white"
+            >
               Phone calls
             </Typography>
           </div>
@@ -74,7 +99,11 @@ function PrivacyConsentForm() {
       </fieldset>
 
       <fieldset className="border border-gray-300 dark:border-gray-700 rounded-md p-4">
-        <Typography as="legend" variant="small" className="font-medium text-gray-900 dark:text-white px-2">
+        <Typography
+          as="legend"
+          variant="small"
+          className="font-medium text-gray-900 dark:text-white px-2"
+        >
           Privacy options
         </Typography>
         <div className="flex flex-col gap-2 mt-2">
@@ -84,7 +113,10 @@ function PrivacyConsentForm() {
               name="analytics"
               className="dark:border-gray-600"
             />
-            <Typography variant="small" className="text-gray-900 dark:text-white">
+            <Typography
+              variant="small"
+              className="text-gray-900 dark:text-white"
+            >
               Allow analytics cookies
             </Typography>
           </div>
@@ -94,7 +126,10 @@ function PrivacyConsentForm() {
               name="personalization"
               className="dark:border-gray-600"
             />
-            <Typography variant="small" className="text-gray-900 dark:text-white">
+            <Typography
+              variant="small"
+              className="text-gray-900 dark:text-white"
+            >
               Allow personalized content
             </Typography>
           </div>
@@ -102,7 +137,10 @@ function PrivacyConsentForm() {
       </fieldset>
 
       <div>
-        <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+        <Typography
+          variant="small"
+          className="mb-1 font-medium text-gray-900 dark:text-white"
+        >
           Additional notes
         </Typography>
         <Textarea
@@ -110,7 +148,7 @@ function PrivacyConsentForm() {
           name="notes"
           rows={3}
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
 

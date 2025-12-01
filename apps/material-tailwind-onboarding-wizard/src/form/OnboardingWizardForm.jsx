@@ -1,5 +1,11 @@
 import { useState } from 'react'
-import { Input, Button, Textarea, Checkbox, Typography } from '@material-tailwind/react'
+import {
+  Input,
+  Button,
+  Textarea,
+  Checkbox,
+  Typography,
+} from '@material-tailwind/react'
 
 function OnboardingWizardForm() {
   const [step, setStep] = useState(1)
@@ -14,12 +20,18 @@ function OnboardingWizardForm() {
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       {step === 1 && (
         <section>
-          <Typography variant="h6" className="mb-4 text-gray-900 dark:text-white">
+          <Typography
+            variant="h6"
+            className="mb-4 text-gray-900 dark:text-white"
+          >
             Account
           </Typography>
           <div className="flex flex-col gap-4">
             <div>
-              <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+              <Typography
+                variant="small"
+                className="mb-1 font-medium text-gray-900 dark:text-white"
+              >
                 Work email
               </Typography>
               <Input
@@ -28,11 +40,14 @@ function OnboardingWizardForm() {
                 type="email"
                 required
                 className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-                labelProps={{ className: "hidden" }}
+                labelProps={{ className: 'hidden' }}
               />
             </div>
             <div>
-              <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+              <Typography
+                variant="small"
+                className="mb-1 font-medium text-gray-900 dark:text-white"
+              >
                 Password
               </Typography>
               <Input
@@ -42,7 +57,7 @@ function OnboardingWizardForm() {
                 required
                 minLength={8}
                 className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-                labelProps={{ className: "hidden" }}
+                labelProps={{ className: 'hidden' }}
               />
             </div>
           </div>
@@ -51,12 +66,18 @@ function OnboardingWizardForm() {
 
       {step === 2 && (
         <section>
-          <Typography variant="h6" className="mb-4 text-gray-900 dark:text-white">
+          <Typography
+            variant="h6"
+            className="mb-4 text-gray-900 dark:text-white"
+          >
             Team
           </Typography>
           <div className="flex flex-col gap-4">
             <div>
-              <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+              <Typography
+                variant="small"
+                className="mb-1 font-medium text-gray-900 dark:text-white"
+              >
                 Team name
               </Typography>
               <Input
@@ -65,11 +86,14 @@ function OnboardingWizardForm() {
                 type="text"
                 required
                 className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-                labelProps={{ className: "hidden" }}
+                labelProps={{ className: 'hidden' }}
               />
             </div>
             <div>
-              <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+              <Typography
+                variant="small"
+                className="mb-1 font-medium text-gray-900 dark:text-white"
+              >
                 Team size
               </Typography>
               <select
@@ -93,12 +117,18 @@ function OnboardingWizardForm() {
 
       {step === 3 && (
         <section>
-          <Typography variant="h6" className="mb-4 text-gray-900 dark:text-white">
+          <Typography
+            variant="h6"
+            className="mb-4 text-gray-900 dark:text-white"
+          >
             Preferences
           </Typography>
           <div className="flex flex-col gap-4">
             <div>
-              <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+              <Typography
+                variant="small"
+                className="mb-1 font-medium text-gray-900 dark:text-white"
+              >
                 Primary goal
               </Typography>
               <Textarea
@@ -107,7 +137,7 @@ function OnboardingWizardForm() {
                 rows={3}
                 required
                 className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-                labelProps={{ className: "hidden" }}
+                labelProps={{ className: 'hidden' }}
               />
             </div>
             <div className="flex items-center gap-2">
@@ -116,7 +146,10 @@ function OnboardingWizardForm() {
                 name="updates"
                 className="dark:border-gray-600"
               />
-              <Typography variant="small" className="text-gray-900 dark:text-white">
+              <Typography
+                variant="small"
+                className="text-gray-900 dark:text-white"
+              >
                 Send me product tips
               </Typography>
             </div>
@@ -139,9 +172,7 @@ function OnboardingWizardForm() {
             Next
           </Button>
         ) : (
-          <Button type="submit">
-            Finish setup
-          </Button>
+          <Button type="submit">Finish setup</Button>
         )}
       </div>
     </form>

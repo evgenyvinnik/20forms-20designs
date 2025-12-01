@@ -13,7 +13,10 @@ function AdvancedSearchForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div>
-        <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+        <Typography
+          variant="small"
+          className="mb-1 font-medium text-gray-900 dark:text-white"
+        >
           Search query
         </Typography>
         <Input
@@ -22,11 +25,14 @@ function AdvancedSearchForm() {
           type="text"
           required
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+        <Typography
+          variant="small"
+          className="mb-1 font-medium text-gray-900 dark:text-white"
+        >
           Category
         </Typography>
         <select
@@ -44,7 +50,10 @@ function AdvancedSearchForm() {
         </select>
       </div>
       <div>
-        <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+        <Typography
+          variant="small"
+          className="mb-1 font-medium text-gray-900 dark:text-white"
+        >
           Date from
         </Typography>
         <Input
@@ -52,11 +61,14 @@ function AdvancedSearchForm() {
           name="dateFrom"
           type="date"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+        <Typography
+          variant="small"
+          className="mb-1 font-medium text-gray-900 dark:text-white"
+        >
           Date to
         </Typography>
         <Input
@@ -64,11 +76,14 @@ function AdvancedSearchForm() {
           name="dateTo"
           type="date"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+        <Typography
+          variant="small"
+          className="mb-1 font-medium text-gray-900 dark:text-white"
+        >
           Sort by
         </Typography>
         <select

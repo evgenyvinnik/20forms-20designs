@@ -1,5 +1,11 @@
 import { useState } from 'react'
-import { Input, Button, Textarea, Radio, Typography } from '@material-tailwind/react'
+import {
+  Input,
+  Button,
+  Textarea,
+  Radio,
+  Typography,
+} from '@material-tailwind/react'
 
 function SupportTicketForm() {
   const [priority, setPriority] = useState('medium')
@@ -12,7 +18,10 @@ function SupportTicketForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div>
-        <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+        <Typography
+          variant="small"
+          className="mb-1 font-medium text-gray-900 dark:text-white"
+        >
           Subject
         </Typography>
         <Input
@@ -21,11 +30,15 @@ function SupportTicketForm() {
           type="text"
           required
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <fieldset>
-        <Typography as="legend" variant="small" className="mb-2 font-medium text-gray-900 dark:text-white">
+        <Typography
+          as="legend"
+          variant="small"
+          className="mb-2 font-medium text-gray-900 dark:text-white"
+        >
           Priority
         </Typography>
         <div className="flex flex-col gap-2">
@@ -37,7 +50,7 @@ function SupportTicketForm() {
             checked={priority === 'low'}
             onChange={() => setPriority('low')}
             className="dark:border-gray-600"
-            labelProps={{ className: "text-gray-900 dark:text-white" }}
+            labelProps={{ className: 'text-gray-900 dark:text-white' }}
           />
           <Radio
             id="material-tailwind-support-ticket-priority-medium"
@@ -47,7 +60,7 @@ function SupportTicketForm() {
             checked={priority === 'medium'}
             onChange={() => setPriority('medium')}
             className="dark:border-gray-600"
-            labelProps={{ className: "text-gray-900 dark:text-white" }}
+            labelProps={{ className: 'text-gray-900 dark:text-white' }}
           />
           <Radio
             id="material-tailwind-support-ticket-priority-high"
@@ -57,12 +70,15 @@ function SupportTicketForm() {
             checked={priority === 'high'}
             onChange={() => setPriority('high')}
             className="dark:border-gray-600"
-            labelProps={{ className: "text-gray-900 dark:text-white" }}
+            labelProps={{ className: 'text-gray-900 dark:text-white' }}
           />
         </div>
       </fieldset>
       <div>
-        <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+        <Typography
+          variant="small"
+          className="mb-1 font-medium text-gray-900 dark:text-white"
+        >
           Issue description
         </Typography>
         <Textarea
@@ -71,11 +87,14 @@ function SupportTicketForm() {
           rows={4}
           required
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" className="mb-1 font-medium text-gray-900 dark:text-white">
+        <Typography
+          variant="small"
+          className="mb-1 font-medium text-gray-900 dark:text-white"
+        >
           Attachments
         </Typography>
         <input

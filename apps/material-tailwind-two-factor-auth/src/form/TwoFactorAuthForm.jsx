@@ -8,11 +8,19 @@ function TwoFactorAuthForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <Typography variant="paragraph" color="gray" className="dark:text-gray-300">
+      <Typography
+        variant="paragraph"
+        color="gray"
+        className="dark:text-gray-300"
+      >
         Enter the code from your authenticator app or SMS.
       </Typography>
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Verification code
         </Typography>
         <Input
@@ -25,11 +33,15 @@ function TwoFactorAuthForm() {
           maxLength={6}
           placeholder="Enter 6-digit code"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div>
-        <Typography variant="small" color="blue-gray" className="mb-1 font-medium dark:text-white">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium dark:text-white"
+        >
           Backup code (optional)
         </Typography>
         <Input
@@ -39,7 +51,7 @@ function TwoFactorAuthForm() {
           pattern="[A-Za-z0-9]{6,12}"
           placeholder="Enter backup code"
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
-          labelProps={{ className: "hidden" }}
+          labelProps={{ className: 'hidden' }}
         />
       </div>
       <div className="flex gap-2">
