@@ -1,82 +1,87 @@
 import * as Ariakit from '@ariakit/react'
 
 function AdvancedSearchForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  const form = Ariakit.useFormStore({
+    defaultValues: {
+      keywords: '',
+      category: 'all',
+      dateFrom: '',
+      dateTo: '',
+      sortBy: 'relevance',
+    },
+  })
+
+  form.useSubmit(() => {
     alert('Search submitted!')
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit} className="form-stack">
-      <div className="form-field">
-        <label htmlFor="ariakit-search-keywords" className="label">
+    <Ariakit.Form store={form} className="form-stack">
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.keywords} className="label">
           Keywords
-        </label>
-        <input
-          id="ariakit-search-keywords"
-          name="keywords"
-          type="text"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.keywords}
           className="input"
           required
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-search-category" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.category} className="label">
           Category
-        </label>
-        <select
-          id="ariakit-search-category"
-          name="category"
-          className="select"
-          defaultValue="all"
-        >
-          <option value="all">All</option>
-          <option value="electronics">Electronics</option>
-          <option value="clothing">Clothing</option>
-          <option value="books">Books</option>
-        </select>
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-search-dateFrom" className="label">
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.category}
+          render={
+            <select className="select">
+              <option value="all">All</option>
+              <option value="electronics">Electronics</option>
+              <option value="clothing">Clothing</option>
+              <option value="books">Books</option>
+            </select>
+          }
+        />
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.dateFrom} className="label">
           Date from
-        </label>
-        <input
-          id="ariakit-search-dateFrom"
-          name="dateFrom"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.dateFrom}
           type="date"
           className="input"
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-search-dateTo" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.dateTo} className="label">
           Date to
-        </label>
-        <input
-          id="ariakit-search-dateTo"
-          name="dateTo"
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.dateTo}
           type="date"
           className="input"
         />
-      </div>
-      <div className="form-field">
-        <label htmlFor="ariakit-search-sortBy" className="label">
+      </Ariakit.FormGroup>
+      <Ariakit.FormGroup className="form-field">
+        <Ariakit.FormLabel name={form.names.sortBy} className="label">
           Sort by
-        </label>
-        <select
-          id="ariakit-search-sortBy"
-          name="sortBy"
-          className="select"
-          defaultValue="relevance"
-        >
-          <option value="relevance">Relevance</option>
-          <option value="date">Date</option>
-          <option value="price">Price</option>
-        </select>
-      </div>
-      <Ariakit.Button type="submit" className="button button-primary">
+        </Ariakit.FormLabel>
+        <Ariakit.FormInput
+          name={form.names.sortBy}
+          render={
+            <select className="select">
+              <option value="relevance">Relevance</option>
+              <option value="date">Date</option>
+              <option value="price">Price</option>
+            </select>
+          }
+        />
+      </Ariakit.FormGroup>
+      <Ariakit.FormSubmit className="button button-primary">
         Search
-      </Ariakit.Button>
-    </form>
+      </Ariakit.FormSubmit>
+    </Ariakit.Form>
   )
 }
 

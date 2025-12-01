@@ -12,7 +12,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "@atlaskit/button": "^20.3.0",
-    "@atlaskit/checkbox": "^14.1.0",
+    "@atlaskit/checkbox": "^17.1.22",
     "@atlaskit/css-reset": "^6.11.0",
     "@atlaskit/form": "^10.6.0",
     "@atlaskit/primitives": "^13.5.0",
