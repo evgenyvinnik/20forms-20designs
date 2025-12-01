@@ -1,0 +1,503 @@
+/* Headless UI Form Styles with Light/Dark Theme Support */
+
+.app-container {
+  padding: 16px;
+  min-height: 100vh;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.app-container.light {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+.app-container.dark {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+/* Form Layout */
+.form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Form Field */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Labels */
+.label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.light .label {
+  color: #374151;
+}
+
+.dark .label {
+  color: #d1d5db;
+}
+
+/* Input Fields */
+.input {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.light .input {
+  background-color: #ffffff;
+  border-color: #d1d5db;
+  color: #1a1a1a;
+}
+
+.light .input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.dark .input {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #ffffff;
+}
+
+.dark .input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+.input::placeholder {
+  color: #9ca3af;
+}
+
+/* Select / Listbox */
+.select-button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.light .select-button {
+  background-color: #ffffff;
+  border-color: #d1d5db;
+  color: #1a1a1a;
+}
+
+.light .select-button:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.dark .select-button {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #ffffff;
+}
+
+.dark .select-button:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+.select-options {
+  position: absolute;
+  z-index: 10;
+  margin-top: 4px;
+  max-height: 200px;
+  width: 100%;
+  overflow: auto;
+  border-radius: 6px;
+  border: 1px solid;
+  padding: 4px 0;
+}
+
+.light .select-options {
+  background-color: #ffffff;
+  border-color: #d1d5db;
+}
+
+.dark .select-options {
+  background-color: #374151;
+  border-color: #4b5563;
+}
+
+.select-option {
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.light .select-option {
+  color: #1a1a1a;
+}
+
+.light .select-option[data-focus] {
+  background-color: #e5e7eb;
+}
+
+.light .select-option[data-selected] {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.dark .select-option {
+  color: #ffffff;
+}
+
+.dark .select-option[data-focus] {
+  background-color: #4b5563;
+}
+
+.dark .select-option[data-selected] {
+  background-color: #1e3a5f;
+  color: #60a5fa;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-icon {
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+}
+
+.light .select-icon {
+  color: #6b7280;
+}
+
+.dark .select-icon {
+  color: #9ca3af;
+}
+
+/* Textarea */
+.textarea {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid;
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.light .textarea {
+  background-color: #ffffff;
+  border-color: #d1d5db;
+  color: #1a1a1a;
+}
+
+.light .textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.dark .textarea {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #ffffff;
+}
+
+.dark .textarea:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+/* Checkbox */
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.light .checkbox {
+  border-color: #d1d5db;
+  background-color: #ffffff;
+}
+
+.light .checkbox[data-checked] {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.dark .checkbox {
+  border-color: #4b5563;
+  background-color: #374151;
+}
+
+.dark .checkbox[data-checked] {
+  background-color: #60a5fa;
+  border-color: #60a5fa;
+}
+
+.checkbox-check {
+  width: 12px;
+  height: 12px;
+  color: white;
+}
+
+.checkbox-label {
+  font-size: 14px;
+}
+
+/* Radio Group */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.radio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.radio {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+
+.light .radio {
+  border-color: #d1d5db;
+  background-color: #ffffff;
+}
+
+.light .radio[data-checked] {
+  border-color: #3b82f6;
+}
+
+.dark .radio {
+  border-color: #4b5563;
+  background-color: #374151;
+}
+
+.dark .radio[data-checked] {
+  border-color: #60a5fa;
+}
+
+.radio-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.radio[data-checked] .radio-dot {
+  opacity: 1;
+}
+
+.light .radio-dot {
+  background-color: #3b82f6;
+}
+
+.dark .radio-dot {
+  background-color: #60a5fa;
+}
+
+.radio-label {
+  font-size: 14px;
+}
+
+/* Buttons */
+.button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.button-primary {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.button-primary:hover {
+  background-color: #2563eb;
+}
+
+.button-secondary {
+  border: 1px solid;
+}
+
+.light .button-secondary {
+  background-color: #ffffff;
+  border-color: #d1d5db;
+  color: #374151;
+}
+
+.light .button-secondary:hover {
+  background-color: #f3f4f6;
+}
+
+.dark .button-secondary {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #d1d5db;
+}
+
+.dark .button-secondary:hover {
+  background-color: #4b5563;
+}
+
+/* Fieldset */
+.fieldset {
+  border: 1px solid;
+  border-radius: 6px;
+  padding: 16px;
+  margin: 0;
+}
+
+.light .fieldset {
+  border-color: #e5e7eb;
+}
+
+.dark .fieldset {
+  border-color: #374151;
+}
+
+.legend {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 8px;
+}
+
+/* Section headers */
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.light .section-title {
+  color: #1f2937;
+}
+
+.dark .section-title {
+  color: #f3f4f6;
+}
+
+/* Section divider */
+.section {
+  padding: 16px 0;
+  border-bottom: 1px solid;
+}
+
+.light .section {
+  border-color: #e5e7eb;
+}
+
+.dark .section {
+  border-color: #374151;
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+/* Description text */
+.description {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.light .description {
+  color: #6b7280;
+}
+
+.dark .description {
+  color: #9ca3af;
+}
+
+/* File input */
+.file-input {
+  font-size: 14px;
+}
+
+.light .file-input {
+  color: #374151;
+}
+
+.dark .file-input {
+  color: #d1d5db;
+}
+
+/* Focus visible styles for accessibility */
+.button:focus-visible,
+.input:focus-visible,
+.select-button:focus-visible,
+.textarea:focus-visible,
+.checkbox:focus-visible,
+.radio:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.dark .button:focus-visible,
+.dark .input:focus-visible,
+.dark .select-button:focus-visible,
+.dark .textarea:focus-visible,
+.dark .checkbox:focus-visible,
+.dark .radio:focus-visible {
+  outline-color: #60a5fa;
+}
