@@ -1,6 +1,4 @@
-
 import { useState, useEffect } from 'react'
-
 
 // Import all form components
 import AdvancedSearchForm from './forms/AdvancedSearchForm'
@@ -48,51 +46,19 @@ const FORM_COMPONENTS = {
   'user-registration': UserRegistrationForm,
 }
 
+// Note: Evergreen UI does not support dark theme
+
 function App() {
   const [formId, setFormId] = useState(() => {
     const params = new URLSearchParams(window.location.search)
     return params.get('form') || 'user-login'
   })
 
-  const [theme, setTheme] = useState(() => {
-    const params = new URLSearchParams(window.location.search)
-    return params.get('theme') === 'dark' ? 'dark' : 'light'
-  })
-
-  // Apply theme on mount and when it changes
-  useEffect(() => {
-    // Check URL for theme parameter
-    const params = new URLSearchParams(window.location.search)
-    const urlTheme = params.get('theme')
-
-    if (urlTheme === 'dark' || theme === 'dark') {
-      document.body.classList.add('dark')
-      document.body.style.backgroundColor = '#1a1a2e'
-      document.body.style.color = '#ffffff'
-    } else {
-      document.body.classList.remove('dark')
-      document.body.style.backgroundColor = ''
-      document.body.style.color = ''
-    }
-  }, [theme])
-
-  // Listen for theme changes from parent
-  useEffect(() => {
-    const handleMessage = (event) => {
-      if (event.data?.type === 'SET_THEME') {
-        setTheme(event.data.theme)
-      }
-    }
-    window.addEventListener('message', handleMessage)
-    return () => window.removeEventListener('message', handleMessage)
-  }, [])
-
   // Listen for URL changes
   useEffect(() => {
     const handlePopState = () => {
       const params = new URLSearchParams(window.location.search)
       setFormId(params.get('form') || 'user-login')
-      setTheme(params.get('theme') === 'dark' ? 'dark' : 'light')
     }
     window.addEventListener('popstate', handlePopState)
     return () => window.removeEventListener('popstate', handlePopState)
