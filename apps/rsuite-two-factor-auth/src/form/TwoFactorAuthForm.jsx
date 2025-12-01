@@ -7,7 +7,9 @@ function TwoFactorAuthForm() {
 
   return (
     <Form fluid onSubmit={handleSubmit}>
-      <p style={{ marginBottom: '16px' }}>Enter the code from your authenticator app or SMS.</p>
+      <p style={{ marginBottom: '16px' }}>
+        Enter the code from your authenticator app or SMS.
+      </p>
 
       <Form.Group controlId="code">
         <Form.ControlLabel>Verification code</Form.ControlLabel>

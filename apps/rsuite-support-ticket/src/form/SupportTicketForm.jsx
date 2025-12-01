@@ -23,7 +23,13 @@ function SupportTicketForm() {
 
       <Form.Group controlId="description">
         <Form.ControlLabel>Issue description</Form.ControlLabel>
-        <Form.Control name="description" accepter={Input} as="textarea" rows={4} required />
+        <Form.Control
+          name="description"
+          accepter={Input}
+          as="textarea"
+          rows={4}
+          required
+        />
       </Form.Group>
 
       <Form.Group controlId="attachments">

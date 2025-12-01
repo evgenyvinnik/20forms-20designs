@@ -30,7 +30,9 @@ function PrivacyConsentForm() {
         <Form.ControlLabel>Privacy options</Form.ControlLabel>
         <CheckboxGroup name="privacyOptions">
           <Checkbox value="analytics">Allow analytics cookies</Checkbox>
-          <Checkbox value="personalization">Allow personalized content</Checkbox>
+          <Checkbox value="personalization">
+            Allow personalized content
+          </Checkbox>
         </CheckboxGroup>
       </Form.Group>
 

@@ -29,7 +29,12 @@ function UserRegistrationForm() {
 
       <Form.Group controlId="confirmPassword">
         <Form.ControlLabel>Confirm password</Form.ControlLabel>
-        <Form.Control name="confirmPassword" type="password" minLength={8} required />
+        <Form.Control
+          name="confirmPassword"
+          type="password"
+          minLength={8}
+          required
+        />
       </Form.Group>
 
       <Form.Group controlId="terms">

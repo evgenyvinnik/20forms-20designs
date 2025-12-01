@@ -7,7 +7,9 @@ function PasswordResetForm() {
 
   return (
     <Form fluid onSubmit={handleSubmit}>
-      <p style={{ marginBottom: '16px' }}>Request a password reset link via email.</p>
+      <p style={{ marginBottom: '16px' }}>
+        Request a password reset link via email.
+      </p>
 
       <Form.Group controlId="email">
         <Form.ControlLabel>Email address</Form.ControlLabel>

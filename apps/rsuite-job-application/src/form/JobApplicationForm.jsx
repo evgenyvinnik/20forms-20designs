@@ -34,7 +34,13 @@ function JobApplicationForm() {
 
       <Form.Group controlId="coverLetter">
         <Form.ControlLabel>Cover letter</Form.ControlLabel>
-        <Form.Control name="coverLetter" accepter={Input} as="textarea" rows={4} required />
+        <Form.Control
+          name="coverLetter"
+          accepter={Input}
+          as="textarea"
+          rows={4}
+          required
+        />
       </Form.Group>
 
       <Form.Group controlId="updates">
