@@ -18,9 +18,7 @@ function TwoFactorAuthForm() {
       <Grid>
         <Grid.Row>
           <Grid.Col>
-            <MD>
-              Enter the code from your authenticator app or SMS.
-            </MD>
+            <MD>Enter the code from your authenticator app or SMS.</MD>
           </Grid.Col>
         </Grid.Row>
 
