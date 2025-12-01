@@ -1,4 +1,12 @@
-import { Box, FormControl, TextInput, Textarea, Select, Checkbox, Button } from '@primer/react'
+import {
+  Box,
+  FormControl,
+  TextInput,
+  Textarea,
+  Select,
+  Checkbox,
+  Button,
+} from '@primer/react'
 
 function ContactInquiryForm() {
   const handleSubmit = (event) => {
@@ -24,12 +32,7 @@ function ContactInquiryForm() {
 
       <FormControl required>
         <FormControl.Label>Email address</FormControl.Label>
-        <TextInput
-          id="primer-contact-email"
-          name="email"
-          type="email"
-          block
-        />
+        <TextInput id="primer-contact-email" name="email" type="email" block />
       </FormControl>
 
       <FormControl required>
@@ -45,12 +48,7 @@ function ContactInquiryForm() {
 
       <FormControl required>
         <FormControl.Label>Message</FormControl.Label>
-        <Textarea
-          id="primer-contact-message"
-          name="message"
-          rows={4}
-          block
-        />
+        <Textarea id="primer-contact-message" name="message" rows={4} block />
       </FormControl>
 
       <FormControl>

@@ -34,12 +34,7 @@ function ProfileUpdateForm() {
 
       <FormControl required>
         <FormControl.Label>Email address</FormControl.Label>
-        <TextInput
-          id="primer-profile-email"
-          name="email"
-          type="email"
-          block
-        />
+        <TextInput id="primer-profile-email" name="email" type="email" block />
       </FormControl>
 
       <FormControl required>
@@ -56,12 +51,7 @@ function ProfileUpdateForm() {
 
       <FormControl required>
         <FormControl.Label>Short bio</FormControl.Label>
-        <Textarea
-          id="primer-profile-bio"
-          name="bio"
-          rows={3}
-          block
-        />
+        <Textarea id="primer-profile-bio" name="bio" rows={3} block />
       </FormControl>
 
       <Button type="submit" variant="primary" block>

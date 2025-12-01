@@ -1,4 +1,11 @@
-import { Box, FormControl, TextInput, Select, Checkbox, Button } from '@primer/react'
+import {
+  Box,
+  FormControl,
+  TextInput,
+  Select,
+  Checkbox,
+  Button,
+} from '@primer/react'
 
 function EventRegistrationForm() {
   const handleSubmit = (event) => {
@@ -24,12 +31,7 @@ function EventRegistrationForm() {
 
       <FormControl required>
         <FormControl.Label>Email address</FormControl.Label>
-        <TextInput
-          id="primer-event-email"
-          name="email"
-          type="email"
-          block
-        />
+        <TextInput id="primer-event-email" name="email" type="email" block />
       </FormControl>
 
       <FormControl required>

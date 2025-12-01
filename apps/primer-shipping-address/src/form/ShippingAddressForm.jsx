@@ -1,5 +1,12 @@
 import { useState } from 'react'
-import { Box, FormControl, TextInput, Select, Checkbox, Button } from '@primer/react'
+import {
+  Box,
+  FormControl,
+  TextInput,
+  Select,
+  Checkbox,
+  Button,
+} from '@primer/react'
 import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from './locationOptions'
 
 function ShippingAddressForm() {
@@ -54,12 +61,7 @@ function ShippingAddressForm() {
 
       <FormControl required>
         <FormControl.Label>City</FormControl.Label>
-        <TextInput
-          id="primer-shipping-city"
-          name="city"
-          type="text"
-          block
-        />
+        <TextInput id="primer-shipping-city" name="city" type="text" block />
       </FormControl>
 
       <FormControl required>

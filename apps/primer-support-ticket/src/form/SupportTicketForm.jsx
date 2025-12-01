@@ -1,4 +1,13 @@
-import { Box, FormControl, TextInput, Textarea, Radio, RadioGroup, Button, Text } from '@primer/react'
+import {
+  Box,
+  FormControl,
+  TextInput,
+  Textarea,
+  Radio,
+  RadioGroup,
+  Button,
+  Text,
+} from '@primer/react'
 
 function SupportTicketForm() {
   const handleSubmit = (event) => {
@@ -23,7 +32,9 @@ function SupportTicketForm() {
       </FormControl>
 
       <fieldset style={{ border: 'none', padding: 0, margin: 0 }}>
-        <Text as="legend" sx={{ fontWeight: 'bold', mb: 2 }}>Priority</Text>
+        <Text as="legend" sx={{ fontWeight: 'bold', mb: 2 }}>
+          Priority
+        </Text>
         <RadioGroup name="priority">
           <RadioGroup.Label visuallyHidden>Priority</RadioGroup.Label>
           <FormControl>

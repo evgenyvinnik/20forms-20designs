@@ -25,12 +25,7 @@ function OrderTrackingForm() {
 
       <FormControl required>
         <FormControl.Label>Email address</FormControl.Label>
-        <TextInput
-          id="primer-order-email"
-          name="email"
-          type="email"
-          block
-        />
+        <TextInput id="primer-order-email" name="email" type="email" block />
       </FormControl>
 
       <FormControl required>

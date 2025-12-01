@@ -34,32 +34,17 @@ function AppointmentRequestForm() {
 
       <FormControl required>
         <FormControl.Label>Preferred date</FormControl.Label>
-        <TextInput
-          id="primer-appointment-date"
-          name="date"
-          type="date"
-          block
-        />
+        <TextInput id="primer-appointment-date" name="date" type="date" block />
       </FormControl>
 
       <FormControl required>
         <FormControl.Label>Preferred time</FormControl.Label>
-        <TextInput
-          id="primer-appointment-time"
-          name="time"
-          type="time"
-          block
-        />
+        <TextInput id="primer-appointment-time" name="time" type="time" block />
       </FormControl>
 
       <FormControl required>
         <FormControl.Label>Reason for visit</FormControl.Label>
-        <Textarea
-          id="primer-appointment-reason"
-          name="reason"
-          rows={3}
-          block
-        />
+        <Textarea id="primer-appointment-reason" name="reason" rows={3} block />
       </FormControl>
 
       <Button type="submit" variant="primary" block>

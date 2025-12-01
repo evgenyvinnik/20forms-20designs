@@ -1,4 +1,12 @@
-import { Box, FormControl, TextInput, Textarea, Checkbox, Button, Text } from '@primer/react'
+import {
+  Box,
+  FormControl,
+  TextInput,
+  Textarea,
+  Checkbox,
+  Button,
+  Text,
+} from '@primer/react'
 
 function PrivacyConsentForm() {
   const handleSubmit = (event) => {
@@ -24,12 +32,7 @@ function PrivacyConsentForm() {
 
       <FormControl required>
         <FormControl.Label>Email address</FormControl.Label>
-        <TextInput
-          id="primer-privacy-email"
-          name="email"
-          type="email"
-          block
-        />
+        <TextInput id="primer-privacy-email" name="email" type="email" block />
       </FormControl>
 
       <Box as="fieldset" sx={{ border: 0, p: 0, m: 0 }}>
@@ -62,7 +65,10 @@ function PrivacyConsentForm() {
             <FormControl.Label>Allow analytics cookies</FormControl.Label>
           </FormControl>
           <FormControl>
-            <Checkbox id="primer-privacy-personalization" name="personalization" />
+            <Checkbox
+              id="primer-privacy-personalization"
+              name="personalization"
+            />
             <FormControl.Label>Allow personalized content</FormControl.Label>
           </FormControl>
         </Box>
@@ -70,12 +76,7 @@ function PrivacyConsentForm() {
 
       <FormControl>
         <FormControl.Label>Additional notes</FormControl.Label>
-        <Textarea
-          id="primer-privacy-notes"
-          name="notes"
-          rows={3}
-          block
-        />
+        <Textarea id="primer-privacy-notes" name="notes" rows={3} block />
       </FormControl>
 
       <Button type="submit" variant="primary" block>
