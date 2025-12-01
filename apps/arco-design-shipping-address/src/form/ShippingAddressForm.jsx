@@ -1,160 +1,134 @@
-import {
-  Button,
-  Input,
-  Checkbox,
-  Select,
-  DatePicker,
-  Radio,
-  InputNumber,
-  TimePicker,
-  Switch,
-  Form,
-  Space,
-} from '@arco-design/web-react'
-
 import { useState } from 'react'
+import { Button, Input, Checkbox, Select, Space } from '@arco-design/web-react'
 import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from './locationOptions'
 
 function ShippingAddressForm() {
   const [country, setCountry] = useState('US')
+  const regionOptions = country === 'CA' ? CANADIAN_PROVINCES : US_STATES
 
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Shipping address saved!')
   }
 
-  const regionOptions = country === 'CA' ? CANADIAN_PROVINCES : US_STATES
-  const postalPattern =
-    country === 'CA'
-      ? '[A-Za-z]\\d[A-Za-z] ?\\d[A-Za-z]\\d'
-      : '\\d{5}(-\\d{4})?'
-
   return (
     <form onSubmit={handleSubmit}>
       <Space direction="vertical" size="medium" style={{ width: '100%' }}>
-      <div>
-        <label
-          style={{ display: 'block', marginBottom: '4px' }}
-          htmlFor="nocss-shipping-full-name"
-        >
-          Recipient name
-        </label>
-        <Input
-          id="nocss-shipping-full-name"
-          name="fullName"
-          type="text"
-          required
-          style={{ width: '100%' }}
-        />
-      </div>
-      <div>
-        <label
-          style={{ display: 'block', marginBottom: '4px' }}
-          htmlFor="nocss-shipping-street"
-        >
-          Street address
-        </label>
-        <Input
-          id="nocss-shipping-street"
-          name="street"
-          type="text"
-          required
-          style={{ width: '100%' }}
-        />
-      </div>
-      <div>
-        <label
-          style={{ display: 'block', marginBottom: '4px' }}
-          htmlFor="nocss-shipping-street-2"
-        >
-          Apartment, suite, etc.
-        </label>
-        <Input
-          id="nocss-shipping-street-2"
-          name="street2"
-          type="text"
-          style={{ width: '100%' }}
-        />
-      </div>
-      <div>
-        <label
-          style={{ display: 'block', marginBottom: '4px' }}
-          htmlFor="nocss-shipping-city"
-        >
-          City
-        </label>
-        <Input
-          id="nocss-shipping-city"
-          name="city"
-          type="text"
-          required
-          style={{ width: '100%' }}
-        />
-      </div>
-      <div>
-        <label
-          style={{ display: 'block', marginBottom: '4px' }}
-          htmlFor="nocss-shipping-country"
-        >
-          Country
-        </label>
-        <Select
-          id="nocss-shipping-country"
-          name="country"
-          value={country}
-          onChange={(value) => setCountry(value)}
-          required
-          style={{ width: '100%' }}
-        >
-          {COUNTRIES.map(({ value, label }) => (
-            <Select.Option key={value} value={value}>
-              {label}
-            </Select.Option>
-          ))}
-        </Select>
-      </div>
-      <div>
-        <label
-          style={{ display: 'block', marginBottom: '4px' }}
-          htmlFor="nocss-shipping-region"
-        >
-          State / Province / Territory
-        </label>
-        <Select
-          id="nocss-shipping-region"
-          name="region"
-          required
-          style={{ width: '100%' }}
-        >
-          <Select.Option value="">Select an option</Select.Option>
-        </Select>
-      </div>
-      <div>
-        <label
-          style={{ display: 'block', marginBottom: '4px' }}
-          htmlFor="nocss-shipping-postal"
-        >
-          Postal code
-        </label>
-        <Input
-          id="nocss-shipping-postal"
-          name="postalCode"
-          type="text"
-          pattern={postalPattern}
-          inputMode="text"
-          required
-          style={{ width: '100%' }}
-        />
-      </div>
-      <div>
-        <label style={{ display: 'block', marginBottom: '4px' }}>
+        <div>
+          <label
+            style={{ display: 'block', marginBottom: '4px' }}
+            htmlFor="arco-shipping-full-name"
+          >
+            Recipient name
+          </label>
+          <Input
+            id="arco-shipping-full-name"
+            name="fullName"
+            required
+            style={{ width: '100%' }}
+          />
+        </div>
+        <div>
+          <label
+            style={{ display: 'block', marginBottom: '4px' }}
+            htmlFor="arco-shipping-street"
+          >
+            Street address
+          </label>
+          <Input
+            id="arco-shipping-street"
+            name="street"
+            required
+            style={{ width: '100%' }}
+          />
+        </div>
+        <div>
+          <label
+            style={{ display: 'block', marginBottom: '4px' }}
+            htmlFor="arco-shipping-street-2"
+          >
+            Apartment, suite, etc.
+          </label>
+          <Input
+            id="arco-shipping-street-2"
+            name="street2"
+            style={{ width: '100%' }}
+          />
+        </div>
+        <div>
+          <label
+            style={{ display: 'block', marginBottom: '4px' }}
+            htmlFor="arco-shipping-city"
+          >
+            City
+          </label>
+          <Input
+            id="arco-shipping-city"
+            name="city"
+            required
+            style={{ width: '100%' }}
+          />
+        </div>
+        <div>
+          <label
+            style={{ display: 'block', marginBottom: '4px' }}
+            htmlFor="arco-shipping-country"
+          >
+            Country
+          </label>
+          <Select
+            id="arco-shipping-country"
+            value={country}
+            onChange={(value) => setCountry(value)}
+            style={{ width: '100%' }}
+          >
+            {COUNTRIES.map(({ value, label }) => (
+              <Select.Option key={value} value={value}>
+                {label}
+              </Select.Option>
+            ))}
+          </Select>
+        </div>
+        <div>
+          <label
+            style={{ display: 'block', marginBottom: '4px' }}
+            htmlFor="arco-shipping-region"
+          >
+            State / Province / Territory
+          </label>
+          <Select
+            id="arco-shipping-region"
+            placeholder="Select an option"
+            style={{ width: '100%' }}
+          >
+            {regionOptions.map((region) => (
+              <Select.Option key={region} value={region}>
+                {region}
+              </Select.Option>
+            ))}
+          </Select>
+        </div>
+        <div>
+          <label
+            style={{ display: 'block', marginBottom: '4px' }}
+            htmlFor="arco-shipping-postal"
+          >
+            Postal code
+          </label>
+          <Input
+            id="arco-shipping-postal"
+            name="postalCode"
+            required
+            style={{ width: '100%' }}
+          />
+        </div>
+        <div>
           <Checkbox name="default">Use as default shipping address</Checkbox>
-        </label>
-      </div>
-      <Button type="primary" htmlType="submit">
-        Save address
-      </Button>
-    </Space>
+        </div>
+        <Button type="primary" htmlType="submit">
+          Save address
+        </Button>
+      </Space>
     </form>
   )
 }
