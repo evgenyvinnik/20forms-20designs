@@ -1,6 +1,5 @@
-
-import { useState, useEffect } from 'react'
-
+import { useState, useEffect, useMemo } from 'react'
+import { ThemeProvider, createTheme, CssBaseline, Box } from '@mui/material'
 
 // Import all form components
 import AdvancedSearchForm from './forms/AdvancedSearchForm'
@@ -59,23 +58,6 @@ function App() {
     return params.get('theme') === 'dark' ? 'dark' : 'light'
   })
 
-  // Apply theme on mount and when it changes
-  useEffect(() => {
-    // Check URL for theme parameter
-    const params = new URLSearchParams(window.location.search)
-    const urlTheme = params.get('theme')
-
-    if (urlTheme === 'dark' || theme === 'dark') {
-      document.body.classList.add('dark')
-      document.body.style.backgroundColor = '#1a1a2e'
-      document.body.style.color = '#ffffff'
-    } else {
-      document.body.classList.remove('dark')
-      document.body.style.backgroundColor = ''
-      document.body.style.color = ''
-    }
-  }, [theme])
-
   // Listen for theme changes from parent
   useEffect(() => {
     const handleMessage = (event) => {
@@ -98,13 +80,27 @@ function App() {
     return () => window.removeEventListener('popstate', handlePopState)
   }, [])
 
+  // Create MUI theme based on current theme mode
+  const muiTheme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode: theme,
+        },
+      }),
+    [theme]
+  )
+
   // Get the form component based on the form ID
   const FormComponent = FORM_COMPONENTS[formId]
 
   return (
-    <div style={{ padding: '20px', maxWidth: '500px', margin: '0 auto' }}>
-      <FormComponent />
-    </div>
+    <ThemeProvider theme={muiTheme}>
+      <CssBaseline />
+      <Box sx={{ padding: '20px', maxWidth: '500px', margin: '0 auto' }}>
+        <FormComponent />
+      </Box>
+    </ThemeProvider>
   )
 }
 
