@@ -4,27 +4,16 @@ import '@awesome.me/webawesome/dist/components/button/button.js'
 function OrderTrackingForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Tracking your order...')
+    alert('Finding your order...')
   }
 
   return (
     <form onSubmit={handleSubmit} className="wa-stack wa-gap-m">
-      <wa-input
-        label="Order number"
-        name="orderNumber"
-        type="text"
-        placeholder="e.g. ORD-123456"
-        required
-      />
-      <wa-input
-        label="Email or phone"
-        name="contact"
-        type="text"
-        placeholder="Email or phone used during checkout"
-        required
-      />
+      <wa-input label="Order number" name="orderNumber" type="text" required />
+      <wa-input label="Email address" name="email" type="email" required />
+      <wa-input label="Postal code" name="postalCode" type="text" required />
       <wa-button type="submit" variant="brand">
-        Track order
+        Find order
       </wa-button>
     </form>
   )

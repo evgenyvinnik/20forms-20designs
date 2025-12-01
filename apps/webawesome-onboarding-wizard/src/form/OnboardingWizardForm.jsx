@@ -1,98 +1,68 @@
-import { useState } from 'react'
 import '@awesome.me/webawesome/dist/components/input/input.js'
 import '@awesome.me/webawesome/dist/components/select/select.js'
 import '@awesome.me/webawesome/dist/components/option/option.js'
+import '@awesome.me/webawesome/dist/components/textarea/textarea.js'
 import '@awesome.me/webawesome/dist/components/checkbox/checkbox.js'
 import '@awesome.me/webawesome/dist/components/button/button.js'
 
 function OnboardingWizardForm() {
-  const [step, setStep] = useState(1)
-  const totalSteps = 3
-
-  const handleNext = () => {
-    if (step < totalSteps) {
-      setStep(step + 1)
-    }
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Onboarding complete!')
   }
 
   const handleBack = () => {
-    if (step > 1) {
-      setStep(step - 1)
-    }
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    if (step === totalSteps) {
-      alert('Onboarding complete!')
-    } else {
-      handleNext()
-    }
+    alert('Back action placeholder')
   }
 
   return (
     <form onSubmit={handleSubmit} className="wa-stack wa-gap-m">
-      <p style={{ fontWeight: 'bold', marginBottom: '8px' }}>
-        Step {step} of {totalSteps}
-      </p>
+      <section>
+        <h3>Step 1: Account</h3>
+        <div className="wa-stack wa-gap-m">
+          <wa-input label="Work email" name="email" type="email" required />
+          <wa-input
+            label="Password"
+            name="password"
+            type="password"
+            minlength="8"
+            required
+          />
+        </div>
+      </section>
 
-      {step === 1 && (
-        <>
-          <wa-input label="Full name" name="fullName" type="text" required />
-          <wa-input label="Email" name="email" type="email" required />
-          <wa-input label="Password" name="password" type="password" required />
-        </>
-      )}
-
-      {step === 2 && (
-        <>
-          <wa-input label="Company name" name="company" type="text" />
-          <wa-select
-            label="Industry"
-            name="industry"
-            placeholder="Select your industry"
-          >
-            <wa-option value="tech">Technology</wa-option>
-            <wa-option value="finance">Finance</wa-option>
-            <wa-option value="healthcare">Healthcare</wa-option>
-            <wa-option value="education">Education</wa-option>
-            <wa-option value="retail">Retail</wa-option>
-            <wa-option value="other">Other</wa-option>
-          </wa-select>
+      <section>
+        <h3>Step 2: Team</h3>
+        <div className="wa-stack wa-gap-m">
+          <wa-input label="Team name" name="teamName" type="text" required />
           <wa-select
             label="Team size"
             name="teamSize"
-            placeholder="Select team size"
+            placeholder="Select size"
+            required
           >
-            <wa-option value="1">Just me</wa-option>
-            <wa-option value="2-10">2-10 people</wa-option>
-            <wa-option value="11-50">11-50 people</wa-option>
-            <wa-option value="51-200">51-200 people</wa-option>
-            <wa-option value="200+">200+ people</wa-option>
+            <wa-option value="1-5">1-5</wa-option>
+            <wa-option value="6-20">6-20</wa-option>
+            <wa-option value="21-50">21-50</wa-option>
+            <wa-option value="50+">50+</wa-option>
           </wa-select>
-        </>
-      )}
+        </div>
+      </section>
 
-      {step === 3 && (
-        <>
-          <wa-checkbox name="newsletter">
-            Subscribe to our newsletter
-          </wa-checkbox>
-          <wa-checkbox name="updates">Receive product updates</wa-checkbox>
-          <wa-checkbox name="terms" required>
-            I agree to the Terms of Service and Privacy Policy
-          </wa-checkbox>
-        </>
-      )}
+      <section>
+        <h3>Step 3: Preferences</h3>
+        <div className="wa-stack wa-gap-m">
+          <wa-textarea label="Primary goal" name="goal" rows="3" required />
+          <wa-checkbox name="updates">Send me product tips</wa-checkbox>
+        </div>
+      </section>
 
       <div className="wa-cluster wa-gap-s">
-        {step > 1 && (
-          <wa-button type="button" variant="neutral" onClick={handleBack}>
-            Back
-          </wa-button>
-        )}
+        <wa-button type="button" variant="neutral" onClick={handleBack}>
+          Back
+        </wa-button>
         <wa-button type="submit" variant="brand">
-          {step === totalSteps ? 'Complete' : 'Next'}
+          Finish setup
         </wa-button>
       </div>
     </form>

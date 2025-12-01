@@ -14,15 +14,22 @@ function TwoFactorAuthForm() {
   return (
     <form onSubmit={handleSubmit} className="wa-stack wa-gap-m">
       <p style={{ marginBottom: '8px' }}>
-        Enter the 6-digit code sent to your device
+        Enter the code from your authenticator app or SMS.
       </p>
       <wa-input
         label="Verification code"
         name="code"
         type="text"
         maxlength="6"
-        placeholder="000000"
+        pattern="[0-9]*"
+        inputmode="numeric"
         required
+      />
+      <wa-input
+        label="Backup code"
+        name="backupCode"
+        type="text"
+        help-text="Use a backup code if you can't access your authenticator"
       />
       <div className="wa-cluster wa-gap-s">
         <wa-button type="submit" variant="brand">

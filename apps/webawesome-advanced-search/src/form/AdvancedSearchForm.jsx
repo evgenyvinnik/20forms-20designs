@@ -10,48 +10,26 @@ function AdvancedSearchForm() {
     alert('Search submitted!')
   }
 
-  const handleReset = () => {
-    alert('Filters cleared!')
-  }
-
   return (
     <form onSubmit={handleSubmit} className="wa-stack wa-gap-m">
-      <wa-input
-        label="Keywords"
-        name="keywords"
-        type="text"
-        placeholder="Enter search terms"
-      />
-      <wa-select label="Category" name="category" placeholder="All categories">
-        <wa-option value="electronics">Electronics</wa-option>
-        <wa-option value="clothing">Clothing</wa-option>
-        <wa-option value="home">Home & Garden</wa-option>
-        <wa-option value="sports">Sports</wa-option>
-        <wa-option value="books">Books</wa-option>
-      </wa-select>
-      <div className="wa-cluster wa-gap-m">
-        <wa-input label="Min price" name="minPrice" type="number" min="0" />
-        <wa-input label="Max price" name="maxPrice" type="number" min="0" />
-      </div>
-      <wa-select label="Sort by" name="sortBy" value="relevance">
-        <wa-option value="relevance">Relevance</wa-option>
-        <wa-option value="price-asc">Price: Low to High</wa-option>
-        <wa-option value="price-desc">Price: High to Low</wa-option>
-        <wa-option value="newest">Newest First</wa-option>
-        <wa-option value="rating">Best Rating</wa-option>
+      <wa-input label="Search query" name="query" type="text" required />
+      <wa-select label="Category" name="category" value="all" required>
+        <wa-option value="all">All</wa-option>
+        <wa-option value="articles">Articles</wa-option>
+        <wa-option value="products">Products</wa-option>
+        <wa-option value="people">People</wa-option>
       </wa-select>
       <wa-input label="Date from" name="dateFrom" type="date" />
       <wa-input label="Date to" name="dateTo" type="date" />
-      <wa-checkbox name="inStock">In stock only</wa-checkbox>
-      <wa-checkbox name="onSale">On sale</wa-checkbox>
-      <div className="wa-cluster wa-gap-s">
-        <wa-button type="submit" variant="brand">
-          Search
-        </wa-button>
-        <wa-button type="button" variant="neutral" onClick={handleReset}>
-          Clear filters
-        </wa-button>
-      </div>
+      <wa-select label="Sort by" name="sort" value="relevance" required>
+        <wa-option value="relevance">Relevance</wa-option>
+        <wa-option value="newest">Newest</wa-option>
+        <wa-option value="oldest">Oldest</wa-option>
+      </wa-select>
+      <wa-checkbox name="includeArchived">Include archived</wa-checkbox>
+      <wa-button type="submit" variant="brand">
+        Search
+      </wa-button>
     </form>
   )
 }
