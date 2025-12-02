@@ -12,9 +12,9 @@ test.describe('Shell App', () => {
     test('should display the header with title and subtitle', async ({
       page,
     }) => {
-      await expect(page.locator('h1')).toHaveText('20 Forms, 20 Designs')
-      await expect(page.locator('.subtitle')).toContainText(
-        'Choose a form and a component library'
+      await expect(page.locator('h1')).toHaveText('20 Forms, 40 Designs')
+      await expect(page.locator('.subtitle').first()).toContainText(
+        '40+ React UI libraries'
       )
     })
   })
