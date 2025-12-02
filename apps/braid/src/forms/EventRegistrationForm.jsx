@@ -63,10 +63,11 @@ function EventRegistrationForm() {
 
         <Checkbox
           id="braid-event-newsletter"
-          label="Notify me about future events"
           checked={newsletter}
           onChange={(e) => setNewsletter(e.target.checked)}
-        />
+        >
+          Notify me about future events
+        </Checkbox>
 
         <Box>
           <Button type="submit">Register</Button>

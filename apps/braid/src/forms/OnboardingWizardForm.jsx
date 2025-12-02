@@ -91,10 +91,11 @@ function OnboardingWizardForm() {
             />
             <Checkbox
               id="braid-onboarding-updates"
-              label="Send me product tips"
               checked={updates}
               onChange={(e) => setUpdates(e.target.checked)}
-            />
+            >
+              Send me product tips
+            </Checkbox>
           </Stack>
         </section>
 

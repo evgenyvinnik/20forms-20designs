@@ -80,10 +80,11 @@ function JobApplicationForm() {
 
         <Checkbox
           id="braid-job-updates"
-          label="Keep me informed about future roles"
           checked={updates}
           onChange={(e) => setUpdates(e.target.checked)}
-        />
+        >
+          Keep me informed about future roles
+        </Checkbox>
 
         <Box>
           <Button type="submit">Submit application</Button>

@@ -48,38 +48,43 @@ function PrivacyConsentForm() {
           <Text weight="medium">Communication channels</Text>
           <Checkbox
             id="braid-privacy-email-optin"
-            label="Email updates"
             checked={emailOptIn}
             onChange={(e) => setEmailOptIn(e.target.checked)}
-          />
+          >
+            Email updates
+          </Checkbox>
           <Checkbox
             id="braid-privacy-sms-optin"
-            label="SMS notifications"
             checked={smsOptIn}
             onChange={(e) => setSmsOptIn(e.target.checked)}
-          />
+          >
+            SMS notifications
+          </Checkbox>
           <Checkbox
             id="braid-privacy-phone-optin"
-            label="Phone calls"
             checked={phoneOptIn}
             onChange={(e) => setPhoneOptIn(e.target.checked)}
-          />
+          >
+            Phone calls
+          </Checkbox>
         </Stack>
 
         <Stack space="small">
           <Text weight="medium">Privacy options</Text>
           <Checkbox
             id="braid-privacy-analytics"
-            label="Allow analytics cookies"
             checked={analytics}
             onChange={(e) => setAnalytics(e.target.checked)}
-          />
+          >
+            Allow analytics cookies
+          </Checkbox>
           <Checkbox
             id="braid-privacy-personalization"
-            label="Allow personalized content"
             checked={personalization}
             onChange={(e) => setPersonalization(e.target.checked)}
-          />
+          >
+            Allow personalized content
+          </Checkbox>
         </Stack>
 
         <Textarea

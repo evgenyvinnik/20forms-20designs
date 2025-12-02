@@ -47,10 +47,11 @@ function PasswordChangeForm() {
 
         <Checkbox
           id="braid-password-change-logout"
-          label="Sign out of other devices"
           checked={logoutOthers}
           onChange={(e) => setLogoutOthers(e.target.checked)}
-        />
+        >
+          Sign out of other devices
+        </Checkbox>
 
         <Box>
           <Button type="submit">Update password</Button>

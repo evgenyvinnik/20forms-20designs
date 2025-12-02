@@ -97,10 +97,11 @@ function ShippingAddressForm() {
 
         <Checkbox
           id="braid-shipping-default"
-          label="Use as default shipping address"
           checked={useDefault}
           onChange={(e) => setUseDefault(e.target.checked)}
-        />
+        >
+          Use as default shipping address
+        </Checkbox>
 
         <Box>
           <Button type="submit">Save address</Button>
