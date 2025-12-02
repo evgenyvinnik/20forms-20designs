@@ -5,7 +5,7 @@ import RadioGroup from '@salesforce/design-system-react/components/radio-group'
 import Radio from '@salesforce/design-system-react/components/radio-group/radio'
 import Button from '@salesforce/design-system-react/components/button'
 
-function SupportTicketForm({ theme }) {
+function SupportTicketForm() {
   const [subject, setSubject] = useState('')
   const [priority, setPriority] = useState('medium')
   const [description, setDescription] = useState('')

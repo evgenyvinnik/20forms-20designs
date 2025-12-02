@@ -9,7 +9,7 @@ const shippingOptions = [
   { id: 'overnight', label: 'Overnight' },
 ]
 
-function CheckoutPaymentForm({ theme }) {
+function CheckoutPaymentForm() {
   const [email, setEmail] = useState('')
   const [shippingMethod, setShippingMethod] = useState([])
   const [cardNumber, setCardNumber] = useState('')

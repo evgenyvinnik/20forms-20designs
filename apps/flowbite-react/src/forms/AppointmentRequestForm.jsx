@@ -12,7 +12,7 @@ function AppointmentRequestForm() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-appointment-name" value="Full name" />
+            <Label htmlFor="flowbite-appointment-name">Full name</Label>
           </div>
           <TextInput
             id="flowbite-appointment-name"
@@ -23,7 +23,7 @@ function AppointmentRequestForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-appointment-email" value="Email address" />
+            <Label htmlFor="flowbite-appointment-email">Email address</Label>
           </div>
           <TextInput
             id="flowbite-appointment-email"
@@ -34,7 +34,7 @@ function AppointmentRequestForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-appointment-date" value="Preferred date" />
+            <Label htmlFor="flowbite-appointment-date">Preferred date</Label>
           </div>
           <TextInput
             id="flowbite-appointment-date"
@@ -45,7 +45,7 @@ function AppointmentRequestForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-appointment-time" value="Preferred time" />
+            <Label htmlFor="flowbite-appointment-time">Preferred time</Label>
           </div>
           <TextInput
             id="flowbite-appointment-time"
@@ -56,10 +56,7 @@ function AppointmentRequestForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-appointment-reason"
-              value="Reason for visit"
-            />
+            <Label htmlFor="flowbite-appointment-reason">Reason for visit</Label>
           </div>
           <Textarea
             id="flowbite-appointment-reason"

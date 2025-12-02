@@ -12,7 +12,7 @@ function BillingInfoForm() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-billing-name" value="Name on card" />
+            <Label htmlFor="flowbite-billing-name">Name on card</Label>
           </div>
           <TextInput
             id="flowbite-billing-name"
@@ -23,7 +23,7 @@ function BillingInfoForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-billing-card-number" value="Card number" />
+            <Label htmlFor="flowbite-billing-card-number">Card number</Label>
           </div>
           <TextInput
             id="flowbite-billing-card-number"
@@ -37,10 +37,7 @@ function BillingInfoForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-billing-expiration"
-              value="Expiration date"
-            />
+            <Label htmlFor="flowbite-billing-expiration">Expiration date</Label>
           </div>
           <TextInput
             id="flowbite-billing-expiration"
@@ -54,7 +51,7 @@ function BillingInfoForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-billing-cvc" value="Security code" />
+            <Label htmlFor="flowbite-billing-cvc">Security code</Label>
           </div>
           <TextInput
             id="flowbite-billing-cvc"
@@ -68,7 +65,7 @@ function BillingInfoForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-billing-address" value="Billing address" />
+            <Label htmlFor="flowbite-billing-address">Billing address</Label>
           </div>
           <TextInput
             id="flowbite-billing-address"
@@ -79,7 +76,7 @@ function BillingInfoForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-billing-country" value="Country" />
+            <Label htmlFor="flowbite-billing-country">Country</Label>
           </div>
           <Select id="flowbite-billing-country" name="country" required>
             <option value="">Select country</option>

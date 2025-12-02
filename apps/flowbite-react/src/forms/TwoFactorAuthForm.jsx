@@ -15,10 +15,7 @@ function TwoFactorAuthForm() {
         </p>
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-two-factor-code"
-              value="Verification code"
-            />
+            <Label htmlFor="flowbite-two-factor-code">Verification code</Label>
           </div>
           <TextInput
             id="flowbite-two-factor-code"
@@ -32,10 +29,7 @@ function TwoFactorAuthForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-two-factor-backup"
-              value="Backup code (optional)"
-            />
+            <Label htmlFor="flowbite-two-factor-backup">Backup code (optional)</Label>
           </div>
           <TextInput
             id="flowbite-two-factor-backup"

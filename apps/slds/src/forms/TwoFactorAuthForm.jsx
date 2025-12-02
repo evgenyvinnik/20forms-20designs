@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Input from '@salesforce/design-system-react/components/input'
 import Button from '@salesforce/design-system-react/components/button'
 
-function TwoFactorAuthForm({ theme }) {
+function TwoFactorAuthForm() {
   const [code, setCode] = useState('')
   const [backupCode, setBackupCode] = useState('')
 
@@ -13,7 +13,7 @@ function TwoFactorAuthForm({ theme }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <p className="slds-m-bottom_medium" style={{ color: theme === 'dark' ? '#fff' : '#16325c' }}>
+      <p className="slds-m-bottom_medium" style={{ color: '#16325c' }}>
         Enter the code from your authenticator app or SMS.
       </p>
 
@@ -41,11 +41,7 @@ function TwoFactorAuthForm({ theme }) {
       </div>
 
       <div className="slds-form-element">
-        <Button
-          type="submit"
-          variant="brand"
-          label="Verify"
-        />
+        <Button type="submit" variant="brand" label="Verify" />
         <Button
           type="button"
           variant="neutral"

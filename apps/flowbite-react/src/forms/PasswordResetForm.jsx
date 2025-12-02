@@ -15,10 +15,7 @@ function PasswordResetForm() {
         </p>
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-password-reset-email"
-              value="Email address"
-            />
+            <Label htmlFor="flowbite-password-reset-email">Email address</Label>
           </div>
           <TextInput
             id="flowbite-password-reset-email"

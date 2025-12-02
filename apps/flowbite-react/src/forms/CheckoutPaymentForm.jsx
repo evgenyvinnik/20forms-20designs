@@ -12,10 +12,7 @@ function CheckoutPaymentForm() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-checkout-email"
-              value="Email for receipt"
-            />
+            <Label htmlFor="flowbite-checkout-email">Email for receipt</Label>
           </div>
           <TextInput
             id="flowbite-checkout-email"
@@ -26,10 +23,7 @@ function CheckoutPaymentForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-checkout-shipping-method"
-              value="Shipping method"
-            />
+            <Label htmlFor="flowbite-checkout-shipping-method">Shipping method</Label>
           </div>
           <Select
             id="flowbite-checkout-shipping-method"
@@ -44,10 +38,7 @@ function CheckoutPaymentForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-checkout-card-number"
-              value="Card number"
-            />
+            <Label htmlFor="flowbite-checkout-card-number">Card number</Label>
           </div>
           <TextInput
             id="flowbite-checkout-card-number"
@@ -61,7 +52,7 @@ function CheckoutPaymentForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-checkout-expiration" value="Expiration" />
+            <Label htmlFor="flowbite-checkout-expiration">Expiration</Label>
           </div>
           <TextInput
             id="flowbite-checkout-expiration"
@@ -75,7 +66,7 @@ function CheckoutPaymentForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-checkout-cvc" value="CVC" />
+            <Label htmlFor="flowbite-checkout-cvc">CVC</Label>
           </div>
           <TextInput
             id="flowbite-checkout-cvc"
@@ -89,7 +80,7 @@ function CheckoutPaymentForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-checkout-promo" value="Promo code" />
+            <Label htmlFor="flowbite-checkout-promo">Promo code</Label>
           </div>
           <TextInput
             id="flowbite-checkout-promo"

@@ -26,7 +26,7 @@ const CANADIAN_PROVINCES = [
   { id: 'qc', label: 'Quebec' },
 ]
 
-function ShippingAddressForm({ theme }) {
+function ShippingAddressForm() {
   const [fullName, setFullName] = useState('')
   const [street, setStreet] = useState('')
   const [street2, setStreet2] = useState('')

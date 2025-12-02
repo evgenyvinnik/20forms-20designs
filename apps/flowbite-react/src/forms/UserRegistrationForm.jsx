@@ -12,10 +12,7 @@ function UserRegistrationForm() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-user-registration-name"
-              value="Full name"
-            />
+            <Label htmlFor="flowbite-user-registration-name">Full name</Label>
           </div>
           <TextInput
             id="flowbite-user-registration-name"
@@ -26,10 +23,7 @@ function UserRegistrationForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-user-registration-email"
-              value="Email address"
-            />
+            <Label htmlFor="flowbite-user-registration-email">Email address</Label>
           </div>
           <TextInput
             id="flowbite-user-registration-email"
@@ -40,10 +34,7 @@ function UserRegistrationForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-user-registration-username"
-              value="Username"
-            />
+            <Label htmlFor="flowbite-user-registration-username">Username</Label>
           </div>
           <TextInput
             id="flowbite-user-registration-username"
@@ -55,10 +46,7 @@ function UserRegistrationForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-user-registration-password"
-              value="Password"
-            />
+            <Label htmlFor="flowbite-user-registration-password">Password</Label>
           </div>
           <TextInput
             id="flowbite-user-registration-password"
@@ -70,10 +58,7 @@ function UserRegistrationForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-user-registration-confirm"
-              value="Confirm password"
-            />
+            <Label htmlFor="flowbite-user-registration-confirm">Confirm password</Label>
           </div>
           <TextInput
             id="flowbite-user-registration-confirm"

@@ -12,7 +12,7 @@ const ratingOptions = [
   { id: 'poor', label: 'Poor' },
 ]
 
-function CustomerFeedbackForm({ theme }) {
+function CustomerFeedbackForm() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [rating, setRating] = useState([])

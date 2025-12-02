@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Input from '@salesforce/design-system-react/components/input'
 import Button from '@salesforce/design-system-react/components/button'
 
-function PasswordResetForm({ theme }) {
+function PasswordResetForm() {
   const [email, setEmail] = useState('')
 
   const handleSubmit = (event) => {
@@ -12,10 +12,7 @@ function PasswordResetForm({ theme }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <p
-        className="slds-m-bottom_medium"
-        style={{ color: theme === 'dark' ? '#fff' : '#16325c' }}
-      >
+      <p className="slds-m-bottom_medium" style={{ color: '#16325c' }}>
         Request a password reset link via email.
       </p>
 

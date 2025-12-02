@@ -3,7 +3,7 @@ import Input from '@salesforce/design-system-react/components/input'
 import Checkbox from '@salesforce/design-system-react/components/checkbox'
 import Button from '@salesforce/design-system-react/components/button'
 
-function UserRegistrationForm({ theme }) {
+function UserRegistrationForm() {
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [username, setUsername] = useState('')

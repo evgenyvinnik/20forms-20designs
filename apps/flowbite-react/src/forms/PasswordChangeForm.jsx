@@ -12,10 +12,7 @@ function PasswordChangeForm() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-password-change-current"
-              value="Current password"
-            />
+            <Label htmlFor="flowbite-password-change-current">Current password</Label>
           </div>
           <TextInput
             id="flowbite-password-change-current"
@@ -26,10 +23,7 @@ function PasswordChangeForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-password-change-new"
-              value="New password"
-            />
+            <Label htmlFor="flowbite-password-change-new">New password</Label>
           </div>
           <TextInput
             id="flowbite-password-change-new"
@@ -41,10 +35,7 @@ function PasswordChangeForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-password-change-confirm"
-              value="Confirm new password"
-            />
+            <Label htmlFor="flowbite-password-change-confirm">Confirm new password</Label>
           </div>
           <TextInput
             id="flowbite-password-change-confirm"

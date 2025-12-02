@@ -19,7 +19,7 @@ function JobApplicationForm() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-job-full-name" value="Full name" />
+            <Label htmlFor="flowbite-job-full-name">Full name</Label>
           </div>
           <TextInput
             id="flowbite-job-full-name"
@@ -30,7 +30,7 @@ function JobApplicationForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-job-email" value="Email address" />
+            <Label htmlFor="flowbite-job-email">Email address</Label>
           </div>
           <TextInput
             id="flowbite-job-email"
@@ -41,7 +41,7 @@ function JobApplicationForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-job-phone" value="Phone number" />
+            <Label htmlFor="flowbite-job-phone">Phone number</Label>
           </div>
           <TextInput
             id="flowbite-job-phone"
@@ -53,13 +53,13 @@ function JobApplicationForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-job-role" value="Role applied for" />
+            <Label htmlFor="flowbite-job-role">Role applied for</Label>
           </div>
           <TextInput id="flowbite-job-role" name="role" type="text" required />
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-job-resume" value="Resume link" />
+            <Label htmlFor="flowbite-job-resume">Resume link</Label>
           </div>
           <TextInput
             id="flowbite-job-resume"
@@ -70,7 +70,7 @@ function JobApplicationForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-job-cover-letter" value="Cover letter" />
+            <Label htmlFor="flowbite-job-cover-letter">Cover letter</Label>
           </div>
           <Textarea
             id="flowbite-job-cover-letter"

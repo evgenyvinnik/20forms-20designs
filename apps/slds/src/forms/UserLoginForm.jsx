@@ -3,7 +3,7 @@ import Input from '@salesforce/design-system-react/components/input'
 import Checkbox from '@salesforce/design-system-react/components/checkbox'
 import Button from '@salesforce/design-system-react/components/button'
 
-function UserLoginForm({ theme }) {
+function UserLoginForm() {
   const [identifier, setIdentifier] = useState('')
   const [password, setPassword] = useState('')
   const [remember, setRemember] = useState(false)

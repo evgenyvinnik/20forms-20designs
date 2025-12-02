@@ -20,7 +20,7 @@ function CustomerFeedbackForm() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-feedback-name" value="Name" />
+            <Label htmlFor="flowbite-feedback-name">Name</Label>
           </div>
           <TextInput
             id="flowbite-feedback-name"
@@ -31,7 +31,7 @@ function CustomerFeedbackForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-feedback-email" value="Email address" />
+            <Label htmlFor="flowbite-feedback-email">Email address</Label>
           </div>
           <TextInput
             id="flowbite-feedback-email"
@@ -42,7 +42,7 @@ function CustomerFeedbackForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-feedback-rating" value="Overall rating" />
+            <Label htmlFor="flowbite-feedback-rating">Overall rating</Label>
           </div>
           <Select id="flowbite-feedback-rating" name="rating" required>
             <option value="">Select rating</option>
@@ -54,7 +54,7 @@ function CustomerFeedbackForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-feedback-comments" value="Comments" />
+            <Label htmlFor="flowbite-feedback-comments">Comments</Label>
           </div>
           <Textarea
             id="flowbite-feedback-comments"

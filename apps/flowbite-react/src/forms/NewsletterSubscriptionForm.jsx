@@ -19,7 +19,7 @@ function NewsletterSubscriptionForm() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-newsletter-email" value="Email address" />
+            <Label htmlFor="flowbite-newsletter-email">Email address</Label>
           </div>
           <TextInput
             id="flowbite-newsletter-email"
@@ -30,7 +30,7 @@ function NewsletterSubscriptionForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-newsletter-frequency" value="Frequency" />
+            <Label htmlFor="flowbite-newsletter-frequency">Frequency</Label>
           </div>
           <Select id="flowbite-newsletter-frequency" name="frequency" required>
             <option value="">Select frequency</option>

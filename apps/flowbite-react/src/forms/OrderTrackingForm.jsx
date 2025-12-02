@@ -12,10 +12,7 @@ function OrderTrackingForm() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-order-tracking-number"
-              value="Order number"
-            />
+            <Label htmlFor="flowbite-order-tracking-number">Order number</Label>
           </div>
           <TextInput
             id="flowbite-order-tracking-number"
@@ -27,10 +24,7 @@ function OrderTrackingForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-order-tracking-email"
-              value="Email address"
-            />
+            <Label htmlFor="flowbite-order-tracking-email">Email address</Label>
           </div>
           <TextInput
             id="flowbite-order-tracking-email"
@@ -41,10 +35,7 @@ function OrderTrackingForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-order-tracking-postal"
-              value="Postal code"
-            />
+            <Label htmlFor="flowbite-order-tracking-postal">Postal code</Label>
           </div>
           <TextInput
             id="flowbite-order-tracking-postal"

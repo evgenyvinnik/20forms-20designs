@@ -3,7 +3,7 @@ import Input from '@salesforce/design-system-react/components/input'
 import Checkbox from '@salesforce/design-system-react/components/checkbox'
 import Button from '@salesforce/design-system-react/components/button'
 
-function PasswordChangeForm({ theme }) {
+function PasswordChangeForm() {
   const [currentPassword, setCurrentPassword] = useState('')
   const [newPassword, setNewPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')

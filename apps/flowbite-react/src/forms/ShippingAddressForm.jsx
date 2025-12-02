@@ -29,10 +29,7 @@ function ShippingAddressForm() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-shipping-full-name"
-              value="Recipient name"
-            />
+            <Label htmlFor="flowbite-shipping-full-name">Recipient name</Label>
           </div>
           <TextInput
             id="flowbite-shipping-full-name"
@@ -43,7 +40,7 @@ function ShippingAddressForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-shipping-street" value="Street address" />
+            <Label htmlFor="flowbite-shipping-street">Street address</Label>
           </div>
           <TextInput
             id="flowbite-shipping-street"
@@ -54,10 +51,7 @@ function ShippingAddressForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-shipping-street-2"
-              value="Apartment, suite, etc."
-            />
+            <Label htmlFor="flowbite-shipping-street-2">Apartment, suite, etc.</Label>
           </div>
           <TextInput
             id="flowbite-shipping-street-2"
@@ -67,7 +61,7 @@ function ShippingAddressForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-shipping-city" value="City" />
+            <Label htmlFor="flowbite-shipping-city">City</Label>
           </div>
           <TextInput
             id="flowbite-shipping-city"
@@ -78,7 +72,7 @@ function ShippingAddressForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-shipping-country" value="Country" />
+            <Label htmlFor="flowbite-shipping-country">Country</Label>
           </div>
           <Select
             id="flowbite-shipping-country"
@@ -96,10 +90,7 @@ function ShippingAddressForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-shipping-region"
-              value="State / Province / Territory"
-            />
+            <Label htmlFor="flowbite-shipping-region">State / Province / Territory</Label>
           </div>
           <Select id="flowbite-shipping-region" name="region" required>
             <option value="">Select an option</option>
@@ -112,7 +103,7 @@ function ShippingAddressForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-shipping-postal" value="Postal code" />
+            <Label htmlFor="flowbite-shipping-postal">Postal code</Label>
           </div>
           <TextInput
             id="flowbite-shipping-postal"

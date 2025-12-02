@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Input from '@salesforce/design-system-react/components/input'
 import Button from '@salesforce/design-system-react/components/button'
 
-function OrderTrackingForm({ theme }) {
+function OrderTrackingForm() {
   const [orderNumber, setOrderNumber] = useState('')
   const [email, setEmail] = useState('')
   const [postalCode, setPostalCode] = useState('')

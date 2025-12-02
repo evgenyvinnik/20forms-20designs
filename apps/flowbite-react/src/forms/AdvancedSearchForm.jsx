@@ -19,7 +19,7 @@ function AdvancedSearchForm() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-search-query" value="Search query" />
+            <Label htmlFor="flowbite-search-query">Search query</Label>
           </div>
           <TextInput
             id="flowbite-search-query"
@@ -30,7 +30,7 @@ function AdvancedSearchForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-search-category" value="Category" />
+            <Label htmlFor="flowbite-search-category">Category</Label>
           </div>
           <Select id="flowbite-search-category" name="category" required>
             <option value="all">All</option>
@@ -41,7 +41,7 @@ function AdvancedSearchForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-search-date-from" value="Date from" />
+            <Label htmlFor="flowbite-search-date-from">Date from</Label>
           </div>
           <TextInput
             id="flowbite-search-date-from"
@@ -51,13 +51,13 @@ function AdvancedSearchForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-search-date-to" value="Date to" />
+            <Label htmlFor="flowbite-search-date-to">Date to</Label>
           </div>
           <TextInput id="flowbite-search-date-to" name="dateTo" type="date" />
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-search-sort" value="Sort by" />
+            <Label htmlFor="flowbite-search-sort">Sort by</Label>
           </div>
           <Select id="flowbite-search-sort" name="sort" required>
             <option value="relevance">Relevance</option>

@@ -19,7 +19,7 @@ function EventRegistrationForm() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-event-name" value="Full name" />
+            <Label htmlFor="flowbite-event-name">Full name</Label>
           </div>
           <TextInput
             id="flowbite-event-name"
@@ -30,7 +30,7 @@ function EventRegistrationForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-event-email" value="Email address" />
+            <Label htmlFor="flowbite-event-email">Email address</Label>
           </div>
           <TextInput
             id="flowbite-event-email"
@@ -41,7 +41,7 @@ function EventRegistrationForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-event-ticket" value="Ticket type" />
+            <Label htmlFor="flowbite-event-ticket">Ticket type</Label>
           </div>
           <Select id="flowbite-event-ticket" name="ticketType" required>
             <option value="">Select ticket</option>
@@ -52,7 +52,7 @@ function EventRegistrationForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-event-guests" value="Number of guests" />
+            <Label htmlFor="flowbite-event-guests">Number of guests</Label>
           </div>
           <TextInput
             id="flowbite-event-guests"

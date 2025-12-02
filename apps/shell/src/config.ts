@@ -485,7 +485,7 @@ export const LIBRARIES: Library[] = [
     website: 'https://designsystem.digital.gov',
     repo: 'https://github.com/uswds/uswds',
     implemented: true,
-    supportsTheme: true,
+    supportsTheme: false,
   },
   {
     name: 'Web Awesome',

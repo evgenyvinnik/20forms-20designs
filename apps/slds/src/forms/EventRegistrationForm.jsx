@@ -10,7 +10,7 @@ const ticketOptions = [
   { id: 'student', label: 'Student' },
 ]
 
-function EventRegistrationForm({ theme }) {
+function EventRegistrationForm() {
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [ticketType, setTicketType] = useState([])

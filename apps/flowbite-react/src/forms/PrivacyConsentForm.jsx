@@ -19,7 +19,7 @@ function PrivacyConsentForm() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-privacy-name" value="Full name" />
+            <Label htmlFor="flowbite-privacy-name">Full name</Label>
           </div>
           <TextInput
             id="flowbite-privacy-name"
@@ -30,7 +30,7 @@ function PrivacyConsentForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-privacy-email" value="Email address" />
+            <Label htmlFor="flowbite-privacy-email">Email address</Label>
           </div>
           <TextInput
             id="flowbite-privacy-email"
@@ -78,7 +78,7 @@ function PrivacyConsentForm() {
         </fieldset>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-privacy-notes" value="Additional notes" />
+            <Label htmlFor="flowbite-privacy-notes">Additional notes</Label>
           </div>
           <Textarea id="flowbite-privacy-notes" name="notes" rows={3} />
         </div>

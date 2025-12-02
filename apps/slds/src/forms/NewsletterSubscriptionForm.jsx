@@ -10,7 +10,7 @@ const frequencyOptions = [
   { id: 'quarterly', label: 'Quarterly' },
 ]
 
-function NewsletterSubscriptionForm({ theme }) {
+function NewsletterSubscriptionForm() {
   const [email, setEmail] = useState('')
   const [frequency, setFrequency] = useState([])
   const [agree, setAgree] = useState(false)

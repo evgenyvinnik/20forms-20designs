@@ -12,7 +12,7 @@ const topicOptions = [
   { id: 'other', label: 'Other' },
 ]
 
-function ContactInquiryForm({ theme }) {
+function ContactInquiryForm() {
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [topic, setTopic] = useState([])

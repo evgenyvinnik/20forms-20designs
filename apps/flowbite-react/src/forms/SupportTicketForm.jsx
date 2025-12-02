@@ -20,7 +20,7 @@ function SupportTicketForm() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-ticket-subject" value="Subject" />
+            <Label htmlFor="flowbite-ticket-subject">Subject</Label>
           </div>
           <TextInput
             id="flowbite-ticket-subject"
@@ -61,10 +61,7 @@ function SupportTicketForm() {
         </fieldset>
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-ticket-description"
-              value="Issue description"
-            />
+            <Label htmlFor="flowbite-ticket-description">Issue description</Label>
           </div>
           <Textarea
             id="flowbite-ticket-description"
@@ -75,7 +72,7 @@ function SupportTicketForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-ticket-attachments" value="Attachments" />
+            <Label htmlFor="flowbite-ticket-attachments">Attachments</Label>
           </div>
           <FileInput
             id="flowbite-ticket-attachments"

@@ -8,7 +8,7 @@ const countryOptions = [
   { id: 'ca', label: 'Canada' },
 ]
 
-function BillingInfoForm({ theme }) {
+function BillingInfoForm() {
   const [cardName, setCardName] = useState('')
   const [cardNumber, setCardNumber] = useState('')
   const [expiration, setExpiration] = useState('')

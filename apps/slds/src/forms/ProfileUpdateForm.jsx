@@ -3,7 +3,7 @@ import Input from '@salesforce/design-system-react/components/input'
 import Textarea from '@salesforce/design-system-react/components/textarea'
 import Button from '@salesforce/design-system-react/components/button'
 
-function ProfileUpdateForm({ theme }) {
+function ProfileUpdateForm() {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')

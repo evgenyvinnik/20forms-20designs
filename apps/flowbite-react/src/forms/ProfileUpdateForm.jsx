@@ -12,7 +12,7 @@ function ProfileUpdateForm() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-profile-first-name" value="First name" />
+            <Label htmlFor="flowbite-profile-first-name">First name</Label>
           </div>
           <TextInput
             id="flowbite-profile-first-name"
@@ -23,7 +23,7 @@ function ProfileUpdateForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-profile-last-name" value="Last name" />
+            <Label htmlFor="flowbite-profile-last-name">Last name</Label>
           </div>
           <TextInput
             id="flowbite-profile-last-name"
@@ -34,7 +34,7 @@ function ProfileUpdateForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-profile-email" value="Email address" />
+            <Label htmlFor="flowbite-profile-email">Email address</Label>
           </div>
           <TextInput
             id="flowbite-profile-email"
@@ -45,7 +45,7 @@ function ProfileUpdateForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-profile-phone" value="Phone number" />
+            <Label htmlFor="flowbite-profile-phone">Phone number</Label>
           </div>
           <TextInput
             id="flowbite-profile-phone"
@@ -57,7 +57,7 @@ function ProfileUpdateForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-profile-bio" value="Short bio" />
+            <Label htmlFor="flowbite-profile-bio">Short bio</Label>
           </div>
           <Textarea id="flowbite-profile-bio" name="bio" rows={3} required />
         </div>

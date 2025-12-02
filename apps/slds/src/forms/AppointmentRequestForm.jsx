@@ -3,7 +3,7 @@ import Input from '@salesforce/design-system-react/components/input'
 import Textarea from '@salesforce/design-system-react/components/textarea'
 import Button from '@salesforce/design-system-react/components/button'
 
-function AppointmentRequestForm({ theme }) {
+function AppointmentRequestForm() {
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [date, setDate] = useState('')

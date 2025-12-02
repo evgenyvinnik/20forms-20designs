@@ -12,10 +12,7 @@ function UserLoginForm() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">
-            <Label
-              htmlFor="flowbite-user-login-email"
-              value="Email or username"
-            />
+            <Label htmlFor="flowbite-user-login-email">Email or username</Label>
           </div>
           <TextInput
             id="flowbite-user-login-email"
@@ -26,7 +23,7 @@ function UserLoginForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-user-login-password" value="Password" />
+            <Label htmlFor="flowbite-user-login-password">Password</Label>
           </div>
           <TextInput
             id="flowbite-user-login-password"

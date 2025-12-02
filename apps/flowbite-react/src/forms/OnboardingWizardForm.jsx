@@ -25,7 +25,7 @@ function OnboardingWizardForm() {
           <div className="flex flex-col gap-4">
             <div>
               <div className="mb-2 block">
-                <Label htmlFor="flowbite-onboarding-email" value="Work email" />
+                <Label htmlFor="flowbite-onboarding-email">Work email</Label>
               </div>
               <TextInput
                 id="flowbite-onboarding-email"
@@ -36,10 +36,7 @@ function OnboardingWizardForm() {
             </div>
             <div>
               <div className="mb-2 block">
-                <Label
-                  htmlFor="flowbite-onboarding-password"
-                  value="Password"
-                />
+                <Label htmlFor="flowbite-onboarding-password">Password</Label>
               </div>
               <TextInput
                 id="flowbite-onboarding-password"
@@ -58,10 +55,7 @@ function OnboardingWizardForm() {
           <div className="flex flex-col gap-4">
             <div>
               <div className="mb-2 block">
-                <Label
-                  htmlFor="flowbite-onboarding-team-name"
-                  value="Team name"
-                />
+                <Label htmlFor="flowbite-onboarding-team-name">Team name</Label>
               </div>
               <TextInput
                 id="flowbite-onboarding-team-name"
@@ -72,7 +66,7 @@ function OnboardingWizardForm() {
             </div>
             <div>
               <div className="mb-2 block">
-                <Label htmlFor="flowbite-onboarding-size" value="Team size" />
+                <Label htmlFor="flowbite-onboarding-size">Team size</Label>
               </div>
               <Select id="flowbite-onboarding-size" name="teamSize" required>
                 <option value="">Select size</option>
@@ -91,10 +85,7 @@ function OnboardingWizardForm() {
           <div className="flex flex-col gap-4">
             <div>
               <div className="mb-2 block">
-                <Label
-                  htmlFor="flowbite-onboarding-goal"
-                  value="Primary goal"
-                />
+                <Label htmlFor="flowbite-onboarding-goal">Primary goal</Label>
               </div>
               <Textarea
                 id="flowbite-onboarding-goal"

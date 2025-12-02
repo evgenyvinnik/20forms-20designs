@@ -20,7 +20,7 @@ function ContactInquiryForm() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-contact-name" value="Full name" />
+            <Label htmlFor="flowbite-contact-name">Full name</Label>
           </div>
           <TextInput
             id="flowbite-contact-name"
@@ -31,7 +31,7 @@ function ContactInquiryForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-contact-email" value="Email address" />
+            <Label htmlFor="flowbite-contact-email">Email address</Label>
           </div>
           <TextInput
             id="flowbite-contact-email"
@@ -42,7 +42,7 @@ function ContactInquiryForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-contact-topic" value="Topic" />
+            <Label htmlFor="flowbite-contact-topic">Topic</Label>
           </div>
           <Select id="flowbite-contact-topic" name="topic" required>
             <option value="">Select topic</option>
@@ -54,7 +54,7 @@ function ContactInquiryForm() {
         </div>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="flowbite-contact-message" value="Message" />
+            <Label htmlFor="flowbite-contact-message">Message</Label>
           </div>
           <Textarea
             id="flowbite-contact-message"

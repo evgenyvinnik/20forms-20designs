@@ -17,7 +17,7 @@ const sortOptions = [
   { id: 'oldest', label: 'Oldest' },
 ]
 
-function AdvancedSearchForm({ theme }) {
+function AdvancedSearchForm() {
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState([])
   const [dateFrom, setDateFrom] = useState('')

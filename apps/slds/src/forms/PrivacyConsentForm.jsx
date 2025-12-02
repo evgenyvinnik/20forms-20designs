@@ -4,7 +4,7 @@ import Textarea from '@salesforce/design-system-react/components/textarea'
 import Checkbox from '@salesforce/design-system-react/components/checkbox'
 import Button from '@salesforce/design-system-react/components/button'
 
-function PrivacyConsentForm({ theme }) {
+function PrivacyConsentForm() {
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [notes, setNotes] = useState('')
