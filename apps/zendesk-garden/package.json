@@ -16,7 +16,7 @@
     "@zendeskgarden/react-buttons": "^9.12.2",
     "@zendeskgarden/react-grid": "^9.12.2",
     "@zendeskgarden/react-typography": "^9.12.2",
-    "styled-components": "^5.3.11"
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^5.1.1",
