@@ -1,5 +1,11 @@
 import { useState, useCallback } from 'react'
-import { FormLayout, TextField, Select, Checkbox, Button } from '@shopify/polaris'
+import {
+  FormLayout,
+  TextField,
+  Select,
+  Checkbox,
+  Button,
+} from '@shopify/polaris'
 import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from './locationOptions'
 
 function ShippingAddressForm() {
@@ -15,7 +21,7 @@ function ShippingAddressForm() {
   const regionOptions = (country === 'CA' ? CANADIAN_PROVINCES : US_STATES).map(
     (r) => ({ label: r, value: r })
   )
-  
+
   const regionLabel = country === 'CA' ? 'Province' : 'State'
 
   const handleSubmit = useCallback((event) => {

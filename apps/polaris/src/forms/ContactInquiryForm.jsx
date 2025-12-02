@@ -1,5 +1,11 @@
 import { useState, useCallback } from 'react'
-import { FormLayout, TextField, Select, Checkbox, Button } from '@shopify/polaris'
+import {
+  FormLayout,
+  TextField,
+  Select,
+  Checkbox,
+  Button,
+} from '@shopify/polaris'
 
 function ContactInquiryForm() {
   const [name, setName] = useState('')

@@ -293,17 +293,17 @@ Total non-empty lines of code in the project:
 
 | Extension | Lines      |
 | --------- | ---------- |
-| `.jsx`    | 64,900     |
-| `.js`     | 6,671      |
-| `.mjs`    | 2,475      |
-| `.json`   | 1,022      |
-| `.css`    | 1,007      |
-| `.ts`     | 999        |
-| `.html`   | 910        |
-| `.md`     | 640        |
-| `.tsx`    | 490        |
+| `.jsx`    | 63,385     |
+| `.js`     | 6,742      |
+| `.mjs`    | 2,484      |
+| `.json`   | 1,401      |
+| `.css`    | 1,283      |
+| `.ts`     | 988        |
+| `.html`   | 911        |
+| `.md`     | 659        |
+| `.tsx`    | 545        |
 | `.scss`   | 7          |
-| **Total** | **79,121** |
+| **Total** | **78,405** |
 
 *Generated using `scripts/calc-sloc.mjs` — excludes `node_modules`, `dist`, lock files, and other build artifacts.*
 
