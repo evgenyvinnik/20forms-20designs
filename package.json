@@ -1,7 +1,7 @@
 {
   "name": "20forms-20designs",
   "private": true,
-  "version": "1.0.251202.45",
+  "version": "1.0.251202.46",
   "type": "module",
   "packageManager": "pnpm@9.14.2",
   "scripts": {
