@@ -7,7 +7,7 @@ function PasswordResetForm() {
   }
 
   return (
-    <Card className="w-full p-6 sm:p-8">
+    <Card className="mx-4 w-full p-6 sm:p-8">
       <h1 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Password Reset</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <p className="text-gray-600 dark:text-gray-400">
