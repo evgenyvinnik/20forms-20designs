@@ -6,8 +6,6 @@ import {
   TextInputField,
 } from 'evergreen-ui'
 
-const formStackProps = { display: 'flex', flexDirection: 'column', gap: 16 }
-
 function EventRegistrationForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -15,7 +13,13 @@ function EventRegistrationForm() {
   }
 
   return (
-    <Pane is="form" onSubmit={handleSubmit} {...formStackProps}>
+    <Pane
+      is="form"
+      onSubmit={handleSubmit}
+      display="flex"
+      flexDirection="column"
+      gap={8}
+    >
       <TextInputField
         id="evergreen-event-name"
         label="Full name"

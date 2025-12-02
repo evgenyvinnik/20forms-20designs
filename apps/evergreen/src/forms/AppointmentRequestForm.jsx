@@ -1,7 +1,5 @@
 import { Button, Pane, TextInputField, TextareaField } from 'evergreen-ui'
 
-const formStackProps = { display: 'flex', flexDirection: 'column', gap: 16 }
-
 function AppointmentRequestForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -9,7 +7,13 @@ function AppointmentRequestForm() {
   }
 
   return (
-    <Pane is="form" onSubmit={handleSubmit} {...formStackProps}>
+    <Pane
+      is="form"
+      onSubmit={handleSubmit}
+      display="flex"
+      flexDirection="column"
+      gap={8}
+    >
       <TextInputField
         id="evergreen-appointment-name"
         label="Full name"

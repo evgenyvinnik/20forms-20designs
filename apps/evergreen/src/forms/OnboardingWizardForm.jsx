@@ -8,10 +8,6 @@ import {
   TextareaField,
 } from 'evergreen-ui'
 
-const formStackProps = { display: 'flex', flexDirection: 'column', gap: 24 }
-const sectionStackProps = { display: 'flex', flexDirection: 'column', gap: 16 }
-const buttonRowProps = { display: 'flex', gap: 12, flexWrap: 'wrap' }
-
 function OnboardingWizardForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -19,8 +15,14 @@ function OnboardingWizardForm() {
   }
 
   return (
-    <Pane is="form" onSubmit={handleSubmit} {...formStackProps}>
-      <Pane {...sectionStackProps}>
+    <Pane
+      is="form"
+      onSubmit={handleSubmit}
+      display="flex"
+      flexDirection="column"
+      gap={24}
+    >
+      <Pane display="flex" flexDirection="column" gap={16}>
         <Heading size={500}>Step 1: Account</Heading>
         <TextInputField
           id="evergreen-onboarding-email"
@@ -39,7 +41,7 @@ function OnboardingWizardForm() {
         />
       </Pane>
 
-      <Pane {...sectionStackProps}>
+      <Pane display="flex" flexDirection="column" gap={16}>
         <Heading size={500}>Step 2: Team</Heading>
         <TextInputField
           id="evergreen-onboarding-team-name"
@@ -63,7 +65,7 @@ function OnboardingWizardForm() {
         </SelectField>
       </Pane>
 
-      <Pane {...sectionStackProps}>
+      <Pane display="flex" flexDirection="column" gap={16}>
         <Heading size={500}>Step 3: Preferences</Heading>
         <TextareaField
           id="evergreen-onboarding-goal"
@@ -75,7 +77,7 @@ function OnboardingWizardForm() {
         <Checkbox label="Send me product tips" name="updates" />
       </Pane>
 
-      <Pane {...buttonRowProps}>
+      <Pane display="flex" gap={12} flexWrap="wrap">
         <Button
           type="button"
           appearance="default"

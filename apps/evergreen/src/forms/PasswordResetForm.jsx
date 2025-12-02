@@ -1,7 +1,5 @@
 import { Button, Pane, Paragraph, TextInputField } from 'evergreen-ui'
 
-const formStackProps = { display: 'flex', flexDirection: 'column', gap: 16 }
-
 function PasswordResetForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -9,7 +7,13 @@ function PasswordResetForm() {
   }
 
   return (
-    <Pane is="form" onSubmit={handleSubmit} {...formStackProps}>
+    <Pane
+      is="form"
+      onSubmit={handleSubmit}
+      display="flex"
+      flexDirection="column"
+      gap={8}
+    >
       <Paragraph marginBottom={0}>
         Request a password reset link via email.
       </Paragraph>

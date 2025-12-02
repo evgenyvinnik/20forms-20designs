@@ -9,8 +9,6 @@ import {
 
 import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from './locationOptions'
 
-const formStackProps = { display: 'flex', flexDirection: 'column', gap: 16 }
-
 function ShippingAddressForm() {
   const [country, setCountry] = useState('US')
 
@@ -29,7 +27,13 @@ function ShippingAddressForm() {
   }
 
   return (
-    <Pane is="form" onSubmit={handleSubmit} {...formStackProps}>
+    <Pane
+      is="form"
+      onSubmit={handleSubmit}
+      display="flex"
+      flexDirection="column"
+      gap={8}
+    >
       <TextInputField
         id="evergreen-shipping-full-name"
         label="Recipient name"

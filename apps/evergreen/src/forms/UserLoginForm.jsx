@@ -1,8 +1,5 @@
 import { Button, Checkbox, Pane, TextInputField } from 'evergreen-ui'
 
-const formStackProps = { display: 'flex', flexDirection: 'column', gap: 16 }
-const buttonRowProps = { display: 'flex', gap: 12, flexWrap: 'wrap' }
-
 function UserLoginForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -10,7 +7,13 @@ function UserLoginForm() {
   }
 
   return (
-    <Pane is="form" onSubmit={handleSubmit} {...formStackProps}>
+    <Pane
+      is="form"
+      onSubmit={handleSubmit}
+      display="flex"
+      flexDirection="column"
+      gap={8}
+    >
       <TextInputField
         id="evergreen-user-login-identifier"
         label="Email or username"
@@ -26,7 +29,7 @@ function UserLoginForm() {
         required
       />
       <Checkbox label="Keep me signed in" name="remember" />
-      <Pane {...buttonRowProps}>
+      <Pane display="flex" gap={12} flexWrap="wrap">
         <Button appearance="primary" type="submit">
           Sign in
         </Button>

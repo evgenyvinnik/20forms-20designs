@@ -1,7 +1,5 @@
 import { Button, Checkbox, Pane, TextInputField } from 'evergreen-ui'
 
-const formStackProps = { display: 'flex', flexDirection: 'column', gap: 16 }
-
 function UserRegistrationForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -9,7 +7,13 @@ function UserRegistrationForm() {
   }
 
   return (
-    <Pane is="form" onSubmit={handleSubmit} {...formStackProps}>
+    <Pane
+      is="form"
+      onSubmit={handleSubmit}
+      display="flex"
+      flexDirection="column"
+      gap={8}
+    >
       <TextInputField
         id="evergreen-user-registration-name"
         label="Full name"

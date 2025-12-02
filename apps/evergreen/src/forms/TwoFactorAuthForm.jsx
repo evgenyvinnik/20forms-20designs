@@ -1,8 +1,5 @@
 import { Button, Pane, Paragraph, TextInputField } from 'evergreen-ui'
 
-const formStackProps = { display: 'flex', flexDirection: 'column', gap: 16 }
-const buttonRowProps = { display: 'flex', gap: 12, flexWrap: 'wrap' }
-
 function TwoFactorAuthForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -10,7 +7,13 @@ function TwoFactorAuthForm() {
   }
 
   return (
-    <Pane is="form" onSubmit={handleSubmit} {...formStackProps}>
+    <Pane
+      is="form"
+      onSubmit={handleSubmit}
+      display="flex"
+      flexDirection="column"
+      gap={8}
+    >
       <Paragraph marginBottom={0}>
         Enter the code from your authenticator app or SMS.
       </Paragraph>
@@ -31,7 +34,7 @@ function TwoFactorAuthForm() {
         type="text"
         pattern="[A-Za-z0-9]{6,12}"
       />
-      <Pane {...buttonRowProps}>
+      <Pane display="flex" gap={12} flexWrap="wrap">
         <Button appearance="primary" type="submit">
           Verify
         </Button>

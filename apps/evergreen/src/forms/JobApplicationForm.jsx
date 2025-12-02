@@ -6,8 +6,6 @@ import {
   TextareaField,
 } from 'evergreen-ui'
 
-const formStackProps = { display: 'flex', flexDirection: 'column', gap: 16 }
-
 function JobApplicationForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -15,7 +13,13 @@ function JobApplicationForm() {
   }
 
   return (
-    <Pane is="form" onSubmit={handleSubmit} {...formStackProps}>
+    <Pane
+      is="form"
+      onSubmit={handleSubmit}
+      display="flex"
+      flexDirection="column"
+      gap={8}
+    >
       <TextInputField
         id="evergreen-job-full-name"
         label="Full name"

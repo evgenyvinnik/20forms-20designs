@@ -7,8 +7,6 @@ import {
   TextareaField,
 } from 'evergreen-ui'
 
-const formStackProps = { display: 'flex', flexDirection: 'column', gap: 16 }
-
 function CustomerFeedbackForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -16,7 +14,13 @@ function CustomerFeedbackForm() {
   }
 
   return (
-    <Pane is="form" onSubmit={handleSubmit} {...formStackProps}>
+    <Pane
+      is="form"
+      onSubmit={handleSubmit}
+      display="flex"
+      flexDirection="column"
+      gap={8}
+    >
       <TextInputField
         id="evergreen-feedback-name"
         label="Name"

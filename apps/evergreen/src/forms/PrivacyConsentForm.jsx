@@ -6,9 +6,6 @@ import {
   TextareaField,
 } from 'evergreen-ui'
 
-const formStackProps = { display: 'flex', flexDirection: 'column', gap: 16 }
-const checkboxGroupProps = { display: 'flex', flexDirection: 'column', gap: 8 }
-
 function PrivacyConsentForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -16,7 +13,13 @@ function PrivacyConsentForm() {
   }
 
   return (
-    <Pane is="form" onSubmit={handleSubmit} {...formStackProps}>
+    <Pane
+      is="form"
+      onSubmit={handleSubmit}
+      display="flex"
+      flexDirection="column"
+      gap={8}
+    >
       <TextInputField
         id="evergreen-privacy-name"
         label="Full name"
@@ -32,7 +35,9 @@ function PrivacyConsentForm() {
         required
       />
       <Pane
-        {...checkboxGroupProps}
+        display="flex"
+        flexDirection="column"
+        gap={8}
         aria-label="Communication channels"
         role="group"
       >
@@ -41,7 +46,13 @@ function PrivacyConsentForm() {
         <Checkbox label="SMS notifications" name="smsOptIn" />
         <Checkbox label="Phone calls" name="phoneOptIn" />
       </Pane>
-      <Pane {...checkboxGroupProps} aria-label="Privacy options" role="group">
+      <Pane
+        display="flex"
+        flexDirection="column"
+        gap={8}
+        aria-label="Privacy options"
+        role="group"
+      >
         <strong>Privacy options</strong>
         <Checkbox label="Allow analytics cookies" name="analytics" />
         <Checkbox label="Allow personalized content" name="personalization" />

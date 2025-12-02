@@ -6,8 +6,6 @@ import {
   TextInputField,
 } from 'evergreen-ui'
 
-const formStackProps = { display: 'flex', flexDirection: 'column', gap: 16 }
-
 function NewsletterSubscriptionForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -15,7 +13,13 @@ function NewsletterSubscriptionForm() {
   }
 
   return (
-    <Pane is="form" onSubmit={handleSubmit} {...formStackProps}>
+    <Pane
+      is="form"
+      onSubmit={handleSubmit}
+      display="flex"
+      flexDirection="column"
+      gap={8}
+    >
       <TextInputField
         id="evergreen-newsletter-email"
         label="Email address"
