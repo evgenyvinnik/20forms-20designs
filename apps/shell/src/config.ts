@@ -39,7 +39,6 @@ export type LibraryId =
   | 'slds'
   | 'material-tailwind'
   | 'react-spectrum'
-  | 'orbit'
   | 'semi-design'
   | 'headlessui'
 
@@ -105,7 +104,6 @@ export const LIBRARY_NAME_TO_ID: Record<string, LibraryId | undefined> = {
   Mantine: 'mantine',
   'Material Tailwind': 'material-tailwind',
   MUI: 'mui',
-  'Orbit by Kiwi.com': 'orbit',
   PatternFly: 'patternfly',
   'Pinterest Gestalt': 'gestalt',
   PrimeReact: 'primereact',
@@ -354,14 +352,6 @@ export const LIBRARIES: Library[] = [
     supportsTheme: true,
   },
   {
-    name: 'Orbit by Kiwi.com',
-    directory: 'orbit',
-    website: 'https://orbit.kiwi',
-    repo: 'https://github.com/kiwicom/orbit',
-    implemented: true,
-    supportsTheme: true,
-  },
-  {
     name: 'PatternFly',
     directory: 'patternfly',
     website: 'https://www.patternfly.org',
@@ -560,7 +550,6 @@ const CONSOLIDATED_LIBRARIES: Set<LibraryId> = new Set([
   'slds',
   'material-tailwind',
   'react-spectrum',
-  'orbit',
   'semi-design',
   'headlessui',
   'react-no-css',

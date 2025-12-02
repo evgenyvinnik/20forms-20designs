@@ -1,13 +1,26 @@
 /* Atlaskit uses design tokens and CSS-in-JS, minimal custom CSS needed */
+/* The @atlaskit/tokens package provides CSS custom properties that automatically
+   change based on the active theme (light/dark). The AppProvider from 
+   @atlaskit/app-provider handles applying the correct theme tokens. */
 html,
 body,
 #root {
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  /* Use Atlaskit design tokens - these automatically switch between light and dark mode */
   background-color: var(--ds-surface, #ffffff);
   color: var(--ds-text, #172b4d);
   transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Support for theme applied via data attributes by AppProvider */
+[data-color-mode='dark'] {
+  color-scheme: dark;
+}
+
+[data-color-mode='light'] {
+  color-scheme: light;
 }
 
 .app-container {

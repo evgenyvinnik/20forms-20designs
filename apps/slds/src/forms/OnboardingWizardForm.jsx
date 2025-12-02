@@ -19,7 +19,7 @@ const steps = [
   { id: 2, label: 'Preferences' },
 ]
 
-function OnboardingWizardForm({ theme }) {
+function OnboardingWizardForm() {
   const [step, setStep] = useState(0)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')

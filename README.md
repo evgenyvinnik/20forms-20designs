@@ -1,4 +1,4 @@
-# 20forms-20designs
+# 20 Forms, 40 Designs
 
 > **Form Library Comparison Playground** — Compare the same forms implemented across different React design systems with full CSS isolation.
 
@@ -38,7 +38,7 @@ This project uses a **monorepo + iframe architecture** for complete CSS isolatio
 
 ### Why Separate Apps Per Library?
 
-You might wonder: *why build 42 separate applications instead of one unified app?* The answer comes down to **CSS isolation** — the core technical challenge of this project.
+You might wonder: *why build 41 separate applications instead of one unified app?* The answer comes down to **CSS isolation** — the core technical challenge of this project.
 
 **The Problem with a Single SPA:**
 
@@ -66,7 +66,7 @@ This means MUI's `CssBaseline`, Tailwind's preflight, and Chakra's global styles
 
 **The Trade-off:**
 
-Yes, building 42 separate apps means:
+Yes, building 41 separate apps means:
 - Longer build times (~2-3 minutes for full build)
 - Duplicated React/library bundles across apps
 - More complex deployment orchestration
@@ -130,7 +130,6 @@ All libraries implement the same 20 forms with identical content, labels, and fi
 | [Mantine](https://mantine.dev/)                         | ✅ Light/Dark | [GitHub](https://github.com/mantinedev/mantine)                   |
 | [Material Tailwind](https://www.material-tailwind.com/)  | ✅ Light/Dark | [GitHub](https://github.com/creativetimofficial/material-tailwind) |
 | [MUI](https://mui.com/)                                 | ✅ Light/Dark | [GitHub](https://github.com/mui/material-ui)                      |
-| [Orbit by Kiwi.com](https://orbit.kiwi/)                 | ✅ Light/Dark | [GitHub](https://github.com/kiwicom/orbit)                        |
 | [PatternFly](https://www.patternfly.org/)               | ✅ Light/Dark | [GitHub](https://github.com/patternfly/patternfly-react)          |
 | [Pinterest Gestalt](https://gestalt.pinterest.systems/) | ✅ Light/Dark | [GitHub](https://github.com/pinterest/gestalt)                    |
 | [PrimeReact](https://primereact.org/)                   | ✅ Light/Dark | [GitHub](https://github.com/primefaces/primereact)                |
@@ -181,7 +180,7 @@ This runs the shell application in development mode.
 ### Production Build (CSS Isolation)
 
 ```bash
-# Build all 43 apps (shell + 42 library apps) for GitHub Pages
+# Build all 42 apps (shell + 41 library apps) for GitHub Pages
 pnpm run build
 
 # Preview the production build locally
@@ -249,7 +248,7 @@ This project is configured for automatic deployment to GitHub Pages via GitHub A
 The workflow:
 
 - Installs dependencies with pnpm (with caching for faster builds)
-- Builds all 43 apps (shell + 42 library apps)
+- Builds all 42 apps (shell + 41 library apps)
 - Deploys to GitHub Pages
 
 **Live URL:** `https://<username>.github.io/20forms-20designs/`

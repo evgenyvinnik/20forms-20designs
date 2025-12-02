@@ -123,16 +123,6 @@ const LIBRARIES = [
     needsTailwind: true,
   },
   {
-    id: 'orbit',
-    name: 'Orbit',
-    prefix: 'orbit',
-    dependencies: {
-      '@kiwicom/orbit-components': '^18.2.0',
-      'styled-components': '^6.1.18',
-    },
-    supportsTheme: true,
-  },
-  {
     id: 'patternfly',
     name: 'PatternFly',
     prefix: 'patternfly',

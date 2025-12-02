@@ -93,7 +93,6 @@ const LIBRARY_CONFIGS = {
   'slds': { dirPrefix: 'slds', name: 'SLDS', appTemplate: 'slds-user-login' },
   'material-tailwind': { dirPrefix: 'material-tailwind', name: 'Material Tailwind', appTemplate: 'material-tailwind-user-login' },
   'react-spectrum': { dirPrefix: 'react-spectrum', name: 'React Spectrum', appTemplate: 'react-spectrum-user-login' },
-  'orbit': { dirPrefix: 'orbit', name: 'Orbit', appTemplate: 'orbit-user-login' },
   'semi-design': { dirPrefix: 'semi-design', name: 'Semi Design', appTemplate: 'semi-design-user-login' },
   'headlessui': { dirPrefix: 'headlessui', name: 'Headless UI', appTemplate: 'headlessui-user-login' },
 }

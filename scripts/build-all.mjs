@@ -26,16 +26,49 @@ const APPS_DIR = path.join(ROOT_DIR, 'apps');
 // Maximum concurrent builds (increase based on CPU cores - typically 8-12 is safe)
 const MAX_CONCURRENCY = 14;
 
-// Consolidated app names (one per design system)
+// Consolidated app names (one per design system) - sorted alphabetically
 const CONSOLIDATED_APPS = [
-  'mui', 'chakra', 'antd', 'react-bootstrap', 'evergreen', 'blueprint',
-  'radix-ui', 'gravity-ui', 'react-no-css', 'cloudscape', 'daisyui',
-  'shadcn-ui', 'gestalt', 'polaris', 'elastic-ui', 'zendesk-garden',
-  'tamagui', 'uswds', 'primereact', 'webawesome', 'arco-design', 'carbon',
-  'ariakit', 'baseweb', 'atlaskit', 'braid', 'fluent-ui', 'mantine',
-  'coreui', 'grommet', 'flowbite-react', 'semantic-ui', 'primer', 'rsuite',
-  'patternfly', 'theme-ui', 'slds', 'material-tailwind',
-  'react-spectrum', 'orbit', 'semi-design', 'headlessui'
+  'antd',
+  'arco-design',
+  'ariakit',
+  'atlaskit',
+  'baseweb',
+  'blueprint',
+  'braid',
+  'carbon',
+  'chakra',
+  'cloudscape',
+  'coreui',
+  'daisyui',
+  'elastic-ui',
+  'evergreen',
+  'flowbite-react',
+  'fluent-ui',
+  'gestalt',
+  'gravity-ui',
+  'grommet',
+  'headlessui',
+  'mantine',
+  'material-tailwind',
+  'mui',
+  'patternfly',
+  'polaris',
+  'primereact',
+  'primer',
+  'radix-ui',
+  'react-bootstrap',
+  'react-no-css',
+  'react-spectrum',
+  'rsuite',
+  'semantic-ui',
+  'semi-design',
+  'shadcn-ui',
+  'slds',
+  'tamagui',
+  'theme-ui',
+  'uswds',
+  'webawesome',
+  'zendesk-garden',
 ];
 
 /**

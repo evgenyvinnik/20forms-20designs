@@ -49,51 +49,19 @@ const FORM_COMPONENTS = {
   'user-registration': UserRegistrationForm,
 }
 
+// Note: Salesforce Lightning Design System does not support dark theme
+
 function App() {
   const [formId, setFormId] = useState(() => {
     const params = new URLSearchParams(window.location.search)
     return params.get('form') || 'user-login'
   })
 
-  const [theme, setTheme] = useState(() => {
-    const params = new URLSearchParams(window.location.search)
-    return params.get('theme') === 'dark' ? 'dark' : 'light'
-  })
-
-  // Apply theme on mount and when it changes
-  useEffect(() => {
-    // Check URL for theme parameter
-    const params = new URLSearchParams(window.location.search)
-    const urlTheme = params.get('theme')
-
-    if (urlTheme === 'dark' || theme === 'dark') {
-      document.body.classList.add('dark')
-      document.body.style.backgroundColor = '#1a1a2e'
-      document.body.style.color = '#ffffff'
-    } else {
-      document.body.classList.remove('dark')
-      document.body.style.backgroundColor = ''
-      document.body.style.color = ''
-    }
-  }, [theme])
-
-  // Listen for theme changes from parent
-  useEffect(() => {
-    const handleMessage = (event) => {
-      if (event.data?.type === 'SET_THEME') {
-        setTheme(event.data.theme)
-      }
-    }
-    window.addEventListener('message', handleMessage)
-    return () => window.removeEventListener('message', handleMessage)
-  }, [])
-
   // Listen for URL changes
   useEffect(() => {
     const handlePopState = () => {
       const params = new URLSearchParams(window.location.search)
       setFormId(params.get('form') || 'user-login')
-      setTheme(params.get('theme') === 'dark' ? 'dark' : 'light')
     }
     window.addEventListener('popstate', handlePopState)
     return () => window.removeEventListener('popstate', handlePopState)
@@ -101,77 +69,10 @@ function App() {
 
   // Get the form component based on the form ID
   const FormComponent = FORM_COMPONENTS[formId]
-  const isDark = theme === 'dark'
-
-  // SLDS doesn't have native dark mode support - we need custom CSS overrides
-  // The slds-theme_inverse class only sets container colors, not form elements
-  const darkModeStyles = isDark
-    ? `
-    .slds-form-element__label,
-    .slds-form-element__legend,
-    .slds-checkbox__label .slds-form-element__label,
-    .slds-radio__label .slds-form-element__label,
-    .slds-text-heading_small,
-    .slds-text-heading--small,
-    .slds-progress__marker,
-    .slds-progress__item .slds-button,
-    .slds-progress__item .slds-progress__marker_icon,
-    .slds-combobox__input-value,
-    label,
-    legend {
-      color: #ffffff !important;
-    }
-    .slds-input,
-    .slds-textarea,
-    .slds-combobox__input,
-    .slds-input_faux {
-      background-color: #1e3a5f !important;
-      border-color: #5a8aba !important;
-      color: #ffffff !important;
-    }
-    .slds-input::placeholder,
-    .slds-textarea::placeholder {
-      color: #a0b5cc !important;
-    }
-    .slds-checkbox_faux,
-    .slds-checkbox--faux {
-      background-color: #1e3a5f !important;
-      border-color: #5a8aba !important;
-    }
-    .slds-progress__item.slds-is-completed .slds-progress__marker,
-    .slds-progress__item.slds-is-active .slds-progress__marker {
-      background-color: #1b96ff !important;
-      border-color: #1b96ff !important;
-    }
-    .slds-progress__item .slds-progress__marker {
-      background-color: #1e3a5f !important;
-      border-color: #5a8aba !important;
-    }
-    .slds-progress__bar {
-      background-color: #1e3a5f !important;
-    }
-    .slds-progress__bar span {
-      background-color: #1b96ff !important;
-    }
-    .slds-listbox__option {
-      color: #181818 !important;
-    }
-  `
-    : ''
 
   return (
     <IconSettings iconPath="/assets/icons">
-      {isDark && <style>{darkModeStyles}</style>}
-      <div
-        className={isDark ? 'slds-theme_inverse' : ''}
-        style={{
-          padding: '20px',
-          maxWidth: '500px',
-          margin: '0 auto',
-          backgroundColor: isDark ? '#16325c' : undefined,
-          minHeight: '100vh',
-        }}
-      >
+      <div style={{ padding: '20px', maxWidth: '500px', margin: '0 auto' }}>
         <FormComponent />
       </div>
     </IconSettings>

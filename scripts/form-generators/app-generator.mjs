@@ -18,8 +18,6 @@ export function generateAppJsx(library, form) {
       return generateMantineApp(library, form)
     case 'material-tailwind':
       return generateMaterialTailwindApp(library, form)
-    case 'orbit':
-      return generateOrbitApp(library, form)
     case 'patternfly':
       return generatePatternFlyApp(library, form)
     case 'primer':
@@ -336,47 +334,6 @@ function App() {
         <FormComponent theme={theme} />
       </div>
     </ThemeProvider>
-  )
-}
-
-export default App
-`
-}
-
-function generateOrbitApp(library, form) {
-  return `import { useState, useEffect } from 'react'
-import { OrbitProvider, defaultTheme } from '@kiwicom/orbit-components'
-import FormComponent from './form/${form.name}'
-
-function App() {
-  const [theme, setTheme] = useState(() => {
-    const params = new URLSearchParams(window.location.search)
-    return params.get('theme') === 'dark' ? 'dark' : 'light'
-  })
-
-  useEffect(() => {
-    const handleMessage = (event) => {
-      if (event.data?.type === 'SET_THEME') {
-        setTheme(event.data.theme)
-      }
-    }
-    window.addEventListener('message', handleMessage)
-    return () => window.removeEventListener('message', handleMessage)
-  }, [])
-
-  return (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
-      <div
-        style={{
-          padding: '16px',
-          background: theme === 'dark' ? '#1e1e1e' : '#ffffff',
-          color: theme === 'dark' ? '#ffffff' : '#1e1e1e',
-          minHeight: '100vh',
-        }}
-      >
-        <FormComponent />
-      </div>
-    </OrbitProvider>
   )
 }
 

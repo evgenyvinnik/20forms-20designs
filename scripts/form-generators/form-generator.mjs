@@ -24,9 +24,6 @@ import {
   generateMaterialTailwindForms 
 } from './libraries/material-tailwind-forms.mjs'
 import { 
-  generateOrbitForms 
-} from './libraries/orbit-forms.mjs'
-import { 
   generatePatternFlyForms 
 } from './libraries/patternfly-forms.mjs'
 import { 
@@ -67,8 +64,6 @@ export function generateForm(library, form) {
       return generateMantineForms(form)
     case 'material-tailwind':
       return generateMaterialTailwindForms(form)
-    case 'orbit':
-      return generateOrbitForms(form)
     case 'patternfly':
       return generatePatternFlyForms(form)
     case 'primer':

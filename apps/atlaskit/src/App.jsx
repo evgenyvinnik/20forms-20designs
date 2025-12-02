@@ -1,6 +1,6 @@
 import './styles.css'
 
-import AppProvider from '@atlaskit/app-provider'
+import AppProvider, { useSetColorMode } from '@atlaskit/app-provider'
 
 import { useState, useEffect } from 'react'
 import { Box, xcss } from '@atlaskit/primitives'
@@ -60,47 +60,66 @@ const containerStyles = xcss({
   color: 'color.text',
 })
 
+// Get initial color mode from URL
+function getInitialColorMode() {
+  const params = new URLSearchParams(window.location.search)
+  return params.get('theme') === 'dark' ? 'dark' : 'light'
+}
+
+// Inner component that can use AppProvider hooks
+function AppContent({ formId }) {
+  const setColorMode = useSetColorMode()
+
+  // Listen for theme changes from parent
+  useEffect(() => {
+    const handleMessage = (event) => {
+      if (event.data?.type === 'SET_THEME') {
+        setColorMode(event.data.theme === 'dark' ? 'dark' : 'light')
+      }
+    }
+    window.addEventListener('message', handleMessage)
+    return () => window.removeEventListener('message', handleMessage)
+  }, [setColorMode])
+
+  // Listen for URL changes
+  useEffect(() => {
+    const handlePopState = () => {
+      const params = new URLSearchParams(window.location.search)
+      setColorMode(params.get('theme') === 'dark' ? 'dark' : 'light')
+    }
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [setColorMode])
+
+  // Get the form component based on the form ID
+  const FormComponent = FORM_COMPONENTS[formId]
+
+  return (
+    <Box xcss={containerStyles}>
+      <FormComponent />
+    </Box>
+  )
+}
+
 function App() {
   const [formId, setFormId] = useState(() => {
     const params = new URLSearchParams(window.location.search)
     return params.get('form') || 'user-login'
   })
 
-  const [theme, setTheme] = useState(() => {
-    const params = new URLSearchParams(window.location.search)
-    return params.get('theme') === 'dark' ? 'dark' : 'light'
-  })
-
-  // Listen for theme changes from parent
-  useEffect(() => {
-    const handleMessage = (event) => {
-      if (event.data?.type === 'SET_THEME') {
-        setTheme(event.data.theme)
-      }
-    }
-    window.addEventListener('message', handleMessage)
-    return () => window.removeEventListener('message', handleMessage)
-  }, [])
-
-  // Listen for URL changes
+  // Listen for URL changes for form selection
   useEffect(() => {
     const handlePopState = () => {
       const params = new URLSearchParams(window.location.search)
       setFormId(params.get('form') || 'user-login')
-      setTheme(params.get('theme') === 'dark' ? 'dark' : 'light')
     }
     window.addEventListener('popstate', handlePopState)
     return () => window.removeEventListener('popstate', handlePopState)
   }, [])
 
-  // Get the form component based on the form ID
-  const FormComponent = FORM_COMPONENTS[formId]
-
   return (
-    <AppProvider colorMode={theme}>
-      <Box xcss={containerStyles}>
-        <FormComponent />
-      </Box>
+    <AppProvider defaultColorMode={getInitialColorMode()}>
+      <AppContent formId={formId} />
     </AppProvider>
   )
 }
