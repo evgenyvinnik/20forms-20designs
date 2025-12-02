@@ -85,10 +85,8 @@ function App() {
 
   return (
     <ColorSchemeProvider colorScheme={theme}>
-      <Box color="default" minHeight="100vh" padding={5}>
-        <Box maxWidth={500} marginStart="auto" marginEnd="auto">
-          <FormComponent />
-        </Box>
+      <Box color="default" padding={5}>
+        <FormComponent />
       </Box>
     </ColorSchemeProvider>
   )
