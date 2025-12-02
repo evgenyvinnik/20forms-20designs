@@ -30,6 +30,14 @@ dist-ssr
 coverage
 .nyc_output
 
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+**/test-results/
+**/playwright-report/
+
 # Environment files
 .env
 .env.local
