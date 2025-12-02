@@ -153,7 +153,7 @@ All libraries implement the same 20 forms with identical content, labels, and fi
 | 35 | [Shopify Polaris](https://polaris.shopify.com/)         | ✅ Light/Dark | [GitHub](https://github.com/Shopify/polaris)                      |
 | 36 | [Tamagui](https://tamagui.dev/)                         | ✅ Light/Dark | [GitHub](https://github.com/tamagui/tamagui)                      |
 | 37 | [Theme UI](https://theme-ui.com/)                       | ✅ Light/Dark | [GitHub](https://github.com/system-ui/theme-ui)                   |
-| 38 | [U.S. Web Design System](https://designsystem.digital.gov/) | ✅ Light/Dark | [GitHub](https://github.com/uswds/uswds)                      |
+| 38 | [U.S. Web Design System](https://designsystem.digital.gov/) | ⚠️ Light only | [GitHub](https://github.com/uswds/uswds)                      |
 | 39 | [Web Awesome](https://webawesome.com/)                  | ✅ Light/Dark | [GitHub](https://github.com/AmazeeLabs/webawesome)                |
 | 40 | [Zendesk Garden](https://garden.zendesk.com/)           | ✅ Light/Dark | [GitHub](https://github.com/zendeskgarden/react-components)       |
 
