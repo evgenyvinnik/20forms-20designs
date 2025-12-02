@@ -5,11 +5,7 @@ import flowbiteReact from 'flowbite-react/plugin/vite'
 
 export default defineConfig(({ mode }) => ({
   plugins: [
-    react({
-      babel: {
-        plugins: ['babel-plugin-react-compiler'],
-      },
-    }),
+    react(),
     tailwindcss(),
     flowbiteReact(),
   ],
