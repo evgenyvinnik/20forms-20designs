@@ -1,0 +1,97 @@
+version: 2
+updates:
+  # npm/pnpm dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    # Run every 2 weeks (first and third Monday of each month)
+    # Dependabot doesn't support biweekly directly, so we use weekly
+    # and group updates to reduce noise
+    open-pull-requests-limit: 10
+    groups:
+      # Group all minor and patch updates together
+      minor-and-patch:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+      # Group major updates by category
+      react-ecosystem:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "react-router*"
+        update-types:
+          - "major"
+      build-tools:
+        patterns:
+          - "vite"
+          - "typescript"
+          - "eslint*"
+          - "prettier"
+        update-types:
+          - "major"
+      design-systems:
+        patterns:
+          - "@mui/*"
+          - "@chakra-ui/*"
+          - "antd"
+          - "@ant-design/*"
+          - "@mantine/*"
+          - "@radix-ui/*"
+          - "@fluentui/*"
+          - "@blueprintjs/*"
+          - "@cloudscape-design/*"
+          - "@carbon/*"
+          - "@patternfly/*"
+          - "@primer/*"
+          - "@adobe/react-spectrum"
+          - "evergreen-ui"
+          - "grommet"
+          - "rsuite"
+          - "semantic-ui-react"
+          - "@arco-design/*"
+          - "@douyinfe/semi-ui"
+          - "baseui"
+          - "@atlaskit/*"
+          - "@elastic/eui"
+          - "@gravity-ui/*"
+          - "gestalt"
+          - "@zendesk/garden-react-*"
+          - "@shopify/polaris"
+          - "tamagui"
+          - "theme-ui"
+          - "braid-design-system"
+          - "@coreui/*"
+          - "daisyui"
+          - "flowbite-react"
+          - "@headlessui/*"
+          - "@material-tailwind/*"
+          - "primereact"
+          - "@salesforce/design-system-react"
+          - "@uswds/*"
+        update-types:
+          - "major"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "npm"
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "github-actions"
