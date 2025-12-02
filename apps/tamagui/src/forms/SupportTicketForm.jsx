@@ -19,7 +19,7 @@ function SupportTicketForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <YStack gap="$3">
+      <YStack gap="$2">
         <YStack gap="$1">
           <Label htmlFor="subject">Subject</Label>
           <Input id="subject" name="subject" placeholder="Subject" required />

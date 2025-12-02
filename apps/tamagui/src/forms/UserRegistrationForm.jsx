@@ -11,7 +11,7 @@ function UserRegistrationForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <YStack gap="$3">
+      <YStack gap="$2">
         <YStack gap="$1">
           <Label htmlFor="fullName">Full name</Label>
           <Input

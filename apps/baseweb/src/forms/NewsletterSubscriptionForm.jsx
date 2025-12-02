@@ -24,7 +24,7 @@ function NewsletterSubscriptionForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Block display="flex" flexDirection="column" gridGap="scale600">
+      <Block display="flex" flexDirection="column" gridGap="scale200">
         <FormControl label="Email address">
           <Input
             id="baseweb-newsletter-email"

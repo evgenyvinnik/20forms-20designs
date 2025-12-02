@@ -1,30 +1,31 @@
 import { useState, useCallback } from 'react'
-import { FormLayout, TextField, Select, Button } from '@shopify/polaris'
+import { FormLayout, TextField, Select, Checkbox, Button } from '@shopify/polaris'
 
 function ContactInquiryForm() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
-  const [subject, setSubject] = useState('')
+  const [topic, setTopic] = useState('')
   const [message, setMessage] = useState('')
+  const [consent, setConsent] = useState(false)
 
-  const subjectOptions = [
-    { label: 'Select a subject', value: '' },
-    { label: 'General inquiry', value: 'general' },
-    { label: 'Sales', value: 'sales' },
+  const topicOptions = [
+    { label: 'Select topic', value: '' },
     { label: 'Support', value: 'support' },
+    { label: 'Sales', value: 'sales' },
     { label: 'Feedback', value: 'feedback' },
+    { label: 'Other', value: 'other' },
   ]
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
-    alert('Inquiry submitted successfully!')
+    alert('Inquiry submitted!')
   }, [])
 
   return (
     <form onSubmit={handleSubmit}>
       <FormLayout>
         <TextField
-          label="Name"
+          label="Full name"
           type="text"
           value={name}
           onChange={setName}
@@ -40,10 +41,10 @@ function ContactInquiryForm() {
           requiredIndicator
         />
         <Select
-          label="Subject"
-          options={subjectOptions}
-          value={subject}
-          onChange={setSubject}
+          label="Topic"
+          options={topicOptions}
+          value={topic}
+          onChange={setTopic}
           requiredIndicator
         />
         <TextField
@@ -54,8 +55,13 @@ function ContactInquiryForm() {
           autoComplete="off"
           requiredIndicator
         />
+        <Checkbox
+          label="Allow follow-up communication"
+          checked={consent}
+          onChange={setConsent}
+        />
         <Button submit variant="primary">
-          Send message
+          Submit inquiry
         </Button>
       </FormLayout>
     </form>

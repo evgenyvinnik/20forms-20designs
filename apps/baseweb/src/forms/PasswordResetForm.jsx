@@ -15,7 +15,7 @@ function PasswordResetForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Block display="flex" flexDirection="column" gridGap="scale600">
+      <Block display="flex" flexDirection="column" gridGap="scale200">
         <ParagraphSmall>
           Request a password reset link via email.
         </ParagraphSmall>

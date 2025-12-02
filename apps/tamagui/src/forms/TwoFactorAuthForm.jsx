@@ -8,7 +8,7 @@ function TwoFactorAuthForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <YStack gap="$3">
+      <YStack gap="$2">
         <Text>Enter the code from your authenticator app or SMS.</Text>
 
         <YStack gap="$1">

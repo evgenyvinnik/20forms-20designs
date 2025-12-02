@@ -7,7 +7,8 @@ function TwoFactorAuthForm() {
   }
 
   return (
-    <Card className="w-full">
+    <Card className="w-full p-6 sm:p-8">
+      <h1 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Two Factor Auth</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <p className="text-gray-600 dark:text-gray-400">
           Enter the code from your authenticator app or SMS.

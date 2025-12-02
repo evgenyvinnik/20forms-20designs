@@ -2,54 +2,54 @@
 
 /* Checkbox label text */
 body.dark .usa-checkbox__label {
-  color: #f0f0f0;
+  color: #f0f0f0 !important;
 }
 
 /* Checkbox box styling */
 body.dark .usa-checkbox__label::before {
-  background-color: #2d2d2d;
-  border-color: #a9aeb1;
-  box-shadow: 0 0 0 1px #a9aeb1;
+  background-color: #2d2d2d !important;
+  border-color: #a9aeb1 !important;
+  box-shadow: 0 0 0 1px #a9aeb1 !important;
 }
 
 /* Checkbox checked state */
 body.dark .usa-checkbox__input:checked + .usa-checkbox__label::before {
-  background-color: #005ea2;
-  border-color: #73b3e7;
-  box-shadow: none;
+  background-color: #005ea2 !important;
+  border-color: #73b3e7 !important;
+  box-shadow: none !important;
 }
 
 /* Checkbox checkmark visibility in dark mode */
 body.dark .usa-checkbox__input:checked + .usa-checkbox__label::after {
-  border-color: #ffffff;
+  border-color: #ffffff !important;
 }
 
 /* Checkbox hover state */
 body.dark .usa-checkbox__label:hover::before {
-  border-color: #73b3e7;
+  border-color: #73b3e7 !important;
 }
 
 /* Checkbox focus state */
 body.dark .usa-checkbox__input:focus + .usa-checkbox__label::before {
-  outline: 2px solid #73b3e7;
-  outline-offset: 2px;
+  outline: 2px solid #73b3e7 !important;
+  outline-offset: 2px !important;
 }
 
 /* Radio button label text */
 body.dark .usa-radio__label {
-  color: #f0f0f0;
+  color: #f0f0f0 !important;
 }
 
 /* Radio button circle styling */
 body.dark .usa-radio__label::before {
-  background-color: #2d2d2d;
-  border-color: #565c65;
+  background-color: #2d2d2d !important;
+  border-color: #565c65 !important;
 }
 
 /* Radio button checked state */
 body.dark .usa-radio__input:checked + .usa-radio__label::before {
-  background-color: #2d2d2d;
-  border-color: #005ea2;
+  background-color: #2d2d2d !important;
+  border-color: #005ea2 !important;
 }
 
 /* Fieldset legend */

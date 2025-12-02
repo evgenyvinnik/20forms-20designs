@@ -26,7 +26,7 @@ function OnboardingWizardForm() {
   return (
     <form onSubmit={handleSubmit}>
       <YStack gap="$4">
-        <YStack gap="$3">
+        <YStack gap="$2">
           <H3>Step 1: Account</H3>
 
           <YStack gap="$1">
@@ -53,7 +53,7 @@ function OnboardingWizardForm() {
           </YStack>
         </YStack>
 
-        <YStack gap="$3">
+        <YStack gap="$2">
           <H3>Step 2: Team</H3>
 
           <YStack gap="$1">
@@ -115,7 +115,7 @@ function OnboardingWizardForm() {
           </YStack>
         </YStack>
 
-        <YStack gap="$3">
+        <YStack gap="$2">
           <H3>Step 3: Preferences</H3>
 
           <YStack gap="$1">

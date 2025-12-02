@@ -1,44 +1,33 @@
 import { useState, useCallback } from 'react'
-import {
-  FormLayout,
-  TextField,
-  Select,
-  Checkbox,
-  Button,
-} from '@shopify/polaris'
+import { FormLayout, TextField, Select, Button } from '@shopify/polaris'
 
 function BillingInfoForm() {
-  const [cardholderName, setCardholderName] = useState('')
+  const [cardName, setCardName] = useState('')
   const [cardNumber, setCardNumber] = useState('')
-  const [expiryDate, setExpiryDate] = useState('')
-  const [cvv, setCvv] = useState('')
-  const [billingAddress, setBillingAddress] = useState('')
-  const [city, setCity] = useState('')
+  const [expiration, setExpiration] = useState('')
+  const [cvc, setCvc] = useState('')
+  const [address, setAddress] = useState('')
   const [country, setCountry] = useState('')
-  const [saveCard, setSaveCard] = useState(false)
 
   const countryOptions = [
     { label: 'Select country', value: '' },
-    { label: 'United States', value: 'us' },
-    { label: 'Canada', value: 'ca' },
-    { label: 'United Kingdom', value: 'uk' },
-    { label: 'Australia', value: 'au' },
-    { label: 'Germany', value: 'de' },
+    { label: 'United States', value: 'US' },
+    { label: 'Canada', value: 'CA' },
   ]
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
-    alert('Billing information saved!')
+    alert('Billing details saved!')
   }, [])
 
   return (
     <form onSubmit={handleSubmit}>
       <FormLayout>
         <TextField
-          label="Cardholder name"
+          label="Name on card"
           type="text"
-          value={cardholderName}
-          onChange={setCardholderName}
+          value={cardName}
+          onChange={setCardName}
           autoComplete="cc-name"
           requiredIndicator
         />
@@ -48,59 +37,49 @@ function BillingInfoForm() {
           value={cardNumber}
           onChange={setCardNumber}
           autoComplete="cc-number"
+          inputMode="numeric"
+          maxLength={19}
           requiredIndicator
         />
         <FormLayout.Group>
           <TextField
-            label="Expiry date"
+            label="Expiration date"
             type="text"
-            value={expiryDate}
-            onChange={setExpiryDate}
+            value={expiration}
+            onChange={setExpiration}
             autoComplete="cc-exp"
             placeholder="MM/YY"
+            inputMode="numeric"
             requiredIndicator
           />
           <TextField
-            label="CVV"
+            label="Security code"
             type="text"
-            value={cvv}
-            onChange={setCvv}
+            value={cvc}
+            onChange={setCvc}
             autoComplete="cc-csc"
+            inputMode="numeric"
+            maxLength={4}
             requiredIndicator
           />
         </FormLayout.Group>
         <TextField
           label="Billing address"
           type="text"
-          value={billingAddress}
-          onChange={setBillingAddress}
+          value={address}
+          onChange={setAddress}
           autoComplete="street-address"
           requiredIndicator
         />
-        <FormLayout.Group>
-          <TextField
-            label="City"
-            type="text"
-            value={city}
-            onChange={setCity}
-            autoComplete="address-level2"
-            requiredIndicator
-          />
-          <Select
-            label="Country"
-            options={countryOptions}
-            value={country}
-            onChange={setCountry}
-            requiredIndicator
-          />
-        </FormLayout.Group>
-        <Checkbox
-          label="Save card for future purchases"
-          checked={saveCard}
-          onChange={setSaveCard}
+        <Select
+          label="Country"
+          options={countryOptions}
+          value={country}
+          onChange={setCountry}
+          requiredIndicator
         />
         <Button submit variant="primary">
-          Save billing info
+          Save billing details
         </Button>
       </FormLayout>
     </form>

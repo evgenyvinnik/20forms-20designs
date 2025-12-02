@@ -24,7 +24,7 @@ function AdvancedSearchForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <YStack gap="$3">
+      <YStack gap="$2">
         <YStack gap="$1">
           <Label htmlFor="query">Search query</Label>
           <Input id="query" name="query" placeholder="Search query" required />

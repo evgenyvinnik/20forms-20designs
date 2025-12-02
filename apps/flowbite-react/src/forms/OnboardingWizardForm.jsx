@@ -15,7 +15,8 @@ function OnboardingWizardForm() {
   }
 
   return (
-    <Card className="w-full">
+    <Card className="w-full p-6 sm:p-8">
+      <h1 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Onboarding Wizard</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <section>
           <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">

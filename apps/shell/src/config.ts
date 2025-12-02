@@ -429,7 +429,7 @@ export const LIBRARIES: Library[] = [
     website: 'https://design-system-react-site.herokuapp.com',
     repo: 'https://github.com/salesforce/design-system-react',
     implemented: true,
-    supportsTheme: true,
+    supportsTheme: false,
   },
   {
     name: 'Semantic UI React',

@@ -1,20 +1,22 @@
 import { useState, useCallback } from 'react'
-import { FormLayout, TextField, Select, Button } from '@shopify/polaris'
+import { FormLayout, TextField, Select, Checkbox, Button } from '@shopify/polaris'
+import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from './locationOptions'
 
 function ShippingAddressForm() {
   const [fullName, setFullName] = useState('')
-  const [addressLine1, setAddressLine1] = useState('')
-  const [addressLine2, setAddressLine2] = useState('')
+  const [street, setStreet] = useState('')
+  const [street2, setStreet2] = useState('')
   const [city, setCity] = useState('')
-  const [state, setState] = useState('')
-  const [zipCode, setZipCode] = useState('')
-  const [country, setCountry] = useState('')
+  const [country, setCountry] = useState('US')
+  const [region, setRegion] = useState('')
+  const [postalCode, setPostalCode] = useState('')
+  const [isDefault, setIsDefault] = useState(false)
 
-  const countryOptions = [
-    { label: 'Select country', value: '' },
-    { label: 'United States', value: 'us' },
-    { label: 'Canada', value: 'ca' },
-  ]
+  const regionOptions = (country === 'CA' ? CANADIAN_PROVINCES : US_STATES).map(
+    (r) => ({ label: r, value: r })
+  )
+  
+  const regionLabel = country === 'CA' ? 'Province' : 'State'
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
@@ -25,7 +27,7 @@ function ShippingAddressForm() {
     <form onSubmit={handleSubmit}>
       <FormLayout>
         <TextField
-          label="Full name"
+          label="Recipient name"
           type="text"
           value={fullName}
           onChange={setFullName}
@@ -33,55 +35,55 @@ function ShippingAddressForm() {
           requiredIndicator
         />
         <TextField
-          label="Address line 1"
+          label="Street address"
           type="text"
-          value={addressLine1}
-          onChange={setAddressLine1}
+          value={street}
+          onChange={setStreet}
           autoComplete="address-line1"
           requiredIndicator
         />
         <TextField
-          label="Address line 2"
+          label="Apartment, suite, etc."
           type="text"
-          value={addressLine2}
-          onChange={setAddressLine2}
+          value={street2}
+          onChange={setStreet2}
           autoComplete="address-line2"
         />
-        <FormLayout.Group>
-          <TextField
-            label="City"
-            type="text"
-            value={city}
-            onChange={setCity}
-            autoComplete="address-level2"
-            requiredIndicator
-          />
-          <TextField
-            label="State/Province"
-            type="text"
-            value={state}
-            onChange={setState}
-            autoComplete="address-level1"
-            requiredIndicator
-          />
-        </FormLayout.Group>
-        <FormLayout.Group>
-          <TextField
-            label="ZIP/Postal code"
-            type="text"
-            value={zipCode}
-            onChange={setZipCode}
-            autoComplete="postal-code"
-            requiredIndicator
-          />
-          <Select
-            label="Country"
-            options={countryOptions}
-            value={country}
-            onChange={setCountry}
-            requiredIndicator
-          />
-        </FormLayout.Group>
+        <TextField
+          label="City"
+          type="text"
+          value={city}
+          onChange={setCity}
+          autoComplete="address-level2"
+          requiredIndicator
+        />
+        <Select
+          label="Country"
+          options={COUNTRIES}
+          value={country}
+          onChange={setCountry}
+          requiredIndicator
+        />
+        <Select
+          label={regionLabel}
+          options={[{ label: 'Select an option', value: '' }, ...regionOptions]}
+          value={region}
+          onChange={setRegion}
+          requiredIndicator
+        />
+        <TextField
+          label="Postal code"
+          type="text"
+          value={postalCode}
+          onChange={setPostalCode}
+          autoComplete="postal-code"
+          requiredIndicator
+        />
+        <Checkbox
+          label="Use as default shipping address"
+          checked={isDefault}
+          onChange={setIsDefault}
+        />
         <Button submit variant="primary">
           Save address
         </Button>

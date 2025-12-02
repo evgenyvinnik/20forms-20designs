@@ -24,7 +24,7 @@ function PrivacyConsentForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Block display="flex" flexDirection="column" gridGap="scale600">
+      <Block display="flex" flexDirection="column" gridGap="scale200">
         <FormControl label="Full name">
           <Input
             id="baseweb-privacy-name"

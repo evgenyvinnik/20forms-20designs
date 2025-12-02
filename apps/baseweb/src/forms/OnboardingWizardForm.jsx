@@ -30,7 +30,7 @@ function OnboardingWizardForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Block display="flex" flexDirection="column" gridGap="scale600">
+      <Block display="flex" flexDirection="column" gridGap="scale200">
         <Block as="section">
           <HeadingSmall marginBottom="scale400">Step 1: Account</HeadingSmall>
           <Block display="flex" flexDirection="column" gridGap="scale400">

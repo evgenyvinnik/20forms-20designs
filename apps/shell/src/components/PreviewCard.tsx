@@ -53,7 +53,7 @@ const FORM_HEIGHTS: Record<FormId, number> = {
   // Standard forms (typical registration/checkout)
   'user-registration': 700,
   'billing-info': 700,
-  'shipping-address': 750,
+  'shipping-address': 800,
   'checkout-payment': 750,
   'event-registration': 700,
   'support-ticket': 650,

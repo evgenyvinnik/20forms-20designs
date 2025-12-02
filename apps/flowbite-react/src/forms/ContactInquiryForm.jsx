@@ -15,7 +15,8 @@ function ContactInquiryForm() {
   }
 
   return (
-    <Card className="w-full">
+    <Card className="w-full p-6 sm:p-8">
+      <h1 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Contact Inquiry</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">

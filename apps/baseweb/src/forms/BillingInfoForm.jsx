@@ -25,7 +25,7 @@ function BillingInfoForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Block display="flex" flexDirection="column" gridGap="scale600">
+      <Block display="flex" flexDirection="column" gridGap="scale200">
         <FormControl label="Name on card">
           <Input
             id="baseweb-billing-name"

@@ -16,7 +16,7 @@ function TwoFactorAuthForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Block display="flex" flexDirection="column" gridGap="scale600">
+      <Block display="flex" flexDirection="column" gridGap="scale200">
         <ParagraphSmall>
           Enter the code from your authenticator app or SMS.
         </ParagraphSmall>

@@ -18,7 +18,7 @@ function PasswordChangeForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Block display="flex" flexDirection="column" gridGap="scale600">
+      <Block display="flex" flexDirection="column" gridGap="scale200">
         <FormControl label="Current password">
           <Input
             id="baseweb-password-change-current"

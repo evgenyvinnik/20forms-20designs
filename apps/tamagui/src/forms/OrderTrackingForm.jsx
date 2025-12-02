@@ -8,7 +8,7 @@ function OrderTrackingForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <YStack gap="$3">
+      <YStack gap="$2">
         <YStack gap="$1">
           <Label htmlFor="orderNumber">Order number</Label>
           <Input

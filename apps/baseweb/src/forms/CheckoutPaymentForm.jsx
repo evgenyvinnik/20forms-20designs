@@ -26,7 +26,7 @@ function CheckoutPaymentForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Block display="flex" flexDirection="column" gridGap="scale600">
+      <Block display="flex" flexDirection="column" gridGap="scale200">
         <FormControl label="Email for receipt">
           <Input
             id="baseweb-checkout-email"
