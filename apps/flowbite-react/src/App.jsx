@@ -85,7 +85,7 @@ function App() {
   const FormComponent = FORM_COMPONENTS[formId] || FORM_COMPONENTS['user-login']
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 dark:bg-gray-900">
+    <div className="min-h-screen p-4 text-gray-600 antialiased dark:bg-gray-900 dark:text-gray-400">
       <FormComponent />
     </div>
   )
