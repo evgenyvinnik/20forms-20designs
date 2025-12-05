@@ -118,7 +118,7 @@ async function buildApp(appName) {
   }
 
   try {
-    await runCommand('pnpm', ['run', 'build'], appDir);
+    await runCommand('bun', ['run', 'build'], appDir);
     console.log(`✅ Built ${appName}`);
     return { app: appName, success: true };
   } catch (error) {
@@ -223,7 +223,7 @@ async function main() {
   // Copy builds to dist
   console.log('\n📋 Copying builds to dist...');
   try {
-    await runCommand('node', ['scripts/copy-builds-to-dist.mjs'], ROOT_DIR);
+    await runCommand('bun', ['scripts/copy-builds-to-dist.mjs'], ROOT_DIR);
     console.log('✅ Builds copied to dist/');
   } catch (error) {
     console.error('❌ Failed to copy builds:', error.message);

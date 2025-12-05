@@ -161,8 +161,9 @@ All libraries implement the same 20 forms with identical content, labels, and fi
 
 ### Prerequisites
 
-- Node.js 18 or higher
-- pnpm 9 or higher (`npm install -g pnpm`)
+- [Bun](https://bun.sh/) (v1.0 or higher) — Install with: `curl -fsSL https://bun.sh/install | bash`
+
+> **Note:** This project uses Bun for faster dependency installation and build times. If you prefer Node.js, see the [Alternative: Using Node.js](#alternative-using-nodejs) section below.
 
 ### Installation
 
@@ -172,14 +173,14 @@ git clone https://github.com/evgenyvinnik/20forms-20designs.git
 cd 20forms-20designs
 
 # Install dependencies
-pnpm install
+bun install
 ```
 
 ### Development
 
 ```bash
 # Run the shell app in development mode
-pnpm run dev:shell
+bun run dev:shell
 ```
 
 This runs the shell application in development mode.
@@ -188,11 +189,11 @@ This runs the shell application in development mode.
 
 ```bash
 # Build all 42 apps (shell + 41 library apps) for GitHub Pages
-pnpm run build
+bun run build
 
 # Preview the production build locally
-pnpm run preview
-# Then open: http://localhost:5000/20forms-20designs/
+bun run preview
+# Then open: http://localhost:3000/20forms-20designs/
 ```
 
 The production build uses iframes for complete CSS isolation between libraries.
@@ -221,12 +222,12 @@ Each library app is a standalone Vite + React application that:
 
 | Script                      | Description                                       |
 | --------------------------- | ------------------------------------------------- |
-| `pnpm run build`            | Build shell + all library apps + copy to dist     |
-| `pnpm run build:shell`      | Build only the shell app                          |
-| `pnpm run clean`            | Remove all build artifacts                        |
-| `pnpm run dev:shell`        | Run shell app in development mode                 |
-| `pnpm run preview`          | Preview the production build locally              |
-| `pnpm run lint`             | Lint all apps (may take a while)                  |
+| `bun run build`             | Build shell + all library apps + copy to dist     |
+| `bun run build:shell`       | Build only the shell app                          |
+| `bun run clean`             | Remove all build artifacts                        |
+| `bun run dev:shell`         | Run shell app in development mode                 |
+| `bun run preview`           | Preview the production build locally              |
+| `bun run lint`              | Lint all apps (may take a while)                  |
 
 ## 🧪 Testing
 
@@ -238,21 +239,21 @@ The shell app includes a comprehensive Playwright test suite to ensure UI functi
 cd apps/shell
 
 # Run all tests headlessly
-pnpm test
+bun test
 
 # Run tests with Playwright UI (interactive mode)
-pnpm test:ui
+bun test:ui
 
 # Run tests with browser visible
-pnpm test:headed
+bun test:headed
 
 # Run tests in debug mode
-pnpm test:debug
+bun test:debug
 
 # Run tests for a specific browser
-pnpm test -- --project=chromium
-pnpm test -- --project=firefox
-pnpm test -- --project=webkit
+bun test -- --project=chromium
+bun test -- --project=firefox
+bun test -- --project=webkit
 ```
 
 ### Test Coverage
@@ -277,14 +278,14 @@ The test suite covers:
 2. Implement all 20 forms in `src/forms/` following the pattern from existing libraries
 3. Create the App.jsx with form routing via URL parameter
 4. Update `apps/shell/src/config.ts` with the new library (add to LibraryId type, LIBRARY_NAME_TO_ID, LIBRARIES array, and CONSOLIDATED_LIBRARIES set)
-5. Run `pnpm run build`
+5. Run `bun run build`
 
 ## 🔧 Adding a New Form
 
 1. Add the new form component to each library's `src/forms/` directory
 2. Update the form routing in each library's App.jsx
 3. Update `apps/shell/src/config.ts` with the new form (add to FormId type, FORM_NAME_TO_ID, and FORMS array)
-4. Run `pnpm run build`
+4. Run `bun run build`
 
 ## 🌐 Deployment
 
@@ -297,7 +298,7 @@ This project is configured for automatic deployment to GitHub Pages via GitHub A
 
 The workflow:
 
-- Installs dependencies with pnpm (with caching for faster builds)
+- Installs dependencies with Bun (with caching for faster builds)
 - Builds all 42 apps (shell + 41 library apps)
 - Deploys to GitHub Pages
 
@@ -307,7 +308,7 @@ The workflow:
 
 ```bash
 # Build for production
-pnpm run build
+bun run build
 
 # The dist/ folder contains all static assets
 # Upload dist/ to any static hosting provider
@@ -323,10 +324,11 @@ The project is configured with `/20forms-20designs/` as the base path. If deploy
 
 ## 📝 Tech Stack
 
+- **Bun** — Fast JavaScript runtime and package manager
 - **Vite** — Fast build tool and dev server
 - **React 18** — UI library
 - **TypeScript** — Type-safe shell app
-- **pnpm Workspaces** — Fast, disk-efficient monorepo management
+- **Bun Workspaces** — Fast, disk-efficient monorepo management
 - **GitHub Actions** — CI/CD pipeline
 - **GitHub Pages** — Static hosting
 
@@ -349,6 +351,17 @@ Total non-empty lines of code in the project:
 | **Total** | **78,109** |
 
 *Generated using `scripts/calc-sloc.mjs` — excludes `node_modules`, `dist`, lock files, and other build artifacts.*
+
+## 🔄 Alternative: Using Node.js
+
+If you prefer to use Node.js with pnpm instead of Bun:
+
+1. Install Node.js 18+ and pnpm 9+
+2. Install dependencies: `pnpm install`
+3. Build: `pnpm run build`
+4. Dev server: `pnpm run dev:shell`
+
+Note: You'll need to update the `package.json` scripts and build files to use `pnpm` and `node` commands instead of `bun`.
 
 ## 📄 License
 

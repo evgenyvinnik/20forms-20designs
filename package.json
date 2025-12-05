@@ -3,19 +3,22 @@
   "private": true,
   "version": "1.0.251205.49",
   "type": "module",
-  "packageManager": "pnpm@9.14.2",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev:shell": "pnpm --filter @forms-comparison/shell dev",
-    "build": "node scripts/build-all.mjs --consolidated",
-    "build:all": "node scripts/build-all.mjs",
-    "build:shell": "pnpm --filter @forms-comparison/shell build",
-    "build:copy": "node scripts/copy-builds-to-dist.mjs",
-    "preview": "node scripts/serve-preview.mjs",
-    "preview:shell": "pnpm --filter @forms-comparison/shell preview",
-    "clean": "node scripts/clean.mjs",
+    "dev:shell": "cd apps/shell && bun run dev",
+    "build": "bun scripts/build-all.mjs --consolidated",
+    "build:all": "bun scripts/build-all.mjs",
+    "build:shell": "cd apps/shell && bun run build",
+    "build:copy": "bun scripts/copy-builds-to-dist.mjs",
+    "preview": "bun scripts/serve-preview.mjs",
+    "preview:shell": "cd apps/shell && bun run preview",
+    "clean": "bun scripts/clean.mjs",
     "lint": "eslint 'apps/*/src/**/*.{js,jsx,ts,tsx}' 'packages/*/src/**/*.{js,jsx,ts,tsx}' --cache",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
-    "sloc": "node scripts/calc-sloc.mjs"
+    "sloc": "bun scripts/calc-sloc.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
@@ -32,6 +35,6 @@
     "typescript-eslint": "^8.48.0"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "bun": ">=1.0.0"
   }
 }

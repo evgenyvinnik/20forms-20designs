@@ -17,10 +17,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: 20
+          bun-version: latest
 
       - name: Calculate version
         run: |
@@ -31,13 +31,13 @@ jobs:
 
       - name: Update package version
         run: |
-          node - <<'NODE'
+          bun -e "
           const fs = require('fs');
           const version = process.env.VERSION;
           const data = JSON.parse(fs.readFileSync('package.json', 'utf8'));
           data.version = version;
           fs.writeFileSync('package.json', JSON.stringify(data, null, 2) + '\n');
-          NODE
+          "
 
       - name: Commit version bump
         uses: stefanzweifel/git-auto-commit-action@v5

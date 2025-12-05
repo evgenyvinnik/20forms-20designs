@@ -18,47 +18,47 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30  # Building 161 apps can take a while
+    timeout-minutes: 30  # Building 42 apps can take a while
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: '22'
+          bun-version: latest
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: false
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - name: Setup pnpm cache
+      - name: Cache Bun dependencies
         uses: actions/cache@v4
         with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/package.json') }}
           restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+            ${{ runner.os }}-bun-
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: |
+          echo "⏱️ Starting dependency installation..."
+          START_TIME=$(date +%s)
+          bun install
+          END_TIME=$(date +%s)
+          echo "✅ Dependencies installed in $((END_TIME - START_TIME)) seconds"
 
       - name: Build all apps
-        run: pnpm run build
-        env:
-          NODE_OPTIONS: '--max-old-space-size=4096'
+        run: |
+          echo "⏱️ Starting build..."
+          START_TIME=$(date +%s)
+          bun run build
+          END_TIME=$(date +%s)
+          echo "✅ Build completed in $((END_TIME - START_TIME)) seconds"
 
       - name: Install Playwright Browsers
-        run: pnpm --filter @forms-comparison/shell exec playwright install --with-deps chromium
+        working-directory: apps/shell
+        run: bunx playwright install --with-deps chromium
 
       - name: Run Playwright tests
-        run: pnpm --filter @forms-comparison/shell test -- --project=chromium
+        working-directory: apps/shell
+        run: bun test -- --project=chromium
 
       - name: Upload Playwright report
         uses: actions/upload-artifact@v4
