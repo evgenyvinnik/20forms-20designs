@@ -58,7 +58,7 @@ jobs:
 
       - name: Run Playwright tests
         working-directory: apps/shell
-        run: bun test -- --project=chromium
+        run: bunx playwright test --project=chromium
 
       - name: Upload Playwright report
         uses: actions/upload-artifact@v4

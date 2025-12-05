@@ -239,21 +239,21 @@ The shell app includes a comprehensive Playwright test suite to ensure UI functi
 cd apps/shell
 
 # Run all tests headlessly
-bun test
+bunx playwright test
 
 # Run tests with Playwright UI (interactive mode)
-bun test:ui
+bunx playwright test --ui
 
 # Run tests with browser visible
-bun test:headed
+bunx playwright test --headed
 
 # Run tests in debug mode
-bun test:debug
+bunx playwright test --debug
 
 # Run tests for a specific browser
-bun test -- --project=chromium
-bun test -- --project=firefox
-bun test -- --project=webkit
+bunx playwright test --project=chromium
+bunx playwright test --project=firefox
+bunx playwright test --project=webkit
 ```
 
 ### Test Coverage
@@ -338,17 +338,17 @@ Total non-empty lines of code in the project:
 
 | Extension | Lines      |
 | --------- | ---------- |
-| `.jsx`    | 62,591     |
+| `.jsx`    | 62,473     |
+| `.md`     | 36,874     |
 | `.js`     | 6,742      |
 | `.mjs`    | 2,484      |
 | `.ts`     | 1,434      |
-| `.json`   | 1,410      |
 | `.css`    | 1,213      |
-| `.html`   | 993        |
-| `.md`     | 690        |
-| `.tsx`    | 545        |
+| `.json`   | 1,028      |
+| `.html`   | 986        |
+| `.tsx`    | 559        |
 | `.scss`   | 7          |
-| **Total** | **78,109** |
+| **Total** | **113,800** |
 
 *Generated using `scripts/calc-sloc.mjs` — excludes `node_modules`, `dist`, lock files, and other build artifacts.*
 
