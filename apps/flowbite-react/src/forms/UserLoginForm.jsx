@@ -1,4 +1,4 @@
-import { Button, Card, Checkbox, Label, TextInput } from 'flowbite-react'
+import { Button, Checkbox, Label, TextInput } from 'flowbite-react'
 
 function UserLoginForm() {
   const handleSubmit = (event) => {
@@ -7,37 +7,34 @@ function UserLoginForm() {
   }
 
   return (
-    <Card className="mx-4 w-full p-6 sm:p-8">
-      <h1 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">User Login</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <div>
-          <div className="mb-2 block">
-            <Label htmlFor="flowbite-user-login-email">Email or username</Label>
-          </div>
-          <TextInput
-            id="flowbite-user-login-email"
-            name="identifier"
-            type="text"
-            required
-          />
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div>
+        <div className="mb-2 block">
+          <Label htmlFor="flowbite-user-login-email">Email or username</Label>
         </div>
-        <div>
-          <div className="mb-2 block">
-            <Label htmlFor="flowbite-user-login-password">Password</Label>
-          </div>
-          <TextInput
-            id="flowbite-user-login-password"
-            name="password"
-            type="password"
-            required
-          />
+        <TextInput
+          id="flowbite-user-login-email"
+          name="identifier"
+          type="text"
+          required
+        />
+      </div>
+      <div>
+        <div className="mb-2 block">
+          <Label htmlFor="flowbite-user-login-password">Password</Label>
         </div>
-        <div className="flex items-center gap-2">
-          <Checkbox id="flowbite-user-login-remember" name="remember" />
-          <Label htmlFor="flowbite-user-login-remember">
-            Keep me signed in
-          </Label>
-        </div>
+        <TextInput
+          id="flowbite-user-login-password"
+          name="password"
+          type="password"
+          required
+        />
+      </div>
+      <div className="flex items-center gap-2">
+        <Checkbox id="flowbite-user-login-remember" name="remember" />
+        <Label htmlFor="flowbite-user-login-remember">Keep me signed in</Label>
+      </div>
+      <div className="flex gap-2">
         <Button type="submit">Sign in</Button>
         <Button
           type="button"
@@ -46,8 +43,8 @@ function UserLoginForm() {
         >
           Forgot password?
         </Button>
-      </form>
-    </Card>
+      </div>
+    </form>
   )
 }
 

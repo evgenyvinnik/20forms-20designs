@@ -66,12 +66,10 @@ function App() {
     return () => window.removeEventListener('message', handleMessage)
   }, [])
 
+  // Apply theme to document
   useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
+    document.documentElement.classList.remove('light', 'dark')
+    document.documentElement.classList.add(theme)
   }, [theme])
 
   useEffect(() => {
@@ -87,12 +85,8 @@ function App() {
   const FormComponent = FORM_COMPONENTS[formId] || FORM_COMPONENTS['user-login']
 
   return (
-    <div
-      className={`px-4 py-6 sm:px-6 md:px-8 min-h-screen ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'}`}
-    >
-      <div className="max-w-lg mx-auto">
-        <FormComponent />
-      </div>
+    <div className="min-h-screen p-4 text-gray-600 antialiased dark:bg-gray-900 dark:text-gray-400">
+      <FormComponent />
     </div>
   )
 }
