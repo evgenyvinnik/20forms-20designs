@@ -21,7 +21,7 @@ jobs:
     timeout-minutes: 30  # Building 42 apps can take a while
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
