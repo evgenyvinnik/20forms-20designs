@@ -11,7 +11,7 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "@elastic/eui": "^97.0.0",
+    "@elastic/eui": "^110.0.0",
     "@elastic/datemath": "^5.0.3",
     "@emotion/react": "^11.14.0",
     "@emotion/css": "^11.13.5",
