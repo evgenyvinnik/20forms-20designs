@@ -12,8 +12,8 @@
     "@trussworks/react-uswds": "^10.2.0",
     "focus-trap-react": "^10.3.1",
     "@uswds/uswds": "^3.10.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^5.1.1",
