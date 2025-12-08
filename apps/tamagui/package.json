@@ -9,17 +9,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tamagui/config": "^1.121.7",
-    "@tamagui/core": "^1.121.7",
-    "@tamagui/font-inter": "^1.121.7",
-    "@tamagui/shorthands": "^1.121.7",
-    "@tamagui/themes": "^1.121.7",
+    "@tamagui/config": "^1.139.2",
+    "@tamagui/core": "^1.139.2",
+    "@tamagui/font-inter": "^1.139.2",
+    "@tamagui/shorthands": "^1.139.2",
+    "@tamagui/themes": "^1.139.2",
     "tamagui": "^1.121.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@tamagui/vite-plugin": "^1.121.7",
+    "@tamagui/vite-plugin": "^1.139.2",
     "@vitejs/plugin-react": "^4.3.4",
     "vite": "^6.2.4"
   }
