@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@arco-design/web-react": "^2.66.8",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^5.1.1",
