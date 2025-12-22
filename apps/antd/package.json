@@ -11,8 +11,8 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "antd": "^5.22.0",
-    "@ant-design/icons": "^5.5.0"
+    "antd": "^6.1.1",
+    "@ant-design/icons": "^6.1.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^5.1.1",
