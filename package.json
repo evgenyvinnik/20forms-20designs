@@ -21,7 +21,7 @@
     "sloc": "bun scripts/calc-sloc.mjs"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
+    "@eslint/js": "^9.39.2",
     "@types/node": "^22.10.1",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
@@ -32,7 +32,7 @@
     "prettier": "^3.6.2",
     "sharp": "^0.34.5",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.48.0"
+    "typescript-eslint": "^8.50.1"
   },
   "engines": {
     "bun": ">=1.0.0"
