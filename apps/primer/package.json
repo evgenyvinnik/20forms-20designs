@@ -9,14 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
     "@primer/react": "^37.24.0",
-    "@primer/primitives": "^10.5.1",
-    "styled-components": "^5.3.11"
+    "@primer/primitives": "^11.6.0",
+    "styled-components": "^6.4.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^5.1.1",
-    "vite": "^7.2.4"
+    "@vitejs/plugin-react": "^6.0.1",
+    "vite": "^8.0.8"
   }
 }

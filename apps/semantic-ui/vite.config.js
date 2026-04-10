@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
     emptyOutDir: true,
     minify: 'esbuild',
+    cssMinify: 'esbuild',
     sourcemap: false,
     reportCompressedSize: false,
   },

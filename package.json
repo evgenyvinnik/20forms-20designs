@@ -21,18 +21,21 @@
     "sloc": "bun scripts/calc-sloc.mjs"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
-    "@types/node": "^22.10.1",
-    "eslint": "^9.39.1",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^25.6.0",
+    "eslint": "^10.2.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.4.24",
-    "globals": "^16.5.0",
-    "prettier": "^3.6.2",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.4.0",
+    "prettier": "^3.8.2",
     "sharp": "^0.34.5",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.48.0"
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.58.1"
+  },
+  "overrides": {
+    "@cloudscape-design/component-toolkit": "1.0.0-beta.156"
   },
   "engines": {
     "bun": ">=1.0.0"
