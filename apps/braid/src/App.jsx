@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import 'braid-design-system/reset'
 import { BraidProvider, Box } from 'braid-design-system'
-import apacTheme from 'braid-design-system/themes/apac'
+import apacTheme from 'braid-design-system/themes/seekJobs'
 import { colorModeQueryParamCheck } from 'braid-design-system/color-mode/query-param'
 
 // Import all form components

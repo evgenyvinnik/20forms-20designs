@@ -11,23 +11,23 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "@atlaskit/app-provider": "^3.2.7",
-    "@atlaskit/button": "^20.3.0",
-    "@atlaskit/checkbox": "^17.1.22",
-    "@atlaskit/css-reset": "^6.11.0",
-    "@atlaskit/form": "^10.6.0",
-    "@atlaskit/primitives": "^13.5.0",
-    "@atlaskit/radio": "^6.6.0",
-    "@atlaskit/select": "^18.2.0",
-    "@atlaskit/textarea": "^5.7.0",
-    "@atlaskit/textfield": "^6.6.0",
-    "@atlaskit/tokens": "^2.2.0",
-    "@atlaskit/datetime-picker": "^15.3.0",
-    "@atlaskit/heading": "^2.4.0",
-    "@atlaskit/range": "^7.4.0"
+    "@atlaskit/app-provider": "^4.2.2",
+    "@atlaskit/button": "^23.11.2",
+    "@atlaskit/checkbox": "^17.3.11",
+    "@atlaskit/css-reset": "^7.4.3",
+    "@atlaskit/form": "^15.5.4",
+    "@atlaskit/primitives": "^18.1.4",
+    "@atlaskit/radio": "^8.5.2",
+    "@atlaskit/select": "^21.10.4",
+    "@atlaskit/textarea": "^8.2.9",
+    "@atlaskit/textfield": "^8.3.1",
+    "@atlaskit/tokens": "^12.0.0",
+    "@atlaskit/datetime-picker": "^17.6.4",
+    "@atlaskit/heading": "^5.4.1",
+    "@atlaskit/range": "^10.0.5"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.5.2",
-    "vite": "^7.0.0"
+    "@vitejs/plugin-react": "^6.0.1",
+    "vite": "^8.0.8"
   }
 }

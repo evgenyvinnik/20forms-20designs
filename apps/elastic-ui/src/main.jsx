@@ -15,7 +15,6 @@ import { icon as eye } from '@elastic/eui/es/components/icon/assets/eye'
 import { icon as eyeClosed } from '@elastic/eui/es/components/icon/assets/eye_closed'
 import { icon as empty } from '@elastic/eui/es/components/icon/assets/empty'
 import { icon as warning } from '@elastic/eui/es/components/icon/assets/warning'
-import { icon as alert } from '@elastic/eui/es/components/icon/assets/alert'
 
 appendIconComponentCache({
   arrowDown,
@@ -30,7 +29,7 @@ appendIconComponentCache({
   eyeClosed,
   empty,
   warning,
-  alert,
+  alert: warning,
 })
 
 import App from './App'
