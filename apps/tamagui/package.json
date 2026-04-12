@@ -15,8 +15,8 @@
     "@tamagui/shorthands": "^1.144.4",
     "@tamagui/themes": "^1.144.4",
     "tamagui": "^1.144.4",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@tamagui/vite-plugin": "^1.144.4",

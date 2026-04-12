@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "baseui": "^16.1.1",
     "styletron-engine-monolithic": "^1.0.0",
     "styletron-react": "^6.1.1"
