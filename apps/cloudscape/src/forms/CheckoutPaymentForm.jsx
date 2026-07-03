@@ -33,9 +33,9 @@ function CheckoutPaymentForm() {
             name="shippingMethod"
 
             options={[
-              { label: 'Standard', value: 'standard' },
-              { label: 'Express', value: 'express' },
-              { label: 'Overnight', value: 'overnight' },
+              { label: 'Standard Shipping', value: 'standard' },
+              { label: 'Express Shipping', value: 'express' },
+              { label: 'Overnight Delivery', value: 'overnight' },
             ]}
             selectedOption={selectedShipping}
             onChange={({ detail }) =>

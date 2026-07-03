@@ -1,4 +1,4 @@
-import { Button, Stack, TextInput, Select } from '@mantine/core'
+import { Button, Group, Select, Stack, TextInput } from '@mantine/core'
 
 function CheckoutPaymentForm() {
   const handleSubmit = (event) => {
@@ -20,11 +20,11 @@ function CheckoutPaymentForm() {
           id="mantine-checkout-shipping-method"
           name="shippingMethod"
           label="Shipping method"
-
+          defaultValue="standard"
           data={[
-            { value: 'standard', label: 'Standard' },
-            { value: 'express', label: 'Express' },
-            { value: 'overnight', label: 'Overnight' },
+            { value: 'standard', label: 'Standard Shipping' },
+            { value: 'express', label: 'Express Shipping' },
+            { value: 'overnight', label: 'Overnight Delivery' },
           ]}
           required
         />
@@ -36,7 +36,22 @@ function CheckoutPaymentForm() {
           maxLength={19}
           required
         />
-        <Group grow></Group>
+        <Group grow>
+          <TextInput
+            id="mantine-checkout-expiration"
+            name="expiration"
+            label="Expiration"
+            placeholder="MM/YY"
+            required
+          />
+          <TextInput
+            id="mantine-checkout-cvc"
+            name="cvc"
+            label="CVC"
+            maxLength={4}
+            required
+          />
+        </Group>
         <TextInput
           id="mantine-checkout-promo"
           name="promoCode"

@@ -14,9 +14,9 @@ function CheckoutPaymentForm() {
   const [promoCode, setPromoCode] = useState('')
 
   const shippingOptions = [
-    { label: 'Standard', id: 'standard' },
-    { label: 'Express', id: 'express' },
-    { label: 'Overnight', id: 'overnight' },
+    { label: 'Standard Shipping', id: 'standard' },
+    { label: 'Express Shipping', id: 'express' },
+    { label: 'Overnight Delivery', id: 'overnight' },
   ]
 
   const handleSubmit = (event) => {

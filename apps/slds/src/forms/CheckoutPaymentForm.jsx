@@ -4,9 +4,9 @@ import Combobox from '@salesforce/design-system-react/components/combobox'
 import Button from '@salesforce/design-system-react/components/button'
 
 const shippingOptions = [
-  { id: 'standard', label: 'Standard' },
-  { id: 'express', label: 'Express' },
-  { id: 'overnight', label: 'Overnight' },
+  { id: 'standard', label: 'Standard Shipping' },
+  { id: 'express', label: 'Express Shipping' },
+  { id: 'overnight', label: 'Overnight Delivery' },
 ]
 
 function CheckoutPaymentForm() {
