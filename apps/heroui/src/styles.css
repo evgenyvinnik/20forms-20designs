@@ -1,0 +1,105 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111827;
+  --border-color: #e5e7eb;
+  --input-bg: #f9fafb;
+  --focus-ring: #006fee;
+  --error-color: #f31260;
+  --card-bg: #ffffff;
+  --primary-bg: #006fee;
+  --primary-hover: #005bc4;
+  --primary-text: #ffffff;
+}
+
+[data-theme='dark'] {
+  --bg-color: #000000;
+  --text-color: #ecedee;
+  --border-color: #27272a;
+  --input-bg: #18181b;
+  --focus-ring: #006fee;
+  --error-color: #f31260;
+  --card-bg: #18181b;
+  --primary-bg: #006fee;
+  --primary-hover: #005bc4;
+  --primary-text: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.heroui-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.heroui-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.heroui-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.heroui-input,
+.heroui-textarea,
+.heroui-select {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.875rem;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+  outline: none;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.heroui-input:focus,
+.heroui-textarea:focus,
+.heroui-select:focus {
+  border-color: var(--focus-ring);
+  box-shadow: 0 0 0 2px var(--focus-ring);
+}
+
+.heroui-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  box-shadow: 0 4px 14px 0 rgba(0, 111, 238, 0.39);
+  transition:
+    opacity 0.15s,
+    transform 0.15s;
+}
+
+.heroui-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@forms-comparison/base-ui",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@base-ui-components/react": "^1.0.0-rc.0",
+    "lucide-react": "^1.18.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "vite": "^8.0.8"
+  }
+}

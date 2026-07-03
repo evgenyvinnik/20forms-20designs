@@ -42,6 +42,12 @@ export type LibraryId =
   | 'semi-design'
   | 'headlessui'
   | 'astryx'
+  | 'ark-ui'
+  | 'base-ui'
+  | 'park-ui'
+  | 'heroui'
+  | 'gluestack'
+  | 'joy-ui'
 
 // Form ID for iframe URLs
 export type FormId =
@@ -85,9 +91,11 @@ export interface Form {
 export const LIBRARY_NAME_TO_ID: Record<string, LibraryId | undefined> = {
   'Ant Design': 'antd',
   'Arco Design': 'arco-design',
+  'Ark UI': 'ark-ui',
   Astryx: 'astryx',
   Ariakit: 'ariakit',
   'Atlassian Atlaskit': 'atlaskit',
+  'Base UI': 'base-ui',
   'Base Web': 'baseweb',
   Blueprint: 'blueprint',
   'Braid Design System': 'braid',
@@ -100,12 +108,16 @@ export const LIBRARY_NAME_TO_ID: Record<string, LibraryId | undefined> = {
   Evergreen: 'evergreen',
   'Flowbite React': 'flowbite-react',
   'Fluent UI': 'fluent-ui',
+  'gluestack-ui': 'gluestack',
   'Gravity UI': 'gravity-ui',
   Grommet: 'grommet',
   'Headless UI': 'headlessui',
+  HeroUI: 'heroui',
+  'Joy UI': 'joy-ui',
   Mantine: 'mantine',
   'Material Tailwind': 'material-tailwind',
   MUI: 'mui',
+  'Park UI': 'park-ui',
   PatternFly: 'patternfly',
   'Pinterest Gestalt': 'gestalt',
   PrimeReact: 'primereact',
@@ -513,13 +525,61 @@ export const LIBRARIES: Library[] = [
     implemented: true,
     supportsTheme: true,
   },
+  {
+    name: 'Ark UI',
+    directory: 'ark-ui',
+    website: 'https://ark-ui.com',
+    repo: 'https://github.com/chakra-ui/ark',
+    implemented: true,
+    supportsTheme: true,
+  },
+  {
+    name: 'Base UI',
+    directory: 'base-ui',
+    website: 'https://base-ui.com',
+    repo: 'https://github.com/mui/base-ui',
+    implemented: true,
+    supportsTheme: true,
+  },
+  {
+    name: 'Park UI',
+    directory: 'park-ui',
+    website: 'https://park-ui.com',
+    repo: 'https://github.com/cschroeter/park-ui',
+    implemented: true,
+    supportsTheme: true,
+  },
+  {
+    name: 'HeroUI',
+    directory: 'heroui',
+    website: 'https://heroui.com',
+    repo: 'https://github.com/heroui-inc/heroui',
+    implemented: true,
+    supportsTheme: true,
+  },
+  {
+    name: 'gluestack-ui',
+    directory: 'gluestack',
+    website: 'https://gluestack.io',
+    repo: 'https://github.com/gluestack/gluestack-ui',
+    implemented: true,
+    supportsTheme: true,
+  },
+  {
+    name: 'Joy UI',
+    directory: 'joy-ui',
+    website: 'https://v7.mui.com/joy-ui/getting-started',
+    repo: 'https://github.com/mui/material-ui',
+    implemented: true,
+    supportsTheme: true,
+  },
 ]
 
 // Get implemented libraries only
 export const IMPLEMENTED_LIBRARIES = LIBRARIES.filter((lib) => lib.implemented)
 
 // Libraries that have been consolidated into a single app with form parameter
-// All 43 design systems are now consolidated
+// All design systems are now consolidated
 const CONSOLIDATED_LIBRARIES: Set<LibraryId> = new Set([
   'mui',
   'chakra',
@@ -563,6 +623,12 @@ const CONSOLIDATED_LIBRARIES: Set<LibraryId> = new Set([
   'semi-design',
   'headlessui',
   'astryx',
+  'ark-ui',
+  'base-ui',
+  'park-ui',
+  'heroui',
+  'gluestack',
+  'joy-ui',
 ])
 
 // Build iframe URL

@@ -1,5 +1,5 @@
 {
-  "name": "@forms-comparison/material-tailwind",
+  "name": "@forms-comparison/gluestack",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -9,17 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@gluestack-style/react": "^1.0.57",
+    "@gluestack-ui/config": "^1.1.20",
+    "@gluestack-ui/themed": "^1.1.73",
+    "lucide-react": "^1.18.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "@floating-ui/dom": "^1.6.13",
-    "@floating-ui/react": "^0.27.4",
-    "@material-tailwind/react": "^2.1.10"
+    "react-native-web": "^0.19.13"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.1",
-    "autoprefixer": "^10.4.27",
-    "postcss": "^8.5.9",
-    "tailwindcss": "^3.4.17",
     "vite": "^8.0.8"
   }
 }

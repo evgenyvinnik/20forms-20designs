@@ -1,0 +1,141 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #0f172a;
+  --border-color: #cbd5e1;
+  --input-bg: #ffffff;
+  --focus-ring: #3b82f6;
+  --error-color: #ef4444;
+  --card-bg: #f8fafc;
+  --primary-bg: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-text: #ffffff;
+}
+
+[data-theme='dark'] {
+  --bg-color: #0f172a;
+  --text-color: #f8fafc;
+  --border-color: #334155;
+  --input-bg: #1e293b;
+  --focus-ring: #60a5fa;
+  --error-color: #f87171;
+  --card-bg: #1e293b;
+  --primary-bg: #3b82f6;
+  --primary-hover: #2563eb;
+  --primary-text: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.ark-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.ark-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.ark-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.ark-input,
+.ark-textarea,
+.ark-select-trigger {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.875rem;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  box-sizing: border-box;
+  outline: none;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.ark-input:focus,
+.ark-textarea:focus,
+.ark-select-trigger:focus {
+  border-color: var(--focus-ring);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.ark-input[data-invalid],
+.ark-textarea[data-invalid] {
+  border-color: var(--error-color);
+}
+
+.ark-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.ark-checkbox-control {
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--input-bg);
+}
+
+.ark-checkbox[data-state='checked'] .ark-checkbox-control {
+  background-color: var(--primary-bg);
+  border-color: var(--primary-bg);
+  color: #fff;
+}
+
+.ark-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  transition: background-color 0.15s;
+}
+
+.ark-button:hover {
+  background-color: var(--primary-hover);
+}
+
+.ark-button-secondary {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.ark-button-secondary:hover {
+  background-color: var(--card-bg);
+}
