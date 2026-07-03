@@ -2,90 +2,46 @@ import { useState } from 'react'
 import { Field } from '@ark-ui/react'
 
 export default function CheckoutPaymentForm() {
-  const [formData, setFormData] = useState({
-    cardNumber: '',
-    cardName: '',
-    expiry: '',
-    cvv: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
-  }
+  const handleSubmit = (e) => { e.preventDefault(); alert('Submitted!'); }
 
   return (
     <form onSubmit={handleSubmit} className="ark-form">
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
-        Payment Details
-      </h2>
-      {submitted && (
-        <div
-          style={{
-            padding: '0.75rem 1rem',
-            background: '#dcfce7',
-            color: '#166534',
-            borderRadius: '0.5rem',
-            fontSize: '0.875rem',
-          }}
-        >
-          Payment processed successfully!
+      <Field.Root required className="ark-field">
+      <Field.Label className="ark-label">Email for receipt</Field.Label>
+      <Field.Input className="ark-input" name="email" type="email"     required />
+      
+    </Field.Root>
+<Field.Root required className="ark-field">
+        <Field.Label className="ark-label">Shipping method</Field.Label>
+        <select className="ark-select" name="shippingMethod" defaultValue="standard" required>
+          <option value="standard">Standard Shipping</option>
+          <option value="express">Express Shipping</option>
+          <option value="overnight">Overnight Delivery</option>
+        </select>
+      </Field.Root>
+<Field.Root required className="ark-field">
+      <Field.Label className="ark-label">Card number</Field.Label>
+      <Field.Input className="ark-input" name="cardNumber" type="text"   maxLength={19}  required />
+      
+    </Field.Root>
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+          <Field.Root required className="ark-field">
+      <Field.Label className="ark-label">Expiration</Field.Label>
+      <Field.Input className="ark-input" name="expiration" type="text"  placeholder="MM/YY"   required />
+      
+    </Field.Root>
+          <Field.Root required className="ark-field">
+      <Field.Label className="ark-label">CVC</Field.Label>
+      <Field.Input className="ark-input" name="cvc" type="text"   maxLength={4}  required />
+      
+    </Field.Root>
         </div>
-      )}
-      <Field.Root required className="ark-field">
-        <Field.Label className="ark-label">Name on Card</Field.Label>
-        <Field.Input
-          className="ark-input"
-          type="text"
-          value={formData.cardName}
-          onChange={(e) =>
-            setFormData({ ...formData, cardName: e.target.value })
-          }
-        />
-      </Field.Root>
-      <Field.Root required className="ark-field">
-        <Field.Label className="ark-label">Card Number</Field.Label>
-        <Field.Input
-          className="ark-input"
-          type="text"
-          value={formData.cardNumber}
-          onChange={(e) =>
-            setFormData({ ...formData, cardNumber: e.target.value })
-          }
-          placeholder="1234 5678 9012 3456"
-        />
-      </Field.Root>
-      <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
-      >
-        <Field.Root required className="ark-field">
-          <Field.Label className="ark-label">Expiration (MM/YY)</Field.Label>
-          <Field.Input
-            className="ark-input"
-            type="text"
-            value={formData.expiry}
-            onChange={(e) =>
-              setFormData({ ...formData, expiry: e.target.value })
-            }
-            placeholder="MM/YY"
-          />
-        </Field.Root>
-        <Field.Root required className="ark-field">
-          <Field.Label className="ark-label">CVV</Field.Label>
-          <Field.Input
-            className="ark-input"
-            type="password"
-            value={formData.cvv}
-            onChange={(e) => setFormData({ ...formData, cvv: e.target.value })}
-            placeholder="123"
-            maxLength={4}
-          />
-        </Field.Root>
-      </div>
-      <button type="submit" className="ark-button">
-        Complete Purchase
-      </button>
+<Field.Root  className="ark-field">
+      <Field.Label className="ark-label">Promo code</Field.Label>
+      <Field.Input className="ark-input" name="promoCode" type="text"    pattern="[A-Za-z0-9]{3,15}"  />
+      
+    </Field.Root>
+<button type="submit" className="ark-button">Place order</button>
     </form>
   )
 }

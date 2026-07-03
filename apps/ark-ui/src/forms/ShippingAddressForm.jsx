@@ -1,104 +1,53 @@
 import { useState } from 'react'
 import { Field } from '@ark-ui/react'
+import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from './locationOptions'
 
 export default function ShippingAddressForm() {
-  const [formData, setFormData] = useState({
-    recipient: '',
-    address: '',
-    city: '',
-    zip: '',
-    sameAsBilling: true,
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
-  }
+  const [country, setCountry] = useState('US')
+  const handleSubmit = (e) => { e.preventDefault(); alert('Shipping address saved!'); }
+  const regionOptions = country === 'CA' ? CANADIAN_PROVINCES : US_STATES
 
   return (
     <form onSubmit={handleSubmit} className="ark-form">
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
-        Shipping Address
-      </h2>
-      {submitted && (
-        <div
-          style={{
-            padding: '0.75rem 1rem',
-            background: '#dcfce7',
-            color: '#166534',
-            borderRadius: '0.5rem',
-            fontSize: '0.875rem',
-          }}
-        >
-          Shipping address saved!
-        </div>
-      )}
       <Field.Root required className="ark-field">
-        <Field.Label className="ark-label">Recipient Name</Field.Label>
-        <Field.Input
-          className="ark-input"
-          type="text"
-          value={formData.recipient}
-          onChange={(e) =>
-            setFormData({ ...formData, recipient: e.target.value })
-          }
-        />
+        <Field.Label className="ark-label">Recipient name</Field.Label>
+        <Field.Input className="ark-input" name="fullName" required />
       </Field.Root>
       <Field.Root required className="ark-field">
-        <Field.Label className="ark-label">Street Address</Field.Label>
-        <Field.Input
-          className="ark-input"
-          type="text"
-          value={formData.address}
-          onChange={(e) =>
-            setFormData({ ...formData, address: e.target.value })
-          }
-        />
+        <Field.Label className="ark-label">Street address</Field.Label>
+        <Field.Input className="ark-input" name="street" required />
       </Field.Root>
-      <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
-      >
+      <Field.Root className="ark-field">
+        <Field.Label className="ark-label">Apartment, suite, etc.</Field.Label>
+        <Field.Input className="ark-input" name="street2" />
+      </Field.Root>
+      <Field.Root required className="ark-field">
+        <Field.Label className="ark-label">City</Field.Label>
+        <Field.Input className="ark-input" name="city" required />
+      </Field.Root>
+      <Field.Root required className="ark-field">
+        <Field.Label className="ark-label">Country</Field.Label>
+        <select className="ark-select" name="country" value={country} onChange={(e) => setCountry(e.target.value)} required>
+          {COUNTRIES.map(({ value, label }) => (<option key={value} value={value}>{label}</option>))}
+        </select>
+      </Field.Root>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
         <Field.Root required className="ark-field">
-          <Field.Label className="ark-label">City</Field.Label>
-          <Field.Input
-            className="ark-input"
-            type="text"
-            value={formData.city}
-            onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-          />
+          <Field.Label className="ark-label">State / Province</Field.Label>
+          <select className="ark-select" name="region" required>
+            {regionOptions.map((region) => (<option key={region} value={region}>{region}</option>))}
+          </select>
         </Field.Root>
         <Field.Root required className="ark-field">
-          <Field.Label className="ark-label">ZIP Code</Field.Label>
-          <Field.Input
-            className="ark-input"
-            type="text"
-            value={formData.zip}
-            onChange={(e) => setFormData({ ...formData, zip: e.target.value })}
-          />
+          <Field.Label className="ark-label">Postal code</Field.Label>
+          <Field.Input className="ark-input" name="postalCode" required />
         </Field.Root>
       </div>
-      <label
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.5rem',
-          fontSize: '0.875rem',
-          cursor: 'pointer',
-        }}
-      >
-        <input
-          type="checkbox"
-          checked={formData.sameAsBilling}
-          onChange={(e) =>
-            setFormData({ ...formData, sameAsBilling: e.target.checked })
-          }
-        />
-        Use as default billing address
+      <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem' }}>
+        <input type="checkbox" name="default" />
+        Use as default shipping address
       </label>
-      <button type="submit" className="ark-button">
-        Save Address
-      </button>
+      <button type="submit" className="ark-button">Save address</button>
     </form>
   )
 }

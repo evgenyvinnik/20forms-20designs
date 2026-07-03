@@ -2,82 +2,33 @@ import { useState } from 'react'
 import { Field } from '@ark-ui/react'
 
 export default function AdvancedSearchForm() {
-  const [formData, setFormData] = useState({
-    query: '',
-    category: 'all',
-    sortBy: 'relevance',
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
-  }
+  const handleSubmit = (e) => { e.preventDefault(); alert('Submitted!'); }
 
   return (
     <form onSubmit={handleSubmit} className="ark-form">
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
-        Advanced Search
-      </h2>
-      {submitted && (
-        <div
-          style={{
-            padding: '0.75rem 1rem',
-            background: '#dcfce7',
-            color: '#166534',
-            borderRadius: '0.5rem',
-            fontSize: '0.875rem',
-          }}
-        >
-          Search executed!
-        </div>
-      )}
       <Field.Root required className="ark-field">
-        <Field.Label className="ark-label">Search Keywords</Field.Label>
-        <Field.Input
-          className="ark-input"
-          type="text"
-          value={formData.query}
-          onChange={(e) => setFormData({ ...formData, query: e.target.value })}
-          placeholder="Search..."
-        />
+      <Field.Label className="ark-label">Search query</Field.Label>
+      <Field.Input className="ark-input" name="query" type="text"     required />
+      
+    </Field.Root>
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+          <Field.Root  className="ark-field">
+        <Field.Label className="ark-label">Category</Field.Label>
+        <select className="ark-select" name="category" defaultValue="all" >
+          <option value="all">All categories</option>
+          <option value="docs">Documentation</option>
+          <option value="blog">Blog posts</option>
+        </select>
       </Field.Root>
-      <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
-      >
-        <Field.Root className="ark-field">
-          <Field.Label className="ark-label">Category</Field.Label>
-          <select
-            className="ark-select"
-            value={formData.category}
-            onChange={(e) =>
-              setFormData({ ...formData, category: e.target.value })
-            }
-          >
-            <option value="all">All Categories</option>
-            <option value="articles">Articles</option>
-            <option value="products">Products</option>
-            <option value="users">Users</option>
-          </select>
-        </Field.Root>
-        <Field.Root className="ark-field">
-          <Field.Label className="ark-label">Sort By</Field.Label>
-          <select
-            className="ark-select"
-            value={formData.sortBy}
-            onChange={(e) =>
-              setFormData({ ...formData, sortBy: e.target.value })
-            }
-          >
-            <option value="relevance">Relevance</option>
-            <option value="newest">Newest First</option>
-            <option value="popular">Most Popular</option>
-          </select>
-        </Field.Root>
-      </div>
-      <button type="submit" className="ark-button">
-        Execute Search
-      </button>
+          <Field.Root  className="ark-field">
+        <Field.Label className="ark-label">Sort by</Field.Label>
+        <select className="ark-select" name="sortBy" defaultValue="relevance" >
+          <option value="relevance">Relevance</option>
+          <option value="date">Date</option>
+        </select>
+      </Field.Root>
+        </div>
+<button type="submit" className="ark-button">Search</button>
     </form>
   )
 }

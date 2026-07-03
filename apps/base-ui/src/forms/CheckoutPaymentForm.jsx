@@ -2,94 +2,46 @@ import { useState } from 'react'
 import { Field } from '@base-ui-components/react/field'
 
 export default function CheckoutPaymentForm() {
-  const [formData, setFormData] = useState({
-    cardNumber: '',
-    cardName: '',
-    expiry: '',
-    cvv: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
-  }
+  const handleSubmit = (e) => { e.preventDefault(); alert('Submitted!'); }
 
   return (
     <form onSubmit={handleSubmit} className="base-form">
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
-        Payment Details
-      </h2>
-      {submitted && (
-        <div
-          style={{
-            padding: '0.75rem 1rem',
-            background: '#dcfce7',
-            color: '#166534',
-            borderRadius: '0.5rem',
-            fontSize: '0.875rem',
-          }}
-        >
-          Payment processed successfully!
+      <Field.Root required className="base-field">
+      <Field.Label className="base-label">Email for receipt</Field.Label>
+      <Field.Control className="base-input" name="email" type="email"     required />
+      
+    </Field.Root>
+<Field.Root required className="base-field">
+        <Field.Label className="base-label">Shipping method</Field.Label>
+        <select className="base-select" name="shippingMethod" defaultValue="standard" required>
+          <option value="standard">Standard Shipping</option>
+          <option value="express">Express Shipping</option>
+          <option value="overnight">Overnight Delivery</option>
+        </select>
+      </Field.Root>
+<Field.Root required className="base-field">
+      <Field.Label className="base-label">Card number</Field.Label>
+      <Field.Control className="base-input" name="cardNumber" type="text"   maxLength={19}  required />
+      
+    </Field.Root>
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+          <Field.Root required className="base-field">
+      <Field.Label className="base-label">Expiration</Field.Label>
+      <Field.Control className="base-input" name="expiration" type="text"  placeholder="MM/YY"   required />
+      
+    </Field.Root>
+          <Field.Root required className="base-field">
+      <Field.Label className="base-label">CVC</Field.Label>
+      <Field.Control className="base-input" name="cvc" type="text"   maxLength={4}  required />
+      
+    </Field.Root>
         </div>
-      )}
-      <Field.Root className="base-field">
-        <Field.Label className="base-label">Name on Card</Field.Label>
-        <Field.Control
-          required
-          className="base-control"
-          type="text"
-          value={formData.cardName}
-          onChange={(e) =>
-            setFormData({ ...formData, cardName: e.target.value })
-          }
-        />
-      </Field.Root>
-      <Field.Root className="base-field">
-        <Field.Label className="base-label">Card Number</Field.Label>
-        <Field.Control
-          required
-          className="base-control"
-          type="text"
-          value={formData.cardNumber}
-          onChange={(e) =>
-            setFormData({ ...formData, cardNumber: e.target.value })
-          }
-          placeholder="1234 5678 9012 3456"
-        />
-      </Field.Root>
-      <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
-      >
-        <Field.Root className="base-field">
-          <Field.Label className="base-label">Expiration (MM/YY)</Field.Label>
-          <Field.Control
-            required
-            className="base-control"
-            type="text"
-            value={formData.expiry}
-            onChange={(e) =>
-              setFormData({ ...formData, expiry: e.target.value })
-            }
-            placeholder="MM/YY"
-          />
-        </Field.Root>
-        <Field.Root className="base-field">
-          <Field.Label className="base-label">CVV</Field.Label>
-          <Field.Control
-            required
-            className="base-control"
-            type="password"
-            value={formData.cvv}
-            onChange={(e) => setFormData({ ...formData, cvv: e.target.value })}
-            placeholder="123"
-            maxLength={4}
-          />
-        </Field.Root>
-      </div>
-      <button type="submit" className="base-button">
-        Complete Purchase
-      </button>
+<Field.Root  className="base-field">
+      <Field.Label className="base-label">Promo code</Field.Label>
+      <Field.Control className="base-input" name="promoCode" type="text"    pattern="[A-Za-z0-9]{3,15}"  />
+      
+    </Field.Root>
+<button type="submit" className="base-button">Place order</button>
     </form>
   )
 }

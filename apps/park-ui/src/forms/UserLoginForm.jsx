@@ -2,78 +2,28 @@ import { useState } from 'react'
 import { Field } from '@ark-ui/react'
 
 export default function UserLoginForm() {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    rememberMe: false,
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
-  }
+  const handleSubmit = (e) => { e.preventDefault(); alert('Submitted!'); }
 
   return (
     <form onSubmit={handleSubmit} className="park-form">
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
-        Sign In
-      </h2>
-      {submitted && (
-        <div
-          style={{
-            padding: '0.75rem 1rem',
-            background: '#dcfce7',
-            color: '#166534',
-            borderRadius: '0.5rem',
-            fontSize: '0.875rem',
-          }}
-        >
-          Log in successful!
-        </div>
-      )}
       <Field.Root required className="park-field">
-        <Field.Label className="park-label">Email Address</Field.Label>
-        <Field.Input
-          className="park-input"
-          type="email"
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          placeholder="you@example.com"
-        />
-      </Field.Root>
-      <Field.Root required className="park-field">
-        <Field.Label className="park-label">Password</Field.Label>
-        <Field.Input
-          className="park-input"
-          type="password"
-          value={formData.password}
-          onChange={(e) =>
-            setFormData({ ...formData, password: e.target.value })
-          }
-        />
-      </Field.Root>
-      <label
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.5rem',
-          fontSize: '0.875rem',
-          cursor: 'pointer',
-        }}
-      >
-        <input
-          type="checkbox"
-          checked={formData.rememberMe}
-          onChange={(e) =>
-            setFormData({ ...formData, rememberMe: e.target.checked })
-          }
-        />
-        Remember this device
-      </label>
-      <button type="submit" className="park-button">
-        Sign In
-      </button>
+      <Field.Label className="park-label">Email or username</Field.Label>
+      <Field.Input className="park-input" name="identifier" type="text"     required />
+      
+    </Field.Root>
+<Field.Root required className="park-field">
+      <Field.Label className="park-label">Password</Field.Label>
+      <Field.Input className="park-input" name="password" type="password"     required />
+      
+    </Field.Root>
+<label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem' }}>
+      <input type="checkbox" name="remember"   />
+      Keep me signed in
+    </label>
+<button type="button" style={{ background: 'none', border: 'none', color: '#2563eb', cursor: 'pointer', fontSize: '0.875rem' }} onClick={() => alert('Password reset link flow placeholder')}>
+      Forgot password?
+    </button>
+<button type="submit" className="park-button">Sign in</button>
     </form>
   )
 }
