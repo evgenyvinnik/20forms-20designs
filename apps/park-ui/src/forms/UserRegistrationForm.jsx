@@ -1,70 +1,106 @@
-function UserRegistrationForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Registration submitted!')
+import { useState } from 'react'
+import { Field } from '@ark-ui/react'
+
+export default function UserRegistrationForm() {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    terms: false,
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-user-registration-name">Full name</label>
-        <input
-          id="nocss-user-registration-name"
-          name="fullName"
+    <form onSubmit={handleSubmit} className="park-form">
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
+        Create Account
+      </h2>
+      {submitted && (
+        <div
+          style={{
+            padding: '0.75rem 1rem',
+            background: '#dcfce7',
+            color: '#166534',
+            borderRadius: '0.5rem',
+            fontSize: '0.875rem',
+          }}
+        >
+          Registration successful!
+        </div>
+      )}
+      <Field.Root required className="park-field">
+        <Field.Label className="park-label">Full Name</Field.Label>
+        <Field.Input
+          className="park-input"
           type="text"
-          required
+          value={formData.fullName}
+          onChange={(e) =>
+            setFormData({ ...formData, fullName: e.target.value })
+          }
+          placeholder="Jane Doe"
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-user-registration-email">Email address</label>
-        <input
-          id="nocss-user-registration-email"
-          name="email"
+      </Field.Root>
+      <Field.Root required className="park-field">
+        <Field.Label className="park-label">Email Address</Field.Label>
+        <Field.Input
+          className="park-input"
           type="email"
-          required
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          placeholder="jane@example.com"
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-user-registration-username">Username</label>
-        <input
-          id="nocss-user-registration-username"
-          name="username"
-          type="text"
-          minLength="3"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-user-registration-password">Password</label>
-        <input
-          id="nocss-user-registration-password"
-          name="password"
+      </Field.Root>
+      <Field.Root required className="park-field">
+        <Field.Label className="park-label">Password</Field.Label>
+        <Field.Input
+          className="park-input"
           type="password"
-          minLength="8"
-          required
+          value={formData.password}
+          onChange={(e) =>
+            setFormData({ ...formData, password: e.target.value })
+          }
+          minLength={8}
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-user-registration-confirm">
-          Confirm password
-        </label>
-        <input
-          id="nocss-user-registration-confirm"
-          name="confirmPassword"
+      </Field.Root>
+      <Field.Root required className="park-field">
+        <Field.Label className="park-label">Confirm Password</Field.Label>
+        <Field.Input
+          className="park-input"
           type="password"
-          minLength="8"
-          required
+          value={formData.confirmPassword}
+          onChange={(e) =>
+            setFormData({ ...formData, confirmPassword: e.target.value })
+          }
         />
-      </div>
-      <div>
-        <label>
-          <input name="terms" type="checkbox" required />I agree to the terms
-          and conditions
-        </label>
-      </div>
-      <button type="submit">Create account</button>
+      </Field.Root>
+      <label
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          fontSize: '0.875rem',
+          cursor: 'pointer',
+        }}
+      >
+        <input
+          type="checkbox"
+          required
+          checked={formData.terms}
+          onChange={(e) =>
+            setFormData({ ...formData, terms: e.target.checked })
+          }
+        />
+        I agree to the Terms of Service and Privacy Policy
+      </label>
+      <button type="submit" className="park-button">
+        Register
+      </button>
     </form>
   )
 }
-
-export default UserRegistrationForm

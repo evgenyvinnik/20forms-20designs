@@ -1,39 +1,56 @@
-function TwoFactorAuthForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Verification submitted!')
+import { useState } from 'react'
+
+export default function TwoFactorAuthForm() {
+  const [code, setCode] = useState('')
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <p>Enter the code from your authenticator app or SMS.</p>
-      <div>
-        <label htmlFor="nocss-two-factor-code">Verification code</label>
+    <form onSubmit={handleSubmit} className="gluestack-form">
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
+        Two-Factor Authentication
+      </h2>
+      {submitted && (
+        <div
+          style={{
+            padding: '0.75rem 1rem',
+            background: '#dbeafe',
+            color: '#1e40af',
+            borderRadius: '0.375rem',
+            fontSize: '0.875rem',
+          }}
+        >
+          Two-factor authentication verified!
+        </div>
+      )}
+      <div className="gluestack-field">
+        <label className="gluestack-label">Authentication Code</label>
         <input
-          id="nocss-two-factor-code"
-          name="code"
+          className="gluestack-input"
           type="text"
-          inputMode="numeric"
-          pattern="\\d{6}"
-          maxLength="6"
           required
+          value={code}
+          onChange={(e) => setCode(e.target.value)}
+          placeholder="123456"
+          maxLength={6}
         />
+        <span
+          style={{
+            fontSize: '0.75rem',
+            color: '#6b7280',
+            marginTop: '0.25rem',
+          }}
+        >
+          Enter the 6-digit code from your authenticator app.
+        </span>
       </div>
-      <div>
-        <label htmlFor="nocss-two-factor-backup">Backup code (optional)</label>
-        <input
-          id="nocss-two-factor-backup"
-          name="backupCode"
-          type="text"
-          pattern="[A-Za-z0-9]{6,12}"
-        />
-      </div>
-      <button type="submit">Verify</button>
-      <button type="button" onClick={() => alert('A new code has been sent!')}>
-        Resend code
+      <button type="submit" className="gluestack-button">
+        Verify Code
       </button>
     </form>
   )
 }
-
-export default TwoFactorAuthForm

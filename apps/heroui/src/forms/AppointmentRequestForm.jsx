@@ -1,49 +1,40 @@
-function AppointmentRequestForm() {
+import { useState } from 'react'
+import { Input, Button, Textarea, Select, SelectItem } from '@heroui/react'
+
+export default function AppointmentRequestForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Appointment request submitted!')
+    alert('Appointment requested!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-appointment-name">Full name</label>
-        <input
-          id="nocss-appointment-name"
-          name="fullName"
-          type="text"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-appointment-email">Email address</label>
-        <input
-          id="nocss-appointment-email"
-          name="email"
-          type="email"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-appointment-date">Preferred date</label>
-        <input id="nocss-appointment-date" name="date" type="date" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-appointment-time">Preferred time</label>
-        <input id="nocss-appointment-time" name="time" type="time" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-appointment-reason">Reason for visit</label>
-        <textarea
-          id="nocss-appointment-reason"
-          name="reason"
-          rows="3"
-          required
-        />
-      </div>
-      <button type="submit">Request appointment</button>
+    <form onSubmit={handleSubmit} className="heroui-form">
+      <Input label="Your name" variant="bordered" isRequired name="name" />
+      <Select
+        label="Service requested"
+        variant="bordered"
+        defaultSelectedKeys={['consultation']}
+        isRequired
+        name="service"
+      >
+        <SelectItem key="consultation" value="consultation">
+          Initial Consultation
+        </SelectItem>
+        <SelectItem key="followup" value="followup">
+          Follow-up Session
+        </SelectItem>
+      </Select>
+      <Input
+        label="Preferred date"
+        variant="bordered"
+        isRequired
+        type="date"
+        name="date"
+      />
+      <Textarea label="Notes" variant="bordered" minRows={3} name="notes" />
+      <Button type="submit" color="primary" shadow>
+        Request appointment
+      </Button>
     </form>
   )
 }
-
-export default AppointmentRequestForm

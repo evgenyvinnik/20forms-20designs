@@ -1,42 +1,49 @@
-function ContactInquiryForm() {
+import { useState } from 'react'
+import { Input, Button, Textarea, Select, SelectItem } from '@heroui/react'
+
+export default function ContactInquiryForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Inquiry submitted!')
+    alert('Inquiry sent!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-contact-name">Full name</label>
-        <input id="nocss-contact-name" name="fullName" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-contact-email">Email address</label>
-        <input id="nocss-contact-email" name="email" type="email" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-contact-topic">Topic</label>
-        <select id="nocss-contact-topic" name="topic" required>
-          <option value="">Select topic</option>
-          <option value="support">Support</option>
-          <option value="sales">Sales</option>
-          <option value="feedback">Feedback</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="nocss-contact-message">Message</label>
-        <textarea id="nocss-contact-message" name="message" rows="4" required />
-      </div>
-      <div>
-        <label>
-          <input name="consent" type="checkbox" />
-          Allow follow-up communication
-        </label>
-      </div>
-      <button type="submit">Submit inquiry</button>
+    <form onSubmit={handleSubmit} className="heroui-form">
+      <Input label="Your name" variant="bordered" isRequired name="name" />
+      <Input
+        label="Email address"
+        variant="bordered"
+        isRequired
+        type="email"
+        name="email"
+      />
+      <Select
+        label="Topic"
+        variant="bordered"
+        defaultSelectedKeys={['general']}
+        isRequired
+        name="topic"
+      >
+        <SelectItem key="general" value="general">
+          General Support
+        </SelectItem>
+        <SelectItem key="sales" value="sales">
+          Sales & Business
+        </SelectItem>
+        <SelectItem key="feedback" value="feedback">
+          Product Feedback
+        </SelectItem>
+      </Select>
+      <Textarea
+        label="Message"
+        variant="bordered"
+        isRequired
+        minRows={4}
+        name="message"
+      />
+      <Button type="submit" color="primary" shadow>
+        Send inquiry
+      </Button>
     </form>
   )
 }
-
-export default ContactInquiryForm

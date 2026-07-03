@@ -1,51 +1,69 @@
-function ProfileUpdateForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Profile updated!')
+import { useState } from 'react'
+import { Field } from '@ark-ui/react'
+
+export default function ProfileUpdateForm() {
+  const [formData, setFormData] = useState({
+    fullName: 'Jane Doe',
+    email: 'jane@example.com',
+    bio: 'Software engineer and open source enthusiast.',
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-profile-first-name">First name</label>
-        <input
-          id="nocss-profile-first-name"
-          name="firstName"
+    <form onSubmit={handleSubmit} className="ark-form">
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
+        Profile Settings
+      </h2>
+      {submitted && (
+        <div
+          style={{
+            padding: '0.75rem 1rem',
+            background: '#dcfce7',
+            color: '#166534',
+            borderRadius: '0.5rem',
+            fontSize: '0.875rem',
+          }}
+        >
+          Profile updated successfully!
+        </div>
+      )}
+      <Field.Root required className="ark-field">
+        <Field.Label className="ark-label">Full Name</Field.Label>
+        <Field.Input
+          className="ark-input"
           type="text"
-          required
+          value={formData.fullName}
+          onChange={(e) =>
+            setFormData({ ...formData, fullName: e.target.value })
+          }
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-profile-last-name">Last name</label>
-        <input
-          id="nocss-profile-last-name"
-          name="lastName"
-          type="text"
-          required
+      </Field.Root>
+      <Field.Root required className="ark-field">
+        <Field.Label className="ark-label">Email Address</Field.Label>
+        <Field.Input
+          className="ark-input"
+          type="email"
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-profile-email">Email address</label>
-        <input id="nocss-profile-email" name="email" type="email" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-profile-phone">Phone number</label>
-        <input
-          id="nocss-profile-phone"
-          name="phone"
-          type="tel"
-          pattern="[+0-9\s-]{7,20}"
-          inputMode="tel"
-          required
+      </Field.Root>
+      <Field.Root className="ark-field">
+        <Field.Label className="ark-label">Bio</Field.Label>
+        <Field.Textarea
+          className="ark-textarea"
+          rows={3}
+          value={formData.bio}
+          onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-profile-bio">Short bio</label>
-        <textarea id="nocss-profile-bio" name="bio" rows="3" required />
-      </div>
-      <button type="submit">Save changes</button>
+      </Field.Root>
+      <button type="submit" className="ark-button">
+        Save Changes
+      </button>
     </form>
   )
 }
-
-export default ProfileUpdateForm

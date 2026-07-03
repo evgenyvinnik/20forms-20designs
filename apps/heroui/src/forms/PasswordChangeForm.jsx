@@ -1,51 +1,40 @@
-function PasswordChangeForm() {
+import { useState } from 'react'
+import { Input, Button } from '@heroui/react'
+
+export default function PasswordChangeForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Password change requested!')
+    alert('Password updated!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-password-change-current">Current password</label>
-        <input
-          id="nocss-password-change-current"
-          name="currentPassword"
-          type="password"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-password-change-new">New password</label>
-        <input
-          id="nocss-password-change-new"
-          name="newPassword"
-          type="password"
-          minLength="8"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-password-change-confirm">
-          Confirm new password
-        </label>
-        <input
-          id="nocss-password-change-confirm"
-          name="confirmPassword"
-          type="password"
-          minLength="8"
-          required
-        />
-      </div>
-      <div>
-        <label>
-          <input name="logoutOthers" type="checkbox" />
-          Sign out of other devices
-        </label>
-      </div>
-      <button type="submit">Update password</button>
+    <form onSubmit={handleSubmit} className="heroui-form">
+      <Input
+        label="Current password"
+        variant="bordered"
+        isRequired
+        type="password"
+        name="currentPassword"
+      />
+      <Input
+        label="New password"
+        variant="bordered"
+        isRequired
+        type="password"
+        minLength={8}
+        name="newPassword"
+      />
+      <Input
+        label="Confirm new password"
+        variant="bordered"
+        isRequired
+        type="password"
+        minLength={8}
+        name="confirmPassword"
+      />
+      <Button type="submit" color="primary" shadow>
+        Update password
+      </Button>
     </form>
   )
 }
-
-export default PasswordChangeForm

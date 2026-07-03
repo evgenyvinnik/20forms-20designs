@@ -1,44 +1,41 @@
-function UserLoginForm() {
+import { useState } from 'react'
+import { Input, Button, Checkbox } from '@heroui/react'
+
+export default function UserLoginForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Login submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-user-login-email">Email or username</label>
-        <input
-          id="nocss-user-login-email"
-          name="identifier"
-          type="text"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-user-login-password">Password</label>
-        <input
-          id="nocss-user-login-password"
-          name="password"
-          type="password"
-          required
-        />
-      </div>
-      <div>
-        <label>
-          <input name="remember" type="checkbox" />
-          Keep me signed in
-        </label>
-      </div>
-      <button type="submit">Sign in</button>
-      <button
+    <form onSubmit={handleSubmit} className="heroui-form">
+      <Input
+        label="Email or username"
+        variant="bordered"
+        isRequired
+        type="text"
+        name="identifier"
+      />
+      <Input
+        label="Password"
+        variant="bordered"
+        isRequired
+        type="password"
+        name="password"
+      />
+      <Checkbox defaultSelected name="remember">
+        Keep me signed in
+      </Checkbox>
+      <Button type="submit" color="primary" shadow>
+        Sign in
+      </Button>
+      <Button
         type="button"
+        variant="light"
         onClick={() => alert('Password reset link flow placeholder')}
       >
         Forgot password?
-      </button>
+      </Button>
     </form>
   )
 }
-
-export default UserLoginForm

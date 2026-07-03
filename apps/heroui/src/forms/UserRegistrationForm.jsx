@@ -1,70 +1,51 @@
-function UserRegistrationForm() {
+import { useState } from 'react'
+import { Input, Button, Checkbox } from '@heroui/react'
+
+export default function UserRegistrationForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Registration submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-user-registration-name">Full name</label>
-        <input
-          id="nocss-user-registration-name"
-          name="fullName"
-          type="text"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-user-registration-email">Email address</label>
-        <input
-          id="nocss-user-registration-email"
-          name="email"
-          type="email"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-user-registration-username">Username</label>
-        <input
-          id="nocss-user-registration-username"
-          name="username"
-          type="text"
-          minLength="3"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-user-registration-password">Password</label>
-        <input
-          id="nocss-user-registration-password"
-          name="password"
-          type="password"
-          minLength="8"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-user-registration-confirm">
-          Confirm password
-        </label>
-        <input
-          id="nocss-user-registration-confirm"
-          name="confirmPassword"
-          type="password"
-          minLength="8"
-          required
-        />
-      </div>
-      <div>
-        <label>
-          <input name="terms" type="checkbox" required />I agree to the terms
-          and conditions
-        </label>
-      </div>
-      <button type="submit">Create account</button>
+    <form onSubmit={handleSubmit} className="heroui-form">
+      <Input label="Full name" variant="bordered" isRequired name="fullName" />
+      <Input
+        label="Email address"
+        variant="bordered"
+        isRequired
+        type="email"
+        name="email"
+      />
+      <Input
+        label="Username"
+        variant="bordered"
+        isRequired
+        minLength={3}
+        name="username"
+      />
+      <Input
+        label="Password"
+        variant="bordered"
+        isRequired
+        type="password"
+        minLength={8}
+        name="password"
+      />
+      <Input
+        label="Confirm password"
+        variant="bordered"
+        isRequired
+        type="password"
+        minLength={8}
+        name="confirmPassword"
+      />
+      <Checkbox isRequired name="terms">
+        I agree to the terms and conditions
+      </Checkbox>
+      <Button type="submit" color="primary" shadow>
+        Create account
+      </Button>
     </form>
   )
 }
-
-export default UserRegistrationForm

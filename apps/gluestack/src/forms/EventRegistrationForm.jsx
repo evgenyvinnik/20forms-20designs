@@ -1,48 +1,74 @@
-function EventRegistrationForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Event registration submitted!')
+import { useState } from 'react'
+
+export default function EventRegistrationForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    ticketType: 'standard',
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-event-name">Full name</label>
-        <input id="nocss-event-name" name="fullName" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-event-email">Email address</label>
-        <input id="nocss-event-email" name="email" type="email" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-event-ticket">Ticket type</label>
-        <select id="nocss-event-ticket" name="ticketType" required>
-          <option value="">Select ticket</option>
-          <option value="general">General admission</option>
-          <option value="vip">VIP</option>
-          <option value="student">Student</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="nocss-event-guests">Number of guests</label>
+    <form onSubmit={handleSubmit} className="gluestack-form">
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
+        Event Registration
+      </h2>
+      {submitted && (
+        <div
+          style={{
+            padding: '0.75rem 1rem',
+            background: '#dbeafe',
+            color: '#1e40af',
+            borderRadius: '0.375rem',
+            fontSize: '0.875rem',
+          }}
+        >
+          Event registration confirmed!
+        </div>
+      )}
+      <div className="gluestack-field">
+        <label className="gluestack-label">Attendee Name</label>
         <input
-          id="nocss-event-guests"
-          name="guestCount"
-          type="number"
-          min="0"
-          max="20"
+          className="gluestack-input"
+          type="text"
           required
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
         />
       </div>
-      <div>
-        <label>
-          <input name="newsletter" type="checkbox" />
-          Notify me about future events
-        </label>
+      <div className="gluestack-field">
+        <label className="gluestack-label">Email Address</label>
+        <input
+          className="gluestack-input"
+          type="email"
+          required
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+        />
       </div>
-      <button type="submit">Register</button>
+      <div className="gluestack-field">
+        <label className="gluestack-label">Ticket Tier</label>
+        <select
+          className="gluestack-select"
+          required
+          value={formData.ticketType}
+          onChange={(e) =>
+            setFormData({ ...formData, ticketType: e.target.value })
+          }
+        >
+          <option value="standard">Standard Pass</option>
+          <option value="vip">VIP Pass</option>
+          <option value="student">Student Pass</option>
+        </select>
+      </div>
+      <button type="submit" className="gluestack-button">
+        Register for Event
+      </button>
     </form>
   )
 }
-
-export default EventRegistrationForm

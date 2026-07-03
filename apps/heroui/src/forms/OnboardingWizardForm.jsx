@@ -1,76 +1,50 @@
-function OnboardingWizardForm() {
+import { useState } from 'react'
+import { Input, Button } from '@heroui/react'
+
+export default function OnboardingWizardForm() {
+  const [step, setStep] = useState(1)
+
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Onboarding complete!')
+    if (step === 1) {
+      setStep(2)
+    } else {
+      alert('Onboarding complete!')
+    }
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <section>
-        <h3>Step 1: Account</h3>
-        <div>
-          <label htmlFor="nocss-onboarding-email">Work email</label>
-          <input
-            id="nocss-onboarding-email"
-            name="email"
-            type="email"
-            required
+    <form onSubmit={handleSubmit} className="heroui-form">
+      {step === 1 ? (
+        <>
+          <Input
+            label="Your full name"
+            variant="bordered"
+            isRequired
+            name="name"
           />
-        </div>
-        <div>
-          <label htmlFor="nocss-onboarding-password">Password</label>
-          <input
-            id="nocss-onboarding-password"
-            name="password"
-            type="password"
-            minLength="8"
-            required
+          <Button type="submit" color="primary" shadow>
+            Next step
+          </Button>
+        </>
+      ) : (
+        <>
+          <Input
+            label="Company name"
+            variant="bordered"
+            isRequired
+            name="company"
           />
-        </div>
-      </section>
-      <section>
-        <h3>Step 2: Team</h3>
-        <div>
-          <label htmlFor="nocss-onboarding-team-name">Team name</label>
-          <input
-            id="nocss-onboarding-team-name"
-            name="teamName"
-            type="text"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="nocss-onboarding-size">Team size</label>
-          <select id="nocss-onboarding-size" name="teamSize" required>
-            <option value="">Select size</option>
-            <option value="1-5">1-5</option>
-            <option value="6-20">6-20</option>
-            <option value="21-50">21-50</option>
-            <option value="50+">50+</option>
-          </select>
-        </div>
-      </section>
-      <section>
-        <h3>Step 3: Preferences</h3>
-        <div>
-          <label htmlFor="nocss-onboarding-goal">Primary goal</label>
-          <textarea id="nocss-onboarding-goal" name="goal" rows="3" required />
-        </div>
-        <div>
-          <label>
-            <input name="updates" type="checkbox" />
-            Send me product tips
-          </label>
-        </div>
-      </section>
-      <div>
-        <button type="button" onClick={() => alert('Back action placeholder')}>
-          Back
-        </button>
-        <button type="submit">Finish setup</button>
-      </div>
+          <div style={{ display: 'flex', gap: '0.5rem' }}>
+            <Button type="button" variant="flat" onClick={() => setStep(1)}>
+              Back
+            </Button>
+            <Button type="submit" color="primary" shadow style={{ flex: 1 }}>
+              Complete onboarding
+            </Button>
+          </div>
+        </>
+      )}
     </form>
   )
 }
-
-export default OnboardingWizardForm

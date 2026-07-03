@@ -1,24 +1,25 @@
-function PasswordResetForm() {
+import { useState } from 'react'
+import { Input, Button } from '@heroui/react'
+
+export default function PasswordResetForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Password reset link requested!')
+    alert('Reset link requested!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <p>Request a password reset link via email.</p>
-      <div>
-        <label htmlFor="nocss-password-reset-email">Email address</label>
-        <input
-          id="nocss-password-reset-email"
-          name="email"
-          type="email"
-          required
-        />
-      </div>
-      <button type="submit">Send reset link</button>
+    <form onSubmit={handleSubmit} className="heroui-form">
+      <Input
+        label="Account email address"
+        variant="bordered"
+        isRequired
+        type="email"
+        name="email"
+        description="Instructions will be sent to this address if an account exists."
+      />
+      <Button type="submit" color="primary" shadow>
+        Send reset instructions
+      </Button>
     </form>
   )
 }
-
-export default PasswordResetForm

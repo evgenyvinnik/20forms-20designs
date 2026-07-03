@@ -1,51 +1,77 @@
-function PasswordChangeForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Password change requested!')
+import { useState } from 'react'
+import { Field } from '@base-ui-components/react/field'
+
+export default function PasswordChangeForm() {
+  const [formData, setFormData] = useState({
+    currentPassword: '',
+    newPassword: '',
+    confirmPassword: '',
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-password-change-current">Current password</label>
-        <input
-          id="nocss-password-change-current"
-          name="currentPassword"
-          type="password"
+    <form onSubmit={handleSubmit} className="base-form">
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
+        Change Password
+      </h2>
+      {submitted && (
+        <div
+          style={{
+            padding: '0.75rem 1rem',
+            background: '#dcfce7',
+            color: '#166534',
+            borderRadius: '0.5rem',
+            fontSize: '0.875rem',
+          }}
+        >
+          Password changed successfully!
+        </div>
+      )}
+      <Field.Root className="base-field">
+        <Field.Label className="base-label">Current Password</Field.Label>
+        <Field.Control
           required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-password-change-new">New password</label>
-        <input
-          id="nocss-password-change-new"
-          name="newPassword"
+          className="base-control"
           type="password"
-          minLength="8"
-          required
+          value={formData.currentPassword}
+          onChange={(e) =>
+            setFormData({ ...formData, currentPassword: e.target.value })
+          }
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-password-change-confirm">
-          Confirm new password
-        </label>
-        <input
-          id="nocss-password-change-confirm"
-          name="confirmPassword"
+      </Field.Root>
+      <Field.Root className="base-field">
+        <Field.Label className="base-label">New Password</Field.Label>
+        <Field.Control
+          required
+          className="base-control"
           type="password"
-          minLength="8"
-          required
+          value={formData.newPassword}
+          onChange={(e) =>
+            setFormData({ ...formData, newPassword: e.target.value })
+          }
+          minLength={8}
         />
-      </div>
-      <div>
-        <label>
-          <input name="logoutOthers" type="checkbox" />
-          Sign out of other devices
-        </label>
-      </div>
-      <button type="submit">Update password</button>
+      </Field.Root>
+      <Field.Root className="base-field">
+        <Field.Label className="base-label">Confirm New Password</Field.Label>
+        <Field.Control
+          required
+          className="base-control"
+          type="password"
+          value={formData.confirmPassword}
+          onChange={(e) =>
+            setFormData({ ...formData, confirmPassword: e.target.value })
+          }
+        />
+      </Field.Root>
+      <button type="submit" className="base-button">
+        Update Password
+      </button>
     </form>
   )
 }
-
-export default PasswordChangeForm

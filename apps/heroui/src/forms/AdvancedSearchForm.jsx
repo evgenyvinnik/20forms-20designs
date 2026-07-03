@@ -1,49 +1,51 @@
-function AdvancedSearchForm() {
+import { useState } from 'react'
+import { Input, Button, Select, SelectItem } from '@heroui/react'
+
+export default function AdvancedSearchForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Search submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-search-query">Search query</label>
-        <input id="nocss-search-query" name="query" type="text" required />
+    <form onSubmit={handleSubmit} className="heroui-form">
+      <Input label="Search query" variant="bordered" isRequired name="query" />
+      <div
+        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
+      >
+        <Select
+          label="Category"
+          variant="bordered"
+          defaultSelectedKeys={['all']}
+          name="category"
+        >
+          <SelectItem key="all" value="all">
+            All categories
+          </SelectItem>
+          <SelectItem key="docs" value="docs">
+            Documentation
+          </SelectItem>
+          <SelectItem key="blog" value="blog">
+            Blog posts
+          </SelectItem>
+        </Select>
+        <Select
+          label="Sort by"
+          variant="bordered"
+          defaultSelectedKeys={['relevance']}
+          name="sortBy"
+        >
+          <SelectItem key="relevance" value="relevance">
+            Relevance
+          </SelectItem>
+          <SelectItem key="date" value="date">
+            Date
+          </SelectItem>
+        </Select>
       </div>
-      <div>
-        <label htmlFor="nocss-search-category">Category</label>
-        <select id="nocss-search-category" name="category" required>
-          <option value="all">All</option>
-          <option value="articles">Articles</option>
-          <option value="products">Products</option>
-          <option value="people">People</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="nocss-search-date-from">Date from</label>
-        <input id="nocss-search-date-from" name="dateFrom" type="date" />
-      </div>
-      <div>
-        <label htmlFor="nocss-search-date-to">Date to</label>
-        <input id="nocss-search-date-to" name="dateTo" type="date" />
-      </div>
-      <div>
-        <label htmlFor="nocss-search-sort">Sort by</label>
-        <select id="nocss-search-sort" name="sort" required>
-          <option value="relevance">Relevance</option>
-          <option value="newest">Newest</option>
-          <option value="oldest">Oldest</option>
-        </select>
-      </div>
-      <div>
-        <label>
-          <input name="includeArchived" type="checkbox" />
-          Include archived
-        </label>
-      </div>
-      <button type="submit">Search</button>
+      <Button type="submit" color="primary" shadow>
+        Search
+      </Button>
     </form>
   )
 }
-
-export default AdvancedSearchForm

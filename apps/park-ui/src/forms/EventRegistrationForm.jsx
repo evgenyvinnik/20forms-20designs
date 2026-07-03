@@ -1,48 +1,73 @@
-function EventRegistrationForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Event registration submitted!')
+import { useState } from 'react'
+import { Field } from '@ark-ui/react'
+
+export default function EventRegistrationForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    ticketType: 'standard',
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-event-name">Full name</label>
-        <input id="nocss-event-name" name="fullName" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-event-email">Email address</label>
-        <input id="nocss-event-email" name="email" type="email" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-event-ticket">Ticket type</label>
-        <select id="nocss-event-ticket" name="ticketType" required>
-          <option value="">Select ticket</option>
-          <option value="general">General admission</option>
-          <option value="vip">VIP</option>
-          <option value="student">Student</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="nocss-event-guests">Number of guests</label>
-        <input
-          id="nocss-event-guests"
-          name="guestCount"
-          type="number"
-          min="0"
-          max="20"
-          required
+    <form onSubmit={handleSubmit} className="park-form">
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
+        Event Registration
+      </h2>
+      {submitted && (
+        <div
+          style={{
+            padding: '0.75rem 1rem',
+            background: '#dcfce7',
+            color: '#166534',
+            borderRadius: '0.5rem',
+            fontSize: '0.875rem',
+          }}
+        >
+          Event registration confirmed!
+        </div>
+      )}
+      <Field.Root required className="park-field">
+        <Field.Label className="park-label">Attendee Name</Field.Label>
+        <Field.Input
+          className="park-input"
+          type="text"
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
         />
-      </div>
-      <div>
-        <label>
-          <input name="newsletter" type="checkbox" />
-          Notify me about future events
-        </label>
-      </div>
-      <button type="submit">Register</button>
+      </Field.Root>
+      <Field.Root required className="park-field">
+        <Field.Label className="park-label">Email Address</Field.Label>
+        <Field.Input
+          className="park-input"
+          type="email"
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+        />
+      </Field.Root>
+      <Field.Root required className="park-field">
+        <Field.Label className="park-label">Ticket Tier</Field.Label>
+        <select
+          className="park-select"
+          value={formData.ticketType}
+          onChange={(e) =>
+            setFormData({ ...formData, ticketType: e.target.value })
+          }
+          required
+        >
+          <option value="standard">Standard Pass</option>
+          <option value="vip">VIP Pass</option>
+          <option value="student">Student Pass</option>
+        </select>
+      </Field.Root>
+      <button type="submit" className="park-button">
+        Register for Event
+      </button>
     </form>
   )
 }
-
-export default EventRegistrationForm

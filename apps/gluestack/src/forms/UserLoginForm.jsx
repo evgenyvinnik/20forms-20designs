@@ -1,44 +1,80 @@
-function UserLoginForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Login submitted!')
+import { useState } from 'react'
+
+export default function UserLoginForm() {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    rememberMe: false,
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-user-login-email">Email or username</label>
+    <form onSubmit={handleSubmit} className="gluestack-form">
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
+        Sign In
+      </h2>
+      {submitted && (
+        <div
+          style={{
+            padding: '0.75rem 1rem',
+            background: '#dbeafe',
+            color: '#1e40af',
+            borderRadius: '0.375rem',
+            fontSize: '0.875rem',
+          }}
+        >
+          Log in successful!
+        </div>
+      )}
+      <div className="gluestack-field">
+        <label className="gluestack-label">Email Address</label>
         <input
-          id="nocss-user-login-email"
-          name="identifier"
-          type="text"
+          className="gluestack-input"
+          type="email"
           required
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          placeholder="you@example.com"
         />
       </div>
-      <div>
-        <label htmlFor="nocss-user-login-password">Password</label>
+      <div className="gluestack-field">
+        <label className="gluestack-label">Password</label>
         <input
-          id="nocss-user-login-password"
-          name="password"
+          className="gluestack-input"
           type="password"
           required
+          value={formData.password}
+          onChange={(e) =>
+            setFormData({ ...formData, password: e.target.value })
+          }
         />
       </div>
-      <div>
-        <label>
-          <input name="remember" type="checkbox" />
-          Keep me signed in
-        </label>
-      </div>
-      <button type="submit">Sign in</button>
-      <button
-        type="button"
-        onClick={() => alert('Password reset link flow placeholder')}
+      <label
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          fontSize: '0.875rem',
+          cursor: 'pointer',
+        }}
       >
-        Forgot password?
+        <input
+          type="checkbox"
+          checked={formData.rememberMe}
+          onChange={(e) =>
+            setFormData({ ...formData, rememberMe: e.target.checked })
+          }
+        />
+        Remember this device
+      </label>
+      <button type="submit" className="gluestack-button">
+        Sign In
       </button>
     </form>
   )
 }
-
-export default UserLoginForm

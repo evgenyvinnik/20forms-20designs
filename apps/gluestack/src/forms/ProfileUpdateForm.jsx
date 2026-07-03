@@ -1,51 +1,70 @@
-function ProfileUpdateForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Profile updated!')
+import { useState } from 'react'
+
+export default function ProfileUpdateForm() {
+  const [formData, setFormData] = useState({
+    fullName: 'Jane Doe',
+    email: 'jane@example.com',
+    bio: 'Software engineer and open source enthusiast.',
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-profile-first-name">First name</label>
+    <form onSubmit={handleSubmit} className="gluestack-form">
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
+        Profile Settings
+      </h2>
+      {submitted && (
+        <div
+          style={{
+            padding: '0.75rem 1rem',
+            background: '#dbeafe',
+            color: '#1e40af',
+            borderRadius: '0.375rem',
+            fontSize: '0.875rem',
+          }}
+        >
+          Profile updated successfully!
+        </div>
+      )}
+      <div className="gluestack-field">
+        <label className="gluestack-label">Full Name</label>
         <input
-          id="nocss-profile-first-name"
-          name="firstName"
+          className="gluestack-input"
           type="text"
           required
+          value={formData.fullName}
+          onChange={(e) =>
+            setFormData({ ...formData, fullName: e.target.value })
+          }
         />
       </div>
-      <div>
-        <label htmlFor="nocss-profile-last-name">Last name</label>
+      <div className="gluestack-field">
+        <label className="gluestack-label">Email Address</label>
         <input
-          id="nocss-profile-last-name"
-          name="lastName"
-          type="text"
+          className="gluestack-input"
+          type="email"
           required
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
         />
       </div>
-      <div>
-        <label htmlFor="nocss-profile-email">Email address</label>
-        <input id="nocss-profile-email" name="email" type="email" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-profile-phone">Phone number</label>
-        <input
-          id="nocss-profile-phone"
-          name="phone"
-          type="tel"
-          pattern="[+0-9\s-]{7,20}"
-          inputMode="tel"
-          required
+      <div className="gluestack-field">
+        <label className="gluestack-label">Bio</label>
+        <textarea
+          className="gluestack-textarea"
+          rows={3}
+          value={formData.bio}
+          onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
         />
       </div>
-      <div>
-        <label htmlFor="nocss-profile-bio">Short bio</label>
-        <textarea id="nocss-profile-bio" name="bio" rows="3" required />
-      </div>
-      <button type="submit">Save changes</button>
+      <button type="submit" className="gluestack-button">
+        Save Changes
+      </button>
     </form>
   )
 }
-
-export default ProfileUpdateForm

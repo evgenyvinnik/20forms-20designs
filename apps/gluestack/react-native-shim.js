@@ -1,4 +1,5 @@
 import * as RNW from 'react-native-web'
+import React from 'react'
 
 const defaultObj = RNW.default || RNW
 
@@ -10,6 +11,19 @@ export const InputAccessoryView = RNW.View || 'div'
 export const KeyboardAvoidingView =
   RNW.KeyboardAvoidingView || RNW.View || 'div'
 export const VirtualizedList = RNW.FlatList || RNW.View || 'div'
+
+export const requireNativeComponent = (name) => {
+  const Dummy = (props) => React.createElement('div', props)
+  Dummy.displayName = name
+  return Dummy
+}
+
+export const codegenNativeComponent = (name) => {
+  const Dummy = (props) => React.createElement('div', props)
+  Dummy.displayName = name
+  return Dummy
+}
+
 export const Animated = RNW.Animated || {
   View: RNW.View || 'div',
   Text: RNW.Text || 'span',
@@ -19,6 +33,7 @@ export const Animated = RNW.Animated || {
   },
   timing: () => ({ start: (cb) => cb && cb() }),
 }
+
 export const TurboModuleRegistry = {
   get: () => null,
   getEnforcing: () => ({}),

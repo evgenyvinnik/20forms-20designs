@@ -1,46 +1,47 @@
-function CustomerFeedbackForm() {
+import { useState } from 'react'
+import { Button, Textarea, Select, SelectItem } from '@heroui/react'
+
+export default function CustomerFeedbackForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Feedback submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-feedback-name">Name</label>
-        <input id="nocss-feedback-name" name="name" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-feedback-email">Email address</label>
-        <input id="nocss-feedback-email" name="email" type="email" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-feedback-rating">Overall rating</label>
-        <select id="nocss-feedback-rating" name="rating" required>
-          <option value="">Select rating</option>
-          <option value="excellent">Excellent</option>
-          <option value="good">Good</option>
-          <option value="average">Average</option>
-          <option value="poor">Poor</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="nocss-feedback-comments">Comments</label>
-        <textarea
-          id="nocss-feedback-comments"
-          name="comments"
-          rows="4"
-          required
-        />
-      </div>
-      <div>
-        <label>
-          <input name="followUp" type="checkbox" />I would like a follow-up
-        </label>
-      </div>
-      <button type="submit">Send feedback</button>
+    <form onSubmit={handleSubmit} className="heroui-form">
+      <Select
+        label="Satisfaction rating"
+        variant="bordered"
+        defaultSelectedKeys={['5']}
+        isRequired
+        name="rating"
+      >
+        <SelectItem key="5" value="5">
+          5 - Excellent
+        </SelectItem>
+        <SelectItem key="4" value="4">
+          4 - Good
+        </SelectItem>
+        <SelectItem key="3" value="3">
+          3 - Average
+        </SelectItem>
+        <SelectItem key="2" value="2">
+          2 - Poor
+        </SelectItem>
+        <SelectItem key="1" value="1">
+          1 - Very Poor
+        </SelectItem>
+      </Select>
+      <Textarea
+        label="Comments"
+        variant="bordered"
+        isRequired
+        minRows={4}
+        name="comments"
+      />
+      <Button type="submit" color="primary" shadow>
+        Submit feedback
+      </Button>
     </form>
   )
 }
-
-export default CustomerFeedbackForm

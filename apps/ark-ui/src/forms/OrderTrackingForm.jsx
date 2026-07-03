@@ -1,42 +1,60 @@
-function OrderTrackingForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Order lookup submitted!')
+import { useState } from 'react'
+import { Field } from '@ark-ui/react'
+
+export default function OrderTrackingForm() {
+  const [formData, setFormData] = useState({
+    orderNumber: '',
+    email: '',
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-order-tracking-number">Order number</label>
-        <input
-          id="nocss-order-tracking-number"
-          name="orderNumber"
+    <form onSubmit={handleSubmit} className="ark-form">
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
+        Track Your Order
+      </h2>
+      {submitted && (
+        <div
+          style={{
+            padding: '0.75rem 1rem',
+            background: '#dcfce7',
+            color: '#166534',
+            borderRadius: '0.5rem',
+            fontSize: '0.875rem',
+          }}
+        >
+          Searching for order status...
+        </div>
+      )}
+      <Field.Root required className="ark-field">
+        <Field.Label className="ark-label">Order Number</Field.Label>
+        <Field.Input
+          className="ark-input"
           type="text"
-          pattern="[A-Za-z0-9-]{6,20}"
-          required
+          value={formData.orderNumber}
+          onChange={(e) =>
+            setFormData({ ...formData, orderNumber: e.target.value })
+          }
+          placeholder="ORD-12345"
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-order-tracking-email">Email address</label>
-        <input
-          id="nocss-order-tracking-email"
-          name="email"
+      </Field.Root>
+      <Field.Root required className="ark-field">
+        <Field.Label className="ark-label">Billing Email</Field.Label>
+        <Field.Input
+          className="ark-input"
           type="email"
-          required
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-order-tracking-postal">Postal code</label>
-        <input
-          id="nocss-order-tracking-postal"
-          name="postalCode"
-          type="text"
-          required
-        />
-      </div>
-      <button type="submit">Find order</button>
+      </Field.Root>
+      <button type="submit" className="ark-button">
+        Track Order
+      </button>
     </form>
   )
 }
-
-export default OrderTrackingForm

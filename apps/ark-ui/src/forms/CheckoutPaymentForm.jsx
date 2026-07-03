@@ -1,26 +1,91 @@
-function CheckoutPaymentForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Checkout submitted!')
+import { useState } from 'react'
+import { Field } from '@ark-ui/react'
+
+export default function CheckoutPaymentForm() {
+  const [formData, setFormData] = useState({
+    cardNumber: '',
+    cardName: '',
+    expiry: '',
+    cvv: '',
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="ark-form">
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
+        Payment Details
+      </h2>
+      {submitted && (
+        <div
+          style={{
+            padding: '0.75rem 1rem',
+            background: '#dcfce7',
+            color: '#166534',
+            borderRadius: '0.5rem',
+            fontSize: '0.875rem',
+          }}
+        >
+          Payment processed successfully!
+        </div>
+      )}
+      <Field.Root required className="ark-field">
+        <Field.Label className="ark-label">Name on Card</Field.Label>
+        <Field.Input
+          className="ark-input"
+          type="text"
+          value={formData.cardName}
+          onChange={(e) =>
+            setFormData({ ...formData, cardName: e.target.value })
+          }
+        />
+      </Field.Root>
+      <Field.Root required className="ark-field">
+        <Field.Label className="ark-label">Card Number</Field.Label>
+        <Field.Input
+          className="ark-input"
+          type="text"
+          value={formData.cardNumber}
+          onChange={(e) =>
+            setFormData({ ...formData, cardNumber: e.target.value })
+          }
+          placeholder="1234 5678 9012 3456"
+        />
+      </Field.Root>
       <div
         style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
-      ></div>
-      <div>
-        <label htmlFor="nocss-checkout-promo">Promo code</label>
-        <input
-          id="nocss-checkout-promo"
-          name="promoCode"
-          type="text"
-          pattern="[A-Za-z0-9]{3,15}"
-        />
+      >
+        <Field.Root required className="ark-field">
+          <Field.Label className="ark-label">Expiration (MM/YY)</Field.Label>
+          <Field.Input
+            className="ark-input"
+            type="text"
+            value={formData.expiry}
+            onChange={(e) =>
+              setFormData({ ...formData, expiry: e.target.value })
+            }
+            placeholder="MM/YY"
+          />
+        </Field.Root>
+        <Field.Root required className="ark-field">
+          <Field.Label className="ark-label">CVV</Field.Label>
+          <Field.Input
+            className="ark-input"
+            type="password"
+            value={formData.cvv}
+            onChange={(e) => setFormData({ ...formData, cvv: e.target.value })}
+            placeholder="123"
+            maxLength={4}
+          />
+        </Field.Root>
       </div>
-      <button type="submit">Place order</button>
+      <button type="submit" className="ark-button">
+        Complete Purchase
+      </button>
     </form>
   )
 }
-
-export default CheckoutPaymentForm

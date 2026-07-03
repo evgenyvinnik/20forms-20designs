@@ -1,48 +1,39 @@
-function EventRegistrationForm() {
+import { useState } from 'react'
+import { Input, Button, Select, SelectItem } from '@heroui/react'
+
+export default function EventRegistrationForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Event registration submitted!')
+    alert('Registered for event!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-event-name">Full name</label>
-        <input id="nocss-event-name" name="fullName" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-event-email">Email address</label>
-        <input id="nocss-event-email" name="email" type="email" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-event-ticket">Ticket type</label>
-        <select id="nocss-event-ticket" name="ticketType" required>
-          <option value="">Select ticket</option>
-          <option value="general">General admission</option>
-          <option value="vip">VIP</option>
-          <option value="student">Student</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="nocss-event-guests">Number of guests</label>
-        <input
-          id="nocss-event-guests"
-          name="guestCount"
-          type="number"
-          min="0"
-          max="20"
-          required
-        />
-      </div>
-      <div>
-        <label>
-          <input name="newsletter" type="checkbox" />
-          Notify me about future events
-        </label>
-      </div>
-      <button type="submit">Register</button>
+    <form onSubmit={handleSubmit} className="heroui-form">
+      <Input label="Attendee name" variant="bordered" isRequired name="name" />
+      <Input
+        label="Email address"
+        variant="bordered"
+        isRequired
+        type="email"
+        name="email"
+      />
+      <Select
+        label="Ticket pass"
+        variant="bordered"
+        defaultSelectedKeys={['general']}
+        isRequired
+        name="ticket"
+      >
+        <SelectItem key="general" value="general">
+          General Admission
+        </SelectItem>
+        <SelectItem key="vip" value="vip">
+          VIP Access
+        </SelectItem>
+      </Select>
+      <Button type="submit" color="primary" shadow>
+        Register for event
+      </Button>
     </form>
   )
 }
-
-export default EventRegistrationForm

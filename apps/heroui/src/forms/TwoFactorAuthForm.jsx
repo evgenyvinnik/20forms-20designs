@@ -1,39 +1,27 @@
-function TwoFactorAuthForm() {
+import { useState } from 'react'
+import { Input, Button, Checkbox } from '@heroui/react'
+
+export default function TwoFactorAuthForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Verification submitted!')
+    alert('2FA code submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <p>Enter the code from your authenticator app or SMS.</p>
-      <div>
-        <label htmlFor="nocss-two-factor-code">Verification code</label>
-        <input
-          id="nocss-two-factor-code"
-          name="code"
-          type="text"
-          inputMode="numeric"
-          pattern="\\d{6}"
-          maxLength="6"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-two-factor-backup">Backup code (optional)</label>
-        <input
-          id="nocss-two-factor-backup"
-          name="backupCode"
-          type="text"
-          pattern="[A-Za-z0-9]{6,12}"
-        />
-      </div>
-      <button type="submit">Verify</button>
-      <button type="button" onClick={() => alert('A new code has been sent!')}>
-        Resend code
-      </button>
+    <form onSubmit={handleSubmit} className="heroui-form">
+      <Input
+        label="6-digit security code"
+        variant="bordered"
+        isRequired
+        maxLength={6}
+        placeholder="123456"
+        name="code"
+        description="Enter the code from your authenticator app."
+      />
+      <Checkbox name="trustDevice">Trust this browser for 30 days</Checkbox>
+      <Button type="submit" color="primary" shadow>
+        Verify code
+      </Button>
     </form>
   )
 }
-
-export default TwoFactorAuthForm

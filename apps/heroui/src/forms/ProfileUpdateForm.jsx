@@ -1,51 +1,39 @@
-function ProfileUpdateForm() {
+import { useState } from 'react'
+import { Input, Button, Textarea } from '@heroui/react'
+
+export default function ProfileUpdateForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Profile updated!')
+    alert('Profile saved!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-profile-first-name">First name</label>
-        <input
-          id="nocss-profile-first-name"
-          name="firstName"
-          type="text"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-profile-last-name">Last name</label>
-        <input
-          id="nocss-profile-last-name"
-          name="lastName"
-          type="text"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-profile-email">Email address</label>
-        <input id="nocss-profile-email" name="email" type="email" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-profile-phone">Phone number</label>
-        <input
-          id="nocss-profile-phone"
-          name="phone"
-          type="tel"
-          pattern="[+0-9\s-]{7,20}"
-          inputMode="tel"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-profile-bio">Short bio</label>
-        <textarea id="nocss-profile-bio" name="bio" rows="3" required />
-      </div>
-      <button type="submit">Save changes</button>
+    <form onSubmit={handleSubmit} className="heroui-form">
+      <Input
+        label="Display name"
+        variant="bordered"
+        defaultValue="Jane Doe"
+        isRequired
+        name="displayName"
+      />
+      <Input
+        label="Public email"
+        variant="bordered"
+        defaultValue="jane@example.com"
+        isRequired
+        type="email"
+        name="email"
+      />
+      <Textarea
+        label="Bio"
+        variant="bordered"
+        defaultValue="Software developer based in San Francisco."
+        minRows={3}
+        name="bio"
+      />
+      <Button type="submit" color="primary" shadow>
+        Save profile
+      </Button>
     </form>
   )
 }
-
-export default ProfileUpdateForm
