@@ -32,13 +32,12 @@ function UserLoginForm() {
           />
         </Box>
         <Box>
-          <Checkbox
-            name="remember"
-            label="Keep me signed in"
-          />
+          <Checkbox name="remember" label="Keep me signed in" />
         </Box>
         <Inline space="space.100">
-          <Button type="submit" appearance="primary">Sign in</Button>
+          <Button type="submit" appearance="primary">
+            Sign in
+          </Button>
           <Button
             appearance="subtle"
             onClick={() => alert('Password reset link flow placeholder')}

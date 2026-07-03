@@ -3,7 +3,9 @@
 .app-container {
   padding: 16px;
   min-height: 100vh;
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }
 
 .app-container.light {
@@ -58,7 +60,9 @@
   border-radius: 6px;
   border: 1px solid;
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .light .input {
@@ -95,7 +99,9 @@
   border: 1px solid;
   outline: none;
   cursor: pointer;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .light .select {
@@ -129,7 +135,9 @@
   outline: none;
   resize: vertical;
   font-family: inherit;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .light .textarea {
@@ -177,7 +185,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s, border-color 0.2s;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
 }
 
 .light .checkbox {
@@ -185,7 +195,7 @@
   background-color: #ffffff;
 }
 
-.light .checkbox[aria-checked="true"] {
+.light .checkbox[aria-checked='true'] {
   background-color: #3b82f6;
   border-color: #3b82f6;
 }
@@ -195,7 +205,7 @@
   background-color: #374151;
 }
 
-.dark .checkbox[aria-checked="true"] {
+.dark .checkbox[aria-checked='true'] {
   background-color: #60a5fa;
   border-color: #60a5fa;
 }
@@ -240,7 +250,7 @@
   background-color: #ffffff;
 }
 
-.light .radio[aria-checked="true"] {
+.light .radio[aria-checked='true'] {
   border-color: #3b82f6;
 }
 
@@ -249,7 +259,7 @@
   background-color: #374151;
 }
 
-.dark .radio[aria-checked="true"] {
+.dark .radio[aria-checked='true'] {
   border-color: #60a5fa;
 }
 
@@ -259,11 +269,11 @@
   border-radius: 50%;
 }
 
-.light .radio[aria-checked="true"] .radio-dot {
+.light .radio[aria-checked='true'] .radio-dot {
   background-color: #3b82f6;
 }
 
-.dark .radio[aria-checked="true"] .radio-dot {
+.dark .radio[aria-checked='true'] .radio-dot {
   background-color: #60a5fa;
 }
 
@@ -279,7 +289,9 @@
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
 }
 
 .button:active {

@@ -27,11 +27,7 @@ function EventRegistrationForm() {
       <Stack space="space.200">
         <Box>
           <Label htmlFor="atlaskit-event-name">Full name</Label>
-          <Textfield
-            id="atlaskit-event-name"
-            name="fullName"
-            isRequired
-          />
+          <Textfield id="atlaskit-event-name" name="fullName" isRequired />
         </Box>
         <Box>
           <Label htmlFor="atlaskit-event-email">Email address</Label>
@@ -55,7 +51,9 @@ function EventRegistrationForm() {
           />
         </Box>
         <Box>
-          <Label htmlFor="atlaskit-event-guests">Number of guests: {guestCount}</Label>
+          <Label htmlFor="atlaskit-event-guests">
+            Number of guests: {guestCount}
+          </Label>
           <Range
             id="atlaskit-event-guests"
             min={0}
@@ -65,12 +63,11 @@ function EventRegistrationForm() {
           />
         </Box>
         <Box>
-          <Checkbox
-            name="newsletter"
-            label="Notify me about future events"
-          />
+          <Checkbox name="newsletter" label="Notify me about future events" />
         </Box>
-        <Button type="submit" appearance="primary">Register</Button>
+        <Button type="submit" appearance="primary">
+          Register
+        </Button>
       </Stack>
     </form>
   )

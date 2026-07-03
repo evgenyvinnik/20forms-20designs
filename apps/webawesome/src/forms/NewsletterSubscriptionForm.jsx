@@ -12,12 +12,7 @@ function NewsletterSubscriptionForm() {
 
   return (
     <form onSubmit={handleSubmit} className="wa-stack wa-gap-m">
-      <wa-input
-        label="Email address"
-        name="email"
-        type="email"
-        required
-      />
+      <wa-input label="Email address" name="email" type="email" required />
       <wa-select
         label="Frequency"
         name="frequency"
@@ -28,9 +23,7 @@ function NewsletterSubscriptionForm() {
         <wa-option value="monthly">Monthly</wa-option>
         <wa-option value="quarterly">Quarterly</wa-option>
       </wa-select>
-      <wa-checkbox name="agree">
-        Receive product updates
-      </wa-checkbox>
+      <wa-checkbox name="agree">Receive product updates</wa-checkbox>
       <wa-button type="submit" variant="brand">
         Subscribe
       </wa-button>

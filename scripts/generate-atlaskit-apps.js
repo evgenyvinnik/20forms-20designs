@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const appsDir = path.join(__dirname, '..', 'apps');
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const appsDir = path.join(__dirname, '..', 'apps')
 
 const forms = [
   'user-login',
@@ -29,7 +29,7 @@ const forms = [
   'onboarding-wizard',
   'advanced-search',
   'privacy-consent',
-];
+]
 
 const formComponentNames = {
   'user-login': 'UserLoginForm',
@@ -52,7 +52,7 @@ const formComponentNames = {
   'onboarding-wizard': 'OnboardingWizardForm',
   'advanced-search': 'AdvancedSearchForm',
   'privacy-consent': 'PrivacyConsentForm',
-};
+}
 
 const formTitles = {
   'user-login': 'User Login',
@@ -75,7 +75,7 @@ const formTitles = {
   'onboarding-wizard': 'Onboarding Wizard',
   'advanced-search': 'Advanced Search',
   'privacy-consent': 'Privacy Consent',
-};
+}
 
 // Templates
 const packageJsonTemplate = (formId) => `{
@@ -110,7 +110,7 @@ const packageJsonTemplate = (formId) => `{
     "vite": "^7.0.0"
   }
 }
-`;
+`
 
 const viteConfigTemplate = (formId) => `import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -129,7 +129,7 @@ export default defineConfig(({ mode }) => ({
     exclude: [],
   },
 }))
-`;
+`
 
 const indexHtmlTemplate = (formId, title) => `<!DOCTYPE html>
 <html lang="en">
@@ -153,7 +153,7 @@ const indexHtmlTemplate = (formId, title) => `<!DOCTYPE html>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
-`;
+`
 
 const mainJsxTemplate = `import React from 'react'
 import ReactDOM from 'react-dom/client'
@@ -187,9 +187,11 @@ setTimeout(reportHeight, 500)
 setTimeout(reportHeight, 1000)
 
 window.addEventListener('load', () => setTimeout(reportHeight, 100))
-`;
+`
 
-const appJsxTemplate = (componentName) => `import { useState, useEffect } from 'react'
+const appJsxTemplate = (
+  componentName
+) => `import { useState, useEffect } from 'react'
 import { setGlobalTheme } from '@atlaskit/tokens'
 import { Box } from '@atlaskit/primitives'
 import FormComponent from './form/${componentName}'
@@ -225,13 +227,13 @@ function App() {
 }
 
 export default App
-`;
+`
 
 const stylesCssTemplate = `/* Atlaskit uses design tokens and CSS-in-JS, minimal custom CSS needed */
 .app-container {
   min-height: 100vh;
 }
-`;
+`
 
 // Form templates
 const formTemplates = {
@@ -1721,42 +1723,42 @@ function PrivacyConsentForm() {
 
 export default PrivacyConsentForm
 `,
-};
+}
 
 // Generate apps
 forms.forEach((formId) => {
-  const appDir = path.join(appsDir, `atlaskit-${formId}`);
-  const srcDir = path.join(appDir, 'src');
-  const formDir = path.join(srcDir, 'form');
+  const appDir = path.join(appsDir, `atlaskit-${formId}`)
+  const srcDir = path.join(appDir, 'src')
+  const formDir = path.join(srcDir, 'form')
 
   // Create directories
-  fs.mkdirSync(formDir, { recursive: true });
+  fs.mkdirSync(formDir, { recursive: true })
 
   // Write files
   fs.writeFileSync(
     path.join(appDir, 'package.json'),
     packageJsonTemplate(formId)
-  );
+  )
   fs.writeFileSync(
     path.join(appDir, 'vite.config.js'),
     viteConfigTemplate(formId)
-  );
+  )
   fs.writeFileSync(
     path.join(appDir, 'index.html'),
     indexHtmlTemplate(formId, formTitles[formId])
-  );
-  fs.writeFileSync(path.join(srcDir, 'main.jsx'), mainJsxTemplate);
+  )
+  fs.writeFileSync(path.join(srcDir, 'main.jsx'), mainJsxTemplate)
   fs.writeFileSync(
     path.join(srcDir, 'App.jsx'),
     appJsxTemplate(formComponentNames[formId])
-  );
-  fs.writeFileSync(path.join(srcDir, 'styles.css'), stylesCssTemplate);
+  )
+  fs.writeFileSync(path.join(srcDir, 'styles.css'), stylesCssTemplate)
   fs.writeFileSync(
     path.join(formDir, `${formComponentNames[formId]}.jsx`),
     formTemplates[formId]
-  );
+  )
 
-  console.log(`✓ Created atlaskit-${formId}`);
-});
+  console.log(`✓ Created atlaskit-${formId}`)
+})
 
-console.log(`\nGenerated ${forms.length} Atlassian Atlaskit form apps.`);
+console.log(`\nGenerated ${forms.length} Atlassian Atlaskit form apps.`)

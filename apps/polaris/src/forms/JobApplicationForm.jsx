@@ -1,33 +1,14 @@
 import { useState, useCallback } from 'react'
-import { FormLayout, TextField, Select, Button, Text } from '@shopify/polaris'
+import { FormLayout, TextField, Checkbox, Button } from '@shopify/polaris'
 
 function JobApplicationForm() {
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
+  const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
-  const [position, setPosition] = useState('')
-  const [experience, setExperience] = useState('')
-  const [linkedin, setLinkedin] = useState('')
-  const [portfolio, setPortfolio] = useState('')
+  const [role, setRole] = useState('')
+  const [resume, setResume] = useState('')
   const [coverLetter, setCoverLetter] = useState('')
-
-  const positionOptions = [
-    { label: 'Select position', value: '' },
-    { label: 'Software Engineer', value: 'software-engineer' },
-    { label: 'Product Manager', value: 'product-manager' },
-    { label: 'Designer', value: 'designer' },
-    { label: 'Marketing Specialist', value: 'marketing' },
-    { label: 'Sales Representative', value: 'sales' },
-  ]
-
-  const experienceOptions = [
-    { label: 'Select experience level', value: '' },
-    { label: '0-1 years', value: 'entry' },
-    { label: '2-4 years', value: 'mid' },
-    { label: '5-7 years', value: 'senior' },
-    { label: '8+ years', value: 'lead' },
-  ]
+  const [updates, setUpdates] = useState(false)
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
@@ -37,24 +18,14 @@ function JobApplicationForm() {
   return (
     <form onSubmit={handleSubmit}>
       <FormLayout>
-        <FormLayout.Group>
-          <TextField
-            label="First name"
-            type="text"
-            value={firstName}
-            onChange={setFirstName}
-            autoComplete="given-name"
-            requiredIndicator
-          />
-          <TextField
-            label="Last name"
-            type="text"
-            value={lastName}
-            onChange={setLastName}
-            autoComplete="family-name"
-            requiredIndicator
-          />
-        </FormLayout.Group>
+        <TextField
+          label="Full name"
+          type="text"
+          value={fullName}
+          onChange={setFullName}
+          autoComplete="name"
+          requiredIndicator
+        />
         <TextField
           label="Email address"
           type="email"
@@ -69,43 +40,38 @@ function JobApplicationForm() {
           value={phone}
           onChange={setPhone}
           autoComplete="tel"
-          requiredIndicator
-        />
-        <Select
-          label="Position"
-          options={positionOptions}
-          value={position}
-          onChange={setPosition}
-          requiredIndicator
-        />
-        <Select
-          label="Years of experience"
-          options={experienceOptions}
-          value={experience}
-          onChange={setExperience}
+          pattern="[+0-9\s-]{7,20}"
+          inputMode="tel"
           requiredIndicator
         />
         <TextField
-          label="LinkedIn profile"
-          type="url"
-          value={linkedin}
-          onChange={setLinkedin}
-          autoComplete="url"
+          label="Role applied for"
+          type="text"
+          value={role}
+          onChange={setRole}
+          autoComplete="off"
+          requiredIndicator
         />
         <TextField
-          label="Portfolio/Website"
+          label="Resume link"
           type="url"
-          value={portfolio}
-          onChange={setPortfolio}
+          value={resume}
+          onChange={setResume}
           autoComplete="url"
+          requiredIndicator
         />
-        <Text as="p">Upload your resume (PDF format preferred)</Text>
         <TextField
           label="Cover letter"
           value={coverLetter}
           onChange={setCoverLetter}
           multiline={4}
           autoComplete="off"
+          requiredIndicator
+        />
+        <Checkbox
+          label="Keep me informed about future roles"
+          checked={updates}
+          onChange={setUpdates}
         />
         <Button submit variant="primary">
           Submit application

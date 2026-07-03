@@ -1,4 +1,4 @@
-# 20 Forms, 40 Designs
+# 20 Forms, 42 Designs
 
 > **Form Library Comparison Playground** — Compare the same forms implemented across different React design systems with full CSS isolation.
 
@@ -6,13 +6,13 @@
 
 This is project that I wanted to implement for quite some time. So far in my professional experience I have worked with a lot of various design systems and I was always fascinated how the same form could look so much differently using different component library.
 
-This is how this project was born. It represents 20 extremely common forms that were built using 41 popular React design systems. Each form is rendered in a fully isolated iframe, preventing any CSS bleed between different design systems.
+This is how this project was born. It represents 20 extremely common forms that were built using 42 popular React design systems. Each form is rendered in a fully isolated iframe, preventing any CSS bleed between different design systems.
 
 **[Live Demo →](https://evgenyvinnik.github.io/20forms-20designs/)**
 
 ## ✨ Features
 
-- **820 Form Implementations** — 41 libraries × 20 forms, each running in an isolated context
+- **840 Form Implementations** — 42 libraries × 20 forms, each running in an isolated context
 - **CSS Isolation** — No style conflicts between design systems (iframe-based architecture)
 - **Theme Support** — Light/dark mode toggle for libraries that support theming
 - **Comparison Matrix** — Side-by-side comparison of forms across libraries
@@ -29,7 +29,7 @@ This project uses a **monorepo + iframe architecture** for complete CSS isolatio
 │   ├── mui/                      # MUI (all 20 forms)
 │   ├── chakra/                   # Chakra UI (all 20 forms)
 │   ├── antd/                     # Ant Design (all 20 forms)
-│   └── ... (42 apps total: 41 libraries + shell)
+│   └── ... (43 apps total: 42 libraries + shell)
 ├── scripts/
 │   ├── build-all.mjs             # Build orchestration
 │   └── copy-builds-to-dist.mjs   # Deployment bundler
@@ -38,11 +38,12 @@ This project uses a **monorepo + iframe architecture** for complete CSS isolatio
 
 ### Why Separate Apps Per Library?
 
-You might wonder: *why build 41 separate applications instead of one unified app?* The answer comes down to **CSS isolation** — the core technical challenge of this project.
+You might wonder: _why build 42 separate applications instead of one unified app?_ The answer comes down to **CSS isolation** — the core technical challenge of this project.
 
 **The Problem with a Single SPA:**
 
 When multiple design systems coexist in one application, their styles inevitably conflict:
+
 - MUI's CSS baseline overrides Chakra's default styles
 - Tailwind's preflight resets Blueprint's component styling
 - Global resets from one library break layouts in another
@@ -52,6 +53,7 @@ We initially attempted a single-SPA approach and encountered exactly these issue
 **The Iframe Solution:**
 
 Each `<iframe>` creates a completely isolated browsing context with its own:
+
 - `<head>` element and stylesheets
 - CSS cascade and specificity rules
 - JavaScript runtime
@@ -66,12 +68,14 @@ This means MUI's `CssBaseline`, Tailwind's preflight, and Chakra's global styles
 
 **The Trade-off:**
 
-Yes, building 41 separate apps means:
+Yes, building 42 separate apps means:
+
 - Longer build times (~2-3 minutes for full build)
 - Duplicated React/library bundles across apps
 - More complex deployment orchestration
 
 But it guarantees:
+
 - **Zero CSS bleed** between any two design systems
 - **True visual fidelity** — each form looks exactly as it would in a real project using that library
 - **Independent theming** — light/dark mode works correctly per-library without conflicts
@@ -108,54 +112,54 @@ All libraries implement the same 20 forms with identical content, labels, and fi
 
 #### Reference Implementation
 
-| Library                                                 | Theme Support | Repository                                                        |
-| ------------------------------------------------------- | ------------- | ----------------------------------------------------------------- |
-| [React (No CSS)](https://react.dev/)                    | ✅ Light/Dark | [GitHub](https://github.com/facebook/react) — *Canonical reference* |
+| Library                              | Theme Support | Repository                                                          |
+| ------------------------------------ | ------------- | ------------------------------------------------------------------- |
+| [React (No CSS)](https://react.dev/) | ✅ Light/Dark | [GitHub](https://github.com/facebook/react) — _Canonical reference_ |
 
 #### Design System Libraries
 
-| #  | Library                                                 | Theme Support | Repository                                                        |
-| -- | ------------------------------------------------------- | ------------- | ----------------------------------------------------------------- |
-| 1  | [Ant Design](https://ant.design/)                       | ✅ Light/Dark | [GitHub](https://github.com/ant-design/ant-design)                |
-| 2  | [Arco Design](https://arco.design/)                     | ✅ Light/Dark | [GitHub](https://github.com/arco-design/arco-design)              |
-| 3  | [Ariakit](https://ariakit.org/)                         | ✅ Light/Dark | [GitHub](https://github.com/ariakit/ariakit)                      |
-| 4  | [Atlassian Atlaskit](https://atlassian.design/components) | ✅ Light/Dark | [Bitbucket](https://bitbucket.org/atlassian/atlassian-frontend/)  |
-| 5  | [Base Web](https://baseweb.design/)                     | ✅ Light/Dark | [GitHub](https://github.com/uber/baseweb)                         |
-| 6  | [Blueprint](https://blueprintjs.com/)                   | ✅ Light/Dark | [GitHub](https://github.com/palantir/blueprint)                   |
-| 7  | [Braid Design System](https://seek-oss.github.io/braid-design-system/) | ✅ Light/Dark | [GitHub](https://github.com/seek-oss/braid-design-system) |
-| 8  | [Carbon Design System](https://carbondesignsystem.com/) | ✅ Light/Dark | [GitHub](https://github.com/carbon-design-system/carbon)          |
-| 9  | [Chakra UI](https://chakra-ui.com/)                     | ✅ Light/Dark | [GitHub](https://github.com/chakra-ui/chakra-ui)                  |
-| 10 | [Cloudscape](https://cloudscape.design/)                | ✅ Light/Dark | [GitHub](https://github.com/cloudscape-design/components)         |
-| 11 | [CoreUI](https://coreui.io/react/)                      | ✅ Light/Dark | [GitHub](https://github.com/coreui/coreui-react)                  |
-| 12 | [DaisyUI](https://daisyui.com/)                         | ✅ Light/Dark | [GitHub](https://github.com/saadeghi/daisyui)                     |
-| 13 | [Elastic UI (EUI)](https://eui.elastic.co/)             | ✅ Light/Dark | [GitHub](https://github.com/elastic/eui)                          |
-| 14 | [Evergreen](https://evergreen.segment.com/)             | ⚠️ Light only | [GitHub](https://github.com/segmentio/evergreen)                  |
-| 15 | [Flowbite React](https://flowbite-react.com/)           | ✅ Light/Dark | [GitHub](https://github.com/themesberg/flowbite-react)            |
-| 16 | [Fluent UI](https://developer.microsoft.com/en-us/fluentui) | ✅ Light/Dark | [GitHub](https://github.com/microsoft/fluentui)                   |
-| 17 | [Gravity UI](https://gravity-ui.com/)                   | ✅ Light/Dark | [GitHub](https://github.com/gravity-ui/uikit)                     |
-| 18 | [Grommet](https://v2.grommet.io/)                       | ✅ Light/Dark | [GitHub](https://github.com/grommet/grommet)                      |
-| 19 | [Headless UI](https://headlessui.com/)                  | ✅ Light/Dark | [GitHub](https://github.com/tailwindlabs/headlessui)              |
-| 20 | [Mantine](https://mantine.dev/)                         | ✅ Light/Dark | [GitHub](https://github.com/mantinedev/mantine)                   |
-| 21 | [Material Tailwind](https://www.material-tailwind.com/) | ✅ Light/Dark | [GitHub](https://github.com/creativetimofficial/material-tailwind) |
-| 22 | [MUI](https://mui.com/)                                 | ✅ Light/Dark | [GitHub](https://github.com/mui/material-ui)                      |
-| 23 | [PatternFly](https://www.patternfly.org/)               | ✅ Light/Dark | [GitHub](https://github.com/patternfly/patternfly-react)          |
-| 24 | [Pinterest Gestalt](https://gestalt.pinterest.systems/) | ✅ Light/Dark | [GitHub](https://github.com/pinterest/gestalt)                    |
-| 25 | [PrimeReact](https://primereact.org/)                   | ✅ Light/Dark | [GitHub](https://github.com/primefaces/primereact)                |
-| 26 | [Primer React](https://primer.style/react/)             | ✅ Light/Dark | [GitHub](https://github.com/primer/react)                         |
-| 27 | [Radix UI](https://www.radix-ui.com/)                   | ✅ Light/Dark | [GitHub](https://github.com/radix-ui/primitives)                  |
-| 28 | [React Bootstrap](https://react-bootstrap.netlify.app/) | ✅ Light/Dark | [GitHub](https://github.com/react-bootstrap/react-bootstrap)      |
-| 29 | [React Spectrum](https://react-spectrum.adobe.com/)     | ✅ Light/Dark | [GitHub](https://github.com/adobe/react-spectrum)                 |
-| 30 | [RSuite](https://rsuitejs.com/)                         | ✅ Light/Dark | [GitHub](https://github.com/rsuite/rsuite)                        |
-| 31 | [Salesforce Lightning Design System](https://design-system-react-site.herokuapp.com/) | ⚠️ Light only | [GitHub](https://github.com/salesforce/design-system-react) |
-| 32 | [Semantic UI React](https://react.semantic-ui.com/)     | ✅ Light/Dark | [GitHub](https://github.com/Semantic-Org/Semantic-UI-React)       |
-| 33 | [Semi Design](https://semi.design/)                     | ✅ Light/Dark | [GitHub](https://github.com/DouyinFE/semi-design)                 |
-| 34 | [Shadcn/ui](https://ui.shadcn.com/)                     | ✅ Light/Dark | [GitHub](https://github.com/shadcn-ui/ui)                         |
-| 35 | [Shopify Polaris](https://polaris.shopify.com/)         | ✅ Light/Dark | [GitHub](https://github.com/Shopify/polaris)                      |
-| 36 | [Tamagui](https://tamagui.dev/)                         | ✅ Light/Dark | [GitHub](https://github.com/tamagui/tamagui)                      |
-| 37 | [Theme UI](https://theme-ui.com/)                       | ✅ Light/Dark | [GitHub](https://github.com/system-ui/theme-ui)                   |
-| 38 | [U.S. Web Design System](https://designsystem.digital.gov/) | ⚠️ Light only | [GitHub](https://github.com/uswds/uswds)                      |
-| 39 | [Web Awesome](https://webawesome.com/)                  | ✅ Light/Dark | [GitHub](https://github.com/AmazeeLabs/webawesome)                |
-| 40 | [Zendesk Garden](https://garden.zendesk.com/)           | ✅ Light/Dark | [GitHub](https://github.com/zendeskgarden/react-components)       |
+| #   | Library                                                                               | Theme Support | Repository                                                         |
+| --- | ------------------------------------------------------------------------------------- | ------------- | ------------------------------------------------------------------ |
+| 1   | [Ant Design](https://ant.design/)                                                     | ✅ Light/Dark | [GitHub](https://github.com/ant-design/ant-design)                 |
+| 2   | [Arco Design](https://arco.design/)                                                   | ✅ Light/Dark | [GitHub](https://github.com/arco-design/arco-design)               |
+| 3   | [Ariakit](https://ariakit.org/)                                                       | ✅ Light/Dark | [GitHub](https://github.com/ariakit/ariakit)                       |
+| 4   | [Atlassian Atlaskit](https://atlassian.design/components)                             | ✅ Light/Dark | [Bitbucket](https://bitbucket.org/atlassian/atlassian-frontend/)   |
+| 5   | [Base Web](https://baseweb.design/)                                                   | ✅ Light/Dark | [GitHub](https://github.com/uber/baseweb)                          |
+| 6   | [Blueprint](https://blueprintjs.com/)                                                 | ✅ Light/Dark | [GitHub](https://github.com/palantir/blueprint)                    |
+| 7   | [Braid Design System](https://seek-oss.github.io/braid-design-system/)                | ✅ Light/Dark | [GitHub](https://github.com/seek-oss/braid-design-system)          |
+| 8   | [Carbon Design System](https://carbondesignsystem.com/)                               | ✅ Light/Dark | [GitHub](https://github.com/carbon-design-system/carbon)           |
+| 9   | [Chakra UI](https://chakra-ui.com/)                                                   | ✅ Light/Dark | [GitHub](https://github.com/chakra-ui/chakra-ui)                   |
+| 10  | [Cloudscape](https://cloudscape.design/)                                              | ✅ Light/Dark | [GitHub](https://github.com/cloudscape-design/components)          |
+| 11  | [CoreUI](https://coreui.io/react/)                                                    | ✅ Light/Dark | [GitHub](https://github.com/coreui/coreui-react)                   |
+| 12  | [DaisyUI](https://daisyui.com/)                                                       | ✅ Light/Dark | [GitHub](https://github.com/saadeghi/daisyui)                      |
+| 13  | [Elastic UI (EUI)](https://eui.elastic.co/)                                           | ✅ Light/Dark | [GitHub](https://github.com/elastic/eui)                           |
+| 14  | [Evergreen](https://evergreen.segment.com/)                                           | ⚠️ Light only | [GitHub](https://github.com/segmentio/evergreen)                   |
+| 15  | [Flowbite React](https://flowbite-react.com/)                                         | ✅ Light/Dark | [GitHub](https://github.com/themesberg/flowbite-react)             |
+| 16  | [Fluent UI](https://developer.microsoft.com/en-us/fluentui)                           | ✅ Light/Dark | [GitHub](https://github.com/microsoft/fluentui)                    |
+| 17  | [Gravity UI](https://gravity-ui.com/)                                                 | ✅ Light/Dark | [GitHub](https://github.com/gravity-ui/uikit)                      |
+| 18  | [Grommet](https://v2.grommet.io/)                                                     | ✅ Light/Dark | [GitHub](https://github.com/grommet/grommet)                       |
+| 19  | [Headless UI](https://headlessui.com/)                                                | ✅ Light/Dark | [GitHub](https://github.com/tailwindlabs/headlessui)               |
+| 20  | [Mantine](https://mantine.dev/)                                                       | ✅ Light/Dark | [GitHub](https://github.com/mantinedev/mantine)                    |
+| 21  | [Material Tailwind](https://www.material-tailwind.com/)                               | ✅ Light/Dark | [GitHub](https://github.com/creativetimofficial/material-tailwind) |
+| 22  | [MUI](https://mui.com/)                                                               | ✅ Light/Dark | [GitHub](https://github.com/mui/material-ui)                       |
+| 23  | [PatternFly](https://www.patternfly.org/)                                             | ✅ Light/Dark | [GitHub](https://github.com/patternfly/patternfly-react)           |
+| 24  | [Pinterest Gestalt](https://gestalt.pinterest.systems/)                               | ✅ Light/Dark | [GitHub](https://github.com/pinterest/gestalt)                     |
+| 25  | [PrimeReact](https://primereact.org/)                                                 | ✅ Light/Dark | [GitHub](https://github.com/primefaces/primereact)                 |
+| 26  | [Primer React](https://primer.style/react/)                                           | ✅ Light/Dark | [GitHub](https://github.com/primer/react)                          |
+| 27  | [Radix UI](https://www.radix-ui.com/)                                                 | ✅ Light/Dark | [GitHub](https://github.com/radix-ui/primitives)                   |
+| 28  | [React Bootstrap](https://react-bootstrap.netlify.app/)                               | ✅ Light/Dark | [GitHub](https://github.com/react-bootstrap/react-bootstrap)       |
+| 29  | [React Spectrum](https://react-spectrum.adobe.com/)                                   | ✅ Light/Dark | [GitHub](https://github.com/adobe/react-spectrum)                  |
+| 30  | [RSuite](https://rsuitejs.com/)                                                       | ✅ Light/Dark | [GitHub](https://github.com/rsuite/rsuite)                         |
+| 31  | [Salesforce Lightning Design System](https://design-system-react-site.herokuapp.com/) | ⚠️ Light only | [GitHub](https://github.com/salesforce/design-system-react)        |
+| 32  | [Semantic UI React](https://react.semantic-ui.com/)                                   | ✅ Light/Dark | [GitHub](https://github.com/Semantic-Org/Semantic-UI-React)        |
+| 33  | [Semi Design](https://semi.design/)                                                   | ✅ Light/Dark | [GitHub](https://github.com/DouyinFE/semi-design)                  |
+| 34  | [Shadcn/ui](https://ui.shadcn.com/)                                                   | ✅ Light/Dark | [GitHub](https://github.com/shadcn-ui/ui)                          |
+| 35  | [Shopify Polaris](https://polaris.shopify.com/)                                       | ✅ Light/Dark | [GitHub](https://github.com/Shopify/polaris)                       |
+| 36  | [Tamagui](https://tamagui.dev/)                                                       | ✅ Light/Dark | [GitHub](https://github.com/tamagui/tamagui)                       |
+| 37  | [Theme UI](https://theme-ui.com/)                                                     | ✅ Light/Dark | [GitHub](https://github.com/system-ui/theme-ui)                    |
+| 38  | [U.S. Web Design System](https://designsystem.digital.gov/)                           | ⚠️ Light only | [GitHub](https://github.com/uswds/uswds)                           |
+| 39  | [Web Awesome](https://webawesome.com/)                                                | ✅ Light/Dark | [GitHub](https://github.com/AmazeeLabs/webawesome)                 |
+| 40  | [Zendesk Garden](https://garden.zendesk.com/)                                         | ✅ Light/Dark | [GitHub](https://github.com/zendeskgarden/react-components)        |
 
 ## 🚀 Getting Started
 
@@ -220,14 +224,14 @@ Each library app is a standalone Vite + React application that:
 
 ### Scripts
 
-| Script                      | Description                                       |
-| --------------------------- | ------------------------------------------------- |
-| `bun run build`             | Build shell + all library apps + copy to dist     |
-| `bun run build:shell`       | Build only the shell app                          |
-| `bun run clean`             | Remove all build artifacts                        |
-| `bun run dev:shell`         | Run shell app in development mode                 |
-| `bun run preview`           | Preview the production build locally              |
-| `bun run lint`              | Lint all apps (may take a while)                  |
+| Script                | Description                                   |
+| --------------------- | --------------------------------------------- |
+| `bun run build`       | Build shell + all library apps + copy to dist |
+| `bun run build:shell` | Build only the shell app                      |
+| `bun run clean`       | Remove all build artifacts                    |
+| `bun run dev:shell`   | Run shell app in development mode             |
+| `bun run preview`     | Preview the production build locally          |
+| `bun run lint`        | Lint all apps (may take a while)              |
 
 ## 🧪 Testing
 
@@ -338,19 +342,19 @@ Total non-empty lines of code in the project:
 
 | Extension | Lines      |
 | --------- | ---------- |
-| `.jsx`    | 62,473     |
-| `.md`     | 36,874     |
-| `.js`     | 6,742      |
-| `.mjs`    | 2,484      |
-| `.ts`     | 1,434      |
-| `.css`    | 1,213      |
-| `.json`   | 1,028      |
-| `.html`   | 986        |
-| `.tsx`    | 559        |
+| `.jsx`    | 65,274     |
+| `.js`     | 6,880      |
+| `.mjs`    | 2,489      |
+| `.ts`     | 1,444      |
+| `.json`   | 1,420      |
+| `.css`    | 1,241      |
+| `.html`   | 926        |
+| `.md`     | 698        |
+| `.tsx`    | 561        |
 | `.scss`   | 7          |
-| **Total** | **113,800** |
+| **Total** | **80,940** |
 
-*Generated using `scripts/calc-sloc.mjs` — excludes `node_modules`, `dist`, lock files, and other build artifacts.*
+_Generated using `scripts/calc-sloc.mjs` — excludes `node_modules`, `dist`, lock files, and other build artifacts._
 
 ## 🔄 Alternative: Using Node.js
 

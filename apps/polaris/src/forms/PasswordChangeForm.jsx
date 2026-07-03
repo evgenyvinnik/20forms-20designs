@@ -1,14 +1,15 @@
 import { useState, useCallback } from 'react'
-import { FormLayout, TextField, Button } from '@shopify/polaris'
+import { FormLayout, TextField, Checkbox, Button } from '@shopify/polaris'
 
 function PasswordChangeForm() {
   const [currentPassword, setCurrentPassword] = useState('')
   const [newPassword, setNewPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+  const [logoutOthers, setLogoutOthers] = useState(false)
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
-    alert('Password changed successfully!')
+    alert('Password change requested!')
   }, [])
 
   return (
@@ -28,6 +29,7 @@ function PasswordChangeForm() {
           value={newPassword}
           onChange={setNewPassword}
           autoComplete="new-password"
+          minLength={8}
           requiredIndicator
         />
         <TextField
@@ -36,10 +38,16 @@ function PasswordChangeForm() {
           value={confirmPassword}
           onChange={setConfirmPassword}
           autoComplete="new-password"
+          minLength={8}
           requiredIndicator
         />
+        <Checkbox
+          label="Sign out of other devices"
+          checked={logoutOthers}
+          onChange={setLogoutOthers}
+        />
         <Button submit variant="primary">
-          Change password
+          Update password
         </Button>
       </FormLayout>
     </form>

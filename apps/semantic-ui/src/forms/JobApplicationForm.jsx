@@ -53,10 +53,7 @@ function JobApplicationForm({ inverted }) {
         required
       />
       <Form.Field>
-        <Checkbox
-          name="updates"
-          label="Keep me informed about future roles"
-        />
+        <Checkbox name="updates" label="Keep me informed about future roles" />
       </Form.Field>
       <Button type="submit" primary>
         Submit application

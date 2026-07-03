@@ -31,6 +31,7 @@ const CONSOLIDATED_APPS = [
   'antd',
   'arco-design',
   'ariakit',
+  'astryx',
   'atlaskit',
   'baseweb',
   'blueprint',
@@ -80,6 +81,10 @@ function runCommand(command, args, cwd) {
       cwd,
       stdio: 'pipe',
       shell: true,
+      env: {
+        ...process.env,
+        PATH: `${path.join(cwd, 'node_modules', '.bin')}:${path.join(ROOT_DIR, 'node_modules', '.bin')}:${process.env.HOME || ''}/.bun/bin:${process.env.PATH || ''}`,
+      },
     });
 
     let stdout = '';

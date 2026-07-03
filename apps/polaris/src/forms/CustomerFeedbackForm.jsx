@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react'
 import {
   FormLayout,
   TextField,
-  ChoiceList,
+  Select,
   Checkbox,
   Button,
 } from '@shopify/polaris'
@@ -10,16 +10,16 @@ import {
 function CustomerFeedbackForm() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
-  const [rating, setRating] = useState(['3'])
-  const [feedback, setFeedback] = useState('')
-  const [recommend, setRecommend] = useState(false)
+  const [rating, setRating] = useState('')
+  const [comments, setComments] = useState('')
+  const [followUp, setFollowUp] = useState(false)
 
   const ratingOptions = [
-    { label: '1 - Very poor', value: '1' },
-    { label: '2 - Poor', value: '2' },
-    { label: '3 - Average', value: '3' },
-    { label: '4 - Good', value: '4' },
-    { label: '5 - Excellent', value: '5' },
+    { label: 'Select rating', value: '' },
+    { label: 'Excellent', value: 'excellent' },
+    { label: 'Good', value: 'good' },
+    { label: 'Average', value: 'average' },
+    { label: 'Poor', value: 'poor' },
   ]
 
   const handleSubmit = useCallback((event) => {
@@ -36,6 +36,7 @@ function CustomerFeedbackForm() {
           value={name}
           onChange={setName}
           autoComplete="name"
+          requiredIndicator
         />
         <TextField
           label="Email address"
@@ -43,28 +44,30 @@ function CustomerFeedbackForm() {
           value={email}
           onChange={setEmail}
           autoComplete="email"
+          requiredIndicator
         />
-        <ChoiceList
-          title="How would you rate your experience?"
-          choices={ratingOptions}
-          selected={rating}
+        <Select
+          label="Overall rating"
+          options={ratingOptions}
+          value={rating}
           onChange={setRating}
+          requiredIndicator
         />
         <TextField
-          label="Your feedback"
-          value={feedback}
-          onChange={setFeedback}
+          label="Comments"
+          value={comments}
+          onChange={setComments}
           multiline={4}
           autoComplete="off"
           requiredIndicator
         />
         <Checkbox
-          label="Would you recommend us to others?"
-          checked={recommend}
-          onChange={setRecommend}
+          label="I would like a follow-up"
+          checked={followUp}
+          onChange={setFollowUp}
         />
         <Button submit variant="primary">
-          Submit feedback
+          Send feedback
         </Button>
       </FormLayout>
     </form>

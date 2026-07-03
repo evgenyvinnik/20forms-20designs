@@ -32,7 +32,9 @@ function CheckoutPaymentForm() {
           />
         </Box>
         <Box>
-          <Label htmlFor="atlaskit-checkout-shipping-method">Shipping method</Label>
+          <Label htmlFor="atlaskit-checkout-shipping-method">
+            Shipping method
+          </Label>
           <Select
             inputId="atlaskit-checkout-shipping-method"
             name="shippingMethod"
@@ -72,12 +74,11 @@ function CheckoutPaymentForm() {
         </Box>
         <Box>
           <Label htmlFor="atlaskit-checkout-promo">Promo code</Label>
-          <Textfield
-            id="atlaskit-checkout-promo"
-            name="promoCode"
-          />
+          <Textfield id="atlaskit-checkout-promo" name="promoCode" />
         </Box>
-        <Button type="submit" appearance="primary">Place order</Button>
+        <Button type="submit" appearance="primary">
+          Place order
+        </Button>
       </Stack>
     </form>
   )

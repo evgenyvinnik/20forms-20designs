@@ -27,11 +27,7 @@ function ContactInquiryForm() {
       <Stack space="space.200">
         <Box>
           <Label htmlFor="atlaskit-contact-name">Full name</Label>
-          <Textfield
-            id="atlaskit-contact-name"
-            name="fullName"
-            isRequired
-          />
+          <Textfield id="atlaskit-contact-name" name="fullName" isRequired />
         </Box>
         <Box>
           <Label htmlFor="atlaskit-contact-email">Email address</Label>
@@ -56,19 +52,14 @@ function ContactInquiryForm() {
         </Box>
         <Box>
           <Label htmlFor="atlaskit-contact-message">Message</Label>
-          <TextArea
-            id="atlaskit-contact-message"
-            name="message"
-            isRequired
-          />
+          <TextArea id="atlaskit-contact-message" name="message" isRequired />
         </Box>
         <Box>
-          <Checkbox
-            name="consent"
-            label="Allow follow-up communication"
-          />
+          <Checkbox name="consent" label="Allow follow-up communication" />
         </Box>
-        <Button type="submit" appearance="primary">Submit inquiry</Button>
+        <Button type="submit" appearance="primary">
+          Submit inquiry
+        </Button>
       </Stack>
     </form>
   )

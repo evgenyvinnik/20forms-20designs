@@ -25,11 +25,7 @@ function SupportTicketForm() {
       <Stack space="space.200">
         <Box>
           <Label htmlFor="atlaskit-ticket-subject">Subject</Label>
-          <Textfield
-            id="atlaskit-ticket-subject"
-            name="subject"
-            isRequired
-          />
+          <Textfield id="atlaskit-ticket-subject" name="subject" isRequired />
         </Box>
         <Box>
           <Text as="strong">Priority</Text>
@@ -58,7 +54,9 @@ function SupportTicketForm() {
             style={{ display: 'block', marginTop: '8px' }}
           />
         </Box>
-        <Button type="submit" appearance="primary">Submit ticket</Button>
+        <Button type="submit" appearance="primary">
+          Submit ticket
+        </Button>
       </Stack>
     </form>
   )

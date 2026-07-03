@@ -27,11 +27,7 @@ function CustomerFeedbackForm() {
       <Stack space="space.200">
         <Box>
           <Label htmlFor="atlaskit-feedback-name">Name</Label>
-          <Textfield
-            id="atlaskit-feedback-name"
-            name="name"
-            isRequired
-          />
+          <Textfield id="atlaskit-feedback-name" name="name" isRequired />
         </Box>
         <Box>
           <Label htmlFor="atlaskit-feedback-email">Email address</Label>
@@ -63,12 +59,11 @@ function CustomerFeedbackForm() {
           />
         </Box>
         <Box>
-          <Checkbox
-            name="followUp"
-            label="I would like a follow-up"
-          />
+          <Checkbox name="followUp" label="I would like a follow-up" />
         </Box>
-        <Button type="submit" appearance="primary">Send feedback</Button>
+        <Button type="submit" appearance="primary">
+          Send feedback
+        </Button>
       </Stack>
     </form>
   )

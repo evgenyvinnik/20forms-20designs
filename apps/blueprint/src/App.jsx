@@ -2,9 +2,7 @@ import '@blueprintjs/core/lib/css/blueprint.css'
 
 import '@blueprintjs/icons/lib/css/blueprint-icons.css'
 
-
 import { useState, useEffect } from 'react'
-
 
 // Import all form components
 import AdvancedSearchForm from './forms/AdvancedSearchForm'

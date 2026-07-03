@@ -1,4 +1,12 @@
-import { Form, TextInput, TextArea, Button, Checkbox, Stack, FormGroup } from '@carbon/react'
+import {
+  Form,
+  TextInput,
+  TextArea,
+  Button,
+  Checkbox,
+  Stack,
+  FormGroup,
+} from '@carbon/react'
 
 function PrivacyConsentForm() {
   const handleSubmit = (event) => {

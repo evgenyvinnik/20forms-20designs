@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const FORMS = [
   'user-registration',
@@ -28,15 +28,15 @@ const FORMS = [
   'onboarding-wizard',
   'advanced-search',
   'privacy-consent',
-];
+]
 
-const appsDir = path.join(__dirname, '..', 'apps');
+const appsDir = path.join(__dirname, '..', 'apps')
 
 function toPascalCase(str) {
   return str
     .split('-')
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join('');
+    .join('')
 }
 
 function generatePackageJson(formName) {
@@ -59,7 +59,7 @@ function generatePackageJson(formName) {
       '@vitejs/plugin-react': '^5.1.1',
       vite: '^7.2.4',
     },
-  };
+  }
 }
 
 function generateViteConfig() {
@@ -70,11 +70,11 @@ export default defineConfig({
   plugins: [react()],
   base: './',
 })
-`;
+`
 }
 
 function generateIndexHtml(formName) {
-  const pascalCaseName = toPascalCase(formName);
+  const pascalCaseName = toPascalCase(formName)
   return `<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -88,7 +88,7 @@ function generateIndexHtml(formName) {
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
-`;
+`
 }
 
 function generateMainJsx() {
@@ -101,11 +101,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </React.StrictMode>,
 )
-`;
+`
 }
 
 function generateAppJsx(formName) {
-  const pascalCaseName = toPascalCase(formName);
+  const pascalCaseName = toPascalCase(formName)
   return `import '@arco-design/web-react/dist/css/arco.css'
 import { useEffect } from 'react'
 import ${pascalCaseName}Form from './form/${pascalCaseName}Form'
@@ -135,117 +135,117 @@ function App() {
 }
 
 export default App
-`;
+`
 }
 
 function generateFormComponent(formName) {
-  const reactNoCssDir = path.join(appsDir, `react-no-css-${formName}`);
+  const reactNoCssDir = path.join(appsDir, `react-no-css-${formName}`)
   const reactNoCssFormPath = path.join(
     reactNoCssDir,
     'src',
     'form',
     `${toPascalCase(formName)}Form.jsx`
-  );
+  )
 
   if (!fs.existsSync(reactNoCssFormPath)) {
-    console.error(`React no-css form not found: ${reactNoCssFormPath}`);
-    return null;
+    console.error(`React no-css form not found: ${reactNoCssFormPath}`)
+    return null
   }
 
-  const reactNoCssContent = fs.readFileSync(reactNoCssFormPath, 'utf-8');
+  const reactNoCssContent = fs.readFileSync(reactNoCssFormPath, 'utf-8')
 
   // Parse the react-no-css component to extract structure
   // Convert basic HTML elements to Arco Design components
-  let arcoContent = reactNoCssContent;
+  let arcoContent = reactNoCssContent
 
   // Replace imports
   arcoContent = arcoContent.replace(
     /^/,
     `import { Button, Input, Checkbox, Select, DatePicker, Radio, Textarea, InputNumber, TimePicker, Switch, Form } from '@arco-design/web-react'\n\n`
-  );
+  )
 
   // Convert button elements to Arco Button
   arcoContent = arcoContent.replace(
     /<button\s+type="submit">(.*?)<\/button>/g,
     '<Button type="primary" htmlType="submit">$1</Button>'
-  );
+  )
   arcoContent = arcoContent.replace(
     /<button\s+type="button"([^>]*)>(.*?)<\/button>/g,
     '<Button htmlType="button"$1>$2</Button>'
-  );
+  )
 
   // Convert input elements to Arco Input (excluding checkbox and radio)
   arcoContent = arcoContent.replace(
     /<input\s+([^>]*type="text"[^>]*)\/>/g,
     (match, attrs) => {
-      return `<Input ${attrs}/>`;
+      return `<Input ${attrs}/>`
     }
-  );
+  )
   arcoContent = arcoContent.replace(
     /<input\s+([^>]*type="email"[^>]*)\/>/g,
     (match, attrs) => {
-      return `<Input ${attrs}/>`;
+      return `<Input ${attrs}/>`
     }
-  );
+  )
   arcoContent = arcoContent.replace(
     /<input\s+([^>]*type="password"[^>]*)\/>/g,
     (match, attrs) => {
-      return `<Input.Password ${attrs}/>`;
+      return `<Input.Password ${attrs}/>`
     }
-  );
+  )
   arcoContent = arcoContent.replace(
     /<input\s+([^>]*type="tel"[^>]*)\/>/g,
     (match, attrs) => {
-      return `<Input ${attrs}/>`;
+      return `<Input ${attrs}/>`
     }
-  );
+  )
   arcoContent = arcoContent.replace(
     /<input\s+([^>]*type="url"[^>]*)\/>/g,
     (match, attrs) => {
-      return `<Input ${attrs}/>`;
+      return `<Input ${attrs}/>`
     }
-  );
+  )
   arcoContent = arcoContent.replace(
     /<input\s+([^>]*type="number"[^>]*)\/>/g,
     (match, attrs) => {
-      return `<InputNumber ${attrs}/>`;
+      return `<InputNumber ${attrs}/>`
     }
-  );
+  )
   arcoContent = arcoContent.replace(
     /<input\s+([^>]*type="date"[^>]*)\/>/g,
     (match, attrs) => {
-      return `<DatePicker ${attrs}/>`;
+      return `<DatePicker ${attrs}/>`
     }
-  );
+  )
   arcoContent = arcoContent.replace(
     /<input\s+([^>]*type="time"[^>]*)\/>/g,
     (match, attrs) => {
-      return `<TimePicker ${attrs}/>`;
+      return `<TimePicker ${attrs}/>`
     }
-  );
+  )
 
   // Convert checkbox inputs
   arcoContent = arcoContent.replace(
     /<input\s+([^>]*type="checkbox"[^>]*)\/>/g,
     (match, attrs) => {
-      return `<Checkbox ${attrs}/>`;
+      return `<Checkbox ${attrs}/>`
     }
-  );
+  )
 
   // Convert radio inputs
   arcoContent = arcoContent.replace(
     /<input\s+([^>]*type="radio"[^>]*)\/>/g,
     (match, attrs) => {
-      return `<Radio ${attrs}/>`;
+      return `<Radio ${attrs}/>`
     }
-  );
+  )
 
   // Convert textarea
-  arcoContent = arcoContent.replace(/<textarea\s+([^>]*)\/>/g, '<Textarea $1/>');
+  arcoContent = arcoContent.replace(/<textarea\s+([^>]*)\/>/g, '<Textarea $1/>')
   arcoContent = arcoContent.replace(
     /<textarea\s+([^>]*)><\/textarea>/g,
     '<Textarea $1/>'
-  );
+  )
 
   // Convert select elements
   arcoContent = arcoContent.replace(
@@ -253,69 +253,71 @@ function generateFormComponent(formName) {
     (match, attrs, options) => {
       // Keep the select as is for now - Arco Select needs different structure
       // We'll handle this in a simpler way
-      return `<Select ${attrs}>${options}</Select>`;
+      return `<Select ${attrs}>${options}</Select>`
     }
-  );
+  )
 
-  return arcoContent;
+  return arcoContent
 }
 
 function createArcoApp(formName) {
-  const appDir = path.join(appsDir, `arco-design-${formName}`);
-  const srcDir = path.join(appDir, 'src');
-  const formDir = path.join(srcDir, 'form');
+  const appDir = path.join(appsDir, `arco-design-${formName}`)
+  const srcDir = path.join(appDir, 'src')
+  const formDir = path.join(srcDir, 'form')
 
-  console.log(`Creating arco-design-${formName}...`);
+  console.log(`Creating arco-design-${formName}...`)
 
   // Create directories
   if (!fs.existsSync(appDir)) {
-    fs.mkdirSync(appDir, { recursive: true });
+    fs.mkdirSync(appDir, { recursive: true })
   }
   if (!fs.existsSync(srcDir)) {
-    fs.mkdirSync(srcDir, { recursive: true });
+    fs.mkdirSync(srcDir, { recursive: true })
   }
   if (!fs.existsSync(formDir)) {
-    fs.mkdirSync(formDir, { recursive: true });
+    fs.mkdirSync(formDir, { recursive: true })
   }
 
   // Create package.json
   fs.writeFileSync(
     path.join(appDir, 'package.json'),
     JSON.stringify(generatePackageJson(formName), null, 2)
-  );
+  )
 
   // Create vite.config.js
-  fs.writeFileSync(path.join(appDir, 'vite.config.js'), generateViteConfig());
+  fs.writeFileSync(path.join(appDir, 'vite.config.js'), generateViteConfig())
 
   // Create index.html
-  fs.writeFileSync(path.join(appDir, 'index.html'), generateIndexHtml(formName));
+  fs.writeFileSync(path.join(appDir, 'index.html'), generateIndexHtml(formName))
 
   // Create main.jsx
-  fs.writeFileSync(path.join(srcDir, 'main.jsx'), generateMainJsx());
+  fs.writeFileSync(path.join(srcDir, 'main.jsx'), generateMainJsx())
 
   // Create App.jsx
-  fs.writeFileSync(path.join(srcDir, 'App.jsx'), generateAppJsx(formName));
+  fs.writeFileSync(path.join(srcDir, 'App.jsx'), generateAppJsx(formName))
 
   // Create form component
-  const formComponent = generateFormComponent(formName);
+  const formComponent = generateFormComponent(formName)
   if (formComponent) {
-    const pascalCaseName = toPascalCase(formName);
+    const pascalCaseName = toPascalCase(formName)
     fs.writeFileSync(
       path.join(formDir, `${pascalCaseName}Form.jsx`),
       formComponent
-    );
+    )
   }
 
-  console.log(`✓ Created arco-design-${formName}`);
+  console.log(`✓ Created arco-design-${formName}`)
 }
 
-console.log('Generating Arco Design apps...\n');
+console.log('Generating Arco Design apps...\n')
 
 FORMS.forEach((formName) => {
-  createArcoApp(formName);
-});
+  createArcoApp(formName)
+})
 
-console.log('\n✓ All Arco Design apps generated successfully!');
-console.log('\nNext steps:');
-console.log('1. Run: npm install');
-console.log('2. Test an app: npm run dev --workspace=@forms-comparison/arco-design-user-login');
+console.log('\n✓ All Arco Design apps generated successfully!')
+console.log('\nNext steps:')
+console.log('1. Run: npm install')
+console.log(
+  '2. Test an app: npm run dev --workspace=@forms-comparison/arco-design-user-login'
+)

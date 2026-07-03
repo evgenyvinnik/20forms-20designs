@@ -22,7 +22,9 @@ function UserRegistrationForm() {
           />
         </Box>
         <Box>
-          <Label htmlFor="atlaskit-user-registration-email">Email address</Label>
+          <Label htmlFor="atlaskit-user-registration-email">
+            Email address
+          </Label>
           <Textfield
             id="atlaskit-user-registration-email"
             name="email"
@@ -48,7 +50,9 @@ function UserRegistrationForm() {
           />
         </Box>
         <Box>
-          <Label htmlFor="atlaskit-user-registration-confirm">Confirm password</Label>
+          <Label htmlFor="atlaskit-user-registration-confirm">
+            Confirm password
+          </Label>
           <Textfield
             id="atlaskit-user-registration-confirm"
             name="confirmPassword"
@@ -63,7 +67,9 @@ function UserRegistrationForm() {
             isRequired
           />
         </Box>
-        <Button type="submit" appearance="primary">Create account</Button>
+        <Button type="submit" appearance="primary">
+          Create account
+        </Button>
       </Stack>
     </form>
   )

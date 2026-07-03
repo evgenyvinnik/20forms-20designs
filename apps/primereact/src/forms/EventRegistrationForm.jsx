@@ -27,7 +27,10 @@ function EventRegistrationForm() {
   return (
     <form onSubmit={handleSubmit} className="p-fluid">
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-event-name" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-event-name"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Full name
         </label>
         <InputText
@@ -39,7 +42,10 @@ function EventRegistrationForm() {
         />
       </div>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-event-email" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-event-email"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Email address
         </label>
         <InputText
@@ -52,7 +58,10 @@ function EventRegistrationForm() {
         />
       </div>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-event-ticket" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-event-ticket"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Ticket type
         </label>
         <Dropdown
@@ -66,7 +75,10 @@ function EventRegistrationForm() {
         />
       </div>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-event-guests" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-event-guests"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Number of guests
         </label>
         <InputNumber
@@ -80,14 +92,24 @@ function EventRegistrationForm() {
           required
         />
       </div>
-      <div className="field-checkbox" style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+      <div
+        className="field-checkbox"
+        style={{
+          marginBottom: '1rem',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+        }}
+      >
         <Checkbox
           inputId="primereact-event-newsletter"
           name="newsletter"
           checked={newsletter}
           onChange={(e) => setNewsletter(e.checked)}
         />
-        <label htmlFor="primereact-event-newsletter">Notify me about future events</label>
+        <label htmlFor="primereact-event-newsletter">
+          Notify me about future events
+        </label>
       </div>
       <Button type="submit" label="Register" />
     </form>

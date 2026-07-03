@@ -49,13 +49,11 @@ function AppointmentRequestForm() {
         </Box>
         <Box>
           <Label htmlFor="atlaskit-appointment-reason">Reason for visit</Label>
-          <TextArea
-            id="atlaskit-appointment-reason"
-            name="reason"
-            isRequired
-          />
+          <TextArea id="atlaskit-appointment-reason" name="reason" isRequired />
         </Box>
-        <Button type="submit" appearance="primary">Request appointment</Button>
+        <Button type="submit" appearance="primary">
+          Request appointment
+        </Button>
       </Stack>
     </form>
   )

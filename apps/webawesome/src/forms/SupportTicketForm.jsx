@@ -12,12 +12,7 @@ function SupportTicketForm() {
 
   return (
     <form onSubmit={handleSubmit} className="wa-stack wa-gap-m">
-      <wa-input
-        label="Subject"
-        name="subject"
-        type="text"
-        required
-      />
+      <wa-input label="Subject" name="subject" type="text" required />
       <wa-radio-group label="Priority" name="priority" required>
         <wa-radio value="low">Low</wa-radio>
         <wa-radio value="medium">Medium</wa-radio>
@@ -31,11 +26,7 @@ function SupportTicketForm() {
       />
       <div className="wa-stack wa-gap-xs">
         <label>Attachments</label>
-        <input
-          type="file"
-          name="attachments"
-          multiple
-        />
+        <input type="file" name="attachments" multiple />
       </div>
       <wa-button type="submit" variant="brand">
         Submit ticket

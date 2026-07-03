@@ -7,7 +7,15 @@ import prettierConfig from 'eslint-config-prettier'
 import tseslint from 'typescript-eslint'
 
 export default [
-  { ignores: ['dist', 'node_modules', 'build', '*.config.js', 'playwright-report'] },
+  {
+    ignores: [
+      'dist',
+      'node_modules',
+      'build',
+      '*.config.js',
+      'playwright-report',
+    ],
+  },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {

@@ -10,18 +10,18 @@ import {
 function NewsletterSubscriptionForm() {
   const [email, setEmail] = useState('')
   const [frequency, setFrequency] = useState('')
-  const [acceptTerms, setAcceptTerms] = useState(false)
+  const [agree, setAgree] = useState(false)
 
   const frequencyOptions = [
     { label: 'Select frequency', value: '' },
-    { label: 'Daily', value: 'daily' },
     { label: 'Weekly', value: 'weekly' },
     { label: 'Monthly', value: 'monthly' },
+    { label: 'Quarterly', value: 'quarterly' },
   ]
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
-    alert('Subscribed successfully!')
+    alert('Newsletter subscription submitted!')
   }, [])
 
   return (
@@ -36,15 +36,16 @@ function NewsletterSubscriptionForm() {
           requiredIndicator
         />
         <Select
-          label="Email frequency"
+          label="Frequency"
           options={frequencyOptions}
           value={frequency}
           onChange={setFrequency}
+          requiredIndicator
         />
         <Checkbox
-          label="I agree to receive marketing emails"
-          checked={acceptTerms}
-          onChange={setAcceptTerms}
+          label="Receive product updates"
+          checked={agree}
+          onChange={setAgree}
         />
         <Button submit variant="primary">
           Subscribe

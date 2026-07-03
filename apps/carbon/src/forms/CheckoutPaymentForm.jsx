@@ -1,4 +1,11 @@
-import { Form, TextInput, Select, SelectItem, Button, Stack } from '@carbon/react'
+import {
+  Form,
+  TextInput,
+  Select,
+  SelectItem,
+  Button,
+  Stack,
+} from '@carbon/react'
 
 function CheckoutPaymentForm() {
   const handleSubmit = (event) => {

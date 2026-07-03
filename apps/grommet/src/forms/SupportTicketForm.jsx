@@ -1,4 +1,13 @@
-import { Box, Button, FileInput, Form, FormField, RadioButtonGroup, TextArea, TextInput } from 'grommet'
+import {
+  Box,
+  Button,
+  FileInput,
+  Form,
+  FormField,
+  RadioButtonGroup,
+  TextArea,
+  TextInput,
+} from 'grommet'
 
 function SupportTicketForm() {
   const handleSubmit = (event) => {
@@ -14,11 +23,7 @@ function SupportTicketForm() {
         htmlFor="grommet-ticket-subject"
         required
       >
-        <TextInput
-          id="grommet-ticket-subject"
-          name="subject"
-          type="text"
-        />
+        <TextInput id="grommet-ticket-subject" name="subject" type="text" />
       </FormField>
       <FormField
         label="Priority"
@@ -38,11 +43,7 @@ function SupportTicketForm() {
         htmlFor="grommet-ticket-description"
         required
       >
-        <TextArea
-          id="grommet-ticket-description"
-          name="description"
-          rows={4}
-        />
+        <TextArea id="grommet-ticket-description" name="description" rows={4} />
       </FormField>
       <FormField
         label="Attachments"

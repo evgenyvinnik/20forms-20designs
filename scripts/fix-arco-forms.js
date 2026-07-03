@@ -92,8 +92,10 @@ function fixFormComponent(formName) {
     /<Select\s+([^>]*)>([\s\S]*?)<\/Select>/g,
     (match, attrs, options) => {
       // Extract option elements
-      const optionMatches = [...options.matchAll(/<option value="([^"]*)"[^>]*>([^<]+)<\/option>/g)]
-      
+      const optionMatches = [
+        ...options.matchAll(/<option value="([^"]*)"[^>]*>([^<]+)<\/option>/g),
+      ]
+
       if (optionMatches.length === 0) return match
 
       const arcoOptions = optionMatches
@@ -109,59 +111,44 @@ function fixFormComponent(formName) {
   // Add proper spacing to form fields
   content = content.replace(
     /(<div>\s*<label)/g,
-    '<div style={{ marginBottom: \'12px\' }}>\n        <label style={{ display: \'block\', marginBottom: \'4px\' }}'
+    "<div style={{ marginBottom: '12px' }}>\n        <label style={{ display: 'block', marginBottom: '4px' }}"
   )
 
   // Add full width to inputs
-  content = content.replace(
-    /<Input ([^>]*?)\/>/g,
-    (match, attrs) => {
-      if (!attrs.includes('style=')) {
-        return `<Input ${attrs} style={{ width: '100%' }} />`
-      }
-      return match
+  content = content.replace(/<Input ([^>]*?)\/>/g, (match, attrs) => {
+    if (!attrs.includes('style=')) {
+      return `<Input ${attrs} style={{ width: '100%' }} />`
     }
-  )
-  
-  content = content.replace(
-    /<Input\.Password ([^>]*?)\/>/g,
-    (match, attrs) => {
-      if (!attrs.includes('style=')) {
-        return `<Input.Password ${attrs} style={{ width: '100%' }} />`
-      }
-      return match
-    }
-  )
+    return match
+  })
 
-  content = content.replace(
-    /<Select ([^>]*?)>/g,
-    (match, attrs) => {
-      if (!attrs.includes('style=')) {
-        return `<Select ${attrs} style={{ width: '100%' }}>`
-      }
-      return match
+  content = content.replace(/<Input\.Password ([^>]*?)\/>/g, (match, attrs) => {
+    if (!attrs.includes('style=')) {
+      return `<Input.Password ${attrs} style={{ width: '100%' }} />`
     }
-  )
+    return match
+  })
 
-  content = content.replace(
-    /<DatePicker ([^>]*?)\/>/g,
-    (match, attrs) => {
-      if (!attrs.includes('style=')) {
-        return `<DatePicker ${attrs} style={{ width: '100%' }} />`
-      }
-      return match
+  content = content.replace(/<Select ([^>]*?)>/g, (match, attrs) => {
+    if (!attrs.includes('style=')) {
+      return `<Select ${attrs} style={{ width: '100%' }}>`
     }
-  )
+    return match
+  })
 
-  content = content.replace(
-    /<Textarea ([^>]*?)\/>/g,
-    (match, attrs) => {
-      if (!attrs.includes('style=')) {
-        return `<Textarea ${attrs} style={{ width: '100%' }} />`
-      }
-      return match
+  content = content.replace(/<DatePicker ([^>]*?)\/>/g, (match, attrs) => {
+    if (!attrs.includes('style=')) {
+      return `<DatePicker ${attrs} style={{ width: '100%' }} />`
     }
-  )
+    return match
+  })
+
+  content = content.replace(/<Textarea ([^>]*?)\/>/g, (match, attrs) => {
+    if (!attrs.includes('style=')) {
+      return `<Textarea ${attrs} style={{ width: '100%' }} />`
+    }
+    return match
+  })
 
   fs.writeFileSync(formPath, content)
   console.log(`✓ Fixed ${formName}`)

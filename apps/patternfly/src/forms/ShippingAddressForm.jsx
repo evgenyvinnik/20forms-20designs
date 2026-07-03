@@ -23,7 +23,11 @@ function ShippingAddressForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <FormGroup label="Recipient name" isRequired fieldId="pf-shipping-full-name">
+      <FormGroup
+        label="Recipient name"
+        isRequired
+        fieldId="pf-shipping-full-name"
+      >
         <TextInput
           isRequired
           type="text"
@@ -40,19 +44,10 @@ function ShippingAddressForm() {
         />
       </FormGroup>
       <FormGroup label="Apartment, suite, etc." fieldId="pf-shipping-street-2">
-        <TextInput
-          type="text"
-          id="pf-shipping-street-2"
-          name="street2"
-        />
+        <TextInput type="text" id="pf-shipping-street-2" name="street2" />
       </FormGroup>
       <FormGroup label="City" isRequired fieldId="pf-shipping-city">
-        <TextInput
-          isRequired
-          type="text"
-          id="pf-shipping-city"
-          name="city"
-        />
+        <TextInput isRequired type="text" id="pf-shipping-city" name="city" />
       </FormGroup>
       <FormGroup label="Country" isRequired fieldId="pf-shipping-country">
         <FormSelect
@@ -67,7 +62,11 @@ function ShippingAddressForm() {
           ))}
         </FormSelect>
       </FormGroup>
-      <FormGroup label="State / Province / Territory" isRequired fieldId="pf-shipping-region">
+      <FormGroup
+        label="State / Province / Territory"
+        isRequired
+        fieldId="pf-shipping-region"
+      >
         <FormSelect id="pf-shipping-region" name="region" isRequired>
           <FormSelectOption value="" label="Select an option" isPlaceholder />
           {regionOptions.map((region) => (
@@ -91,7 +90,9 @@ function ShippingAddressForm() {
         />
       </FormGroup>
       <ActionGroup>
-        <Button variant="primary" type="submit">Save address</Button>
+        <Button variant="primary" type="submit">
+          Save address
+        </Button>
       </ActionGroup>
     </Form>
   )

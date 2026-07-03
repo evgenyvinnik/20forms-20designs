@@ -16,11 +16,7 @@ function JobApplicationForm() {
       <Stack space="space.200">
         <Box>
           <Label htmlFor="atlaskit-job-full-name">Full name</Label>
-          <Textfield
-            id="atlaskit-job-full-name"
-            name="fullName"
-            isRequired
-          />
+          <Textfield id="atlaskit-job-full-name" name="fullName" isRequired />
         </Box>
         <Box>
           <Label htmlFor="atlaskit-job-email">Email address</Label>
@@ -42,11 +38,7 @@ function JobApplicationForm() {
         </Box>
         <Box>
           <Label htmlFor="atlaskit-job-role">Role applied for</Label>
-          <Textfield
-            id="atlaskit-job-role"
-            name="role"
-            isRequired
-          />
+          <Textfield id="atlaskit-job-role" name="role" isRequired />
         </Box>
         <Box>
           <Label htmlFor="atlaskit-job-resume">Resume link</Label>
@@ -71,7 +63,9 @@ function JobApplicationForm() {
             label="Keep me informed about future roles"
           />
         </Box>
-        <Button type="submit" appearance="primary">Submit application</Button>
+        <Button type="submit" appearance="primary">
+          Submit application
+        </Button>
       </Stack>
     </form>
   )

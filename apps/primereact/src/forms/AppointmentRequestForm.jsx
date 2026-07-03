@@ -19,7 +19,10 @@ function AppointmentRequestForm() {
   return (
     <form onSubmit={handleSubmit} className="p-fluid">
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-appointment-name" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-appointment-name"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Full name
         </label>
         <InputText
@@ -31,7 +34,10 @@ function AppointmentRequestForm() {
         />
       </div>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-appointment-email" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-appointment-email"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Email address
         </label>
         <InputText
@@ -44,7 +50,10 @@ function AppointmentRequestForm() {
         />
       </div>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-appointment-date" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-appointment-date"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Preferred date
         </label>
         <Calendar
@@ -58,7 +67,10 @@ function AppointmentRequestForm() {
         />
       </div>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-appointment-time" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-appointment-time"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Preferred time
         </label>
         <Calendar
@@ -73,7 +85,10 @@ function AppointmentRequestForm() {
         />
       </div>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-appointment-reason" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-appointment-reason"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Reason for visit
         </label>
         <InputTextarea

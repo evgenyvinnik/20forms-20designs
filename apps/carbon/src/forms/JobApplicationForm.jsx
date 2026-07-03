@@ -1,4 +1,11 @@
-import { Form, TextInput, TextArea, Button, Checkbox, Stack } from '@carbon/react'
+import {
+  Form,
+  TextInput,
+  TextArea,
+  Button,
+  Checkbox,
+  Stack,
+} from '@carbon/react'
 
 function JobApplicationForm() {
   const handleSubmit = (event) => {
