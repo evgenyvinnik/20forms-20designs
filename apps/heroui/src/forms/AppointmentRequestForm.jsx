@@ -1,82 +1,49 @@
-import { useState } from 'react'
-import { Input, Button, TextArea } from '@heroui/react'
-
-export default function AppointmentRequestForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    service: 'consultation',
-    date: '',
-    notes: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
+function AppointmentRequestForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Appointment request submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit} className="heroui-form">
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
-        Book Appointment
-      </h2>
-      {submitted && (
-        <div
-          style={{
-            padding: '0.75rem 1rem',
-            background: '#dcfce7',
-            color: '#166534',
-            borderRadius: '0.5rem',
-            fontSize: '0.875rem',
-          }}
-        >
-          Appointment request submitted!
-        </div>
-      )}
-      <div className="heroui-field">
-        <label className="heroui-label">Your Name</label>
-        <Input
-          isRequired
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="nocss-appointment-name">Full name</label>
+        <input
+          id="nocss-appointment-name"
+          name="fullName"
           type="text"
-          value={formData.name}
-          onValueChange={(val) => setFormData({ ...formData, name: val })}
-        />
-      </div>
-      <div className="heroui-field">
-        <label className="heroui-label">Service Required</label>
-        <select
-          className="heroui-select"
-          value={formData.service}
-          onChange={(e) =>
-            setFormData({ ...formData, service: e.target.value })
-          }
           required
-        >
-          <option value="consultation">Initial Consultation</option>
-          <option value="followup">Follow-up Session</option>
-          <option value="review">Annual Review</option>
-        </select>
-      </div>
-      <div className="heroui-field">
-        <label className="heroui-label">Preferred Date</label>
-        <Input
-          isRequired
-          type="date"
-          value={formData.date}
-          onValueChange={(val) => setFormData({ ...formData, date: val })}
         />
       </div>
-      <div className="heroui-field">
-        <label className="heroui-label">Special Instructions</label>
-        <TextArea
-          minRows={3}
-          value={formData.notes}
-          onValueChange={(val) => setFormData({ ...formData, notes: val })}
+      <div>
+        <label htmlFor="nocss-appointment-email">Email address</label>
+        <input
+          id="nocss-appointment-email"
+          name="email"
+          type="email"
+          required
         />
       </div>
-      <Button type="submit" color="primary">
-        Request Appointment
-      </Button>
+      <div>
+        <label htmlFor="nocss-appointment-date">Preferred date</label>
+        <input id="nocss-appointment-date" name="date" type="date" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-appointment-time">Preferred time</label>
+        <input id="nocss-appointment-time" name="time" type="time" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-appointment-reason">Reason for visit</label>
+        <textarea
+          id="nocss-appointment-reason"
+          name="reason"
+          rows="3"
+          required
+        />
+      </div>
+      <button type="submit">Request appointment</button>
     </form>
   )
 }
+
+export default AppointmentRequestForm

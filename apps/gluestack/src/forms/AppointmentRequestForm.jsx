@@ -1,84 +1,49 @@
-import { useState } from 'react'
-
-export default function AppointmentRequestForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    service: 'consultation',
-    date: '',
-    notes: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
+function AppointmentRequestForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Appointment request submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit} className="gluestack-form">
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
-        Book Appointment
-      </h2>
-      {submitted && (
-        <div
-          style={{
-            padding: '0.75rem 1rem',
-            background: '#dbeafe',
-            color: '#1e40af',
-            borderRadius: '0.375rem',
-            fontSize: '0.875rem',
-          }}
-        >
-          Appointment request submitted!
-        </div>
-      )}
-      <div className="gluestack-field">
-        <label className="gluestack-label">Your Name</label>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="nocss-appointment-name">Full name</label>
         <input
-          className="gluestack-input"
+          id="nocss-appointment-name"
+          name="fullName"
           type="text"
           required
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
         />
       </div>
-      <div className="gluestack-field">
-        <label className="gluestack-label">Service Required</label>
-        <select
-          className="gluestack-select"
-          required
-          value={formData.service}
-          onChange={(e) =>
-            setFormData({ ...formData, service: e.target.value })
-          }
-        >
-          <option value="consultation">Initial Consultation</option>
-          <option value="followup">Follow-up Session</option>
-          <option value="review">Annual Review</option>
-        </select>
-      </div>
-      <div className="gluestack-field">
-        <label className="gluestack-label">Preferred Date</label>
+      <div>
+        <label htmlFor="nocss-appointment-email">Email address</label>
         <input
-          className="gluestack-input"
-          type="date"
+          id="nocss-appointment-email"
+          name="email"
+          type="email"
           required
-          value={formData.date}
-          onChange={(e) => setFormData({ ...formData, date: e.target.value })}
         />
       </div>
-      <div className="gluestack-field">
-        <label className="gluestack-label">Special Instructions</label>
+      <div>
+        <label htmlFor="nocss-appointment-date">Preferred date</label>
+        <input id="nocss-appointment-date" name="date" type="date" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-appointment-time">Preferred time</label>
+        <input id="nocss-appointment-time" name="time" type="time" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-appointment-reason">Reason for visit</label>
         <textarea
-          className="gluestack-textarea"
-          rows={3}
-          value={formData.notes}
-          onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+          id="nocss-appointment-reason"
+          name="reason"
+          rows="3"
+          required
         />
       </div>
-      <button type="submit" className="gluestack-button">
-        Request Appointment
-      </button>
+      <button type="submit">Request appointment</button>
     </form>
   )
 }
+
+export default AppointmentRequestForm

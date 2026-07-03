@@ -1,88 +1,66 @@
-import { useState } from 'react'
-
-export default function BillingInfoForm() {
-  const [formData, setFormData] = useState({
-    address: '',
-    city: '',
-    state: '',
-    zip: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
+function BillingInfoForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Billing details saved!')
   }
 
   return (
-    <form onSubmit={handleSubmit} className="gluestack-form">
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
-        Billing Information
-      </h2>
-      {submitted && (
-        <div
-          style={{
-            padding: '0.75rem 1rem',
-            background: '#dbeafe',
-            color: '#1e40af',
-            borderRadius: '0.375rem',
-            fontSize: '0.875rem',
-          }}
-        >
-          Billing details saved!
-        </div>
-      )}
-      <div className="gluestack-field">
-        <label className="gluestack-label">Street Address</label>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="nocss-billing-name">Name on card</label>
+        <input id="nocss-billing-name" name="cardName" type="text" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-billing-card-number">Card number</label>
         <input
-          className="gluestack-input"
+          id="nocss-billing-card-number"
+          name="cardNumber"
           type="text"
+          inputMode="numeric"
+          pattern="[0-9]{13,19}"
+          maxLength="19"
           required
-          value={formData.address}
-          onChange={(e) =>
-            setFormData({ ...formData, address: e.target.value })
-          }
         />
       </div>
-      <div className="gluestack-field">
-        <label className="gluestack-label">City</label>
+      <div>
+        <label htmlFor="nocss-billing-expiration">Expiration date</label>
         <input
-          className="gluestack-input"
+          id="nocss-billing-expiration"
+          name="expiration"
           type="text"
+          placeholder="MM/YY"
+          pattern="^(0[1-9]|1[0-2])\\/\\d{2}$"
+          inputMode="numeric"
           required
-          value={formData.city}
-          onChange={(e) => setFormData({ ...formData, city: e.target.value })}
         />
       </div>
-      <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
-      >
-        <div className="gluestack-field">
-          <label className="gluestack-label">State / Province</label>
-          <input
-            className="gluestack-input"
-            type="text"
-            required
-            value={formData.state}
-            onChange={(e) =>
-              setFormData({ ...formData, state: e.target.value })
-            }
-          />
-        </div>
-        <div className="gluestack-field">
-          <label className="gluestack-label">ZIP / Postal Code</label>
-          <input
-            className="gluestack-input"
-            type="text"
-            required
-            value={formData.zip}
-            onChange={(e) => setFormData({ ...formData, zip: e.target.value })}
-          />
-        </div>
+      <div>
+        <label htmlFor="nocss-billing-cvc">Security code</label>
+        <input
+          id="nocss-billing-cvc"
+          name="cvc"
+          type="text"
+          inputMode="numeric"
+          pattern="[0-9]{3,4}"
+          maxLength="4"
+          required
+        />
       </div>
-      <button type="submit" className="gluestack-button">
-        Save Billing Info
-      </button>
+      <div>
+        <label htmlFor="nocss-billing-address">Billing address</label>
+        <input id="nocss-billing-address" name="address" type="text" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-billing-country">Country</label>
+        <select id="nocss-billing-country" name="country" required>
+          <option value="">Select country</option>
+          <option value="US">United States</option>
+          <option value="CA">Canada</option>
+        </select>
+      </div>
+      <button type="submit">Save billing details</button>
     </form>
   )
 }
+
+export default BillingInfoForm

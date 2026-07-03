@@ -1,75 +1,51 @@
-import { useState } from 'react'
-import {
-  FormControl,
-  FormLabel,
-  Input,
-  Button,
-  Alert,
-  Typography,
-  Box,
-} from '@mui/joy'
-
-export default function PasswordChangeForm() {
-  const [formData, setFormData] = useState({
-    currentPassword: '',
-    newPassword: '',
-    confirmPassword: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
+function PasswordChangeForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Password change requested!')
   }
 
   return (
-    <Box
-      component="form"
-      onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
-    >
-      <Typography level="h3" component="h2">
-        Change Password
-      </Typography>
-      {submitted && (
-        <Alert color="success" variant="soft">
-          Password changed successfully!
-        </Alert>
-      )}
-      <FormControl required>
-        <FormLabel>Current Password</FormLabel>
-        <Input
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="nocss-password-change-current">Current password</label>
+        <input
+          id="nocss-password-change-current"
+          name="currentPassword"
           type="password"
-          value={formData.currentPassword}
-          onChange={(e) =>
-            setFormData({ ...formData, currentPassword: e.target.value })
-          }
+          required
         />
-      </FormControl>
-      <FormControl required>
-        <FormLabel>New Password</FormLabel>
-        <Input
+      </div>
+      <div>
+        <label htmlFor="nocss-password-change-new">New password</label>
+        <input
+          id="nocss-password-change-new"
+          name="newPassword"
           type="password"
-          value={formData.newPassword}
-          onChange={(e) =>
-            setFormData({ ...formData, newPassword: e.target.value })
-          }
-          slotProps={{ input: { minLength: 8 } }}
+          minLength="8"
+          required
         />
-      </FormControl>
-      <FormControl required>
-        <FormLabel>Confirm New Password</FormLabel>
-        <Input
+      </div>
+      <div>
+        <label htmlFor="nocss-password-change-confirm">
+          Confirm new password
+        </label>
+        <input
+          id="nocss-password-change-confirm"
+          name="confirmPassword"
           type="password"
-          value={formData.confirmPassword}
-          onChange={(e) =>
-            setFormData({ ...formData, confirmPassword: e.target.value })
-          }
+          minLength="8"
+          required
         />
-      </FormControl>
-      <Button type="submit" color="primary">
-        Update Password
-      </Button>
-    </Box>
+      </div>
+      <div>
+        <label>
+          <input name="logoutOthers" type="checkbox" />
+          Sign out of other devices
+        </label>
+      </div>
+      <button type="submit">Update password</button>
+    </form>
   )
 }
+
+export default PasswordChangeForm

@@ -1,86 +1,42 @@
-import { useState } from 'react'
-import { Field } from '@ark-ui/react'
-
-export default function ContactInquiryForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: 'general',
-    message: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
+function ContactInquiryForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Inquiry submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit} className="park-form">
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
-        Contact Us
-      </h2>
-      {submitted && (
-        <div
-          style={{
-            padding: '0.75rem 1rem',
-            background: '#dcfce7',
-            color: '#166534',
-            borderRadius: '0.5rem',
-            fontSize: '0.875rem',
-          }}
-        >
-          Thank you for your message. We will respond shortly!
-        </div>
-      )}
-      <Field.Root required className="park-field">
-        <Field.Label className="park-label">Your Name</Field.Label>
-        <Field.Input
-          className="park-input"
-          type="text"
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-        />
-      </Field.Root>
-      <Field.Root required className="park-field">
-        <Field.Label className="park-label">Email Address</Field.Label>
-        <Field.Input
-          className="park-input"
-          type="email"
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        />
-      </Field.Root>
-      <Field.Root required className="park-field">
-        <Field.Label className="park-label">Inquiry Subject</Field.Label>
-        <select
-          className="park-select"
-          value={formData.subject}
-          onChange={(e) =>
-            setFormData({ ...formData, subject: e.target.value })
-          }
-          required
-        >
-          <option value="general">General Inquiry</option>
-          <option value="support">Technical Support</option>
-          <option value="billing">Billing Question</option>
-          <option value="partnership">Partnership Opportunity</option>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="nocss-contact-name">Full name</label>
+        <input id="nocss-contact-name" name="fullName" type="text" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-contact-email">Email address</label>
+        <input id="nocss-contact-email" name="email" type="email" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-contact-topic">Topic</label>
+        <select id="nocss-contact-topic" name="topic" required>
+          <option value="">Select topic</option>
+          <option value="support">Support</option>
+          <option value="sales">Sales</option>
+          <option value="feedback">Feedback</option>
+          <option value="other">Other</option>
         </select>
-      </Field.Root>
-      <Field.Root required className="park-field">
-        <Field.Label className="park-label">Message</Field.Label>
-        <Field.Textarea
-          className="park-textarea"
-          rows={4}
-          value={formData.message}
-          onChange={(e) =>
-            setFormData({ ...formData, message: e.target.value })
-          }
-        />
-      </Field.Root>
-      <button type="submit" className="park-button">
-        Send Message
-      </button>
+      </div>
+      <div>
+        <label htmlFor="nocss-contact-message">Message</label>
+        <textarea id="nocss-contact-message" name="message" rows="4" required />
+      </div>
+      <div>
+        <label>
+          <input name="consent" type="checkbox" />
+          Allow follow-up communication
+        </label>
+      </div>
+      <button type="submit">Submit inquiry</button>
     </form>
   )
 }
+
+export default ContactInquiryForm

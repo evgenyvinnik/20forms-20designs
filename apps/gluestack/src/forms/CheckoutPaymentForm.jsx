@@ -1,94 +1,76 @@
-import { useState } from 'react'
-
-export default function CheckoutPaymentForm() {
-  const [formData, setFormData] = useState({
-    cardNumber: '',
-    cardName: '',
-    expiry: '',
-    cvv: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
+function CheckoutPaymentForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Checkout submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit} className="gluestack-form">
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
-        Payment Details
-      </h2>
-      {submitted && (
-        <div
-          style={{
-            padding: '0.75rem 1rem',
-            background: '#dbeafe',
-            color: '#1e40af',
-            borderRadius: '0.375rem',
-            fontSize: '0.875rem',
-          }}
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="nocss-checkout-email">Email for receipt</label>
+        <input id="nocss-checkout-email" name="email" type="email" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-checkout-shipping-method">Shipping method</label>
+        <select
+          id="nocss-checkout-shipping-method"
+          name="shippingMethod"
+          required
         >
-          Payment processed successfully!
-        </div>
-      )}
-      <div className="gluestack-field">
-        <label className="gluestack-label">Name on Card</label>
+          <option value="">Select shipping</option>
+          <option value="standard">Standard</option>
+          <option value="express">Express</option>
+          <option value="overnight">Overnight</option>
+        </select>
+      </div>
+      <div>
+        <label htmlFor="nocss-checkout-card-number">Card number</label>
         <input
-          className="gluestack-input"
+          id="nocss-checkout-card-number"
+          name="cardNumber"
           type="text"
+          inputMode="numeric"
+          pattern="[0-9]{13,19}"
+          maxLength="19"
           required
-          value={formData.cardName}
-          onChange={(e) =>
-            setFormData({ ...formData, cardName: e.target.value })
-          }
         />
       </div>
-      <div className="gluestack-field">
-        <label className="gluestack-label">Card Number</label>
+      <div>
+        <label htmlFor="nocss-checkout-expiration">Expiration</label>
         <input
-          className="gluestack-input"
+          id="nocss-checkout-expiration"
+          name="expiration"
           type="text"
+          placeholder="MM/YY"
+          pattern="^(0[1-9]|1[0-2])\\/\\d{2}$"
+          inputMode="numeric"
           required
-          value={formData.cardNumber}
-          onChange={(e) =>
-            setFormData({ ...formData, cardNumber: e.target.value })
-          }
-          placeholder="1234 5678 9012 3456"
         />
       </div>
-      <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
-      >
-        <div className="gluestack-field">
-          <label className="gluestack-label">Expiration (MM/YY)</label>
-          <input
-            className="gluestack-input"
-            type="text"
-            required
-            value={formData.expiry}
-            onChange={(e) =>
-              setFormData({ ...formData, expiry: e.target.value })
-            }
-            placeholder="MM/YY"
-          />
-        </div>
-        <div className="gluestack-field">
-          <label className="gluestack-label">CVV</label>
-          <input
-            className="gluestack-input"
-            type="password"
-            required
-            value={formData.cvv}
-            onChange={(e) => setFormData({ ...formData, cvv: e.target.value })}
-            placeholder="123"
-            maxLength={4}
-          />
-        </div>
+      <div>
+        <label htmlFor="nocss-checkout-cvc">CVC</label>
+        <input
+          id="nocss-checkout-cvc"
+          name="cvc"
+          type="text"
+          inputMode="numeric"
+          pattern="[0-9]{3,4}"
+          maxLength="4"
+          required
+        />
       </div>
-      <button type="submit" className="gluestack-button">
-        Complete Purchase
-      </button>
+      <div>
+        <label htmlFor="nocss-checkout-promo">Promo code</label>
+        <input
+          id="nocss-checkout-promo"
+          name="promoCode"
+          type="text"
+          pattern="[A-Za-z0-9]{3,15}"
+        />
+      </div>
+      <button type="submit">Place order</button>
     </form>
   )
 }
+
+export default CheckoutPaymentForm

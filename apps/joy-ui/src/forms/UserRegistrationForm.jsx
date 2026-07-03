@@ -1,94 +1,70 @@
-import { useState } from 'react'
-import {
-  FormControl,
-  FormLabel,
-  Input,
-  Button,
-  Checkbox,
-  Alert,
-  Typography,
-  Box,
-} from '@mui/joy'
-
-export default function UserRegistrationForm() {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-    terms: false,
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
+function UserRegistrationForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Registration submitted!')
   }
 
   return (
-    <Box
-      component="form"
-      onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
-    >
-      <Typography level="h3" component="h2">
-        Create Account
-      </Typography>
-      {submitted && (
-        <Alert color="success" variant="soft">
-          Registration successful!
-        </Alert>
-      )}
-      <FormControl required>
-        <FormLabel>Full Name</FormLabel>
-        <Input
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="nocss-user-registration-name">Full name</label>
+        <input
+          id="nocss-user-registration-name"
+          name="fullName"
           type="text"
-          value={formData.fullName}
-          onChange={(e) =>
-            setFormData({ ...formData, fullName: e.target.value })
-          }
-          placeholder="Jane Doe"
+          required
         />
-      </FormControl>
-      <FormControl required>
-        <FormLabel>Email Address</FormLabel>
-        <Input
+      </div>
+      <div>
+        <label htmlFor="nocss-user-registration-email">Email address</label>
+        <input
+          id="nocss-user-registration-email"
+          name="email"
           type="email"
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          placeholder="jane@example.com"
+          required
         />
-      </FormControl>
-      <FormControl required>
-        <FormLabel>Password</FormLabel>
-        <Input
+      </div>
+      <div>
+        <label htmlFor="nocss-user-registration-username">Username</label>
+        <input
+          id="nocss-user-registration-username"
+          name="username"
+          type="text"
+          minLength="3"
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="nocss-user-registration-password">Password</label>
+        <input
+          id="nocss-user-registration-password"
+          name="password"
           type="password"
-          value={formData.password}
-          onChange={(e) =>
-            setFormData({ ...formData, password: e.target.value })
-          }
-          slotProps={{ input: { minLength: 8 } }}
+          minLength="8"
+          required
         />
-      </FormControl>
-      <FormControl required>
-        <FormLabel>Confirm Password</FormLabel>
-        <Input
+      </div>
+      <div>
+        <label htmlFor="nocss-user-registration-confirm">
+          Confirm password
+        </label>
+        <input
+          id="nocss-user-registration-confirm"
+          name="confirmPassword"
           type="password"
-          value={formData.confirmPassword}
-          onChange={(e) =>
-            setFormData({ ...formData, confirmPassword: e.target.value })
-          }
+          minLength="8"
+          required
         />
-      </FormControl>
-      <Checkbox
-        required
-        label="I agree to the Terms of Service and Privacy Policy"
-        checked={formData.terms}
-        onChange={(e) => setFormData({ ...formData, terms: e.target.checked })}
-      />
-      <Button type="submit" color="primary">
-        Register
-      </Button>
-    </Box>
+      </div>
+      <div>
+        <label>
+          <input name="terms" type="checkbox" required />I agree to the terms
+          and conditions
+        </label>
+      </div>
+      <button type="submit">Create account</button>
+    </form>
   )
 }
+
+export default UserRegistrationForm

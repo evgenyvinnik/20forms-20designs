@@ -1,81 +1,56 @@
-import { useState } from 'react'
-import { Field } from '@ark-ui/react'
-
-export default function JobApplicationForm() {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    coverLetter: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
+function JobApplicationForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Application submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit} className="park-form">
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
-        Job Application
-      </h2>
-      {submitted && (
-        <div
-          style={{
-            padding: '0.75rem 1rem',
-            background: '#dcfce7',
-            color: '#166534',
-            borderRadius: '0.5rem',
-            fontSize: '0.875rem',
-          }}
-        >
-          Application submitted successfully!
-        </div>
-      )}
-      <Field.Root required className="park-field">
-        <Field.Label className="park-label">Full Name</Field.Label>
-        <Field.Input
-          className="park-input"
-          type="text"
-          value={formData.fullName}
-          onChange={(e) =>
-            setFormData({ ...formData, fullName: e.target.value })
-          }
-        />
-      </Field.Root>
-      <Field.Root required className="park-field">
-        <Field.Label className="park-label">Email Address</Field.Label>
-        <Field.Input
-          className="park-input"
-          type="email"
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        />
-      </Field.Root>
-      <Field.Root required className="park-field">
-        <Field.Label className="park-label">Phone Number</Field.Label>
-        <Field.Input
-          className="park-input"
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="nocss-job-full-name">Full name</label>
+        <input id="nocss-job-full-name" name="fullName" type="text" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-job-email">Email address</label>
+        <input id="nocss-job-email" name="email" type="email" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-job-phone">Phone number</label>
+        <input
+          id="nocss-job-phone"
+          name="phone"
           type="tel"
-          value={formData.phone}
-          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+          pattern="[+0-9\s-]{7,20}"
+          inputMode="tel"
+          required
         />
-      </Field.Root>
-      <Field.Root required className="park-field">
-        <Field.Label className="park-label">Cover Letter</Field.Label>
-        <Field.Textarea
-          className="park-textarea"
-          rows={4}
-          value={formData.coverLetter}
-          onChange={(e) =>
-            setFormData({ ...formData, coverLetter: e.target.value })
-          }
+      </div>
+      <div>
+        <label htmlFor="nocss-job-role">Role applied for</label>
+        <input id="nocss-job-role" name="role" type="text" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-job-resume">Resume link</label>
+        <input id="nocss-job-resume" name="resume" type="url" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-job-cover-letter">Cover letter</label>
+        <textarea
+          id="nocss-job-cover-letter"
+          name="coverLetter"
+          rows="4"
+          required
         />
-      </Field.Root>
-      <button type="submit" className="park-button">
-        Submit Application
-      </button>
+      </div>
+      <div>
+        <label>
+          <input name="updates" type="checkbox" />
+          Keep me informed about future roles
+        </label>
+      </div>
+      <button type="submit">Submit application</button>
     </form>
   )
 }
+
+export default JobApplicationForm

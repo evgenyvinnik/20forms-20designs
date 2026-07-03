@@ -1,104 +1,92 @@
 import { useState } from 'react'
-import { Field } from '@ark-ui/react'
+import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from './locationOptions'
 
-export default function ShippingAddressForm() {
-  const [formData, setFormData] = useState({
-    recipient: '',
-    address: '',
-    city: '',
-    zip: '',
-    sameAsBilling: true,
-  })
-  const [submitted, setSubmitted] = useState(false)
+function ShippingAddressForm() {
+  const [country, setCountry] = useState('US')
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Shipping address saved!')
   }
 
+  const regionOptions = country === 'CA' ? CANADIAN_PROVINCES : US_STATES
+  const postalPattern =
+    country === 'CA'
+      ? '[A-Za-z]\\d[A-Za-z] ?\\d[A-Za-z]\\d'
+      : '\\d{5}(-\\d{4})?'
+
   return (
-    <form onSubmit={handleSubmit} className="park-form">
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
-        Shipping Address
-      </h2>
-      {submitted && (
-        <div
-          style={{
-            padding: '0.75rem 1rem',
-            background: '#dcfce7',
-            color: '#166534',
-            borderRadius: '0.5rem',
-            fontSize: '0.875rem',
-          }}
-        >
-          Shipping address saved!
-        </div>
-      )}
-      <Field.Root required className="park-field">
-        <Field.Label className="park-label">Recipient Name</Field.Label>
-        <Field.Input
-          className="park-input"
-          type="text"
-          value={formData.recipient}
-          onChange={(e) =>
-            setFormData({ ...formData, recipient: e.target.value })
-          }
-        />
-      </Field.Root>
-      <Field.Root required className="park-field">
-        <Field.Label className="park-label">Street Address</Field.Label>
-        <Field.Input
-          className="park-input"
-          type="text"
-          value={formData.address}
-          onChange={(e) =>
-            setFormData({ ...formData, address: e.target.value })
-          }
-        />
-      </Field.Root>
-      <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
-      >
-        <Field.Root required className="park-field">
-          <Field.Label className="park-label">City</Field.Label>
-          <Field.Input
-            className="park-input"
-            type="text"
-            value={formData.city}
-            onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-          />
-        </Field.Root>
-        <Field.Root required className="park-field">
-          <Field.Label className="park-label">ZIP Code</Field.Label>
-          <Field.Input
-            className="park-input"
-            type="text"
-            value={formData.zip}
-            onChange={(e) => setFormData({ ...formData, zip: e.target.value })}
-          />
-        </Field.Root>
-      </div>
-      <label
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.5rem',
-          fontSize: '0.875rem',
-          cursor: 'pointer',
-        }}
-      >
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="nocss-shipping-full-name">Recipient name</label>
         <input
-          type="checkbox"
-          checked={formData.sameAsBilling}
-          onChange={(e) =>
-            setFormData({ ...formData, sameAsBilling: e.target.checked })
-          }
+          id="nocss-shipping-full-name"
+          name="fullName"
+          type="text"
+          required
         />
-        Use as default billing address
-      </label>
-      <button type="submit" className="park-button">
-        Save Address
-      </button>
+      </div>
+      <div>
+        <label htmlFor="nocss-shipping-street">Street address</label>
+        <input id="nocss-shipping-street" name="street" type="text" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-shipping-street-2">Apartment, suite, etc.</label>
+        <input id="nocss-shipping-street-2" name="street2" type="text" />
+      </div>
+      <div>
+        <label htmlFor="nocss-shipping-city">City</label>
+        <input id="nocss-shipping-city" name="city" type="text" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-shipping-country">Country</label>
+        <select
+          id="nocss-shipping-country"
+          name="country"
+          value={country}
+          onChange={(event) => setCountry(event.target.value)}
+          required
+        >
+          {COUNTRIES.map(({ value, label }) => (
+            <option key={value} value={value}>
+              {label}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label htmlFor="nocss-shipping-region">
+          State / Province / Territory
+        </label>
+        <select id="nocss-shipping-region" name="region" required>
+          <option value="">Select an option</option>
+          {regionOptions.map((region) => (
+            <option key={region} value={region}>
+              {region}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label htmlFor="nocss-shipping-postal">Postal code</label>
+        <input
+          id="nocss-shipping-postal"
+          name="postalCode"
+          type="text"
+          pattern={postalPattern}
+          inputMode="text"
+          required
+        />
+      </div>
+      <div>
+        <label>
+          <input name="default" type="checkbox" />
+          Use as default shipping address
+        </label>
+      </div>
+      <button type="submit">Save address</button>
     </form>
   )
 }
+
+export default ShippingAddressForm

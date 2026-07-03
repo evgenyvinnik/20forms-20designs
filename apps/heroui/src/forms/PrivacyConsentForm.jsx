@@ -1,58 +1,52 @@
-import { useState } from 'react'
-import { Checkbox, Button } from '@heroui/react'
-
-export default function PrivacyConsentForm() {
-  const [formData, setFormData] = useState({
-    marketing: false,
-    analytics: true,
-    thirdParty: false,
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
+function PrivacyConsentForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Privacy preferences saved!')
   }
 
   return (
-    <form onSubmit={handleSubmit} className="heroui-form">
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
-        Privacy & Cookies Consent
-      </h2>
-      {submitted && (
-        <div
-          style={{
-            padding: '0.75rem 1rem',
-            background: '#dcfce7',
-            color: '#166534',
-            borderRadius: '0.5rem',
-            fontSize: '0.875rem',
-          }}
-        >
-          Privacy preferences saved!
-        </div>
-      )}
-      <Checkbox
-        isSelected={formData.marketing}
-        onValueChange={(val) => setFormData({ ...formData, marketing: val })}
-      >
-        Receive marketing communication and special offers
-      </Checkbox>
-      <Checkbox
-        isSelected={formData.analytics}
-        onValueChange={(val) => setFormData({ ...formData, analytics: val })}
-      >
-        Allow anonymous performance and analytics tracking
-      </Checkbox>
-      <Checkbox
-        isSelected={formData.thirdParty}
-        onValueChange={(val) => setFormData({ ...formData, thirdParty: val })}
-      >
-        Share data with trusted third-party service partners
-      </Checkbox>
-      <Button type="submit" color="primary">
-        Save Preferences
-      </Button>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="nocss-privacy-name">Full name</label>
+        <input id="nocss-privacy-name" name="fullName" type="text" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-privacy-email">Email address</label>
+        <input id="nocss-privacy-email" name="email" type="email" required />
+      </div>
+      <fieldset>
+        <legend>Communication channels</legend>
+        <label>
+          <input name="emailOptIn" type="checkbox" />
+          Email updates
+        </label>
+        <label>
+          <input name="smsOptIn" type="checkbox" />
+          SMS notifications
+        </label>
+        <label>
+          <input name="phoneOptIn" type="checkbox" />
+          Phone calls
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>Privacy options</legend>
+        <label>
+          <input name="analytics" type="checkbox" />
+          Allow analytics cookies
+        </label>
+        <label>
+          <input name="personalization" type="checkbox" />
+          Allow personalized content
+        </label>
+      </fieldset>
+      <div>
+        <label htmlFor="nocss-privacy-notes">Additional notes</label>
+        <textarea id="nocss-privacy-notes" name="notes" rows="3" />
+      </div>
+      <button type="submit">Save preferences</button>
     </form>
   )
 }
+
+export default PrivacyConsentForm

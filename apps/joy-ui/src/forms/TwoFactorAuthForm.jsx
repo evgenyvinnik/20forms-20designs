@@ -1,54 +1,39 @@
-import { useState } from 'react'
-import {
-  FormControl,
-  FormLabel,
-  FormHelperText,
-  Input,
-  Button,
-  Alert,
-  Typography,
-  Box,
-} from '@mui/joy'
-
-export default function TwoFactorAuthForm() {
-  const [code, setCode] = useState('')
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
+function TwoFactorAuthForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Verification submitted!')
   }
 
   return (
-    <Box
-      component="form"
-      onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
-    >
-      <Typography level="h3" component="h2">
-        Two-Factor Authentication
-      </Typography>
-      {submitted && (
-        <Alert color="success" variant="soft">
-          Two-factor authentication verified!
-        </Alert>
-      )}
-      <FormControl required>
-        <FormLabel>Authentication Code</FormLabel>
-        <Input
+    <form onSubmit={handleSubmit}>
+      <p>Enter the code from your authenticator app or SMS.</p>
+      <div>
+        <label htmlFor="nocss-two-factor-code">Verification code</label>
+        <input
+          id="nocss-two-factor-code"
+          name="code"
           type="text"
-          value={code}
-          onChange={(e) => setCode(e.target.value)}
-          placeholder="123456"
-          slotProps={{ input: { maxLength: 6, pattern: '[0-9]{6}' } }}
+          inputMode="numeric"
+          pattern="\\d{6}"
+          maxLength="6"
+          required
         />
-        <FormHelperText>
-          Enter the 6-digit code from your authenticator app.
-        </FormHelperText>
-      </FormControl>
-      <Button type="submit" color="primary">
-        Verify Code
-      </Button>
-    </Box>
+      </div>
+      <div>
+        <label htmlFor="nocss-two-factor-backup">Backup code (optional)</label>
+        <input
+          id="nocss-two-factor-backup"
+          name="backupCode"
+          type="text"
+          pattern="[A-Za-z0-9]{6,12}"
+        />
+      </div>
+      <button type="submit">Verify</button>
+      <button type="button" onClick={() => alert('A new code has been sent!')}>
+        Resend code
+      </button>
+    </form>
   )
 }
+
+export default TwoFactorAuthForm

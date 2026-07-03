@@ -1,84 +1,56 @@
-import { useState } from 'react'
-
-export default function JobApplicationForm() {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    coverLetter: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
+function JobApplicationForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Application submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit} className="gluestack-form">
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
-        Job Application
-      </h2>
-      {submitted && (
-        <div
-          style={{
-            padding: '0.75rem 1rem',
-            background: '#dbeafe',
-            color: '#1e40af',
-            borderRadius: '0.375rem',
-            fontSize: '0.875rem',
-          }}
-        >
-          Application submitted successfully!
-        </div>
-      )}
-      <div className="gluestack-field">
-        <label className="gluestack-label">Full Name</label>
-        <input
-          className="gluestack-input"
-          type="text"
-          required
-          value={formData.fullName}
-          onChange={(e) =>
-            setFormData({ ...formData, fullName: e.target.value })
-          }
-        />
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="nocss-job-full-name">Full name</label>
+        <input id="nocss-job-full-name" name="fullName" type="text" required />
       </div>
-      <div className="gluestack-field">
-        <label className="gluestack-label">Email Address</label>
-        <input
-          className="gluestack-input"
-          type="email"
-          required
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        />
+      <div>
+        <label htmlFor="nocss-job-email">Email address</label>
+        <input id="nocss-job-email" name="email" type="email" required />
       </div>
-      <div className="gluestack-field">
-        <label className="gluestack-label">Phone Number</label>
+      <div>
+        <label htmlFor="nocss-job-phone">Phone number</label>
         <input
-          className="gluestack-input"
+          id="nocss-job-phone"
+          name="phone"
           type="tel"
+          pattern="[+0-9\s-]{7,20}"
+          inputMode="tel"
           required
-          value={formData.phone}
-          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
         />
       </div>
-      <div className="gluestack-field">
-        <label className="gluestack-label">Cover Letter</label>
+      <div>
+        <label htmlFor="nocss-job-role">Role applied for</label>
+        <input id="nocss-job-role" name="role" type="text" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-job-resume">Resume link</label>
+        <input id="nocss-job-resume" name="resume" type="url" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-job-cover-letter">Cover letter</label>
         <textarea
-          className="gluestack-textarea"
+          id="nocss-job-cover-letter"
+          name="coverLetter"
+          rows="4"
           required
-          rows={4}
-          value={formData.coverLetter}
-          onChange={(e) =>
-            setFormData({ ...formData, coverLetter: e.target.value })
-          }
         />
       </div>
-      <button type="submit" className="gluestack-button">
-        Submit Application
-      </button>
+      <div>
+        <label>
+          <input name="updates" type="checkbox" />
+          Keep me informed about future roles
+        </label>
+      </div>
+      <button type="submit">Submit application</button>
     </form>
   )
 }
+
+export default JobApplicationForm

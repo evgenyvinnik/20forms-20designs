@@ -1,84 +1,56 @@
-import { useState } from 'react'
-import { Field } from '@base-ui-components/react/field'
-
-export default function JobApplicationForm() {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    coverLetter: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
+function JobApplicationForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Application submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit} className="base-form">
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
-        Job Application
-      </h2>
-      {submitted && (
-        <div
-          style={{
-            padding: '0.75rem 1rem',
-            background: '#dcfce7',
-            color: '#166534',
-            borderRadius: '0.5rem',
-            fontSize: '0.875rem',
-          }}
-        >
-          Application submitted successfully!
-        </div>
-      )}
-      <Field.Root className="base-field">
-        <Field.Label className="base-label">Full Name</Field.Label>
-        <Field.Control
-          required
-          className="base-control"
-          type="text"
-          value={formData.fullName}
-          onChange={(e) =>
-            setFormData({ ...formData, fullName: e.target.value })
-          }
-        />
-      </Field.Root>
-      <Field.Root className="base-field">
-        <Field.Label className="base-label">Email Address</Field.Label>
-        <Field.Control
-          required
-          className="base-control"
-          type="email"
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        />
-      </Field.Root>
-      <Field.Root className="base-field">
-        <Field.Label className="base-label">Phone Number</Field.Label>
-        <Field.Control
-          required
-          className="base-control"
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="nocss-job-full-name">Full name</label>
+        <input id="nocss-job-full-name" name="fullName" type="text" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-job-email">Email address</label>
+        <input id="nocss-job-email" name="email" type="email" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-job-phone">Phone number</label>
+        <input
+          id="nocss-job-phone"
+          name="phone"
           type="tel"
-          value={formData.phone}
-          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-        />
-      </Field.Root>
-      <Field.Root className="base-field">
-        <Field.Label className="base-label">Cover Letter</Field.Label>
-        <Field.Control
+          pattern="[+0-9\s-]{7,20}"
+          inputMode="tel"
           required
-          render={<textarea className="base-control" rows={4} />}
-          value={formData.coverLetter}
-          onChange={(e) =>
-            setFormData({ ...formData, coverLetter: e.target.value })
-          }
         />
-      </Field.Root>
-      <button type="submit" className="base-button">
-        Submit Application
-      </button>
+      </div>
+      <div>
+        <label htmlFor="nocss-job-role">Role applied for</label>
+        <input id="nocss-job-role" name="role" type="text" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-job-resume">Resume link</label>
+        <input id="nocss-job-resume" name="resume" type="url" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-job-cover-letter">Cover letter</label>
+        <textarea
+          id="nocss-job-cover-letter"
+          name="coverLetter"
+          rows="4"
+          required
+        />
+      </div>
+      <div>
+        <label>
+          <input name="updates" type="checkbox" />
+          Keep me informed about future roles
+        </label>
+      </div>
+      <button type="submit">Submit application</button>
     </form>
   )
 }
+
+export default JobApplicationForm

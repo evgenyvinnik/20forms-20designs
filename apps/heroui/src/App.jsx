@@ -1,5 +1,6 @@
 import './styles.css'
 import { useState, useEffect } from 'react'
+import { HeroUIProvider } from '@heroui/react'
 
 import AdvancedSearchForm from './forms/AdvancedSearchForm'
 import AppointmentRequestForm from './forms/AppointmentRequestForm'
@@ -88,16 +89,18 @@ function App() {
   const FormComponent = FORM_COMPONENTS[formId] || FORM_COMPONENTS['user-login']
 
   return (
-    <div
-      style={{
-        padding: '20px',
-        maxWidth: '560px',
-        margin: '0 auto',
-        minHeight: '100vh',
-      }}
-    >
-      <FormComponent />
-    </div>
+    <HeroUIProvider>
+      <div
+        style={{
+          padding: '20px',
+          maxWidth: '560px',
+          margin: '0 auto',
+          minHeight: '100vh',
+        }}
+      >
+        <FormComponent />
+      </div>
+    </HeroUIProvider>
   )
 }
 

@@ -1,89 +1,76 @@
-import { useState } from 'react'
-import {
-  FormControl,
-  FormLabel,
-  Input,
-  Button,
-  Alert,
-  Typography,
-  Box,
-} from '@mui/joy'
-
-export default function CheckoutPaymentForm() {
-  const [formData, setFormData] = useState({
-    cardNumber: '',
-    cardName: '',
-    expiry: '',
-    cvv: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
+function CheckoutPaymentForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Checkout submitted!')
   }
 
   return (
-    <Box
-      component="form"
-      onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
-    >
-      <Typography level="h3" component="h2">
-        Payment Details
-      </Typography>
-      {submitted && (
-        <Alert color="success" variant="soft">
-          Payment processed successfully!
-        </Alert>
-      )}
-      <FormControl required>
-        <FormLabel>Name on Card</FormLabel>
-        <Input
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="nocss-checkout-email">Email for receipt</label>
+        <input id="nocss-checkout-email" name="email" type="email" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-checkout-shipping-method">Shipping method</label>
+        <select
+          id="nocss-checkout-shipping-method"
+          name="shippingMethod"
+          required
+        >
+          <option value="">Select shipping</option>
+          <option value="standard">Standard</option>
+          <option value="express">Express</option>
+          <option value="overnight">Overnight</option>
+        </select>
+      </div>
+      <div>
+        <label htmlFor="nocss-checkout-card-number">Card number</label>
+        <input
+          id="nocss-checkout-card-number"
+          name="cardNumber"
           type="text"
-          value={formData.cardName}
-          onChange={(e) =>
-            setFormData({ ...formData, cardName: e.target.value })
-          }
+          inputMode="numeric"
+          pattern="[0-9]{13,19}"
+          maxLength="19"
+          required
         />
-      </FormControl>
-      <FormControl required>
-        <FormLabel>Card Number</FormLabel>
-        <Input
+      </div>
+      <div>
+        <label htmlFor="nocss-checkout-expiration">Expiration</label>
+        <input
+          id="nocss-checkout-expiration"
+          name="expiration"
           type="text"
-          value={formData.cardNumber}
-          onChange={(e) =>
-            setFormData({ ...formData, cardNumber: e.target.value })
-          }
-          placeholder="1234 5678 9012 3456"
+          placeholder="MM/YY"
+          pattern="^(0[1-9]|1[0-2])\\/\\d{2}$"
+          inputMode="numeric"
+          required
         />
-      </FormControl>
-      <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}>
-        <FormControl required>
-          <FormLabel>Expiration (MM/YY)</FormLabel>
-          <Input
-            type="text"
-            value={formData.expiry}
-            onChange={(e) =>
-              setFormData({ ...formData, expiry: e.target.value })
-            }
-            placeholder="MM/YY"
-          />
-        </FormControl>
-        <FormControl required>
-          <FormLabel>CVV</FormLabel>
-          <Input
-            type="password"
-            value={formData.cvv}
-            onChange={(e) => setFormData({ ...formData, cvv: e.target.value })}
-            placeholder="123"
-            slotProps={{ input: { maxLength: 4 } }}
-          />
-        </FormControl>
-      </Box>
-      <Button type="submit" color="primary">
-        Complete Purchase
-      </Button>
-    </Box>
+      </div>
+      <div>
+        <label htmlFor="nocss-checkout-cvc">CVC</label>
+        <input
+          id="nocss-checkout-cvc"
+          name="cvc"
+          type="text"
+          inputMode="numeric"
+          pattern="[0-9]{3,4}"
+          maxLength="4"
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="nocss-checkout-promo">Promo code</label>
+        <input
+          id="nocss-checkout-promo"
+          name="promoCode"
+          type="text"
+          pattern="[A-Za-z0-9]{3,15}"
+        />
+      </div>
+      <button type="submit">Place order</button>
+    </form>
   )
 }
+
+export default CheckoutPaymentForm

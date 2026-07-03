@@ -1,83 +1,66 @@
-import { useState } from 'react'
-import {
-  FormControl,
-  FormLabel,
-  Input,
-  Button,
-  Alert,
-  Typography,
-  Box,
-} from '@mui/joy'
-
-export default function BillingInfoForm() {
-  const [formData, setFormData] = useState({
-    address: '',
-    city: '',
-    state: '',
-    zip: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
+function BillingInfoForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Billing details saved!')
   }
 
   return (
-    <Box
-      component="form"
-      onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
-    >
-      <Typography level="h3" component="h2">
-        Billing Information
-      </Typography>
-      {submitted && (
-        <Alert color="success" variant="soft">
-          Billing details saved!
-        </Alert>
-      )}
-      <FormControl required>
-        <FormLabel>Street Address</FormLabel>
-        <Input
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="nocss-billing-name">Name on card</label>
+        <input id="nocss-billing-name" name="cardName" type="text" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-billing-card-number">Card number</label>
+        <input
+          id="nocss-billing-card-number"
+          name="cardNumber"
           type="text"
-          value={formData.address}
-          onChange={(e) =>
-            setFormData({ ...formData, address: e.target.value })
-          }
+          inputMode="numeric"
+          pattern="[0-9]{13,19}"
+          maxLength="19"
+          required
         />
-      </FormControl>
-      <FormControl required>
-        <FormLabel>City</FormLabel>
-        <Input
+      </div>
+      <div>
+        <label htmlFor="nocss-billing-expiration">Expiration date</label>
+        <input
+          id="nocss-billing-expiration"
+          name="expiration"
           type="text"
-          value={formData.city}
-          onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+          placeholder="MM/YY"
+          pattern="^(0[1-9]|1[0-2])\\/\\d{2}$"
+          inputMode="numeric"
+          required
         />
-      </FormControl>
-      <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}>
-        <FormControl required>
-          <FormLabel>State / Province</FormLabel>
-          <Input
-            type="text"
-            value={formData.state}
-            onChange={(e) =>
-              setFormData({ ...formData, state: e.target.value })
-            }
-          />
-        </FormControl>
-        <FormControl required>
-          <FormLabel>ZIP / Postal Code</FormLabel>
-          <Input
-            type="text"
-            value={formData.zip}
-            onChange={(e) => setFormData({ ...formData, zip: e.target.value })}
-          />
-        </FormControl>
-      </Box>
-      <Button type="submit" color="primary">
-        Save Billing Info
-      </Button>
-    </Box>
+      </div>
+      <div>
+        <label htmlFor="nocss-billing-cvc">Security code</label>
+        <input
+          id="nocss-billing-cvc"
+          name="cvc"
+          type="text"
+          inputMode="numeric"
+          pattern="[0-9]{3,4}"
+          maxLength="4"
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="nocss-billing-address">Billing address</label>
+        <input id="nocss-billing-address" name="address" type="text" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-billing-country">Country</label>
+        <select id="nocss-billing-country" name="country" required>
+          <option value="">Select country</option>
+          <option value="US">United States</option>
+          <option value="CA">Canada</option>
+        </select>
+      </div>
+      <button type="submit">Save billing details</button>
+    </form>
   )
 }
+
+export default BillingInfoForm

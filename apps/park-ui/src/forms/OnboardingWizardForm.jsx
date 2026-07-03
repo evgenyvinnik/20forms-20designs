@@ -1,101 +1,76 @@
-import { useState } from 'react'
-import { Field } from '@ark-ui/react'
-
-export default function OnboardingWizardForm() {
-  const [step, setStep] = useState(1)
-  const [formData, setFormData] = useState({
-    displayName: '',
-    company: '',
-    role: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (step < 2) {
-      setStep(step + 1)
-    } else {
-      setSubmitted(true)
-    }
+function OnboardingWizardForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Onboarding complete!')
   }
 
   return (
-    <form onSubmit={handleSubmit} className="park-form">
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
-        Welcome Onboarding
-      </h2>
-      {submitted && (
-        <div
-          style={{
-            padding: '0.75rem 1rem',
-            background: '#dcfce7',
-            color: '#166534',
-            borderRadius: '0.5rem',
-            fontSize: '0.875rem',
-          }}
-        >
-          Onboarding completed!
+    <form onSubmit={handleSubmit}>
+      <section>
+        <h3>Step 1: Account</h3>
+        <div>
+          <label htmlFor="nocss-onboarding-email">Work email</label>
+          <input
+            id="nocss-onboarding-email"
+            name="email"
+            type="email"
+            required
+          />
         </div>
-      )}
-      <span style={{ fontSize: '0.875rem', color: '#6b7280' }}>
-        Step {step} of 2
-      </span>
-      {step === 1 ? (
-        <>
-          <Field.Root required className="park-field">
-            <Field.Label className="park-label">Display Name</Field.Label>
-            <Field.Input
-              className="park-input"
-              type="text"
-              value={formData.displayName}
-              onChange={(e) =>
-                setFormData({ ...formData, displayName: e.target.value })
-              }
-            />
-          </Field.Root>
-          <button type="submit" className="park-button">
-            Next Step
-          </button>
-        </>
-      ) : (
-        <>
-          <Field.Root required className="park-field">
-            <Field.Label className="park-label">Company Name</Field.Label>
-            <Field.Input
-              className="park-input"
-              type="text"
-              value={formData.company}
-              onChange={(e) =>
-                setFormData({ ...formData, company: e.target.value })
-              }
-            />
-          </Field.Root>
-          <Field.Root required className="park-field">
-            <Field.Label className="park-label">Job Title / Role</Field.Label>
-            <Field.Input
-              className="park-input"
-              type="text"
-              value={formData.role}
-              onChange={(e) =>
-                setFormData({ ...formData, role: e.target.value })
-              }
-            />
-          </Field.Root>
-          <div style={{ display: 'flex', gap: '1rem' }}>
-            <button
-              type="button"
-              className="park-button"
-              style={{ background: '#e2e8f0', color: '#1e293b' }}
-              onClick={() => setStep(1)}
-            >
-              Back
-            </button>
-            <button type="submit" className="park-button" style={{ flex: 1 }}>
-              Complete Setup
-            </button>
-          </div>
-        </>
-      )}
+        <div>
+          <label htmlFor="nocss-onboarding-password">Password</label>
+          <input
+            id="nocss-onboarding-password"
+            name="password"
+            type="password"
+            minLength="8"
+            required
+          />
+        </div>
+      </section>
+      <section>
+        <h3>Step 2: Team</h3>
+        <div>
+          <label htmlFor="nocss-onboarding-team-name">Team name</label>
+          <input
+            id="nocss-onboarding-team-name"
+            name="teamName"
+            type="text"
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="nocss-onboarding-size">Team size</label>
+          <select id="nocss-onboarding-size" name="teamSize" required>
+            <option value="">Select size</option>
+            <option value="1-5">1-5</option>
+            <option value="6-20">6-20</option>
+            <option value="21-50">21-50</option>
+            <option value="50+">50+</option>
+          </select>
+        </div>
+      </section>
+      <section>
+        <h3>Step 3: Preferences</h3>
+        <div>
+          <label htmlFor="nocss-onboarding-goal">Primary goal</label>
+          <textarea id="nocss-onboarding-goal" name="goal" rows="3" required />
+        </div>
+        <div>
+          <label>
+            <input name="updates" type="checkbox" />
+            Send me product tips
+          </label>
+        </div>
+      </section>
+      <div>
+        <button type="button" onClick={() => alert('Back action placeholder')}>
+          Back
+        </button>
+        <button type="submit">Finish setup</button>
+      </div>
     </form>
   )
 }
+
+export default OnboardingWizardForm

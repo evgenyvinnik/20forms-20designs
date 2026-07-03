@@ -1,51 +1,39 @@
-import { useState } from 'react'
-import { Field } from '@base-ui-components/react/field'
-
-export default function TwoFactorAuthForm() {
-  const [code, setCode] = useState('')
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
+function TwoFactorAuthForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Verification submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit} className="base-form">
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
-        Two-Factor Authentication
-      </h2>
-      {submitted && (
-        <div
-          style={{
-            padding: '0.75rem 1rem',
-            background: '#dcfce7',
-            color: '#166534',
-            borderRadius: '0.5rem',
-            fontSize: '0.875rem',
-          }}
-        >
-          Two-factor authentication verified!
-        </div>
-      )}
-      <Field.Root className="base-field">
-        <Field.Label className="base-label">Authentication Code</Field.Label>
-        <Field.Control
-          required
-          className="base-control"
+    <form onSubmit={handleSubmit}>
+      <p>Enter the code from your authenticator app or SMS.</p>
+      <div>
+        <label htmlFor="nocss-two-factor-code">Verification code</label>
+        <input
+          id="nocss-two-factor-code"
+          name="code"
           type="text"
-          value={code}
-          onChange={(e) => setCode(e.target.value)}
-          placeholder="123456"
-          maxLength={6}
+          inputMode="numeric"
+          pattern="\\d{6}"
+          maxLength="6"
+          required
         />
-        <Field.Description style={{ fontSize: '0.75rem', color: '#6b7280' }}>
-          Enter the 6-digit code from your authenticator app.
-        </Field.Description>
-      </Field.Root>
-      <button type="submit" className="base-button">
-        Verify Code
+      </div>
+      <div>
+        <label htmlFor="nocss-two-factor-backup">Backup code (optional)</label>
+        <input
+          id="nocss-two-factor-backup"
+          name="backupCode"
+          type="text"
+          pattern="[A-Za-z0-9]{6,12}"
+        />
+      </div>
+      <button type="submit">Verify</button>
+      <button type="button" onClick={() => alert('A new code has been sent!')}>
+        Resend code
       </button>
     </form>
   )
 }
+
+export default TwoFactorAuthForm

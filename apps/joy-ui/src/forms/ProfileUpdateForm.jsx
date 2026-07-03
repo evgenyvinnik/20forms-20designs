@@ -1,71 +1,51 @@
-import { useState } from 'react'
-import {
-  FormControl,
-  FormLabel,
-  Input,
-  Textarea,
-  Button,
-  Alert,
-  Typography,
-  Box,
-} from '@mui/joy'
-
-export default function ProfileUpdateForm() {
-  const [formData, setFormData] = useState({
-    fullName: 'Jane Doe',
-    email: 'jane@example.com',
-    bio: 'Software engineer and open source enthusiast.',
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
+function ProfileUpdateForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Profile updated!')
   }
 
   return (
-    <Box
-      component="form"
-      onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
-    >
-      <Typography level="h3" component="h2">
-        Profile Settings
-      </Typography>
-      {submitted && (
-        <Alert color="success" variant="soft">
-          Profile updated successfully!
-        </Alert>
-      )}
-      <FormControl required>
-        <FormLabel>Full Name</FormLabel>
-        <Input
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="nocss-profile-first-name">First name</label>
+        <input
+          id="nocss-profile-first-name"
+          name="firstName"
           type="text"
-          value={formData.fullName}
-          onChange={(e) =>
-            setFormData({ ...formData, fullName: e.target.value })
-          }
+          required
         />
-      </FormControl>
-      <FormControl required>
-        <FormLabel>Email Address</FormLabel>
-        <Input
-          type="email"
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+      </div>
+      <div>
+        <label htmlFor="nocss-profile-last-name">Last name</label>
+        <input
+          id="nocss-profile-last-name"
+          name="lastName"
+          type="text"
+          required
         />
-      </FormControl>
-      <FormControl>
-        <FormLabel>Bio</FormLabel>
-        <Textarea
-          minRows={3}
-          value={formData.bio}
-          onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
+      </div>
+      <div>
+        <label htmlFor="nocss-profile-email">Email address</label>
+        <input id="nocss-profile-email" name="email" type="email" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-profile-phone">Phone number</label>
+        <input
+          id="nocss-profile-phone"
+          name="phone"
+          type="tel"
+          pattern="[+0-9\s-]{7,20}"
+          inputMode="tel"
+          required
         />
-      </FormControl>
-      <Button type="submit" color="primary">
-        Save Changes
-      </Button>
-    </Box>
+      </div>
+      <div>
+        <label htmlFor="nocss-profile-bio">Short bio</label>
+        <textarea id="nocss-profile-bio" name="bio" rows="3" required />
+      </div>
+      <button type="submit">Save changes</button>
+    </form>
   )
 }
+
+export default ProfileUpdateForm

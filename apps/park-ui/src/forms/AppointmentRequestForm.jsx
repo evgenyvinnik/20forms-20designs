@@ -1,83 +1,49 @@
-import { useState } from 'react'
-import { Field } from '@ark-ui/react'
-
-export default function AppointmentRequestForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    service: 'consultation',
-    date: '',
-    notes: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
+function AppointmentRequestForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert('Appointment request submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit} className="park-form">
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
-        Book Appointment
-      </h2>
-      {submitted && (
-        <div
-          style={{
-            padding: '0.75rem 1rem',
-            background: '#dcfce7',
-            color: '#166534',
-            borderRadius: '0.5rem',
-            fontSize: '0.875rem',
-          }}
-        >
-          Appointment request submitted!
-        </div>
-      )}
-      <Field.Root required className="park-field">
-        <Field.Label className="park-label">Your Name</Field.Label>
-        <Field.Input
-          className="park-input"
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="nocss-appointment-name">Full name</label>
+        <input
+          id="nocss-appointment-name"
+          name="fullName"
           type="text"
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-        />
-      </Field.Root>
-      <Field.Root required className="park-field">
-        <Field.Label className="park-label">Service Required</Field.Label>
-        <select
-          className="park-select"
-          value={formData.service}
-          onChange={(e) =>
-            setFormData({ ...formData, service: e.target.value })
-          }
           required
-        >
-          <option value="consultation">Initial Consultation</option>
-          <option value="followup">Follow-up Session</option>
-          <option value="review">Annual Review</option>
-        </select>
-      </Field.Root>
-      <Field.Root required className="park-field">
-        <Field.Label className="park-label">Preferred Date</Field.Label>
-        <Field.Input
-          className="park-input"
-          type="date"
-          value={formData.date}
-          onChange={(e) => setFormData({ ...formData, date: e.target.value })}
         />
-      </Field.Root>
-      <Field.Root className="park-field">
-        <Field.Label className="park-label">Special Instructions</Field.Label>
-        <Field.Textarea
-          className="park-textarea"
-          rows={3}
-          value={formData.notes}
-          onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+      </div>
+      <div>
+        <label htmlFor="nocss-appointment-email">Email address</label>
+        <input
+          id="nocss-appointment-email"
+          name="email"
+          type="email"
+          required
         />
-      </Field.Root>
-      <button type="submit" className="park-button">
-        Request Appointment
-      </button>
+      </div>
+      <div>
+        <label htmlFor="nocss-appointment-date">Preferred date</label>
+        <input id="nocss-appointment-date" name="date" type="date" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-appointment-time">Preferred time</label>
+        <input id="nocss-appointment-time" name="time" type="time" required />
+      </div>
+      <div>
+        <label htmlFor="nocss-appointment-reason">Reason for visit</label>
+        <textarea
+          id="nocss-appointment-reason"
+          name="reason"
+          rows="3"
+          required
+        />
+      </div>
+      <button type="submit">Request appointment</button>
     </form>
   )
 }
+
+export default AppointmentRequestForm
