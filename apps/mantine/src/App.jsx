@@ -58,6 +58,10 @@ function App() {
   })
 
   useEffect(() => {
+    document.documentElement.setAttribute('data-mantine-color-scheme', theme)
+  }, [theme])
+
+  useEffect(() => {
     const handleMessage = (event) => {
       if (event.data?.type === 'SET_THEME') {
         setTheme(event.data.theme)
