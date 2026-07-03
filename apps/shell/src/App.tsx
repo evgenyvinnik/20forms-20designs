@@ -1,6 +1,6 @@
 import { useMemo, useEffect } from 'react'
 import { LIBRARIES, FORMS, LIBRARY_NAME_TO_ID, FORM_NAME_TO_ID } from './config'
-import { useAppStore, ThemeMode, GroupBy } from './store'
+import { useAppStore } from './store'
 import { SelectionColumn } from './components/SelectionColumn'
 import { PreviewSection } from './components/PreviewSection'
 import { PreviewToggleRow } from './components/PreviewToggleRow'
@@ -24,72 +24,7 @@ function App() {
     selectNoLibraries,
   } = useAppStore()
 
-  // Initialize state from URL search params on mount & after store hydration
-  useEffect(() => {
-    const applyUrlParams = () => {
-      const params = new URLSearchParams(window.location.search)
 
-      // Parse theme
-      const themeParam = params.get('theme')
-      if (themeParam === 'dark' || themeParam === 'light') {
-        setThemeMode(themeParam as ThemeMode)
-      }
-
-      // Parse groupBy
-      const groupParam = params.get('groupBy')
-      if (groupParam === 'library' || groupParam === 'form') {
-        setGroupBy(groupParam as GroupBy)
-      }
-
-      // Parse forms param
-      const formsParam = params.get('forms') || params.get('form')
-      if (formsParam) {
-        const parsedForms = formsParam
-          .split(',')
-          .map((f) => {
-            const match = FORMS.find(
-              (formName) =>
-                formName.toLowerCase() === f.trim().toLowerCase() ||
-                FORM_NAME_TO_ID[formName] === f.trim().toLowerCase()
-            )
-            return match
-          })
-          .filter((f): f is string => Boolean(f))
-
-        if (parsedForms.length > 0) {
-          useAppStore.setState({ selectedForms: parsedForms })
-        }
-      }
-
-      // Parse libraries param
-      const libsParam = params.get('libraries') || params.get('library')
-      if (libsParam) {
-        const parsedLibs = libsParam
-          .split(',')
-          .map((l) => {
-            const match = LIBRARIES.find(
-              (lib) =>
-                lib.implemented &&
-                (lib.name.toLowerCase() === l.trim().toLowerCase() ||
-                  LIBRARY_NAME_TO_ID[lib.name] === l.trim().toLowerCase() ||
-                  lib.directory.toLowerCase() === l.trim().toLowerCase())
-            )
-            return match?.name
-          })
-          .filter((l): l is string => Boolean(l))
-
-        if (parsedLibs.length > 0) {
-          useAppStore.setState({ selectedLibraries: parsedLibs })
-        }
-      }
-    }
-
-    applyUrlParams()
-    const unsub = useAppStore.persist?.onFinishHydration?.(applyUrlParams)
-    return () => {
-      if (typeof unsub === 'function') unsub()
-    }
-  }, [])
 
   // Sync state back to URL query parameters
   useEffect(() => {
