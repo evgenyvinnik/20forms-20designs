@@ -15,16 +15,18 @@ function NewsletterSubscriptionForm() {
       <TextInput name="email" type="email" label="Email address" required />
       <Selector
         name="frequency"
-        label="Digest frequency"
+        label="Frequency"
         defaultValue="weekly"
         options={[
-          { value: 'weekly', label: 'Weekly digest' },
-          { value: 'monthly', label: 'Monthly summary' },
+          { value: 'weekly', label: 'Weekly' },
+          { value: 'monthly', label: 'Monthly' },
+          { value: 'quarterly', label: 'Quarterly' },
         ]}
+        required
       />
       <CheckboxInput
-        name="productUpdates"
-        label="Include product release notes"
+        name="receiveUpdates"
+        label="Receive product updates"
         defaultChecked
       />
       <Button type="submit" variant="primary">

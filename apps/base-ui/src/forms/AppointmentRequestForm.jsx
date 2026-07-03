@@ -10,25 +10,22 @@ export default function AppointmentRequestForm() {
   return (
     <form onSubmit={handleSubmit} className="base-form">
       <Field.Root required className="base-field">
-        <Field.Label className="base-label">Your name</Field.Label>
+        <Field.Label className="base-label">Full name</Field.Label>
         <Field.Control
           className="base-input"
-          name="name"
+          name="fullName"
           type="text"
           required
         />
       </Field.Root>
       <Field.Root required className="base-field">
-        <Field.Label className="base-label">Service requested</Field.Label>
-        <select
-          className="base-select"
-          name="service"
-          defaultValue="consultation"
+        <Field.Label className="base-label">Email address</Field.Label>
+        <Field.Control
+          className="base-input"
+          name="email"
+          type="email"
           required
-        >
-          <option value="consultation">Initial Consultation</option>
-          <option value="followup">Follow-up Session</option>
-        </select>
+        />
       </Field.Root>
       <Field.Root required className="base-field">
         <Field.Label className="base-label">Preferred date</Field.Label>
@@ -39,13 +36,23 @@ export default function AppointmentRequestForm() {
           required
         />
       </Field.Root>
-      <Field.Root className="base-field">
-        <Field.Label className="base-label">Notes</Field.Label>
+      <Field.Root required className="base-field">
+        <Field.Label className="base-label">Preferred time</Field.Label>
+        <Field.Control
+          className="base-input"
+          name="time"
+          type="time"
+          required
+        />
+      </Field.Root>
+      <Field.Root required className="base-field">
+        <Field.Label className="base-label">Reason for visit</Field.Label>
         <Field.Control
           render={<textarea />}
           className="base-textarea"
-          name="notes"
+          name="reason"
           rows={3}
+          required
         />
       </Field.Root>
       <button type="submit" className="base-button">

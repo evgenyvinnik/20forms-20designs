@@ -10,17 +10,27 @@ export default function ProfileUpdateForm() {
   return (
     <form onSubmit={handleSubmit} className="base-form">
       <Field.Root required className="base-field">
-        <Field.Label className="base-label">Display name</Field.Label>
+        <Field.Label className="base-label">First name</Field.Label>
         <Field.Control
           className="base-input"
-          name="displayName"
+          name="firstName"
           type="text"
-          defaultValue="Jane Doe"
+          defaultValue="Jane"
           required
         />
       </Field.Root>
       <Field.Root required className="base-field">
-        <Field.Label className="base-label">Public email</Field.Label>
+        <Field.Label className="base-label">Last name</Field.Label>
+        <Field.Control
+          className="base-input"
+          name="lastName"
+          type="text"
+          defaultValue="Doe"
+          required
+        />
+      </Field.Root>
+      <Field.Root required className="base-field">
+        <Field.Label className="base-label">Email address</Field.Label>
         <Field.Control
           className="base-input"
           name="email"
@@ -30,7 +40,11 @@ export default function ProfileUpdateForm() {
         />
       </Field.Root>
       <Field.Root className="base-field">
-        <Field.Label className="base-label">Bio</Field.Label>
+        <Field.Label className="base-label">Phone number</Field.Label>
+        <Field.Control className="base-input" name="phone" type="tel" />
+      </Field.Root>
+      <Field.Root className="base-field">
+        <Field.Label className="base-label">Short bio</Field.Label>
         <Field.Control
           render={<textarea />}
           className="base-textarea"
@@ -40,7 +54,7 @@ export default function ProfileUpdateForm() {
         />
       </Field.Root>
       <button type="submit" className="base-button">
-        Save profile
+        Save changes
       </button>
     </form>
   )

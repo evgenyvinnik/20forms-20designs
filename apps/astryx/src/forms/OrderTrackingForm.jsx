@@ -13,14 +13,10 @@ function OrderTrackingForm() {
       style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <TextInput name="orderNumber" type="text" label="Order number" required />
-      <TextInput
-        name="email"
-        type="email"
-        label="Billing email address"
-        required
-      />
+      <TextInput name="email" type="email" label="Email address" required />
+      <TextInput name="postalCode" type="text" label="Postal code" required />
       <Button type="submit" variant="primary">
-        Track order
+        Find order
       </Button>
     </form>
   )

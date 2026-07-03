@@ -12,23 +12,23 @@ function PrivacyConsentForm() {
       onSubmit={handleSubmit}
       style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
-      <CheckboxInput
-        name="necessary"
-        label="Essential cookies required for site operation"
-        defaultChecked
-        disabled
-      />
+      <TextInput name="fullName" type="text" label="Full name" required />
+      <TextInput name="email" type="email" label="Email address" required />
+      <CheckboxInput name="emailUpdates" label="Email updates" defaultChecked />
+      <CheckboxInput name="smsAlerts" label="SMS notifications" />
+      <CheckboxInput name="phoneCalls" label="Phone calls" />
       <CheckboxInput
         name="analytics"
-        label="Allow anonymous analytics tracking"
+        label="Allow analytics cookies"
         defaultChecked
       />
       <CheckboxInput
-        name="marketing"
-        label="Receive promotional updates and newsletters"
+        name="personalization"
+        label="Allow personalized content"
       />
+      <TextInput name="notes" label="Additional notes" multiline rows={3} />
       <Button type="submit" variant="primary">
-        Save consent settings
+        Save preferences
       </Button>
     </form>
   )

@@ -23,21 +23,27 @@ export default function EventRegistrationForm() {
       sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
     >
       <FormControl required>
-        <FormLabel>Attendee name</FormLabel>
-        <Input name="name" type="text" required />
+        <FormLabel>Full name</FormLabel>
+        <Input name="fullName" type="text" required />
       </FormControl>
       <FormControl required>
         <FormLabel>Email address</FormLabel>
         <Input name="email" type="email" required />
       </FormControl>
       <FormControl required>
-        <FormLabel>Ticket pass</FormLabel>
-        <Select name="ticket" defaultValue="general" required>
-          <Option value="general">General Admission</Option>
-          <Option value="vip">VIP Access</Option>
+        <FormLabel>Ticket type</FormLabel>
+        <Select name="ticketType" defaultValue="general" required>
+          <Option value="general">General admission</Option>
+          <Option value="vip">VIP</Option>
+          <Option value="student">Student</Option>
         </Select>
       </FormControl>
-      <Button type="submit">Register for event</Button>
+      <FormControl required>
+        <FormLabel>Number of guests</FormLabel>
+        <Input name="guests" type="number" defaultValue="1" required />
+      </FormControl>
+      <Checkbox name="notify" label="Notify me about future events" />
+      <Button type="submit">Register</Button>
     </Box>
   )
 }

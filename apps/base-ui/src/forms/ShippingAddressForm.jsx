@@ -48,8 +48,11 @@ export default function ShippingAddressForm() {
         style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
       >
         <Field.Root required className="base-field">
-          <Field.Label className="base-label">State / Province</Field.Label>
+          <Field.Label className="base-label">
+            State / Province / Territory
+          </Field.Label>
           <select className="base-select" name="region" required>
+            <option value="">Select an option</option>
             {regionOptions.map((region) => (
               <option key={region} value={region}>
                 {region}

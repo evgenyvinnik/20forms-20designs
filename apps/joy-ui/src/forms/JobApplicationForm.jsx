@@ -35,9 +35,21 @@ export default function JobApplicationForm() {
         <Input name="phone" type="tel" required />
       </FormControl>
       <FormControl required>
+        <FormLabel>Role applied for</FormLabel>
+        <Input name="role" type="text" required />
+      </FormControl>
+      <FormControl required>
+        <FormLabel>Resume link</FormLabel>
+        <Input name="resumeUrl" type="url" required />
+      </FormControl>
+      <FormControl required>
         <FormLabel>Cover letter</FormLabel>
         <Input name="coverLetter" multiline minRows={4} required />
       </FormControl>
+      <Checkbox
+        name="keepInformed"
+        label="Keep me informed about future roles"
+      />
       <Button type="submit">Submit application</Button>
     </Box>
   )

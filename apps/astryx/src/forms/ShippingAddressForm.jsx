@@ -11,7 +11,10 @@ function ShippingAddressForm() {
   }
 
   const regionList = country === 'CA' ? CANADIAN_PROVINCES : US_STATES
-  const regionOptions = regionList.map((r) => ({ value: r, label: r }))
+  const regionOptions = [
+    { value: '', label: 'Select an option' },
+    ...regionList.map((r) => ({ value: r, label: r })),
+  ]
 
   return (
     <form
@@ -37,10 +40,11 @@ function ShippingAddressForm() {
       >
         <Selector
           name="region"
-          label="State / Province"
+          label="State / Province / Territory"
           value={region}
           onChange={(val) => setRegion(val)}
           options={regionOptions}
+          required
         />
         <TextInput name="postalCode" type="text" label="Postal code" required />
       </div>

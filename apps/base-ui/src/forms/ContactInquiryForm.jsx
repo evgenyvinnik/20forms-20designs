@@ -10,7 +10,7 @@ export default function ContactInquiryForm() {
   return (
     <form onSubmit={handleSubmit} className="base-form">
       <Field.Root required className="base-field">
-        <Field.Label className="base-label">Your name</Field.Label>
+        <Field.Label className="base-label">Full name</Field.Label>
         <Field.Control
           className="base-input"
           name="name"
@@ -32,12 +32,13 @@ export default function ContactInquiryForm() {
         <select
           className="base-select"
           name="topic"
-          defaultValue="general"
+          defaultValue="support"
           required
         >
-          <option value="general">General Support</option>
-          <option value="sales">Sales & Business</option>
-          <option value="feedback">Product Feedback</option>
+          <option value="support">Support</option>
+          <option value="sales">Sales</option>
+          <option value="feedback">Feedback</option>
+          <option value="other">Other</option>
         </select>
       </Field.Root>
       <Field.Root required className="base-field">
@@ -50,8 +51,19 @@ export default function ContactInquiryForm() {
           required
         />
       </Field.Root>
+      <label
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          fontSize: '0.875rem',
+        }}
+      >
+        <input type="checkbox" name="allowFollowup" />
+        Allow follow-up communication
+      </label>
       <button type="submit" className="base-button">
-        Send inquiry
+        Submit inquiry
       </button>
     </form>
   )

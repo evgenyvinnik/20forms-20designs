@@ -19,7 +19,7 @@ export default function OrderTrackingForm() {
         />
       </Field.Root>
       <Field.Root required className="base-field">
-        <Field.Label className="base-label">Billing email address</Field.Label>
+        <Field.Label className="base-label">Email address</Field.Label>
         <Field.Control
           className="base-input"
           name="email"
@@ -27,8 +27,17 @@ export default function OrderTrackingForm() {
           required
         />
       </Field.Root>
+      <Field.Root required className="base-field">
+        <Field.Label className="base-label">Postal code</Field.Label>
+        <Field.Control
+          className="base-input"
+          name="postalCode"
+          type="text"
+          required
+        />
+      </Field.Root>
       <button type="submit" className="base-button">
-        Track order
+        Find order
       </button>
     </form>
   )

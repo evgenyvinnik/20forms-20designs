@@ -48,8 +48,11 @@ export default function ShippingAddressForm() {
         style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
       >
         <Field.Root required className="ark-field">
-          <Field.Label className="ark-label">State / Province</Field.Label>
+          <Field.Label className="ark-label">
+            State / Province / Territory
+          </Field.Label>
           <select className="ark-select" name="region" required>
+            <option value="">Select an option</option>
             {regionOptions.map((region) => (
               <option key={region} value={region}>
                 {region}

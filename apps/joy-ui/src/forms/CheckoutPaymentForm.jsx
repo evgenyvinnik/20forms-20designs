@@ -29,9 +29,9 @@ export default function CheckoutPaymentForm() {
       <FormControl required>
         <FormLabel>Shipping method</FormLabel>
         <Select name="shippingMethod" defaultValue="standard" required>
-          <Option value="standard">Standard Shipping</Option>
-          <Option value="express">Express Shipping</Option>
-          <Option value="overnight">Overnight Delivery</Option>
+          <Option value="standard">Standard</Option>
+          <Option value="express">Express</Option>
+          <Option value="overnight">Overnight</Option>
         </Select>
       </FormControl>
       <FormControl required>
@@ -40,6 +40,7 @@ export default function CheckoutPaymentForm() {
           name="cardNumber"
           type="text"
           slotProps={{ input: { maxLength: 19 } }}
+          slotProps={{ input: { pattern: '[0-9]{13,19}' } }}
           required
         />
       </FormControl>

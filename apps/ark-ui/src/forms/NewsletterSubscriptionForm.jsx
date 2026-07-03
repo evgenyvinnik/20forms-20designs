@@ -14,15 +14,16 @@ export default function NewsletterSubscriptionForm() {
         <Field.Input className="ark-input" name="email" type="email" required />
       </Field.Root>
       <Field.Root required className="ark-field">
-        <Field.Label className="ark-label">Digest frequency</Field.Label>
+        <Field.Label className="ark-label">Frequency</Field.Label>
         <select
           className="ark-select"
           name="frequency"
           defaultValue="weekly"
           required
         >
-          <option value="weekly">Weekly digest</option>
-          <option value="monthly">Monthly summary</option>
+          <option value="weekly">Weekly</option>
+          <option value="monthly">Monthly</option>
+          <option value="quarterly">Quarterly</option>
         </select>
       </Field.Root>
       <label
@@ -33,8 +34,8 @@ export default function NewsletterSubscriptionForm() {
           fontSize: '0.875rem',
         }}
       >
-        <input type="checkbox" name="productUpdates" defaultChecked />
-        Include product release notes
+        <input type="checkbox" name="receiveUpdates" defaultChecked />
+        Receive product updates
       </label>
       <button type="submit" className="ark-button">
         Subscribe

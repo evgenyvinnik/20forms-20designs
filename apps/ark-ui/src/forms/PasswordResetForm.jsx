@@ -9,15 +9,15 @@ export default function PasswordResetForm() {
 
   return (
     <form onSubmit={handleSubmit} className="ark-form">
+      <p style={{ fontSize: '0.875rem', color: '#64748b', margin: 0 }}>
+        Request a password reset link via email.
+      </p>
       <Field.Root required className="ark-field">
         <Field.Label className="ark-label">Account email address</Field.Label>
         <Field.Input className="ark-input" name="email" type="email" required />
-        <span style={{ fontSize: '0.75rem', color: '#64748b' }}>
-          Instructions will be sent to this address if an account exists.
-        </span>
       </Field.Root>
       <button type="submit" className="ark-button">
-        Send reset instructions
+        Send reset link
       </button>
     </form>
   )

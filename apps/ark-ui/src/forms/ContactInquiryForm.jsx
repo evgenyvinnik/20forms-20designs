@@ -10,7 +10,7 @@ export default function ContactInquiryForm() {
   return (
     <form onSubmit={handleSubmit} className="ark-form">
       <Field.Root required className="ark-field">
-        <Field.Label className="ark-label">Your name</Field.Label>
+        <Field.Label className="ark-label">Full name</Field.Label>
         <Field.Input className="ark-input" name="name" type="text" required />
       </Field.Root>
       <Field.Root required className="ark-field">
@@ -22,12 +22,13 @@ export default function ContactInquiryForm() {
         <select
           className="ark-select"
           name="topic"
-          defaultValue="general"
+          defaultValue="support"
           required
         >
-          <option value="general">General Support</option>
-          <option value="sales">Sales & Business</option>
-          <option value="feedback">Product Feedback</option>
+          <option value="support">Support</option>
+          <option value="sales">Sales</option>
+          <option value="feedback">Feedback</option>
+          <option value="other">Other</option>
         </select>
       </Field.Root>
       <Field.Root required className="ark-field">
@@ -39,8 +40,19 @@ export default function ContactInquiryForm() {
           required
         />
       </Field.Root>
+      <label
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          fontSize: '0.875rem',
+        }}
+      >
+        <input type="checkbox" name="allowFollowup" />
+        Allow follow-up communication
+      </label>
       <button type="submit" className="ark-button">
-        Send inquiry
+        Submit inquiry
       </button>
     </form>
   )

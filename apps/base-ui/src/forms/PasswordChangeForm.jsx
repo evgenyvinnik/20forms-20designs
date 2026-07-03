@@ -36,6 +36,17 @@ export default function PasswordChangeForm() {
           required
         />
       </Field.Root>
+      <label
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          fontSize: '0.875rem',
+        }}
+      >
+        <input type="checkbox" name="signOutOther" />
+        Sign out of other devices
+      </label>
       <button type="submit" className="base-button">
         Update password
       </button>

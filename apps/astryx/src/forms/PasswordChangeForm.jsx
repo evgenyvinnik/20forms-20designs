@@ -30,6 +30,7 @@ function PasswordChangeForm() {
         label="Confirm new password"
         required
       />
+      <CheckboxInput name="signOutOther" label="Sign out of other devices" />
       <Button type="submit" variant="primary">
         Update password
       </Button>

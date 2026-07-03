@@ -34,6 +34,7 @@ export default function PasswordChangeForm() {
         <FormLabel>Confirm new password</FormLabel>
         <Input name="confirmPassword" type="password" required />
       </FormControl>
+      <Checkbox name="signOutOther" label="Sign out of other devices" />
       <Button type="submit">Update password</Button>
     </Box>
   )

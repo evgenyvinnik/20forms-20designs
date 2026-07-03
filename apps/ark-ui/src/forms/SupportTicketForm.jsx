@@ -20,25 +20,52 @@ export default function SupportTicketForm() {
       </Field.Root>
       <Field.Root required className="ark-field">
         <Field.Label className="ark-label">Priority</Field.Label>
-        <select
-          className="ark-select"
-          name="priority"
-          defaultValue="medium"
-          required
-        >
-          <option value="low">Low</option>
-          <option value="medium">Medium</option>
-          <option value="high">High</option>
-        </select>
+        <div style={{ display: 'flex', gap: '1rem' }}>
+          <label
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.25rem',
+              fontSize: '0.875rem',
+            }}
+          >
+            <input type="radio" name="priority" value="low" /> Low
+          </label>
+          <label
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.25rem',
+              fontSize: '0.875rem',
+            }}
+          >
+            <input type="radio" name="priority" value="medium" defaultChecked />{' '}
+            Medium
+          </label>
+          <label
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.25rem',
+              fontSize: '0.875rem',
+            }}
+          >
+            <input type="radio" name="priority" value="high" /> High
+          </label>
+        </div>
       </Field.Root>
       <Field.Root required className="ark-field">
-        <Field.Label className="ark-label">Description</Field.Label>
+        <Field.Label className="ark-label">Issue description</Field.Label>
         <Field.Textarea
           className="ark-textarea"
           name="description"
           rows={4}
           required
         />
+      </Field.Root>
+      <Field.Root className="ark-field">
+        <Field.Label className="ark-label">Attachments</Field.Label>
+        <Field.Input className="ark-input" name="attachment" type="file" />
       </Field.Root>
       <button type="submit" className="ark-button">
         Submit ticket

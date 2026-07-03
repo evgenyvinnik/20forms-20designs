@@ -12,6 +12,9 @@ function PasswordResetForm() {
       onSubmit={handleSubmit}
       style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
+      <p style={{ fontSize: '0.875rem', color: '#64748b', margin: 0 }}>
+        Request a password reset link via email.
+      </p>
       <TextInput
         name="email"
         type="email"
@@ -19,7 +22,7 @@ function PasswordResetForm() {
         required
       />
       <Button type="submit" variant="primary">
-        Send reset instructions
+        Send reset link
       </Button>
     </form>
   )

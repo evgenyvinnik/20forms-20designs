@@ -9,6 +9,24 @@ export default function PrivacyConsentForm() {
 
   return (
     <form onSubmit={handleSubmit} className="base-form">
+      <Field.Root required className="base-field">
+        <Field.Label className="base-label">Full name</Field.Label>
+        <Field.Control
+          className="base-input"
+          name="fullName"
+          type="text"
+          required
+        />
+      </Field.Root>
+      <Field.Root required className="base-field">
+        <Field.Label className="base-label">Email address</Field.Label>
+        <Field.Control
+          className="base-input"
+          name="email"
+          type="email"
+          required
+        />
+      </Field.Root>
       <label
         style={{
           display: 'flex',
@@ -17,8 +35,30 @@ export default function PrivacyConsentForm() {
           fontSize: '0.875rem',
         }}
       >
-        <input type="checkbox" name="necessary" defaultChecked disabled />
-        Essential cookies required for site operation
+        <input type="checkbox" name="emailUpdates" defaultChecked />
+        Email updates
+      </label>
+      <label
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          fontSize: '0.875rem',
+        }}
+      >
+        <input type="checkbox" name="smsAlerts" />
+        SMS notifications
+      </label>
+      <label
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          fontSize: '0.875rem',
+        }}
+      >
+        <input type="checkbox" name="phoneCalls" />
+        Phone calls
       </label>
       <label
         style={{
@@ -29,7 +69,7 @@ export default function PrivacyConsentForm() {
         }}
       >
         <input type="checkbox" name="analytics" defaultChecked />
-        Allow anonymous analytics tracking
+        Allow analytics cookies
       </label>
       <label
         style={{
@@ -39,11 +79,20 @@ export default function PrivacyConsentForm() {
           fontSize: '0.875rem',
         }}
       >
-        <input type="checkbox" name="marketing" />
-        Receive promotional updates and newsletters
+        <input type="checkbox" name="personalization" />
+        Allow personalized content
       </label>
+      <Field.Root className="base-field">
+        <Field.Label className="base-label">Additional notes</Field.Label>
+        <Field.Control
+          render={<textarea />}
+          className="base-textarea"
+          name="notes"
+          rows={3}
+        />
+      </Field.Root>
       <button type="submit" className="base-button">
-        Save consent settings
+        Save preferences
       </button>
     </form>
   )

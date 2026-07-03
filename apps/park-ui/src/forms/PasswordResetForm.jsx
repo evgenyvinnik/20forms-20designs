@@ -9,6 +9,9 @@ export default function PasswordResetForm() {
 
   return (
     <form onSubmit={handleSubmit} className="park-form">
+      <p style={{ fontSize: '0.875rem', color: '#64748b', margin: 0 }}>
+        Request a password reset link via email.
+      </p>
       <Field.Root required className="park-field">
         <Field.Label className="park-label">Account email address</Field.Label>
         <Field.Input
@@ -17,12 +20,9 @@ export default function PasswordResetForm() {
           type="email"
           required
         />
-        <span style={{ fontSize: '0.75rem', color: '#64748b' }}>
-          Instructions will be sent to this address if an account exists.
-        </span>
       </Field.Root>
       <button type="submit" className="park-button">
-        Send reset instructions
+        Send reset link
       </button>
     </form>
   )

@@ -59,8 +59,8 @@ export default function ShippingAddressForm() {
       </FormControl>
       <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}>
         <FormControl required>
-          <FormLabel>State / Province</FormLabel>
-          <Select name="region" required>
+          <FormLabel>State / Province / Territory</FormLabel>
+          <Select name="region" required placeholder="Select an option">
             {regionList.map((region) => (
               <Option key={region} value={region}>
                 {region}

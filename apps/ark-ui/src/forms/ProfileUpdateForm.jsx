@@ -10,17 +10,27 @@ export default function ProfileUpdateForm() {
   return (
     <form onSubmit={handleSubmit} className="ark-form">
       <Field.Root required className="ark-field">
-        <Field.Label className="ark-label">Display name</Field.Label>
+        <Field.Label className="ark-label">First name</Field.Label>
         <Field.Input
           className="ark-input"
-          name="displayName"
+          name="firstName"
           type="text"
-          defaultValue="Jane Doe"
+          defaultValue="Jane"
           required
         />
       </Field.Root>
       <Field.Root required className="ark-field">
-        <Field.Label className="ark-label">Public email</Field.Label>
+        <Field.Label className="ark-label">Last name</Field.Label>
+        <Field.Input
+          className="ark-input"
+          name="lastName"
+          type="text"
+          defaultValue="Doe"
+          required
+        />
+      </Field.Root>
+      <Field.Root required className="ark-field">
+        <Field.Label className="ark-label">Email address</Field.Label>
         <Field.Input
           className="ark-input"
           name="email"
@@ -30,7 +40,11 @@ export default function ProfileUpdateForm() {
         />
       </Field.Root>
       <Field.Root className="ark-field">
-        <Field.Label className="ark-label">Bio</Field.Label>
+        <Field.Label className="ark-label">Phone number</Field.Label>
+        <Field.Input className="ark-input" name="phone" type="tel" />
+      </Field.Root>
+      <Field.Root className="ark-field">
+        <Field.Label className="ark-label">Short bio</Field.Label>
         <Field.Textarea
           className="ark-textarea"
           name="bio"
@@ -39,7 +53,7 @@ export default function ProfileUpdateForm() {
         />
       </Field.Root>
       <button type="submit" className="ark-button">
-        Save profile
+        Save changes
       </button>
     </form>
   )

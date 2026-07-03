@@ -26,9 +26,9 @@ export default function CheckoutPaymentForm() {
           defaultValue="standard"
           required
         >
-          <option value="standard">Standard Shipping</option>
-          <option value="express">Express Shipping</option>
-          <option value="overnight">Overnight Delivery</option>
+          <option value="standard">Standard</option>
+          <option value="express">Express</option>
+          <option value="overnight">Overnight</option>
         </select>
       </Field.Root>
       <Field.Root required className="base-field">
@@ -38,6 +38,7 @@ export default function CheckoutPaymentForm() {
           name="cardNumber"
           type="text"
           maxLength={19}
+          pattern="[0-9]{13,19}"
           required
         />
       </Field.Root>

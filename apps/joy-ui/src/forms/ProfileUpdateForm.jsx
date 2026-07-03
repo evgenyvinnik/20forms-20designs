@@ -23,16 +23,15 @@ export default function ProfileUpdateForm() {
       sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
     >
       <FormControl required>
-        <FormLabel>Display name</FormLabel>
-        <Input
-          name="displayName"
-          type="text"
-          defaultValue="Jane Doe"
-          required
-        />
+        <FormLabel>First name</FormLabel>
+        <Input name="firstName" type="text" defaultValue="Jane" required />
       </FormControl>
       <FormControl required>
-        <FormLabel>Public email</FormLabel>
+        <FormLabel>Last name</FormLabel>
+        <Input name="lastName" type="text" defaultValue="Doe" required />
+      </FormControl>
+      <FormControl required>
+        <FormLabel>Email address</FormLabel>
         <Input
           name="email"
           type="email"
@@ -41,7 +40,11 @@ export default function ProfileUpdateForm() {
         />
       </FormControl>
       <FormControl>
-        <FormLabel>Bio</FormLabel>
+        <FormLabel>Phone number</FormLabel>
+        <Input name="phone" type="tel" />
+      </FormControl>
+      <FormControl>
+        <FormLabel>Short bio</FormLabel>
         <Input
           name="bio"
           multiline
@@ -49,7 +52,7 @@ export default function ProfileUpdateForm() {
           defaultValue="Software developer based in San Francisco."
         />
       </FormControl>
-      <Button type="submit">Save profile</Button>
+      <Button type="submit">Save changes</Button>
     </Box>
   )
 }

@@ -19,7 +19,7 @@ export default function OrderTrackingForm() {
         />
       </Field.Root>
       <Field.Root required className="park-field">
-        <Field.Label className="park-label">Billing email address</Field.Label>
+        <Field.Label className="park-label">Email address</Field.Label>
         <Field.Input
           className="park-input"
           name="email"
@@ -27,8 +27,17 @@ export default function OrderTrackingForm() {
           required
         />
       </Field.Root>
+      <Field.Root required className="park-field">
+        <Field.Label className="park-label">Postal code</Field.Label>
+        <Field.Input
+          className="park-input"
+          name="postalCode"
+          type="text"
+          required
+        />
+      </Field.Root>
       <button type="submit" className="park-button">
-        Track order
+        Find order
       </button>
     </form>
   )

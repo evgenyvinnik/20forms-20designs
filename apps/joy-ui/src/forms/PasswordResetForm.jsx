@@ -22,14 +22,14 @@ export default function PasswordResetForm() {
       onSubmit={handleSubmit}
       sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
     >
+      <p style={{ fontSize: '0.875rem', color: '#64748b', margin: 0 }}>
+        Request a password reset link via email.
+      </p>
       <FormControl required>
         <FormLabel>Account email address</FormLabel>
         <Input name="email" type="email" required />
-        <span style={{ fontSize: '0.75rem', color: '#64748b' }}>
-          Instructions will be sent to this address if an account exists.
-        </span>
       </FormControl>
-      <Button type="submit">Send reset instructions</Button>
+      <Button type="submit">Send reset link</Button>
     </Box>
   )
 }

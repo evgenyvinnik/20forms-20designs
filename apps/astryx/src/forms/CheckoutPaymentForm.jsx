@@ -18,16 +18,18 @@ function CheckoutPaymentForm() {
         label="Shipping method"
         defaultValue="standard"
         options={[
-          { value: 'standard', label: 'Standard Shipping' },
-          { value: 'express', label: 'Express Shipping' },
-          { value: 'overnight', label: 'Overnight Delivery' },
+          { value: 'standard', label: 'Standard' },
+          { value: 'express', label: 'Express' },
+          { value: 'overnight', label: 'Overnight' },
         ]}
+        required
       />
       <TextInput
         name="cardNumber"
         type="text"
         label="Card number"
         maxLength={19}
+        pattern="[0-9]{13,19}"
         required
       />
       <div

@@ -27,15 +27,16 @@ export default function NewsletterSubscriptionForm() {
         <Input name="email" type="email" required />
       </FormControl>
       <FormControl required>
-        <FormLabel>Digest frequency</FormLabel>
+        <FormLabel>Frequency</FormLabel>
         <Select name="frequency" defaultValue="weekly" required>
-          <Option value="weekly">Weekly digest</Option>
-          <Option value="monthly">Monthly summary</Option>
+          <Option value="weekly">Weekly</Option>
+          <Option value="monthly">Monthly</Option>
+          <Option value="quarterly">Quarterly</Option>
         </Select>
       </FormControl>
       <Checkbox
-        name="productUpdates"
-        label="Include product release notes"
+        name="receiveUpdates"
+        label="Receive product updates"
         defaultChecked
       />
       <Button type="submit">Subscribe</Button>

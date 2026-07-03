@@ -12,21 +12,27 @@ function ContactInquiryForm() {
       onSubmit={handleSubmit}
       style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
-      <TextInput name="name" type="text" label="Your name" required />
+      <TextInput name="name" type="text" label="Full name" required />
       <TextInput name="email" type="email" label="Email address" required />
       <Selector
         name="topic"
         label="Topic"
-        defaultValue="general"
+        defaultValue="support"
         options={[
-          { value: 'general', label: 'General Support' },
-          { value: 'sales', label: 'Sales & Business' },
-          { value: 'feedback', label: 'Product Feedback' },
+          { value: 'support', label: 'Support' },
+          { value: 'sales', label: 'Sales' },
+          { value: 'feedback', label: 'Feedback' },
+          { value: 'other', label: 'Other' },
         ]}
+        required
       />
       <TextInput name="message" label="Message" multiline rows={4} required />
+      <CheckboxInput
+        name="allowFollowup"
+        label="Allow follow-up communication"
+      />
       <Button type="submit" variant="primary">
-        Send inquiry
+        Submit inquiry
       </Button>
     </form>
   )

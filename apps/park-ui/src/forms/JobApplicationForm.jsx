@@ -32,6 +32,19 @@ export default function JobApplicationForm() {
         <Field.Input className="park-input" name="phone" type="tel" required />
       </Field.Root>
       <Field.Root required className="park-field">
+        <Field.Label className="park-label">Role applied for</Field.Label>
+        <Field.Input className="park-input" name="role" type="text" required />
+      </Field.Root>
+      <Field.Root required className="park-field">
+        <Field.Label className="park-label">Resume link</Field.Label>
+        <Field.Input
+          className="park-input"
+          name="resumeUrl"
+          type="url"
+          required
+        />
+      </Field.Root>
+      <Field.Root required className="park-field">
         <Field.Label className="park-label">Cover letter</Field.Label>
         <Field.Textarea
           className="park-textarea"
@@ -40,6 +53,17 @@ export default function JobApplicationForm() {
           required
         />
       </Field.Root>
+      <label
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          fontSize: '0.875rem',
+        }}
+      >
+        <input type="checkbox" name="keepInformed" />
+        Keep me informed about future roles
+      </label>
       <button type="submit" className="park-button">
         Submit application
       </button>

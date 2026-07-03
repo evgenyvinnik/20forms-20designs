@@ -19,15 +19,16 @@ export default function NewsletterSubscriptionForm() {
         />
       </Field.Root>
       <Field.Root required className="base-field">
-        <Field.Label className="base-label">Digest frequency</Field.Label>
+        <Field.Label className="base-label">Frequency</Field.Label>
         <select
           className="base-select"
           name="frequency"
           defaultValue="weekly"
           required
         >
-          <option value="weekly">Weekly digest</option>
-          <option value="monthly">Monthly summary</option>
+          <option value="weekly">Weekly</option>
+          <option value="monthly">Monthly</option>
+          <option value="quarterly">Quarterly</option>
         </select>
       </Field.Root>
       <label
@@ -38,8 +39,8 @@ export default function NewsletterSubscriptionForm() {
           fontSize: '0.875rem',
         }}
       >
-        <input type="checkbox" name="productUpdates" defaultChecked />
-        Include product release notes
+        <input type="checkbox" name="receiveUpdates" defaultChecked />
+        Receive product updates
       </label>
       <button type="submit" className="base-button">
         Subscribe

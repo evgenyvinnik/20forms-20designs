@@ -27,10 +27,14 @@ export default function OrderTrackingForm() {
         <Input name="orderNumber" type="text" required />
       </FormControl>
       <FormControl required>
-        <FormLabel>Billing email address</FormLabel>
+        <FormLabel>Email address</FormLabel>
         <Input name="email" type="email" required />
       </FormControl>
-      <Button type="submit">Track order</Button>
+      <FormControl required>
+        <FormLabel>Postal code</FormLabel>
+        <Input name="postalCode" type="text" required />
+      </FormControl>
+      <Button type="submit">Find order</Button>
     </Box>
   )
 }

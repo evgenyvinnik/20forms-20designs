@@ -23,24 +23,46 @@ export default function BillingInfoForm() {
       sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
     >
       <FormControl required>
-        <FormLabel>Billing name</FormLabel>
-        <Input name="billingName" type="text" required />
+        <FormLabel>Name on card</FormLabel>
+        <Input name="cardName" type="text" required />
       </FormControl>
       <FormControl required>
-        <FormLabel>Street address</FormLabel>
-        <Input name="address" type="text" required />
+        <FormLabel>Card number</FormLabel>
+        <Input
+          name="cardNumber"
+          type="text"
+          slotProps={{ input: { maxLength: 19 } }}
+          slotProps={{ input: { pattern: '[0-9]{13,19}' } }}
+          required
+        />
       </FormControl>
       <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}>
         <FormControl required>
-          <FormLabel>City</FormLabel>
-          <Input name="city" type="text" required />
+          <FormLabel>Expiration date</FormLabel>
+          <Input name="expiry" type="text" placeholder="MM/YY" required />
         </FormControl>
         <FormControl required>
-          <FormLabel>ZIP code</FormLabel>
-          <Input name="zip" type="text" required />
+          <FormLabel>Security code</FormLabel>
+          <Input
+            name="cvc"
+            type="password"
+            slotProps={{ input: { maxLength: 4 } }}
+            required
+          />
         </FormControl>
       </Box>
-      <Button type="submit">Save billing info</Button>
+      <FormControl required>
+        <FormLabel>Billing address</FormLabel>
+        <Input name="address" type="text" required />
+      </FormControl>
+      <FormControl required>
+        <FormLabel>Country</FormLabel>
+        <Select name="country" defaultValue="US" required>
+          <Option value="US">United States</Option>
+          <Option value="CA">Canada</Option>
+        </Select>
+      </FormControl>
+      <Button type="submit">Save billing details</Button>
     </Box>
   )
 }

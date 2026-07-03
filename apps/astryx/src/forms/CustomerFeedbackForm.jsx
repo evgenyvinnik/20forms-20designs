@@ -12,21 +12,24 @@ function CustomerFeedbackForm() {
       onSubmit={handleSubmit}
       style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
+      <TextInput name="fullName" type="text" label="Full name" required />
+      <TextInput name="email" type="email" label="Email address" required />
       <Selector
         name="rating"
-        label="Satisfaction rating"
-        defaultValue="5"
+        label="Overall rating"
+        defaultValue="excellent"
         options={[
-          { value: '5', label: '5 - Excellent' },
-          { value: '4', label: '4 - Good' },
-          { value: '3', label: '3 - Average' },
-          { value: '2', label: '2 - Poor' },
-          { value: '1', label: '1 - Very Poor' },
+          { value: 'excellent', label: 'Excellent' },
+          { value: 'good', label: 'Good' },
+          { value: 'average', label: 'Average' },
+          { value: 'poor', label: 'Poor' },
         ]}
+        required
       />
       <TextInput name="comments" label="Comments" multiline rows={4} required />
+      <CheckboxInput name="followUp" label="I would like a follow-up" />
       <Button type="submit" variant="primary">
-        Submit feedback
+        Send feedback
       </Button>
     </form>
   )

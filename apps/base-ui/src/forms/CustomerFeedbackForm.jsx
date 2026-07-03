@@ -10,13 +10,35 @@ export default function CustomerFeedbackForm() {
   return (
     <form onSubmit={handleSubmit} className="base-form">
       <Field.Root required className="base-field">
-        <Field.Label className="base-label">Satisfaction rating</Field.Label>
-        <select className="base-select" name="rating" defaultValue="5" required>
-          <option value="5">5 - Excellent</option>
-          <option value="4">4 - Good</option>
-          <option value="3">3 - Average</option>
-          <option value="2">2 - Poor</option>
-          <option value="1">1 - Very Poor</option>
+        <Field.Label className="base-label">Full name</Field.Label>
+        <Field.Control
+          className="base-input"
+          name="fullName"
+          type="text"
+          required
+        />
+      </Field.Root>
+      <Field.Root required className="base-field">
+        <Field.Label className="base-label">Email address</Field.Label>
+        <Field.Control
+          className="base-input"
+          name="email"
+          type="email"
+          required
+        />
+      </Field.Root>
+      <Field.Root required className="base-field">
+        <Field.Label className="base-label">Overall rating</Field.Label>
+        <select
+          className="base-select"
+          name="rating"
+          defaultValue="excellent"
+          required
+        >
+          <option value="excellent">Excellent</option>
+          <option value="good">Good</option>
+          <option value="average">Average</option>
+          <option value="poor">Poor</option>
         </select>
       </Field.Root>
       <Field.Root required className="base-field">
@@ -29,8 +51,18 @@ export default function CustomerFeedbackForm() {
           required
         />
       </Field.Root>
+      <label
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          fontSize: '0.875rem',
+        }}
+      >
+        <input type="checkbox" name="followUp" />I would like a follow-up
+      </label>
       <button type="submit" className="base-button">
-        Submit feedback
+        Send feedback
       </button>
     </form>
   )

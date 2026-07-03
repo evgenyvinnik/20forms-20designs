@@ -9,6 +9,19 @@ export default function PrivacyConsentForm() {
 
   return (
     <form onSubmit={handleSubmit} className="ark-form">
+      <Field.Root required className="ark-field">
+        <Field.Label className="ark-label">Full name</Field.Label>
+        <Field.Input
+          className="ark-input"
+          name="fullName"
+          type="text"
+          required
+        />
+      </Field.Root>
+      <Field.Root required className="ark-field">
+        <Field.Label className="ark-label">Email address</Field.Label>
+        <Field.Input className="ark-input" name="email" type="email" required />
+      </Field.Root>
       <label
         style={{
           display: 'flex',
@@ -17,8 +30,30 @@ export default function PrivacyConsentForm() {
           fontSize: '0.875rem',
         }}
       >
-        <input type="checkbox" name="necessary" defaultChecked disabled />
-        Essential cookies required for site operation
+        <input type="checkbox" name="emailUpdates" defaultChecked />
+        Email updates
+      </label>
+      <label
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          fontSize: '0.875rem',
+        }}
+      >
+        <input type="checkbox" name="smsAlerts" />
+        SMS notifications
+      </label>
+      <label
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          fontSize: '0.875rem',
+        }}
+      >
+        <input type="checkbox" name="phoneCalls" />
+        Phone calls
       </label>
       <label
         style={{
@@ -29,7 +64,7 @@ export default function PrivacyConsentForm() {
         }}
       >
         <input type="checkbox" name="analytics" defaultChecked />
-        Allow anonymous analytics tracking
+        Allow analytics cookies
       </label>
       <label
         style={{
@@ -39,11 +74,15 @@ export default function PrivacyConsentForm() {
           fontSize: '0.875rem',
         }}
       >
-        <input type="checkbox" name="marketing" />
-        Receive promotional updates and newsletters
+        <input type="checkbox" name="personalization" />
+        Allow personalized content
       </label>
+      <Field.Root className="ark-field">
+        <Field.Label className="ark-label">Additional notes</Field.Label>
+        <Field.Textarea className="ark-textarea" name="notes" rows={3} />
+      </Field.Root>
       <button type="submit" className="ark-button">
-        Save consent settings
+        Save preferences
       </button>
     </form>
   )

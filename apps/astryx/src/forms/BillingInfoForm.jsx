@@ -12,16 +12,46 @@ function BillingInfoForm() {
       onSubmit={handleSubmit}
       style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
-      <TextInput name="billingName" type="text" label="Billing name" required />
-      <TextInput name="address" type="text" label="Street address" required />
+      <TextInput name="cardName" type="text" label="Name on card" required />
+      <TextInput
+        name="cardNumber"
+        type="text"
+        label="Card number"
+        maxLength={19}
+        pattern="[0-9]{13,19}"
+        required
+      />
       <div
         style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}
       >
-        <TextInput name="city" type="text" label="City" required />
-        <TextInput name="zip" type="text" label="ZIP code" required />
+        <TextInput
+          name="expiry"
+          type="text"
+          label="Expiration date"
+          placeholder="MM/YY"
+          required
+        />
+        <TextInput
+          name="cvc"
+          type="password"
+          label="Security code"
+          maxLength={4}
+          required
+        />
       </div>
+      <TextInput name="address" type="text" label="Billing address" required />
+      <Selector
+        name="country"
+        label="Country"
+        defaultValue="US"
+        options={[
+          { value: 'US', label: 'United States' },
+          { value: 'CA', label: 'Canada' },
+        ]}
+        required
+      />
       <Button type="submit" variant="primary">
-        Save billing info
+        Save billing details
       </Button>
     </form>
   )
