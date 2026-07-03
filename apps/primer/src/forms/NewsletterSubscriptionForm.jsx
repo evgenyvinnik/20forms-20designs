@@ -1,11 +1,4 @@
-import {
-  Box,
-  FormControl,
-  TextInput,
-  Select,
-  Checkbox,
-  Button,
-} from '@primer/react'
+import { FormControl, TextInput, Select, Checkbox, Button } from '@primer/react'
 
 function NewsletterSubscriptionForm() {
   const handleSubmit = (event) => {
@@ -14,10 +7,9 @@ function NewsletterSubscriptionForm() {
   }
 
   return (
-    <Box
-      as="form"
+    <form
       onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <FormControl required>
         <FormControl.Label>Email address</FormControl.Label>
@@ -47,7 +39,7 @@ function NewsletterSubscriptionForm() {
       <Button type="submit" variant="primary" block>
         Subscribe
       </Button>
-    </Box>
+    </form>
   )
 }
 

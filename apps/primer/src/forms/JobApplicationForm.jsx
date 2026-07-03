@@ -1,5 +1,4 @@
 import {
-  Box,
   FormControl,
   TextInput,
   Textarea,
@@ -14,10 +13,9 @@ function JobApplicationForm() {
   }
 
   return (
-    <Box
-      as="form"
+    <form
       onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <FormControl required>
         <FormControl.Label>Full name</FormControl.Label>
@@ -66,7 +64,7 @@ function JobApplicationForm() {
       <Button type="submit" variant="primary" block>
         Submit application
       </Button>
-    </Box>
+    </form>
   )
 }
 

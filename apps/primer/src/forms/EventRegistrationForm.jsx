@@ -1,11 +1,4 @@
-import {
-  Box,
-  FormControl,
-  TextInput,
-  Select,
-  Checkbox,
-  Button,
-} from '@primer/react'
+import { FormControl, TextInput, Select, Checkbox, Button } from '@primer/react'
 
 function EventRegistrationForm() {
   const handleSubmit = (event) => {
@@ -14,10 +7,9 @@ function EventRegistrationForm() {
   }
 
   return (
-    <Box
-      as="form"
+    <form
       onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <FormControl required>
         <FormControl.Label>Full name</FormControl.Label>
@@ -64,7 +56,7 @@ function EventRegistrationForm() {
       <Button type="submit" variant="primary" block>
         Register
       </Button>
-    </Box>
+    </form>
   )
 }
 

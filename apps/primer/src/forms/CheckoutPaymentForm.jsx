@@ -1,4 +1,4 @@
-import { Box, FormControl, TextInput, Select, Button } from '@primer/react'
+import { FormControl, TextInput, Select, Button } from '@primer/react'
 
 function CheckoutPaymentForm() {
   const handleSubmit = (event) => {
@@ -7,10 +7,9 @@ function CheckoutPaymentForm() {
   }
 
   return (
-    <Box
-      as="form"
+    <form
       onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <FormControl required>
         <FormControl.Label>Email for receipt</FormControl.Label>
@@ -80,7 +79,7 @@ function CheckoutPaymentForm() {
       <Button type="submit" variant="primary" block>
         Place order
       </Button>
-    </Box>
+    </form>
   )
 }
 

@@ -1,5 +1,4 @@
 import {
-  Box,
   FormControl,
   TextInput,
   Textarea,
@@ -15,10 +14,9 @@ function PrivacyConsentForm() {
   }
 
   return (
-    <Box
-      as="form"
+    <form
       onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <FormControl required>
         <FormControl.Label>Full name</FormControl.Label>
@@ -35,11 +33,11 @@ function PrivacyConsentForm() {
         <TextInput id="primer-privacy-email" name="email" type="email" block />
       </FormControl>
 
-      <Box as="fieldset" sx={{ border: 0, p: 0, m: 0 }}>
+      <fieldset style={{ border: 0, padding: 0, margin: 0 }}>
         <Text as="legend" sx={{ fontWeight: 'bold', mb: 2 }}>
           Communication channels
         </Text>
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           <FormControl>
             <Checkbox id="primer-privacy-email-optin" name="emailOptIn" />
             <FormControl.Label>Email updates</FormControl.Label>
@@ -52,14 +50,14 @@ function PrivacyConsentForm() {
             <Checkbox id="primer-privacy-phone-optin" name="phoneOptIn" />
             <FormControl.Label>Phone calls</FormControl.Label>
           </FormControl>
-        </Box>
-      </Box>
+        </div>
+      </fieldset>
 
-      <Box as="fieldset" sx={{ border: 0, p: 0, m: 0 }}>
+      <fieldset style={{ border: 0, padding: 0, margin: 0 }}>
         <Text as="legend" sx={{ fontWeight: 'bold', mb: 2 }}>
           Privacy options
         </Text>
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           <FormControl>
             <Checkbox id="primer-privacy-analytics" name="analytics" />
             <FormControl.Label>Allow analytics cookies</FormControl.Label>
@@ -71,8 +69,8 @@ function PrivacyConsentForm() {
             />
             <FormControl.Label>Allow personalized content</FormControl.Label>
           </FormControl>
-        </Box>
-      </Box>
+        </div>
+      </fieldset>
 
       <FormControl>
         <FormControl.Label>Additional notes</FormControl.Label>
@@ -82,7 +80,7 @@ function PrivacyConsentForm() {
       <Button type="submit" variant="primary" block>
         Save preferences
       </Button>
-    </Box>
+    </form>
   )
 }
 

@@ -1,5 +1,4 @@
 import {
-  Box,
   FormControl,
   TextInput,
   Textarea,
@@ -15,10 +14,9 @@ function ContactInquiryForm() {
   }
 
   return (
-    <Box
-      as="form"
+    <form
       onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <FormControl required>
         <FormControl.Label>Full name</FormControl.Label>
@@ -59,7 +57,7 @@ function ContactInquiryForm() {
       <Button type="submit" variant="primary" block>
         Submit inquiry
       </Button>
-    </Box>
+    </form>
   )
 }
 

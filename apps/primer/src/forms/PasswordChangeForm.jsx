@@ -1,4 +1,4 @@
-import { Box, FormControl, TextInput, Checkbox, Button } from '@primer/react'
+import { FormControl, TextInput, Checkbox, Button } from '@primer/react'
 
 function PasswordChangeForm() {
   const handleSubmit = (event) => {
@@ -7,10 +7,9 @@ function PasswordChangeForm() {
   }
 
   return (
-    <Box
-      as="form"
+    <form
       onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <FormControl required>
         <FormControl.Label>Current password</FormControl.Label>
@@ -52,7 +51,7 @@ function PasswordChangeForm() {
       <Button type="submit" variant="primary" block>
         Update password
       </Button>
-    </Box>
+    </form>
   )
 }
 

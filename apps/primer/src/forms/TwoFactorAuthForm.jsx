@@ -1,4 +1,4 @@
-import { Box, FormControl, TextInput, Button, Text } from '@primer/react'
+import { FormControl, TextInput, Button, Text } from '@primer/react'
 
 function TwoFactorAuthForm() {
   const handleSubmit = (event) => {
@@ -7,10 +7,9 @@ function TwoFactorAuthForm() {
   }
 
   return (
-    <Box
-      as="form"
+    <form
       onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <Text as="p" sx={{ color: 'fg.muted' }}>
         Enter the code from your authenticator app or SMS.
@@ -51,7 +50,7 @@ function TwoFactorAuthForm() {
       >
         Resend code
       </Button>
-    </Box>
+    </form>
   )
 }
 

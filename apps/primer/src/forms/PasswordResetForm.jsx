@@ -1,4 +1,4 @@
-import { Box, FormControl, TextInput, Button, Text } from '@primer/react'
+import { FormControl, TextInput, Button, Text } from '@primer/react'
 
 function PasswordResetForm() {
   const handleSubmit = (event) => {
@@ -7,10 +7,9 @@ function PasswordResetForm() {
   }
 
   return (
-    <Box
-      as="form"
+    <form
       onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <Text as="p" sx={{ color: 'fg.muted' }}>
         Request a password reset link via email.
@@ -29,7 +28,7 @@ function PasswordResetForm() {
       <Button type="submit" variant="primary" block>
         Send reset link
       </Button>
-    </Box>
+    </form>
   )
 }
 

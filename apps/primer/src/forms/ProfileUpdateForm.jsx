@@ -1,4 +1,4 @@
-import { Box, FormControl, TextInput, Textarea, Button } from '@primer/react'
+import { FormControl, TextInput, Textarea, Button } from '@primer/react'
 
 function ProfileUpdateForm() {
   const handleSubmit = (event) => {
@@ -7,10 +7,9 @@ function ProfileUpdateForm() {
   }
 
   return (
-    <Box
-      as="form"
+    <form
       onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <FormControl required>
         <FormControl.Label>First name</FormControl.Label>
@@ -57,7 +56,7 @@ function ProfileUpdateForm() {
       <Button type="submit" variant="primary" block>
         Save changes
       </Button>
-    </Box>
+    </form>
   )
 }
 

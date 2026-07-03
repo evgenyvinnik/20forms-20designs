@@ -1,11 +1,4 @@
-import {
-  Box,
-  FormControl,
-  TextInput,
-  Select,
-  Checkbox,
-  Button,
-} from '@primer/react'
+import { FormControl, TextInput, Select, Checkbox, Button } from '@primer/react'
 
 function AdvancedSearchForm() {
   const handleSubmit = (event) => {
@@ -14,10 +7,9 @@ function AdvancedSearchForm() {
   }
 
   return (
-    <Box
-      as="form"
+    <form
       onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <FormControl required>
         <FormControl.Label>Search query</FormControl.Label>
@@ -66,7 +58,7 @@ function AdvancedSearchForm() {
       <Button type="submit" variant="primary" block>
         Search
       </Button>
-    </Box>
+    </form>
   )
 }
 

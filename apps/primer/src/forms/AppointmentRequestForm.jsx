@@ -1,4 +1,4 @@
-import { Box, FormControl, TextInput, Textarea, Button } from '@primer/react'
+import { FormControl, TextInput, Textarea, Button } from '@primer/react'
 
 function AppointmentRequestForm() {
   const handleSubmit = (event) => {
@@ -7,10 +7,9 @@ function AppointmentRequestForm() {
   }
 
   return (
-    <Box
-      as="form"
+    <form
       onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <FormControl required>
         <FormControl.Label>Full name</FormControl.Label>
@@ -50,7 +49,7 @@ function AppointmentRequestForm() {
       <Button type="submit" variant="primary" block>
         Request appointment
       </Button>
-    </Box>
+    </form>
   )
 }
 

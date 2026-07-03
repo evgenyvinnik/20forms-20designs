@@ -15,7 +15,7 @@
     "@atlaskit/button": "^23.11.2",
     "@atlaskit/checkbox": "^17.3.11",
     "@atlaskit/css-reset": "^7.4.3",
-    "@atlaskit/form": "^15.5.4",
+    "@atlaskit/form": "^16.1.0",
     "@atlaskit/primitives": "^18.1.4",
     "@atlaskit/radio": "^8.5.2",
     "@atlaskit/select": "^21.10.4",

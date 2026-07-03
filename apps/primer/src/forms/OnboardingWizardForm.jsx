@@ -1,5 +1,4 @@
 import {
-  Box,
   FormControl,
   TextInput,
   Select,
@@ -16,17 +15,16 @@ function OnboardingWizardForm() {
   }
 
   return (
-    <Box
-      as="form"
+    <form
       onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <section>
         <Heading as="h3" sx={{ fontSize: 2, mb: 3 }}>
           Account
         </Heading>
 
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
           <FormControl required>
             <FormControl.Label>Work email</FormControl.Label>
             <TextInput
@@ -47,7 +45,7 @@ function OnboardingWizardForm() {
               block
             />
           </FormControl>
-        </Box>
+        </div>
       </section>
 
       <section>
@@ -55,7 +53,7 @@ function OnboardingWizardForm() {
           Team
         </Heading>
 
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
           <FormControl required>
             <FormControl.Label>Team name</FormControl.Label>
             <TextInput
@@ -76,7 +74,7 @@ function OnboardingWizardForm() {
               <Select.Option value="50+">50+</Select.Option>
             </Select>
           </FormControl>
-        </Box>
+        </div>
       </section>
 
       <section>
@@ -84,7 +82,7 @@ function OnboardingWizardForm() {
           Preferences
         </Heading>
 
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
           <FormControl required>
             <FormControl.Label>Primary goal</FormControl.Label>
             <Textarea id="primer-onboarding-goal" name="goal" rows={3} block />
@@ -94,10 +92,10 @@ function OnboardingWizardForm() {
             <Checkbox id="primer-onboarding-updates" name="updates" />
             <FormControl.Label>Send me product tips</FormControl.Label>
           </FormControl>
-        </Box>
+        </div>
       </section>
 
-      <Box sx={{ display: 'flex', gap: 2 }}>
+      <div style={{ display: 'flex', gap: 2 }}>
         <Button
           type="button"
           variant="default"
@@ -108,8 +106,8 @@ function OnboardingWizardForm() {
         <Button type="submit" variant="primary" sx={{ flex: 1 }}>
           Finish setup
         </Button>
-      </Box>
-    </Box>
+      </div>
+    </form>
   )
 }
 
