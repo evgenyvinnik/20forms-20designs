@@ -37,7 +37,9 @@ function OrderTrackingForm() {
             isRequired
           />
         </Box>
-        <Button type="submit" appearance="primary">Find order</Button>
+        <Button type="submit" appearance="primary">
+          Find order
+        </Button>
       </Stack>
     </form>
   )

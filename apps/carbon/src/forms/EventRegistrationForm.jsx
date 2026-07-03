@@ -1,4 +1,13 @@
-import { Form, TextInput, Select, SelectItem, NumberInput, Button, Checkbox, Stack } from '@carbon/react'
+import {
+  Form,
+  TextInput,
+  Select,
+  SelectItem,
+  NumberInput,
+  Button,
+  Checkbox,
+  Stack,
+} from '@carbon/react'
 
 function EventRegistrationForm() {
   const handleSubmit = (event) => {

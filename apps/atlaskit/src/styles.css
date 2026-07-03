@@ -11,7 +11,9 @@ body,
   /* Use Atlaskit design tokens - these automatically switch between light and dark mode */
   background-color: var(--ds-surface, #ffffff);
   color: var(--ds-text, #172b4d);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 /* Support for theme applied via data attributes by AppProvider */

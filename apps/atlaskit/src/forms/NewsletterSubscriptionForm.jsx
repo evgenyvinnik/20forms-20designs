@@ -45,12 +45,11 @@ function NewsletterSubscriptionForm() {
           />
         </Box>
         <Box>
-          <Checkbox
-            name="agree"
-            label="Receive product updates"
-          />
+          <Checkbox name="agree" label="Receive product updates" />
         </Box>
-        <Button type="submit" appearance="primary">Subscribe</Button>
+        <Button type="submit" appearance="primary">
+          Subscribe
+        </Button>
       </Stack>
     </form>
   )

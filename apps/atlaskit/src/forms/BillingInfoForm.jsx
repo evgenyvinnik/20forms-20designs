@@ -23,11 +23,7 @@ function BillingInfoForm() {
       <Stack space="space.200">
         <Box>
           <Label htmlFor="atlaskit-billing-name">Name on card</Label>
-          <Textfield
-            id="atlaskit-billing-name"
-            name="cardName"
-            isRequired
-          />
+          <Textfield id="atlaskit-billing-name" name="cardName" isRequired />
         </Box>
         <Box>
           <Label htmlFor="atlaskit-billing-card-number">Card number</Label>
@@ -58,11 +54,7 @@ function BillingInfoForm() {
         </Box>
         <Box>
           <Label htmlFor="atlaskit-billing-address">Billing address</Label>
-          <Textfield
-            id="atlaskit-billing-address"
-            name="address"
-            isRequired
-          />
+          <Textfield id="atlaskit-billing-address" name="address" isRequired />
         </Box>
         <Box>
           <Label htmlFor="atlaskit-billing-country">Country</Label>
@@ -76,7 +68,9 @@ function BillingInfoForm() {
             isRequired
           />
         </Box>
-        <Button type="submit" appearance="primary">Save billing details</Button>
+        <Button type="submit" appearance="primary">
+          Save billing details
+        </Button>
       </Stack>
     </form>
   )

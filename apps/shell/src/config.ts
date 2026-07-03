@@ -41,6 +41,7 @@ export type LibraryId =
   | 'react-spectrum'
   | 'semi-design'
   | 'headlessui'
+  | 'astryx'
 
 // Form ID for iframe URLs
 export type FormId =
@@ -84,6 +85,7 @@ export interface Form {
 export const LIBRARY_NAME_TO_ID: Record<string, LibraryId | undefined> = {
   'Ant Design': 'antd',
   'Arco Design': 'arco-design',
+  Astryx: 'astryx',
   Ariakit: 'ariakit',
   'Atlassian Atlaskit': 'atlaskit',
   'Base Web': 'baseweb',
@@ -503,6 +505,14 @@ export const LIBRARIES: Library[] = [
     implemented: true,
     supportsTheme: true,
   },
+  {
+    name: 'Astryx',
+    directory: 'astryx',
+    website: 'https://astryx.atmeta.com',
+    repo: 'https://github.com/facebook/astryx',
+    implemented: true,
+    supportsTheme: true,
+  },
 ]
 
 // Get implemented libraries only
@@ -552,7 +562,7 @@ const CONSOLIDATED_LIBRARIES: Set<LibraryId> = new Set([
   'react-spectrum',
   'semi-design',
   'headlessui',
-  'react-no-css',
+  'astryx',
 ])
 
 // Build iframe URL

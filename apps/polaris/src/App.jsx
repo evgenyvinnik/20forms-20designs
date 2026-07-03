@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { AppProvider } from '@shopify/polaris'
+import enTranslations from '@shopify/polaris/locales/en.json'
 import '@shopify/polaris/build/esm/styles.css'
 
 // Import all form components
@@ -81,13 +82,16 @@ function App() {
   const FormComponent = FORM_COMPONENTS[formId] || FORM_COMPONENTS['user-login']
 
   return (
-    <AppProvider>
+    <AppProvider i18n={enTranslations}>
       <div
+        data-polaris-theme={theme === 'dark' ? 'dark' : 'light'}
         style={{
-          padding: '16px',
-          background: theme === 'dark' ? '#1a1a1a' : '#fff',
-          color: theme === 'dark' ? '#fff' : '#000',
+          padding: '20px',
+          maxWidth: '560px',
+          margin: '0 auto',
           minHeight: '100vh',
+          background: theme === 'dark' ? '#000000' : '#ffffff',
+          color: theme === 'dark' ? '#e3e3e3' : '#303030',
         }}
       >
         <FormComponent />

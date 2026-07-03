@@ -28,7 +28,10 @@ function ContactInquiryForm() {
   return (
     <form onSubmit={handleSubmit} className="p-fluid">
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-contact-name" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-contact-name"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Full name
         </label>
         <InputText
@@ -40,7 +43,10 @@ function ContactInquiryForm() {
         />
       </div>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-contact-email" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-contact-email"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Email address
         </label>
         <InputText
@@ -53,7 +59,10 @@ function ContactInquiryForm() {
         />
       </div>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-contact-topic" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-contact-topic"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Topic
         </label>
         <Dropdown
@@ -67,7 +76,10 @@ function ContactInquiryForm() {
         />
       </div>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-contact-message" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-contact-message"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Message
         </label>
         <InputTextarea
@@ -79,14 +91,24 @@ function ContactInquiryForm() {
           required
         />
       </div>
-      <div className="field-checkbox" style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+      <div
+        className="field-checkbox"
+        style={{
+          marginBottom: '1rem',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+        }}
+      >
         <Checkbox
           inputId="primereact-contact-consent"
           name="consent"
           checked={consent}
           onChange={(e) => setConsent(e.checked)}
         />
-        <label htmlFor="primereact-contact-consent">Allow follow-up communication</label>
+        <label htmlFor="primereact-contact-consent">
+          Allow follow-up communication
+        </label>
       </div>
       <Button type="submit" label="Submit inquiry" />
     </form>

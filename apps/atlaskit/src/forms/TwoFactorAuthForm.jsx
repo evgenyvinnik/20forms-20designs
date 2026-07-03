@@ -23,14 +23,15 @@ function TwoFactorAuthForm() {
           />
         </Box>
         <Box>
-          <Label htmlFor="atlaskit-two-factor-backup">Backup code (optional)</Label>
-          <Textfield
-            id="atlaskit-two-factor-backup"
-            name="backupCode"
-          />
+          <Label htmlFor="atlaskit-two-factor-backup">
+            Backup code (optional)
+          </Label>
+          <Textfield id="atlaskit-two-factor-backup" name="backupCode" />
         </Box>
         <Inline space="space.100">
-          <Button type="submit" appearance="primary">Verify</Button>
+          <Button type="submit" appearance="primary">
+            Verify
+          </Button>
           <Button
             appearance="subtle"
             onClick={() => alert('A new code has been sent!')}

@@ -10,7 +10,7 @@ function PasswordResetForm() {
   const handleSubmit = (values) => {
     setLoading(true)
     console.log('Password reset requested for:', values)
-    
+
     setTimeout(() => {
       setLoading(false)
       Toast.success('Password reset email sent! Check your inbox.')
@@ -23,7 +23,8 @@ function PasswordResetForm() {
         Reset Password
       </Title>
       <Text type="secondary" style={{ display: 'block', marginBottom: '24px' }}>
-        Enter your email address and we'll send you a link to reset your password.
+        Enter your email address and we'll send you a link to reset your
+        password.
       </Text>
 
       <Form onSubmit={handleSubmit} labelPosition="top">

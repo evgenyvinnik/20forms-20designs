@@ -1,4 +1,13 @@
-import { Form, TextInput, TextArea, DatePicker, DatePickerInput, TimePicker, Button, Stack } from '@carbon/react'
+import {
+  Form,
+  TextInput,
+  TextArea,
+  DatePicker,
+  DatePickerInput,
+  TimePicker,
+  Button,
+  Stack,
+} from '@carbon/react'
 
 function AppointmentRequestForm() {
   const handleSubmit = (event) => {

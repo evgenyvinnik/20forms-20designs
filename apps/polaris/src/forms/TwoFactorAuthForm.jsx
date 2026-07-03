@@ -9,22 +9,21 @@ import {
 
 function TwoFactorAuthForm() {
   const [code, setCode] = useState('')
+  const [backupCode, setBackupCode] = useState('')
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
-    alert('Two-factor authentication verified!')
+    alert('Verification submitted!')
   }, [])
 
   const handleResend = useCallback(() => {
-    alert('Verification code resent!')
+    alert('A new code has been sent!')
   }, [])
 
   return (
     <form onSubmit={handleSubmit}>
       <FormLayout>
-        <Text as="p">
-          Enter the 6-digit verification code sent to your device.
-        </Text>
+        <Text as="p">Enter the code from your authenticator app or SMS.</Text>
         <TextField
           label="Verification code"
           type="text"
@@ -33,6 +32,15 @@ function TwoFactorAuthForm() {
           autoComplete="one-time-code"
           requiredIndicator
           maxLength={6}
+          pattern="\d{6}"
+          inputMode="numeric"
+        />
+        <TextField
+          label="Backup code (optional)"
+          type="text"
+          value={backupCode}
+          onChange={setBackupCode}
+          pattern="[A-Za-z0-9]{6,12}"
         />
         <InlineStack gap="300">
           <Button submit variant="primary">

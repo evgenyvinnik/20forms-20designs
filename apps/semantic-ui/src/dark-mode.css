@@ -174,7 +174,9 @@ body.dark .ui.modal > .actions {
 body.dark .ui.card,
 body.dark .ui.cards > .card {
   background: #2d2d44 !important;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1) !important;
 }
 
 body.dark .ui.card > .content,

@@ -12,9 +12,14 @@ function PasswordResetForm() {
 
   return (
     <form onSubmit={handleSubmit} className="p-fluid">
-      <p style={{ marginBottom: '1rem' }}>Request a password reset link via email.</p>
+      <p style={{ marginBottom: '1rem' }}>
+        Request a password reset link via email.
+      </p>
       <div className="field" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="primereact-password-reset-email" style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label
+          htmlFor="primereact-password-reset-email"
+          style={{ display: 'block', marginBottom: '0.5rem' }}
+        >
           Email address
         </label>
         <InputText

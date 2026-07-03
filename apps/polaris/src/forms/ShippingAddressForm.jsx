@@ -18,11 +18,21 @@ function ShippingAddressForm() {
   const [postalCode, setPostalCode] = useState('')
   const [isDefault, setIsDefault] = useState(false)
 
-  const regionOptions = (country === 'CA' ? CANADIAN_PROVINCES : US_STATES).map(
-    (r) => ({ label: r, value: r })
-  )
+  const regionList = country === 'CA' ? CANADIAN_PROVINCES : US_STATES
+  const regionOptions = [
+    { label: 'Select an option', value: '' },
+    ...regionList.map((r) => ({ label: r, value: r })),
+  ]
 
-  const regionLabel = country === 'CA' ? 'Province' : 'State'
+  const postalPattern =
+    country === 'CA'
+      ? '[A-Za-z]\\d[A-Za-z] ?\\d[A-Za-z]\\d'
+      : '\\d{5}(-\\d{4})?'
+
+  const handleCountryChange = useCallback((value) => {
+    setCountry(value)
+    setRegion('')
+  }, [])
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
@@ -67,12 +77,12 @@ function ShippingAddressForm() {
           label="Country"
           options={COUNTRIES}
           value={country}
-          onChange={setCountry}
+          onChange={handleCountryChange}
           requiredIndicator
         />
         <Select
-          label={regionLabel}
-          options={[{ label: 'Select an option', value: '' }, ...regionOptions]}
+          label="State / Province / Territory"
+          options={regionOptions}
           value={region}
           onChange={setRegion}
           requiredIndicator
@@ -83,6 +93,7 @@ function ShippingAddressForm() {
           value={postalCode}
           onChange={setPostalCode}
           autoComplete="postal-code"
+          pattern={postalPattern}
           requiredIndicator
         />
         <Checkbox

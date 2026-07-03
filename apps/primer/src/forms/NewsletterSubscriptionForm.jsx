@@ -1,4 +1,11 @@
-import { Box, FormControl, TextInput, Select, Checkbox, Button } from '@primer/react'
+import {
+  Box,
+  FormControl,
+  TextInput,
+  Select,
+  Checkbox,
+  Button,
+} from '@primer/react'
 
 function NewsletterSubscriptionForm() {
   const handleSubmit = (event) => {

@@ -16,11 +16,7 @@ function PrivacyConsentForm() {
       <Stack space="space.200">
         <Box>
           <Label htmlFor="atlaskit-privacy-name">Full name</Label>
-          <Textfield
-            id="atlaskit-privacy-name"
-            name="fullName"
-            isRequired
-          />
+          <Textfield id="atlaskit-privacy-name" name="fullName" isRequired />
         </Box>
         <Box>
           <Label htmlFor="atlaskit-privacy-email">Email address</Label>
@@ -34,27 +30,15 @@ function PrivacyConsentForm() {
         <Box>
           <Text as="strong">Communication channels</Text>
           <Stack space="space.100">
-            <Checkbox
-              name="emailOptIn"
-              label="Email updates"
-            />
-            <Checkbox
-              name="smsOptIn"
-              label="SMS notifications"
-            />
-            <Checkbox
-              name="phoneOptIn"
-              label="Phone calls"
-            />
+            <Checkbox name="emailOptIn" label="Email updates" />
+            <Checkbox name="smsOptIn" label="SMS notifications" />
+            <Checkbox name="phoneOptIn" label="Phone calls" />
           </Stack>
         </Box>
         <Box>
           <Text as="strong">Privacy options</Text>
           <Stack space="space.100">
-            <Checkbox
-              name="analytics"
-              label="Allow analytics cookies"
-            />
+            <Checkbox name="analytics" label="Allow analytics cookies" />
             <Checkbox
               name="personalization"
               label="Allow personalized content"
@@ -63,12 +47,11 @@ function PrivacyConsentForm() {
         </Box>
         <Box>
           <Label htmlFor="atlaskit-privacy-notes">Additional notes</Label>
-          <TextArea
-            id="atlaskit-privacy-notes"
-            name="notes"
-          />
+          <TextArea id="atlaskit-privacy-notes" name="notes" />
         </Box>
-        <Button type="submit" appearance="primary">Save preferences</Button>
+        <Button type="submit" appearance="primary">
+          Save preferences
+        </Button>
       </Stack>
     </form>
   )

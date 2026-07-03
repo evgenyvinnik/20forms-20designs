@@ -1,9 +1,6 @@
 import './styles.css'
 
-
-
 import { useState, useEffect } from 'react'
-
 
 // Import all form components
 import AdvancedSearchForm from './forms/AdvancedSearchForm'

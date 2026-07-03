@@ -10,30 +10,28 @@ function ProfileUpdateForm() {
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
-    alert('Profile updated successfully!')
+    alert('Profile updated!')
   }, [])
 
   return (
     <form onSubmit={handleSubmit}>
       <FormLayout>
-        <FormLayout.Group>
-          <TextField
-            label="First name"
-            type="text"
-            value={firstName}
-            onChange={setFirstName}
-            autoComplete="given-name"
-            requiredIndicator
-          />
-          <TextField
-            label="Last name"
-            type="text"
-            value={lastName}
-            onChange={setLastName}
-            autoComplete="family-name"
-            requiredIndicator
-          />
-        </FormLayout.Group>
+        <TextField
+          label="First name"
+          type="text"
+          value={firstName}
+          onChange={setFirstName}
+          autoComplete="given-name"
+          requiredIndicator
+        />
+        <TextField
+          label="Last name"
+          type="text"
+          value={lastName}
+          onChange={setLastName}
+          autoComplete="family-name"
+          requiredIndicator
+        />
         <TextField
           label="Email address"
           type="email"
@@ -48,16 +46,20 @@ function ProfileUpdateForm() {
           value={phone}
           onChange={setPhone}
           autoComplete="tel"
+          pattern="[+0-9\s-]{7,20}"
+          inputMode="tel"
+          requiredIndicator
         />
         <TextField
-          label="Bio"
+          label="Short bio"
           value={bio}
           onChange={setBio}
-          multiline={4}
+          multiline={3}
           autoComplete="off"
+          requiredIndicator
         />
         <Button submit variant="primary">
-          Update profile
+          Save changes
         </Button>
       </FormLayout>
     </form>

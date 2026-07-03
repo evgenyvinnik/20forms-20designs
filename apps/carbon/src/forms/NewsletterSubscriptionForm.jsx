@@ -1,4 +1,12 @@
-import { Form, TextInput, Select, SelectItem, Button, Checkbox, Stack } from '@carbon/react'
+import {
+  Form,
+  TextInput,
+  Select,
+  SelectItem,
+  Button,
+  Checkbox,
+  Stack,
+} from '@carbon/react'
 
 function NewsletterSubscriptionForm() {
   const handleSubmit = (event) => {

@@ -24,7 +24,8 @@ function SupportTicketForm() {
   ]
 
   const handleDropZoneDrop = useCallback(
-    (_dropFiles, acceptedFiles) => setFiles((files) => [...files, ...acceptedFiles]),
+    (_dropFiles, acceptedFiles) =>
+      setFiles((files) => [...files, ...acceptedFiles]),
     []
   )
 
@@ -43,7 +44,9 @@ function SupportTicketForm() {
             alt={file.name}
             source={window.URL.createObjectURL(file)}
           />
-          <Text variant="bodyMd" as="p">{file.name}</Text>
+          <Text variant="bodyMd" as="p">
+            {file.name}
+          </Text>
         </InlineStack>
       ))}
     </BlockStack>

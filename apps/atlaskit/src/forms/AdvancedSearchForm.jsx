@@ -34,11 +34,7 @@ function AdvancedSearchForm() {
       <Stack space="space.200">
         <Box>
           <Label htmlFor="atlaskit-search-query">Search query</Label>
-          <Textfield
-            id="atlaskit-search-query"
-            name="query"
-            isRequired
-          />
+          <Textfield id="atlaskit-search-query" name="query" isRequired />
         </Box>
         <Box>
           <Label htmlFor="atlaskit-search-category">Category</Label>
@@ -79,12 +75,11 @@ function AdvancedSearchForm() {
           />
         </Box>
         <Box>
-          <Checkbox
-            name="includeArchived"
-            label="Include archived"
-          />
+          <Checkbox name="includeArchived" label="Include archived" />
         </Box>
-        <Button type="submit" appearance="primary">Search</Button>
+        <Button type="submit" appearance="primary">
+          Search
+        </Button>
       </Stack>
     </form>
   )

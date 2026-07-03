@@ -1,27 +1,26 @@
 import { useState, useCallback } from 'react'
-import { FormLayout, TextField, Button, Text } from '@shopify/polaris'
+import { FormLayout, TextField, Button } from '@shopify/polaris'
 
 function OrderTrackingForm() {
   const [orderNumber, setOrderNumber] = useState('')
   const [email, setEmail] = useState('')
+  const [postalCode, setPostalCode] = useState('')
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
-    alert('Tracking your order!')
+    alert('Order lookup submitted!')
   }, [])
 
   return (
     <form onSubmit={handleSubmit}>
       <FormLayout>
-        <Text as="p">
-          Enter your order number and email address to track your order.
-        </Text>
         <TextField
           label="Order number"
           type="text"
           value={orderNumber}
           onChange={setOrderNumber}
           autoComplete="off"
+          pattern="[A-Za-z0-9-]{6,20}"
           requiredIndicator
         />
         <TextField
@@ -32,8 +31,16 @@ function OrderTrackingForm() {
           autoComplete="email"
           requiredIndicator
         />
+        <TextField
+          label="Postal code"
+          type="text"
+          value={postalCode}
+          onChange={setPostalCode}
+          autoComplete="postal-code"
+          requiredIndicator
+        />
         <Button submit variant="primary">
-          Track order
+          Find order
         </Button>
       </FormLayout>
     </form>

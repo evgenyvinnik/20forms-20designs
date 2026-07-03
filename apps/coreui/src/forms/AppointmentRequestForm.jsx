@@ -24,7 +24,9 @@ function AppointmentRequestForm() {
         />
       </div>
       <div className="mb-3">
-        <CFormLabel htmlFor="coreui-appointment-email">Email address</CFormLabel>
+        <CFormLabel htmlFor="coreui-appointment-email">
+          Email address
+        </CFormLabel>
         <CFormInput
           id="coreui-appointment-email"
           name="email"
@@ -33,7 +35,9 @@ function AppointmentRequestForm() {
         />
       </div>
       <div className="mb-3">
-        <CFormLabel htmlFor="coreui-appointment-date">Preferred date</CFormLabel>
+        <CFormLabel htmlFor="coreui-appointment-date">
+          Preferred date
+        </CFormLabel>
         <CFormInput
           id="coreui-appointment-date"
           name="date"
@@ -42,7 +46,9 @@ function AppointmentRequestForm() {
         />
       </div>
       <div className="mb-3">
-        <CFormLabel htmlFor="coreui-appointment-time">Preferred time</CFormLabel>
+        <CFormLabel htmlFor="coreui-appointment-time">
+          Preferred time
+        </CFormLabel>
         <CFormInput
           id="coreui-appointment-time"
           name="time"
@@ -51,7 +57,9 @@ function AppointmentRequestForm() {
         />
       </div>
       <div className="mb-3">
-        <CFormLabel htmlFor="coreui-appointment-reason">Reason for visit</CFormLabel>
+        <CFormLabel htmlFor="coreui-appointment-reason">
+          Reason for visit
+        </CFormLabel>
         <CFormTextarea
           id="coreui-appointment-reason"
           name="reason"

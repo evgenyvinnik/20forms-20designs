@@ -29,10 +29,7 @@ function PasswordChangeForm() {
           minLength={8}
           required
         />
-        <Checkbox
-          name="logoutOthers"
-          label="Sign out of other devices"
-        />
+        <Checkbox name="logoutOthers" label="Sign out of other devices" />
         <Button type="submit">Update password</Button>
       </Stack>
     </form>

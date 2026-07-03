@@ -1,4 +1,13 @@
-import { Form, TextInput, RadioButtonGroup, RadioButton, TextArea, FileUploader, Button, Stack } from '@carbon/react'
+import {
+  Form,
+  TextInput,
+  RadioButtonGroup,
+  RadioButton,
+  TextArea,
+  FileUploader,
+  Button,
+  Stack,
+} from '@carbon/react'
 
 function SupportTicketForm() {
   const handleSubmit = (event) => {

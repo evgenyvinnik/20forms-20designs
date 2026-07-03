@@ -32,10 +32,7 @@ function NewsletterSubscriptionForm({ inverted }) {
         />
       </Form.Field>
       <Form.Field>
-        <Checkbox
-          name="agree"
-          label="Receive product updates"
-        />
+        <Checkbox name="agree" label="Receive product updates" />
       </Form.Field>
       <Button type="submit" primary>
         Subscribe

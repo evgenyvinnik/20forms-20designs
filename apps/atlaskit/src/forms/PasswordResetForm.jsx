@@ -22,7 +22,9 @@ function PasswordResetForm() {
             isRequired
           />
         </Box>
-        <Button type="submit" appearance="primary">Send reset link</Button>
+        <Button type="submit" appearance="primary">
+          Send reset link
+        </Button>
       </Stack>
     </form>
   )

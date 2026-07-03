@@ -14,7 +14,9 @@ function PasswordChangeForm() {
     <form onSubmit={handleSubmit}>
       <Stack space="space.200">
         <Box>
-          <Label htmlFor="atlaskit-password-change-current">Current password</Label>
+          <Label htmlFor="atlaskit-password-change-current">
+            Current password
+          </Label>
           <Textfield
             id="atlaskit-password-change-current"
             name="currentPassword"
@@ -32,7 +34,9 @@ function PasswordChangeForm() {
           />
         </Box>
         <Box>
-          <Label htmlFor="atlaskit-password-change-confirm">Confirm new password</Label>
+          <Label htmlFor="atlaskit-password-change-confirm">
+            Confirm new password
+          </Label>
           <Textfield
             id="atlaskit-password-change-confirm"
             name="confirmPassword"
@@ -41,12 +45,11 @@ function PasswordChangeForm() {
           />
         </Box>
         <Box>
-          <Checkbox
-            name="logoutOthers"
-            label="Sign out of other devices"
-          />
+          <Checkbox name="logoutOthers" label="Sign out of other devices" />
         </Box>
-        <Button type="submit" appearance="primary">Update password</Button>
+        <Button type="submit" appearance="primary">
+          Update password
+        </Button>
       </Stack>
     </form>
   )

@@ -79,17 +79,10 @@ function OnboardingWizardForm() {
           <Stack space="space.200">
             <Box>
               <Label htmlFor="atlaskit-onboarding-goal">Primary goal</Label>
-              <TextArea
-                id="atlaskit-onboarding-goal"
-                name="goal"
-                isRequired
-              />
+              <TextArea id="atlaskit-onboarding-goal" name="goal" isRequired />
             </Box>
             <Box>
-              <Checkbox
-                name="updates"
-                label="Send me product tips"
-              />
+              <Checkbox name="updates" label="Send me product tips" />
             </Box>
           </Stack>
         </Box>
@@ -100,7 +93,9 @@ function OnboardingWizardForm() {
           >
             Back
           </Button>
-          <Button type="submit" appearance="primary">Finish setup</Button>
+          <Button type="submit" appearance="primary">
+            Finish setup
+          </Button>
         </Inline>
       </Stack>
     </form>

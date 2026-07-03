@@ -7,20 +7,72 @@ import { Label } from '@atlaskit/form'
 import { Box, Stack } from '@atlaskit/primitives'
 
 const US_STATES = [
-  'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
-  'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa',
-  'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan',
-  'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-  'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio',
-  'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota',
-  'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia',
-  'Wisconsin', 'Wyoming'
+  'Alabama',
+  'Alaska',
+  'Arizona',
+  'Arkansas',
+  'California',
+  'Colorado',
+  'Connecticut',
+  'Delaware',
+  'Florida',
+  'Georgia',
+  'Hawaii',
+  'Idaho',
+  'Illinois',
+  'Indiana',
+  'Iowa',
+  'Kansas',
+  'Kentucky',
+  'Louisiana',
+  'Maine',
+  'Maryland',
+  'Massachusetts',
+  'Michigan',
+  'Minnesota',
+  'Mississippi',
+  'Missouri',
+  'Montana',
+  'Nebraska',
+  'Nevada',
+  'New Hampshire',
+  'New Jersey',
+  'New Mexico',
+  'New York',
+  'North Carolina',
+  'North Dakota',
+  'Ohio',
+  'Oklahoma',
+  'Oregon',
+  'Pennsylvania',
+  'Rhode Island',
+  'South Carolina',
+  'South Dakota',
+  'Tennessee',
+  'Texas',
+  'Utah',
+  'Vermont',
+  'Virginia',
+  'Washington',
+  'West Virginia',
+  'Wisconsin',
+  'Wyoming',
 ]
 
 const CANADIAN_PROVINCES = [
-  'Alberta', 'British Columbia', 'Manitoba', 'New Brunswick', 'Newfoundland and Labrador',
-  'Nova Scotia', 'Ontario', 'Prince Edward Island', 'Quebec', 'Saskatchewan',
-  'Northwest Territories', 'Nunavut', 'Yukon'
+  'Alberta',
+  'British Columbia',
+  'Manitoba',
+  'New Brunswick',
+  'Newfoundland and Labrador',
+  'Nova Scotia',
+  'Ontario',
+  'Prince Edward Island',
+  'Quebec',
+  'Saskatchewan',
+  'Northwest Territories',
+  'Nunavut',
+  'Yukon',
 ]
 
 const countryOptions = [
@@ -29,7 +81,10 @@ const countryOptions = [
 ]
 
 function ShippingAddressForm() {
-  const [country, setCountry] = useState({ label: 'United States', value: 'US' })
+  const [country, setCountry] = useState({
+    label: 'United States',
+    value: 'US',
+  })
   const [region, setRegion] = useState(null)
 
   const regionOptions = useMemo(() => {
@@ -55,26 +110,17 @@ function ShippingAddressForm() {
         </Box>
         <Box>
           <Label htmlFor="atlaskit-shipping-street">Street address</Label>
-          <Textfield
-            id="atlaskit-shipping-street"
-            name="street"
-            isRequired
-          />
+          <Textfield id="atlaskit-shipping-street" name="street" isRequired />
         </Box>
         <Box>
-          <Label htmlFor="atlaskit-shipping-street-2">Apartment, suite, etc.</Label>
-          <Textfield
-            id="atlaskit-shipping-street-2"
-            name="street2"
-          />
+          <Label htmlFor="atlaskit-shipping-street-2">
+            Apartment, suite, etc.
+          </Label>
+          <Textfield id="atlaskit-shipping-street-2" name="street2" />
         </Box>
         <Box>
           <Label htmlFor="atlaskit-shipping-city">City</Label>
-          <Textfield
-            id="atlaskit-shipping-city"
-            name="city"
-            isRequired
-          />
+          <Textfield id="atlaskit-shipping-city" name="city" isRequired />
         </Box>
         <Box>
           <Label htmlFor="atlaskit-shipping-country">Country</Label>
@@ -91,7 +137,9 @@ function ShippingAddressForm() {
           />
         </Box>
         <Box>
-          <Label htmlFor="atlaskit-shipping-region">State / Province / Territory</Label>
+          <Label htmlFor="atlaskit-shipping-region">
+            State / Province / Territory
+          </Label>
           <Select
             inputId="atlaskit-shipping-region"
             name="region"
@@ -111,12 +159,11 @@ function ShippingAddressForm() {
           />
         </Box>
         <Box>
-          <Checkbox
-            name="default"
-            label="Use as default shipping address"
-          />
+          <Checkbox name="default" label="Use as default shipping address" />
         </Box>
-        <Button type="submit" appearance="primary">Save address</Button>
+        <Button type="submit" appearance="primary">
+          Save address
+        </Button>
       </Stack>
     </form>
   )
