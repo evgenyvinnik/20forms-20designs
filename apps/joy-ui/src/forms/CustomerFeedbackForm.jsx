@@ -1,46 +1,69 @@
-function CustomerFeedbackForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Feedback submitted!')
+import { useState } from 'react'
+import {
+  FormControl,
+  FormLabel,
+  RadioGroup,
+  Radio,
+  Textarea,
+  Button,
+  Alert,
+  Typography,
+  Box,
+} from '@mui/joy'
+
+export default function CustomerFeedbackForm() {
+  const [formData, setFormData] = useState({
+    rating: '5',
+    comments: '',
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-feedback-name">Name</label>
-        <input id="nocss-feedback-name" name="name" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-feedback-email">Email address</label>
-        <input id="nocss-feedback-email" name="email" type="email" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-feedback-rating">Overall rating</label>
-        <select id="nocss-feedback-rating" name="rating" required>
-          <option value="">Select rating</option>
-          <option value="excellent">Excellent</option>
-          <option value="good">Good</option>
-          <option value="average">Average</option>
-          <option value="poor">Poor</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="nocss-feedback-comments">Comments</label>
-        <textarea
-          id="nocss-feedback-comments"
-          name="comments"
-          rows="4"
-          required
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+    >
+      <Typography level="h3" component="h2">
+        Customer Feedback
+      </Typography>
+      {submitted && (
+        <Alert color="success" variant="soft">
+          Thank you for your feedback!
+        </Alert>
+      )}
+      <FormControl required>
+        <FormLabel>Overall Satisfaction</FormLabel>
+        <RadioGroup
+          orientation="horizontal"
+          value={formData.rating}
+          onChange={(e) => setFormData({ ...formData, rating: e.target.value })}
+        >
+          <Radio value="1" label="1 - Poor" />
+          <Radio value="2" label="2 - Fair" />
+          <Radio value="3" label="3 - Good" />
+          <Radio value="4" label="4 - Very Good" />
+          <Radio value="5" label="5 - Excellent" />
+        </RadioGroup>
+      </FormControl>
+      <FormControl required>
+        <FormLabel>Detailed Comments</FormLabel>
+        <Textarea
+          minRows={4}
+          value={formData.comments}
+          onChange={(e) =>
+            setFormData({ ...formData, comments: e.target.value })
+          }
         />
-      </div>
-      <div>
-        <label>
-          <input name="followUp" type="checkbox" />I would like a follow-up
-        </label>
-      </div>
-      <button type="submit">Send feedback</button>
-    </form>
+      </FormControl>
+      <Button type="submit" color="primary">
+        Submit Feedback
+      </Button>
+    </Box>
   )
 }
-
-export default CustomerFeedbackForm

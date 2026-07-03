@@ -1,49 +1,84 @@
-function AppointmentRequestForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Appointment request submitted!')
+import { useState } from 'react'
+import { Field } from '@base-ui-components/react/field'
+
+export default function AppointmentRequestForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    service: 'consultation',
+    date: '',
+    notes: '',
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-appointment-name">Full name</label>
-        <input
-          id="nocss-appointment-name"
-          name="fullName"
+    <form onSubmit={handleSubmit} className="base-form">
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
+        Book Appointment
+      </h2>
+      {submitted && (
+        <div
+          style={{
+            padding: '0.75rem 1rem',
+            background: '#dcfce7',
+            color: '#166534',
+            borderRadius: '0.5rem',
+            fontSize: '0.875rem',
+          }}
+        >
+          Appointment request submitted!
+        </div>
+      )}
+      <Field.Root className="base-field">
+        <Field.Label className="base-label">Your Name</Field.Label>
+        <Field.Control
+          required
+          className="base-control"
           type="text"
-          required
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-appointment-email">Email address</label>
-        <input
-          id="nocss-appointment-email"
-          name="email"
-          type="email"
+      </Field.Root>
+      <Field.Root className="base-field">
+        <Field.Label className="base-label">Service Required</Field.Label>
+        <select
+          className="base-control"
+          value={formData.service}
+          onChange={(e) =>
+            setFormData({ ...formData, service: e.target.value })
+          }
           required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-appointment-date">Preferred date</label>
-        <input id="nocss-appointment-date" name="date" type="date" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-appointment-time">Preferred time</label>
-        <input id="nocss-appointment-time" name="time" type="time" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-appointment-reason">Reason for visit</label>
-        <textarea
-          id="nocss-appointment-reason"
-          name="reason"
-          rows="3"
+        >
+          <option value="consultation">Initial Consultation</option>
+          <option value="followup">Follow-up Session</option>
+          <option value="review">Annual Review</option>
+        </select>
+      </Field.Root>
+      <Field.Root className="base-field">
+        <Field.Label className="base-label">Preferred Date</Field.Label>
+        <Field.Control
           required
+          className="base-control"
+          type="date"
+          value={formData.date}
+          onChange={(e) => setFormData({ ...formData, date: e.target.value })}
         />
-      </div>
-      <button type="submit">Request appointment</button>
+      </Field.Root>
+      <Field.Root className="base-field">
+        <Field.Label className="base-label">Special Instructions</Field.Label>
+        <Field.Control
+          render={<textarea className="base-control" rows={3} />}
+          value={formData.notes}
+          onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+        />
+      </Field.Root>
+      <button type="submit" className="base-button">
+        Request Appointment
+      </button>
     </form>
   )
 }
-
-export default AppointmentRequestForm

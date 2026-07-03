@@ -1,92 +1,90 @@
 import { useState } from 'react'
-import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from './locationOptions'
+import { Input, Button, Checkbox } from '@heroui/react'
 
-function ShippingAddressForm() {
-  const [country, setCountry] = useState('US')
+export default function ShippingAddressForm() {
+  const [formData, setFormData] = useState({
+    recipient: '',
+    address: '',
+    city: '',
+    zip: '',
+    sameAsBilling: true,
+  })
+  const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Shipping address saved!')
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
-  const regionOptions = country === 'CA' ? CANADIAN_PROVINCES : US_STATES
-  const postalPattern =
-    country === 'CA'
-      ? '[A-Za-z]\\d[A-Za-z] ?\\d[A-Za-z]\\d'
-      : '\\d{5}(-\\d{4})?'
-
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-shipping-full-name">Recipient name</label>
-        <input
-          id="nocss-shipping-full-name"
-          name="fullName"
-          type="text"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-shipping-street">Street address</label>
-        <input id="nocss-shipping-street" name="street" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-shipping-street-2">Apartment, suite, etc.</label>
-        <input id="nocss-shipping-street-2" name="street2" type="text" />
-      </div>
-      <div>
-        <label htmlFor="nocss-shipping-city">City</label>
-        <input id="nocss-shipping-city" name="city" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-shipping-country">Country</label>
-        <select
-          id="nocss-shipping-country"
-          name="country"
-          value={country}
-          onChange={(event) => setCountry(event.target.value)}
-          required
+    <form onSubmit={handleSubmit} className="heroui-form">
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
+        Shipping Address
+      </h2>
+      {submitted && (
+        <div
+          style={{
+            padding: '0.75rem 1rem',
+            background: '#dcfce7',
+            color: '#166534',
+            borderRadius: '0.5rem',
+            fontSize: '0.875rem',
+          }}
         >
-          {COUNTRIES.map(({ value, label }) => (
-            <option key={value} value={value}>
-              {label}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div>
-        <label htmlFor="nocss-shipping-region">
-          State / Province / Territory
-        </label>
-        <select id="nocss-shipping-region" name="region" required>
-          <option value="">Select an option</option>
-          {regionOptions.map((region) => (
-            <option key={region} value={region}>
-              {region}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div>
-        <label htmlFor="nocss-shipping-postal">Postal code</label>
-        <input
-          id="nocss-shipping-postal"
-          name="postalCode"
+          Shipping address saved!
+        </div>
+      )}
+      <div className="heroui-field">
+        <label className="heroui-label">Recipient Name</label>
+        <Input
+          isRequired
           type="text"
-          pattern={postalPattern}
-          inputMode="text"
-          required
+          value={formData.recipient}
+          onValueChange={(val) => setFormData({ ...formData, recipient: val })}
         />
       </div>
-      <div>
-        <label>
-          <input name="default" type="checkbox" />
-          Use as default shipping address
-        </label>
+      <div className="heroui-field">
+        <label className="heroui-label">Street Address</label>
+        <Input
+          isRequired
+          type="text"
+          value={formData.address}
+          onValueChange={(val) => setFormData({ ...formData, address: val })}
+        />
       </div>
-      <button type="submit">Save address</button>
+      <div
+        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
+      >
+        <div className="heroui-field">
+          <label className="heroui-label">City</label>
+          <Input
+            isRequired
+            type="text"
+            value={formData.city}
+            onValueChange={(val) => setFormData({ ...formData, city: val })}
+          />
+        </div>
+        <div className="heroui-field">
+          <label className="heroui-label">ZIP Code</label>
+          <Input
+            isRequired
+            type="text"
+            value={formData.zip}
+            onValueChange={(val) => setFormData({ ...formData, zip: val })}
+          />
+        </div>
+      </div>
+      <Checkbox
+        isSelected={formData.sameAsBilling}
+        onValueChange={(val) =>
+          setFormData({ ...formData, sameAsBilling: val })
+        }
+      >
+        Use as default billing address
+      </Checkbox>
+      <Button type="submit" color="primary">
+        Save Address
+      </Button>
     </form>
   )
 }
-
-export default ShippingAddressForm

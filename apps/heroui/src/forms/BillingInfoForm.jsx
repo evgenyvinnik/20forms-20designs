@@ -1,66 +1,81 @@
-function BillingInfoForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Billing details saved!')
+import { useState } from 'react'
+import { Input, Button } from '@heroui/react'
+
+export default function BillingInfoForm() {
+  const [formData, setFormData] = useState({
+    address: '',
+    city: '',
+    state: '',
+    zip: '',
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-billing-name">Name on card</label>
-        <input id="nocss-billing-name" name="cardName" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-billing-card-number">Card number</label>
-        <input
-          id="nocss-billing-card-number"
-          name="cardNumber"
+    <form onSubmit={handleSubmit} className="heroui-form">
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
+        Billing Information
+      </h2>
+      {submitted && (
+        <div
+          style={{
+            padding: '0.75rem 1rem',
+            background: '#dcfce7',
+            color: '#166534',
+            borderRadius: '0.5rem',
+            fontSize: '0.875rem',
+          }}
+        >
+          Billing details saved!
+        </div>
+      )}
+      <div className="heroui-field">
+        <label className="heroui-label">Street Address</label>
+        <Input
+          isRequired
           type="text"
-          inputMode="numeric"
-          pattern="[0-9]{13,19}"
-          maxLength="19"
-          required
+          value={formData.address}
+          onValueChange={(val) => setFormData({ ...formData, address: val })}
         />
       </div>
-      <div>
-        <label htmlFor="nocss-billing-expiration">Expiration date</label>
-        <input
-          id="nocss-billing-expiration"
-          name="expiration"
+      <div className="heroui-field">
+        <label className="heroui-label">City</label>
+        <Input
+          isRequired
           type="text"
-          placeholder="MM/YY"
-          pattern="^(0[1-9]|1[0-2])\\/\\d{2}$"
-          inputMode="numeric"
-          required
+          value={formData.city}
+          onValueChange={(val) => setFormData({ ...formData, city: val })}
         />
       </div>
-      <div>
-        <label htmlFor="nocss-billing-cvc">Security code</label>
-        <input
-          id="nocss-billing-cvc"
-          name="cvc"
-          type="text"
-          inputMode="numeric"
-          pattern="[0-9]{3,4}"
-          maxLength="4"
-          required
-        />
+      <div
+        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
+      >
+        <div className="heroui-field">
+          <label className="heroui-label">State / Province</label>
+          <Input
+            isRequired
+            type="text"
+            value={formData.state}
+            onValueChange={(val) => setFormData({ ...formData, state: val })}
+          />
+        </div>
+        <div className="heroui-field">
+          <label className="heroui-label">ZIP / Postal Code</label>
+          <Input
+            isRequired
+            type="text"
+            value={formData.zip}
+            onValueChange={(val) => setFormData({ ...formData, zip: val })}
+          />
+        </div>
       </div>
-      <div>
-        <label htmlFor="nocss-billing-address">Billing address</label>
-        <input id="nocss-billing-address" name="address" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-billing-country">Country</label>
-        <select id="nocss-billing-country" name="country" required>
-          <option value="">Select country</option>
-          <option value="US">United States</option>
-          <option value="CA">Canada</option>
-        </select>
-      </div>
-      <button type="submit">Save billing details</button>
+      <Button type="submit" color="primary">
+        Save Billing Info
+      </Button>
     </form>
   )
 }
-
-export default BillingInfoForm

@@ -1,76 +1,95 @@
-function CheckoutPaymentForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Checkout submitted!')
+import { useState } from 'react'
+import { Field } from '@base-ui-components/react/field'
+
+export default function CheckoutPaymentForm() {
+  const [formData, setFormData] = useState({
+    cardNumber: '',
+    cardName: '',
+    expiry: '',
+    cvv: '',
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-checkout-email">Email for receipt</label>
-        <input id="nocss-checkout-email" name="email" type="email" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-checkout-shipping-method">Shipping method</label>
-        <select
-          id="nocss-checkout-shipping-method"
-          name="shippingMethod"
-          required
+    <form onSubmit={handleSubmit} className="base-form">
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
+        Payment Details
+      </h2>
+      {submitted && (
+        <div
+          style={{
+            padding: '0.75rem 1rem',
+            background: '#dcfce7',
+            color: '#166534',
+            borderRadius: '0.5rem',
+            fontSize: '0.875rem',
+          }}
         >
-          <option value="">Select shipping</option>
-          <option value="standard">Standard</option>
-          <option value="express">Express</option>
-          <option value="overnight">Overnight</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="nocss-checkout-card-number">Card number</label>
-        <input
-          id="nocss-checkout-card-number"
-          name="cardNumber"
-          type="text"
-          inputMode="numeric"
-          pattern="[0-9]{13,19}"
-          maxLength="19"
+          Payment processed successfully!
+        </div>
+      )}
+      <Field.Root className="base-field">
+        <Field.Label className="base-label">Name on Card</Field.Label>
+        <Field.Control
           required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-checkout-expiration">Expiration</label>
-        <input
-          id="nocss-checkout-expiration"
-          name="expiration"
+          className="base-control"
           type="text"
-          placeholder="MM/YY"
-          pattern="^(0[1-9]|1[0-2])\\/\\d{2}$"
-          inputMode="numeric"
+          value={formData.cardName}
+          onChange={(e) =>
+            setFormData({ ...formData, cardName: e.target.value })
+          }
+        />
+      </Field.Root>
+      <Field.Root className="base-field">
+        <Field.Label className="base-label">Card Number</Field.Label>
+        <Field.Control
           required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-checkout-cvc">CVC</label>
-        <input
-          id="nocss-checkout-cvc"
-          name="cvc"
+          className="base-control"
           type="text"
-          inputMode="numeric"
-          pattern="[0-9]{3,4}"
-          maxLength="4"
-          required
+          value={formData.cardNumber}
+          onChange={(e) =>
+            setFormData({ ...formData, cardNumber: e.target.value })
+          }
+          placeholder="1234 5678 9012 3456"
         />
+      </Field.Root>
+      <div
+        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
+      >
+        <Field.Root className="base-field">
+          <Field.Label className="base-label">Expiration (MM/YY)</Field.Label>
+          <Field.Control
+            required
+            className="base-control"
+            type="text"
+            value={formData.expiry}
+            onChange={(e) =>
+              setFormData({ ...formData, expiry: e.target.value })
+            }
+            placeholder="MM/YY"
+          />
+        </Field.Root>
+        <Field.Root className="base-field">
+          <Field.Label className="base-label">CVV</Field.Label>
+          <Field.Control
+            required
+            className="base-control"
+            type="password"
+            value={formData.cvv}
+            onChange={(e) => setFormData({ ...formData, cvv: e.target.value })}
+            placeholder="123"
+            maxLength={4}
+          />
+        </Field.Root>
       </div>
-      <div>
-        <label htmlFor="nocss-checkout-promo">Promo code</label>
-        <input
-          id="nocss-checkout-promo"
-          name="promoCode"
-          type="text"
-          pattern="[A-Za-z0-9]{3,15}"
-        />
-      </div>
-      <button type="submit">Place order</button>
+      <button type="submit" className="base-button">
+        Complete Purchase
+      </button>
     </form>
   )
 }
-
-export default CheckoutPaymentForm

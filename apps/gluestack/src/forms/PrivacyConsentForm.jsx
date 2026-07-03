@@ -1,52 +1,93 @@
-function PrivacyConsentForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Privacy preferences saved!')
+import { useState } from 'react'
+
+export default function PrivacyConsentForm() {
+  const [formData, setFormData] = useState({
+    marketing: false,
+    analytics: true,
+    thirdParty: false,
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-privacy-name">Full name</label>
-        <input id="nocss-privacy-name" name="fullName" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-privacy-email">Email address</label>
-        <input id="nocss-privacy-email" name="email" type="email" required />
-      </div>
-      <fieldset>
-        <legend>Communication channels</legend>
-        <label>
-          <input name="emailOptIn" type="checkbox" />
-          Email updates
-        </label>
-        <label>
-          <input name="smsOptIn" type="checkbox" />
-          SMS notifications
-        </label>
-        <label>
-          <input name="phoneOptIn" type="checkbox" />
-          Phone calls
-        </label>
-      </fieldset>
-      <fieldset>
-        <legend>Privacy options</legend>
-        <label>
-          <input name="analytics" type="checkbox" />
-          Allow analytics cookies
-        </label>
-        <label>
-          <input name="personalization" type="checkbox" />
-          Allow personalized content
-        </label>
-      </fieldset>
-      <div>
-        <label htmlFor="nocss-privacy-notes">Additional notes</label>
-        <textarea id="nocss-privacy-notes" name="notes" rows="3" />
-      </div>
-      <button type="submit">Save preferences</button>
+    <form onSubmit={handleSubmit} className="gluestack-form">
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
+        Privacy & Cookies Consent
+      </h2>
+      {submitted && (
+        <div
+          style={{
+            padding: '0.75rem 1rem',
+            background: '#dbeafe',
+            color: '#1e40af',
+            borderRadius: '0.375rem',
+            fontSize: '0.875rem',
+          }}
+        >
+          Privacy preferences saved!
+        </div>
+      )}
+      <label
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          fontSize: '0.875rem',
+          cursor: 'pointer',
+        }}
+      >
+        <input
+          type="checkbox"
+          checked={formData.marketing}
+          onChange={(e) =>
+            setFormData({ ...formData, marketing: e.target.checked })
+          }
+        />
+        Receive marketing communication and special offers
+      </label>
+      <label
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          fontSize: '0.875rem',
+          cursor: 'pointer',
+        }}
+      >
+        <input
+          type="checkbox"
+          checked={formData.analytics}
+          onChange={(e) =>
+            setFormData({ ...formData, analytics: e.target.checked })
+          }
+        />
+        Allow anonymous performance and analytics tracking
+      </label>
+      <label
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          fontSize: '0.875rem',
+          cursor: 'pointer',
+        }}
+      >
+        <input
+          type="checkbox"
+          checked={formData.thirdParty}
+          onChange={(e) =>
+            setFormData({ ...formData, thirdParty: e.target.checked })
+          }
+        />
+        Share data with trusted third-party service partners
+      </label>
+      <button type="submit" className="gluestack-button">
+        Save Preferences
+      </button>
     </form>
   )
 }
-
-export default PrivacyConsentForm

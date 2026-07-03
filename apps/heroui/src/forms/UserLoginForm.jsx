@@ -1,44 +1,65 @@
-function UserLoginForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Login submitted!')
+import { useState } from 'react'
+import { Input, Button, Checkbox } from '@heroui/react'
+
+export default function UserLoginForm() {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    rememberMe: false,
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-user-login-email">Email or username</label>
-        <input
-          id="nocss-user-login-email"
-          name="identifier"
-          type="text"
-          required
+    <form onSubmit={handleSubmit} className="heroui-form">
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
+        Sign In
+      </h2>
+      {submitted && (
+        <div
+          style={{
+            padding: '0.75rem 1rem',
+            background: '#dcfce7',
+            color: '#166534',
+            borderRadius: '0.5rem',
+            fontSize: '0.875rem',
+          }}
+        >
+          Log in successful!
+        </div>
+      )}
+      <div className="heroui-field">
+        <label className="heroui-label">Email Address</label>
+        <Input
+          isRequired
+          type="email"
+          value={formData.email}
+          onValueChange={(val) => setFormData({ ...formData, email: val })}
+          placeholder="you@example.com"
         />
       </div>
-      <div>
-        <label htmlFor="nocss-user-login-password">Password</label>
-        <input
-          id="nocss-user-login-password"
-          name="password"
+      <div className="heroui-field">
+        <label className="heroui-label">Password</label>
+        <Input
+          isRequired
           type="password"
-          required
+          value={formData.password}
+          onValueChange={(val) => setFormData({ ...formData, password: val })}
         />
       </div>
-      <div>
-        <label>
-          <input name="remember" type="checkbox" />
-          Keep me signed in
-        </label>
-      </div>
-      <button type="submit">Sign in</button>
-      <button
-        type="button"
-        onClick={() => alert('Password reset link flow placeholder')}
+      <Checkbox
+        isSelected={formData.rememberMe}
+        onValueChange={(val) => setFormData({ ...formData, rememberMe: val })}
       >
-        Forgot password?
-      </button>
+        Remember this device
+      </Checkbox>
+      <Button type="submit" color="primary">
+        Sign In
+      </Button>
     </form>
   )
 }
-
-export default UserLoginForm

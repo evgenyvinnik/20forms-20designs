@@ -1,42 +1,60 @@
-function OrderTrackingForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Order lookup submitted!')
+import { useState } from 'react'
+import { Input, Button } from '@heroui/react'
+
+export default function OrderTrackingForm() {
+  const [formData, setFormData] = useState({
+    orderNumber: '',
+    email: '',
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-order-tracking-number">Order number</label>
-        <input
-          id="nocss-order-tracking-number"
-          name="orderNumber"
+    <form onSubmit={handleSubmit} className="heroui-form">
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: 0 }}>
+        Track Your Order
+      </h2>
+      {submitted && (
+        <div
+          style={{
+            padding: '0.75rem 1rem',
+            background: '#dcfce7',
+            color: '#166534',
+            borderRadius: '0.5rem',
+            fontSize: '0.875rem',
+          }}
+        >
+          Searching for order status...
+        </div>
+      )}
+      <div className="heroui-field">
+        <label className="heroui-label">Order Number</label>
+        <Input
+          isRequired
           type="text"
-          pattern="[A-Za-z0-9-]{6,20}"
-          required
+          value={formData.orderNumber}
+          onValueChange={(val) =>
+            setFormData({ ...formData, orderNumber: val })
+          }
+          placeholder="ORD-12345"
         />
       </div>
-      <div>
-        <label htmlFor="nocss-order-tracking-email">Email address</label>
-        <input
-          id="nocss-order-tracking-email"
-          name="email"
+      <div className="heroui-field">
+        <label className="heroui-label">Billing Email</label>
+        <Input
+          isRequired
           type="email"
-          required
+          value={formData.email}
+          onValueChange={(val) => setFormData({ ...formData, email: val })}
         />
       </div>
-      <div>
-        <label htmlFor="nocss-order-tracking-postal">Postal code</label>
-        <input
-          id="nocss-order-tracking-postal"
-          name="postalCode"
-          type="text"
-          required
-        />
-      </div>
-      <button type="submit">Find order</button>
+      <Button type="submit" color="primary">
+        Track Order
+      </Button>
     </form>
   )
 }
-
-export default OrderTrackingForm

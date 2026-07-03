@@ -1,48 +1,73 @@
-function EventRegistrationForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Event registration submitted!')
+import { useState } from 'react'
+import {
+  FormControl,
+  FormLabel,
+  Input,
+  Select,
+  Option,
+  Button,
+  Alert,
+  Typography,
+  Box,
+} from '@mui/joy'
+
+export default function EventRegistrationForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    ticketType: 'standard',
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-event-name">Full name</label>
-        <input id="nocss-event-name" name="fullName" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-event-email">Email address</label>
-        <input id="nocss-event-email" name="email" type="email" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-event-ticket">Ticket type</label>
-        <select id="nocss-event-ticket" name="ticketType" required>
-          <option value="">Select ticket</option>
-          <option value="general">General admission</option>
-          <option value="vip">VIP</option>
-          <option value="student">Student</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="nocss-event-guests">Number of guests</label>
-        <input
-          id="nocss-event-guests"
-          name="guestCount"
-          type="number"
-          min="0"
-          max="20"
-          required
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+    >
+      <Typography level="h3" component="h2">
+        Event Registration
+      </Typography>
+      {submitted && (
+        <Alert color="success" variant="soft">
+          Event registration confirmed!
+        </Alert>
+      )}
+      <FormControl required>
+        <FormLabel>Attendee Name</FormLabel>
+        <Input
+          type="text"
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
         />
-      </div>
-      <div>
-        <label>
-          <input name="newsletter" type="checkbox" />
-          Notify me about future events
-        </label>
-      </div>
-      <button type="submit">Register</button>
-    </form>
+      </FormControl>
+      <FormControl required>
+        <FormLabel>Email Address</FormLabel>
+        <Input
+          type="email"
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+        />
+      </FormControl>
+      <FormControl required>
+        <FormLabel>Ticket Tier</FormLabel>
+        <Select
+          value={formData.ticketType}
+          onChange={(_, val) => setFormData({ ...formData, ticketType: val })}
+        >
+          <Option value="standard">Standard Pass</Option>
+          <Option value="vip">VIP Pass</Option>
+          <Option value="student">Student Pass</Option>
+        </Select>
+      </FormControl>
+      <Button type="submit" color="primary">
+        Register for Event
+      </Button>
+    </Box>
   )
 }
-
-export default EventRegistrationForm

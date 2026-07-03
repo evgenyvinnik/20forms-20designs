@@ -1,42 +1,62 @@
-function OrderTrackingForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Order lookup submitted!')
+import { useState } from 'react'
+import {
+  FormControl,
+  FormLabel,
+  Input,
+  Button,
+  Alert,
+  Typography,
+  Box,
+} from '@mui/joy'
+
+export default function OrderTrackingForm() {
+  const [formData, setFormData] = useState({
+    orderNumber: '',
+    email: '',
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-order-tracking-number">Order number</label>
-        <input
-          id="nocss-order-tracking-number"
-          name="orderNumber"
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+    >
+      <Typography level="h3" component="h2">
+        Track Your Order
+      </Typography>
+      {submitted && (
+        <Alert color="success" variant="soft">
+          Searching for order status...
+        </Alert>
+      )}
+      <FormControl required>
+        <FormLabel>Order Number</FormLabel>
+        <Input
           type="text"
-          pattern="[A-Za-z0-9-]{6,20}"
-          required
+          value={formData.orderNumber}
+          onChange={(e) =>
+            setFormData({ ...formData, orderNumber: e.target.value })
+          }
+          placeholder="ORD-12345"
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-order-tracking-email">Email address</label>
-        <input
-          id="nocss-order-tracking-email"
-          name="email"
+      </FormControl>
+      <FormControl required>
+        <FormLabel>Billing Email</FormLabel>
+        <Input
           type="email"
-          required
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-order-tracking-postal">Postal code</label>
-        <input
-          id="nocss-order-tracking-postal"
-          name="postalCode"
-          type="text"
-          required
-        />
-      </div>
-      <button type="submit">Find order</button>
-    </form>
+      </FormControl>
+      <Button type="submit" color="primary">
+        Track Order
+      </Button>
+    </Box>
   )
 }
-
-export default OrderTrackingForm

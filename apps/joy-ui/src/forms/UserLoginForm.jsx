@@ -1,44 +1,73 @@
-function UserLoginForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    alert('Login submitted!')
+import { useState } from 'react'
+import {
+  FormControl,
+  FormLabel,
+  Input,
+  Button,
+  Checkbox,
+  Alert,
+  Typography,
+  Box,
+} from '@mui/joy'
+
+export default function UserLoginForm() {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    rememberMe: false,
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-user-login-email">Email or username</label>
-        <input
-          id="nocss-user-login-email"
-          name="identifier"
-          type="text"
-          required
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+    >
+      <Typography level="h3" component="h2">
+        Sign In
+      </Typography>
+      {submitted && (
+        <Alert color="success" variant="soft">
+          Log in successful!
+        </Alert>
+      )}
+      <FormControl required>
+        <FormLabel>Email Address</FormLabel>
+        <Input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          placeholder="you@example.com"
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-user-login-password">Password</label>
-        <input
-          id="nocss-user-login-password"
-          name="password"
+      </FormControl>
+      <FormControl required>
+        <FormLabel>Password</FormLabel>
+        <Input
           type="password"
-          required
+          name="password"
+          value={formData.password}
+          onChange={(e) =>
+            setFormData({ ...formData, password: e.target.value })
+          }
         />
-      </div>
-      <div>
-        <label>
-          <input name="remember" type="checkbox" />
-          Keep me signed in
-        </label>
-      </div>
-      <button type="submit">Sign in</button>
-      <button
-        type="button"
-        onClick={() => alert('Password reset link flow placeholder')}
-      >
-        Forgot password?
-      </button>
-    </form>
+      </FormControl>
+      <Checkbox
+        label="Remember this device"
+        checked={formData.rememberMe}
+        onChange={(e) =>
+          setFormData({ ...formData, rememberMe: e.target.checked })
+        }
+      />
+      <Button type="submit" color="primary">
+        Sign In
+      </Button>
+    </Box>
   )
 }
-
-export default UserLoginForm
