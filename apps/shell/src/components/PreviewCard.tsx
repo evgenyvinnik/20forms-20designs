@@ -32,10 +32,9 @@ const FORM_ID_TO_FILENAME: Record<FormId, string> = {
   'privacy-consent': 'PrivacyConsentForm.jsx',
 }
 
-// Generous form heights so forms never show vertical scrollbars
 const FORM_HEIGHTS: Record<FormId, number> = {
-  'password-reset': 520,
-  'two-factor-auth': 520,
+  'password-reset': 540,
+  'two-factor-auth': 540,
   'newsletter-subscription': 540,
   'order-tracking': 540,
   'user-login': 580,
@@ -152,7 +151,7 @@ export function PreviewCard({
         title={`${libraryName}-${formName}`}
         src={iframeSrc}
         className="preview-iframe"
-        style={{ height: `${iframeHeight}px` }}
+        style={{ height: `${iframeHeight}px`, border: 'none' }}
         sandbox="allow-scripts allow-forms allow-same-origin"
         onLoad={handleIframeLoad}
       />

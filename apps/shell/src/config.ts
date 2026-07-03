@@ -46,7 +46,6 @@ export type LibraryId =
   | 'base-ui'
   | 'park-ui'
   | 'heroui'
-  | 'gluestack'
   | 'joy-ui'
 
 // Form ID for iframe URLs
@@ -108,7 +107,6 @@ export const LIBRARY_NAME_TO_ID: Record<string, LibraryId | undefined> = {
   Evergreen: 'evergreen',
   'Flowbite React': 'flowbite-react',
   'Fluent UI': 'fluent-ui',
-  'gluestack-ui': 'gluestack',
   'Gravity UI': 'gravity-ui',
   Grommet: 'grommet',
   'Headless UI': 'headlessui',
@@ -558,14 +556,6 @@ export const LIBRARIES: Library[] = [
     supportsTheme: true,
   },
   {
-    name: 'gluestack-ui',
-    directory: 'gluestack',
-    website: 'https://gluestack.io',
-    repo: 'https://github.com/gluestack/gluestack-ui',
-    implemented: true,
-    supportsTheme: true,
-  },
-  {
     name: 'Joy UI',
     directory: 'joy-ui',
     website: 'https://v7.mui.com/joy-ui/getting-started',
@@ -627,7 +617,6 @@ const CONSOLIDATED_LIBRARIES: Set<LibraryId> = new Set([
   'base-ui',
   'park-ui',
   'heroui',
-  'gluestack',
   'joy-ui',
 ])
 

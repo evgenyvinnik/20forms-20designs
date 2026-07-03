@@ -90,16 +90,13 @@ function App() {
 
   return (
     <HeroUIProvider>
-      <div
-        style={{
-          padding: '20px',
-          maxWidth: '560px',
-          margin: '0 auto',
-          minHeight: '100vh',
-        }}
+      <main
+        className={`${theme} text-foreground bg-background p-4 min-h-screen box-border`}
       >
-        <FormComponent />
-      </div>
+        <div style={{ maxWidth: '520px', margin: '0 auto' }}>
+          <FormComponent />
+        </div>
+      </main>
     </HeroUIProvider>
   )
 }
