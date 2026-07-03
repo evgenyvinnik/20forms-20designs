@@ -1,42 +1,35 @@
-function OrderTrackingForm() {
+import { useState } from 'react'
+import { Box, Button, FormControl, FormLabel, Input } from '@mui/joy'
+
+export default function OrderTrackingForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Order lookup submitted!')
+    alert('Tracking request sent!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-order-tracking-number">Order number</label>
-        <input
-          id="nocss-order-tracking-number"
-          name="orderNumber"
-          type="text"
-          pattern="[A-Za-z0-9-]{6,20}"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-order-tracking-email">Email address</label>
-        <input
-          id="nocss-order-tracking-email"
-          name="email"
-          type="email"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-order-tracking-postal">Postal code</label>
-        <input
-          id="nocss-order-tracking-postal"
-          name="postalCode"
-          type="text"
-          required
-        />
-      </div>
-      <button type="submit">Find order</button>
-    </form>
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+        maxWidth: '100%',
+        boxSizing: 'border-box',
+      }}
+    >
+      <FormControl required>
+        <FormLabel htmlFor="joy-track-order">Order number</FormLabel>
+        <Input id="joy-track-order" name="orderNumber" type="text" required />
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-track-email">Billing email address</FormLabel>
+        <Input id="joy-track-email" name="email" type="email" required />
+      </FormControl>
+
+      <Button type="submit">Track order</Button>
+    </Box>
   )
 }
-
-export default OrderTrackingForm

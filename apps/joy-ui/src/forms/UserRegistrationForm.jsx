@@ -1,70 +1,75 @@
-function UserRegistrationForm() {
+import { useState } from 'react'
+import { Box, Button, Checkbox, FormControl, FormLabel, Input } from '@mui/joy'
+
+export default function UserRegistrationForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Registration submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-user-registration-name">Full name</label>
-        <input
-          id="nocss-user-registration-name"
-          name="fullName"
-          type="text"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-user-registration-email">Email address</label>
-        <input
-          id="nocss-user-registration-email"
-          name="email"
-          type="email"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-user-registration-username">Username</label>
-        <input
-          id="nocss-user-registration-username"
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+        maxWidth: '100%',
+        boxSizing: 'border-box',
+      }}
+    >
+      <FormControl required>
+        <FormLabel htmlFor="joy-reg-fullName">Full name</FormLabel>
+        <Input id="joy-reg-fullName" name="fullName" type="text" required />
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-reg-email">Email address</FormLabel>
+        <Input id="joy-reg-email" name="email" type="email" required />
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-reg-username">Username</FormLabel>
+        <Input
+          id="joy-reg-username"
           name="username"
           type="text"
-          minLength="3"
+          slotProps={{ input: { minLength: 3 } }}
           required
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-user-registration-password">Password</label>
-        <input
-          id="nocss-user-registration-password"
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-reg-password">Password</FormLabel>
+        <Input
+          id="joy-reg-password"
           name="password"
           type="password"
-          minLength="8"
+          slotProps={{ input: { minLength: 8 } }}
           required
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-user-registration-confirm">
-          Confirm password
-        </label>
-        <input
-          id="nocss-user-registration-confirm"
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-reg-confirm">Confirm password</FormLabel>
+        <Input
+          id="joy-reg-confirm"
           name="confirmPassword"
           type="password"
-          minLength="8"
+          slotProps={{ input: { minLength: 8 } }}
           required
         />
-      </div>
-      <div>
-        <label>
-          <input name="terms" type="checkbox" required />I agree to the terms
-          and conditions
-        </label>
-      </div>
-      <button type="submit">Create account</button>
-    </form>
+      </FormControl>
+
+      <Checkbox
+        name="terms"
+        label="I agree to the terms and conditions"
+        required
+        sx={{ my: 1 }}
+      />
+
+      <Button type="submit">Create account</Button>
+    </Box>
   )
 }
-
-export default UserRegistrationForm

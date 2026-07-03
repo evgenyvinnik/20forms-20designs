@@ -1,51 +1,57 @@
-function ProfileUpdateForm() {
+import { useState } from 'react'
+import { Box, Button, FormControl, FormLabel, Input, Textarea } from '@mui/joy'
+
+export default function ProfileUpdateForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Profile updated!')
+    alert('Profile saved!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-profile-first-name">First name</label>
-        <input
-          id="nocss-profile-first-name"
-          name="firstName"
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+        maxWidth: '100%',
+        boxSizing: 'border-box',
+      }}
+    >
+      <FormControl required>
+        <FormLabel htmlFor="joy-profile-name">Display name</FormLabel>
+        <Input
+          id="joy-profile-name"
+          name="displayName"
           type="text"
+          defaultValue="Jane Doe"
           required
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-profile-last-name">Last name</label>
-        <input
-          id="nocss-profile-last-name"
-          name="lastName"
-          type="text"
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-profile-email">Public email</FormLabel>
+        <Input
+          id="joy-profile-email"
+          name="email"
+          type="email"
+          defaultValue="jane@example.com"
           required
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-profile-email">Email address</label>
-        <input id="nocss-profile-email" name="email" type="email" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-profile-phone">Phone number</label>
-        <input
-          id="nocss-profile-phone"
-          name="phone"
-          type="tel"
-          pattern="[+0-9\s-]{7,20}"
-          inputMode="tel"
-          required
+      </FormControl>
+
+      <FormControl>
+        <FormLabel htmlFor="joy-profile-bio">Bio</FormLabel>
+        <Textarea
+          id="joy-profile-bio"
+          name="bio"
+          minRows={3}
+          defaultValue="Software developer based in San Francisco."
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-profile-bio">Short bio</label>
-        <textarea id="nocss-profile-bio" name="bio" rows="3" required />
-      </div>
-      <button type="submit">Save changes</button>
-    </form>
+      </FormControl>
+
+      <Button type="submit">Save profile</Button>
+    </Box>
   )
 }
-
-export default ProfileUpdateForm

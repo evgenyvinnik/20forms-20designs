@@ -1,44 +1,55 @@
-function UserLoginForm() {
+import { useState } from 'react'
+import { Box, Button, Checkbox, FormControl, FormLabel, Input } from '@mui/joy'
+
+export default function UserLoginForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Login submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-user-login-email">Email or username</label>
-        <input
-          id="nocss-user-login-email"
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+        maxWidth: '100%',
+        boxSizing: 'border-box',
+      }}
+    >
+      <FormControl required>
+        <FormLabel htmlFor="joy-user-login-email">Email or username</FormLabel>
+        <Input
+          id="joy-user-login-email"
           name="identifier"
           type="text"
           required
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-user-login-password">Password</label>
-        <input
-          id="nocss-user-login-password"
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-user-login-password">Password</FormLabel>
+        <Input
+          id="joy-user-login-password"
           name="password"
           type="password"
           required
         />
-      </div>
-      <div>
-        <label>
-          <input name="remember" type="checkbox" />
-          Keep me signed in
-        </label>
-      </div>
-      <button type="submit">Sign in</button>
-      <button
+      </FormControl>
+
+      <Checkbox name="remember" label="Keep me signed in" sx={{ my: 1 }} />
+
+      <Button type="submit">Sign in</Button>
+      <Button
         type="button"
+        variant="plain"
+        color="neutral"
         onClick={() => alert('Password reset link flow placeholder')}
       >
         Forgot password?
-      </button>
-    </form>
+      </Button>
+    </Box>
   )
 }
-
-export default UserLoginForm

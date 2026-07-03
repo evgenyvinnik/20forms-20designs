@@ -24,67 +24,9 @@ function CheckoutPaymentForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="slds-form-element slds-m-bottom_small">
-        <Input
-          id="slds-checkout-email"
-          type="email"
-          label="Email for receipt"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </div>
-
-      <div className="slds-form-element slds-m-bottom_small">
-        <Combobox
-          id="slds-checkout-shipping"
-          labels={{ label: 'Shipping method' }}
-          options={shippingOptions}
-          selection={shippingMethod}
-          onSelect={(event, data) => setShippingMethod(data.selection)}
-          variant="readonly"
-          required
-        />
-      </div>
-
-      <div className="slds-form-element slds-m-bottom_small">
-        <Input
-          id="slds-checkout-cardnumber"
-          label="Card number"
-          value={cardNumber}
-          onChange={(e) => setCardNumber(e.target.value)}
-          inputMode="numeric"
-          pattern="[0-9]{13,19}"
-          maxLength={19}
-          required
-        />
-      </div>
-
-      <div className="slds-form-element slds-m-bottom_small">
-        <Input
-          id="slds-checkout-expiration"
-          label="Expiration"
-          value={expiration}
-          onChange={(e) => setExpiration(e.target.value)}
-          placeholder="MM/YY"
-          pattern="^(0[1-9]|1[0-2])\/\d{2}$"
-          inputMode="numeric"
-          required
-        />
-      </div>
-
-      <div className="slds-form-element slds-m-bottom_small">
-        <Input
-          id="slds-checkout-cvc"
-          label="CVC"
-          value={cvc}
-          onChange={(e) => setCvc(e.target.value)}
-          inputMode="numeric"
-          pattern="[0-9]{3,4}"
-          maxLength={4}
-          required
-        />
-      </div>
+      <div
+        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
+      ></div>
 
       <div className="slds-form-element slds-m-bottom_medium">
         <Input

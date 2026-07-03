@@ -1,56 +1,45 @@
-function JobApplicationForm() {
+import { useState } from 'react'
+import { Box, Button, FormControl, FormLabel, Input, Textarea } from '@mui/joy'
+
+export default function JobApplicationForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Application submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-job-full-name">Full name</label>
-        <input id="nocss-job-full-name" name="fullName" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-job-email">Email address</label>
-        <input id="nocss-job-email" name="email" type="email" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-job-phone">Phone number</label>
-        <input
-          id="nocss-job-phone"
-          name="phone"
-          type="tel"
-          pattern="[+0-9\s-]{7,20}"
-          inputMode="tel"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-job-role">Role applied for</label>
-        <input id="nocss-job-role" name="role" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-job-resume">Resume link</label>
-        <input id="nocss-job-resume" name="resume" type="url" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-job-cover-letter">Cover letter</label>
-        <textarea
-          id="nocss-job-cover-letter"
-          name="coverLetter"
-          rows="4"
-          required
-        />
-      </div>
-      <div>
-        <label>
-          <input name="updates" type="checkbox" />
-          Keep me informed about future roles
-        </label>
-      </div>
-      <button type="submit">Submit application</button>
-    </form>
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+        maxWidth: '100%',
+        boxSizing: 'border-box',
+      }}
+    >
+      <FormControl required>
+        <FormLabel htmlFor="joy-job-name">Full name</FormLabel>
+        <Input id="joy-job-name" name="fullName" type="text" required />
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-job-email">Email address</FormLabel>
+        <Input id="joy-job-email" name="email" type="email" required />
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-job-phone">Phone number</FormLabel>
+        <Input id="joy-job-phone" name="phone" type="tel" required />
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-job-cover">Cover letter</FormLabel>
+        <Textarea id="joy-job-cover" name="coverLetter" minRows={4} required />
+      </FormControl>
+
+      <Button type="submit">Submit application</Button>
+    </Box>
   )
 }
-
-export default JobApplicationForm

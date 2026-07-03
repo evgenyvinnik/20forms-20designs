@@ -1,33 +1,59 @@
-function NewsletterSubscriptionForm() {
+import { useState } from 'react'
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControl,
+  FormLabel,
+  Input,
+  Option,
+  Select,
+} from '@mui/joy'
+
+export default function NewsletterSubscriptionForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Newsletter subscription submitted!')
+    alert('Subscribed to newsletter!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-newsletter-email">Email address</label>
-        <input id="nocss-newsletter-email" name="email" type="email" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-newsletter-frequency">Frequency</label>
-        <select id="nocss-newsletter-frequency" name="frequency" required>
-          <option value="">Select frequency</option>
-          <option value="weekly">Weekly</option>
-          <option value="monthly">Monthly</option>
-          <option value="quarterly">Quarterly</option>
-        </select>
-      </div>
-      <div>
-        <label>
-          <input name="agree" type="checkbox" />
-          Receive product updates
-        </label>
-      </div>
-      <button type="submit">Subscribe</button>
-    </form>
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+        maxWidth: '100%',
+        boxSizing: 'border-box',
+      }}
+    >
+      <FormControl required>
+        <FormLabel htmlFor="joy-news-email">Email address</FormLabel>
+        <Input id="joy-news-email" name="email" type="email" required />
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-news-frequency">Digest frequency</FormLabel>
+        <Select
+          id="joy-news-frequency"
+          name="frequency"
+          defaultValue="weekly"
+          required
+        >
+          <Option value="weekly">Weekly digest</Option>
+          <Option value="monthly">Monthly summary</Option>
+        </Select>
+      </FormControl>
+
+      <Checkbox
+        name="productUpdates"
+        label="Include product release notes"
+        defaultChecked
+        sx={{ my: 1 }}
+      />
+
+      <Button type="submit">Subscribe</Button>
+    </Box>
   )
 }
-
-export default NewsletterSubscriptionForm

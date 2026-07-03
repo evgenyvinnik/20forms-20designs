@@ -1,39 +1,55 @@
-function TwoFactorAuthForm() {
+import { useState } from 'react'
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControl,
+  FormHelperText,
+  FormLabel,
+  Input,
+} from '@mui/joy'
+
+export default function TwoFactorAuthForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Verification submitted!')
+    alert('2FA code submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <p>Enter the code from your authenticator app or SMS.</p>
-      <div>
-        <label htmlFor="nocss-two-factor-code">Verification code</label>
-        <input
-          id="nocss-two-factor-code"
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+        maxWidth: '100%',
+        boxSizing: 'border-box',
+      }}
+    >
+      <FormControl required>
+        <FormLabel htmlFor="joy-2fa-code">6-digit security code</FormLabel>
+        <Input
+          id="joy-2fa-code"
           name="code"
           type="text"
-          inputMode="numeric"
-          pattern="\\d{6}"
-          maxLength="6"
+          slotProps={{
+            input: { pattern: '[0-9]{6}', maxLength: 6, inputMode: 'numeric' },
+          }}
           required
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-two-factor-backup">Backup code (optional)</label>
-        <input
-          id="nocss-two-factor-backup"
-          name="backupCode"
-          type="text"
-          pattern="[A-Za-z0-9]{6,12}"
-        />
-      </div>
-      <button type="submit">Verify</button>
-      <button type="button" onClick={() => alert('A new code has been sent!')}>
-        Resend code
-      </button>
-    </form>
+        <FormHelperText>
+          Enter the code from your authenticator app.
+        </FormHelperText>
+      </FormControl>
+
+      <Checkbox
+        name="trustDevice"
+        label="Trust this browser for 30 days"
+        sx={{ my: 1 }}
+      />
+
+      <Button type="submit">Verify code</Button>
+    </Box>
   )
 }
-
-export default TwoFactorAuthForm

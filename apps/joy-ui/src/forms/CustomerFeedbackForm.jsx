@@ -1,46 +1,50 @@
-function CustomerFeedbackForm() {
+import { useState } from 'react'
+import {
+  Box,
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  Option,
+  Select,
+  Textarea,
+} from '@mui/joy'
+
+export default function CustomerFeedbackForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Feedback submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-feedback-name">Name</label>
-        <input id="nocss-feedback-name" name="name" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-feedback-email">Email address</label>
-        <input id="nocss-feedback-email" name="email" type="email" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-feedback-rating">Overall rating</label>
-        <select id="nocss-feedback-rating" name="rating" required>
-          <option value="">Select rating</option>
-          <option value="excellent">Excellent</option>
-          <option value="good">Good</option>
-          <option value="average">Average</option>
-          <option value="poor">Poor</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="nocss-feedback-comments">Comments</label>
-        <textarea
-          id="nocss-feedback-comments"
-          name="comments"
-          rows="4"
-          required
-        />
-      </div>
-      <div>
-        <label>
-          <input name="followUp" type="checkbox" />I would like a follow-up
-        </label>
-      </div>
-      <button type="submit">Send feedback</button>
-    </form>
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+        maxWidth: '100%',
+        boxSizing: 'border-box',
+      }}
+    >
+      <FormControl required>
+        <FormLabel htmlFor="joy-fb-rating">Satisfaction rating</FormLabel>
+        <Select id="joy-fb-rating" name="rating" defaultValue="5" required>
+          <Option value="5">5 - Excellent</Option>
+          <Option value="4">4 - Good</Option>
+          <Option value="3">3 - Average</Option>
+          <Option value="2">2 - Poor</Option>
+          <Option value="1">1 - Very Poor</Option>
+        </Select>
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-fb-comments">Comments</FormLabel>
+        <Textarea id="joy-fb-comments" name="comments" minRows={4} required />
+      </FormControl>
+
+      <Button type="submit">Submit feedback</Button>
+    </Box>
   )
 }
-
-export default CustomerFeedbackForm

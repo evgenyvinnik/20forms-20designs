@@ -1,76 +1,87 @@
-function CheckoutPaymentForm() {
+import { useState } from 'react'
+import {
+  Box,
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  Option,
+  Select,
+} from '@mui/joy'
+
+export default function CheckoutPaymentForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Checkout submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-checkout-email">Email for receipt</label>
-        <input id="nocss-checkout-email" name="email" type="email" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-checkout-shipping-method">Shipping method</label>
-        <select
-          id="nocss-checkout-shipping-method"
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+        maxWidth: '100%',
+        boxSizing: 'border-box',
+      }}
+    >
+      <FormControl required>
+        <FormLabel htmlFor="joy-checkout-email">Email for receipt</FormLabel>
+        <Input id="joy-checkout-email" name="email" type="email" required />
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-checkout-shipping">Shipping method</FormLabel>
+        <Select
+          id="joy-checkout-shipping"
           name="shippingMethod"
+          defaultValue="standard"
           required
         >
-          <option value="">Select shipping</option>
-          <option value="standard">Standard</option>
-          <option value="express">Express</option>
-          <option value="overnight">Overnight</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="nocss-checkout-card-number">Card number</label>
-        <input
-          id="nocss-checkout-card-number"
+          <Option value="standard">Standard Shipping</Option>
+          <Option value="express">Express Shipping</Option>
+          <Option value="overnight">Overnight Delivery</Option>
+        </Select>
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-checkout-card">Card number</FormLabel>
+        <Input
+          id="joy-checkout-card"
           name="cardNumber"
           type="text"
-          inputMode="numeric"
-          pattern="[0-9]{13,19}"
-          maxLength="19"
+          slotProps={{ input: { inputMode: 'numeric', maxLength: 19 } }}
           required
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-checkout-expiration">Expiration</label>
-        <input
-          id="nocss-checkout-expiration"
-          name="expiration"
-          type="text"
-          placeholder="MM/YY"
-          pattern="^(0[1-9]|1[0-2])\\/\\d{2}$"
-          inputMode="numeric"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-checkout-cvc">CVC</label>
-        <input
-          id="nocss-checkout-cvc"
-          name="cvc"
-          type="text"
-          inputMode="numeric"
-          pattern="[0-9]{3,4}"
-          maxLength="4"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-checkout-promo">Promo code</label>
-        <input
-          id="nocss-checkout-promo"
-          name="promoCode"
-          type="text"
-          pattern="[A-Za-z0-9]{3,15}"
-        />
-      </div>
-      <button type="submit">Place order</button>
-    </form>
+      </FormControl>
+
+      <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}>
+        <FormControl required>
+          <FormLabel htmlFor="joy-checkout-exp">Expiration</FormLabel>
+          <Input
+            id="joy-checkout-exp"
+            name="expiration"
+            placeholder="MM/YY"
+            type="text"
+            required
+          />
+        </FormControl>
+
+        <FormControl required>
+          <FormLabel htmlFor="joy-checkout-cvc">CVC</FormLabel>
+          <Input
+            id="joy-checkout-cvc"
+            name="cvc"
+            type="text"
+            slotProps={{ input: { inputMode: 'numeric', maxLength: 4 } }}
+            required
+          />
+        </FormControl>
+      </Box>
+
+      <Button type="submit">Place order</Button>
+    </Box>
   )
 }
-
-export default CheckoutPaymentForm

@@ -41,26 +41,7 @@ function CheckoutPaymentForm({ inverted }) {
         pattern="[0-9]{13,19}"
         inputMode="numeric"
       />
-      <Form.Input
-        id="semantic-ui-checkout-payment-expiration"
-        name="expiration"
-        label="Expiration"
-        type="text"
-        required
-        placeholder="MM/YY"
-        pattern="^(0[1-9]|1[0-2])\/\d{2}$"
-        inputMode="numeric"
-      />
-      <Form.Input
-        id="semantic-ui-checkout-payment-cvc"
-        name="cvc"
-        label="CVC"
-        type="text"
-        required
-        maxLength={4}
-        pattern="[0-9]{3,4}"
-        inputMode="numeric"
-      />
+      <Form.Group widths="equal"></Form.Group>
       <Form.Input
         id="semantic-ui-checkout-payment-promo"
         name="promoCode"

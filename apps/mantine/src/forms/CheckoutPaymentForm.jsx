@@ -36,22 +36,7 @@ function CheckoutPaymentForm() {
           maxLength={19}
           required
         />
-        <TextInput
-          id="mantine-checkout-expiration"
-          name="expiration"
-          label="Expiration"
-          placeholder="MM/YY"
-          inputMode="numeric"
-          required
-        />
-        <TextInput
-          id="mantine-checkout-cvc"
-          name="cvc"
-          label="CVC"
-          inputMode="numeric"
-          maxLength={4}
-          required
-        />
+        <Group grow></Group>
         <TextInput
           id="mantine-checkout-promo"
           name="promoCode"

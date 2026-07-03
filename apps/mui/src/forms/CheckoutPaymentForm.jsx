@@ -47,31 +47,9 @@ function CheckoutPaymentForm() {
         }}
       />
 
-      <TextField
-        id="mui-checkout-expiration"
-        name="expiration"
-        label="Expiration"
-        type="text"
-        placeholder="MM/YY"
-        required
-        inputProps={{
-          pattern: '^(0[1-9]|1[0-2])\\/\\d{2}$',
-          inputMode: 'numeric',
-        }}
-      />
-
-      <TextField
-        id="mui-checkout-cvc"
-        name="cvc"
-        label="CVC"
-        type="text"
-        required
-        inputProps={{
-          inputMode: 'numeric',
-          pattern: '[0-9]{3,4}',
-          maxLength: 4,
-        }}
-      />
+      <Box
+        sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}
+      ></Box>
 
       <TextField
         id="mui-checkout-promo"

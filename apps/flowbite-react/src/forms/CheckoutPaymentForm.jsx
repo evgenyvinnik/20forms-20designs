@@ -19,76 +19,62 @@ function CheckoutPaymentForm() {
           required
         />
       </div>
+
       <div>
         <div className="mb-2 block">
-          <Label htmlFor="flowbite-checkout-shipping-method">
-            Shipping method
-          </Label>
+          <Label htmlFor="flowbite-checkout-shipping">Shipping method</Label>
         </div>
-        <Select
-          id="flowbite-checkout-shipping-method"
-          name="shippingMethod"
-          required
-        >
-          <option value="">Select shipping</option>
+        <Select id="flowbite-checkout-shipping" name="shippingMethod" required>
           <option value="standard">Standard</option>
           <option value="express">Express</option>
           <option value="overnight">Overnight</option>
         </Select>
       </div>
+
       <div>
         <div className="mb-2 block">
-          <Label htmlFor="flowbite-checkout-card-number">Card number</Label>
+          <Label htmlFor="flowbite-checkout-card">Card number</Label>
         </div>
         <TextInput
-          id="flowbite-checkout-card-number"
+          id="flowbite-checkout-card"
           name="cardNumber"
           type="text"
           inputMode="numeric"
-          pattern="[0-9]{13,19}"
           maxLength={19}
           required
         />
       </div>
-      <div>
-        <div className="mb-2 block">
-          <Label htmlFor="flowbite-checkout-expiration">Expiration</Label>
+
+      <div
+        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
+      >
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="flowbite-checkout-exp">Expiration</Label>
+          </div>
+          <TextInput
+            id="flowbite-checkout-exp"
+            name="expiration"
+            placeholder="MM/YY"
+            type="text"
+            required
+          />
         </div>
-        <TextInput
-          id="flowbite-checkout-expiration"
-          name="expiration"
-          type="text"
-          placeholder="MM/YY"
-          pattern="^(0[1-9]|1[0-2])\/\d{2}$"
-          inputMode="numeric"
-          required
-        />
-      </div>
-      <div>
-        <div className="mb-2 block">
-          <Label htmlFor="flowbite-checkout-cvc">CVC</Label>
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="flowbite-checkout-cvc">CVC</Label>
+          </div>
+          <TextInput
+            id="flowbite-checkout-cvc"
+            name="cvc"
+            type="text"
+            inputMode="numeric"
+            maxLength={4}
+            required
+          />
         </div>
-        <TextInput
-          id="flowbite-checkout-cvc"
-          name="cvc"
-          type="text"
-          inputMode="numeric"
-          pattern="[0-9]{3,4}"
-          maxLength={4}
-          required
-        />
       </div>
-      <div>
-        <div className="mb-2 block">
-          <Label htmlFor="flowbite-checkout-promo">Promo code</Label>
-        </div>
-        <TextInput
-          id="flowbite-checkout-promo"
-          name="promoCode"
-          type="text"
-          pattern="[A-Za-z0-9]{3,15}"
-        />
-      </div>
+
       <Button type="submit">Place order</Button>
     </form>
   )

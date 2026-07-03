@@ -17,67 +17,9 @@ function ShippingAddressForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-shipping-full-name">Recipient name</label>
-        <input
-          id="nocss-shipping-full-name"
-          name="fullName"
-          type="text"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-shipping-street">Street address</label>
-        <input id="nocss-shipping-street" name="street" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-shipping-street-2">Apartment, suite, etc.</label>
-        <input id="nocss-shipping-street-2" name="street2" type="text" />
-      </div>
-      <div>
-        <label htmlFor="nocss-shipping-city">City</label>
-        <input id="nocss-shipping-city" name="city" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-shipping-country">Country</label>
-        <select
-          id="nocss-shipping-country"
-          name="country"
-          value={country}
-          onChange={(event) => setCountry(event.target.value)}
-          required
-        >
-          {COUNTRIES.map(({ value, label }) => (
-            <option key={value} value={value}>
-              {label}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div>
-        <label htmlFor="nocss-shipping-region">
-          State / Province / Territory
-        </label>
-        <select id="nocss-shipping-region" name="region" required>
-          <option value="">Select an option</option>
-          {regionOptions.map((region) => (
-            <option key={region} value={region}>
-              {region}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div>
-        <label htmlFor="nocss-shipping-postal">Postal code</label>
-        <input
-          id="nocss-shipping-postal"
-          name="postalCode"
-          type="text"
-          pattern={postalPattern}
-          inputMode="text"
-          required
-        />
-      </div>
+      <div
+        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
+      ></div>
       <div>
         <label>
           <input name="default" type="checkbox" />

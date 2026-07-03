@@ -1,51 +1,57 @@
-function PasswordChangeForm() {
+import { useState } from 'react'
+import { Box, Button, FormControl, FormLabel, Input } from '@mui/joy'
+
+export default function PasswordChangeForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Password change requested!')
+    alert('Password updated!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-password-change-current">Current password</label>
-        <input
-          id="nocss-password-change-current"
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+        maxWidth: '100%',
+        boxSizing: 'border-box',
+      }}
+    >
+      <FormControl required>
+        <FormLabel htmlFor="joy-pw-current">Current password</FormLabel>
+        <Input
+          id="joy-pw-current"
           name="currentPassword"
           type="password"
           required
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-password-change-new">New password</label>
-        <input
-          id="nocss-password-change-new"
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-pw-new">New password</FormLabel>
+        <Input
+          id="joy-pw-new"
           name="newPassword"
           type="password"
-          minLength="8"
+          slotProps={{ input: { minLength: 8 } }}
           required
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-password-change-confirm">
-          Confirm new password
-        </label>
-        <input
-          id="nocss-password-change-confirm"
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-pw-confirm">Confirm new password</FormLabel>
+        <Input
+          id="joy-pw-confirm"
           name="confirmPassword"
           type="password"
-          minLength="8"
+          slotProps={{ input: { minLength: 8 } }}
           required
         />
-      </div>
-      <div>
-        <label>
-          <input name="logoutOthers" type="checkbox" />
-          Sign out of other devices
-        </label>
-      </div>
-      <button type="submit">Update password</button>
-    </form>
+      </FormControl>
+
+      <Button type="submit">Update password</Button>
+    </Box>
   )
 }
-
-export default PasswordChangeForm

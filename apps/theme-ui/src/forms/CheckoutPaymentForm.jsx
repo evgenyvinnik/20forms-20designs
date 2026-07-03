@@ -56,79 +56,9 @@ function CheckoutPaymentForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div sx={{ marginBottom: 3 }}>
-        <label htmlFor="theme-ui-checkout-email" sx={labelStyles}>
-          Email for receipt
-        </label>
-        <input
-          id="theme-ui-checkout-email"
-          name="email"
-          type="email"
-          required
-          sx={inputStyles}
-        />
-      </div>
-      <div sx={{ marginBottom: 3 }}>
-        <label htmlFor="theme-ui-checkout-shipping-method" sx={labelStyles}>
-          Shipping method
-        </label>
-        <select
-          id="theme-ui-checkout-shipping-method"
-          name="shippingMethod"
-          required
-          sx={selectStyles}
-        >
-          <option value="">Select shipping</option>
-          <option value="standard">Standard</option>
-          <option value="express">Express</option>
-          <option value="overnight">Overnight</option>
-        </select>
-      </div>
-      <div sx={{ marginBottom: 3 }}>
-        <label htmlFor="theme-ui-checkout-card-number" sx={labelStyles}>
-          Card number
-        </label>
-        <input
-          id="theme-ui-checkout-card-number"
-          name="cardNumber"
-          type="text"
-          inputMode="numeric"
-          pattern="[0-9]{13,19}"
-          maxLength="19"
-          required
-          sx={inputStyles}
-        />
-      </div>
-      <div sx={{ marginBottom: 3 }}>
-        <label htmlFor="theme-ui-checkout-expiration" sx={labelStyles}>
-          Expiration
-        </label>
-        <input
-          id="theme-ui-checkout-expiration"
-          name="expiration"
-          type="text"
-          placeholder="MM/YY"
-          pattern="^(0[1-9]|1[0-2])\/\d{2}$"
-          inputMode="numeric"
-          required
-          sx={inputStyles}
-        />
-      </div>
-      <div sx={{ marginBottom: 3 }}>
-        <label htmlFor="theme-ui-checkout-cvc" sx={labelStyles}>
-          CVC
-        </label>
-        <input
-          id="theme-ui-checkout-cvc"
-          name="cvc"
-          type="text"
-          inputMode="numeric"
-          pattern="[0-9]{3,4}"
-          maxLength="4"
-          required
-          sx={inputStyles}
-        />
-      </div>
+      <div
+        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
+      ></div>
       <div sx={{ marginBottom: 3 }}>
         <label htmlFor="theme-ui-checkout-promo" sx={labelStyles}>
           Promo code

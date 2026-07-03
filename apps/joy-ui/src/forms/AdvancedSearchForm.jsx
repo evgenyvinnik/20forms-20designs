@@ -1,49 +1,57 @@
-function AdvancedSearchForm() {
+import { useState } from 'react'
+import {
+  Box,
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  Option,
+  Select,
+} from '@mui/joy'
+
+export default function AdvancedSearchForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Search submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-search-query">Search query</label>
-        <input id="nocss-search-query" name="query" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-search-category">Category</label>
-        <select id="nocss-search-category" name="category" required>
-          <option value="all">All</option>
-          <option value="articles">Articles</option>
-          <option value="products">Products</option>
-          <option value="people">People</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="nocss-search-date-from">Date from</label>
-        <input id="nocss-search-date-from" name="dateFrom" type="date" />
-      </div>
-      <div>
-        <label htmlFor="nocss-search-date-to">Date to</label>
-        <input id="nocss-search-date-to" name="dateTo" type="date" />
-      </div>
-      <div>
-        <label htmlFor="nocss-search-sort">Sort by</label>
-        <select id="nocss-search-sort" name="sort" required>
-          <option value="relevance">Relevance</option>
-          <option value="newest">Newest</option>
-          <option value="oldest">Oldest</option>
-        </select>
-      </div>
-      <div>
-        <label>
-          <input name="includeArchived" type="checkbox" />
-          Include archived
-        </label>
-      </div>
-      <button type="submit">Search</button>
-    </form>
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+        maxWidth: '100%',
+        boxSizing: 'border-box',
+      }}
+    >
+      <FormControl required>
+        <FormLabel htmlFor="joy-search-query">Search query</FormLabel>
+        <Input id="joy-search-query" name="query" type="text" required />
+      </FormControl>
+
+      <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}>
+        <FormControl>
+          <FormLabel htmlFor="joy-search-category">Category</FormLabel>
+          <Select id="joy-search-category" name="category" defaultValue="all">
+            <Option value="all">All categories</Option>
+            <Option value="docs">Documentation</Option>
+            <Option value="blog">Blog posts</Option>
+          </Select>
+        </FormControl>
+
+        <FormControl>
+          <FormLabel htmlFor="joy-search-sort">Sort by</FormLabel>
+          <Select id="joy-search-sort" name="sortBy" defaultValue="relevance">
+            <Option value="relevance">Relevance</Option>
+            <Option value="date">Date</Option>
+          </Select>
+        </FormControl>
+      </Box>
+
+      <Button type="submit">Search</Button>
+    </Box>
   )
 }
-
-export default AdvancedSearchForm

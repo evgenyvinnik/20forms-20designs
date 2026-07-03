@@ -11,59 +11,7 @@ function CheckoutPaymentForm() {
       onSubmit={handleSubmit}
       style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
-      <FormControl required>
-        <FormControl.Label>Email for receipt</FormControl.Label>
-        <TextInput id="primer-checkout-email" name="email" type="email" block />
-      </FormControl>
-
-      <FormControl required>
-        <FormControl.Label>Shipping method</FormControl.Label>
-        <Select id="primer-checkout-shipping" name="shippingMethod" block>
-          <Select.Option value="">Select shipping</Select.Option>
-          <Select.Option value="standard">Standard</Select.Option>
-          <Select.Option value="express">Express</Select.Option>
-          <Select.Option value="overnight">Overnight</Select.Option>
-        </Select>
-      </FormControl>
-
-      <FormControl required>
-        <FormControl.Label>Card number</FormControl.Label>
-        <TextInput
-          id="primer-checkout-cardnumber"
-          name="cardNumber"
-          type="text"
-          inputMode="numeric"
-          pattern="[0-9]{13,19}"
-          maxLength={19}
-          block
-        />
-      </FormControl>
-
-      <FormControl required>
-        <FormControl.Label>Expiration</FormControl.Label>
-        <TextInput
-          id="primer-checkout-expiration"
-          name="expiration"
-          type="text"
-          placeholder="MM/YY"
-          pattern="^(0[1-9]|1[0-2])\/\d{2}$"
-          inputMode="numeric"
-          block
-        />
-      </FormControl>
-
-      <FormControl required>
-        <FormControl.Label>CVC</FormControl.Label>
-        <TextInput
-          id="primer-checkout-cvc"
-          name="cvc"
-          type="text"
-          inputMode="numeric"
-          pattern="[0-9]{3,4}"
-          maxLength={4}
-          block
-        />
-      </FormControl>
+      <Box display="grid" gridTemplateColumns="1fr 1fr" gridGap={3}></Box>
 
       <FormControl>
         <FormControl.Label>Promo code</FormControl.Label>

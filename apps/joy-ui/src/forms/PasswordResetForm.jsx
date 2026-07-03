@@ -1,24 +1,40 @@
-function PasswordResetForm() {
+import { useState } from 'react'
+import {
+  Box,
+  Button,
+  FormControl,
+  FormHelperText,
+  FormLabel,
+  Input,
+} from '@mui/joy'
+
+export default function PasswordResetForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Password reset link requested!')
+    alert('Reset link requested!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <p>Request a password reset link via email.</p>
-      <div>
-        <label htmlFor="nocss-password-reset-email">Email address</label>
-        <input
-          id="nocss-password-reset-email"
-          name="email"
-          type="email"
-          required
-        />
-      </div>
-      <button type="submit">Send reset link</button>
-    </form>
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+        maxWidth: '100%',
+        boxSizing: 'border-box',
+      }}
+    >
+      <FormControl required>
+        <FormLabel htmlFor="joy-reset-email">Account email address</FormLabel>
+        <Input id="joy-reset-email" name="email" type="email" required />
+        <FormHelperText>
+          Instructions will be sent to this address if an account exists.
+        </FormHelperText>
+      </FormControl>
+
+      <Button type="submit">Send reset instructions</Button>
+    </Box>
   )
 }
-
-export default PasswordResetForm

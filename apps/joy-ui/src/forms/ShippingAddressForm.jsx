@@ -1,4 +1,14 @@
 import { useState } from 'react'
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControl,
+  FormLabel,
+  Input,
+  Option,
+  Select,
+} from '@mui/joy'
 import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from './locationOptions'
 
 function ShippingAddressForm() {
@@ -16,76 +26,94 @@ function ShippingAddressForm() {
       : '\\d{5}(-\\d{4})?'
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-shipping-full-name">Recipient name</label>
-        <input
-          id="nocss-shipping-full-name"
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+        maxWidth: '100%',
+        boxSizing: 'border-box',
+      }}
+    >
+      <FormControl required>
+        <FormLabel htmlFor="joy-shipping-full-name">Recipient name</FormLabel>
+        <Input
+          id="joy-shipping-full-name"
           name="fullName"
           type="text"
           required
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-shipping-street">Street address</label>
-        <input id="nocss-shipping-street" name="street" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-shipping-street-2">Apartment, suite, etc.</label>
-        <input id="nocss-shipping-street-2" name="street2" type="text" />
-      </div>
-      <div>
-        <label htmlFor="nocss-shipping-city">City</label>
-        <input id="nocss-shipping-city" name="city" type="text" required />
-      </div>
-      <div>
-        <label htmlFor="nocss-shipping-country">Country</label>
-        <select
-          id="nocss-shipping-country"
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-shipping-street">Street address</FormLabel>
+        <Input id="joy-shipping-street" name="street" type="text" required />
+      </FormControl>
+
+      <FormControl>
+        <FormLabel htmlFor="joy-shipping-street-2">
+          Apartment, suite, etc.
+        </FormLabel>
+        <Input id="joy-shipping-street-2" name="street2" type="text" />
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-shipping-city">City</FormLabel>
+        <Input id="joy-shipping-city" name="city" type="text" required />
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-shipping-country">Country</FormLabel>
+        <Select
+          id="joy-shipping-country"
           name="country"
           value={country}
-          onChange={(event) => setCountry(event.target.value)}
+          onChange={(_, val) => val && setCountry(val)}
           required
         >
           {COUNTRIES.map(({ value, label }) => (
-            <option key={value} value={value}>
+            <Option key={value} value={value}>
               {label}
-            </option>
+            </Option>
           ))}
-        </select>
-      </div>
-      <div>
-        <label htmlFor="nocss-shipping-region">
-          State / Province / Territory
-        </label>
-        <select id="nocss-shipping-region" name="region" required>
-          <option value="">Select an option</option>
-          {regionOptions.map((region) => (
-            <option key={region} value={region}>
-              {region}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div>
-        <label htmlFor="nocss-shipping-postal">Postal code</label>
-        <input
-          id="nocss-shipping-postal"
-          name="postalCode"
-          type="text"
-          pattern={postalPattern}
-          inputMode="text"
-          required
-        />
-      </div>
-      <div>
-        <label>
-          <input name="default" type="checkbox" />
-          Use as default shipping address
-        </label>
-      </div>
-      <button type="submit">Save address</button>
-    </form>
+        </Select>
+      </FormControl>
+
+      <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}>
+        <FormControl required>
+          <FormLabel htmlFor="joy-shipping-region">State / Province</FormLabel>
+          <Select id="joy-shipping-region" name="region" required>
+            <Option value="">Select</Option>
+            {regionOptions.map((region) => (
+              <Option key={region} value={region}>
+                {region}
+              </Option>
+            ))}
+          </Select>
+        </FormControl>
+
+        <FormControl required>
+          <FormLabel htmlFor="joy-shipping-postal">Postal code</FormLabel>
+          <Input
+            id="joy-shipping-postal"
+            name="postalCode"
+            type="text"
+            slotProps={{ input: { pattern: postalPattern } }}
+            required
+          />
+        </FormControl>
+      </Box>
+
+      <Checkbox
+        name="default"
+        label="Use as default shipping address"
+        sx={{ my: 1 }}
+      />
+
+      <Button type="submit">Save address</Button>
+    </Box>
   )
 }
 

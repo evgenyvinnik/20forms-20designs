@@ -1,75 +1,63 @@
-function SupportTicketForm() {
+import { useState } from 'react'
+import {
+  Box,
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  Option,
+  Select,
+  Textarea,
+} from '@mui/joy'
+
+export default function SupportTicketForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Support ticket submitted!')
+    alert('Ticket submitted!')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nocss-ticket-subject">Subject</label>
-        <input id="nocss-ticket-subject" name="subject" type="text" required />
-      </div>
-      <div>
-        <fieldset>
-          <legend>Priority</legend>
-          <div>
-            <label>
-              <input
-                id="nocss-ticket-priority-low"
-                type="radio"
-                name="priority"
-                value="low"
-                required
-              />
-              Low
-            </label>
-          </div>
-          <div>
-            <label>
-              <input
-                id="nocss-ticket-priority-medium"
-                type="radio"
-                name="priority"
-                value="medium"
-              />
-              Medium
-            </label>
-          </div>
-          <div>
-            <label>
-              <input
-                id="nocss-ticket-priority-high"
-                type="radio"
-                name="priority"
-                value="high"
-              />
-              High
-            </label>
-          </div>
-        </fieldset>
-      </div>
-      <div>
-        <label htmlFor="nocss-ticket-description">Issue description</label>
-        <textarea
-          id="nocss-ticket-description"
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+        maxWidth: '100%',
+        boxSizing: 'border-box',
+      }}
+    >
+      <FormControl required>
+        <FormLabel htmlFor="joy-ticket-subject">Subject</FormLabel>
+        <Input id="joy-ticket-subject" name="subject" type="text" required />
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-ticket-priority">Priority</FormLabel>
+        <Select
+          id="joy-ticket-priority"
+          name="priority"
+          defaultValue="medium"
+          required
+        >
+          <Option value="low">Low</Option>
+          <Option value="medium">Medium</Option>
+          <Option value="high">High</Option>
+        </Select>
+      </FormControl>
+
+      <FormControl required>
+        <FormLabel htmlFor="joy-ticket-desc">Description</FormLabel>
+        <Textarea
+          id="joy-ticket-desc"
           name="description"
-          rows="4"
+          minRows={4}
           required
         />
-      </div>
-      <div>
-        <label htmlFor="nocss-ticket-attachments">Attachments</label>
-        <input
-          id="nocss-ticket-attachments"
-          name="attachments"
-          type="file"
-          multiple
-        />
-      </div>
-      <button type="submit">Submit ticket</button>
-    </form>
+      </FormControl>
+
+      <Button type="submit">Submit ticket</Button>
+    </Box>
   )
 }
-
-export default SupportTicketForm
