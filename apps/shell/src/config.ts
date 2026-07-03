@@ -45,7 +45,6 @@ export type LibraryId =
   | 'ark-ui'
   | 'base-ui'
   | 'park-ui'
-  | 'heroui'
   | 'joy-ui'
 
 // Form ID for iframe URLs
@@ -110,7 +109,6 @@ export const LIBRARY_NAME_TO_ID: Record<string, LibraryId | undefined> = {
   'Gravity UI': 'gravity-ui',
   Grommet: 'grommet',
   'Headless UI': 'headlessui',
-  HeroUI: 'heroui',
   'Joy UI': 'joy-ui',
   Mantine: 'mantine',
   'Material Tailwind': 'material-tailwind',
@@ -548,14 +546,6 @@ export const LIBRARIES: Library[] = [
     supportsTheme: true,
   },
   {
-    name: 'HeroUI',
-    directory: 'heroui',
-    website: 'https://heroui.com',
-    repo: 'https://github.com/heroui-inc/heroui',
-    implemented: true,
-    supportsTheme: true,
-  },
-  {
     name: 'Joy UI',
     directory: 'joy-ui',
     website: 'https://v7.mui.com/joy-ui/getting-started',
@@ -616,7 +606,6 @@ const CONSOLIDATED_LIBRARIES: Set<LibraryId> = new Set([
   'ark-ui',
   'base-ui',
   'park-ui',
-  'heroui',
   'joy-ui',
 ])
 

@@ -196,6 +196,7 @@ function App() {
             onToggleItem={toggleLibrarySelection}
             onSelectAll={selectAllLibraries}
             onSelectNone={selectNoLibraries}
+            twoColumnLayout={true}
           />
         </div>
 
