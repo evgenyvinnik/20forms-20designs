@@ -1,4 +1,4 @@
-import { Box, FormControl, TextInput, Button } from '@primer/react'
+import { FormControl, TextInput, Button } from '@primer/react'
 
 function OrderTrackingForm() {
   const handleSubmit = (event) => {
@@ -7,10 +7,9 @@ function OrderTrackingForm() {
   }
 
   return (
-    <Box
-      as="form"
+    <form
       onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <FormControl required>
         <FormControl.Label>Order number</FormControl.Label>
@@ -41,7 +40,7 @@ function OrderTrackingForm() {
       <Button type="submit" variant="primary" block>
         Find order
       </Button>
-    </Box>
+    </form>
   )
 }
 

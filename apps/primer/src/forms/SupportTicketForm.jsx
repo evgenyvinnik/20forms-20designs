@@ -1,5 +1,4 @@
 import {
-  Box,
   FormControl,
   TextInput,
   Textarea,
@@ -16,10 +15,9 @@ function SupportTicketForm() {
   }
 
   return (
-    <Box
-      as="form"
+    <form
       onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <FormControl required>
         <FormControl.Label>Subject</FormControl.Label>
@@ -76,7 +74,7 @@ function SupportTicketForm() {
       <Button type="submit" variant="primary" block>
         Submit ticket
       </Button>
-    </Box>
+    </form>
   )
 }
 

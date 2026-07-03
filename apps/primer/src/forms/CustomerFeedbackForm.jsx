@@ -1,5 +1,4 @@
 import {
-  Box,
   FormControl,
   TextInput,
   Select,
@@ -15,10 +14,9 @@ function CustomerFeedbackForm() {
   }
 
   return (
-    <Box
-      as="form"
+    <form
       onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <FormControl required>
         <FormControl.Label>Name</FormControl.Label>
@@ -59,7 +57,7 @@ function CustomerFeedbackForm() {
       <Button type="submit" variant="primary" block>
         Send feedback
       </Button>
-    </Box>
+    </form>
   )
 }
 

@@ -1,12 +1,5 @@
 import { useState } from 'react'
-import {
-  Box,
-  FormControl,
-  TextInput,
-  Select,
-  Checkbox,
-  Button,
-} from '@primer/react'
+import { FormControl, TextInput, Select, Checkbox, Button } from '@primer/react'
 import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from './locationOptions'
 
 function ShippingAddressForm() {
@@ -24,10 +17,9 @@ function ShippingAddressForm() {
       : '\\d{5}(-\\d{4})?'
 
   return (
-    <Box
-      as="form"
+    <form
       onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <FormControl required>
         <FormControl.Label>Recipient name</FormControl.Label>
@@ -113,7 +105,7 @@ function ShippingAddressForm() {
       <Button type="submit" variant="primary" block>
         Save address
       </Button>
-    </Box>
+    </form>
   )
 }
 

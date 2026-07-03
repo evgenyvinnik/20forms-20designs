@@ -1,4 +1,4 @@
-import { Box, FormControl, TextInput, Checkbox, Button } from '@primer/react'
+import { FormControl, TextInput, Checkbox, Button } from '@primer/react'
 
 function UserLoginForm() {
   const handleSubmit = (event) => {
@@ -7,10 +7,9 @@ function UserLoginForm() {
   }
 
   return (
-    <Box
-      as="form"
+    <form
       onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <FormControl required>
         <FormControl.Label>Email or username</FormControl.Label>
@@ -48,7 +47,7 @@ function UserLoginForm() {
       >
         Forgot password?
       </Button>
-    </Box>
+    </form>
   )
 }
 

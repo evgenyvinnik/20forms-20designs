@@ -1,4 +1,4 @@
-import { Box, FormControl, TextInput, Select, Button } from '@primer/react'
+import { FormControl, TextInput, Select, Button } from '@primer/react'
 
 function BillingInfoForm() {
   const handleSubmit = (event) => {
@@ -7,10 +7,9 @@ function BillingInfoForm() {
   }
 
   return (
-    <Box
-      as="form"
+    <form
       onSubmit={handleSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
       <FormControl required>
         <FormControl.Label>Name on card</FormControl.Label>
@@ -83,7 +82,7 @@ function BillingInfoForm() {
       <Button type="submit" variant="primary" block>
         Save billing details
       </Button>
-    </Box>
+    </form>
   )
 }
 
