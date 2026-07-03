@@ -24,7 +24,6 @@ export default function ProfileUpdateForm() {
         <Input
           id="joy-profile-name"
           name="displayName"
-          type="text"
           defaultValue="Jane Doe"
           required
         />

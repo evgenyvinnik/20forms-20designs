@@ -21,23 +21,20 @@ export default function PrivacyConsentForm() {
     >
       <Checkbox
         name="necessary"
-        label="Essential cookies required for site operation"
         defaultChecked
         disabled
+        label="Essential cookies required for site operation"
       />
       <Checkbox
         name="analytics"
-        label="Allow anonymous analytics tracking"
         defaultChecked
+        label="Allow anonymous analytics tracking"
       />
       <Checkbox
         name="marketing"
         label="Receive promotional updates and newsletters"
       />
-
-      <Button type="submit" sx={{ mt: 1 }}>
-        Save consent settings
-      </Button>
+      <Button type="submit">Save consent settings</Button>
     </Box>
   )
 }

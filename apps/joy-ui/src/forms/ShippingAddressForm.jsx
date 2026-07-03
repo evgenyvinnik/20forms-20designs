@@ -11,7 +11,7 @@ import {
 } from '@mui/joy'
 import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from './locationOptions'
 
-function ShippingAddressForm() {
+export default function ShippingAddressForm() {
   const [country, setCountry] = useState('US')
 
   const handleSubmit = (event) => {
@@ -20,10 +20,6 @@ function ShippingAddressForm() {
   }
 
   const regionOptions = country === 'CA' ? CANADIAN_PROVINCES : US_STATES
-  const postalPattern =
-    country === 'CA'
-      ? '[A-Za-z]\\d[A-Za-z] ?\\d[A-Za-z]\\d'
-      : '\\d{5}(-\\d{4})?'
 
   return (
     <Box
@@ -38,30 +34,25 @@ function ShippingAddressForm() {
       }}
     >
       <FormControl required>
-        <FormLabel htmlFor="joy-shipping-full-name">Recipient name</FormLabel>
-        <Input
-          id="joy-shipping-full-name"
-          name="fullName"
-          type="text"
-          required
-        />
+        <FormLabel htmlFor="joy-shipping-name">Recipient name</FormLabel>
+        <Input id="joy-shipping-name" name="fullName" required />
       </FormControl>
 
       <FormControl required>
         <FormLabel htmlFor="joy-shipping-street">Street address</FormLabel>
-        <Input id="joy-shipping-street" name="street" type="text" required />
+        <Input id="joy-shipping-street" name="street" required />
       </FormControl>
 
       <FormControl>
-        <FormLabel htmlFor="joy-shipping-street-2">
+        <FormLabel htmlFor="joy-shipping-street2">
           Apartment, suite, etc.
         </FormLabel>
-        <Input id="joy-shipping-street-2" name="street2" type="text" />
+        <Input id="joy-shipping-street2" name="street2" />
       </FormControl>
 
       <FormControl required>
         <FormLabel htmlFor="joy-shipping-city">City</FormLabel>
-        <Input id="joy-shipping-city" name="city" type="text" required />
+        <Input id="joy-shipping-city" name="city" required />
       </FormControl>
 
       <FormControl required>
@@ -70,7 +61,7 @@ function ShippingAddressForm() {
           id="joy-shipping-country"
           name="country"
           value={country}
-          onChange={(_, val) => val && setCountry(val)}
+          onChange={(_, val) => setCountry(val)}
           required
         >
           {COUNTRIES.map(({ value, label }) => (
@@ -85,7 +76,6 @@ function ShippingAddressForm() {
         <FormControl required>
           <FormLabel htmlFor="joy-shipping-region">State / Province</FormLabel>
           <Select id="joy-shipping-region" name="region" required>
-            <Option value="">Select</Option>
             {regionOptions.map((region) => (
               <Option key={region} value={region}>
                 {region}
@@ -96,13 +86,7 @@ function ShippingAddressForm() {
 
         <FormControl required>
           <FormLabel htmlFor="joy-shipping-postal">Postal code</FormLabel>
-          <Input
-            id="joy-shipping-postal"
-            name="postalCode"
-            type="text"
-            slotProps={{ input: { pattern: postalPattern } }}
-            required
-          />
+          <Input id="joy-shipping-postal" name="postalCode" required />
         </FormControl>
       </Box>
 
@@ -116,5 +100,3 @@ function ShippingAddressForm() {
     </Box>
   )
 }
-
-export default ShippingAddressForm

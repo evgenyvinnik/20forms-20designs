@@ -48,8 +48,8 @@ export default function NewsletterSubscriptionForm() {
 
       <Checkbox
         name="productUpdates"
-        label="Include product release notes"
         defaultChecked
+        label="Include product release notes"
         sx={{ my: 1 }}
       />
 

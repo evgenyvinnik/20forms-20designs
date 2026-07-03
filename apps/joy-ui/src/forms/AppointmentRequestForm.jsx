@@ -29,14 +29,16 @@ export default function AppointmentRequestForm() {
       }}
     >
       <FormControl required>
-        <FormLabel htmlFor="joy-app-name">Your name</FormLabel>
-        <Input id="joy-app-name" name="name" type="text" required />
+        <FormLabel htmlFor="joy-appointment-name">Your name</FormLabel>
+        <Input id="joy-appointment-name" name="name" required />
       </FormControl>
 
       <FormControl required>
-        <FormLabel htmlFor="joy-app-service">Service requested</FormLabel>
+        <FormLabel htmlFor="joy-appointment-service">
+          Service requested
+        </FormLabel>
         <Select
-          id="joy-app-service"
+          id="joy-appointment-service"
           name="service"
           defaultValue="consultation"
           required
@@ -47,13 +49,13 @@ export default function AppointmentRequestForm() {
       </FormControl>
 
       <FormControl required>
-        <FormLabel htmlFor="joy-app-date">Preferred date</FormLabel>
-        <Input id="joy-app-date" name="date" type="date" required />
+        <FormLabel htmlFor="joy-appointment-date">Preferred date</FormLabel>
+        <Input id="joy-appointment-date" name="date" type="date" required />
       </FormControl>
 
       <FormControl>
-        <FormLabel htmlFor="joy-app-notes">Notes</FormLabel>
-        <Textarea id="joy-app-notes" name="notes" minRows={3} />
+        <FormLabel htmlFor="joy-appointment-notes">Notes</FormLabel>
+        <Textarea id="joy-appointment-notes" name="notes" minRows={3} />
       </FormControl>
 
       <Button type="submit">Request appointment</Button>

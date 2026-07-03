@@ -21,7 +21,7 @@ export default function JobApplicationForm() {
     >
       <FormControl required>
         <FormLabel htmlFor="joy-job-name">Full name</FormLabel>
-        <Input id="joy-job-name" name="fullName" type="text" required />
+        <Input id="joy-job-name" name="fullName" required />
       </FormControl>
 
       <FormControl required>
@@ -35,8 +35,13 @@ export default function JobApplicationForm() {
       </FormControl>
 
       <FormControl required>
-        <FormLabel htmlFor="joy-job-cover">Cover letter</FormLabel>
-        <Textarea id="joy-job-cover" name="coverLetter" minRows={4} required />
+        <FormLabel htmlFor="joy-job-cover-letter">Cover letter</FormLabel>
+        <Textarea
+          id="joy-job-cover-letter"
+          name="coverLetter"
+          minRows={4}
+          required
+        />
       </FormControl>
 
       <Button type="submit">Submit application</Button>

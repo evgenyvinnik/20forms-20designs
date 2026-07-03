@@ -28,19 +28,24 @@ export default function OnboardingWizardForm() {
       {step === 1 ? (
         <>
           <FormControl required>
-            <FormLabel htmlFor="joy-onb-name">Your full name</FormLabel>
-            <Input id="joy-onb-name" name="name" type="text" required />
+            <FormLabel htmlFor="joy-onboarding-name">Your full name</FormLabel>
+            <Input id="joy-onboarding-name" name="name" required />
           </FormControl>
           <Button type="submit">Next step</Button>
         </>
       ) : (
         <>
           <FormControl required>
-            <FormLabel htmlFor="joy-onb-company">Company name</FormLabel>
-            <Input id="joy-onb-company" name="company" type="text" required />
+            <FormLabel htmlFor="joy-onboarding-company">Company name</FormLabel>
+            <Input id="joy-onboarding-company" name="company" required />
           </FormControl>
           <Box sx={{ display: 'flex', gap: 1 }}>
-            <Button type="button" variant="outlined" onClick={() => setStep(1)}>
+            <Button
+              type="button"
+              variant="outlined"
+              color="neutral"
+              onClick={() => setStep(1)}
+            >
               Back
             </Button>
             <Button type="submit" sx={{ flex: 1 }}>

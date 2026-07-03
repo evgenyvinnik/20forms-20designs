@@ -29,7 +29,7 @@ export default function EventRegistrationForm() {
     >
       <FormControl required>
         <FormLabel htmlFor="joy-event-name">Attendee name</FormLabel>
-        <Input id="joy-event-name" name="name" type="text" required />
+        <Input id="joy-event-name" name="name" required />
       </FormControl>
 
       <FormControl required>

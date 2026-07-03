@@ -85,10 +85,10 @@ function App() {
   return (
     <div
       style={{
-        padding: '20px',
+        padding: '16px',
         maxWidth: '560px',
         margin: '0 auto',
-        minHeight: '100vh',
+        boxSizing: 'border-box',
       }}
     >
       <FormComponent />

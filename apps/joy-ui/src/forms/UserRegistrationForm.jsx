@@ -20,8 +20,8 @@ export default function UserRegistrationForm() {
       }}
     >
       <FormControl required>
-        <FormLabel htmlFor="joy-reg-fullName">Full name</FormLabel>
-        <Input id="joy-reg-fullName" name="fullName" type="text" required />
+        <FormLabel htmlFor="joy-reg-full-name">Full name</FormLabel>
+        <Input id="joy-reg-full-name" name="fullName" type="text" required />
       </FormControl>
 
       <FormControl required>
@@ -52,9 +52,11 @@ export default function UserRegistrationForm() {
       </FormControl>
 
       <FormControl required>
-        <FormLabel htmlFor="joy-reg-confirm">Confirm password</FormLabel>
+        <FormLabel htmlFor="joy-reg-confirm-password">
+          Confirm password
+        </FormLabel>
         <Input
-          id="joy-reg-confirm"
+          id="joy-reg-confirm-password"
           name="confirmPassword"
           type="password"
           slotProps={{ input: { minLength: 8 } }}

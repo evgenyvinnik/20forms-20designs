@@ -20,8 +20,8 @@ export default function OrderTrackingForm() {
       }}
     >
       <FormControl required>
-        <FormLabel htmlFor="joy-track-order">Order number</FormLabel>
-        <Input id="joy-track-order" name="orderNumber" type="text" required />
+        <FormLabel htmlFor="joy-track-order-number">Order number</FormLabel>
+        <Input id="joy-track-order-number" name="orderNumber" required />
       </FormControl>
 
       <FormControl required>

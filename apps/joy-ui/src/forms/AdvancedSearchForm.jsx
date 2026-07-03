@@ -29,7 +29,7 @@ export default function AdvancedSearchForm() {
     >
       <FormControl required>
         <FormLabel htmlFor="joy-search-query">Search query</FormLabel>
-        <Input id="joy-search-query" name="query" type="text" required />
+        <Input id="joy-search-query" name="query" required />
       </FormControl>
 
       <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}>

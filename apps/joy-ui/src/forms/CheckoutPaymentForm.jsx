@@ -33,9 +33,11 @@ export default function CheckoutPaymentForm() {
       </FormControl>
 
       <FormControl required>
-        <FormLabel htmlFor="joy-checkout-shipping">Shipping method</FormLabel>
+        <FormLabel htmlFor="joy-checkout-shipping-method">
+          Shipping method
+        </FormLabel>
         <Select
-          id="joy-checkout-shipping"
+          id="joy-checkout-shipping-method"
           name="shippingMethod"
           defaultValue="standard"
           required
@@ -47,24 +49,23 @@ export default function CheckoutPaymentForm() {
       </FormControl>
 
       <FormControl required>
-        <FormLabel htmlFor="joy-checkout-card">Card number</FormLabel>
+        <FormLabel htmlFor="joy-checkout-card-number">Card number</FormLabel>
         <Input
-          id="joy-checkout-card"
+          id="joy-checkout-card-number"
           name="cardNumber"
           type="text"
-          slotProps={{ input: { inputMode: 'numeric', maxLength: 19 } }}
+          slotProps={{ input: { maxLength: 19 } }}
           required
         />
       </FormControl>
 
       <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}>
         <FormControl required>
-          <FormLabel htmlFor="joy-checkout-exp">Expiration</FormLabel>
+          <FormLabel htmlFor="joy-checkout-expiration">Expiration</FormLabel>
           <Input
-            id="joy-checkout-exp"
+            id="joy-checkout-expiration"
             name="expiration"
             placeholder="MM/YY"
-            type="text"
             required
           />
         </FormControl>
@@ -75,7 +76,7 @@ export default function CheckoutPaymentForm() {
             id="joy-checkout-cvc"
             name="cvc"
             type="text"
-            slotProps={{ input: { inputMode: 'numeric', maxLength: 4 } }}
+            slotProps={{ input: { maxLength: 4 } }}
             required
           />
         </FormControl>

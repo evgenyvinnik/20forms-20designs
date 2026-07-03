@@ -30,7 +30,7 @@ export default function SupportTicketForm() {
     >
       <FormControl required>
         <FormLabel htmlFor="joy-ticket-subject">Subject</FormLabel>
-        <Input id="joy-ticket-subject" name="subject" type="text" required />
+        <Input id="joy-ticket-subject" name="subject" required />
       </FormControl>
 
       <FormControl required>
@@ -48,9 +48,9 @@ export default function SupportTicketForm() {
       </FormControl>
 
       <FormControl required>
-        <FormLabel htmlFor="joy-ticket-desc">Description</FormLabel>
+        <FormLabel htmlFor="joy-ticket-description">Description</FormLabel>
         <Textarea
-          id="joy-ticket-desc"
+          id="joy-ticket-description"
           name="description"
           minRows={4}
           required

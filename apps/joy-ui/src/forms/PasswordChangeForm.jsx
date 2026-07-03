@@ -20,9 +20,9 @@ export default function PasswordChangeForm() {
       }}
     >
       <FormControl required>
-        <FormLabel htmlFor="joy-pw-current">Current password</FormLabel>
+        <FormLabel htmlFor="joy-change-current">Current password</FormLabel>
         <Input
-          id="joy-pw-current"
+          id="joy-change-current"
           name="currentPassword"
           type="password"
           required
@@ -30,9 +30,9 @@ export default function PasswordChangeForm() {
       </FormControl>
 
       <FormControl required>
-        <FormLabel htmlFor="joy-pw-new">New password</FormLabel>
+        <FormLabel htmlFor="joy-change-new">New password</FormLabel>
         <Input
-          id="joy-pw-new"
+          id="joy-change-new"
           name="newPassword"
           type="password"
           slotProps={{ input: { minLength: 8 } }}
@@ -41,9 +41,9 @@ export default function PasswordChangeForm() {
       </FormControl>
 
       <FormControl required>
-        <FormLabel htmlFor="joy-pw-confirm">Confirm new password</FormLabel>
+        <FormLabel htmlFor="joy-change-confirm">Confirm new password</FormLabel>
         <Input
-          id="joy-pw-confirm"
+          id="joy-change-confirm"
           name="confirmPassword"
           type="password"
           slotProps={{ input: { minLength: 8 } }}
