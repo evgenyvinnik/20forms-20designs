@@ -13,7 +13,7 @@ import {
 export default function TwoFactorAuthForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('2FA code submitted!')
+    alert('Verification submitted!')
   }
 
   return (

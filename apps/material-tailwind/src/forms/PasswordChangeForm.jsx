@@ -3,7 +3,7 @@ import { Input, Checkbox, Button, Typography } from '@material-tailwind/react'
 function PasswordChangeForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Password changed!')
+    alert('Password change requested!')
   }
 
   return (

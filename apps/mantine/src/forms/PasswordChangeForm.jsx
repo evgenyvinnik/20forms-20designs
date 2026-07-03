@@ -1,4 +1,4 @@
-import { Button, Checkbox, Stack, PasswordInput } from '@mantine/core'
+import { Button, Checkbox, PasswordInput, Stack } from '@mantine/core'
 
 function PasswordChangeForm() {
   const handleSubmit = (event) => {

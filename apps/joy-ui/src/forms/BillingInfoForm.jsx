@@ -13,7 +13,7 @@ import {
 export default function BillingInfoForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Billing info saved!')
+    alert('Billing details saved!')
   }
 
   return (

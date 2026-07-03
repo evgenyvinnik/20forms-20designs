@@ -5,40 +5,44 @@ import {
   EuiFieldText,
   EuiTextArea,
   EuiSelect,
+  EuiCheckbox,
   EuiButton,
 } from '@elastic/eui'
 
-const subjectOptions = [
-  { value: '', text: 'Select a subject' },
-  { value: 'general', text: 'General Inquiry' },
-  { value: 'support', text: 'Technical Support' },
+const topicOptions = [
+  { value: '', text: 'Select topic' },
+  { value: 'support', text: 'Support' },
   { value: 'sales', text: 'Sales' },
   { value: 'feedback', text: 'Feedback' },
+  { value: 'other', text: 'Other' },
 ]
 
 function ContactInquiryForm() {
-  const [name, setName] = useState('')
+  const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
-  const [subject, setSubject] = useState('')
+  const [topic, setTopic] = useState('')
   const [message, setMessage] = useState('')
+  const [consent, setConsent] = useState(false)
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
-    alert('Inquiry submitted successfully!')
+    alert('Inquiry submitted!')
   }, [])
 
   return (
     <EuiForm component="form" onSubmit={handleSubmit}>
-      <EuiFormRow label="Name">
+      <EuiFormRow label="Full name">
         <EuiFieldText
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          name="fullName"
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
           required
         />
       </EuiFormRow>
 
       <EuiFormRow label="Email address">
         <EuiFieldText
+          name="email"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -46,27 +50,39 @@ function ContactInquiryForm() {
         />
       </EuiFormRow>
 
-      <EuiFormRow label="Subject">
+      <EuiFormRow label="Topic">
         <EuiSelect
-          options={subjectOptions}
-          value={subject}
-          onChange={(e) => setSubject(e.target.value)}
+          name="topic"
+          options={topicOptions}
+          value={topic}
+          onChange={(e) => setTopic(e.target.value)}
           required
         />
       </EuiFormRow>
 
       <EuiFormRow label="Message">
         <EuiTextArea
+          name="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          rows={5}
+          rows={4}
           required
         />
       </EuiFormRow>
 
       <EuiFormRow>
+        <EuiCheckbox
+          id="consent-checkbox"
+          name="consent"
+          label="Allow follow-up communication"
+          checked={consent}
+          onChange={(e) => setConsent(e.target.checked)}
+        />
+      </EuiFormRow>
+
+      <EuiFormRow>
         <EuiButton type="submit" fill>
-          Send message
+          Submit inquiry
         </EuiButton>
       </EuiFormRow>
     </EuiForm>

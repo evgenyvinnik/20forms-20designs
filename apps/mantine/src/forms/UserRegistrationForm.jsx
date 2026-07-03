@@ -1,9 +1,9 @@
 import {
   Button,
   Checkbox,
+  PasswordInput,
   Stack,
   TextInput,
-  PasswordInput,
 } from '@mantine/core'
 
 function UserRegistrationForm() {

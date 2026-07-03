@@ -6,7 +6,7 @@ import '@awesome.me/webawesome/dist/components/button/button.js'
 function CheckoutPaymentForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Order placed!')
+    alert('Checkout submitted!')
   }
 
   return (

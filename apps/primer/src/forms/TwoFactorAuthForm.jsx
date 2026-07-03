@@ -3,7 +3,7 @@ import { FormControl, TextInput, Button, Text } from '@primer/react'
 function TwoFactorAuthForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Two-factor authentication verified!')
+    alert('Verification submitted!')
   }
 
   return (

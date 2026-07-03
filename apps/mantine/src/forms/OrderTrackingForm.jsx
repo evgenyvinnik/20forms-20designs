@@ -13,6 +13,7 @@ function OrderTrackingForm() {
           id="mantine-order-tracking-number"
           name="orderNumber"
           label="Order number"
+          pattern="[A-Za-z0-9-]{6,20}"
           required
         />
         <TextInput
@@ -26,6 +27,7 @@ function OrderTrackingForm() {
           id="mantine-order-tracking-postal"
           name="postalCode"
           label="Postal code"
+          type="text"
           required
         />
         <Button type="submit">Find order</Button>

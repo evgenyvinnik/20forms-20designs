@@ -3,7 +3,7 @@ import { Form, TextField, Button, Flex, Text } from '@adobe/react-spectrum'
 function TwoFactorAuthForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Code verified!')
+    alert('Verification submitted!')
   }
 
   return (

@@ -1,6 +1,9 @@
+import { useState } from 'react'
 import { Button, Group, Select, Stack, TextInput } from '@mantine/core'
 
 function CheckoutPaymentForm() {
+  const [shippingMethod, setShippingMethod] = useState('standard')
+
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Checkout submitted!')
@@ -20,7 +23,8 @@ function CheckoutPaymentForm() {
           id="mantine-checkout-shipping-method"
           name="shippingMethod"
           label="Shipping method"
-          defaultValue="standard"
+          value={shippingMethod}
+          onChange={setShippingMethod}
           data={[
             { value: 'standard', label: 'Standard Shipping' },
             { value: 'express', label: 'Express Shipping' },
@@ -56,6 +60,7 @@ function CheckoutPaymentForm() {
           id="mantine-checkout-promo"
           name="promoCode"
           label="Promo code"
+          pattern="[A-Za-z0-9]{3,15}"
         />
         <Button type="submit">Place order</Button>
       </Stack>

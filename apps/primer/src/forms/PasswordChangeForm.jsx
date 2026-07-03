@@ -3,7 +3,7 @@ import { FormControl, TextInput, Checkbox, Button } from '@primer/react'
 function PasswordChangeForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Password changed!')
+    alert('Password change requested!')
   }
 
   return (

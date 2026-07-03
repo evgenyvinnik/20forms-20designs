@@ -4,7 +4,7 @@ import { Field } from '@base-ui-components/react/field'
 export default function PrivacyConsentForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Privacy consent saved!')
+    alert('Privacy preferences saved!')
   }
 
   return (

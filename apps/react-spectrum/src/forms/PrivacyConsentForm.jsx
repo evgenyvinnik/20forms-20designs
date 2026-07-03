@@ -12,7 +12,7 @@ import {
 function PrivacyConsentForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Preferences saved!')
+    alert('Privacy preferences saved!')
   }
 
   return (

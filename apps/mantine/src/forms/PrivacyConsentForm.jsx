@@ -1,10 +1,10 @@
 import {
   Button,
   Checkbox,
+  Fieldset,
   Stack,
   TextInput,
   Textarea,
-  Fieldset,
 } from '@mantine/core'
 
 function PrivacyConsentForm() {
@@ -30,6 +30,7 @@ function PrivacyConsentForm() {
           type="email"
           required
         />
+
         <Fieldset legend="Communication channels">
           <Stack gap="xs">
             <Checkbox name="emailOptIn" label="Email updates" />
@@ -37,6 +38,7 @@ function PrivacyConsentForm() {
             <Checkbox name="phoneOptIn" label="Phone calls" />
           </Stack>
         </Fieldset>
+
         <Fieldset legend="Privacy options">
           <Stack gap="xs">
             <Checkbox name="analytics" label="Allow analytics cookies" />
@@ -46,6 +48,7 @@ function PrivacyConsentForm() {
             />
           </Stack>
         </Fieldset>
+
         <Textarea
           id="mantine-privacy-notes"
           name="notes"

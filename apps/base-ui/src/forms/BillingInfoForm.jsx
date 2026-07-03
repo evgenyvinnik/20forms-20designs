@@ -4,7 +4,7 @@ import { Field } from '@base-ui-components/react/field'
 export default function BillingInfoForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Billing info saved!')
+    alert('Billing details saved!')
   }
 
   return (

@@ -19,7 +19,7 @@ function EventRegistrationForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Registration submitted!')
+    alert('Event registration submitted!')
   }
 
   return (

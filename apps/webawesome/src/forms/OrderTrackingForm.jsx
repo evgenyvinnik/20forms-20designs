@@ -4,7 +4,7 @@ import '@awesome.me/webawesome/dist/components/button/button.js'
 function OrderTrackingForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Finding your order...')
+    alert('Order lookup submitted!')
   }
 
   return (

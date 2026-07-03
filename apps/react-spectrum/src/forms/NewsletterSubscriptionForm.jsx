@@ -11,7 +11,7 @@ import {
 function NewsletterSubscriptionForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Subscribed!')
+    alert('Newsletter subscription submitted!')
   }
 
   return (

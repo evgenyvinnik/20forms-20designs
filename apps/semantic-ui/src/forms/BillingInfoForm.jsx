@@ -9,7 +9,7 @@ const countryOptions = [
 function BillingInfoForm({ inverted }) {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Billing info saved!')
+    alert('Billing details saved!')
   }
 
   return (

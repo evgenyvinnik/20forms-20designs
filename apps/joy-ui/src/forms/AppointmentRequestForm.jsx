@@ -13,7 +13,7 @@ import {
 export default function AppointmentRequestForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Appointment requested!')
+    alert('Appointment request submitted!')
   }
 
   return (

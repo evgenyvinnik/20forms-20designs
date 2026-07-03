@@ -10,7 +10,7 @@ import {
 function CustomerFeedbackForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Feedback sent!')
+    alert('Feedback submitted!')
   }
 
   return (

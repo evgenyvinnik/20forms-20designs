@@ -8,7 +8,7 @@ function TwoFactorAuthForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Verification code submitted!')
+    alert('Verification submitted!')
   }
 
   return (

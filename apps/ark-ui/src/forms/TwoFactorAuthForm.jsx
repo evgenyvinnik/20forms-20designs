@@ -4,7 +4,7 @@ import { Field } from '@ark-ui/react'
 export default function TwoFactorAuthForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('2FA code submitted!')
+    alert('Verification submitted!')
   }
 
   return (

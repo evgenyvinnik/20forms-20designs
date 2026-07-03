@@ -4,7 +4,7 @@ import { Field } from '@ark-ui/react'
 export default function AppointmentRequestForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Appointment requested!')
+    alert('Appointment request submitted!')
   }
 
   return (

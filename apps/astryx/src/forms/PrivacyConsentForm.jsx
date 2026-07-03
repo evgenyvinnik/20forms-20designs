@@ -4,7 +4,7 @@ import { TextInput, Selector, CheckboxInput, Button } from '@astryxdesign/core'
 function PrivacyConsentForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Privacy consent saved!')
+    alert('Privacy preferences saved!')
   }
 
   return (

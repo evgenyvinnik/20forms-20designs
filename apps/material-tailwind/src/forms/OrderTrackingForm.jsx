@@ -3,7 +3,7 @@ import { Input, Button, Typography } from '@material-tailwind/react'
 function OrderTrackingForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Order tracking submitted!')
+    alert('Order lookup submitted!')
   }
 
   return (

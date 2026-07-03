@@ -4,7 +4,7 @@ import { TextInput, Selector, CheckboxInput, Button } from '@astryxdesign/core'
 function JobApplicationForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Job application submitted!')
+    alert('Application submitted!')
   }
 
   return (

@@ -50,7 +50,7 @@ function ShippingAddressForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Address saved!')
+    alert('Shipping address saved!')
   }
 
   return (

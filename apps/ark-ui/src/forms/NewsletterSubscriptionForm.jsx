@@ -4,7 +4,7 @@ import { Field } from '@ark-ui/react'
 export default function NewsletterSubscriptionForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Subscribed to newsletter!')
+    alert('Newsletter subscription submitted!')
   }
 
   return (

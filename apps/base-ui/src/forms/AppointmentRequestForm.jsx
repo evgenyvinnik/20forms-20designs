@@ -4,7 +4,7 @@ import { Field } from '@base-ui-components/react/field'
 export default function AppointmentRequestForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Appointment requested!')
+    alert('Appointment request submitted!')
   }
 
   return (

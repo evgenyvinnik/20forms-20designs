@@ -28,6 +28,7 @@ function JobApplicationForm() {
           name="phone"
           label="Phone number"
           type="tel"
+          pattern="[+0-9\s-]{7,20}"
           inputMode="tel"
           required
         />

@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { Button, Checkbox, Stack, TextInput, Select } from '@mantine/core'
+import { Button, Checkbox, Select, Stack, TextInput } from '@mantine/core'
 import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from './locationOptions'
 
 function ShippingAddressForm() {
   const [country, setCountry] = useState('US')
+  const [region, setRegion] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -11,6 +12,8 @@ function ShippingAddressForm() {
   }
 
   const regionOptions = country === 'CA' ? CANADIAN_PROVINCES : US_STATES
+  const postalPattern =
+    country === 'CA' ? '[A-Za-z]\d[A-Za-z] ?\d[A-Za-z]\d' : '\d{5}(-\d{4})?'
 
   return (
     <form onSubmit={handleSubmit}>
@@ -47,7 +50,10 @@ function ShippingAddressForm() {
           name="country"
           label="Country"
           value={country}
-          onChange={(value) => setCountry(value || 'US')}
+          onChange={(val) => {
+            setCountry(val || 'US')
+            setRegion('')
+          }}
           data={COUNTRIES.map(({ value, label }) => ({ value, label }))}
           required
         />
@@ -55,11 +61,10 @@ function ShippingAddressForm() {
           id="mantine-shipping-region"
           name="region"
           label="State / Province / Territory"
-
-          data={regionOptions.map((region) => ({
-            value: region,
-            label: region,
-          }))}
+          placeholder="Select an option"
+          value={region}
+          onChange={setRegion}
+          data={regionOptions.map((r) => ({ value: r, label: r }))}
           required
         />
         <TextInput
@@ -67,6 +72,7 @@ function ShippingAddressForm() {
           name="postalCode"
           label="Postal code"
           type="text"
+          pattern={postalPattern}
           required
         />
         <Checkbox name="default" label="Use as default shipping address" />

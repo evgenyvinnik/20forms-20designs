@@ -3,7 +3,7 @@ import { Form, Button } from 'semantic-ui-react'
 function AppointmentRequestForm({ inverted }) {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Appointment requested!')
+    alert('Appointment request submitted!')
   }
 
   return (

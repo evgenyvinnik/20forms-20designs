@@ -4,7 +4,7 @@ import { Field } from '@ark-ui/react'
 export default function PasswordChangeForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Password updated!')
+    alert('Password change requested!')
   }
 
   return (

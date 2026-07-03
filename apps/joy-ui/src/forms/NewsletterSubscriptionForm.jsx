@@ -13,7 +13,7 @@ import {
 export default function NewsletterSubscriptionForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Subscribed to newsletter!')
+    alert('Newsletter subscription submitted!')
   }
 
   return (

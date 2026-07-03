@@ -4,7 +4,7 @@ import { Field } from '@base-ui-components/react/field'
 export default function JobApplicationForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Job application submitted!')
+    alert('Application submitted!')
   }
 
   return (

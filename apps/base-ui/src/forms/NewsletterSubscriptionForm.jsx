@@ -4,7 +4,7 @@ import { Field } from '@base-ui-components/react/field'
 export default function NewsletterSubscriptionForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Subscribed to newsletter!')
+    alert('Newsletter subscription submitted!')
   }
 
   return (

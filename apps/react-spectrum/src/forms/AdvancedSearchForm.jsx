@@ -12,7 +12,7 @@ import { DatePicker } from '@adobe/react-spectrum'
 function AdvancedSearchForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Search executed!')
+    alert('Search submitted!')
   }
 
   return (

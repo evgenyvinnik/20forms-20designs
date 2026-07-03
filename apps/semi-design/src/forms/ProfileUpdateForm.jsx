@@ -2,35 +2,46 @@ import { Form, Button } from '@douyinfe/semi-ui'
 
 function ProfileUpdateForm() {
   const handleSubmit = (values) => {
-    alert('Profile saved!')
+    alert('Profile updated!')
   }
 
   return (
     <Form onSubmit={handleSubmit} labelPosition="top">
       <Form.Input
-        field="displayName"
-        label="Display name"
-        initValue="Jane Doe"
-        rules={[{ required: true, message: 'Please enter your display name' }]}
+        field="firstName"
+        label="First name"
+        rules={[{ required: true }]}
+      />
+
+      <Form.Input
+        field="lastName"
+        label="Last name"
+        rules={[{ required: true }]}
       />
 
       <Form.Input
         field="email"
-        label="Public email"
+        label="Email address"
         type="email"
-        initValue="jane@example.com"
-        rules={[{ required: true, message: 'Please enter your email' }]}
+        rules={[{ required: true }]}
+      />
+
+      <Form.Input
+        field="phone"
+        label="Phone number"
+        type="tel"
+        rules={[{ required: true }]}
       />
 
       <Form.TextArea
         field="bio"
-        label="Bio"
+        label="Short bio"
         rows={3}
-        initValue="Software developer based in San Francisco."
+        rules={[{ required: true }]}
       />
 
       <Button type="primary" htmlType="submit" style={{ marginTop: 16 }}>
-        Save profile
+        Save changes
       </Button>
     </Form>
   )

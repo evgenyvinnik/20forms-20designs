@@ -4,7 +4,7 @@ import { Field } from '@ark-ui/react'
 export default function JobApplicationForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Job application submitted!')
+    alert('Application submitted!')
   }
 
   return (

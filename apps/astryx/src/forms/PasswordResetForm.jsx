@@ -4,7 +4,7 @@ import { TextInput, Selector, CheckboxInput, Button } from '@astryxdesign/core'
 function PasswordResetForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Password reset requested!')
+    alert('Password reset link requested!')
   }
 
   return (

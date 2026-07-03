@@ -4,7 +4,7 @@ import { Field } from '@ark-ui/react'
 export default function PasswordResetForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Password reset requested!')
+    alert('Password reset link requested!')
   }
 
   return (

@@ -3,7 +3,7 @@ import { Form, Button } from 'semantic-ui-react'
 function TwoFactorAuthForm({ inverted }) {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Code verified!')
+    alert('Verification submitted!')
   }
 
   return (

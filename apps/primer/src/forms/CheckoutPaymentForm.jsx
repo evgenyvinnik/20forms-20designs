@@ -3,7 +3,7 @@ import { FormControl, TextInput, Select, Button } from '@primer/react'
 function CheckoutPaymentForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Order placed!')
+    alert('Checkout submitted!')
   }
 
   return (
