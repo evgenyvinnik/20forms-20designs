@@ -40,13 +40,12 @@ a:hover {
   line-height: 1.4;
 }
 
-/* Selector row */
+/* Selector row - 1 column layout */
 .selector-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  column-gap: 64px;
-  row-gap: 24px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 900px;
 }
 
 /* Toggle rows */
@@ -126,13 +125,8 @@ a:hover {
   margin-left: 22px;
 }
 
-/* List layouts */
-.two-column-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px 12px;
-}
-
+/* List layouts - single column */
+.two-column-list,
 .single-column-list {
   display: flex;
   flex-direction: column;
