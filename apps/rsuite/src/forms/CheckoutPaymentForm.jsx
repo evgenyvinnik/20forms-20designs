@@ -24,7 +24,7 @@ function CheckoutPaymentForm() {
           name="shippingMethod"
           accepter={SelectPicker}
           data={shippingOptions}
-          placeholder="Select shipping"
+
           block
           required
         />

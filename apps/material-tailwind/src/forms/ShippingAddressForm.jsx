@@ -111,7 +111,7 @@ function ShippingAddressForm() {
           name="fullName"
           type="text"
           required
-          placeholder="Enter recipient name"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />
@@ -129,7 +129,7 @@ function ShippingAddressForm() {
           name="street"
           type="text"
           required
-          placeholder="Enter street address"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />
@@ -146,7 +146,7 @@ function ShippingAddressForm() {
           id="material-tailwind-shipping-address-street2"
           name="street2"
           type="text"
-          placeholder="Apartment, suite, etc. (optional)"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />
@@ -164,7 +164,7 @@ function ShippingAddressForm() {
           name="city"
           type="text"
           required
-          placeholder="Enter city"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />
@@ -225,7 +225,7 @@ function ShippingAddressForm() {
           type="text"
           required
           pattern={postalPattern}
-          placeholder="Enter postal code"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />

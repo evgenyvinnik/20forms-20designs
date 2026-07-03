@@ -28,7 +28,7 @@ function PasswordResetForm() {
           name="email"
           type="email"
           required
-          placeholder="Enter your email"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />

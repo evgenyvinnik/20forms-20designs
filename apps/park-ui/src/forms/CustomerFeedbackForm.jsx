@@ -2,7 +2,10 @@ import { useState } from 'react'
 import { Field } from '@ark-ui/react'
 
 export default function CustomerFeedbackForm() {
-  const handleSubmit = (e) => { e.preventDefault(); alert('Submitted!'); }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    alert('Submitted!')
+  }
 
   return (
     <form onSubmit={handleSubmit} className="park-form">
@@ -16,11 +19,18 @@ export default function CustomerFeedbackForm() {
           <option value="1">1 - Very Poor</option>
         </select>
       </Field.Root>
-<Field.Root required className="park-field">
+      <Field.Root required className="park-field">
         <Field.Label className="park-label">Comments</Field.Label>
-        <Field.Textarea className="park-textarea" name="comments"  rows={4} required />
+        <Field.Textarea
+          className="park-textarea"
+          name="comments"
+          rows={4}
+          required
+        />
       </Field.Root>
-<button type="submit" className="park-button">Submit feedback</button>
+      <button type="submit" className="park-button">
+        Submit feedback
+      </button>
     </form>
   )
 }

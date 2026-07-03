@@ -23,7 +23,7 @@ function PasswordResetForm() {
           <Input
             name="email"
             type="email"
-            placeholder="Enter your email"
+
             required
           />
         </FormField>

@@ -43,7 +43,6 @@ function ContactInquiryForm() {
           id="grommet-contact-topic"
           name="topic"
           options={['Support', 'Sales', 'Feedback', 'Other']}
-          placeholder="Select topic"
         />
       </FormField>
       <FormField

@@ -14,7 +14,7 @@ function AppointmentRequestForm() {
           <Input
             id="fullName"
             name="fullName"
-            placeholder="Full name"
+
             required
           />
         </YStack>
@@ -25,7 +25,7 @@ function AppointmentRequestForm() {
             id="email"
             name="email"
             inputMode="email"
-            placeholder="Email address"
+
             required
           />
         </YStack>
@@ -45,7 +45,7 @@ function AppointmentRequestForm() {
           <TextArea
             id="reason"
             name="reason"
-            placeholder="Reason for visit"
+
             rows={3}
             required
           />

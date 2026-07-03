@@ -17,7 +17,7 @@ function TwoFactorAuthForm() {
             id="code"
             name="code"
             inputMode="numeric"
-            placeholder="Verification code"
+
             maxLength={6}
             required
           />
@@ -25,7 +25,7 @@ function TwoFactorAuthForm() {
 
         <YStack gap="$1">
           <Label htmlFor="backupCode">Backup code (optional)</Label>
-          <Input id="backupCode" name="backupCode" placeholder="Backup code" />
+          <Input id="backupCode" name="backupCode" />
         </YStack>
 
         <Button themeInverse onPress={() => {}}>

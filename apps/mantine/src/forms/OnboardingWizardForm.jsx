@@ -57,7 +57,7 @@ function OnboardingWizardForm() {
               id="mantine-onboarding-size"
               name="teamSize"
               label="Team size"
-              placeholder="Select size"
+
               data={[
                 { value: '1-5', label: '1-5' },
                 { value: '6-20', label: '6-20' },

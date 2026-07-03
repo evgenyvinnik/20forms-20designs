@@ -75,7 +75,7 @@ function OnboardingWizardForm() {
                 id="baseweb-onboarding-size"
                 options={teamSizeOptions}
                 value={teamSize}
-                placeholder="Select size"
+
                 onChange={(params) => setTeamSize(params.value)}
                 required
               />

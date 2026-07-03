@@ -20,7 +20,7 @@ function OrderTrackingForm() {
           <Input
             name="orderNumber"
             type="text"
-            placeholder="ORD-123456"
+
             required
           />
         </FormField>
@@ -28,7 +28,7 @@ function OrderTrackingForm() {
           <Input
             name="email"
             type="email"
-            placeholder="your@email.com"
+
             required
           />
         </FormField>
@@ -36,7 +36,7 @@ function OrderTrackingForm() {
           <Input
             name="postalCode"
             type="text"
-            placeholder="Postal code"
+
             required
           />
         </FormField>

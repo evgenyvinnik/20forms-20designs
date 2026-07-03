@@ -34,7 +34,7 @@ function ContactInquiryForm() {
           id="mantine-contact-topic"
           name="topic"
           label="Topic"
-          placeholder="Select topic"
+
           data={[
             { value: 'support', label: 'Support' },
             { value: 'sales', label: 'Sales' },

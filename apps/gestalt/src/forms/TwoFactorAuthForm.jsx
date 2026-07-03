@@ -18,7 +18,7 @@ function TwoFactorAuthForm() {
           id="gestalt-two-factor-code"
           label="Verification code"
           onChange={({ value }) => setCode(value)}
-          placeholder="123456"
+
           type="text"
           value={code}
         />

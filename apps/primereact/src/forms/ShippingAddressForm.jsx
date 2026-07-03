@@ -121,7 +121,7 @@ function ShippingAddressForm() {
           value={region}
           options={regionDropdownOptions}
           onChange={(e) => setRegion(e.value)}
-          placeholder="Select an option"
+
           required
         />
       </div>

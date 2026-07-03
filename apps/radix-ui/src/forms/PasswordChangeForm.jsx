@@ -32,7 +32,7 @@ function PasswordChangeForm() {
               id="radix-current-password"
               name="currentPassword"
               type="password"
-              placeholder="Enter current password"
+
               required
             />
           </Box>
@@ -49,7 +49,7 @@ function PasswordChangeForm() {
               id="radix-new-password"
               name="newPassword"
               type="password"
-              placeholder="Enter new password"
+
               minLength={8}
               required
             />
@@ -67,7 +67,7 @@ function PasswordChangeForm() {
               id="radix-confirm-new-password"
               name="confirmPassword"
               type="password"
-              placeholder="Confirm new password"
+
               minLength={8}
               required
             />

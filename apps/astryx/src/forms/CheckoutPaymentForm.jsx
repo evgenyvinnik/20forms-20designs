@@ -43,7 +43,6 @@ function CheckoutPaymentForm() {
         value={shippingMethod}
         onChange={(val) => setShippingMethod(val)}
         options={shippingOptions}
-        placeholder="Select shipping"
       />
 
       <TextInput

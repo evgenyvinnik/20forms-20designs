@@ -10,22 +10,12 @@ function UserLoginForm() {
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="rb-user-login-email">
         <Form.Label>Email or username</Form.Label>
-        <Form.Control
-          name="identifier"
-          type="text"
-          required
-          placeholder="Enter email or username"
-        />
+        <Form.Control name="identifier" type="text" required />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="rb-user-login-password">
         <Form.Label>Password</Form.Label>
-        <Form.Control
-          name="password"
-          type="password"
-          required
-          placeholder="Password"
-        />
+        <Form.Control name="password" type="password" required />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="rb-user-login-remember">

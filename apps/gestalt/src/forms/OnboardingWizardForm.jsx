@@ -67,7 +67,7 @@ function OnboardingWizardForm() {
                 id="gestalt-onboard-size"
                 label="Team size"
                 onChange={({ value }) => setTeamSize(value)}
-                placeholder="Select size"
+
                 value={teamSize}
               >
                 {[

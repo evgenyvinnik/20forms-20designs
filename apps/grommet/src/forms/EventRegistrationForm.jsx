@@ -42,7 +42,6 @@ function EventRegistrationForm() {
           id="grommet-event-ticket"
           name="ticketType"
           options={['General admission', 'VIP', 'Student']}
-          placeholder="Select ticket"
         />
       </FormField>
       <FormField

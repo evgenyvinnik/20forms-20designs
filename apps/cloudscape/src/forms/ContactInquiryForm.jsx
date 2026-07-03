@@ -26,7 +26,7 @@ function ContactInquiryForm() {
           <Input
             name="fullName"
             type="text"
-            placeholder="Enter your full name"
+
             required
           />
         </FormField>
@@ -34,14 +34,14 @@ function ContactInquiryForm() {
           <Input
             name="email"
             type="email"
-            placeholder="Enter your email"
+
             required
           />
         </FormField>
         <FormField label="Topic">
           <Select
             name="topic"
-            placeholder="Select topic"
+
             options={[
               { label: 'Support', value: 'support' },
               { label: 'Sales', value: 'sales' },
@@ -53,7 +53,7 @@ function ContactInquiryForm() {
           />
         </FormField>
         <FormField label="Message">
-          <Textarea name="message" placeholder="Enter your message" rows={4} />
+          <Textarea name="message" rows={4} />
         </FormField>
         <Checkbox name="consent">Allow follow-up communication</Checkbox>
         <Button variant="primary" formAction="submit">

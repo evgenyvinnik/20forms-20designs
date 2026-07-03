@@ -46,7 +46,7 @@ function ContactInquiryForm() {
             options={topicOptions}
             value={topic}
             onChange={setTopic}
-            placeholder="Select topic"
+
             isRequired
           />
         </Box>

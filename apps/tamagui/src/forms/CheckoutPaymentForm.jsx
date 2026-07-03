@@ -16,7 +16,7 @@ function CheckoutPaymentForm() {
             id="email"
             name="email"
             type="email"
-            placeholder="Email"
+
             required
           />
         </YStack>
@@ -26,7 +26,7 @@ function CheckoutPaymentForm() {
           <Input
             id="cardNumber"
             name="cardNumber"
-            placeholder="Card number"
+
             required
           />
         </YStack>
@@ -43,7 +43,7 @@ function CheckoutPaymentForm() {
           </YStack>
           <YStack flex={1} gap="$1">
             <Label htmlFor="cvc">CVC</Label>
-            <Input id="cvc" name="cvc" placeholder="CVC" required />
+            <Input id="cvc" name="cvc" required />
           </YStack>
         </XStack>
 

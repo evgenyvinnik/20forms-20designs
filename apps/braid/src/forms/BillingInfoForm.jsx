@@ -66,7 +66,6 @@ function BillingInfoForm() {
           label="Country"
           value={country}
           onChange={(e) => setCountry(e.target.value)}
-          placeholder="Select country"
         >
           <option value="US">United States</option>
           <option value="CA">Canada</option>

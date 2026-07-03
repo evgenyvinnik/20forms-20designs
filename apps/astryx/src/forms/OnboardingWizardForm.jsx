@@ -79,7 +79,6 @@ function OnboardingWizardForm() {
           value={teamSize}
           onChange={(val) => setTeamSize(val)}
           options={teamSizeOptions}
-          placeholder="Select size"
         />
       </section>
 

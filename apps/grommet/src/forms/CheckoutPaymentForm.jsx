@@ -26,7 +26,6 @@ function CheckoutPaymentForm() {
           id="grommet-checkout-shipping-method"
           name="shippingMethod"
           options={['Standard', 'Express', 'Overnight']}
-          placeholder="Select shipping"
         />
       </FormField>
       <FormField

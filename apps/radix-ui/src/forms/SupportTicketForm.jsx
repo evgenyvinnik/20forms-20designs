@@ -33,7 +33,7 @@ function SupportTicketForm() {
               id="radix-support-subject"
               name="subject"
               type="text"
-              placeholder="Brief description of the issue"
+
               required
             />
           </Box>
@@ -77,7 +77,7 @@ function SupportTicketForm() {
               id="radix-support-description"
               name="description"
               rows="4"
-              placeholder="Describe your issue in detail"
+
               required
             />
           </Box>

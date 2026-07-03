@@ -32,7 +32,7 @@ function CustomerFeedbackForm() {
           name="rating"
           accepter={SelectPicker}
           data={ratingOptions}
-          placeholder="Select rating"
+
           block
           required
         />

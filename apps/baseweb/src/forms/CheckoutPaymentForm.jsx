@@ -42,7 +42,7 @@ function CheckoutPaymentForm() {
             id="baseweb-checkout-shipping-method"
             options={shippingOptions}
             value={shippingMethod}
-            placeholder="Select shipping"
+
             onChange={(params) => setShippingMethod(params.value)}
             required
           />

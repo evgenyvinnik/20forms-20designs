@@ -14,7 +14,7 @@ function OrderTrackingForm() {
           <Input
             id="orderNumber"
             name="orderNumber"
-            placeholder="Order number"
+
             required
           />
         </YStack>
@@ -25,7 +25,7 @@ function OrderTrackingForm() {
             id="email"
             name="email"
             inputMode="email"
-            placeholder="Email address"
+
             required
           />
         </YStack>
@@ -35,7 +35,7 @@ function OrderTrackingForm() {
           <Input
             id="postalCode"
             name="postalCode"
-            placeholder="Postal code"
+
             required
           />
         </YStack>

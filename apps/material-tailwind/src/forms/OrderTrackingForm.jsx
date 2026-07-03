@@ -21,7 +21,7 @@ function OrderTrackingForm() {
           type="text"
           required
           pattern="[A-Za-z0-9-]{6,20}"
-          placeholder="e.g., ORD-123456"
+
           size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}

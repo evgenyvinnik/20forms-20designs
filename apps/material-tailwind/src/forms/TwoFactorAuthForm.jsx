@@ -31,7 +31,7 @@ function TwoFactorAuthForm() {
           inputMode="numeric"
           pattern="\d{6}"
           maxLength={6}
-          placeholder="Enter 6-digit code"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />
@@ -49,7 +49,7 @@ function TwoFactorAuthForm() {
           name="backupCode"
           type="text"
           pattern="[A-Za-z0-9]{6,12}"
-          placeholder="Enter backup code"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />

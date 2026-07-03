@@ -52,7 +52,6 @@ function EventRegistrationForm() {
         value={ticketType}
         onChange={(val) => setTicketType(val)}
         options={ticketOptions}
-        placeholder="Select ticket"
       />
 
       <TextInput

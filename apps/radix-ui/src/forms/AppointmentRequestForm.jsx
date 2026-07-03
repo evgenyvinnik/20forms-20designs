@@ -32,7 +32,7 @@ function AppointmentRequestForm() {
               id="radix-appointment-name"
               name="fullName"
               type="text"
-              placeholder="Enter your full name"
+
               required
             />
           </Box>
@@ -49,7 +49,7 @@ function AppointmentRequestForm() {
               id="radix-appointment-email"
               name="email"
               type="email"
-              placeholder="Enter your email"
+
               required
             />
           </Box>
@@ -108,7 +108,7 @@ function AppointmentRequestForm() {
               id="radix-appointment-reason"
               name="reason"
               rows="3"
-              placeholder="Enter reason for visit"
+
               required
             />
           </Box>

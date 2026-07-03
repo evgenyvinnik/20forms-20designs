@@ -59,7 +59,6 @@ function CustomerFeedbackForm() {
         value={rating}
         onChange={(val) => setRating(val)}
         options={ratingOptions}
-        placeholder="Select rating"
       />
 
       <TextArea

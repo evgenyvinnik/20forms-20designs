@@ -32,7 +32,7 @@ function CheckoutPaymentForm() {
               id="radix-checkout-email"
               name="email"
               type="email"
-              placeholder="Enter your email"
+
               required
             />
           </Box>
@@ -46,10 +46,7 @@ function CheckoutPaymentForm() {
               Shipping method
             </Text>
             <Select.Root name="shippingMethod" required>
-              <Select.Trigger
-                id="radix-checkout-shipping-method"
-                placeholder="Select shipping"
-              />
+              <Select.Trigger id="radix-checkout-shipping-method" />
               <Select.Content>
                 <Select.Item value="standard">Standard</Select.Item>
                 <Select.Item value="express">Express</Select.Item>
@@ -70,7 +67,7 @@ function CheckoutPaymentForm() {
               id="radix-checkout-card-number"
               name="cardNumber"
               type="text"
-              placeholder="Enter card number"
+
               inputMode="numeric"
               pattern="[0-9]{13,19}"
               maxLength={19}
@@ -109,7 +106,7 @@ function CheckoutPaymentForm() {
               id="radix-checkout-cvc"
               name="cvc"
               type="text"
-              placeholder="CVC"
+
               inputMode="numeric"
               pattern="[0-9]{3,4}"
               maxLength={4}
@@ -129,7 +126,7 @@ function CheckoutPaymentForm() {
               id="radix-checkout-promo"
               name="promoCode"
               type="text"
-              placeholder="Enter promo code (optional)"
+
               pattern="[A-Za-z0-9]{3,15}"
             />
           </Box>

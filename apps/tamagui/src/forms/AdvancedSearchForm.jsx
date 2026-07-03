@@ -27,14 +27,14 @@ function AdvancedSearchForm() {
       <YStack gap="$2">
         <YStack gap="$1">
           <Label htmlFor="query">Search query</Label>
-          <Input id="query" name="query" placeholder="Search query" required />
+          <Input id="query" name="query" required />
         </YStack>
 
         <YStack gap="$1">
           <Label htmlFor="category">Category</Label>
           <Select id="category" value={category} onValueChange={setCategory}>
             <Select.Trigger>
-              <Select.Value placeholder="All" />
+              <Select.Value />
             </Select.Trigger>
             <Adapt when="sm" platform="touch">
               <Sheet
@@ -92,7 +92,7 @@ function AdvancedSearchForm() {
           <Label htmlFor="sort">Sort by</Label>
           <Select id="sort" value={sort} onValueChange={setSort}>
             <Select.Trigger>
-              <Select.Value placeholder="Relevance" />
+              <Select.Value />
             </Select.Trigger>
             <Adapt when="sm" platform="touch">
               <Sheet

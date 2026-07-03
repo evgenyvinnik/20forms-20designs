@@ -32,7 +32,7 @@ function ContactInquiryForm() {
           name="topic"
           accepter={SelectPicker}
           data={topicOptions}
-          placeholder="Select topic"
+
           block
           required
         />

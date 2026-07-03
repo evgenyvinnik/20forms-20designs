@@ -34,7 +34,6 @@ function EventRegistrationForm() {
         label="Ticket type"
         name="ticketType"
         options={[{ value: '', content: 'Select ticket' }, ...ticketOptions]}
-        placeholder="Select ticket"
       />
       <TextInput
         id="gravity-event-guests"

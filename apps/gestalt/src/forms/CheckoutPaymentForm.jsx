@@ -28,7 +28,7 @@ function CheckoutPaymentForm() {
           id="gestalt-checkout-shipping-method"
           label="Shipping method"
           onChange={({ value }) => setShippingMethod(value)}
-          placeholder="Select shipping"
+
           value={shippingMethod}
         >
           {[

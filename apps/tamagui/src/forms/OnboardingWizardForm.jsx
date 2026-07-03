@@ -35,7 +35,7 @@ function OnboardingWizardForm() {
               id="email"
               name="email"
               inputMode="email"
-              placeholder="Work email"
+
               required
             />
           </YStack>
@@ -46,7 +46,7 @@ function OnboardingWizardForm() {
               id="password"
               name="password"
               secureTextEntry
-              placeholder="Password"
+
               minLength={8}
               required
             />
@@ -61,7 +61,7 @@ function OnboardingWizardForm() {
             <Input
               id="teamName"
               name="teamName"
-              placeholder="Team name"
+
               required
             />
           </YStack>
@@ -70,7 +70,7 @@ function OnboardingWizardForm() {
             <Label htmlFor="teamSize">Team size</Label>
             <Select id="teamSize" value={teamSize} onValueChange={setTeamSize}>
               <Select.Trigger>
-                <Select.Value placeholder="Select size" />
+                <Select.Value />
               </Select.Trigger>
               <Adapt when="sm" platform="touch">
                 <Sheet
@@ -123,7 +123,7 @@ function OnboardingWizardForm() {
             <TextArea
               id="goal"
               name="goal"
-              placeholder="Primary goal"
+
               rows={3}
               required
             />

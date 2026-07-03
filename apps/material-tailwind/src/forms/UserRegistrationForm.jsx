@@ -21,7 +21,7 @@ function UserRegistrationForm() {
           name="fullName"
           type="text"
           required
-          placeholder="Enter your full name"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />
@@ -39,7 +39,7 @@ function UserRegistrationForm() {
           name="email"
           type="email"
           required
-          placeholder="Enter your email"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />
@@ -58,7 +58,7 @@ function UserRegistrationForm() {
           type="text"
           required
           minLength={3}
-          placeholder="Choose a username"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />
@@ -77,7 +77,7 @@ function UserRegistrationForm() {
           type="password"
           required
           minLength={8}
-          placeholder="Create a password"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />
@@ -96,7 +96,7 @@ function UserRegistrationForm() {
           type="password"
           required
           minLength={8}
-          placeholder="Confirm your password"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />

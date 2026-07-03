@@ -25,7 +25,7 @@ function EventRegistrationForm() {
           <Input
             name="fullName"
             type="text"
-            placeholder="Enter your full name"
+
             required
           />
         </FormField>
@@ -33,14 +33,14 @@ function EventRegistrationForm() {
           <Input
             name="email"
             type="email"
-            placeholder="your@email.com"
+
             required
           />
         </FormField>
         <FormField label="Ticket type">
           <Select
             name="ticketType"
-            placeholder="Select ticket"
+
             options={[
               { label: 'General admission', value: 'general' },
               { label: 'VIP', value: 'vip' },
@@ -57,7 +57,7 @@ function EventRegistrationForm() {
             name="guestCount"
             type="number"
             inputMode="numeric"
-            placeholder="0"
+
             required
           />
         </FormField>

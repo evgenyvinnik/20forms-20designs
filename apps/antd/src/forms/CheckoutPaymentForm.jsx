@@ -25,7 +25,7 @@ function CheckoutPaymentForm() {
         name="shippingMethod"
         rules={[{ required: true, message: 'Please select shipping method' }]}
       >
-        <Select placeholder="Select shipping">
+        <Select>
           <Select.Option value="standard">Standard</Select.Option>
           <Select.Option value="express">Express</Select.Option>
           <Select.Option value="overnight">Overnight</Select.Option>

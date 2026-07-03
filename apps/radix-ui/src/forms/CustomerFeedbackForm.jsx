@@ -34,7 +34,7 @@ function CustomerFeedbackForm() {
               id="radix-feedback-name"
               name="name"
               type="text"
-              placeholder="Enter your name"
+
               required
             />
           </Box>
@@ -51,7 +51,7 @@ function CustomerFeedbackForm() {
               id="radix-feedback-email"
               name="email"
               type="email"
-              placeholder="Enter your email"
+
               required
             />
           </Box>
@@ -65,10 +65,7 @@ function CustomerFeedbackForm() {
               Overall rating
             </Text>
             <Select.Root name="rating" required>
-              <Select.Trigger
-                id="radix-feedback-rating"
-                placeholder="Select rating"
-              />
+              <Select.Trigger id="radix-feedback-rating" />
               <Select.Content>
                 <Select.Item value="excellent">Excellent</Select.Item>
                 <Select.Item value="good">Good</Select.Item>
@@ -90,7 +87,7 @@ function CustomerFeedbackForm() {
               id="radix-feedback-comments"
               name="comments"
               rows="4"
-              placeholder="Share your feedback"
+
               required
             />
           </Box>

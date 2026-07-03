@@ -41,7 +41,7 @@ function CheckoutPaymentForm() {
             options={shippingOptions}
             value={shipping}
             onChange={setShipping}
-            placeholder="Select shipping"
+
             isRequired
           />
         </Box>

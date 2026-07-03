@@ -26,7 +26,7 @@ function JobApplicationForm() {
           <Input
             id="fullName"
             name="fullName"
-            placeholder="Full name"
+
             required
           />
         </YStack>
@@ -37,7 +37,7 @@ function JobApplicationForm() {
             id="email"
             name="email"
             inputMode="email"
-            placeholder="Email address"
+
             required
           />
         </YStack>
@@ -48,7 +48,7 @@ function JobApplicationForm() {
             id="phone"
             name="phone"
             inputMode="tel"
-            placeholder="Phone number"
+
             required
           />
         </YStack>
@@ -58,7 +58,7 @@ function JobApplicationForm() {
           <Input
             id="position"
             name="position"
-            placeholder="Role applied for"
+
             required
           />
         </YStack>
@@ -69,7 +69,7 @@ function JobApplicationForm() {
             id="resume"
             name="resume"
             inputMode="url"
-            placeholder="https://..."
+
             required
           />
         </YStack>
@@ -79,7 +79,7 @@ function JobApplicationForm() {
           <TextArea
             id="coverLetter"
             name="coverLetter"
-            placeholder="Tell us why you're a great fit"
+
             rows={4}
             required
           />

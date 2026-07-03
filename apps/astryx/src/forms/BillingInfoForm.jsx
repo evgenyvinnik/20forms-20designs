@@ -91,7 +91,6 @@ function BillingInfoForm() {
         value={country}
         onChange={(val) => setCountry(val)}
         options={countryOptions}
-        placeholder="Select country"
       />
 
       <Button type="submit" variant="primary">

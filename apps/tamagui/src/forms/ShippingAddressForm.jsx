@@ -33,7 +33,7 @@ function ShippingAddressForm() {
           <Input
             id="fullName"
             name="fullName"
-            placeholder="Recipient name"
+
             required
           />
         </YStack>
@@ -43,30 +43,26 @@ function ShippingAddressForm() {
           <Input
             id="street"
             name="street"
-            placeholder="Street address"
+
             required
           />
         </YStack>
 
         <YStack gap="$1">
           <Label htmlFor="street2">Apartment, suite, etc.</Label>
-          <Input
-            id="street2"
-            name="street2"
-            placeholder="Apartment, suite, etc."
-          />
+          <Input id="street2" name="street2" />
         </YStack>
 
         <YStack gap="$1">
           <Label htmlFor="city">City</Label>
-          <Input id="city" name="city" placeholder="City" required />
+          <Input id="city" name="city" required />
         </YStack>
 
         <YStack gap="$1">
           <Label htmlFor="country">Country</Label>
           <Select id="country" value={country} onValueChange={setCountry}>
             <Select.Trigger>
-              <Select.Value placeholder="Select country" />
+              <Select.Value />
             </Select.Trigger>
             <Adapt when="sm" platform="touch">
               <Sheet
@@ -107,7 +103,7 @@ function ShippingAddressForm() {
           <Label htmlFor="region">State / Province / Territory</Label>
           <Select id="region" value={region} onValueChange={setRegion}>
             <Select.Trigger>
-              <Select.Value placeholder="Select an option" />
+              <Select.Value />
             </Select.Trigger>
             <Adapt when="sm" platform="touch">
               <Sheet
@@ -149,7 +145,7 @@ function ShippingAddressForm() {
           <Input
             id="postalCode"
             name="postalCode"
-            placeholder="Postal code"
+
             required
           />
         </YStack>

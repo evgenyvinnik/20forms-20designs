@@ -23,7 +23,7 @@ function JobApplicationForm() {
             id="cloudscape-job-application-full-name"
             name="fullName"
             type="text"
-            placeholder="Enter your full name"
+
             required
           />
         </FormField>
@@ -32,7 +32,7 @@ function JobApplicationForm() {
             id="cloudscape-job-application-email"
             name="email"
             type="email"
-            placeholder="your@email.com"
+
             required
           />
         </FormField>
@@ -41,7 +41,7 @@ function JobApplicationForm() {
             id="cloudscape-job-application-phone"
             name="phone"
             type="tel"
-            placeholder="+1 234 567 8900"
+
             required
           />
         </FormField>
@@ -50,7 +50,7 @@ function JobApplicationForm() {
             id="cloudscape-job-application-role"
             name="role"
             type="text"
-            placeholder="Position title"
+
             required
           />
         </FormField>
@@ -59,7 +59,7 @@ function JobApplicationForm() {
             id="cloudscape-job-application-resume"
             name="resume"
             type="url"
-            placeholder="https://"
+
             required
           />
         </FormField>
@@ -67,7 +67,7 @@ function JobApplicationForm() {
           <Textarea
             id="cloudscape-job-application-cover-letter"
             name="coverLetter"
-            placeholder="Tell us why you're a great fit"
+
             rows={4}
           />
         </FormField>

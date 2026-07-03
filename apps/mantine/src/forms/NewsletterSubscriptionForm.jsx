@@ -20,7 +20,7 @@ function NewsletterSubscriptionForm() {
           id="mantine-newsletter-frequency"
           name="frequency"
           label="Frequency"
-          placeholder="Select frequency"
+
           data={[
             { value: 'weekly', label: 'Weekly' },
             { value: 'monthly', label: 'Monthly' },

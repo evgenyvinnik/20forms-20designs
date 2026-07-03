@@ -22,7 +22,7 @@ function PrivacyConsentForm() {
           <Input
             name="fullName"
             type="text"
-            placeholder="Enter your full name"
+
             required
           />
         </FormField>
@@ -30,7 +30,7 @@ function PrivacyConsentForm() {
           <Input
             name="email"
             type="email"
-            placeholder="your@email.com"
+
             required
           />
         </FormField>
@@ -51,7 +51,7 @@ function PrivacyConsentForm() {
         <FormField label="Additional notes">
           <Textarea
             name="notes"
-            placeholder="Any additional preferences"
+
             rows={3}
           />
         </FormField>

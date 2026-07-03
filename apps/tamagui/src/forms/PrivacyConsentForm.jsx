@@ -30,7 +30,7 @@ function PrivacyConsentForm() {
           <Input
             id="fullName"
             name="fullName"
-            placeholder="Full name"
+
             required
           />
         </YStack>
@@ -41,7 +41,7 @@ function PrivacyConsentForm() {
             id="email"
             name="email"
             inputMode="email"
-            placeholder="Email address"
+
             required
           />
         </YStack>
@@ -119,7 +119,7 @@ function PrivacyConsentForm() {
           <TextArea
             id="notes"
             name="notes"
-            placeholder="Additional notes"
+
             rows={3}
           />
         </YStack>

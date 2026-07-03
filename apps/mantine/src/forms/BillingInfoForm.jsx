@@ -51,7 +51,7 @@ function BillingInfoForm() {
           id="mantine-billing-country"
           name="country"
           label="Country"
-          placeholder="Select country"
+
           data={[
             { value: 'US', label: 'United States' },
             { value: 'CA', label: 'Canada' },

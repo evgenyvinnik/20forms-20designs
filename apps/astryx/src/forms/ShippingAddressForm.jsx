@@ -91,7 +91,6 @@ function ShippingAddressForm() {
         value={region}
         onChange={(val) => setRegion(val)}
         options={regionOptions}
-        placeholder="Select an option"
       />
 
       <TextInput

@@ -31,7 +31,6 @@ function CheckoutPaymentForm() {
           { value: '', content: 'Select shipping' },
           ...shippingOptions,
         ]}
-        placeholder="Select shipping"
       />
       <TextInput
         id="gravity-checkout-card-number"

@@ -51,7 +51,6 @@ function OnboardingWizardForm() {
           label="Team size"
           name="teamSize"
           options={[{ value: '', content: 'Select size' }, ...teamSizeOptions]}
-          placeholder="Select size"
         />
       </div>
 

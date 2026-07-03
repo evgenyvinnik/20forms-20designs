@@ -65,7 +65,6 @@ function BillingInfoForm() {
         label="Country"
         name="country"
         options={countryOptions}
-        placeholder="Select country"
       />
       <Button view="action" type="submit">
         Save billing details

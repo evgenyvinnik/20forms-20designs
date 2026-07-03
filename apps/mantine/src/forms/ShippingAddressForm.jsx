@@ -55,7 +55,7 @@ function ShippingAddressForm() {
           id="mantine-shipping-region"
           name="region"
           label="State / Province / Territory"
-          placeholder="Select an option"
+
           data={regionOptions.map((region) => ({
             value: region,
             label: region,

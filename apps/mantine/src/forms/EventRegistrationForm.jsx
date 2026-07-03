@@ -34,7 +34,7 @@ function EventRegistrationForm() {
           id="mantine-event-ticket"
           name="ticketType"
           label="Ticket type"
-          placeholder="Select ticket"
+
           data={[
             { value: 'general', label: 'General admission' },
             { value: 'vip', label: 'VIP' },

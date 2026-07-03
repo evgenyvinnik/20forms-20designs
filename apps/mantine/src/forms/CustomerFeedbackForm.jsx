@@ -34,7 +34,7 @@ function CustomerFeedbackForm() {
           id="mantine-feedback-rating"
           name="rating"
           label="Overall rating"
-          placeholder="Select rating"
+
           data={[
             { value: 'excellent', label: 'Excellent' },
             { value: 'good', label: 'Good' },

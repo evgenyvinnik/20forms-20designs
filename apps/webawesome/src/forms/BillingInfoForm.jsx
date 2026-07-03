@@ -39,7 +39,7 @@ function BillingInfoForm() {
       <wa-select
         label="Country"
         name="country"
-        placeholder="Select country"
+
         required
       >
         <wa-option value="us">United States</wa-option>

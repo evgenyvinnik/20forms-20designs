@@ -35,7 +35,6 @@ function ContactInquiryForm() {
         label="Topic"
         name="topic"
         options={topicOptions}
-        placeholder="Select topic"
       />
       <Field label="Message" htmlFor="gravity-contact-message">
         <TextArea

@@ -40,7 +40,6 @@ function NewsletterSubscriptionForm() {
         value={frequency}
         onChange={(val) => setFrequency(val)}
         options={frequencyOptions}
-        placeholder="Select frequency"
       />
 
       <CheckboxInput

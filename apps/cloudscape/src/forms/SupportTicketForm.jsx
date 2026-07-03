@@ -22,7 +22,7 @@ function SupportTicketForm() {
           <Input
             name="subject"
             type="text"
-            placeholder="Brief description"
+
             required
           />
         </FormField>
@@ -39,7 +39,7 @@ function SupportTicketForm() {
         <FormField label="Issue description">
           <Textarea
             name="description"
-            placeholder="Describe your issue"
+
             rows={4}
           />
         </FormField>

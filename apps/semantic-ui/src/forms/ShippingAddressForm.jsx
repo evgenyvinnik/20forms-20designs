@@ -133,7 +133,7 @@ function ShippingAddressForm({ inverted }) {
         <Select
           name="region"
           options={regionOptions}
-          placeholder="Select region"
+
           required
         />
       </Form.Field>

@@ -48,7 +48,7 @@ function AppointmentRequestForm() {
           id="gestalt-appointment-reason"
           label="Reason for visit"
           onChange={({ value }) => setReason(value)}
-          placeholder="Describe your reason for the appointment"
+
           rows={3}
           value={reason}
         />

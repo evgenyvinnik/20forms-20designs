@@ -46,7 +46,7 @@ function CustomerFeedbackForm() {
             options={ratingOptions}
             value={rating}
             onChange={setRating}
-            placeholder="Select rating"
+
             isRequired
           />
         </Box>

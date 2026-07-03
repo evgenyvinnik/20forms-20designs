@@ -32,7 +32,7 @@ function UserLoginForm() {
               id="radix-user-login-email"
               name="identifier"
               type="text"
-              placeholder="Enter your email or username"
+
               required
             />
           </Box>
@@ -49,7 +49,7 @@ function UserLoginForm() {
               id="radix-user-login-password"
               name="password"
               type="password"
-              placeholder="Enter your password"
+
               required
             />
           </Box>

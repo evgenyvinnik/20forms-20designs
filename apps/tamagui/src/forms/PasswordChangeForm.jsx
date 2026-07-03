@@ -18,7 +18,7 @@ function PasswordChangeForm() {
             id="currentPassword"
             name="currentPassword"
             secureTextEntry
-            placeholder="Current password"
+
             required
           />
         </YStack>
@@ -29,7 +29,7 @@ function PasswordChangeForm() {
             id="newPassword"
             name="newPassword"
             secureTextEntry
-            placeholder="New password"
+
             minLength={8}
             required
           />
@@ -41,7 +41,7 @@ function PasswordChangeForm() {
             id="confirmPassword"
             name="confirmPassword"
             secureTextEntry
-            placeholder="Confirm new password"
+
             minLength={8}
             required
           />

@@ -54,7 +54,7 @@ function ContactInquiryForm() {
             id="baseweb-contact-topic"
             options={topicOptions}
             value={topic}
-            placeholder="Select topic"
+
             onChange={(params) => setTopic(params.value)}
             required
           />

@@ -24,7 +24,7 @@ function NewsletterSubscriptionForm() {
           name="frequency"
           accepter={SelectPicker}
           data={frequencyOptions}
-          placeholder="Select frequency"
+
           block
           required
         />

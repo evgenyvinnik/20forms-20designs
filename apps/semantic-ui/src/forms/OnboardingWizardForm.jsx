@@ -60,7 +60,7 @@ function OnboardingWizardForm({ inverted }) {
           <Select
             name="teamSize"
             options={teamSizeOptions}
-            placeholder="Select size"
+
             required
           />
         </Form.Field>

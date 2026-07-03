@@ -52,7 +52,7 @@ function OnboardingWizardForm() {
             name="teamSize"
             accepter={SelectPicker}
             data={teamSizeOptions}
-            placeholder="Select size"
+
             block
             required
           />

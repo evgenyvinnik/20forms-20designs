@@ -52,7 +52,7 @@ function EventRegistrationForm() {
             id="baseweb-event-ticket"
             options={ticketOptions}
             value={ticketType}
-            placeholder="Select ticket"
+
             onChange={(params) => setTicketType(params.value)}
             required
           />

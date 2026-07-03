@@ -29,7 +29,7 @@ function EventRegistrationForm() {
           <Input
             id="fullName"
             name="fullName"
-            placeholder="Full name"
+
             required
           />
         </YStack>
@@ -40,7 +40,7 @@ function EventRegistrationForm() {
             id="email"
             name="email"
             inputMode="email"
-            placeholder="Email address"
+
             required
           />
         </YStack>
@@ -53,7 +53,7 @@ function EventRegistrationForm() {
             onValueChange={setTicketType}
           >
             <Select.Trigger>
-              <Select.Value placeholder="Select ticket" />
+              <Select.Value />
             </Select.Trigger>
             <Adapt when="sm" platform="touch">
               <Sheet
@@ -100,7 +100,7 @@ function EventRegistrationForm() {
             id="guestCount"
             name="guestCount"
             inputMode="numeric"
-            placeholder="Number of guests"
+
             required
           />
         </YStack>

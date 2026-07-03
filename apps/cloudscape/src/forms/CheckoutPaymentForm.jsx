@@ -24,14 +24,14 @@ function CheckoutPaymentForm() {
           <Input
             name="email"
             type="email"
-            placeholder="your@email.com"
+
             required
           />
         </FormField>
         <FormField label="Shipping method">
           <Select
             name="shippingMethod"
-            placeholder="Select shipping"
+
             options={[
               { label: 'Standard', value: 'standard' },
               { label: 'Express', value: 'express' },
@@ -47,7 +47,7 @@ function CheckoutPaymentForm() {
           <Input
             name="cardNumber"
             type="text"
-            placeholder="1234 5678 9012 3456"
+
             inputMode="numeric"
             required
           />
@@ -65,13 +65,13 @@ function CheckoutPaymentForm() {
           <Input
             name="cvc"
             type="text"
-            placeholder="123"
+
             inputMode="numeric"
             required
           />
         </FormField>
         <FormField label="Promo code">
-          <Input name="promoCode" type="text" placeholder="Enter code" />
+          <Input name="promoCode" type="text" />
         </FormField>
         <Button variant="primary" formAction="submit">
           Place order

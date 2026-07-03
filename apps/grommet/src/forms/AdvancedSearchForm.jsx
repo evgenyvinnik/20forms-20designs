@@ -36,7 +36,6 @@ function AdvancedSearchForm() {
           id="grommet-search-category"
           name="category"
           options={['All', 'Articles', 'Products', 'People']}
-          placeholder="Select category"
         />
       </FormField>
 
@@ -70,7 +69,6 @@ function AdvancedSearchForm() {
           id="grommet-search-sort"
           name="sortBy"
           options={['Relevance', 'Newest', 'Oldest']}
-          placeholder="Select sort order"
         />
       </FormField>
 

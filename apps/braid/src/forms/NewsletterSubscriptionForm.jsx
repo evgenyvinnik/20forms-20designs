@@ -35,7 +35,6 @@ function NewsletterSubscriptionForm() {
           label="Frequency"
           value={frequency}
           onChange={(e) => setFrequency(e.target.value)}
-          placeholder="Select frequency"
         >
           <option value="weekly">Weekly</option>
           <option value="monthly">Monthly</option>

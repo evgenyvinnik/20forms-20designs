@@ -21,7 +21,7 @@ function PasswordChangeForm() {
           name="currentPassword"
           type="password"
           required
-          placeholder="Enter current password"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />
@@ -40,7 +40,7 @@ function PasswordChangeForm() {
           type="password"
           required
           minLength={8}
-          placeholder="Enter new password"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />
@@ -59,7 +59,7 @@ function PasswordChangeForm() {
           type="password"
           required
           minLength={8}
-          placeholder="Confirm new password"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />

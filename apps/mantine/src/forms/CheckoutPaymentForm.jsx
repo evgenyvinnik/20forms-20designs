@@ -20,7 +20,7 @@ function CheckoutPaymentForm() {
           id="mantine-checkout-shipping-method"
           name="shippingMethod"
           label="Shipping method"
-          placeholder="Select shipping"
+
           data={[
             { value: 'standard', label: 'Standard' },
             { value: 'express', label: 'Express' },

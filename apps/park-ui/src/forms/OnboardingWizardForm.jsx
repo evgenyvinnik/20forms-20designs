@@ -17,7 +17,9 @@ export default function OnboardingWizardForm() {
             <Field.Label className="park-label">Your full name</Field.Label>
             <Field.Input className="park-input" name="name" required />
           </Field.Root>
-          <button type="submit" className="park-button">Next step</button>
+          <button type="submit" className="park-button">
+            Next step
+          </button>
         </>
       ) : (
         <>
@@ -26,7 +28,12 @@ export default function OnboardingWizardForm() {
             <Field.Input className="park-input" name="company" required />
           </Field.Root>
           <div style={{ display: 'flex', gap: '0.5rem' }}>
-            <button type="button" className="park-button" style={{ background: '#e2e8f0', color: '#1e293b' }} onClick={() => setStep(1)}>
+            <button
+              type="button"
+              className="park-button"
+              style={{ background: '#e2e8f0', color: '#1e293b' }}
+              onClick={() => setStep(1)}
+            >
               Back
             </button>
             <button type="submit" className="park-button" style={{ flex: 1 }}>

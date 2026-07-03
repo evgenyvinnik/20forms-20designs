@@ -27,7 +27,7 @@ function PasswordResetForm() {
               id="radix-password-reset-email"
               name="email"
               type="email"
-              placeholder="Enter your email address"
+
               required
             />
           </Box>

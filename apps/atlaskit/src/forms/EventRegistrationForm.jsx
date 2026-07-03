@@ -46,7 +46,7 @@ function EventRegistrationForm() {
             options={ticketOptions}
             value={ticket}
             onChange={setTicket}
-            placeholder="Select ticket"
+
             isRequired
           />
         </Box>

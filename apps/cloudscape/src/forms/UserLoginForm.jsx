@@ -22,7 +22,7 @@ function UserLoginForm() {
             id="cloudscape-user-login-email"
             name="email"
             type="email"
-            placeholder="Enter your email"
+
             required
           />
         </FormField>
@@ -31,7 +31,7 @@ function UserLoginForm() {
             id="cloudscape-user-login-password"
             name="password"
             type="password"
-            placeholder="Enter your password"
+
             required
           />
         </FormField>

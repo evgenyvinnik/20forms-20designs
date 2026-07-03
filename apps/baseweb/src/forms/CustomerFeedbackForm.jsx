@@ -54,7 +54,7 @@ function CustomerFeedbackForm() {
             id="baseweb-feedback-rating"
             options={ratingOptions}
             value={rating}
-            placeholder="Select rating"
+
             onChange={(params) => setRating(params.value)}
             required
           />

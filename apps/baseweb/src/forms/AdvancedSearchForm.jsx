@@ -52,7 +52,7 @@ function AdvancedSearchForm() {
             id="baseweb-search-category"
             options={categoryOptions}
             value={category}
-            placeholder="Select category"
+
             onChange={(params) => setCategory(params.value)}
             required
           />
@@ -84,7 +84,7 @@ function AdvancedSearchForm() {
             id="baseweb-search-sort"
             options={sortOptions}
             value={sortOrder}
-            placeholder="Select sort order"
+
             onChange={(params) => setSortOrder(params.value)}
             required
           />

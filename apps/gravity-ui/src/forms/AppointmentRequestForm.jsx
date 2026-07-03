@@ -27,14 +27,14 @@ function AppointmentRequestForm() {
         id="gravity-appointment-date"
         label="Preferred date"
         name="date"
-        placeholder="YYYY-MM-DD"
+
         controlProps={{ required: true, pattern: '\\d{4}-\\d{2}-\\d{2}' }}
       />
       <TextInput
         id="gravity-appointment-time"
         label="Preferred time"
         name="time"
-        placeholder="HH:MM"
+
         controlProps={{ required: true, pattern: '\\d{2}:\\d{2}' }}
       />
       <Field label="Reason for visit" htmlFor="gravity-appointment-reason">

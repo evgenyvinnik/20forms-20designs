@@ -34,7 +34,7 @@ function EventRegistrationForm({ inverted }) {
         <Select
           name="ticketType"
           options={ticketOptions}
-          placeholder="Select ticket"
+
           required
         />
       </Form.Field>

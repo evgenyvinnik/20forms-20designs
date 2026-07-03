@@ -46,7 +46,6 @@ function CustomerFeedbackForm() {
           label="Overall rating"
           value={rating}
           onChange={(e) => setRating(e.target.value)}
-          placeholder="Select rating"
         >
           <option value="excellent">Excellent</option>
           <option value="good">Good</option>

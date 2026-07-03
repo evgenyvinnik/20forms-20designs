@@ -55,7 +55,7 @@ function ShippingAddressForm() {
       <Form.Select
         field="region"
         label="State / Province / Territory"
-        placeholder="Select an option"
+
         rules={[{ required: true, message: 'Please select a region' }]}
         style={{ width: '100%' }}
       >

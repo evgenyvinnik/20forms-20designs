@@ -15,7 +15,7 @@ function CheckoutPaymentForm() {
       <wa-select
         label="Shipping method"
         name="shipping"
-        placeholder="Select shipping"
+
         required
       >
         <wa-option value="standard">Standard (5-7 days)</wa-option>

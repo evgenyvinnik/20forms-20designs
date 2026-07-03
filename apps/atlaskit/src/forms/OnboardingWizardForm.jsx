@@ -68,7 +68,7 @@ function OnboardingWizardForm() {
                 options={teamSizeOptions}
                 value={teamSize}
                 onChange={setTeamSize}
-                placeholder="Select size"
+
                 isRequired
               />
             </Box>

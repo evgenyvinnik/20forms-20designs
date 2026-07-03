@@ -30,7 +30,7 @@ function NewsletterSubscriptionForm() {
             id="email"
             name="email"
             inputMode="email"
-            placeholder="Email address"
+
             required
           />
         </YStack>
@@ -39,7 +39,7 @@ function NewsletterSubscriptionForm() {
           <Label htmlFor="frequency">Frequency</Label>
           <Select id="frequency" value={frequency} onValueChange={setFrequency}>
             <Select.Trigger>
-              <Select.Value placeholder="Select frequency" />
+              <Select.Value />
             </Select.Trigger>
             <Adapt when="sm" platform="touch">
               <Sheet

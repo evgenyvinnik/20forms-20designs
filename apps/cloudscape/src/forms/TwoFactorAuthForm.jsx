@@ -23,7 +23,7 @@ function TwoFactorAuthForm() {
           <Input
             name="code"
             type="text"
-            placeholder="000000"
+
             inputMode="numeric"
             required
           />

@@ -22,7 +22,7 @@ function SupportTicketForm() {
       <YStack gap="$2">
         <YStack gap="$1">
           <Label htmlFor="subject">Subject</Label>
-          <Input id="subject" name="subject" placeholder="Subject" required />
+          <Input id="subject" name="subject" required />
         </YStack>
 
         <YStack gap="$1">
@@ -56,7 +56,7 @@ function SupportTicketForm() {
           <TextArea
             id="description"
             name="description"
-            placeholder="Issue description"
+
             rows={4}
             required
           />

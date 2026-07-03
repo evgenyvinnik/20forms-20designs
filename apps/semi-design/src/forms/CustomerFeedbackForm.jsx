@@ -27,7 +27,7 @@ function CustomerFeedbackForm() {
       <Form.Select
         field="rating"
         label="Overall rating"
-        placeholder="Select rating"
+
         rules={[{ required: true, message: 'Please select a rating' }]}
         style={{ width: '100%' }}
       >

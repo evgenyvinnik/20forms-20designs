@@ -63,7 +63,7 @@ function BillingInfoForm({ inverted }) {
         <Select
           name="country"
           options={countryOptions}
-          placeholder="Select country"
+
           required
         />
       </Form.Field>

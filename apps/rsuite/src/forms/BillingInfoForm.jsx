@@ -61,7 +61,7 @@ function BillingInfoForm() {
           name="country"
           accepter={SelectPicker}
           data={countryOptions}
-          placeholder="Select country"
+
           block
           required
         />

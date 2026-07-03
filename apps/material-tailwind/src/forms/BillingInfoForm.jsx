@@ -27,7 +27,7 @@ function BillingInfoForm() {
           name="cardName"
           type="text"
           required
-          placeholder="Enter name on card"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />
@@ -48,7 +48,7 @@ function BillingInfoForm() {
           inputMode="numeric"
           pattern="[0-9]{13,19}"
           maxLength={19}
-          placeholder="Enter card number"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />
@@ -90,7 +90,7 @@ function BillingInfoForm() {
             inputMode="numeric"
             pattern="[0-9]{3,4}"
             maxLength={4}
-            placeholder="CVC"
+
             className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
             labelProps={{ className: 'hidden' }}
           />
@@ -109,7 +109,7 @@ function BillingInfoForm() {
           name="address"
           type="text"
           required
-          placeholder="Enter billing address"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />

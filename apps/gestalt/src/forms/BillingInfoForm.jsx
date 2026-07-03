@@ -57,7 +57,7 @@ function BillingInfoForm() {
           id="gestalt-billing-country"
           label="Country"
           onChange={({ value }) => setCountry(value)}
-          placeholder="Select country"
+
           value={country}
         >
           {[

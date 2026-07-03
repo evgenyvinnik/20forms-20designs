@@ -56,7 +56,7 @@ function OnboardingWizardForm() {
       <Form.Select
         field="teamSize"
         label="Team size"
-        placeholder="Select size"
+
         rules={[{ required: true, message: 'Please select your team size' }]}
         style={{ width: '100%' }}
       >

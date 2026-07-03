@@ -70,7 +70,6 @@ function OnboardingWizardForm() {
             id="grommet-onboarding-size"
             name="teamSize"
             options={['1-5', '6-20', '21-50', '50+']}
-            placeholder="Select size"
           />
         </FormField>
       </Box>

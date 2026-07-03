@@ -25,7 +25,7 @@ function NewsletterSubscriptionForm() {
         name="frequency"
         rules={[{ required: true, message: 'Please select a frequency' }]}
       >
-        <Select placeholder="Select frequency">
+        <Select>
           <Select.Option value="weekly">Weekly</Select.Option>
           <Select.Option value="monthly">Monthly</Select.Option>
           <Select.Option value="quarterly">Quarterly</Select.Option>

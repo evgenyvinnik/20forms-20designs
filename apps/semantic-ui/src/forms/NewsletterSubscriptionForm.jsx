@@ -27,7 +27,7 @@ function NewsletterSubscriptionForm({ inverted }) {
         <Select
           name="frequency"
           options={frequencyOptions}
-          placeholder="Select frequency"
+
           required
         />
       </Form.Field>

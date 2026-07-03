@@ -14,7 +14,7 @@ function ProfileUpdateForm() {
           <Input
             id="firstName"
             name="firstName"
-            placeholder="First name"
+
             required
           />
         </YStack>
@@ -24,7 +24,7 @@ function ProfileUpdateForm() {
           <Input
             id="lastName"
             name="lastName"
-            placeholder="Last name"
+
             required
           />
         </YStack>
@@ -35,7 +35,7 @@ function ProfileUpdateForm() {
             id="email"
             name="email"
             inputMode="email"
-            placeholder="Email address"
+
             required
           />
         </YStack>
@@ -46,7 +46,7 @@ function ProfileUpdateForm() {
             id="phone"
             name="phone"
             inputMode="tel"
-            placeholder="Phone number"
+
             required
           />
         </YStack>
@@ -56,7 +56,7 @@ function ProfileUpdateForm() {
           <TextArea
             id="bio"
             name="bio"
-            placeholder="Short bio"
+
             rows={3}
             required
           />

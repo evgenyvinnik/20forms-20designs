@@ -49,19 +49,11 @@ function AdvancedSearchForm() {
         </Box>
         <Box>
           <Label htmlFor="atlaskit-search-date-from">Date from</Label>
-          <DatePicker
-            id="atlaskit-search-date-from"
-            name="dateFrom"
-            placeholder="Select a date"
-          />
+          <DatePicker id="atlaskit-search-date-from" name="dateFrom" />
         </Box>
         <Box>
           <Label htmlFor="atlaskit-search-date-to">Date to</Label>
-          <DatePicker
-            id="atlaskit-search-date-to"
-            name="dateTo"
-            placeholder="Select a date"
-          />
+          <DatePicker id="atlaskit-search-date-to" name="dateTo" />
         </Box>
         <Box>
           <Label htmlFor="atlaskit-search-sort">Sort by</Label>

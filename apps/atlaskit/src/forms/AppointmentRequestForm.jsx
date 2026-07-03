@@ -33,19 +33,11 @@ function AppointmentRequestForm() {
         </Box>
         <Box>
           <Label htmlFor="atlaskit-appointment-date">Preferred date</Label>
-          <DatePicker
-            id="atlaskit-appointment-date"
-            name="date"
-            placeholder="Select a date"
-          />
+          <DatePicker id="atlaskit-appointment-date" name="date" />
         </Box>
         <Box>
           <Label htmlFor="atlaskit-appointment-time">Preferred time</Label>
-          <TimePicker
-            id="atlaskit-appointment-time"
-            name="time"
-            placeholder="Select a time"
-          />
+          <TimePicker id="atlaskit-appointment-time" name="time" />
         </Box>
         <Box>
           <Label htmlFor="atlaskit-appointment-reason">Reason for visit</Label>

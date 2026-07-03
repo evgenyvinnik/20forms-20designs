@@ -33,7 +33,7 @@ function JobApplicationForm() {
               id="radix-job-full-name"
               name="fullName"
               type="text"
-              placeholder="Enter your full name"
+
               required
             />
           </Box>
@@ -45,7 +45,7 @@ function JobApplicationForm() {
               id="radix-job-email"
               name="email"
               type="email"
-              placeholder="Enter your email"
+
               required
             />
           </Box>
@@ -57,7 +57,7 @@ function JobApplicationForm() {
               id="radix-job-phone"
               name="phone"
               type="tel"
-              placeholder="Enter phone number"
+
               pattern="[+0-9\s-]{7,20}"
               inputMode="tel"
               required
@@ -71,7 +71,7 @@ function JobApplicationForm() {
               id="radix-job-role"
               name="role"
               type="text"
-              placeholder="Enter role you're applying for"
+
               required
             />
           </Box>
@@ -88,7 +88,7 @@ function JobApplicationForm() {
               id="radix-job-resume"
               name="resume"
               type="url"
-              placeholder="https://example.com/resume.pdf"
+
               required
             />
           </Box>
@@ -105,7 +105,7 @@ function JobApplicationForm() {
               id="radix-job-cover-letter"
               name="coverLetter"
               rows={4}
-              placeholder="Write your cover letter"
+
               required
             />
           </Box>

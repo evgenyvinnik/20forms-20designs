@@ -28,7 +28,7 @@ function OnboardingWizardForm() {
             <Input
               name="email"
               type="email"
-              placeholder="email@company.com"
+
               required
             />
           </FormField>
@@ -36,7 +36,7 @@ function OnboardingWizardForm() {
             <Input
               name="password"
               type="password"
-              placeholder="Create a password"
+
               minLength={8}
               required
             />
@@ -49,14 +49,14 @@ function OnboardingWizardForm() {
             <Input
               name="teamName"
               type="text"
-              placeholder="Your team name"
+
               required
             />
           </FormField>
           <FormField label="Team size">
             <Select
               name="teamSize"
-              placeholder="Select size"
+
               options={[
                 { label: '1-5', value: '1-5' },
                 { label: '6-20', value: '6-20' },
@@ -76,7 +76,7 @@ function OnboardingWizardForm() {
           <FormField label="Primary goal">
             <Textarea
               name="goal"
-              placeholder="What do you want to achieve?"
+
               rows={3}
               required
             />

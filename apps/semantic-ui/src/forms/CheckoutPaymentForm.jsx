@@ -27,7 +27,7 @@ function CheckoutPaymentForm({ inverted }) {
         <Select
           name="shippingMethod"
           options={shippingOptions}
-          placeholder="Select shipping"
+
           required
         />
       </Form.Field>

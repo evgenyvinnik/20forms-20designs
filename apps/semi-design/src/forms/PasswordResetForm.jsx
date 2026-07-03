@@ -24,7 +24,10 @@ function PasswordResetForm() {
         prefix={<IconMail />}
         rules={[{ required: true, message: 'Please enter your email' }]}
       />
-      <Text type="secondary" style={{ display: 'block', marginBottom: '16px', fontSize: '0.85rem' }}>
+      <Text
+        type="secondary"
+        style={{ display: 'block', marginBottom: '16px', fontSize: '0.85rem' }}
+      >
         Instructions will be sent to this address if an account exists.
       </Text>
 

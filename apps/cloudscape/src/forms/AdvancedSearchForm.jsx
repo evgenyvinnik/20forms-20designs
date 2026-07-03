@@ -35,7 +35,7 @@ function AdvancedSearchForm() {
           <Input
             name="query"
             type="text"
-            placeholder="Enter search terms"
+
             required
           />
         </FormField>
@@ -57,7 +57,7 @@ function AdvancedSearchForm() {
         <FormField label="Date from">
           <DatePicker
             name="dateFrom"
-            placeholder="YYYY/MM/DD"
+
             value={dateFrom}
             onChange={({ detail }) => setDateFrom(detail.value)}
           />
@@ -65,7 +65,7 @@ function AdvancedSearchForm() {
         <FormField label="Date to">
           <DatePicker
             name="dateTo"
-            placeholder="YYYY/MM/DD"
+
             value={dateTo}
             onChange={({ detail }) => setDateTo(detail.value)}
           />

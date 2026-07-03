@@ -59,7 +59,6 @@ function ContactInquiryForm() {
         value={topic}
         onChange={(val) => setTopic(val)}
         options={topicOptions}
-        placeholder="Select topic"
       />
 
       <TextArea

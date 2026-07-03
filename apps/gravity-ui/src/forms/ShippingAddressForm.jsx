@@ -64,7 +64,6 @@ function ShippingAddressForm() {
         label="State / Province / Territory"
         name="region"
         options={[{ value: '', content: 'Select an option' }, ...regionOptions]}
-        placeholder="Select an option"
       />
       <TextInput
         id="gravity-shipping-postal"

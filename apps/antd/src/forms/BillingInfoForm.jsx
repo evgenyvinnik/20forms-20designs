@@ -59,7 +59,7 @@ function BillingInfoForm() {
         name="country"
         rules={[{ required: true, message: 'Please select a country' }]}
       >
-        <Select placeholder="Select country">
+        <Select>
           <Select.Option value="US">United States</Select.Option>
           <Select.Option value="CA">Canada</Select.Option>
         </Select>

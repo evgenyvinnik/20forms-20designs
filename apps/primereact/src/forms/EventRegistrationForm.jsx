@@ -70,7 +70,7 @@ function EventRegistrationForm() {
           value={ticketType}
           options={ticketOptions}
           onChange={(e) => setTicketType(e.value)}
-          placeholder="Select ticket"
+
           required
         />
       </div>

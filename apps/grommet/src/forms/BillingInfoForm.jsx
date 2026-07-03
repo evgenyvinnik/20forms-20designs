@@ -73,7 +73,6 @@ function BillingInfoForm() {
           id="grommet-billing-country"
           name="country"
           options={['United States', 'Canada']}
-          placeholder="Select country"
         />
       </FormField>
       <Box margin={{ top: 'medium' }}>

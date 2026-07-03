@@ -83,7 +83,6 @@ function ShippingAddressForm() {
           id="grommet-shipping-region"
           name="region"
           options={regionOptions}
-          placeholder="Select an option"
         />
       </FormField>
       <FormField

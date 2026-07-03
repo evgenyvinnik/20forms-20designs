@@ -146,7 +146,7 @@ function ShippingAddressForm() {
             options={regionOptions}
             value={region}
             onChange={setRegion}
-            placeholder="Select an option"
+
             isRequired
           />
         </Box>

@@ -33,7 +33,7 @@ function NewsletterSubscriptionForm() {
               id="radix-newsletter-email"
               name="email"
               type="email"
-              placeholder="Enter your email"
+
               required
             />
           </Box>
@@ -47,10 +47,7 @@ function NewsletterSubscriptionForm() {
               Frequency
             </Text>
             <Select.Root name="frequency" required>
-              <Select.Trigger
-                id="radix-newsletter-frequency"
-                placeholder="Select frequency"
-              />
+              <Select.Trigger id="radix-newsletter-frequency" />
               <Select.Content>
                 <Select.Item value="weekly">Weekly</Select.Item>
                 <Select.Item value="monthly">Monthly</Select.Item>

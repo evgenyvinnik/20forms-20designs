@@ -52,7 +52,7 @@ function NewsletterSubscriptionForm() {
           value={frequency}
           options={frequencyOptions}
           onChange={(e) => setFrequency(e.value)}
-          placeholder="Select frequency"
+
           required
         />
       </div>

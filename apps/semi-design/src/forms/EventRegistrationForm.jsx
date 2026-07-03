@@ -27,7 +27,7 @@ function EventRegistrationForm() {
       <Form.Select
         field="ticketType"
         label="Ticket type"
-        placeholder="Select ticket"
+
         rules={[{ required: true, message: 'Please select a ticket type' }]}
         style={{ width: '100%' }}
       >

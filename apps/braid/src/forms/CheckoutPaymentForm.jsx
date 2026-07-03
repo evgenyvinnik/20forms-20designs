@@ -31,7 +31,6 @@ function CheckoutPaymentForm() {
           label="Shipping method"
           value={shippingMethod}
           onChange={(e) => setShippingMethod(e.target.value)}
-          placeholder="Select shipping"
         >
           <option value="standard">Standard</option>
           <option value="express">Express</option>

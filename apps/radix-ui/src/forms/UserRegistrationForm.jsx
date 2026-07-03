@@ -32,7 +32,7 @@ function UserRegistrationForm() {
               id="radix-user-registration-name"
               name="fullName"
               type="text"
-              placeholder="Enter your full name"
+
               required
             />
           </Box>
@@ -49,7 +49,7 @@ function UserRegistrationForm() {
               id="radix-user-registration-email"
               name="email"
               type="email"
-              placeholder="Enter your email"
+
               required
             />
           </Box>
@@ -66,7 +66,7 @@ function UserRegistrationForm() {
               id="radix-user-registration-username"
               name="username"
               type="text"
-              placeholder="Choose a username"
+
               minLength="3"
               required
             />
@@ -84,7 +84,7 @@ function UserRegistrationForm() {
               id="radix-user-registration-password"
               name="password"
               type="password"
-              placeholder="Create a password"
+
               minLength="8"
               required
             />
@@ -102,7 +102,7 @@ function UserRegistrationForm() {
               id="radix-user-registration-confirm"
               name="confirmPassword"
               type="password"
-              placeholder="Confirm your password"
+
               minLength="8"
               required
             />

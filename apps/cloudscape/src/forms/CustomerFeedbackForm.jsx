@@ -23,20 +23,20 @@ function CustomerFeedbackForm() {
     <form onSubmit={handleSubmit}>
       <SpaceBetween direction="vertical" size="l">
         <FormField label="Name">
-          <Input name="name" type="text" placeholder="Your name" required />
+          <Input name="name" type="text" required />
         </FormField>
         <FormField label="Email address">
           <Input
             name="email"
             type="email"
-            placeholder="your@email.com"
+
             required
           />
         </FormField>
         <FormField label="Overall rating">
           <Select
             name="rating"
-            placeholder="Select rating"
+
             options={[
               { label: 'Excellent', value: 'excellent' },
               { label: 'Good', value: 'good' },
@@ -50,7 +50,7 @@ function CustomerFeedbackForm() {
         <FormField label="Comments">
           <Textarea
             name="comments"
-            placeholder="Share your feedback"
+
             rows={4}
           />
         </FormField>
