@@ -60,11 +60,9 @@ function App() {
 
   // Apply theme on mount and when it changes
   useEffect(() => {
-    // Check URL for theme parameter
     const params = new URLSearchParams(window.location.search)
     const urlTheme = params.get('theme')
 
-    // Semi Design uses theme-mode attribute on body for dark mode
     if (urlTheme === 'dark' || theme === 'dark') {
       document.body.setAttribute('theme-mode', 'dark')
     } else {
@@ -94,11 +92,17 @@ function App() {
     return () => window.removeEventListener('popstate', handlePopState)
   }, [])
 
-  // Get the form component based on the form ID
-  const FormComponent = FORM_COMPONENTS[formId]
+  const FormComponent = FORM_COMPONENTS[formId] || FORM_COMPONENTS['user-login']
 
   return (
-    <div style={{ padding: '20px', maxWidth: '500px', margin: '0 auto' }}>
+    <div
+      style={{
+        padding: '20px',
+        maxWidth: '560px',
+        margin: '0 auto',
+        minHeight: '100vh',
+      }}
+    >
       <FormComponent />
     </div>
   )

@@ -15,34 +15,32 @@ function UserLoginForm() {
   }
 
   return (
-    <Container>
-      <form onSubmit={handleSubmit}>
-        <SpaceBetween direction="vertical" size="l">
-          <FormField label="Email address">
-            <Input
-              id="cloudscape-user-login-email"
-              name="email"
-              type="email"
-              placeholder="Enter your email"
-              required
-            />
-          </FormField>
-          <FormField label="Password">
-            <Input
-              id="cloudscape-user-login-password"
-              name="password"
-              type="password"
-              placeholder="Enter your password"
-              required
-            />
-          </FormField>
-          <Checkbox name="rememberMe">Remember me</Checkbox>
-          <Button variant="primary" formAction="submit">
-            Sign in
-          </Button>
-        </SpaceBetween>
-      </form>
-    </Container>
+    <form onSubmit={handleSubmit}>
+      <SpaceBetween direction="vertical" size="l">
+        <FormField label="Email address">
+          <Input
+            id="cloudscape-user-login-email"
+            name="email"
+            type="email"
+            placeholder="Enter your email"
+            required
+          />
+        </FormField>
+        <FormField label="Password">
+          <Input
+            id="cloudscape-user-login-password"
+            name="password"
+            type="password"
+            placeholder="Enter your password"
+            required
+          />
+        </FormField>
+        <Checkbox name="rememberMe">Remember me</Checkbox>
+        <Button variant="primary" formAction="submit">
+          Sign in
+        </Button>
+      </SpaceBetween>
+    </form>
   )
 }
 

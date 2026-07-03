@@ -10,16 +10,9 @@ function ProfileUpdateForm() {
     <form onSubmit={handleSubmit}>
       <Stack gap="md">
         <TextInput
-          id="mantine-profile-first-name"
-          name="firstName"
-          label="First name"
-          type="text"
-          required
-        />
-        <TextInput
-          id="mantine-profile-last-name"
-          name="lastName"
-          label="Last name"
+          id="mantine-profile-full-name"
+          name="fullName"
+          label="Full name"
           type="text"
           required
         />

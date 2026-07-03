@@ -20,53 +20,47 @@ function ContactInquiryForm() {
   }
 
   return (
-    <Container>
-      <form onSubmit={handleSubmit}>
-        <SpaceBetween direction="vertical" size="l">
-          <FormField label="Full name">
-            <Input
-              name="fullName"
-              type="text"
-              placeholder="Enter your full name"
-              required
-            />
-          </FormField>
-          <FormField label="Email address">
-            <Input
-              name="email"
-              type="email"
-              placeholder="Enter your email"
-              required
-            />
-          </FormField>
-          <FormField label="Topic">
-            <Select
-              name="topic"
-              placeholder="Select topic"
-              options={[
-                { label: 'Support', value: 'support' },
-                { label: 'Sales', value: 'sales' },
-                { label: 'Feedback', value: 'feedback' },
-                { label: 'Other', value: 'other' },
-              ]}
-              selectedOption={selectedTopic}
-              onChange={({ detail }) => setSelectedTopic(detail.selectedOption)}
-            />
-          </FormField>
-          <FormField label="Message">
-            <Textarea
-              name="message"
-              placeholder="Enter your message"
-              rows={4}
-            />
-          </FormField>
-          <Checkbox name="consent">Allow follow-up communication</Checkbox>
-          <Button variant="primary" formAction="submit">
-            Submit inquiry
-          </Button>
-        </SpaceBetween>
-      </form>
-    </Container>
+    <form onSubmit={handleSubmit}>
+      <SpaceBetween direction="vertical" size="l">
+        <FormField label="Full name">
+          <Input
+            name="fullName"
+            type="text"
+            placeholder="Enter your full name"
+            required
+          />
+        </FormField>
+        <FormField label="Email address">
+          <Input
+            name="email"
+            type="email"
+            placeholder="Enter your email"
+            required
+          />
+        </FormField>
+        <FormField label="Topic">
+          <Select
+            name="topic"
+            placeholder="Select topic"
+            options={[
+              { label: 'Support', value: 'support' },
+              { label: 'Sales', value: 'sales' },
+              { label: 'Feedback', value: 'feedback' },
+              { label: 'Other', value: 'other' },
+            ]}
+            selectedOption={selectedTopic}
+            onChange={({ detail }) => setSelectedTopic(detail.selectedOption)}
+          />
+        </FormField>
+        <FormField label="Message">
+          <Textarea name="message" placeholder="Enter your message" rows={4} />
+        </FormField>
+        <Checkbox name="consent">Allow follow-up communication</Checkbox>
+        <Button variant="primary" formAction="submit">
+          Submit inquiry
+        </Button>
+      </SpaceBetween>
+    </form>
   )
 }
 

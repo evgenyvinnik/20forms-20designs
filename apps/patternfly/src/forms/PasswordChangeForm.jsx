@@ -37,6 +37,7 @@ function PasswordChangeForm() {
           type="password"
           id="pf-password-change-new"
           name="newPassword"
+          minLength={8}
         />
       </FormGroup>
       <FormGroup
@@ -49,6 +50,7 @@ function PasswordChangeForm() {
           type="password"
           id="pf-password-change-confirm"
           name="confirmPassword"
+          minLength={8}
         />
       </FormGroup>
       <FormGroup fieldId="pf-password-change-logout">
