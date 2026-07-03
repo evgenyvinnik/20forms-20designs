@@ -14,26 +14,24 @@ function PasswordResetForm() {
   }
 
   return (
-    <Container>
-      <form onSubmit={handleSubmit}>
-        <SpaceBetween direction="vertical" size="l">
-          <FormField
-            label="Email address"
-            description="Enter the email address associated with your account"
-          >
-            <Input
-              name="email"
-              type="email"
-              placeholder="Enter your email"
-              required
-            />
-          </FormField>
-          <Button variant="primary" formAction="submit">
-            Send reset link
-          </Button>
-        </SpaceBetween>
-      </form>
-    </Container>
+    <form onSubmit={handleSubmit}>
+      <SpaceBetween direction="vertical" size="l">
+        <FormField
+          label="Email address"
+          description="Enter the email address associated with your account"
+        >
+          <Input
+            name="email"
+            type="email"
+            placeholder="Enter your email"
+            required
+          />
+        </FormField>
+        <Button variant="primary" formAction="submit">
+          Send reset link
+        </Button>
+      </SpaceBetween>
+    </form>
   )
 }
 

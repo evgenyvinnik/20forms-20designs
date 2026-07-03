@@ -81,7 +81,16 @@ function App() {
 
   return (
     <MantineProvider defaultColorScheme={theme} forceColorScheme={theme}>
-      <div style={{ padding: '16px' }}>
+      <div
+        style={{
+          padding: '20px',
+          maxWidth: '560px',
+          margin: '0 auto',
+          minHeight: '100vh',
+          backgroundColor: theme === 'dark' ? '#1a1b1e' : '#ffffff',
+          color: theme === 'dark' ? '#c1c2c5' : '#000000',
+        }}
+      >
         <FormComponent />
       </div>
     </MantineProvider>

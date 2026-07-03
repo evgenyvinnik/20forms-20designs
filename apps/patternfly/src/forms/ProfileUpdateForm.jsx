@@ -15,20 +15,12 @@ function ProfileUpdateForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <FormGroup label="First name" isRequired fieldId="pf-profile-first-name">
+      <FormGroup label="Full name" isRequired fieldId="pf-profile-full-name">
         <TextInput
           isRequired
           type="text"
-          id="pf-profile-first-name"
-          name="firstName"
-        />
-      </FormGroup>
-      <FormGroup label="Last name" isRequired fieldId="pf-profile-last-name">
-        <TextInput
-          isRequired
-          type="text"
-          id="pf-profile-last-name"
-          name="lastName"
+          id="pf-profile-full-name"
+          name="fullName"
         />
       </FormGroup>
       <FormGroup label="Email address" isRequired fieldId="pf-profile-email">

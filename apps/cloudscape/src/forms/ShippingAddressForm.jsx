@@ -35,83 +35,79 @@ function ShippingAddressForm() {
   }))
 
   return (
-    <Container>
-      <form onSubmit={handleSubmit}>
-        <SpaceBetween direction="vertical" size="l">
-          <FormField label="Recipient name">
-            <Input
-              id="cloudscape-shipping-address-full-name"
-              name="fullName"
-              type="text"
-              placeholder="Full name"
-              required
-            />
-          </FormField>
-          <FormField label="Street address">
-            <Input
-              id="cloudscape-shipping-address-street"
-              name="street"
-              type="text"
-              placeholder="Street address"
-              required
-            />
-          </FormField>
-          <FormField label="Apartment, suite, etc.">
-            <Input
-              id="cloudscape-shipping-address-street2"
-              name="street2"
-              type="text"
-              placeholder="Apt, suite, etc."
-            />
-          </FormField>
-          <FormField label="City">
-            <Input
-              id="cloudscape-shipping-address-city"
-              name="city"
-              type="text"
-              placeholder="City"
-              required
-            />
-          </FormField>
-          <FormField label="Country">
-            <Select
-              name="country"
-              selectedOption={selectedCountryOption}
-              onChange={({ detail }) => {
-                setCountry(detail.selectedOption.value)
-                setSelectedCountryOption(detail.selectedOption)
-                setSelectedRegion(null) // Reset region when country changes
-              }}
-              options={countryOptions}
-            />
-          </FormField>
-          <FormField label="State / Province / Territory">
-            <Select
-              name="region"
-              placeholder="Select an option"
-              options={regionOptions}
-              selectedOption={selectedRegion}
-              onChange={({ detail }) =>
-                setSelectedRegion(detail.selectedOption)
-              }
-            />
-          </FormField>
-          <FormField label="Postal code">
-            <Input
-              id="cloudscape-shipping-address-postal-code"
-              name="postalCode"
-              type="text"
-              placeholder="Postal code"
-              required
-            />
-          </FormField>
-          <Checkbox name="default">Use as default shipping address</Checkbox>
-          <Button variant="primary" formAction="submit">
-            Save address
-          </Button>
-        </SpaceBetween>
-      </form>
-    </Container>
+    <form onSubmit={handleSubmit}>
+      <SpaceBetween direction="vertical" size="l">
+        <FormField label="Recipient name">
+          <Input
+            id="cloudscape-shipping-address-full-name"
+            name="fullName"
+            type="text"
+            placeholder="Full name"
+            required
+          />
+        </FormField>
+        <FormField label="Street address">
+          <Input
+            id="cloudscape-shipping-address-street"
+            name="street"
+            type="text"
+            placeholder="Street address"
+            required
+          />
+        </FormField>
+        <FormField label="Apartment, suite, etc.">
+          <Input
+            id="cloudscape-shipping-address-street2"
+            name="street2"
+            type="text"
+            placeholder="Apt, suite, etc."
+          />
+        </FormField>
+        <FormField label="City">
+          <Input
+            id="cloudscape-shipping-address-city"
+            name="city"
+            type="text"
+            placeholder="City"
+            required
+          />
+        </FormField>
+        <FormField label="Country">
+          <Select
+            name="country"
+            selectedOption={selectedCountryOption}
+            onChange={({ detail }) => {
+              setCountry(detail.selectedOption.value)
+              setSelectedCountryOption(detail.selectedOption)
+              setSelectedRegion(null) // Reset region when country changes
+            }}
+            options={countryOptions}
+          />
+        </FormField>
+        <FormField label="State / Province / Territory">
+          <Select
+            name="region"
+            placeholder="Select an option"
+            options={regionOptions}
+            selectedOption={selectedRegion}
+            onChange={({ detail }) => setSelectedRegion(detail.selectedOption)}
+          />
+        </FormField>
+        <FormField label="Postal code">
+          <Input
+            id="cloudscape-shipping-address-postal-code"
+            name="postalCode"
+            type="text"
+            placeholder="Postal code"
+            required
+          />
+        </FormField>
+        <Checkbox name="default">Use as default shipping address</Checkbox>
+        <Button variant="primary" formAction="submit">
+          Save address
+        </Button>
+      </SpaceBetween>
+    </form>
   )
 }
 

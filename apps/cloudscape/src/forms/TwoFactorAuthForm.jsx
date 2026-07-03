@@ -14,27 +14,25 @@ function TwoFactorAuthForm() {
   }
 
   return (
-    <Container>
-      <form onSubmit={handleSubmit}>
-        <SpaceBetween direction="vertical" size="l">
-          <FormField
-            label="Verification code"
-            description="Enter the 6-digit code from your authenticator app"
-          >
-            <Input
-              name="code"
-              type="text"
-              placeholder="000000"
-              inputMode="numeric"
-              required
-            />
-          </FormField>
-          <Button variant="primary" formAction="submit">
-            Verify code
-          </Button>
-        </SpaceBetween>
-      </form>
-    </Container>
+    <form onSubmit={handleSubmit}>
+      <SpaceBetween direction="vertical" size="l">
+        <FormField
+          label="Verification code"
+          description="Enter the 6-digit code from your authenticator app"
+        >
+          <Input
+            name="code"
+            type="text"
+            placeholder="000000"
+            inputMode="numeric"
+            required
+          />
+        </FormField>
+        <Button variant="primary" formAction="submit">
+          Verify code
+        </Button>
+      </SpaceBetween>
+    </form>
   )
 }
 

@@ -61,12 +61,10 @@ function App() {
 
   // Apply theme on mount and when it changes
   useEffect(() => {
-    // Check URL for theme parameter
     const params = new URLSearchParams(window.location.search)
     const urlTheme = params.get('theme')
 
     if (urlTheme === 'dark' || theme === 'dark') {
-      // PatternFly v6 uses pf-v6-theme-dark class on html element
       document.documentElement.classList.add('pf-v6-theme-dark')
       document.body.classList.add('dark')
     } else {
@@ -97,11 +95,17 @@ function App() {
     return () => window.removeEventListener('popstate', handlePopState)
   }, [])
 
-  // Get the form component based on the form ID
-  const FormComponent = FORM_COMPONENTS[formId]
+  const FormComponent = FORM_COMPONENTS[formId] || FORM_COMPONENTS['user-login']
 
   return (
-    <div style={{ padding: '20px', maxWidth: '500px', margin: '0 auto' }}>
+    <div
+      style={{
+        padding: '20px',
+        maxWidth: '560px',
+        margin: '0 auto',
+        minHeight: '100vh',
+      }}
+    >
       <FormComponent />
     </div>
   )
