@@ -49,7 +49,7 @@ function BillingInfoForm() {
       <Form.Select
         field="country"
         label="Country"
-        placeholder="Select country"
+
         rules={[{ required: true, message: 'Please select a country' }]}
         style={{ width: '100%' }}
       >

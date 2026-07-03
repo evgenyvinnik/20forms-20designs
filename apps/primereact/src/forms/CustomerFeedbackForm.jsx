@@ -71,7 +71,7 @@ function CustomerFeedbackForm() {
           value={rating}
           options={ratingOptions}
           onChange={(e) => setRating(e.value)}
-          placeholder="Select rating"
+
           required
         />
       </div>

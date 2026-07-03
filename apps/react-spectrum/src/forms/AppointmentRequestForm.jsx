@@ -4,7 +4,7 @@ import { DatePicker, TimeField } from '@adobe/react-spectrum'
 function AppointmentRequestForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Appointment requested!')
+    alert('Appointment request submitted!')
   }
 
   return (

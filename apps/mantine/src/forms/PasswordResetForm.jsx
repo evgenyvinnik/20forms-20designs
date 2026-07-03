@@ -1,4 +1,4 @@
-import { Button, Stack, TextInput, Text } from '@mantine/core'
+import { Button, Stack, Text, TextInput } from '@mantine/core'
 
 function PasswordResetForm() {
   const handleSubmit = (event) => {

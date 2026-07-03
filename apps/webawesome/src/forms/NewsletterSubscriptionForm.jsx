@@ -16,7 +16,7 @@ function NewsletterSubscriptionForm() {
       <wa-select
         label="Frequency"
         name="frequency"
-        placeholder="Select frequency"
+
         required
       >
         <wa-option value="weekly">Weekly</wa-option>

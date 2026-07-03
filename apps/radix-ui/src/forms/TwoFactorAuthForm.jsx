@@ -30,7 +30,7 @@ function TwoFactorAuthForm() {
               inputMode="numeric"
               pattern="\d{6}"
               maxLength="6"
-              placeholder="Enter 6-digit code"
+
               required
             />
           </Box>
@@ -48,7 +48,6 @@ function TwoFactorAuthForm() {
               name="backupCode"
               type="text"
               pattern="[A-Za-z0-9]{6,12}"
-              placeholder="Enter backup code"
             />
           </Box>
           <Flex gap="2">

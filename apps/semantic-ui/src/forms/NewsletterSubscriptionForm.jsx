@@ -10,7 +10,7 @@ const frequencyOptions = [
 function NewsletterSubscriptionForm({ inverted }) {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Subscription submitted!')
+    alert('Newsletter subscription submitted!')
   }
 
   return (
@@ -27,7 +27,7 @@ function NewsletterSubscriptionForm({ inverted }) {
         <Select
           name="frequency"
           options={frequencyOptions}
-          placeholder="Select frequency"
+
           required
         />
       </Form.Field>

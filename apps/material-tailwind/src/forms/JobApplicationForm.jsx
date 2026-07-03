@@ -9,7 +9,7 @@ import {
 function JobApplicationForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Job application submitted!')
+    alert('Application submitted!')
   }
 
   return (
@@ -100,7 +100,7 @@ function JobApplicationForm() {
           name="resume"
           type="url"
           required
-          placeholder="https://..."
+
           size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}

@@ -43,7 +43,6 @@ function CustomerFeedbackForm() {
           id="grommet-feedback-rating"
           name="rating"
           options={['Excellent', 'Good', 'Average', 'Poor']}
-          placeholder="Select rating"
         />
       </FormField>
       <FormField

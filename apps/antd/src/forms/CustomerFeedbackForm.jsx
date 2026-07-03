@@ -35,7 +35,7 @@ function CustomerFeedbackForm() {
         name="rating"
         rules={[{ required: true, message: 'Please select a rating' }]}
       >
-        <Select placeholder="Select rating">
+        <Select>
           <Select.Option value="excellent">Excellent</Select.Option>
           <Select.Option value="good">Good</Select.Option>
           <Select.Option value="average">Average</Select.Option>

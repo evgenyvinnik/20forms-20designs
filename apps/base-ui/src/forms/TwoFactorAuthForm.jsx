@@ -1,0 +1,59 @@
+import { useState } from 'react'
+import { Field } from '@base-ui-components/react/field'
+
+export default function TwoFactorAuthForm() {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    alert('Verification submitted!')
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="base-form">
+      <p style={{ fontSize: '0.875rem', color: '#64748b', margin: 0 }}>
+        Enter the code from your authenticator app or SMS.
+      </p>
+      <Field.Root required className="base-field">
+        <Field.Label className="base-label">Verification code</Field.Label>
+        <Field.Control
+          className="base-input"
+          name="code"
+          type="text"
+          maxLength={6}
+          pattern="[0-9]{6}"
+          required
+        />
+      </Field.Root>
+      <Field.Root className="base-field">
+        <Field.Label className="base-label">Backup code (optional)</Field.Label>
+        <Field.Control className="base-input" name="backupCode" type="text" />
+      </Field.Root>
+      <label
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          fontSize: '0.875rem',
+        }}
+      >
+        <input type="checkbox" name="trustDevice" />
+        Trust this device for 30 days
+      </label>
+      <button type="submit" className="base-button">
+        Verify
+      </button>
+      <button
+        type="button"
+        style={{
+          background: 'none',
+          border: 'none',
+          color: '#2563eb',
+          cursor: 'pointer',
+          fontSize: '0.875rem',
+        }}
+        onClick={() => alert('Resending code placeholder')}
+      >
+        Resend code
+      </button>
+    </form>
+  )
+}

@@ -24,7 +24,7 @@ function OrderTrackingForm() {
               id="radix-tracking-order-number"
               name="orderNumber"
               type="text"
-              placeholder="Enter your order number"
+
               pattern="[A-Za-z0-9-]{6,20}"
               required
             />
@@ -42,7 +42,7 @@ function OrderTrackingForm() {
               id="radix-tracking-email"
               name="email"
               type="email"
-              placeholder="Enter email used for order"
+
               required
             />
           </Box>
@@ -59,7 +59,7 @@ function OrderTrackingForm() {
               id="radix-tracking-postal"
               name="postalCode"
               type="text"
-              placeholder="Enter postal code"
+
               required
             />
           </Box>

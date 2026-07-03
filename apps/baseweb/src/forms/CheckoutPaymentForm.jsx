@@ -14,9 +14,9 @@ function CheckoutPaymentForm() {
   const [promoCode, setPromoCode] = useState('')
 
   const shippingOptions = [
-    { label: 'Standard', id: 'standard' },
-    { label: 'Express', id: 'express' },
-    { label: 'Overnight', id: 'overnight' },
+    { label: 'Standard Shipping', id: 'standard' },
+    { label: 'Express Shipping', id: 'express' },
+    { label: 'Overnight Delivery', id: 'overnight' },
   ]
 
   const handleSubmit = (event) => {
@@ -42,7 +42,7 @@ function CheckoutPaymentForm() {
             id="baseweb-checkout-shipping-method"
             options={shippingOptions}
             value={shippingMethod}
-            placeholder="Select shipping"
+
             onChange={(params) => setShippingMethod(params.value)}
             required
           />

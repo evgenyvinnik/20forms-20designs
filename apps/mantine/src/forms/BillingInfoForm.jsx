@@ -1,6 +1,9 @@
-import { Button, Stack, TextInput, Select } from '@mantine/core'
+import { useState } from 'react'
+import { Button, Select, Stack, TextInput } from '@mantine/core'
 
 function BillingInfoForm() {
+  const [country, setCountry] = useState('')
+
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Billing details saved!')
@@ -21,6 +24,7 @@ function BillingInfoForm() {
           name="cardNumber"
           label="Card number"
           inputMode="numeric"
+          pattern="[0-9]{13,19}"
           maxLength={19}
           required
         />
@@ -29,6 +33,7 @@ function BillingInfoForm() {
           name="expiration"
           label="Expiration date"
           placeholder="MM/YY"
+          pattern="^(0[1-9]|1[0-2])\/\d{2}$"
           inputMode="numeric"
           required
         />
@@ -37,6 +42,7 @@ function BillingInfoForm() {
           name="cvc"
           label="Security code"
           inputMode="numeric"
+          pattern="[0-9]{3,4}"
           maxLength={4}
           required
         />
@@ -52,6 +58,8 @@ function BillingInfoForm() {
           name="country"
           label="Country"
           placeholder="Select country"
+          value={country}
+          onChange={setCountry}
           data={[
             { value: 'US', label: 'United States' },
             { value: 'CA', label: 'Canada' },

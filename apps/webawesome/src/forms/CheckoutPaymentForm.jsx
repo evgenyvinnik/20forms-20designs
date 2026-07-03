@@ -6,7 +6,7 @@ import '@awesome.me/webawesome/dist/components/button/button.js'
 function CheckoutPaymentForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Order placed!')
+    alert('Checkout submitted!')
   }
 
   return (
@@ -15,7 +15,7 @@ function CheckoutPaymentForm() {
       <wa-select
         label="Shipping method"
         name="shipping"
-        placeholder="Select shipping"
+
         required
       >
         <wa-option value="standard">Standard (5-7 days)</wa-option>

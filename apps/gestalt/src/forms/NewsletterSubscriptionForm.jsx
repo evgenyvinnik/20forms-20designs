@@ -25,7 +25,7 @@ function NewsletterSubscriptionForm() {
           id="gestalt-newsletter-frequency"
           label="Frequency"
           onChange={({ value }) => setFrequency(value)}
-          placeholder="Select frequency"
+
           value={frequency}
         >
           {[

@@ -8,7 +8,7 @@ import '@awesome.me/webawesome/dist/components/button/button.js'
 function OnboardingWizardForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Onboarding complete!')
+    alert('Onboarding completed!')
   }
 
   const handleBack = () => {
@@ -38,7 +38,7 @@ function OnboardingWizardForm() {
           <wa-select
             label="Team size"
             name="teamSize"
-            placeholder="Select size"
+
             required
           >
             <wa-option value="1-5">1-5</wa-option>

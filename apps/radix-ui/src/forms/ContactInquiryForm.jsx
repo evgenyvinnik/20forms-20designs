@@ -34,7 +34,7 @@ function ContactInquiryForm() {
               id="radix-contact-name"
               name="fullName"
               type="text"
-              placeholder="Enter your full name"
+
               required
             />
           </Box>
@@ -51,7 +51,7 @@ function ContactInquiryForm() {
               id="radix-contact-email"
               name="email"
               type="email"
-              placeholder="Enter your email"
+
               required
             />
           </Box>
@@ -65,10 +65,7 @@ function ContactInquiryForm() {
               Topic
             </Text>
             <Select.Root name="topic" required>
-              <Select.Trigger
-                id="radix-contact-topic"
-                placeholder="Select topic"
-              />
+              <Select.Trigger id="radix-contact-topic" />
               <Select.Content>
                 <Select.Item value="support">Support</Select.Item>
                 <Select.Item value="sales">Sales</Select.Item>
@@ -90,7 +87,7 @@ function ContactInquiryForm() {
               id="radix-contact-message"
               name="message"
               rows="4"
-              placeholder="Enter your message"
+
               required
             />
           </Box>

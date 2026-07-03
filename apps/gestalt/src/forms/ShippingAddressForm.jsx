@@ -67,7 +67,7 @@ function ShippingAddressForm() {
           id="gestalt-shipping-region"
           label="State / Province / Territory"
           onChange={({ value }) => setRegion(value)}
-          placeholder="Select an option"
+
           value={region}
         >
           {regionOptions.map((r) => (

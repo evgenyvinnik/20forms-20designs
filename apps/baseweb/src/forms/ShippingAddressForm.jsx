@@ -86,7 +86,7 @@ function ShippingAddressForm() {
             id="baseweb-shipping-region"
             options={regionOptions}
             value={region}
-            placeholder="Select an option"
+
             onChange={(params) => setRegion(params.value)}
             required
           />

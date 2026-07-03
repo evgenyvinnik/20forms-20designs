@@ -12,7 +12,7 @@ import {
 function SupportTicketForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Ticket submitted!')
+    alert('Support ticket submitted!')
   }
 
   return (

@@ -16,7 +16,7 @@ function OnboardingWizardForm() {
   const [form] = Form.useForm()
 
   const handleSubmit = () => {
-    alert('Onboarding complete!')
+    alert('Onboarding completed!')
   }
 
   const handleBack = () => {
@@ -66,7 +66,7 @@ function OnboardingWizardForm() {
         name="teamSize"
         rules={[{ required: true, message: 'Please select your team size' }]}
       >
-        <Select placeholder="Select size">
+        <Select>
           <Select.Option value="1-5">1-5</Select.Option>
           <Select.Option value="6-20">6-20</Select.Option>
           <Select.Option value="21-50">21-50</Select.Option>

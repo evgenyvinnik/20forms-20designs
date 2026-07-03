@@ -34,7 +34,6 @@ function NewsletterSubscriptionForm() {
           id="grommet-newsletter-frequency"
           name="frequency"
           options={['Weekly', 'Monthly', 'Quarterly']}
-          placeholder="Select frequency"
         />
       </FormField>
       <FormField name="agree" htmlFor="grommet-newsletter-agree">

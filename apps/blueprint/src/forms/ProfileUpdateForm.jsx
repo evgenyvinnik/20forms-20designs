@@ -50,9 +50,7 @@ function ProfileUpdateForm() {
       <FormGroup label="Short bio" labelFor="blueprint-profile-bio">
         <TextArea
           id="blueprint-profile-bio"
-          name="bio"
-          rows={3}
-          required
+
           fill
         />
       </FormGroup>

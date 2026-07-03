@@ -22,7 +22,7 @@ function OnboardingWizardForm() {
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
-    alert('Onboarding complete!')
+    alert('Onboarding completed!')
   }, [])
 
   const handleBack = useCallback(() => {
@@ -68,7 +68,6 @@ function OnboardingWizardForm() {
               label="Team size"
               value={teamSize}
               onChange={(e) => setTeamSize(e.target.value)}
-              placeholder="Select size"
             >
               <option value="1-5">1-5</option>
               <option value="6-20">6-20</option>

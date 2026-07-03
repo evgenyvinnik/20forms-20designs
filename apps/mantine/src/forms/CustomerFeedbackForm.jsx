@@ -1,13 +1,16 @@
+import { useState } from 'react'
 import {
   Button,
   Checkbox,
+  Select,
   Stack,
   TextInput,
   Textarea,
-  Select,
 } from '@mantine/core'
 
 function CustomerFeedbackForm() {
+  const [rating, setRating] = useState('')
+
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Feedback submitted!')
@@ -35,6 +38,8 @@ function CustomerFeedbackForm() {
           name="rating"
           label="Overall rating"
           placeholder="Select rating"
+          value={rating}
+          onChange={setRating}
           data={[
             { value: 'excellent', label: 'Excellent' },
             { value: 'good', label: 'Good' },

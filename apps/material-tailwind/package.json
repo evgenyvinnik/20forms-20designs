@@ -11,6 +11,8 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "@floating-ui/dom": "^1.6.13",
+    "@floating-ui/react": "^0.27.4",
     "@material-tailwind/react": "^2.1.10"
   },
   "devDependencies": {

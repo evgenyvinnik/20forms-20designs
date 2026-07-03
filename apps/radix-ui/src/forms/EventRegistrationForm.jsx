@@ -33,7 +33,7 @@ function EventRegistrationForm() {
               id="radix-event-name"
               name="fullName"
               type="text"
-              placeholder="Enter your full name"
+
               required
             />
           </Box>
@@ -50,7 +50,7 @@ function EventRegistrationForm() {
               id="radix-event-email"
               name="email"
               type="email"
-              placeholder="Enter your email"
+
               required
             />
           </Box>
@@ -64,10 +64,7 @@ function EventRegistrationForm() {
               Ticket type
             </Text>
             <Select.Root name="ticketType" required>
-              <Select.Trigger
-                id="radix-event-ticket"
-                placeholder="Select ticket"
-              />
+              <Select.Trigger id="radix-event-ticket" />
               <Select.Content>
                 <Select.Item value="general">General admission</Select.Item>
                 <Select.Item value="vip">VIP</Select.Item>
@@ -88,7 +85,7 @@ function EventRegistrationForm() {
               id="radix-event-guests"
               name="guestCount"
               type="number"
-              placeholder="0"
+
               min={0}
               max={20}
               required

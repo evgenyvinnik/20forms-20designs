@@ -35,7 +35,6 @@ function CustomerFeedbackForm() {
         label="Overall rating"
         name="rating"
         options={[{ value: '', content: 'Select rating' }, ...ratingOptions]}
-        placeholder="Select rating"
       />
       <Field label="Comments" htmlFor="gravity-feedback-comments">
         <TextArea

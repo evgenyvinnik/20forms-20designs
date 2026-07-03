@@ -35,7 +35,7 @@ function ContactInquiryForm() {
         name="topic"
         rules={[{ required: true, message: 'Please select a topic' }]}
       >
-        <Select placeholder="Select topic">
+        <Select>
           <Select.Option value="support">Support</Select.Option>
           <Select.Option value="sales">Sales</Select.Option>
           <Select.Option value="feedback">Feedback</Select.Option>

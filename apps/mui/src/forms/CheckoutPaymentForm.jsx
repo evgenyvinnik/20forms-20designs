@@ -26,12 +26,11 @@ function CheckoutPaymentForm() {
         label="Shipping method"
         select
         required
-        defaultValue=""
+        defaultValue="standard"
       >
-        <MenuItem value="">Select shipping</MenuItem>
-        <MenuItem value="standard">Standard</MenuItem>
-        <MenuItem value="express">Express</MenuItem>
-        <MenuItem value="overnight">Overnight</MenuItem>
+        <MenuItem value="standard">Standard Shipping</MenuItem>
+        <MenuItem value="express">Express Shipping</MenuItem>
+        <MenuItem value="overnight">Overnight Delivery</MenuItem>
       </TextField>
 
       <TextField
@@ -47,31 +46,23 @@ function CheckoutPaymentForm() {
         }}
       />
 
-      <TextField
-        id="mui-checkout-expiration"
-        name="expiration"
-        label="Expiration"
-        type="text"
-        placeholder="MM/YY"
-        required
-        inputProps={{
-          pattern: '^(0[1-9]|1[0-2])\\/\\d{2}$',
-          inputMode: 'numeric',
-        }}
-      />
-
-      <TextField
-        id="mui-checkout-cvc"
-        name="cvc"
-        label="CVC"
-        type="text"
-        required
-        inputProps={{
-          inputMode: 'numeric',
-          pattern: '[0-9]{3,4}',
-          maxLength: 4,
-        }}
-      />
+      <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}>
+        <TextField
+          id="mui-checkout-expiration"
+          name="expiration"
+          label="Expiration"
+          placeholder="MM/YY"
+          required
+        />
+        <TextField
+          id="mui-checkout-cvc"
+          name="cvc"
+          label="CVC"
+          type="text"
+          required
+          inputProps={{ maxLength: 4 }}
+        />
+      </Box>
 
       <TextField
         id="mui-checkout-promo"

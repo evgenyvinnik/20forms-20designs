@@ -3,7 +3,7 @@ import { Form, Button } from 'semantic-ui-react'
 function OrderTrackingForm({ inverted }) {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Order found!')
+    alert('Order lookup submitted!')
   }
 
   return (

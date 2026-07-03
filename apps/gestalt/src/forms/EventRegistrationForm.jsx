@@ -42,7 +42,7 @@ function EventRegistrationForm() {
           id="gestalt-event-ticket"
           label="Ticket type"
           onChange={({ value }) => setTicketType(value)}
-          placeholder="Select ticket"
+
           value={ticketType}
         >
           {[

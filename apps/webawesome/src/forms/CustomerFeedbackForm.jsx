@@ -18,7 +18,7 @@ function CustomerFeedbackForm() {
       <wa-select
         label="Overall rating"
         name="rating"
-        placeholder="Select rating"
+
         required
       >
         <wa-option value="excellent">Excellent</wa-option>

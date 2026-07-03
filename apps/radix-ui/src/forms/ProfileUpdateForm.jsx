@@ -32,7 +32,7 @@ function ProfileUpdateForm() {
               id="radix-profile-first-name"
               name="firstName"
               type="text"
-              placeholder="Enter first name"
+
               required
             />
           </Box>
@@ -49,7 +49,7 @@ function ProfileUpdateForm() {
               id="radix-profile-last-name"
               name="lastName"
               type="text"
-              placeholder="Enter last name"
+
               required
             />
           </Box>
@@ -66,7 +66,7 @@ function ProfileUpdateForm() {
               id="radix-profile-email"
               name="email"
               type="email"
-              placeholder="Enter email"
+
               required
             />
           </Box>
@@ -83,7 +83,7 @@ function ProfileUpdateForm() {
               id="radix-profile-phone"
               name="phone"
               type="tel"
-              placeholder="Enter phone number"
+
               pattern="[+0-9\s-]{7,20}"
               inputMode="tel"
               required
@@ -98,13 +98,7 @@ function ProfileUpdateForm() {
             >
               Short bio
             </Text>
-            <TextArea
-              id="radix-profile-bio"
-              name="bio"
-              rows={3}
-              placeholder="Tell us about yourself"
-              required
-            />
+            <TextArea id="radix-profile-bio" />
           </Box>
           <Button type="submit">Save changes</Button>
         </Flex>

@@ -39,9 +39,9 @@ function CheckoutPaymentForm() {
           isRequired
         >
           <FormSelectOption value="" label="Select shipping" isPlaceholder />
-          <FormSelectOption value="standard" label="Standard" />
-          <FormSelectOption value="express" label="Express" />
-          <FormSelectOption value="overnight" label="Overnight" />
+          <FormSelectOption value="standard" label="Standard Shipping" />
+          <FormSelectOption value="express" label="Express Shipping" />
+          <FormSelectOption value="overnight" label="Overnight Delivery" />
         </FormSelect>
       </FormGroup>
       <FormGroup

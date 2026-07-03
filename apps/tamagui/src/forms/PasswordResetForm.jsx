@@ -17,7 +17,7 @@ function PasswordResetForm() {
             id="email"
             name="email"
             inputMode="email"
-            placeholder="Email address"
+
             required
           />
         </YStack>

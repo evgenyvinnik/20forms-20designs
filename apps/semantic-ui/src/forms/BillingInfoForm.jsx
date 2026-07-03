@@ -9,7 +9,7 @@ const countryOptions = [
 function BillingInfoForm({ inverted }) {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Billing info saved!')
+    alert('Billing details saved!')
   }
 
   return (
@@ -63,7 +63,7 @@ function BillingInfoForm({ inverted }) {
         <Select
           name="country"
           options={countryOptions}
-          placeholder="Select country"
+
           required
         />
       </Form.Field>

@@ -1,13 +1,16 @@
+import { useState } from 'react'
 import {
   Button,
   Checkbox,
-  Stack,
-  TextInput,
   NumberInput,
   Select,
+  Stack,
+  TextInput,
 } from '@mantine/core'
 
 function EventRegistrationForm() {
+  const [ticketType, setTicketType] = useState('')
+
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Event registration submitted!')
@@ -35,6 +38,8 @@ function EventRegistrationForm() {
           name="ticketType"
           label="Ticket type"
           placeholder="Select ticket"
+          value={ticketType}
+          onChange={setTicketType}
           data={[
             { value: 'general', label: 'General admission' },
             { value: 'vip', label: 'VIP' },

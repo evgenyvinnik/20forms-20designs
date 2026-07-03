@@ -21,7 +21,7 @@ function ProfileUpdateForm() {
           name="firstName"
           type="text"
           required
-          placeholder="Enter your first name"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />
@@ -39,7 +39,7 @@ function ProfileUpdateForm() {
           name="lastName"
           type="text"
           required
-          placeholder="Enter your last name"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />
@@ -57,7 +57,7 @@ function ProfileUpdateForm() {
           name="email"
           type="email"
           required
-          placeholder="Enter your email"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />
@@ -77,7 +77,7 @@ function ProfileUpdateForm() {
           required
           pattern="[+0-9\s-]{7,20}"
           inputMode="tel"
-          placeholder="Enter your phone number"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />
@@ -92,10 +92,9 @@ function ProfileUpdateForm() {
         </Typography>
         <Textarea
           id="material-tailwind-profile-update-bio"
-          name="bio"
-          required
+
           rows={3}
-          placeholder="Tell us about yourself"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />

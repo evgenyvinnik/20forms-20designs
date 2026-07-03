@@ -18,7 +18,7 @@ function ProfileUpdateForm() {
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
-    alert('Profile updated successfully!')
+    alert('Profile updated!')
   }, [])
 
   return (
@@ -27,6 +27,7 @@ function ProfileUpdateForm() {
         <EuiFlexItem>
           <EuiFormRow label="First name">
             <EuiFieldText
+              name="firstName"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               required
@@ -36,6 +37,7 @@ function ProfileUpdateForm() {
         <EuiFlexItem>
           <EuiFormRow label="Last name">
             <EuiFieldText
+              name="lastName"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               required
@@ -46,6 +48,7 @@ function ProfileUpdateForm() {
 
       <EuiFormRow label="Email address">
         <EuiFieldText
+          name="email"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -55,23 +58,27 @@ function ProfileUpdateForm() {
 
       <EuiFormRow label="Phone number">
         <EuiFieldText
+          name="phone"
           type="tel"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
+          required
         />
       </EuiFormRow>
 
-      <EuiFormRow label="Bio">
+      <EuiFormRow label="Short bio">
         <EuiTextArea
+          name="bio"
           value={bio}
           onChange={(e) => setBio(e.target.value)}
-          rows={4}
+          rows={3}
+          required
         />
       </EuiFormRow>
 
       <EuiFormRow>
         <EuiButton type="submit" fill>
-          Update profile
+          Save changes
         </EuiButton>
       </EuiFormRow>
     </EuiForm>

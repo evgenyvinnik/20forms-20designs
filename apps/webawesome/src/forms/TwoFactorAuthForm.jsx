@@ -4,7 +4,7 @@ import '@awesome.me/webawesome/dist/components/button/button.js'
 function TwoFactorAuthForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Code verified!')
+    alert('Verification submitted!')
   }
 
   const handleResend = () => {

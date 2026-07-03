@@ -17,7 +17,7 @@ function UserRegistrationForm() {
           <Input
             id="fullName"
             name="fullName"
-            placeholder="Full name"
+
             required
           />
         </YStack>
@@ -28,7 +28,7 @@ function UserRegistrationForm() {
             id="email"
             name="email"
             inputMode="email"
-            placeholder="Email address"
+
             required
           />
         </YStack>
@@ -38,7 +38,7 @@ function UserRegistrationForm() {
           <Input
             id="username"
             name="username"
-            placeholder="Username"
+
             minLength={3}
             required
           />
@@ -50,7 +50,7 @@ function UserRegistrationForm() {
             id="password"
             name="password"
             secureTextEntry
-            placeholder="Password"
+
             minLength={8}
             required
           />
@@ -62,7 +62,7 @@ function UserRegistrationForm() {
             id="confirmPassword"
             name="confirmPassword"
             secureTextEntry
-            placeholder="Confirm password"
+
             minLength={8}
             required
           />

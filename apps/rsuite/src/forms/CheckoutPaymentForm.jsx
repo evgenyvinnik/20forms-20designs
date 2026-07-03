@@ -1,9 +1,9 @@
 import { Form, Button, SelectPicker } from 'rsuite'
 
 const shippingOptions = [
-  { label: 'Standard', value: 'standard' },
-  { label: 'Express', value: 'express' },
-  { label: 'Overnight', value: 'overnight' },
+  { label: 'Standard Shipping', value: 'standard' },
+  { label: 'Express Shipping', value: 'express' },
+  { label: 'Overnight Delivery', value: 'overnight' },
 ]
 
 function CheckoutPaymentForm() {
@@ -24,7 +24,7 @@ function CheckoutPaymentForm() {
           name="shippingMethod"
           accepter={SelectPicker}
           data={shippingOptions}
-          placeholder="Select shipping"
+
           block
           required
         />

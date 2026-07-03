@@ -42,7 +42,7 @@ function ContactInquiryForm() {
           id="gestalt-contact-topic"
           label="Topic"
           onChange={({ value }) => setTopic(value)}
-          placeholder="Select topic"
+
           value={topic}
         >
           {[
@@ -58,7 +58,7 @@ function ContactInquiryForm() {
           id="gestalt-contact-message"
           label="Message"
           onChange={({ value }) => setMessage(value)}
-          placeholder="Enter your message"
+
           rows={4}
           value={message}
         />

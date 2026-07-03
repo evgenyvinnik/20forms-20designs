@@ -17,7 +17,7 @@ function BillingInfoForm() {
           <Input
             id="cardName"
             name="cardName"
-            placeholder="Name on card"
+
             required
           />
         </YStack>
@@ -28,7 +28,7 @@ function BillingInfoForm() {
             id="cardNumber"
             name="cardNumber"
             inputMode="numeric"
-            placeholder="Card number"
+
             maxLength={19}
             required
           />
@@ -51,7 +51,7 @@ function BillingInfoForm() {
             id="cvc"
             name="cvc"
             inputMode="numeric"
-            placeholder="Security code"
+
             maxLength={4}
             required
           />
@@ -62,7 +62,7 @@ function BillingInfoForm() {
           <Input
             id="address"
             name="address"
-            placeholder="Billing address"
+
             required
           />
         </YStack>
@@ -71,7 +71,7 @@ function BillingInfoForm() {
           <Label htmlFor="country">Country</Label>
           <Select id="country" value={country} onValueChange={setCountry}>
             <Select.Trigger>
-              <Select.Value placeholder="Select country" />
+              <Select.Value />
             </Select.Trigger>
             <Adapt when="sm" platform="touch">
               <Sheet

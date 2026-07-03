@@ -3,7 +3,7 @@ import { FormControl, TextInput, Button } from '@primer/react'
 function OrderTrackingForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Order found!')
+    alert('Order lookup submitted!')
   }
 
   return (

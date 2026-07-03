@@ -42,7 +42,7 @@ function CustomerFeedbackForm() {
           id="gestalt-feedback-rating"
           label="Overall rating"
           onChange={({ value }) => setRating(value)}
-          placeholder="Select rating"
+
           value={rating}
         >
           {[

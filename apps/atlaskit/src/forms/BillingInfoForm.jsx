@@ -64,7 +64,7 @@ function BillingInfoForm() {
             options={countryOptions}
             value={country}
             onChange={setCountry}
-            placeholder="Select country"
+
             isRequired
           />
         </Box>

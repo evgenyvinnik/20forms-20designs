@@ -13,7 +13,7 @@ function AdvancedSearchForm() {
         <Form.Control
           name="query"
           type="text"
-          placeholder="Enter search terms"
+
           required
         />
       </Form.Group>

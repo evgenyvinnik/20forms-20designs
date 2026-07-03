@@ -10,9 +10,9 @@ import { useState } from 'react'
 
 const shippingMethods = [
   { value: '', label: 'Select shipping' },
-  { value: 'standard', label: 'Standard' },
-  { value: 'express', label: 'Express' },
-  { value: 'overnight', label: 'Overnight' },
+  { value: 'standard', label: 'Standard Shipping' },
+  { value: 'express', label: 'Express Shipping' },
+  { value: 'overnight', label: 'Overnight Delivery' },
 ]
 
 function CheckoutPaymentForm() {

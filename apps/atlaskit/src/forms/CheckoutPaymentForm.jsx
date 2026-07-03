@@ -6,9 +6,9 @@ import { Label } from '@atlaskit/form'
 import { Box, Stack } from '@atlaskit/primitives'
 
 const shippingOptions = [
-  { label: 'Standard', value: 'standard' },
-  { label: 'Express', value: 'express' },
-  { label: 'Overnight', value: 'overnight' },
+  { label: 'Standard Shipping', value: 'standard' },
+  { label: 'Express Shipping', value: 'express' },
+  { label: 'Overnight Delivery', value: 'overnight' },
 ]
 
 function CheckoutPaymentForm() {
@@ -41,7 +41,7 @@ function CheckoutPaymentForm() {
             options={shippingOptions}
             value={shipping}
             onChange={setShipping}
-            placeholder="Select shipping"
+
             isRequired
           />
         </Box>

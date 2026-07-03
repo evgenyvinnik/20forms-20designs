@@ -27,7 +27,7 @@ function CustomerFeedbackForm() {
       <YStack gap="$2">
         <YStack gap="$1">
           <Label htmlFor="name">Name</Label>
-          <Input id="name" name="name" placeholder="Name" required />
+          <Input id="name" name="name" required />
         </YStack>
 
         <YStack gap="$1">
@@ -36,7 +36,7 @@ function CustomerFeedbackForm() {
             id="email"
             name="email"
             inputMode="email"
-            placeholder="Email address"
+
             required
           />
         </YStack>
@@ -45,7 +45,7 @@ function CustomerFeedbackForm() {
           <Label htmlFor="rating">Overall rating</Label>
           <Select id="rating" value={rating} onValueChange={setRating}>
             <Select.Trigger>
-              <Select.Value placeholder="Select rating" />
+              <Select.Value />
             </Select.Trigger>
             <Adapt when="sm" platform="touch">
               <Sheet
@@ -94,7 +94,7 @@ function CustomerFeedbackForm() {
           <TextArea
             id="comments"
             name="comments"
-            placeholder="Comments"
+
             rows={4}
             required
           />

@@ -21,7 +21,7 @@ function UserLoginForm() {
           name="identifier"
           type="text"
           required
-          placeholder="Enter your email or username"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{
             className: 'hidden',
@@ -41,7 +41,7 @@ function UserLoginForm() {
           name="password"
           type="password"
           required
-          placeholder="Enter your password"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{
             className: 'hidden',

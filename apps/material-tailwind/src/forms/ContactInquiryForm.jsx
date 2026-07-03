@@ -29,7 +29,7 @@ function ContactInquiryForm() {
           name="fullName"
           type="text"
           required
-          placeholder="Enter your full name"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />
@@ -47,7 +47,7 @@ function ContactInquiryForm() {
           name="email"
           type="email"
           required
-          placeholder="Enter your email"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />
@@ -80,7 +80,7 @@ function ContactInquiryForm() {
           name="message"
           required
           rows={4}
-          placeholder="Enter your message"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />

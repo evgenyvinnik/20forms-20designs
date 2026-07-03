@@ -107,9 +107,7 @@ function ProfileUpdateForm() {
         </label>
         <textarea
           id="theme-ui-profile-bio"
-          name="bio"
-          rows="3"
-          required
+
           sx={textareaStyles}
         />
       </div>

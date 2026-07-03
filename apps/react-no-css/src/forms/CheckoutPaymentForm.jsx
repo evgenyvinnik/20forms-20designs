@@ -11,53 +11,51 @@ function CheckoutPaymentForm() {
         <input id="nocss-checkout-email" name="email" type="email" required />
       </div>
       <div>
-        <label htmlFor="nocss-checkout-shipping-method">Shipping method</label>
+        <label htmlFor="nocss-checkout-shipping">Shipping method</label>
         <select
-          id="nocss-checkout-shipping-method"
+          id="nocss-checkout-shipping"
           name="shippingMethod"
+          defaultValue="standard"
           required
         >
-          <option value="">Select shipping</option>
-          <option value="standard">Standard</option>
-          <option value="express">Express</option>
-          <option value="overnight">Overnight</option>
+          <option value="standard">Standard Shipping</option>
+          <option value="express">Express Shipping</option>
+          <option value="overnight">Overnight Delivery</option>
         </select>
       </div>
       <div>
-        <label htmlFor="nocss-checkout-card-number">Card number</label>
+        <label htmlFor="nocss-checkout-card">Card number</label>
         <input
-          id="nocss-checkout-card-number"
+          id="nocss-checkout-card"
           name="cardNumber"
           type="text"
-          inputMode="numeric"
-          pattern="[0-9]{13,19}"
-          maxLength="19"
+          maxLength={19}
           required
         />
       </div>
-      <div>
-        <label htmlFor="nocss-checkout-expiration">Expiration</label>
-        <input
-          id="nocss-checkout-expiration"
-          name="expiration"
-          type="text"
-          placeholder="MM/YY"
-          pattern="^(0[1-9]|1[0-2])\\/\\d{2}$"
-          inputMode="numeric"
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="nocss-checkout-cvc">CVC</label>
-        <input
-          id="nocss-checkout-cvc"
-          name="cvc"
-          type="text"
-          inputMode="numeric"
-          pattern="[0-9]{3,4}"
-          maxLength="4"
-          required
-        />
+      <div
+        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
+      >
+        <div>
+          <label htmlFor="nocss-checkout-expiration">Expiration</label>
+          <input
+            id="nocss-checkout-expiration"
+            name="expiration"
+            type="text"
+            placeholder="MM/YY"
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="nocss-checkout-cvc">CVC</label>
+          <input
+            id="nocss-checkout-cvc"
+            name="cvc"
+            type="text"
+            maxLength={4}
+            required
+          />
+        </div>
       </div>
       <div>
         <label htmlFor="nocss-checkout-promo">Promo code</label>

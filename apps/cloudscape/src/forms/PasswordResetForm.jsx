@@ -10,7 +10,7 @@ import {
 function PasswordResetForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Password reset link sent!')
+    alert('Password reset link requested!')
   }
 
   return (
@@ -23,7 +23,7 @@ function PasswordResetForm() {
           <Input
             name="email"
             type="email"
-            placeholder="Enter your email"
+
             required
           />
         </FormField>

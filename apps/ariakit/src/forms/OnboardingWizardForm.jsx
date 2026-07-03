@@ -13,7 +13,7 @@ function OnboardingWizardForm() {
   })
 
   form.useSubmit(() => {
-    alert('Onboarding complete!')
+    alert('Onboarding completed!')
   })
 
   return (

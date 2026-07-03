@@ -3,7 +3,7 @@ import { Form, Button, Checkbox, Segment, Header } from 'semantic-ui-react'
 function PrivacyConsentForm({ inverted }) {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Preferences saved!')
+    alert('Privacy preferences saved!')
   }
 
   return (

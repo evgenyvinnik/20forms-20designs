@@ -32,7 +32,7 @@ function BillingInfoForm() {
               id="radix-billing-name"
               name="cardName"
               type="text"
-              placeholder="Enter name on card"
+
               required
             />
           </Box>
@@ -49,7 +49,7 @@ function BillingInfoForm() {
               id="radix-billing-card-number"
               name="cardNumber"
               type="text"
-              placeholder="Enter card number"
+
               inputMode="numeric"
               pattern="[0-9]{13,19}"
               maxLength={19}
@@ -88,7 +88,7 @@ function BillingInfoForm() {
               id="radix-billing-cvc"
               name="cvc"
               type="text"
-              placeholder="CVC"
+
               inputMode="numeric"
               pattern="[0-9]{3,4}"
               maxLength={4}
@@ -108,7 +108,7 @@ function BillingInfoForm() {
               id="radix-billing-address"
               name="address"
               type="text"
-              placeholder="Enter billing address"
+
               required
             />
           </Box>
@@ -122,10 +122,7 @@ function BillingInfoForm() {
               Country
             </Text>
             <Select.Root name="country" required>
-              <Select.Trigger
-                id="radix-billing-country"
-                placeholder="Select country"
-              />
+              <Select.Trigger id="radix-billing-country" />
               <Select.Content>
                 <Select.Item value="US">United States</Select.Item>
                 <Select.Item value="CA">Canada</Select.Item>

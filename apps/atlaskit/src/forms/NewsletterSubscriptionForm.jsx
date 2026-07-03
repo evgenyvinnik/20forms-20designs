@@ -40,7 +40,7 @@ function NewsletterSubscriptionForm() {
             options={frequencyOptions}
             value={frequency}
             onChange={setFrequency}
-            placeholder="Select frequency"
+
             isRequired
           />
         </Box>

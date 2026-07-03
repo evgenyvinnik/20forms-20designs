@@ -35,7 +35,7 @@ function CustomerFeedbackForm({ inverted }) {
         <Select
           name="rating"
           options={ratingOptions}
-          placeholder="Select rating"
+
           required
         />
       </Form.Field>

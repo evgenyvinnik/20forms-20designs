@@ -21,13 +21,13 @@ function BillingInfoForm() {
     <form onSubmit={handleSubmit}>
       <SpaceBetween direction="vertical" size="l">
         <FormField label="Name on card">
-          <Input name="cardName" type="text" placeholder="Full name" required />
+          <Input name="cardName" type="text" required />
         </FormField>
         <FormField label="Card number">
           <Input
             name="cardNumber"
             type="text"
-            placeholder="1234 5678 9012 3456"
+
             inputMode="numeric"
             required
           />
@@ -45,7 +45,7 @@ function BillingInfoForm() {
           <Input
             name="cvc"
             type="text"
-            placeholder="CVC"
+
             inputMode="numeric"
             required
           />
@@ -54,14 +54,14 @@ function BillingInfoForm() {
           <Input
             name="address"
             type="text"
-            placeholder="Street address"
+
             required
           />
         </FormField>
         <FormField label="Country">
           <Select
             name="country"
-            placeholder="Select country"
+
             options={[
               { label: 'United States', value: 'US' },
               { label: 'Canada', value: 'CA' },

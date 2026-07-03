@@ -80,7 +80,7 @@ function ShippingAddressForm({ inverted }) {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Address saved!')
+    alert('Shipping address saved!')
   }
 
   const regionOptions = country === 'US' ? usStates : caProvinces
@@ -133,7 +133,7 @@ function ShippingAddressForm({ inverted }) {
         <Select
           name="region"
           options={regionOptions}
-          placeholder="Select region"
+
           required
         />
       </Form.Field>

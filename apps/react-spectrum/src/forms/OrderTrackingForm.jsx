@@ -3,7 +3,7 @@ import { Form, TextField, Button, Flex } from '@adobe/react-spectrum'
 function OrderTrackingForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Order found!')
+    alert('Order lookup submitted!')
   }
 
   return (

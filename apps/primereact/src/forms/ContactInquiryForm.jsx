@@ -71,7 +71,7 @@ function ContactInquiryForm() {
           value={topic}
           options={topicOptions}
           onChange={(e) => setTopic(e.value)}
-          placeholder="Select topic"
+
           required
         />
       </div>

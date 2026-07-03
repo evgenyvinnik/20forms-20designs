@@ -46,7 +46,7 @@ function ProfileUpdateForm() {
       </div>
       <div className="space-y-2">
         <Label htmlFor="shadcn-profile-bio">Short bio</Label>
-        <Textarea id="shadcn-profile-bio" name="bio" rows="3" required />
+        <Textarea id="shadcn-profile-bio" />
       </div>
       <Button type="submit">Save changes</Button>
     </form>

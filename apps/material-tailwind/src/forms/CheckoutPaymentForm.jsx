@@ -12,7 +12,7 @@ function CheckoutPaymentForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Order placed!')
+    alert('Checkout submitted!')
   }
 
   return (

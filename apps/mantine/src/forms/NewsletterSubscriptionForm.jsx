@@ -1,6 +1,9 @@
-import { Button, Checkbox, Stack, TextInput, Select } from '@mantine/core'
+import { useState } from 'react'
+import { Button, Checkbox, Select, Stack, TextInput } from '@mantine/core'
 
 function NewsletterSubscriptionForm() {
+  const [frequency, setFrequency] = useState('')
+
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Newsletter subscription submitted!')
@@ -21,6 +24,8 @@ function NewsletterSubscriptionForm() {
           name="frequency"
           label="Frequency"
           placeholder="Select frequency"
+          value={frequency}
+          onChange={setFrequency}
           data={[
             { value: 'weekly', label: 'Weekly' },
             { value: 'monthly', label: 'Monthly' },

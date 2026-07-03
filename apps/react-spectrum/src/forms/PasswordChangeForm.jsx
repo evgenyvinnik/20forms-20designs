@@ -3,7 +3,7 @@ import { Form, TextField, Checkbox, Button, Flex } from '@adobe/react-spectrum'
 function PasswordChangeForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Password changed!')
+    alert('Password change requested!')
   }
 
   return (

@@ -15,7 +15,7 @@ function ContactInquiryForm() {
     <form onSubmit={handleSubmit} className="wa-stack wa-gap-m">
       <wa-input label="Full name" name="fullName" type="text" required />
       <wa-input label="Email address" name="email" type="email" required />
-      <wa-select label="Topic" name="topic" placeholder="Select topic" required>
+      <wa-select label="Topic" name="topic" required>
         <wa-option value="support">Support</wa-option>
         <wa-option value="sales">Sales</wa-option>
         <wa-option value="feedback">Feedback</wa-option>

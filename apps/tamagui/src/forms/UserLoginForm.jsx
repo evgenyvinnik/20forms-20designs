@@ -17,7 +17,7 @@ function UserLoginForm() {
           <Input
             id="identifier"
             name="identifier"
-            placeholder="Email or username"
+
             required
           />
         </YStack>
@@ -28,7 +28,7 @@ function UserLoginForm() {
             id="password"
             name="password"
             secureTextEntry
-            placeholder="Password"
+
             required
           />
         </YStack>

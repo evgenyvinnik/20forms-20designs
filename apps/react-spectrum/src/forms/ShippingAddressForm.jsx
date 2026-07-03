@@ -83,7 +83,7 @@ function ShippingAddressForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Address saved!')
+    alert('Shipping address saved!')
   }
 
   const regions = country === 'US' ? US_STATES : CA_PROVINCES

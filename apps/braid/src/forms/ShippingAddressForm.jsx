@@ -78,7 +78,6 @@ function ShippingAddressForm() {
           label="State / Province / Territory"
           value={region}
           onChange={(e) => setRegion(e.target.value)}
-          placeholder="Select an option"
         >
           {regionOptions.map((regionOption) => (
             <option key={regionOption} value={regionOption}>

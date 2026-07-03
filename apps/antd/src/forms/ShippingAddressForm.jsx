@@ -67,7 +67,7 @@ function ShippingAddressForm() {
         name="region"
         rules={[{ required: true, message: 'Please select a region' }]}
       >
-        <Select placeholder="Select an option">
+        <Select>
           {regionOptions.map((r) => (
             <Select.Option key={r} value={r}>
               {r}

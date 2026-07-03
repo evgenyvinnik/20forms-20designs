@@ -1,13 +1,16 @@
+import { useState } from 'react'
 import {
   Button,
   Checkbox,
+  Select,
   Stack,
   TextInput,
   Textarea,
-  Select,
 } from '@mantine/core'
 
 function ContactInquiryForm() {
+  const [topic, setTopic] = useState('')
+
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Inquiry submitted!')
@@ -35,6 +38,8 @@ function ContactInquiryForm() {
           name="topic"
           label="Topic"
           placeholder="Select topic"
+          value={topic}
+          onChange={setTopic}
           data={[
             { value: 'support', label: 'Support' },
             { value: 'sales', label: 'Sales' },

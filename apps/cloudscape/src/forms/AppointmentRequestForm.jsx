@@ -27,7 +27,7 @@ function AppointmentRequestForm() {
           <Input
             name="fullName"
             type="text"
-            placeholder="Enter your full name"
+
             required
           />
         </FormField>
@@ -35,14 +35,14 @@ function AppointmentRequestForm() {
           <Input
             name="email"
             type="email"
-            placeholder="your@email.com"
+
             required
           />
         </FormField>
         <FormField label="Preferred date">
           <DatePicker
             name="date"
-            placeholder="YYYY/MM/DD"
+
             value={preferredDate}
             onChange={({ detail }) => setPreferredDate(detail.value)}
           />
@@ -50,13 +50,13 @@ function AppointmentRequestForm() {
         <FormField label="Preferred time">
           <TimeInput
             name="time"
-            placeholder="hh:mm"
+
             value={preferredTime}
             onChange={({ detail }) => setPreferredTime(detail.value)}
           />
         </FormField>
         <FormField label="Reason for visit">
-          <Textarea name="reason" placeholder="Describe your reason" rows={3} />
+          <Textarea name="reason" rows={3} />
         </FormField>
         <Button variant="primary" formAction="submit">
           Request appointment

@@ -18,7 +18,7 @@ const teamSizeOptions = [
 function OnboardingWizardForm({ inverted }) {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Setup complete!')
+    alert('Onboarding completed!')
   }
 
   return (
@@ -60,7 +60,7 @@ function OnboardingWizardForm({ inverted }) {
           <Select
             name="teamSize"
             options={teamSizeOptions}
-            placeholder="Select size"
+
             required
           />
         </Form.Field>

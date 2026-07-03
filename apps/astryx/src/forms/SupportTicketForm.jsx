@@ -1,18 +1,7 @@
 import { useState } from 'react'
-import {
-  TextInput,
-  RadioList,
-  RadioListItem,
-  TextArea,
-  FileInput,
-  Button,
-} from '@astryxdesign/core'
+import { TextInput, Selector, CheckboxInput, Button } from '@astryxdesign/core'
 
 function SupportTicketForm() {
-  const [subject, setSubject] = useState('')
-  const [priority, setPriority] = useState('low')
-  const [description, setDescription] = useState('')
-
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Support ticket submitted!')
@@ -23,43 +12,53 @@ function SupportTicketForm() {
       onSubmit={handleSubmit}
       style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
+      <TextInput name="subject" type="text" label="Subject" required />
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+        <label style={{ fontSize: '0.875rem', fontWeight: 500 }}>
+          Priority
+        </label>
+        <div style={{ display: 'flex', gap: '16px' }}>
+          <label
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              fontSize: '0.875rem',
+            }}
+          >
+            <input type="radio" name="priority" value="low" /> Low
+          </label>
+          <label
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              fontSize: '0.875rem',
+            }}
+          >
+            <input type="radio" name="priority" value="medium" defaultChecked />{' '}
+            Medium
+          </label>
+          <label
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              fontSize: '0.875rem',
+            }}
+          >
+            <input type="radio" name="priority" value="high" /> High
+          </label>
+        </div>
+      </div>
       <TextInput
-        id="astryx-ticket-subject"
-        name="subject"
-        type="text"
-        label="Subject"
-        value={subject}
-        onChange={(e) => setSubject(e.target.value)}
-        required
-      />
-
-      <RadioList
-        label="Priority"
-        value={priority}
-        onChange={(val) => setPriority(val)}
-      >
-        <RadioListItem value="low" label="Low" />
-        <RadioListItem value="medium" label="Medium" />
-        <RadioListItem value="high" label="High" />
-      </RadioList>
-
-      <TextArea
-        id="astryx-ticket-description"
         name="description"
         label="Issue description"
+        multiline
         rows={4}
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
         required
       />
-
-      <FileInput
-        id="astryx-ticket-attachments"
-        name="attachments"
-        label="Attachments"
-        multiple
-      />
-
+      <TextInput name="attachment" type="file" label="Attachments" />
       <Button type="submit" variant="primary">
         Submit ticket
       </Button>

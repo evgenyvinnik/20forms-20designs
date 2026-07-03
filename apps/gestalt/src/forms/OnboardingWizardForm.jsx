@@ -20,7 +20,7 @@ function OnboardingWizardForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Onboarding complete!')
+    alert('Onboarding completed!')
   }
 
   return (
@@ -67,7 +67,7 @@ function OnboardingWizardForm() {
                 id="gestalt-onboard-size"
                 label="Team size"
                 onChange={({ value }) => setTeamSize(value)}
-                placeholder="Select size"
+
                 value={teamSize}
               >
                 {[

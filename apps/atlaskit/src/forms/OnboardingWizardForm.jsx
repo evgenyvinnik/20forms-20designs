@@ -20,7 +20,7 @@ function OnboardingWizardForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Onboarding complete!')
+    alert('Onboarding completed!')
   }
 
   return (
@@ -68,7 +68,7 @@ function OnboardingWizardForm() {
                 options={teamSizeOptions}
                 value={teamSize}
                 onChange={setTeamSize}
-                placeholder="Select size"
+
                 isRequired
               />
             </Box>

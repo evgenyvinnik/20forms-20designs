@@ -3,20 +3,14 @@ import { InputText } from 'primereact/inputtext'
 import { Dropdown } from 'primereact/dropdown'
 import { Button } from 'primereact/button'
 
-function CheckoutPaymentForm() {
-  const [email, setEmail] = useState('')
-  const [shippingMethod, setShippingMethod] = useState('')
-  const [cardNumber, setCardNumber] = useState('')
-  const [expiration, setExpiration] = useState('')
-  const [cvc, setCvc] = useState('')
-  const [promoCode, setPromoCode] = useState('')
+const shippingOptions = [
+  { label: 'Standard Shipping', value: 'standard' },
+  { label: 'Express Shipping', value: 'express' },
+  { label: 'Overnight Delivery', value: 'overnight' },
+]
 
-  const shippingOptions = [
-    { label: 'Select shipping', value: '' },
-    { label: 'Standard', value: 'standard' },
-    { label: 'Express', value: 'express' },
-    { label: 'Overnight', value: 'overnight' },
-  ]
+function CheckoutPaymentForm() {
+  const [shippingMethod, setShippingMethod] = useState('standard')
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -24,103 +18,68 @@ function CheckoutPaymentForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="p-fluid">
-      <div className="field" style={{ marginBottom: '1rem' }}>
-        <label
-          htmlFor="primereact-checkout-email"
-          style={{ display: 'block', marginBottom: '0.5rem' }}
-        >
-          Email for receipt
-        </label>
-        <InputText
-          id="primereact-checkout-email"
-          name="email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+    <form onSubmit={handleSubmit} className="p-fluid flex flex-column gap-3">
+      <div className="field">
+        <label htmlFor="pr-checkout-email">Email for receipt</label>
+        <InputText id="pr-checkout-email" name="email" type="email" required />
       </div>
-      <div className="field" style={{ marginBottom: '1rem' }}>
-        <label
-          htmlFor="primereact-checkout-shipping-method"
-          style={{ display: 'block', marginBottom: '0.5rem' }}
-        >
-          Shipping method
-        </label>
+
+      <div className="field">
+        <label htmlFor="pr-checkout-shipping">Shipping method</label>
         <Dropdown
-          id="primereact-checkout-shipping-method"
+          id="pr-checkout-shipping"
           name="shippingMethod"
           value={shippingMethod}
-          options={shippingOptions}
           onChange={(e) => setShippingMethod(e.value)}
+          options={shippingOptions}
           required
         />
       </div>
-      <div className="field" style={{ marginBottom: '1rem' }}>
-        <label
-          htmlFor="primereact-checkout-card-number"
-          style={{ display: 'block', marginBottom: '0.5rem' }}
-        >
-          Card number
-        </label>
+
+      <div className="field">
+        <label htmlFor="pr-checkout-card">Card number</label>
         <InputText
-          id="primereact-checkout-card-number"
+          id="pr-checkout-card"
           name="cardNumber"
-          value={cardNumber}
-          onChange={(e) => setCardNumber(e.target.value)}
-          keyfilter="int"
+          type="text"
           maxLength={19}
           required
         />
       </div>
-      <div className="field" style={{ marginBottom: '1rem' }}>
-        <label
-          htmlFor="primereact-checkout-expiration"
-          style={{ display: 'block', marginBottom: '0.5rem' }}
-        >
-          Expiration
-        </label>
-        <InputText
-          id="primereact-checkout-expiration"
-          name="expiration"
-          value={expiration}
-          onChange={(e) => setExpiration(e.target.value)}
-          placeholder="MM/YY"
-          required
-        />
+
+      <div className="formgrid grid">
+        <div className="field col">
+          <label htmlFor="pr-checkout-exp">Expiration</label>
+          <InputText
+            id="pr-checkout-exp"
+            name="expiration"
+            type="text"
+            placeholder="MM/YY"
+            required
+          />
+        </div>
+        <div className="field col">
+          <label htmlFor="pr-checkout-cvc">CVC</label>
+          <InputText
+            id="pr-checkout-cvc"
+            name="cvc"
+            type="password"
+            maxLength={4}
+            required
+          />
+        </div>
       </div>
-      <div className="field" style={{ marginBottom: '1rem' }}>
-        <label
-          htmlFor="primereact-checkout-cvc"
-          style={{ display: 'block', marginBottom: '0.5rem' }}
-        >
-          CVC
-        </label>
+
+      <div className="field">
+        <label htmlFor="pr-checkout-promo">Promo code</label>
         <InputText
-          id="primereact-checkout-cvc"
-          name="cvc"
-          value={cvc}
-          onChange={(e) => setCvc(e.target.value)}
-          keyfilter="int"
-          maxLength={4}
-          required
-        />
-      </div>
-      <div className="field" style={{ marginBottom: '1rem' }}>
-        <label
-          htmlFor="primereact-checkout-promo"
-          style={{ display: 'block', marginBottom: '0.5rem' }}
-        >
-          Promo code
-        </label>
-        <InputText
-          id="primereact-checkout-promo"
+          id="pr-checkout-promo"
           name="promoCode"
-          value={promoCode}
-          onChange={(e) => setPromoCode(e.target.value)}
+          type="text"
+          pattern="[A-Za-z0-9]{3,15}"
         />
       </div>
+
       <Button type="submit" label="Place order" />
     </form>
   )

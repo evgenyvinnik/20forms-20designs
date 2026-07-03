@@ -15,7 +15,7 @@ const teamSizeOptions = [
 function OnboardingWizardForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Onboarding complete!')
+    alert('Onboarding completed!')
   }
 
   return (
@@ -51,7 +51,6 @@ function OnboardingWizardForm() {
           label="Team size"
           name="teamSize"
           options={[{ value: '', content: 'Select size' }, ...teamSizeOptions]}
-          placeholder="Select size"
         />
       </div>
 

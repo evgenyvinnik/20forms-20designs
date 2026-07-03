@@ -92,9 +92,7 @@ function ProfileUpdateForm() {
           </label>
           <Input.TextArea
             id="nocss-profile-bio"
-            name="bio"
-            rows="3"
-            required
+
             style={{ width: '100%' }}
           />
         </div>

@@ -3,7 +3,7 @@ import { Form, Button } from 'semantic-ui-react'
 function PasswordResetForm({ inverted }) {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Password reset link sent!')
+    alert('Password reset link requested!')
   }
 
   return (

@@ -22,7 +22,7 @@ function ProfileUpdateForm() {
             id="cloudscape-profile-update-first-name"
             name="firstName"
             type="text"
-            placeholder="Enter first name"
+
             required
           />
         </FormField>
@@ -31,7 +31,7 @@ function ProfileUpdateForm() {
             id="cloudscape-profile-update-last-name"
             name="lastName"
             type="text"
-            placeholder="Enter last name"
+
             required
           />
         </FormField>
@@ -40,23 +40,18 @@ function ProfileUpdateForm() {
             id="cloudscape-profile-update-email"
             name="email"
             type="email"
-            placeholder="Enter your email"
+
             required
           />
         </FormField>
         <FormField label="Phone number">
-          <Input
-            id="cloudscape-profile-update-phone"
-            name="phone"
-            type="tel"
-            placeholder="Enter phone number"
-          />
+          <Input id="cloudscape-profile-update-phone" name="phone" type="tel" />
         </FormField>
         <FormField label="Short bio">
           <Textarea
             id="cloudscape-profile-update-bio"
             name="bio"
-            placeholder="Tell us about yourself"
+
             rows={3}
           />
         </FormField>

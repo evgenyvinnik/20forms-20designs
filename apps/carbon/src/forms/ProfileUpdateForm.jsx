@@ -35,13 +35,7 @@ function ProfileUpdateForm() {
           labelText="Phone number"
           required
         />
-        <TextArea
-          id="carbon-profile-bio"
-          name="bio"
-          labelText="Short bio"
-          rows={3}
-          required
-        />
+        <TextArea id="carbon-profile-bio" />
         <Button type="submit">Save changes</Button>
       </Stack>
     </Form>

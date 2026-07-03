@@ -11,7 +11,7 @@ import {
 function OnboardingWizardForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Setup complete!')
+    alert('Onboarding completed!')
   }
 
   return (

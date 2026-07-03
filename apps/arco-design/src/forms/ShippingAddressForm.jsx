@@ -98,7 +98,7 @@ function ShippingAddressForm() {
           </label>
           <Select
             id="arco-shipping-region"
-            placeholder="Select an option"
+
             style={{ width: '100%' }}
           >
             {regionOptions.map((region) => (

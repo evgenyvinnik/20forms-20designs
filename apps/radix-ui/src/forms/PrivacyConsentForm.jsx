@@ -33,7 +33,7 @@ function PrivacyConsentForm() {
               id="radix-privacy-name"
               name="fullName"
               type="text"
-              placeholder="Enter your full name"
+
               required
             />
           </Box>
@@ -51,7 +51,7 @@ function PrivacyConsentForm() {
               id="radix-privacy-email"
               name="email"
               type="email"
-              placeholder="Enter your email"
+
               required
             />
           </Box>
@@ -111,12 +111,7 @@ function PrivacyConsentForm() {
             >
               Additional notes
             </Text>
-            <TextArea
-              id="radix-privacy-notes"
-              name="notes"
-              rows="3"
-              placeholder="Any additional notes"
-            />
+            <TextArea id="radix-privacy-notes" name="notes" rows="3" />
           </Box>
 
           <Button type="submit">Save preferences</Button>

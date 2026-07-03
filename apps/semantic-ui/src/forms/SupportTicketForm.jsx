@@ -6,7 +6,7 @@ function SupportTicketForm({ inverted }) {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Ticket submitted!')
+    alert('Support ticket submitted!')
   }
 
   return (

@@ -20,7 +20,7 @@ function OnboardingWizardForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Onboarding complete!')
+    alert('Onboarding completed!')
   }
 
   return (
@@ -49,7 +49,7 @@ function OnboardingWizardForm() {
                   id="radix-onboard-email"
                   name="email"
                   type="email"
-                  placeholder="Enter your work email"
+
                   required
                 />
               </Box>
@@ -66,7 +66,7 @@ function OnboardingWizardForm() {
                   id="radix-onboard-password"
                   name="password"
                   type="password"
-                  placeholder="Enter password"
+
                   minLength={8}
                   required
                 />
@@ -92,7 +92,7 @@ function OnboardingWizardForm() {
                   id="radix-onboard-team-name"
                   name="teamName"
                   type="text"
-                  placeholder="Enter team name"
+
                   required
                 />
               </Box>
@@ -106,10 +106,7 @@ function OnboardingWizardForm() {
                   Team size
                 </Text>
                 <Select.Root name="teamSize" required>
-                  <Select.Trigger
-                    id="radix-onboard-team-size"
-                    placeholder="Select size"
-                  />
+                  <Select.Trigger id="radix-onboard-team-size" />
                   <Select.Content>
                     <Select.Item value="1-5">1-5</Select.Item>
                     <Select.Item value="6-20">6-20</Select.Item>
@@ -139,7 +136,7 @@ function OnboardingWizardForm() {
                   id="radix-onboard-goal"
                   name="goal"
                   rows="3"
-                  placeholder="Tell us your primary goal"
+
                   required
                 />
               </Box>

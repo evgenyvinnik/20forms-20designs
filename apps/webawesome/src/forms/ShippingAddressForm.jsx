@@ -42,7 +42,7 @@ function ShippingAddressForm() {
       <wa-select
         label="State / Province / Territory"
         name="region"
-        placeholder="Select an option"
+
         required
       >
         {regionOptions.map((region) => (

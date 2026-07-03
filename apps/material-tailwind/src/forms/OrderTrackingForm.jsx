@@ -3,7 +3,7 @@ import { Input, Button, Typography } from '@material-tailwind/react'
 function OrderTrackingForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Order tracking submitted!')
+    alert('Order lookup submitted!')
   }
 
   return (
@@ -21,7 +21,7 @@ function OrderTrackingForm() {
           type="text"
           required
           pattern="[A-Za-z0-9-]{6,20}"
-          placeholder="e.g., ORD-123456"
+
           size="lg"
           className="!border-gray-300 dark:!border-gray-700 dark:bg-gray-800 dark:text-white"
           labelProps={{ className: 'hidden' }}

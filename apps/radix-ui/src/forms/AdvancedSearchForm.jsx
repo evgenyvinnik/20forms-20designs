@@ -33,7 +33,7 @@ function AdvancedSearchForm() {
               id="radix-search-query"
               name="query"
               type="text"
-              placeholder="Enter search query"
+
               required
             />
           </Box>

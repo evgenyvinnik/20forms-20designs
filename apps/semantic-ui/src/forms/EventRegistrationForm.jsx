@@ -10,7 +10,7 @@ const ticketOptions = [
 function EventRegistrationForm({ inverted }) {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Registration submitted!')
+    alert('Event registration submitted!')
   }
 
   return (
@@ -34,7 +34,7 @@ function EventRegistrationForm({ inverted }) {
         <Select
           name="ticketType"
           options={ticketOptions}
-          placeholder="Select ticket"
+
           required
         />
       </Form.Field>

@@ -87,7 +87,7 @@ function BillingInfoForm() {
             id="baseweb-billing-country"
             options={countryOptions}
             value={country}
-            placeholder="Select country"
+
             onChange={(params) => setCountry(params.value)}
             required
           />

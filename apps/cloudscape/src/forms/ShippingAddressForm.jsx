@@ -42,7 +42,7 @@ function ShippingAddressForm() {
             id="cloudscape-shipping-address-full-name"
             name="fullName"
             type="text"
-            placeholder="Full name"
+
             required
           />
         </FormField>
@@ -51,7 +51,7 @@ function ShippingAddressForm() {
             id="cloudscape-shipping-address-street"
             name="street"
             type="text"
-            placeholder="Street address"
+
             required
           />
         </FormField>
@@ -60,7 +60,6 @@ function ShippingAddressForm() {
             id="cloudscape-shipping-address-street2"
             name="street2"
             type="text"
-            placeholder="Apt, suite, etc."
           />
         </FormField>
         <FormField label="City">
@@ -68,7 +67,7 @@ function ShippingAddressForm() {
             id="cloudscape-shipping-address-city"
             name="city"
             type="text"
-            placeholder="City"
+
             required
           />
         </FormField>
@@ -87,7 +86,7 @@ function ShippingAddressForm() {
         <FormField label="State / Province / Territory">
           <Select
             name="region"
-            placeholder="Select an option"
+
             options={regionOptions}
             selectedOption={selectedRegion}
             onChange={({ detail }) => setSelectedRegion(detail.selectedOption)}
@@ -98,7 +97,7 @@ function ShippingAddressForm() {
             id="cloudscape-shipping-address-postal-code"
             name="postalCode"
             type="text"
-            placeholder="Postal code"
+
             required
           />
         </FormField>

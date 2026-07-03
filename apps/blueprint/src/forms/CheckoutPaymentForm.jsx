@@ -29,9 +29,9 @@ function CheckoutPaymentForm() {
           fill
           options={[
             { label: 'Select shipping', value: '' },
-            { label: 'Standard', value: 'standard' },
-            { label: 'Express', value: 'express' },
-            { label: 'Overnight', value: 'overnight' },
+            { label: 'Standard Shipping', value: 'standard' },
+            { label: 'Express Shipping', value: 'express' },
+            { label: 'Overnight Delivery', value: 'overnight' },
           ]}
         />
       </FormGroup>

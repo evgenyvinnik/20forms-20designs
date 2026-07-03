@@ -36,7 +36,7 @@ function AppointmentRequestForm() {
             id="carbon-appointment-date"
             name="date"
             labelText="Preferred date"
-            placeholder="mm/dd/yyyy"
+
             required
           />
         </DatePicker>

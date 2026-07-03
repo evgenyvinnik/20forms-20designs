@@ -21,7 +21,7 @@ function CheckoutPaymentForm() {
       <Form.Select
         field="shippingMethod"
         label="Shipping method"
-        placeholder="Select shipping"
+
         rules={[{ required: true, message: 'Please select shipping method' }]}
         style={{ width: '100%' }}
       >

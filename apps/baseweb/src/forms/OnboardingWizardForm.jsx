@@ -25,7 +25,7 @@ function OnboardingWizardForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Onboarding complete!')
+    alert('Onboarding completed!')
   }
 
   return (
@@ -75,7 +75,7 @@ function OnboardingWizardForm() {
                 id="baseweb-onboarding-size"
                 options={teamSizeOptions}
                 value={teamSize}
-                placeholder="Select size"
+
                 onChange={(params) => setTeamSize(params.value)}
                 required
               />

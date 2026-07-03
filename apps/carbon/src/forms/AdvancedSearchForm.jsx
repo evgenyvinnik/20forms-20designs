@@ -42,7 +42,6 @@ function AdvancedSearchForm() {
             id="carbon-search-date-from"
             name="dateFrom"
             labelText="Date from"
-            placeholder="mm/dd/yyyy"
           />
         </DatePicker>
         <DatePicker datePickerType="single">
@@ -50,7 +49,6 @@ function AdvancedSearchForm() {
             id="carbon-search-date-to"
             name="dateTo"
             labelText="Date to"
-            placeholder="mm/dd/yyyy"
           />
         </DatePicker>
         <Select

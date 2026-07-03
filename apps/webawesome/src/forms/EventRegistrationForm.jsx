@@ -17,7 +17,7 @@ function EventRegistrationForm() {
       <wa-select
         label="Ticket type"
         name="ticketType"
-        placeholder="Select ticket"
+
         required
       >
         <wa-option value="general">General admission</wa-option>

@@ -3,7 +3,7 @@ import { FormControl, TextInput, Select, Checkbox, Button } from '@primer/react'
 function EventRegistrationForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Registration complete!')
+    alert('Event registration submitted!')
   }
 
   return (

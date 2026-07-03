@@ -8,34 +8,32 @@ function ProfileUpdateForm() {
   return (
     <Form onSubmit={handleSubmit} labelPosition="top">
       <Form.Input
-        field="fullName"
-        label="Full name"
-        rules={[{ required: true, message: 'Please enter your full name' }]}
+        field="firstName"
+        label="First name"
+        rules={[{ required: true }]}
+      />
+
+      <Form.Input
+        field="lastName"
+        label="Last name"
+        rules={[{ required: true }]}
       />
 
       <Form.Input
         field="email"
         label="Email address"
         type="email"
-        rules={[
-          { required: true, message: 'Please enter your email' },
-          { type: 'email', message: 'Please enter a valid email' },
-        ]}
+        rules={[{ required: true }]}
       />
 
       <Form.Input
         field="phone"
         label="Phone number"
         type="tel"
-        rules={[{ required: true, message: 'Please enter your phone number' }]}
+        rules={[{ required: true }]}
       />
 
-      <Form.TextArea
-        field="bio"
-        label="Short bio"
-        rows={3}
-        rules={[{ required: true, message: 'Please enter a short bio' }]}
-      />
+      <Form.TextArea field="bio" label="Short bio" rows={3} />
 
       <Button type="primary" htmlType="submit" style={{ marginTop: 16 }}>
         Save changes

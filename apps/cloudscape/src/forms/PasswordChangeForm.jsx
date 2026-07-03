@@ -21,7 +21,7 @@ function PasswordChangeForm() {
           <Input
             name="currentPassword"
             type="password"
-            placeholder="Enter current password"
+
             required
           />
         </FormField>
@@ -29,7 +29,7 @@ function PasswordChangeForm() {
           <Input
             name="newPassword"
             type="password"
-            placeholder="Enter new password"
+
             required
           />
         </FormField>
@@ -37,7 +37,7 @@ function PasswordChangeForm() {
           <Input
             name="confirmPassword"
             type="password"
-            placeholder="Confirm new password"
+
             required
           />
         </FormField>

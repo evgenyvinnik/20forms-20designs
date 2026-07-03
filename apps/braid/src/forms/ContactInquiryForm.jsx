@@ -46,7 +46,6 @@ function ContactInquiryForm() {
           label="Topic"
           value={topic}
           onChange={(e) => setTopic(e.target.value)}
-          placeholder="Select topic"
         >
           <option value="support">Support</option>
           <option value="sales">Sales</option>

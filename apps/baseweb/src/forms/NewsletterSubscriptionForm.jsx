@@ -40,7 +40,7 @@ function NewsletterSubscriptionForm() {
             id="baseweb-newsletter-frequency"
             options={frequencyOptions}
             value={frequency}
-            placeholder="Select frequency"
+
             onChange={(params) => setFrequency(params.value)}
             required
           />

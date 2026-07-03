@@ -62,9 +62,7 @@ function ProfileUpdateForm() {
         </label>
         <textarea
           id="daisyui-profile-bio"
-          name="bio"
-          rows="3"
-          required
+
           className="textarea textarea-bordered w-full"
         />
       </div>

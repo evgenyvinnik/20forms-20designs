@@ -3,7 +3,7 @@ import { FormControl, TextInput, Select, Button } from '@primer/react'
 function BillingInfoForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Billing info saved!')
+    alert('Billing details saved!')
   }
 
   return (

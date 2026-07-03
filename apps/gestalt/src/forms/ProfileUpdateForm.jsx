@@ -48,7 +48,7 @@ function ProfileUpdateForm() {
           id="gestalt-profile-bio"
           label="Short bio"
           onChange={({ value }) => setBio(value)}
-          placeholder="Tell us about yourself"
+
           rows={3}
           value={bio}
         />

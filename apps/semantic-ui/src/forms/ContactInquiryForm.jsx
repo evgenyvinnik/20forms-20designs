@@ -35,7 +35,7 @@ function ContactInquiryForm({ inverted }) {
         <Select
           name="topic"
           options={topicOptions}
-          placeholder="Select topic"
+
           required
         />
       </Form.Field>

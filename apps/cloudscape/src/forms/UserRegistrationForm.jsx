@@ -21,7 +21,7 @@ function UserRegistrationForm() {
           <Input
             name="fullName"
             type="text"
-            placeholder="Enter your full name"
+
             required
           />
         </FormField>
@@ -29,7 +29,7 @@ function UserRegistrationForm() {
           <Input
             name="email"
             type="email"
-            placeholder="Enter your email"
+
             required
           />
         </FormField>
@@ -37,7 +37,7 @@ function UserRegistrationForm() {
           <Input
             name="username"
             type="text"
-            placeholder="Choose a username"
+
             required
           />
         </FormField>
@@ -45,7 +45,7 @@ function UserRegistrationForm() {
           <Input
             name="password"
             type="password"
-            placeholder="Enter password"
+
             required
           />
         </FormField>
@@ -53,7 +53,7 @@ function UserRegistrationForm() {
           <Input
             name="confirmPassword"
             type="password"
-            placeholder="Confirm password"
+
             required
           />
         </FormField>

@@ -3,7 +3,7 @@ import { Form, Button, Checkbox } from 'semantic-ui-react'
 function PasswordChangeForm({ inverted }) {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Password updated!')
+    alert('Password change requested!')
   }
 
   return (

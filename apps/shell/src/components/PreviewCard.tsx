@@ -9,7 +9,6 @@ import { ThemeMode } from '../store'
 
 const GITHUB_REPO_BASE = 'https://github.com/evgenyvinnik/20forms-20designs'
 
-// Map from form ID to form component filename
 const FORM_ID_TO_FILENAME: Record<FormId, string> = {
   'user-registration': 'UserRegistrationForm.jsx',
   'user-login': 'UserLoginForm.jsx',
@@ -33,42 +32,33 @@ const FORM_ID_TO_FILENAME: Record<FormId, string> = {
   'privacy-consent': 'PrivacyConsentForm.jsx',
 }
 
-// Hardcoded heights per form type based on form complexity
-// This eliminates the need for iframe-to-parent postMessage communication
 const FORM_HEIGHTS: Record<FormId, number> = {
-  // Short forms (simple, few fields)
-  'password-reset': 350,
-  'two-factor-auth': 350,
-  'newsletter-subscription': 350,
-  'order-tracking': 450,
+  'password-reset': 540,
+  'two-factor-auth': 540,
+  'newsletter-subscription': 540,
+  'order-tracking': 540,
+  'user-login': 580,
 
-  // Medium forms (moderate complexity)
-  'user-login': 450,
-  'contact-inquiry': 900,
-  'profile-update': 600,
-  'password-change': 500,
-  'appointment-request': 700,
-  'advanced-search': 700,
+  'contact-inquiry': 780,
+  'profile-update': 680,
+  'password-change': 620,
+  'appointment-request': 720,
+  'advanced-search': 680,
 
-  // Standard forms (typical registration/checkout)
-  'user-registration': 700,
-  'billing-info': 700,
-  'shipping-address': 800,
+  'user-registration': 780,
+  'billing-info': 720,
+  'shipping-address': 820,
   'checkout-payment': 750,
-  'event-registration': 700,
-  'support-ticket': 650,
+  'event-registration': 680,
+  'support-ticket': 720,
 
-  // Long forms (many fields, complex layouts)
-  'job-application': 900,
-  'customer-feedback': 800,
-  'privacy-consent': 800,
-
-  // Extra tall forms (multi-step, wizards)
-  'onboarding-wizard': 950,
+  'job-application': 850,
+  'customer-feedback': 750,
+  'privacy-consent': 680,
+  'onboarding-wizard': 780,
 }
 
-// Default height if form is not in the map
-const DEFAULT_FORM_HEIGHT = 600
+const DEFAULT_FORM_HEIGHT = 680
 
 interface PreviewCardProps {
   libraryName: string
@@ -90,7 +80,6 @@ function buildGitHubUrl(libraryName: string, formName: string): string {
     return GITHUB_REPO_BASE
   }
 
-  // New path structure: /apps/{libId}/src/forms/{FormComponent}.jsx
   return `${GITHUB_REPO_BASE}/blob/main/apps/${libId}/src/forms/${formFilename}`
 }
 
@@ -112,10 +101,8 @@ export function PreviewCard({
   const iframeSrc = buildIframeSrc(libraryName, formName, theme)
   const githubUrl = buildGitHubUrl(libraryName, formName)
 
-  // Use hardcoded height based on form type
   const iframeHeight = getFormHeight(formName)
 
-  // Send theme updates to iframe when theme changes
   useEffect(() => {
     if (iframeRef.current?.contentWindow) {
       iframeRef.current.contentWindow.postMessage(
@@ -129,7 +116,6 @@ export function PreviewCard({
     return null
   }
 
-  // Handle iframe load - send theme to iframe when it loads
   const handleIframeLoad = () => {
     if (iframeRef.current?.contentWindow) {
       iframeRef.current.contentWindow.postMessage(
@@ -165,7 +151,7 @@ export function PreviewCard({
         title={`${libraryName}-${formName}`}
         src={iframeSrc}
         className="preview-iframe"
-        style={{ height: `${iframeHeight}px` }}
+        style={{ height: `${iframeHeight}px`, border: 'none' }}
         sandbox="allow-scripts allow-forms allow-same-origin"
         onLoad={handleIframeLoad}
       />

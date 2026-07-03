@@ -28,7 +28,6 @@ function NewsletterSubscriptionForm() {
         label="Frequency"
         name="frequency"
         options={frequencyOptions}
-        placeholder="Select frequency"
       />
       <Checkbox
         name="agree"

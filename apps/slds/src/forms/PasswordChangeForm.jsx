@@ -12,10 +12,10 @@ function PasswordChangeForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
     if (newPassword !== confirmPassword) {
-      alert('Passwords do not match!')
+      alert('Password change requested!')
       return
     }
-    alert('Password updated!')
+    alert('Password change requested!')
   }
 
   return (

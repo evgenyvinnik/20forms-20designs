@@ -28,13 +28,13 @@ function CheckoutPaymentForm() {
           id="gestalt-checkout-shipping-method"
           label="Shipping method"
           onChange={({ value }) => setShippingMethod(value)}
-          placeholder="Select shipping"
+
           value={shippingMethod}
         >
           {[
-            { label: 'Standard', value: 'standard' },
-            { label: 'Express', value: 'express' },
-            { label: 'Overnight', value: 'overnight' },
+            { label: 'Standard Shipping', value: 'standard' },
+            { label: 'Express Shipping', value: 'express' },
+            { label: 'Overnight Delivery', value: 'overnight' },
           ].map(({ label, value }) => (
             <SelectList.Option key={value} label={label} value={value} />
           ))}

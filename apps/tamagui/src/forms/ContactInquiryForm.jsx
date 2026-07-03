@@ -30,7 +30,7 @@ function ContactInquiryForm() {
           <Input
             id="fullName"
             name="fullName"
-            placeholder="Full name"
+
             required
           />
         </YStack>
@@ -41,7 +41,7 @@ function ContactInquiryForm() {
             id="email"
             name="email"
             inputMode="email"
-            placeholder="Email address"
+
             required
           />
         </YStack>
@@ -50,7 +50,7 @@ function ContactInquiryForm() {
           <Label htmlFor="topic">Topic</Label>
           <Select id="topic" value={topic} onValueChange={setTopic}>
             <Select.Trigger>
-              <Select.Value placeholder="Select topic" />
+              <Select.Value />
             </Select.Trigger>
             <Adapt when="sm" platform="touch">
               <Sheet
@@ -99,7 +99,7 @@ function ContactInquiryForm() {
           <TextArea
             id="message"
             name="message"
-            placeholder="Message"
+
             rows={4}
             required
           />

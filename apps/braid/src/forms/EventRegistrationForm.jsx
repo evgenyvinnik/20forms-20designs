@@ -45,7 +45,6 @@ function EventRegistrationForm() {
           label="Ticket type"
           value={ticketType}
           onChange={(e) => setTicketType(e.target.value)}
-          placeholder="Select ticket"
         >
           <option value="general">General admission</option>
           <option value="vip">VIP</option>

@@ -1,0 +1,26 @@
+{
+  "name": "@forms-comparison/park-ui",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ark-ui/react": "^5.37.2",
+    "park-ui": "^2.3.2",
+    "lucide-react": "^1.18.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@park-ui/tailwind-plugin": "^0.20.1",
+    "@vitejs/plugin-react": "^6.0.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.9",
+    "tailwindcss": "^3.4.17",
+    "vite": "^8.0.8"
+  }
+}

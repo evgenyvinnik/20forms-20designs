@@ -33,7 +33,7 @@ function EventRegistrationForm() {
         name="ticketType"
         rules={[{ required: true, message: 'Please select a ticket type' }]}
       >
-        <Select placeholder="Select ticket">
+        <Select>
           <Select.Option value="general">General admission</Select.Option>
           <Select.Option value="vip">VIP</Select.Option>
           <Select.Option value="student">Student</Select.Option>

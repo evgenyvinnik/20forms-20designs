@@ -21,7 +21,7 @@ function NewsletterSubscriptionForm() {
       <Form.Select
         field="frequency"
         label="Frequency"
-        placeholder="Select frequency"
+
         rules={[{ required: true, message: 'Please select a frequency' }]}
         style={{ width: '100%' }}
       >

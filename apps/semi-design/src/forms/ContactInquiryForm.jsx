@@ -27,7 +27,7 @@ function ContactInquiryForm() {
       <Form.Select
         field="topic"
         label="Topic"
-        placeholder="Select topic"
+
         rules={[{ required: true, message: 'Please select a topic' }]}
         style={{ width: '100%' }}
       >

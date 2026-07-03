@@ -3,7 +3,7 @@ import { FormControl, TextInput, Select, Checkbox, Button } from '@primer/react'
 function NewsletterSubscriptionForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Subscription successful!')
+    alert('Newsletter subscription submitted!')
   }
 
   return (

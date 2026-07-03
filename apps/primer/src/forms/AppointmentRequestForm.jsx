@@ -3,7 +3,7 @@ import { FormControl, TextInput, Textarea, Button } from '@primer/react'
 function AppointmentRequestForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Appointment requested!')
+    alert('Appointment request submitted!')
   }
 
   return (

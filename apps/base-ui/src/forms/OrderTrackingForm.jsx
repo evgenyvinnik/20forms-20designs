@@ -1,0 +1,44 @@
+import { useState } from 'react'
+import { Field } from '@base-ui-components/react/field'
+
+export default function OrderTrackingForm() {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    alert('Order lookup submitted!')
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="base-form">
+      <Field.Root required className="base-field">
+        <Field.Label className="base-label">Order number</Field.Label>
+        <Field.Control
+          className="base-input"
+          name="orderNumber"
+          type="text"
+          required
+        />
+      </Field.Root>
+      <Field.Root required className="base-field">
+        <Field.Label className="base-label">Email address</Field.Label>
+        <Field.Control
+          className="base-input"
+          name="email"
+          type="email"
+          required
+        />
+      </Field.Root>
+      <Field.Root required className="base-field">
+        <Field.Label className="base-label">Postal code</Field.Label>
+        <Field.Control
+          className="base-input"
+          name="postalCode"
+          type="text"
+          required
+        />
+      </Field.Root>
+      <button type="submit" className="base-button">
+        Find order
+      </button>
+    </form>
+  )
+}

@@ -55,7 +55,7 @@ function ShippingAddressForm() {
           name="region"
           accepter={SelectPicker}
           data={regionOptions}
-          placeholder="Select an option"
+
           block
           required
         />

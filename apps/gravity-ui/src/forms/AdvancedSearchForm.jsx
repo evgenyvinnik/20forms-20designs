@@ -40,14 +40,14 @@ function AdvancedSearchForm() {
         id="gravity-search-date-from"
         label="Date from"
         name="dateFrom"
-        placeholder="YYYY-MM-DD"
+
         controlProps={{ pattern: '\\d{4}-\\d{2}-\\d{2}' }}
       />
       <TextInput
         id="gravity-search-date-to"
         label="Date to"
         name="dateTo"
-        placeholder="YYYY-MM-DD"
+
         controlProps={{ pattern: '\\d{4}-\\d{2}-\\d{2}' }}
       />
       <SingleSelectField

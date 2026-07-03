@@ -10,9 +10,16 @@ function ProfileUpdateForm() {
     <form onSubmit={handleSubmit}>
       <Stack gap="md">
         <TextInput
-          id="mantine-profile-full-name"
-          name="fullName"
-          label="Full name"
+          id="mantine-profile-first-name"
+          name="firstName"
+          label="First name"
+          type="text"
+          required
+        />
+        <TextInput
+          id="mantine-profile-last-name"
+          name="lastName"
+          label="Last name"
           type="text"
           required
         />
@@ -28,16 +35,11 @@ function ProfileUpdateForm() {
           name="phone"
           label="Phone number"
           type="tel"
+          pattern="[+0-9\s-]{7,20}"
           inputMode="tel"
           required
         />
-        <Textarea
-          id="mantine-profile-bio"
-          name="bio"
-          label="Short bio"
-          rows={3}
-          required
-        />
+        <Textarea id="mantine-profile-bio" />
         <Button type="submit">Save changes</Button>
       </Stack>
     </form>

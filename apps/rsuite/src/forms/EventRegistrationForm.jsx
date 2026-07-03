@@ -29,7 +29,7 @@ function EventRegistrationForm() {
           name="ticketType"
           accepter={SelectPicker}
           data={ticketOptions}
-          placeholder="Select ticket"
+
           block
           required
         />

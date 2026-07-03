@@ -3,7 +3,7 @@ import { Input, Button, Typography } from '@material-tailwind/react'
 function PasswordResetForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Password reset link sent!')
+    alert('Password reset link requested!')
   }
 
   return (
@@ -28,7 +28,7 @@ function PasswordResetForm() {
           name="email"
           type="email"
           required
-          placeholder="Enter your email"
+
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"
           labelProps={{ className: 'hidden' }}
         />

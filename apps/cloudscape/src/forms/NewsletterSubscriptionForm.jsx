@@ -25,14 +25,14 @@ function NewsletterSubscriptionForm() {
           <Input
             name="email"
             type="email"
-            placeholder="Enter your email"
+
             required
           />
         </FormField>
         <FormField label="Frequency">
           <Select
             name="frequency"
-            placeholder="Select frequency"
+
             options={[
               { label: 'Weekly', value: 'weekly' },
               { label: 'Monthly', value: 'monthly' },

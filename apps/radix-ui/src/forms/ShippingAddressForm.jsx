@@ -43,7 +43,7 @@ function ShippingAddressForm() {
               id="radix-shipping-full-name"
               name="fullName"
               type="text"
-              placeholder="Enter recipient name"
+
               required
             />
           </Box>
@@ -60,7 +60,7 @@ function ShippingAddressForm() {
               id="radix-shipping-street"
               name="street"
               type="text"
-              placeholder="Enter street address"
+
               required
             />
           </Box>
@@ -77,7 +77,6 @@ function ShippingAddressForm() {
               id="radix-shipping-street-2"
               name="street2"
               type="text"
-              placeholder="Apartment, suite, etc. (optional)"
             />
           </Box>
           <Box>
@@ -93,7 +92,7 @@ function ShippingAddressForm() {
               id="radix-shipping-city"
               name="city"
               type="text"
-              placeholder="Enter city"
+
               required
             />
           </Box>
@@ -112,10 +111,7 @@ function ShippingAddressForm() {
               onValueChange={setCountry}
               required
             >
-              <Select.Trigger
-                id="radix-shipping-country"
-                placeholder="Select country"
-              />
+              <Select.Trigger id="radix-shipping-country" />
               <Select.Content>
                 {COUNTRIES.map((c) => (
                   <Select.Item key={c.value} value={c.value}>
@@ -135,10 +131,7 @@ function ShippingAddressForm() {
               State / Province / Territory
             </Text>
             <Select.Root name="region" required>
-              <Select.Trigger
-                id="radix-shipping-region"
-                placeholder="Select an option"
-              />
+              <Select.Trigger id="radix-shipping-region" />
               <Select.Content>
                 {regionOptions.map((region) => (
                   <Select.Item key={region} value={region}>
@@ -161,7 +154,7 @@ function ShippingAddressForm() {
               id="radix-shipping-postal"
               name="postalCode"
               type="text"
-              placeholder="Enter postal code"
+
               pattern={postalPattern}
               required
             />
