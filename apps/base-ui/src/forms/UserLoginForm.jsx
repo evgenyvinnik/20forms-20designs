@@ -38,6 +38,9 @@ export default function UserLoginForm() {
         <input type="checkbox" name="remember" />
         Keep me signed in
       </label>
+      <button type="submit" className="base-button">
+        Sign in
+      </button>
       <button
         type="button"
         style={{
@@ -50,9 +53,6 @@ export default function UserLoginForm() {
         onClick={() => alert('Password reset link flow placeholder')}
       >
         Forgot password?
-      </button>
-      <button type="submit" className="base-button">
-        Sign in
       </button>
     </form>
   )

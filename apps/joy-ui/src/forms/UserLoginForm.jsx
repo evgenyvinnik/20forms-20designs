@@ -1,46 +1,36 @@
 import { useState } from 'react'
-import { Box, Button, Checkbox, FormControl, FormLabel, Input } from '@mui/joy'
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControl,
+  FormLabel,
+  Input,
+  Option,
+  Select,
+} from '@mui/joy'
 
 export default function UserLoginForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Login submitted!')
+    alert('Submitted!')
   }
 
   return (
     <Box
       component="form"
       onSubmit={handleSubmit}
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 2,
-        maxWidth: '100%',
-        boxSizing: 'border-box',
-      }}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
     >
       <FormControl required>
-        <FormLabel htmlFor="joy-user-login-email">Email or username</FormLabel>
-        <Input
-          id="joy-user-login-email"
-          name="identifier"
-          type="text"
-          required
-        />
+        <FormLabel>Email or username</FormLabel>
+        <Input name="identifier" type="text" required />
       </FormControl>
-
       <FormControl required>
-        <FormLabel htmlFor="joy-user-login-password">Password</FormLabel>
-        <Input
-          id="joy-user-login-password"
-          name="password"
-          type="password"
-          required
-        />
+        <FormLabel>Password</FormLabel>
+        <Input name="password" type="password" required />
       </FormControl>
-
-      <Checkbox name="remember" label="Keep me signed in" sx={{ my: 1 }} />
-
+      <Checkbox name="remember" label="Keep me signed in" />
       <Button type="submit">Sign in</Button>
       <Button
         type="button"

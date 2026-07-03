@@ -1,49 +1,43 @@
 import { useState } from 'react'
-import { Box, Button, FormControl, FormLabel, Input, Textarea } from '@mui/joy'
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControl,
+  FormLabel,
+  Input,
+  Option,
+  Select,
+} from '@mui/joy'
 
 export default function JobApplicationForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Application submitted!')
+    alert('Submitted!')
   }
 
   return (
     <Box
       component="form"
       onSubmit={handleSubmit}
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 2,
-        maxWidth: '100%',
-        boxSizing: 'border-box',
-      }}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
     >
       <FormControl required>
-        <FormLabel htmlFor="joy-job-name">Full name</FormLabel>
-        <Input id="joy-job-name" name="fullName" required />
+        <FormLabel>Full name</FormLabel>
+        <Input name="fullName" type="text" required />
       </FormControl>
-
       <FormControl required>
-        <FormLabel htmlFor="joy-job-email">Email address</FormLabel>
-        <Input id="joy-job-email" name="email" type="email" required />
+        <FormLabel>Email address</FormLabel>
+        <Input name="email" type="email" required />
       </FormControl>
-
       <FormControl required>
-        <FormLabel htmlFor="joy-job-phone">Phone number</FormLabel>
-        <Input id="joy-job-phone" name="phone" type="tel" required />
+        <FormLabel>Phone number</FormLabel>
+        <Input name="phone" type="tel" required />
       </FormControl>
-
       <FormControl required>
-        <FormLabel htmlFor="joy-job-cover-letter">Cover letter</FormLabel>
-        <Textarea
-          id="joy-job-cover-letter"
-          name="coverLetter"
-          minRows={4}
-          required
-        />
+        <FormLabel>Cover letter</FormLabel>
+        <Input name="coverLetter" multiline minRows={4} required />
       </FormControl>
-
       <Button type="submit">Submit application</Button>
     </Box>
   )

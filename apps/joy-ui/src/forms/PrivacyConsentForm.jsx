@@ -1,34 +1,37 @@
 import { useState } from 'react'
-import { Box, Button, Checkbox } from '@mui/joy'
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControl,
+  FormLabel,
+  Input,
+  Option,
+  Select,
+} from '@mui/joy'
 
 export default function PrivacyConsentForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Consent saved!')
+    alert('Submitted!')
   }
 
   return (
     <Box
       component="form"
       onSubmit={handleSubmit}
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 2,
-        maxWidth: '100%',
-        boxSizing: 'border-box',
-      }}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
     >
       <Checkbox
         name="necessary"
+        label="Essential cookies required for site operation"
         defaultChecked
         disabled
-        label="Essential cookies required for site operation"
       />
       <Checkbox
         name="analytics"
-        defaultChecked
         label="Allow anonymous analytics tracking"
+        defaultChecked
       />
       <Checkbox
         name="marketing"

@@ -1,56 +1,39 @@
 import { useState } from 'react'
-import { Box, Button, FormControl, FormLabel, Input } from '@mui/joy'
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControl,
+  FormLabel,
+  Input,
+  Option,
+  Select,
+} from '@mui/joy'
 
 export default function PasswordChangeForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Password updated!')
+    alert('Submitted!')
   }
 
   return (
     <Box
       component="form"
       onSubmit={handleSubmit}
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 2,
-        maxWidth: '100%',
-        boxSizing: 'border-box',
-      }}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
     >
       <FormControl required>
-        <FormLabel htmlFor="joy-change-current">Current password</FormLabel>
-        <Input
-          id="joy-change-current"
-          name="currentPassword"
-          type="password"
-          required
-        />
+        <FormLabel>Current password</FormLabel>
+        <Input name="currentPassword" type="password" required />
       </FormControl>
-
       <FormControl required>
-        <FormLabel htmlFor="joy-change-new">New password</FormLabel>
-        <Input
-          id="joy-change-new"
-          name="newPassword"
-          type="password"
-          slotProps={{ input: { minLength: 8 } }}
-          required
-        />
+        <FormLabel>New password</FormLabel>
+        <Input name="newPassword" type="password" required />
       </FormControl>
-
       <FormControl required>
-        <FormLabel htmlFor="joy-change-confirm">Confirm new password</FormLabel>
-        <Input
-          id="joy-change-confirm"
-          name="confirmPassword"
-          type="password"
-          slotProps={{ input: { minLength: 8 } }}
-          required
-        />
+        <FormLabel>Confirm new password</FormLabel>
+        <Input name="confirmPassword" type="password" required />
       </FormControl>
-
       <Button type="submit">Update password</Button>
     </Box>
   )

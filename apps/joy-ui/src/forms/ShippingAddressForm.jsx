@@ -13,55 +13,41 @@ import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from './locationOptions'
 
 export default function ShippingAddressForm() {
   const [country, setCountry] = useState('US')
-
   const handleSubmit = (event) => {
     event.preventDefault()
     alert('Shipping address saved!')
   }
 
-  const regionOptions = country === 'CA' ? CANADIAN_PROVINCES : US_STATES
+  const regionList = country === 'CA' ? CANADIAN_PROVINCES : US_STATES
 
   return (
     <Box
       component="form"
       onSubmit={handleSubmit}
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 2,
-        maxWidth: '100%',
-        boxSizing: 'border-box',
-      }}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
     >
       <FormControl required>
-        <FormLabel htmlFor="joy-shipping-name">Recipient name</FormLabel>
-        <Input id="joy-shipping-name" name="fullName" required />
+        <FormLabel>Recipient name</FormLabel>
+        <Input name="fullName" required />
       </FormControl>
-
       <FormControl required>
-        <FormLabel htmlFor="joy-shipping-street">Street address</FormLabel>
-        <Input id="joy-shipping-street" name="street" required />
+        <FormLabel>Street address</FormLabel>
+        <Input name="street" required />
       </FormControl>
-
       <FormControl>
-        <FormLabel htmlFor="joy-shipping-street2">
-          Apartment, suite, etc.
-        </FormLabel>
-        <Input id="joy-shipping-street2" name="street2" />
+        <FormLabel>Apartment, suite, etc.</FormLabel>
+        <Input name="street2" />
       </FormControl>
-
       <FormControl required>
-        <FormLabel htmlFor="joy-shipping-city">City</FormLabel>
-        <Input id="joy-shipping-city" name="city" required />
+        <FormLabel>City</FormLabel>
+        <Input name="city" required />
       </FormControl>
-
       <FormControl required>
-        <FormLabel htmlFor="joy-shipping-country">Country</FormLabel>
+        <FormLabel>Country</FormLabel>
         <Select
-          id="joy-shipping-country"
           name="country"
           value={country}
-          onChange={(_, val) => setCountry(val)}
+          onChange={(e, val) => setCountry(val)}
           required
         >
           {COUNTRIES.map(({ value, label }) => (
@@ -71,31 +57,23 @@ export default function ShippingAddressForm() {
           ))}
         </Select>
       </FormControl>
-
       <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}>
         <FormControl required>
-          <FormLabel htmlFor="joy-shipping-region">State / Province</FormLabel>
-          <Select id="joy-shipping-region" name="region" required>
-            {regionOptions.map((region) => (
+          <FormLabel>State / Province</FormLabel>
+          <Select name="region" required>
+            {regionList.map((region) => (
               <Option key={region} value={region}>
                 {region}
               </Option>
             ))}
           </Select>
         </FormControl>
-
         <FormControl required>
-          <FormLabel htmlFor="joy-shipping-postal">Postal code</FormLabel>
-          <Input id="joy-shipping-postal" name="postalCode" required />
+          <FormLabel>Postal code</FormLabel>
+          <Input name="postalCode" required />
         </FormControl>
       </Box>
-
-      <Checkbox
-        name="default"
-        label="Use as default shipping address"
-        sx={{ my: 1 }}
-      />
-
+      <Checkbox name="default" label="Use as default shipping address" />
       <Button type="submit">Save address</Button>
     </Box>
   )

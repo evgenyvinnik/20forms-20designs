@@ -1,55 +1,54 @@
 import { useState } from 'react'
-import { Box, Button, FormControl, FormLabel, Input, Textarea } from '@mui/joy'
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControl,
+  FormLabel,
+  Input,
+  Option,
+  Select,
+} from '@mui/joy'
 
 export default function ProfileUpdateForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Profile saved!')
+    alert('Submitted!')
   }
 
   return (
     <Box
       component="form"
       onSubmit={handleSubmit}
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 2,
-        maxWidth: '100%',
-        boxSizing: 'border-box',
-      }}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
     >
       <FormControl required>
-        <FormLabel htmlFor="joy-profile-name">Display name</FormLabel>
+        <FormLabel>Display name</FormLabel>
         <Input
-          id="joy-profile-name"
           name="displayName"
+          type="text"
           defaultValue="Jane Doe"
           required
         />
       </FormControl>
-
       <FormControl required>
-        <FormLabel htmlFor="joy-profile-email">Public email</FormLabel>
+        <FormLabel>Public email</FormLabel>
         <Input
-          id="joy-profile-email"
           name="email"
           type="email"
           defaultValue="jane@example.com"
           required
         />
       </FormControl>
-
       <FormControl>
-        <FormLabel htmlFor="joy-profile-bio">Bio</FormLabel>
-        <Textarea
-          id="joy-profile-bio"
+        <FormLabel>Bio</FormLabel>
+        <Input
           name="bio"
+          multiline
           minRows={3}
           defaultValue="Software developer based in San Francisco."
         />
       </FormControl>
-
       <Button type="submit">Save profile</Button>
     </Box>
   )

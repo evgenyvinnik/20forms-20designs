@@ -1,85 +1,32 @@
 import { useState } from 'react'
-import {
-  TextInput,
-  Selector,
-  TextArea,
-  CheckboxInput,
-  Button,
-} from '@astryxdesign/core'
+import { TextInput, Selector, CheckboxInput, Button } from '@astryxdesign/core'
 
 function CustomerFeedbackForm() {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [rating, setRating] = useState('')
-  const [comments, setComments] = useState('')
-  const [followUp, setFollowUp] = useState(false)
-
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Feedback submitted!')
+    alert('Submitted!')
   }
-
-  const ratingOptions = [
-    { value: '', label: 'Select rating' },
-    { value: 'excellent', label: 'Excellent' },
-    { value: 'good', label: 'Good' },
-    { value: 'average', label: 'Average' },
-    { value: 'poor', label: 'Poor' },
-  ]
 
   return (
     <form
       onSubmit={handleSubmit}
       style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
     >
-      <TextInput
-        id="astryx-feedback-name"
-        name="name"
-        type="text"
-        label="Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        required
-      />
-
-      <TextInput
-        id="astryx-feedback-email"
-        name="email"
-        type="email"
-        label="Email address"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-
       <Selector
-        id="astryx-feedback-rating"
         name="rating"
-        label="Overall rating"
-        value={rating}
-        onChange={(val) => setRating(val)}
-        options={ratingOptions}
+        label="Satisfaction rating"
+        defaultValue="5"
+        options={[
+          { value: '5', label: '5 - Excellent' },
+          { value: '4', label: '4 - Good' },
+          { value: '3', label: '3 - Average' },
+          { value: '2', label: '2 - Poor' },
+          { value: '1', label: '1 - Very Poor' },
+        ]}
       />
-
-      <TextArea
-        id="astryx-feedback-comments"
-        name="comments"
-        label="Comments"
-        rows={4}
-        value={comments}
-        onChange={(e) => setComments(e.target.value)}
-        required
-      />
-
-      <CheckboxInput
-        name="followUp"
-        label="I would like a follow-up"
-        checked={followUp}
-        onChange={(e) => setFollowUp(e.target.checked)}
-      />
-
+      <TextInput name="comments" label="Comments" multiline rows={4} required />
       <Button type="submit" variant="primary">
-        Send feedback
+        Submit feedback
       </Button>
     </form>
   )

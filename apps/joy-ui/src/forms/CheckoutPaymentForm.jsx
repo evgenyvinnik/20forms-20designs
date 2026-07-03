@@ -2,6 +2,7 @@ import { useState } from 'react'
 import {
   Box,
   Button,
+  Checkbox,
   FormControl,
   FormLabel,
   Input,
@@ -12,68 +13,44 @@ import {
 export default function CheckoutPaymentForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Checkout submitted!')
+    alert('Submitted!')
   }
 
   return (
     <Box
       component="form"
       onSubmit={handleSubmit}
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 2,
-        maxWidth: '100%',
-        boxSizing: 'border-box',
-      }}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
     >
       <FormControl required>
-        <FormLabel htmlFor="joy-checkout-email">Email for receipt</FormLabel>
-        <Input id="joy-checkout-email" name="email" type="email" required />
+        <FormLabel>Email for receipt</FormLabel>
+        <Input name="email" type="email" required />
       </FormControl>
-
       <FormControl required>
-        <FormLabel htmlFor="joy-checkout-shipping-method">
-          Shipping method
-        </FormLabel>
-        <Select
-          id="joy-checkout-shipping-method"
-          name="shippingMethod"
-          defaultValue="standard"
-          required
-        >
+        <FormLabel>Shipping method</FormLabel>
+        <Select name="shippingMethod" defaultValue="standard" required>
           <Option value="standard">Standard Shipping</Option>
           <Option value="express">Express Shipping</Option>
           <Option value="overnight">Overnight Delivery</Option>
         </Select>
       </FormControl>
-
       <FormControl required>
-        <FormLabel htmlFor="joy-checkout-card-number">Card number</FormLabel>
+        <FormLabel>Card number</FormLabel>
         <Input
-          id="joy-checkout-card-number"
           name="cardNumber"
           type="text"
           slotProps={{ input: { maxLength: 19 } }}
           required
         />
       </FormControl>
-
       <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}>
         <FormControl required>
-          <FormLabel htmlFor="joy-checkout-expiration">Expiration</FormLabel>
-          <Input
-            id="joy-checkout-expiration"
-            name="expiration"
-            placeholder="MM/YY"
-            required
-          />
+          <FormLabel>Expiration</FormLabel>
+          <Input name="expiration" type="text" placeholder="MM/YY" required />
         </FormControl>
-
         <FormControl required>
-          <FormLabel htmlFor="joy-checkout-cvc">CVC</FormLabel>
+          <FormLabel>CVC</FormLabel>
           <Input
-            id="joy-checkout-cvc"
             name="cvc"
             type="text"
             slotProps={{ input: { maxLength: 4 } }}
@@ -81,7 +58,14 @@ export default function CheckoutPaymentForm() {
           />
         </FormControl>
       </Box>
-
+      <FormControl>
+        <FormLabel>Promo code</FormLabel>
+        <Input
+          name="promoCode"
+          type="text"
+          slotProps={{ input: { pattern: '[A-Za-z0-9]{3,15}' } }}
+        />
+      </FormControl>
       <Button type="submit">Place order</Button>
     </Box>
   )

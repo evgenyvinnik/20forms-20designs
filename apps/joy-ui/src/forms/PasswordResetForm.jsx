@@ -2,38 +2,33 @@ import { useState } from 'react'
 import {
   Box,
   Button,
+  Checkbox,
   FormControl,
-  FormHelperText,
   FormLabel,
   Input,
+  Option,
+  Select,
 } from '@mui/joy'
 
 export default function PasswordResetForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Reset link requested!')
+    alert('Submitted!')
   }
 
   return (
     <Box
       component="form"
       onSubmit={handleSubmit}
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 2,
-        maxWidth: '100%',
-        boxSizing: 'border-box',
-      }}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
     >
       <FormControl required>
-        <FormLabel htmlFor="joy-reset-email">Account email address</FormLabel>
-        <Input id="joy-reset-email" name="email" type="email" required />
-        <FormHelperText>
+        <FormLabel>Account email address</FormLabel>
+        <Input name="email" type="email" required />
+        <span style={{ fontSize: '0.75rem', color: '#64748b' }}>
           Instructions will be sent to this address if an account exists.
-        </FormHelperText>
+        </span>
       </FormControl>
-
       <Button type="submit">Send reset instructions</Button>
     </Box>
   )

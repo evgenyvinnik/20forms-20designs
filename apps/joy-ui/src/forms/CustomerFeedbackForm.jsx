@@ -2,39 +2,29 @@ import { useState } from 'react'
 import {
   Box,
   Button,
+  Checkbox,
   FormControl,
   FormLabel,
+  Input,
   Option,
   Select,
-  Textarea,
 } from '@mui/joy'
 
 export default function CustomerFeedbackForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Feedback submitted!')
+    alert('Submitted!')
   }
 
   return (
     <Box
       component="form"
       onSubmit={handleSubmit}
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 2,
-        maxWidth: '100%',
-        boxSizing: 'border-box',
-      }}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
     >
       <FormControl required>
-        <FormLabel htmlFor="joy-feedback-rating">Satisfaction rating</FormLabel>
-        <Select
-          id="joy-feedback-rating"
-          name="rating"
-          defaultValue="5"
-          required
-        >
+        <FormLabel>Satisfaction rating</FormLabel>
+        <Select name="rating" defaultValue="5" required>
           <Option value="5">5 - Excellent</Option>
           <Option value="4">4 - Good</Option>
           <Option value="3">3 - Average</Option>
@@ -42,17 +32,10 @@ export default function CustomerFeedbackForm() {
           <Option value="1">1 - Very Poor</Option>
         </Select>
       </FormControl>
-
       <FormControl required>
-        <FormLabel htmlFor="joy-feedback-comments">Comments</FormLabel>
-        <Textarea
-          id="joy-feedback-comments"
-          name="comments"
-          minRows={4}
-          required
-        />
+        <FormLabel>Comments</FormLabel>
+        <Input name="comments" multiline minRows={4} required />
       </FormControl>
-
       <Button type="submit">Submit feedback</Button>
     </Box>
   )
