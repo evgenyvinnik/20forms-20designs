@@ -4,7 +4,7 @@ import { Field } from '@ark-ui/react'
 export default function SupportTicketForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Submitted!')
+    alert('Support ticket submitted!')
   }
 
   return (

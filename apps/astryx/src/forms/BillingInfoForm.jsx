@@ -4,7 +4,7 @@ import { TextInput, Selector, CheckboxInput, Button } from '@astryxdesign/core'
 function BillingInfoForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Submitted!')
+    alert('Billing info saved!')
   }
 
   return (

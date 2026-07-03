@@ -4,7 +4,7 @@ import { TextInput, Selector, CheckboxInput, Button } from '@astryxdesign/core'
 function ContactInquiryForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Submitted!')
+    alert('Inquiry submitted!')
   }
 
   return (

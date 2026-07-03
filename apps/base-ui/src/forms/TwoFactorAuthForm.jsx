@@ -4,7 +4,7 @@ import { Field } from '@base-ui-components/react/field'
 export default function TwoFactorAuthForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Submitted!')
+    alert('2FA code submitted!')
   }
 
   return (

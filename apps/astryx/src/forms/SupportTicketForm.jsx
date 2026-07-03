@@ -4,7 +4,7 @@ import { TextInput, Selector, CheckboxInput, Button } from '@astryxdesign/core'
 function SupportTicketForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Submitted!')
+    alert('Support ticket submitted!')
   }
 
   return (

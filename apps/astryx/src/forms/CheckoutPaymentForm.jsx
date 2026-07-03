@@ -4,7 +4,7 @@ import { TextInput, Selector, CheckboxInput, Button } from '@astryxdesign/core'
 function CheckoutPaymentForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Submitted!')
+    alert('Checkout submitted!')
   }
 
   return (

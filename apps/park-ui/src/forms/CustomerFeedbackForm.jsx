@@ -4,7 +4,7 @@ import { Field } from '@ark-ui/react'
 export default function CustomerFeedbackForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Submitted!')
+    alert('Feedback submitted!')
   }
 
   return (

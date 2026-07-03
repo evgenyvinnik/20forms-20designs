@@ -4,7 +4,7 @@ import { Field } from '@ark-ui/react'
 export default function UserRegistrationForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Submitted!')
+    alert('Registration submitted!')
   }
 
   return (

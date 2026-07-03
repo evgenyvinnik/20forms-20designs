@@ -13,7 +13,7 @@ import {
 export default function SupportTicketForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Submitted!')
+    alert('Support ticket submitted!')
   }
 
   return (

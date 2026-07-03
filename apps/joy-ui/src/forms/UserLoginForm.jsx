@@ -13,7 +13,7 @@ import {
 export default function UserLoginForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Submitted!')
+    alert('Login submitted!')
   }
 
   return (

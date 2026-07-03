@@ -4,7 +4,7 @@ import { TextInput, Selector, CheckboxInput, Button } from '@astryxdesign/core'
 function OrderTrackingForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Submitted!')
+    alert('Order lookup submitted!')
   }
 
   return (

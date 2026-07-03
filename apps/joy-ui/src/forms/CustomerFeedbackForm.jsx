@@ -13,7 +13,7 @@ import {
 export default function CustomerFeedbackForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Submitted!')
+    alert('Feedback submitted!')
   }
 
   return (

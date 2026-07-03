@@ -13,7 +13,7 @@ import {
 export default function PasswordChangeForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Submitted!')
+    alert('Password updated!')
   }
 
   return (

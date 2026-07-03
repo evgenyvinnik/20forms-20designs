@@ -23,7 +23,7 @@ function OnboardingWizardForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Onboarding complete!')
+    alert('Onboarding completed!')
   }
 
   return (

@@ -13,7 +13,7 @@ import {
 export default function ContactInquiryForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Submitted!')
+    alert('Inquiry submitted!')
   }
 
   return (

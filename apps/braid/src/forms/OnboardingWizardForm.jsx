@@ -22,7 +22,7 @@ function OnboardingWizardForm() {
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault()
-    alert('Onboarding complete!')
+    alert('Onboarding completed!')
   }, [])
 
   const handleBack = useCallback(() => {

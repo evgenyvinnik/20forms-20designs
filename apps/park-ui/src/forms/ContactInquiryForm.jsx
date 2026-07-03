@@ -4,7 +4,7 @@ import { Field } from '@ark-ui/react'
 export default function ContactInquiryForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Submitted!')
+    alert('Inquiry submitted!')
   }
 
   return (

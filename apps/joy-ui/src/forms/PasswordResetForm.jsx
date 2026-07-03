@@ -13,7 +13,7 @@ import {
 export default function PasswordResetForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Submitted!')
+    alert('Password reset requested!')
   }
 
   return (

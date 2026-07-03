@@ -4,7 +4,7 @@ import { Field } from '@ark-ui/react'
 export default function BillingInfoForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Submitted!')
+    alert('Billing info saved!')
   }
 
   return (

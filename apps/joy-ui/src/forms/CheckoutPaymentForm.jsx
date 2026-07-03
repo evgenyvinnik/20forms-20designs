@@ -13,7 +13,7 @@ import {
 export default function CheckoutPaymentForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Submitted!')
+    alert('Checkout submitted!')
   }
 
   return (

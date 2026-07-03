@@ -6,7 +6,7 @@ export default function OnboardingWizardForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
     if (step === 1) setStep(2)
-    else alert('Onboarding complete!')
+    else alert('Onboarding completed!')
   }
 
   return (

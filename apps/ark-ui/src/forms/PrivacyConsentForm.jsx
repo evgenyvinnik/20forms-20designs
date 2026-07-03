@@ -4,7 +4,7 @@ import { Field } from '@ark-ui/react'
 export default function PrivacyConsentForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Submitted!')
+    alert('Privacy consent saved!')
   }
 
   return (

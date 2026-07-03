@@ -12,7 +12,7 @@ const { Title } = Typography
 function OnboardingWizardForm() {
   const handleSubmit = (values) => {
     console.log(values)
-    alert('Onboarding complete!')
+    alert('Onboarding completed!')
   }
 
   const handleBack = () => {

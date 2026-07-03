@@ -13,7 +13,7 @@ import {
 export default function OrderTrackingForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Submitted!')
+    alert('Order lookup submitted!')
   }
 
   return (

@@ -13,7 +13,7 @@ import {
 export default function AdvancedSearchForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Submitted!')
+    alert('Search executed!')
   }
 
   return (

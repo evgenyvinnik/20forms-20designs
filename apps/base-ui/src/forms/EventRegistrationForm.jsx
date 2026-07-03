@@ -4,7 +4,7 @@ import { Field } from '@base-ui-components/react/field'
 export default function EventRegistrationForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Submitted!')
+    alert('Event registration submitted!')
   }
 
   return (

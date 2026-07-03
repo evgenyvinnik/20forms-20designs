@@ -4,7 +4,7 @@ import { Field } from '@base-ui-components/react/field'
 export default function CheckoutPaymentForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Submitted!')
+    alert('Checkout submitted!')
   }
 
   return (

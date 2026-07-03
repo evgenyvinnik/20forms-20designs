@@ -13,7 +13,7 @@ import {
 export default function JobApplicationForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Submitted!')
+    alert('Job application submitted!')
   }
 
   return (

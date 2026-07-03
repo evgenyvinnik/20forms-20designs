@@ -4,7 +4,7 @@ import { Field } from '@base-ui-components/react/field'
 export default function UserLoginForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Submitted!')
+    alert('Login submitted!')
   }
 
   return (

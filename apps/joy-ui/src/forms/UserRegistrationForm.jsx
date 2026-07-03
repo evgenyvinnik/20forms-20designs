@@ -13,7 +13,7 @@ import {
 export default function UserRegistrationForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Submitted!')
+    alert('Registration submitted!')
   }
 
   return (

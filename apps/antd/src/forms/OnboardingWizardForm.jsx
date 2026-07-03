@@ -16,7 +16,7 @@ function OnboardingWizardForm() {
   const [form] = Form.useForm()
 
   const handleSubmit = () => {
-    alert('Onboarding complete!')
+    alert('Onboarding completed!')
   }
 
   const handleBack = () => {

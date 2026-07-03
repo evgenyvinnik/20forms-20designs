@@ -13,7 +13,7 @@ import {
 export default function ProfileUpdateForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert('Submitted!')
+    alert('Profile updated!')
   }
 
   return (
