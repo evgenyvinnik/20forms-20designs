@@ -46,11 +46,7 @@ function ProfileUpdateForm() {
         <Input type="tel" />
       </Form.Item>
 
-      <Form.Item
-        label="Short bio"
-        name="bio"
-        rules={[{ required: true, message: 'Please enter a short bio' }]}
-      >
+      <Form.Item label="Short bio" name="bio">
         <TextArea rows={3} />
       </Form.Item>
 

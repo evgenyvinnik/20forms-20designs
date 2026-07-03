@@ -49,7 +49,7 @@ function ProfileUpdateForm() {
         </Box>
         <Box>
           <Label htmlFor="atlaskit-profile-bio">Short bio</Label>
-          <TextArea id="atlaskit-profile-bio" name="bio" isRequired />
+          <TextArea id="atlaskit-profile-bio" />
         </Box>
         <Button type="submit" appearance="primary">
           Save changes

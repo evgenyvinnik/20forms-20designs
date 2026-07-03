@@ -1,0 +1,358 @@
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/antd/src/forms/UserLoginForm.jsx
+  6:25  error  'values' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/ark-ui/src/forms/AdvancedSearchForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/ark-ui/src/forms/AppointmentRequestForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/ark-ui/src/forms/BillingInfoForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/ark-ui/src/forms/CheckoutPaymentForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/ark-ui/src/forms/ContactInquiryForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/ark-ui/src/forms/CustomerFeedbackForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/ark-ui/src/forms/EventRegistrationForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/ark-ui/src/forms/JobApplicationForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/ark-ui/src/forms/NewsletterSubscriptionForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/ark-ui/src/forms/OrderTrackingForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/ark-ui/src/forms/PasswordChangeForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/ark-ui/src/forms/PasswordResetForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/ark-ui/src/forms/PrivacyConsentForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/ark-ui/src/forms/ProfileUpdateForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/ark-ui/src/forms/SupportTicketForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/ark-ui/src/forms/TwoFactorAuthForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/ark-ui/src/forms/UserLoginForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/ark-ui/src/forms/UserRegistrationForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/astryx/src/forms/AdvancedSearchForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/astryx/src/forms/AppointmentRequestForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/astryx/src/forms/BillingInfoForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/astryx/src/forms/CheckoutPaymentForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/astryx/src/forms/ContactInquiryForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/astryx/src/forms/CustomerFeedbackForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/astryx/src/forms/EventRegistrationForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/astryx/src/forms/JobApplicationForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/astryx/src/forms/NewsletterSubscriptionForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/astryx/src/forms/OrderTrackingForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/astryx/src/forms/PasswordChangeForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/astryx/src/forms/PasswordResetForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/astryx/src/forms/PrivacyConsentForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/astryx/src/forms/ProfileUpdateForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/astryx/src/forms/SupportTicketForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/astryx/src/forms/TwoFactorAuthForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/astryx/src/forms/UserLoginForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/astryx/src/forms/UserRegistrationForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/atlaskit/src/forms/UserLoginForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/base-ui/src/forms/AdvancedSearchForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/base-ui/src/forms/AppointmentRequestForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/base-ui/src/forms/BillingInfoForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/base-ui/src/forms/CheckoutPaymentForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/base-ui/src/forms/ContactInquiryForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/base-ui/src/forms/CustomerFeedbackForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/base-ui/src/forms/EventRegistrationForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/base-ui/src/forms/JobApplicationForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/base-ui/src/forms/NewsletterSubscriptionForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/base-ui/src/forms/OrderTrackingForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/base-ui/src/forms/PasswordChangeForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/base-ui/src/forms/PasswordResetForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/base-ui/src/forms/PrivacyConsentForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/base-ui/src/forms/ProfileUpdateForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/base-ui/src/forms/SupportTicketForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/base-ui/src/forms/TwoFactorAuthForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/base-ui/src/forms/UserLoginForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/base-ui/src/forms/UserRegistrationForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/elastic-ui/src/forms/SupportTicketForm.jsx
+  22:10  error  'attachments' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/gravity-ui/src/forms/common.jsx
+  4:14  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+  9:14  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/joy-ui/src/forms/AdvancedSearchForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/joy-ui/src/forms/AppointmentRequestForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/joy-ui/src/forms/BillingInfoForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/joy-ui/src/forms/CheckoutPaymentForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/joy-ui/src/forms/ContactInquiryForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/joy-ui/src/forms/CustomerFeedbackForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/joy-ui/src/forms/EventRegistrationForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/joy-ui/src/forms/JobApplicationForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/joy-ui/src/forms/NewsletterSubscriptionForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/joy-ui/src/forms/OrderTrackingForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/joy-ui/src/forms/PasswordChangeForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/joy-ui/src/forms/PasswordResetForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/joy-ui/src/forms/PrivacyConsentForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/joy-ui/src/forms/ProfileUpdateForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/joy-ui/src/forms/SupportTicketForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/joy-ui/src/forms/TwoFactorAuthForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/joy-ui/src/forms/UserLoginForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/joy-ui/src/forms/UserRegistrationForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/mantine/src/forms/ShippingAddressForm.jsx
+  16:33  error  Unnecessary escape character: \d  no-useless-escape
+  16:45  error  Unnecessary escape character: \d  no-useless-escape
+  16:55  error  Unnecessary escape character: \d  no-useless-escape
+  16:62  error  Unnecessary escape character: \d  no-useless-escape
+  16:69  error  Unnecessary escape character: \d  no-useless-escape
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/park-ui/src/forms/AdvancedSearchForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/park-ui/src/forms/AppointmentRequestForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/park-ui/src/forms/BillingInfoForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/park-ui/src/forms/CheckoutPaymentForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/park-ui/src/forms/ContactInquiryForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/park-ui/src/forms/CustomerFeedbackForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/park-ui/src/forms/EventRegistrationForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/park-ui/src/forms/JobApplicationForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/park-ui/src/forms/NewsletterSubscriptionForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/park-ui/src/forms/OrderTrackingForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/park-ui/src/forms/PasswordChangeForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/park-ui/src/forms/PasswordResetForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/park-ui/src/forms/PrivacyConsentForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/park-ui/src/forms/ProfileUpdateForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/park-ui/src/forms/SupportTicketForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/park-ui/src/forms/TwoFactorAuthForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/park-ui/src/forms/UserLoginForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/park-ui/src/forms/UserRegistrationForm.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/patternfly/src/forms/SupportTicketForm.jsx
+  15:21  error  'setIsLoading' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/primer/src/forms/CheckoutPaymentForm.jsx
+  14:8   error  'Box' is not defined  no-undef
+  14:71  error  'Box' is not defined  no-undef
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/primereact/src/forms/CheckoutPaymentForm.jsx
+   7:10  error  'email' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u              @typescript-eslint/no-unused-vars
+   7:17  error  'setEmail' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u           @typescript-eslint/no-unused-vars
+   8:10  error  'shippingMethod' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u     @typescript-eslint/no-unused-vars
+   8:26  error  'setShippingMethod' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+   9:10  error  'cardNumber' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u         @typescript-eslint/no-unused-vars
+   9:22  error  'setCardNumber' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u      @typescript-eslint/no-unused-vars
+  10:10  error  'expiration' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u         @typescript-eslint/no-unused-vars
+  10:22  error  'setExpiration' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u      @typescript-eslint/no-unused-vars
+  11:10  error  'cvc' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                @typescript-eslint/no-unused-vars
+  11:15  error  'setCvc' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u             @typescript-eslint/no-unused-vars
+  14:9   error  'shippingOptions' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u    @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/react-bootstrap/src/forms/CheckoutPaymentForm.jsx
+  11:8   error  'Row' is not defined  no-undef
+  12:10  error  'Col' is not defined  no-undef
+  12:23  error  'Col' is not defined  no-undef
+  13:10  error  'Col' is not defined  no-undef
+  13:23  error  'Col' is not defined  no-undef
+  14:9   error  'Row' is not defined  no-undef
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/semi-design/src/forms/PasswordResetForm.jsx
+  7:25  error  'values' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/semi-design/src/forms/ProfileUpdateForm.jsx
+  4:25  error  'values' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/semi-design/src/forms/TwoFactorAuthForm.jsx
+  6:25  error  'values' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/semi-design/src/forms/UserLoginForm.jsx
+  4:25  error  'values' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/shadcn-ui/src/components/ui/button.jsx
+  49:18  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/shell/src/App.tsx
+  84:6  warning  React Hook useEffect has missing dependencies: 'setGroupBy' and 'setThemeMode'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/slds/src/forms/CheckoutPaymentForm.jsx
+   6:7   error  'shippingOptions' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u    @typescript-eslint/no-unused-vars
+  13:10  error  'email' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u              @typescript-eslint/no-unused-vars
+  13:17  error  'setEmail' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u           @typescript-eslint/no-unused-vars
+  14:10  error  'shippingMethod' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u     @typescript-eslint/no-unused-vars
+  14:26  error  'setShippingMethod' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+  15:10  error  'cardNumber' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u         @typescript-eslint/no-unused-vars
+  15:22  error  'setCardNumber' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u      @typescript-eslint/no-unused-vars
+  16:10  error  'expiration' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u         @typescript-eslint/no-unused-vars
+  16:22  error  'setExpiration' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u      @typescript-eslint/no-unused-vars
+  17:10  error  'cvc' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                @typescript-eslint/no-unused-vars
+  17:15  error  'setCvc' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u             @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/tamagui/src/forms/CheckoutPaymentForm.jsx
+  2:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+/Users/evgenyvinnik/Documents/GitHub/20forms-20designs/apps/theme-ui/src/forms/CheckoutPaymentForm.jsx
+  46:9  error  'selectStyles' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  @typescript-eslint/no-unused-vars
+
+✖ 139 problems (135 errors, 4 warnings)
+

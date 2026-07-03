@@ -48,7 +48,7 @@ function ProfileUpdateForm() {
       </FormGroup>
       <FormGroup>
         <Label htmlFor="uswds-profile-bio">Short bio</Label>
-        <Textarea id="uswds-profile-bio" name="bio" required />
+        <Textarea id="uswds-profile-bio" />
       </FormGroup>
       <Button type="submit">Save changes</Button>
     </Form>

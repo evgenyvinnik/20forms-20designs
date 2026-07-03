@@ -37,16 +37,11 @@ function ProfileUpdateForm() {
         controlProps={{
           required: true,
           inputMode: 'tel',
-          pattern: '[+0-9\\s-]{7,20}',
+          pattern: '[+0-9\s-]{7,20}',
         }}
       />
       <Field label="Short bio" htmlFor="gravity-profile-bio">
-        <TextArea
-          id="gravity-profile-bio"
-          name="bio"
-          rows={3}
-          controlProps={{ required: true }}
-        />
+        <TextArea id="gravity-profile-bio" name="bio" rows={3} />
       </Field>
       <Button view="action" type="submit">
         Save changes

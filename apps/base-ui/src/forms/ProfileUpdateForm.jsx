@@ -49,7 +49,7 @@ export default function ProfileUpdateForm() {
           render={<textarea />}
           className="base-textarea"
           name="bio"
-          defaultValue="Software developer based in San Francisco."
+
           rows={3}
         />
       </Field.Root>

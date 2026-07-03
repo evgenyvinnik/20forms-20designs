@@ -14,7 +14,7 @@ function ProfileUpdateForm() {
       <wa-input label="Last name" name="lastName" type="text" required />
       <wa-input label="Email address" name="email" type="email" required />
       <wa-input label="Phone number" name="phone" type="tel" required />
-      <wa-textarea label="Short bio" name="bio" rows="3" required />
+      <wa-textarea label="Short bio" />
       <wa-button type="submit" variant="brand">
         Save changes
       </wa-button>

@@ -44,12 +44,7 @@ function ProfileUpdateForm() {
       >
         <TextInput id="grommet-profile-phone" name="phone" type="tel" />
       </FormField>
-      <FormField
-        label="Short bio"
-        name="bio"
-        htmlFor="grommet-profile-bio"
-        required
-      >
+      <FormField label="Short bio">
         <TextArea id="grommet-profile-bio" name="bio" rows={3} />
       </FormField>
       <Box margin={{ top: 'medium' }}>

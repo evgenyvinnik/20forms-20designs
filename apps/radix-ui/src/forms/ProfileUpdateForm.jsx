@@ -98,13 +98,7 @@ function ProfileUpdateForm() {
             >
               Short bio
             </Text>
-            <TextArea
-              id="radix-profile-bio"
-              name="bio"
-              rows={3}
-
-              required
-            />
+            <TextArea id="radix-profile-bio" />
           </Box>
           <Button type="submit">Save changes</Button>
         </Flex>

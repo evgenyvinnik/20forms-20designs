@@ -19,7 +19,7 @@ function ProfileUpdateForm() {
           inputMode="tel"
           isRequired
         />
-        <TextArea label="Short bio" name="bio" isRequired />
+        <TextArea label="Short bio" name="bio" rows={3} />
         <Button type="submit" variant="accent">
           Save changes
         </Button>

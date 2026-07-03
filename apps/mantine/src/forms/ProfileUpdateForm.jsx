@@ -39,13 +39,7 @@ function ProfileUpdateForm() {
           inputMode="tel"
           required
         />
-        <Textarea
-          id="mantine-profile-bio"
-          name="bio"
-          label="Short bio"
-          rows={3}
-          required
-        />
+        <Textarea id="mantine-profile-bio" />
         <Button type="submit">Save changes</Button>
       </Stack>
     </form>

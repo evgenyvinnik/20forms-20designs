@@ -33,12 +33,7 @@ function ProfileUpdateForm() {
         rules={[{ required: true }]}
       />
 
-      <Form.TextArea
-        field="bio"
-        label="Short bio"
-        rows={3}
-        rules={[{ required: true }]}
-      />
+      <Form.TextArea field="bio" label="Short bio" rows={3} />
 
       <Button type="primary" htmlType="submit" style={{ marginTop: 16 }}>
         Save changes

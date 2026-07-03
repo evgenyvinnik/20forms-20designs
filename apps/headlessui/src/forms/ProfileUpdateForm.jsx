@@ -62,13 +62,7 @@ function ProfileUpdateForm() {
         <Label className="label" htmlFor="headlessui-profile-update-bio">
           Short bio
         </Label>
-        <Textarea
-          id="headlessui-profile-update-bio"
-          name="bio"
-          rows={3}
-          className="textarea"
-          required
-        />
+        <Textarea id="headlessui-profile-update-bio" />
       </Field>
       <div className="form-row">
         <button type="submit" className="button button-primary">

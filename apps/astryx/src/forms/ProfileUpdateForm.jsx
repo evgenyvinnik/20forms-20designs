@@ -30,17 +30,11 @@ function ProfileUpdateForm() {
         name="email"
         type="email"
         label="Email address"
-        defaultValue="jane@example.com"
+
         required
       />
       <TextInput name="phone" type="tel" label="Phone number" />
-      <TextInput
-        name="bio"
-        label="Short bio"
-        multiline
-        rows={3}
-        defaultValue="Software developer based in San Francisco."
-      />
+      <TextInput name="bio" label="Short bio" multiline rows={3} />
       <Button type="submit" variant="primary">
         Save changes
       </Button>

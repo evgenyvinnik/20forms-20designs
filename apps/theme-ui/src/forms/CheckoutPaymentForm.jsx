@@ -1,4 +1,4 @@
-/** @jsxImportSource theme-ui */
+import { Box, Button, Input, Label, Select } from 'theme-ui'
 
 function CheckoutPaymentForm() {
   const handleSubmit = (event) => {
@@ -6,75 +6,71 @@ function CheckoutPaymentForm() {
     alert('Checkout submitted!')
   }
 
-  const inputStyles = {
-    width: '100%',
-    padding: '8px 12px',
-    fontSize: '16px',
-    border: '1px solid',
-    borderColor: 'border',
-    borderRadius: 'default',
-    backgroundColor: 'inputBg',
-    color: 'text',
-    outline: 'none',
-    '&:focus': {
-      borderColor: 'primary',
-      boxShadow: '0 0 0 2px rgba(0, 119, 204, 0.2)',
-    },
-  }
-
-  const labelStyles = {
-    display: 'block',
-    marginBottom: '4px',
-    fontWeight: 'bold',
-    color: 'text',
-  }
-
-  const buttonStyles = {
-    padding: '10px 20px',
-    fontSize: '16px',
-    fontWeight: 'bold',
-    color: '#fff',
-    backgroundColor: 'primary',
-    border: 'none',
-    borderRadius: 'default',
-    cursor: 'pointer',
-    '&:hover': {
-      opacity: 0.9,
-    },
-  }
-
-  const selectStyles = {
-    ...inputStyles,
-    appearance: 'none',
-    backgroundImage:
-      "url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e\")",
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'right 8px center',
-    backgroundSize: '16px',
-    paddingRight: '32px',
-  }
-
   return (
-    <form onSubmit={handleSubmit}>
-      <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}
-      ></div>
-      <div sx={{ marginBottom: 3 }}>
-        <label htmlFor="theme-ui-checkout-promo" sx={labelStyles}>
-          Promo code
-        </label>
-        <input
-          id="theme-ui-checkout-promo"
+    <Box as="form" onSubmit={handleSubmit}>
+      <Box mb={3}>
+        <Label htmlFor="themeui-checkout-email">Email for receipt</Label>
+        <Input id="themeui-checkout-email" name="email" type="email" required />
+      </Box>
+      <Box mb={3}>
+        <Label htmlFor="themeui-checkout-shipping">Shipping method</Label>
+        <Select
+          id="themeui-checkout-shipping"
+          name="shippingMethod"
+          defaultValue="standard"
+          required
+        >
+          <option value="standard">Standard Shipping</option>
+          <option value="express">Express Shipping</option>
+          <option value="overnight">Overnight Delivery</option>
+        </Select>
+      </Box>
+      <Box mb={3}>
+        <Label htmlFor="themeui-checkout-card">Card number</Label>
+        <Input
+          id="themeui-checkout-card"
+          name="cardNumber"
+          type="text"
+          maxLength={19}
+          required
+        />
+      </Box>
+      <Box
+        sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 3 }}
+        mb={3}
+      >
+        <Box>
+          <Label htmlFor="themeui-checkout-exp">Expiration</Label>
+          <Input
+            id="themeui-checkout-exp"
+            name="expiration"
+            type="text"
+            placeholder="MM/YY"
+            required
+          />
+        </Box>
+        <Box>
+          <Label htmlFor="themeui-checkout-cvc">CVC</Label>
+          <Input
+            id="themeui-checkout-cvc"
+            name="cvc"
+            type="password"
+            maxLength={4}
+            required
+          />
+        </Box>
+      </Box>
+      <Box mb={3}>
+        <Label htmlFor="themeui-checkout-promo">Promo code</Label>
+        <Input
+          id="themeui-checkout-promo"
           name="promoCode"
           type="text"
           pattern="[A-Za-z0-9]{3,15}"
-          sx={inputStyles}
         />
-      </div>
-      <button type="submit" sx={buttonStyles}>
-        Place order
-      </button>
-    </form>
+      </Box>
+      <Button type="submit">Place order</Button>
+    </Box>
   )
 }
 

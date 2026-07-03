@@ -31,7 +31,7 @@ function ProfileUpdateForm() {
 
       <Form.Group controlId="bio">
         <Form.ControlLabel>Short bio</Form.ControlLabel>
-        <Form.Control name="bio" accepter={Textarea} rows={3} required />
+        <Form.Control />
       </Form.Group>
 
       <Form.Group>

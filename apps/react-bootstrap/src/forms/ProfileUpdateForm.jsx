@@ -36,7 +36,7 @@ function ProfileUpdateForm() {
 
       <Form.Group className="mb-3" controlId="rb-profile-bio">
         <Form.Label>Short bio</Form.Label>
-        <Form.Control as="textarea" name="bio" rows={3} required />
+        <Form.Control as="textarea" />
       </Form.Group>
 
       <Button variant="primary" type="submit">

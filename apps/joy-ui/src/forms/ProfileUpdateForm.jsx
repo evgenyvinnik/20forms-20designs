@@ -45,12 +45,7 @@ export default function ProfileUpdateForm() {
       </FormControl>
       <FormControl>
         <FormLabel>Short bio</FormLabel>
-        <Input
-          name="bio"
-          multiline
-          minRows={3}
-          defaultValue="Software developer based in San Francisco."
-        />
+        <Input name="bio" multiline minRows={3} />
       </FormControl>
       <Button type="submit">Save changes</Button>
     </Box>

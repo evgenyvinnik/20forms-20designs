@@ -53,13 +53,7 @@ function ProfileUpdateForm() {
 
         <YStack gap="$1">
           <Label htmlFor="bio">Short bio</Label>
-          <TextArea
-            id="bio"
-            name="bio"
-
-            rows={3}
-            required
-          />
+          <TextArea id="bio" />
         </YStack>
 
         <Button themeInverse onPress={() => {}}>

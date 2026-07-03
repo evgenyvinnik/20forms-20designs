@@ -92,8 +92,7 @@ function ProfileUpdateForm() {
         </Typography>
         <Textarea
           id="material-tailwind-profile-update-bio"
-          name="bio"
-          required
+
           rows={3}
 
           className="!border-t-blue-gray-200 focus:!border-t-gray-900 dark:!border-t-gray-600 dark:focus:!border-t-gray-400 dark:text-white"

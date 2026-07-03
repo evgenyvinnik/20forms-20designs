@@ -38,13 +38,7 @@ function ProfileUpdateForm({ inverted }) {
         pattern="[+0-9\s-]{7,20}"
         inputMode="tel"
       />
-      <Form.TextArea
-        id="semantic-ui-profile-update-bio"
-        name="bio"
-        label="Short bio"
-        rows={3}
-        required
-      />
+      <Form.TextArea id="semantic-ui-profile-update-bio" />
       <Button type="submit" primary>
         Save changes
       </Button>

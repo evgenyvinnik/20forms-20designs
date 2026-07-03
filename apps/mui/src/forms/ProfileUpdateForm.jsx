@@ -41,14 +41,7 @@ function ProfileUpdateForm() {
         required
         inputProps={{ pattern: '[+0-9\\s-]{7,20}', inputMode: 'tel' }}
       />
-      <TextField
-        id="mui-profile-bio"
-        name="bio"
-        label="Short bio"
-        multiline
-        rows={3}
-        required
-      />
+      <TextField id="mui-profile-bio" />
       <Button type="submit" variant="contained">
         Save changes
       </Button>

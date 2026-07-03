@@ -48,7 +48,7 @@ export default function ProfileUpdateForm() {
         <Field.Textarea
           className="park-textarea"
           name="bio"
-          defaultValue="Software developer based in San Francisco."
+
           rows={3}
         />
       </Field.Root>

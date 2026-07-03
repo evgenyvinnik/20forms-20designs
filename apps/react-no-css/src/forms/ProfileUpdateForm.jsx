@@ -41,7 +41,7 @@ function ProfileUpdateForm() {
       </div>
       <div>
         <label htmlFor="nocss-profile-bio">Short bio</label>
-        <textarea id="nocss-profile-bio" name="bio" rows="3" required />
+        <textarea id="nocss-profile-bio" />
       </div>
       <button type="submit">Save changes</button>
     </form>
