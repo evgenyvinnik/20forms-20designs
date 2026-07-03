@@ -205,27 +205,36 @@ function App() {
           <PreviewToggleRow groupBy={groupBy} setGroupBy={setGroupBy} />
         </div>
 
-        {groupBy === 'library'
-          ? activeLibraries.map((lib) => (
-              <PreviewSection
-                key={lib.name}
-                title={lib.name}
-                description={`Form components implemented with ${lib.name}`}
-                forms={activeForms}
-                libraries={[lib]}
-                theme={themeMode}
-              />
-            ))
-          : activeForms.map((form) => (
-              <PreviewSection
-                key={form}
-                title={form}
-                description={`Implemented across component libraries`}
-                forms={[form]}
-                libraries={activeLibraries}
-                theme={themeMode}
-              />
-            ))}
+        {activeLibraries.length === 0 ? (
+          <div className="empty-message">
+            Select at least one implemented library to see previews.
+          </div>
+        ) : activeForms.length === 0 ? (
+          <div className="empty-message">
+            Select at least one form to see previews.
+          </div>
+        ) : groupBy === 'library' ? (
+          activeLibraries.map((lib) => (
+            <PreviewSection
+              key={lib.name}
+              title={lib.name}
+              description={`Form components implemented with ${lib.name}`}
+              forms={activeForms}
+              libraries={[lib]}
+              theme={themeMode}
+            />
+          ))
+        ) : (
+          activeForms.map((form) => (
+            <PreviewSection
+              key={form}
+              title={form}
+              description={`Implemented across component libraries`}
+              forms={[form]}
+              libraries={activeLibraries}
+              theme={themeMode}
+            />
+          ))}
       </main>
     </div>
   )

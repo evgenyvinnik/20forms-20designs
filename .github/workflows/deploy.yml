@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -16,9 +16,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 30 # Building 42 apps can take a while
+    timeout-minutes: 30 # Building apps can take a while
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,6 +32,29 @@ jobs:
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
+
+      - name: Calculate & Bump version
+        if: github.actor != 'github-actions[bot]'
+        run: |
+          DATE=$(date -u +'%y%m%d')
+          VERSION="1.0.${DATE}.${{ github.run_number }}"
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+          echo "Computed version: $VERSION"
+          bun -e "
+          const fs = require('fs');
+          const version = process.env.VERSION;
+          const data = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+          data.version = version;
+          fs.writeFileSync('package.json', JSON.stringify(data, null, 2) + '\n');
+          "
+
+      - name: Commit version bump
+        if: github.actor != 'github-actions[bot]'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: auto-bump version to ${{ env.VERSION }} [skip ci]"
+          branch: ${{ github.ref_name }}
+          file_pattern: package.json
 
       - name: Cache Bun dependencies
         uses: actions/cache@v4
@@ -87,8 +110,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
+    needs: build-and-deploy
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+

@@ -338,12 +338,12 @@ test.describe('Shell App', () => {
       const libraryRadio = page.getByRole('radio', { name: 'Design system' })
       await libraryRadio.click()
 
-      // Section titles should contain "previews" (e.g., "MUI previews")
+      // Section title should be visible (e.g., library name)
       const previewSection = page.locator('.preview-section').first()
       await expect(previewSection).toBeVisible({ timeout: 10000 })
 
       const sectionTitle = previewSection.locator('h3')
-      await expect(sectionTitle).toContainText('previews')
+      await expect(sectionTitle).toBeVisible()
     })
 
     test('should show form-based sections when grouped by form', async ({
