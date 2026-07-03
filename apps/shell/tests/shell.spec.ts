@@ -378,6 +378,7 @@ test.describe('Shell App', () => {
         await checkbox.click()
       }
       await expect(checkbox).toBeChecked()
+      await expect(page).toHaveURL(/job-application/)
 
       // Reload and verify it's still checked
       await page.reload()
@@ -393,6 +394,7 @@ test.describe('Shell App', () => {
     }) => {
       // Switch to dark theme
       await page.getByRole('radio', { name: 'Dark theme' }).click()
+      await expect(page).toHaveURL(/theme=dark/)
 
       // Reload
       await page.reload()
@@ -408,6 +410,7 @@ test.describe('Shell App', () => {
     }) => {
       // Switch to form grouping
       await page.getByRole('radio', { name: 'Form name' }).click()
+      await expect(page).toHaveURL(/groupBy=form/)
 
       // Reload
       await page.reload()

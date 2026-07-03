@@ -234,7 +234,8 @@ function App() {
               libraries={activeLibraries}
               theme={themeMode}
             />
-          ))}
+          ))
+        )}
       </main>
     </div>
   )
