@@ -19,7 +19,7 @@
     "@park-ui/tailwind-plugin": "^0.20.1",
     "@vitejs/plugin-react": "^6.0.1",
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.5.9",
+    "postcss": "^8.5.17",
     "tailwindcss": "^3.4.17",
     "vite": "^8.0.8"
   }
