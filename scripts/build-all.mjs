@@ -74,6 +74,7 @@ const CONSOLIDATED_APPS = [
   'spectrum-2',
   'tamagui',
   'theme-ui',
+  'untitled-ui',
   'uswds',
   'webawesome',
   'zendesk-garden',

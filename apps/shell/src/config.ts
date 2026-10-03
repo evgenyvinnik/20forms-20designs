@@ -49,6 +49,7 @@ export type LibraryId =
   | 'kumo'
   | 'reshaped'
   | 'spectrum-2'
+  | 'untitled-ui'
 
 // Form ID for iframe URLs
 export type FormId =
@@ -139,6 +140,7 @@ export const LIBRARY_NAME_TO_ID: Record<string, LibraryId | undefined> = {
   'Cloudflare Kumo': 'kumo',
   Reshaped: 'reshaped',
   'Spectrum 2': 'spectrum-2',
+  'Untitled UI React': 'untitled-ui',
 }
 
 // Map from form name to form ID (for iframe URLs)
@@ -583,6 +585,14 @@ export const LIBRARIES: Library[] = [
     implemented: true,
     supportsTheme: true,
   },
+  {
+    name: 'Untitled UI React',
+    directory: 'untitled-ui',
+    website: 'https://www.untitledui.com/react',
+    repo: 'https://github.com/untitleduico/react',
+    implemented: true,
+    supportsTheme: true,
+  },
 ]
 
 // Get implemented libraries only
@@ -640,6 +650,7 @@ const CONSOLIDATED_LIBRARIES: Set<LibraryId> = new Set([
   'kumo',
   'reshaped',
   'spectrum-2',
+  'untitled-ui',
 ])
 
 // Build iframe URL

@@ -720,6 +720,25 @@
         "vite": "^8.0.8",
       },
     },
+    "apps/untitled-ui": {
+      "name": "@forms-comparison/untitled-ui",
+      "version": "1.0.0",
+      "dependencies": {
+        "@untitledui/icons": "^0.0.23",
+        "react": "^18.3.1",
+        "react-aria-components": "^1.21.1",
+        "react-dom": "^18.3.1",
+        "tailwind-merge": "^3.7.0",
+      },
+      "devDependencies": {
+        "@tailwindcss/vite": "^4.3.3",
+        "@vitejs/plugin-react": "^6.0.1",
+        "tailwindcss": "^4.3.3",
+        "tailwindcss-animate": "^1.0.7",
+        "tailwindcss-react-aria-components": "^2.2.0",
+        "vite": "^8.0.8",
+      },
+    },
     "apps/uswds": {
       "name": "@forms-comparison/uswds",
       "version": "1.0.0",
@@ -1530,6 +1549,8 @@
     "@forms-comparison/tamagui": ["@forms-comparison/tamagui@workspace:apps/tamagui"],
 
     "@forms-comparison/theme-ui": ["@forms-comparison/theme-ui@workspace:apps/theme-ui"],
+
+    "@forms-comparison/untitled-ui": ["@forms-comparison/untitled-ui@workspace:apps/untitled-ui"],
 
     "@forms-comparison/uswds": ["@forms-comparison/uswds@workspace:apps/uswds"],
 
@@ -2784,6 +2805,8 @@
     "@uiw/react-drag-event-interactive": ["@uiw/react-drag-event-interactive@2.10.3", "", { "peerDependencies": { "@babel/runtime": ">=7.19.0", "react": ">=16.9.0", "react-dom": ">=16.9.0" } }, "sha512-veLm9HF1cairiYbGxcALYVu51T4XAzDz8fmtQ0SiLVFHBX74+iUGo2jArS/XALFBnapsLYTAWTnHXxe38mC/Vw=="],
 
     "@ungap/structured-clone": ["@ungap/structured-clone@1.4.0", "", {}, "sha512-1mEZtMKPM09vDmQt5y7YvmN2+DFTP7Tg0EWXdic8/C6VRnpb33e4ghisCIE3WZjsE2N8mf+QV1Zqh7ZFYLWInQ=="],
+
+    "@untitledui/icons": ["@untitledui/icons@0.0.23", "", { "peerDependencies": { "react": ">= 16" } }, "sha512-WoBtPCXaxweF0RXS9IuqgEeJkBmT7A9SszPHB+vQJOxeAl0hDTFXHlWXsooYniXQ0JmP4+7RADdhWb39GWFT8g=="],
 
     "@uswds/uswds": ["@uswds/uswds@3.14.0", "", { "dependencies": { "lit": "3.3.3" } }, "sha512-kwZ50TqGszxj3+MQhm+c84hI0y8rIKoc7ZLKbuHg+8rTkFisp9lXOMRD2wclyyuYZahpADxMvaPong7bwL7cew=="],
 
@@ -4778,6 +4801,10 @@
     "tailwind-merge-v3": ["tailwind-merge@3.4.0", "", {}, "sha512-uSaO4gnW+b3Y2aWoWfFpX62vn2sR3skfhbjsEnaBI81WD1wBLlHZe5sWf0AqjksNdYTbGBEd0UasQMT3SNV15g=="],
 
     "tailwindcss": ["tailwindcss@4.3.3", "", {}, "sha512-gOhV3P7ufE62QDGg1zVaTgCR+EtPv92k2nIhVcVKcLmxT1sUBsQGhnZj175j+MqRt4zLF7ic+sCYjfhxMxj7YQ=="],
+
+    "tailwindcss-animate": ["tailwindcss-animate@1.0.7", "", { "peerDependencies": { "tailwindcss": ">=3.0.0 || insiders" } }, "sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA=="],
+
+    "tailwindcss-react-aria-components": ["tailwindcss-react-aria-components@2.2.0", "", { "peerDependencies": { "tailwindcss": "^4.0.0" } }, "sha512-iNVDSQd6haXWiu4RakjaYnCUnLw/nOEFSFHEelFeIkT/0f8HSrJ23fwt59F93yNw4FrjjHDXIGHgEtqProNcmQ=="],
 
     "tamagui": ["tamagui@1.144.4", "", { "dependencies": { "@tamagui/accordion": "1.144.4", "@tamagui/adapt": "1.144.4", "@tamagui/alert-dialog": "1.144.4", "@tamagui/animate-presence": "1.144.4", "@tamagui/avatar": "1.144.4", "@tamagui/button": "1.144.4", "@tamagui/card": "1.144.4", "@tamagui/checkbox": "1.144.4", "@tamagui/compose-refs": "1.144.4", "@tamagui/constants": "1.144.4", "@tamagui/core": "1.144.4", "@tamagui/create-context": "1.144.4", "@tamagui/dialog": "1.144.4", "@tamagui/elements": "1.144.4", "@tamagui/fake-react-native": "1.144.4", "@tamagui/focusable": "1.144.4", "@tamagui/font-size": "1.144.4", "@tamagui/form": "1.144.4", "@tamagui/get-button-sized": "1.144.4", "@tamagui/get-font-sized": "1.144.4", "@tamagui/get-token": "1.144.4", "@tamagui/group": "1.144.4", "@tamagui/helpers-tamagui": "1.144.4", "@tamagui/image": "1.144.4", "@tamagui/label": "1.144.4", "@tamagui/linear-gradient": "1.144.4", "@tamagui/list-item": "1.144.4", "@tamagui/polyfill-dev": "1.144.4", "@tamagui/popover": "1.144.4", "@tamagui/popper": "1.144.4", "@tamagui/portal": "1.144.4", "@tamagui/progress": "1.144.4", "@tamagui/radio-group": "1.144.4", "@tamagui/react-native-media-driver": "1.144.4", "@tamagui/scroll-view": "1.144.4", "@tamagui/select": "1.144.4", "@tamagui/separator": "1.144.4", "@tamagui/shapes": "1.144.4", "@tamagui/sheet": "1.144.4", "@tamagui/slider": "1.144.4", "@tamagui/stacks": "1.144.4", "@tamagui/switch": "1.144.4", "@tamagui/tabs": "1.144.4", "@tamagui/text": "1.144.4", "@tamagui/theme": "1.144.4", "@tamagui/toggle-group": "1.144.4", "@tamagui/tooltip": "1.144.4", "@tamagui/use-controllable-state": "1.144.4", "@tamagui/use-debounce": "1.144.4", "@tamagui/use-force-update": "1.144.4", "@tamagui/use-window-dimensions": "1.144.4", "@tamagui/visually-hidden": "1.144.4", "@tamagui/z-index-stack": "1.144.4" }, "peerDependencies": { "react": "*", "react-native": "*" } }, "sha512-U7ymDJmzStZwLSanknri8JjYk5YU8gG+ekViJ0R9tsbolKiu9/YmfEsa2lsz3VoTIzkX0Kb3L05qPRHYREi95A=="],
 
