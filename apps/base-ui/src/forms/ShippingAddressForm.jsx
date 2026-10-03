@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Field } from '@base-ui-components/react/field'
+import { Field } from '@base-ui/react/field'
 import { CANADIAN_PROVINCES, COUNTRIES, US_STATES } from './locationOptions'
 
 export default function ShippingAddressForm() {
