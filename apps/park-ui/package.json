@@ -12,8 +12,8 @@
     "@ark-ui/react": "^5.37.2",
     "park-ui": "^2.3.2",
     "lucide-react": "^1.18.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "devDependencies": {
     "@park-ui/tailwind-plugin": "^0.20.1",
