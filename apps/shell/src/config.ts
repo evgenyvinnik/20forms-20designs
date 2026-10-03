@@ -46,6 +46,7 @@ export type LibraryId =
   | 'base-ui'
   | 'park-ui'
   | 'joy-ui'
+  | 'kumo'
 
 // Form ID for iframe URLs
 export type FormId =
@@ -133,6 +134,7 @@ export const LIBRARY_NAME_TO_ID: Record<string, LibraryId | undefined> = {
   'U.S. Web Design System': 'uswds',
   'Web Awesome': 'webawesome',
   'Zendesk Garden': 'zendesk-garden',
+  'Cloudflare Kumo': 'kumo',
 }
 
 // Map from form name to form ID (for iframe URLs)
@@ -553,6 +555,14 @@ export const LIBRARIES: Library[] = [
     implemented: true,
     supportsTheme: true,
   },
+  {
+    name: 'Cloudflare Kumo',
+    directory: 'kumo',
+    website: 'https://kumo-ui.com',
+    repo: 'https://github.com/cloudflare/kumo',
+    implemented: true,
+    supportsTheme: true,
+  },
 ]
 
 // Get implemented libraries only
@@ -607,6 +617,7 @@ const CONSOLIDATED_LIBRARIES: Set<LibraryId> = new Set([
   'base-ui',
   'park-ui',
   'joy-ui',
+  'kumo',
 ])
 
 // Build iframe URL

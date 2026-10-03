@@ -52,6 +52,7 @@ const CONSOLIDATED_APPS = [
   'grommet',
   'headlessui',
   'joy-ui',
+  'kumo',
   'mantine',
   'material-tailwind',
   'mui',
