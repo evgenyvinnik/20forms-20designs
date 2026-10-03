@@ -65,6 +65,7 @@ const CONSOLIDATED_APPS = [
   'react-bootstrap',
   'react-no-css',
   'react-spectrum',
+  'reshaped',
   'rsuite',
   'semantic-ui',
   'semi-design',

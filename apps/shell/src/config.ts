@@ -47,6 +47,7 @@ export type LibraryId =
   | 'park-ui'
   | 'joy-ui'
   | 'kumo'
+  | 'reshaped'
 
 // Form ID for iframe URLs
 export type FormId =
@@ -135,6 +136,7 @@ export const LIBRARY_NAME_TO_ID: Record<string, LibraryId | undefined> = {
   'Web Awesome': 'webawesome',
   'Zendesk Garden': 'zendesk-garden',
   'Cloudflare Kumo': 'kumo',
+  Reshaped: 'reshaped',
 }
 
 // Map from form name to form ID (for iframe URLs)
@@ -563,6 +565,14 @@ export const LIBRARIES: Library[] = [
     implemented: true,
     supportsTheme: true,
   },
+  {
+    name: 'Reshaped',
+    directory: 'reshaped',
+    website: 'https://reshaped.so',
+    repo: 'https://github.com/reshaped-ui/reshaped',
+    implemented: true,
+    supportsTheme: true,
+  },
 ]
 
 // Get implemented libraries only
@@ -618,6 +628,7 @@ const CONSOLIDATED_LIBRARIES: Set<LibraryId> = new Set([
   'park-ui',
   'joy-ui',
   'kumo',
+  'reshaped',
 ])
 
 // Build iframe URL
