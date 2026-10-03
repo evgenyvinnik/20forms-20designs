@@ -1,7 +1,7 @@
 version: 2
 updates:
-  # npm/pnpm dependencies
-  - package-ecosystem: "npm"
+  # Bun dependencies (bun.lock)
+  - package-ecosystem: "bun"
     directory: "/"
     schedule:
       interval: "weekly"

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Field } from '@base-ui-components/react/field'
+import { Field } from '@base-ui/react/field'
 
 export default function OnboardingWizardForm() {
   const [step, setStep] = useState(1)

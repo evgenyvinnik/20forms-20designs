@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@base-ui-components/react": "^1.0.0-rc.0",
+    "@base-ui/react": "^1.8.0",
     "lucide-react": "^1.18.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
