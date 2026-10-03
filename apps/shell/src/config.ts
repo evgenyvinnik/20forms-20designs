@@ -48,6 +48,7 @@ export type LibraryId =
   | 'joy-ui'
   | 'kumo'
   | 'reshaped'
+  | 'spectrum-2'
 
 // Form ID for iframe URLs
 export type FormId =
@@ -137,6 +138,7 @@ export const LIBRARY_NAME_TO_ID: Record<string, LibraryId | undefined> = {
   'Zendesk Garden': 'zendesk-garden',
   'Cloudflare Kumo': 'kumo',
   Reshaped: 'reshaped',
+  'Spectrum 2': 'spectrum-2',
 }
 
 // Map from form name to form ID (for iframe URLs)
@@ -573,6 +575,14 @@ export const LIBRARIES: Library[] = [
     implemented: true,
     supportsTheme: true,
   },
+  {
+    name: 'Spectrum 2',
+    directory: 'spectrum-2',
+    website: 'https://react-spectrum.adobe.com/s2/',
+    repo: 'https://github.com/adobe/react-spectrum',
+    implemented: true,
+    supportsTheme: true,
+  },
 ]
 
 // Get implemented libraries only
@@ -629,6 +639,7 @@ const CONSOLIDATED_LIBRARIES: Set<LibraryId> = new Set([
   'joy-ui',
   'kumo',
   'reshaped',
+  'spectrum-2',
 ])
 
 // Build iframe URL

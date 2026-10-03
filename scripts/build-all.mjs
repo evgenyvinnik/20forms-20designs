@@ -71,6 +71,7 @@ const CONSOLIDATED_APPS = [
   'semi-design',
   'shadcn-ui',
   'slds',
+  'spectrum-2',
   'tamagui',
   'theme-ui',
   'uswds',
