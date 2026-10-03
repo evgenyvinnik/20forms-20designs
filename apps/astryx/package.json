@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@astryxdesign/core": "^0.1.2",
-    "@astryxdesign/theme-neutral": "^0.1.2",
+    "@astryxdesign/core": "^0.6.3",
+    "@astryxdesign/theme-neutral": "^0.6.3",
     "lucide-react": "^1.18.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

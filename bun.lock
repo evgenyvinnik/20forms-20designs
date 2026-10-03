@@ -77,8 +77,8 @@
       "name": "@forms-comparison/astryx",
       "version": "1.0.0",
       "dependencies": {
-        "@astryxdesign/core": "^0.1.2",
-        "@astryxdesign/theme-neutral": "^0.1.2",
+        "@astryxdesign/core": "^0.6.3",
+        "@astryxdesign/theme-neutral": "^0.6.3",
         "lucide-react": "^1.18.0",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
@@ -836,9 +836,9 @@
 
     "@ark-ui/react": ["@ark-ui/react@5.39.2", "", { "dependencies": { "@internationalized/date": "3.12.4", "@zag-js/accordion": "1.43.3", "@zag-js/anatomy": "1.43.3", "@zag-js/angle-slider": "1.43.3", "@zag-js/async-list": "1.43.3", "@zag-js/auto-resize": "1.43.3", "@zag-js/avatar": "1.43.3", "@zag-js/carousel": "1.43.3", "@zag-js/cascade-select": "1.43.3", "@zag-js/checkbox": "1.43.3", "@zag-js/clipboard": "1.43.3", "@zag-js/collapsible": "1.43.3", "@zag-js/collection": "1.43.3", "@zag-js/color-picker": "1.43.3", "@zag-js/color-utils": "1.43.3", "@zag-js/combobox": "1.43.3", "@zag-js/core": "1.43.3", "@zag-js/date-input": "1.43.3", "@zag-js/date-picker": "1.43.3", "@zag-js/date-utils": "1.43.3", "@zag-js/dialog": "1.43.3", "@zag-js/dom-query": "1.43.3", "@zag-js/drawer": "1.43.3", "@zag-js/editable": "1.43.3", "@zag-js/file-upload": "1.43.3", "@zag-js/file-utils": "1.43.3", "@zag-js/floating-panel": "1.43.3", "@zag-js/focus-trap": "1.43.3", "@zag-js/focus-visible": "1.43.3", "@zag-js/highlight-word": "1.43.3", "@zag-js/hotkeys": "1.43.3", "@zag-js/hover-card": "1.43.3", "@zag-js/i18n-utils": "1.43.3", "@zag-js/image-cropper": "1.43.3", "@zag-js/json-tree-utils": "1.43.3", "@zag-js/listbox": "1.43.3", "@zag-js/marquee": "1.43.3", "@zag-js/menu": "1.43.3", "@zag-js/navigation-menu": "1.43.3", "@zag-js/number-input": "1.43.3", "@zag-js/pagination": "1.43.3", "@zag-js/password-input": "1.43.3", "@zag-js/pin-input": "1.43.3", "@zag-js/popover": "1.43.3", "@zag-js/presence": "1.43.3", "@zag-js/progress": "1.43.3", "@zag-js/qr-code": "1.43.3", "@zag-js/radio-group": "1.43.3", "@zag-js/rating-group": "1.43.3", "@zag-js/react": "1.43.3", "@zag-js/scroll-area": "1.43.3", "@zag-js/select": "1.43.3", "@zag-js/signature-pad": "1.43.3", "@zag-js/slider": "1.43.3", "@zag-js/splitter": "1.43.3", "@zag-js/steps": "1.43.3", "@zag-js/switch": "1.43.3", "@zag-js/tabs": "1.43.3", "@zag-js/tags-input": "1.43.3", "@zag-js/timer": "1.43.3", "@zag-js/toast": "1.43.3", "@zag-js/toc": "1.43.3", "@zag-js/toggle": "1.43.3", "@zag-js/toggle-group": "1.43.3", "@zag-js/tooltip": "1.43.3", "@zag-js/tour": "1.43.3", "@zag-js/tree-view": "1.43.3", "@zag-js/types": "1.43.3", "@zag-js/utils": "1.43.3" }, "peerDependencies": { "react": ">=18.0.0", "react-dom": ">=18.0.0" } }, "sha512-bvfEXm/5JBVe5zmA1myB5EC4+khE18qru5A0qIgV3Qzz10Qykn27heIR5ypyGwnYoE6HgMumZhTdM0xan5mE5g=="],
 
-    "@astryxdesign/core": ["@astryxdesign/core@0.1.9", "", { "dependencies": { "intl-messageformat": "^11.2.9" }, "peerDependencies": { "@stylexjs/stylex": "^0.19.0", "react": ">=19.0.0", "react-dom": ">=19.0.0" } }, "sha512-2ZNypZFfujMPxdU8M9Jbe77vwFPP1FYvA0Pk/3L3OLxEIzi98qLbRJjhDEHLbrflANSFVB4l5+qYpJjYtFFXMQ=="],
+    "@astryxdesign/core": ["@astryxdesign/core@0.6.3", "", { "dependencies": { "intl-messageformat": "^11.2.9" }, "peerDependencies": { "@stylexjs/stylex": "^0.19.0", "react": ">=19.0.0", "react-dom": ">=19.0.0" } }, "sha512-ieaZZn0wjP8saWkfSXFgzvrA0UfXWeOBsvuvsbtJ0789LdYacTJS83UXsROcvPLONUIOO/Iy1Ar5+70xvcVpgg=="],
 
-    "@astryxdesign/theme-neutral": ["@astryxdesign/theme-neutral@0.1.9", "", { "dependencies": { "lucide-react": "^1.18.0" }, "peerDependencies": { "@astryxdesign/core": "0.1.9", "react": ">=19" } }, "sha512-HZPJmzg0S+aKuxUBGJ1L9O+bBZzwzWlROey/7VilM8kUzHA4lYrFcIPzRixoiXs/qyR5sSfJE8YG7jsXuAuywA=="],
+    "@astryxdesign/theme-neutral": ["@astryxdesign/theme-neutral@0.6.3", "", { "dependencies": { "lucide-react": "^1.18.0" }, "peerDependencies": { "@astryxdesign/core": "0.6.3", "react": ">=19" } }, "sha512-6l2u3qVcs5TkN4YUMUrSlMdmRmzt+/nB1pJqZopn3/nylVZcxSql+wzeD7T1VyinM+wHAokoaRD6xmCa2abNDg=="],
 
     "@atlaskit/analytics-next": ["@atlaskit/analytics-next@11.3.0", "", { "dependencies": { "@atlaskit/analytics-next-stable-react-context": "1.0.1", "@atlaskit/platform-feature-flags": "^1.1.0", "@babel/runtime": "^7.0.0", "prop-types": "^15.5.10", "use-memo-one": "^1.1.1" }, "peerDependencies": { "react": "^18.2.0", "react-dom": "^18.2.0" } }, "sha512-UDTl1YSRz7QCFXxTXctgsbVjXMVIIaoyqpH7SAZw2CRjKeTuihljtxBuv0C2EX5hocPS6b2KZKCwA4yEXHWozQ=="],
 
