@@ -233,14 +233,15 @@ Each library app is a standalone Vite + React application that:
 
 ### Scripts
 
-| Script                | Description                                   |
-| --------------------- | --------------------------------------------- |
-| `bun run build`       | Build shell + all library apps + copy to dist |
-| `bun run build:shell` | Build only the shell app                      |
-| `bun run clean`       | Remove all build artifacts                    |
-| `bun run dev:shell`   | Run shell app in development mode             |
-| `bun run preview`     | Preview the production build locally          |
-| `bun run lint`        | Lint all apps (may take a while)              |
+| Script                              | Description                                                                                                          |
+| ----------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `bun run build`                     | Build shell + all library apps + copy to dist. Exits non-zero if any app fails, which stops the deploy workflow      |
+| `bun run build -- --allow-failures` | Same, but exits 0 when some library apps fail (local use only; `BUILD_ALLOW_FAILURES=1 bun run build` is equivalent) |
+| `bun run build:shell`               | Build only the shell app                                                                                             |
+| `bun run clean`                     | Remove all build artifacts                                                                                           |
+| `bun run dev:shell`                 | Run shell app in development mode                                                                                    |
+| `bun run preview`                   | Preview the production build locally                                                                                 |
+| `bun run lint`                      | Lint all apps (may take a while)                                                                                     |
 
 ## 🧪 Testing
 

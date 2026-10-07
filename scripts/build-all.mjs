@@ -8,9 +8,14 @@
  * 2. Builds apps in parallel (with concurrency limit)
  * 3. Copies all builds to the dist directory
  * 
+ * Exits non-zero if any app fails to build, so CI never deploys a broken site.
+ *
  * Usage: 
  *   node scripts/build-all.mjs              # Build all apps (legacy mini-apps + consolidated)
  *   node scripts/build-all.mjs --consolidated  # Build only consolidated apps (recommended)
+ *   node scripts/build-all.mjs --allow-failures  # Exit 0 even if some library apps fail (local use only)
+ *
+ * Setting BUILD_ALLOW_FAILURES=1 is equivalent to passing --allow-failures.
  */
 
 import { spawn } from 'child_process';
@@ -181,6 +186,8 @@ function getAppDirectories() {
 async function main() {
   const args = process.argv.slice(2);
   const consolidatedOnly = args.includes('--consolidated');
+  const allowFailures =
+    args.includes('--allow-failures') || process.env.BUILD_ALLOW_FAILURES === '1';
 
   if (consolidatedOnly) {
     console.log('🚀 Building consolidated apps only...\n');
@@ -243,8 +250,24 @@ async function main() {
     process.exit(1);
   }
 
+  if (failed.length > 0) {
+    const names = failed.map(f => f.app).join(', ');
+    if (allowFailures) {
+      console.warn(`\n⚠️  ${failed.length} app(s) failed to build (${names}); exiting 0 because failures are allowed (--allow-failures / BUILD_ALLOW_FAILURES=1).`);
+      console.warn('   dist/ is incomplete: those libraries will 404 in the preview.');
+    } else {
+      console.error(`\n❌ Build failed: ${failed.length} app(s) did not build (${names}).`);
+      console.error('   dist/ was still populated for local preview, but it is incomplete and must not be deployed.');
+      console.error('   Pass --allow-failures (or set BUILD_ALLOW_FAILURES=1) to exit 0 anyway.');
+      process.exit(1);
+    }
+  }
+
   console.log('\n🎉 All done! Check the dist/ directory.');
 }
 
-main().catch(console.error);
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
 
