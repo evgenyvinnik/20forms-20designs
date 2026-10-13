@@ -743,7 +743,7 @@
       "name": "@forms-comparison/uswds",
       "version": "1.0.0",
       "dependencies": {
-        "@trussworks/react-uswds": "^11.0.1",
+        "@trussworks/react-uswds": "^12.0.0",
         "@uswds/uswds": "^3.13.0",
         "focus-trap-react": "^12.0.0",
         "react": "^18.3.1",
@@ -2662,7 +2662,7 @@
 
     "@tiptap/suggestion": ["@tiptap/suggestion@3.31.4", "", { "peerDependencies": { "@floating-ui/dom": "^1.0.0", "@tiptap/core": "3.31.4", "@tiptap/pm": "3.31.4" } }, "sha512-J9WWMQDAzZOlF9VSdLohpxgrwlB1NscqvNhOPoS3WjwrzQqLj+FAvcchfJQcnybF5mYOtftFZexpOzOt1MqjUA=="],
 
-    "@trussworks/react-uswds": ["@trussworks/react-uswds@11.2.0", "", { "peerDependencies": { "@types/react": "^16.x || ^17.x || ^18.x || ^19.x", "@types/react-dom": "^16.x || ^17.x || ^18.x || ^19.x", "@uswds/uswds": "^3.13.0", "focus-trap-react": "^11.0.4", "react": "^16.x || ^17.x || ^18.x || ^19.x", "react-dom": "^16.x || ^17.x || ^18.x || ^19.x" } }, "sha512-tg8/oq4FgikF/7bsUN1cwYGfSetBDYlDCrkr6dXSxxC2o/PRr03tschKxiJ8Aa9XvE131LF95FtqzZlGy4kP5Q=="],
+    "@trussworks/react-uswds": ["@trussworks/react-uswds@12.0.0", "", { "peerDependencies": { "@types/react": "^16.x || ^17.x || ^18.x || ^19.x", "@types/react-dom": "^16.x || ^17.x || ^18.x || ^19.x", "@uswds/uswds": "^3.13.0", "focus-trap-react": "^11.0.4", "react": "^16.x || ^17.x || ^18.x || ^19.x", "react-dom": "^16.x || ^17.x || ^18.x || ^19.x" } }, "sha512-r0jAsdgK4DVBrhLZjI+iSbaI+NK9WMYOVPAZijs6iHbrXdvvihYi5u7R/2fHnjtra99SBEKgFG9I4YwANGkr6w=="],
 
     "@tybys/wasm-util": ["@tybys/wasm-util@0.10.4", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-W3c4gRigFS0T/Ma4qIYF3GDAc5AQdHb1yL5znJT1Zv1YaD9Kitx656wBjvr19qbiosmZT8lWDM5BEMynUqX65A=="],
 
