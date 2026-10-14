@@ -11,12 +11,12 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "@cloudscape-design/components": "^3.0.1270",
+    "@cloudscape-design/components": "^3.0.1396",
     "@cloudscape-design/component-toolkit": "^1.0.0-beta.156",
     "@cloudscape-design/global-styles": "^1.0.57"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^6.0.1",
-    "vite": "^8.0.8"
+    "@vitejs/plugin-react": "^6.1.2",
+    "vite": "^8.3.4"
   }
 }
