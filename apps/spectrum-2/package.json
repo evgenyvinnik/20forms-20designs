@@ -9,13 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-spectrum/s2": "^1.7.1",
+    "@react-spectrum/s2": "^1.8.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^6.0.1",
+    "@vitejs/plugin-react": "^6.1.2",
     "unplugin-parcel-macros": "^0.2.0",
-    "vite": "^8.0.8"
+    "vite": "^8.3.4"
   }
 }
